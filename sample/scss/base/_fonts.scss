@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'NotoSansKR';
+    font-weight: 700;
+    src:
+        url('/static/renewal/fonts/NotoSansKR-Bold.woff2') format('woff2'),
+        url('/static/renewal/fonts/NotoSansKR-Bold.woff') format('woff'),
+        url('/static/renewal/fonts/NotoSansKR-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    font-weight: 500;
+    src:
+        url('/static/renewal/fonts/NotoSansKR-Medium.woff2') format('woff2'),
+        url('/static/renewal/fonts/NotoSansKR-Medium.woff') format('woff'),
+        url('/static/renewal/fonts/NotoSansKR-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    font-weight: 400;
+    src:
+        url('/static/renewal/fonts/NotoSansKR-Regular.woff2') format('woff2'),
+        url('/static/renewal/fonts/NotoSansKR-Regular.woff') format('woff'),
+        url('/static/renewal/fonts/NotoSansKR-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    font-weight: 300;
+    src:
+        url('/static/renewal/fonts/NotoSansKR-Light.woff2') format('woff2'),
+        url('/static/renewal/fonts/NotoSansKR-Light.woff') format('woff'),
+        url('/static/renewal/fonts/NotoSansKR-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    font-weight: 100;
+    src:
+        url('/static/renewal/fonts/NotoSansKR-Thin.woff2') format('woff2'),
+        url('/static/renewal/fonts/NotoSansKR-Thin.woff') format('woff'),
+        url('/static/renewal/fonts/NotoSansKR-Thin.otf') format('opentype');
+}
