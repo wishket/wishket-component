@@ -1,0 +1,129 @@
+//text input stlye
+@mixin textinput($padding, $brand-color, $placeholder-color, $font-color, $font-size, $line-height){
+  position:relative;
+  padding-bottom:28px;
+
+  >input{
+    display: block;
+    border-radius:4px;
+    padding:$padding;
+    border:1px solid $color-gray200;
+    font-size:$font-size;
+    line-height: $line-height;
+    color:$font-color;
+    font-weight:400;
+    background:#fff;
+    width:100%;
+    &::placeholder{
+      color:$placeholder-color;
+    }
+    &:disabled{
+      background:$color-gray10;
+      color:$color-gray300;
+    }
+  }
+
+  >span{
+    position:absolute;
+    font-size:0.813rem;
+    font-weight: 400;
+    bottom:0;
+    color:$color-gray400;
+    left:0.813rem;
+    &:nth-child(3){
+      left:auto;
+      right:0.813rem;
+    }
+  }
+
+  &.error{
+    >input{
+      color:$color-red500;
+      border-color:$color-red500;
+    }
+    >span{
+      color:$color-red500;
+    }
+  }
+
+  &:hover, &:focus{
+    >input{
+      border-color:$brand-color;
+      &:disabled{
+        &:hover, &:focus{
+          border-color:$color-gray200;
+        }
+      }
+    }
+  }
+}
+
+.text-input-wishket{
+  @include textinput(9px 13px, $color-wishket500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+}
+
+.text-input-partner{
+  @include textinput(9px 13px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+}
+
+.text-input-client{
+  @include textinput(9px 13px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+}
+
+.text-input-wishket-small{
+  @include textinput(9px 13px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+}
+
+.text-input-partner-small{
+  @include textinput(9px 13px, $color-partner500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+}
+
+.text-input-client-small{
+  @include textinput(9px 13px, $color-client500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+}
+
+
+//label input style
+@mixin labelInput($padding, $brand-color, $placeholder-color, $font-color, $font-size, $line-height){
+  position:relative;
+
+  >input{
+    display: block;
+    border-radius:4px;
+    padding:$padding;
+    border:1px solid $color-gray200;
+    font-size:$font-size;
+    line-height: $line-height;
+    color:$font-color;
+    font-weight:400;
+    background:#fff;
+    width:100%;
+    &::placeholder{
+      color:$placeholder-color;
+    }
+    &:disabled{
+      background:$color-gray10;
+      color:$color-gray300;
+    }
+  }
+
+  >label{
+    font-size:0.688rem;
+    color:$brand-color;
+
+  }
+
+  &.error{
+    >input{
+      color:$color-red500;
+      border-color:$color-red500;
+    }
+    >label{
+      color:$color-red500;
+    }
+  }
+}
+
+.label-input-wishket{
+  @include labelInput(17px 53px 17px 13px, $color-wishket500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+}

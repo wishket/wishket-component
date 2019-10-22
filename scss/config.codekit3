@@ -9,7 +9,7 @@
 	],
 "creatorBuild": "31924",
 "files": {
-	"/base/color.scss": {
+	"/base/_color.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -17,7 +17,46 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/base/color.css",
+		"oAP": "/base/_color.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/base/_font.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/base/_font.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/base/_normalize.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/base/_normalize.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/base/_typography.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/base/_typography.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -30,8 +69,34 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "/../css/component.css",
+		"oAP": "/Users/jaehyun/source/wishket-component/css/component.css",
 		"oF": 6,
+		"oS": 3,
+		"uL": 1
+		},
+	"/component/_input.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/component/_input.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/variable/_mixin.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/variable/_mixin.css",
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		}

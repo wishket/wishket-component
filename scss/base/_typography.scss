@@ -1,0 +1,235 @@
+@mixin font-weight-thin {
+  font-weight: 100;
+}
+@mixin font-weight-light {
+  font-weight: 300;
+}
+@mixin font-weight-regular{
+  font-weight: 400
+}
+@mixin font-weight-medium {
+  font-weight: 500;
+}
+@mixin font-weight-bold {
+  font-weight: 700;
+}
+  
+  
+.title-1 {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 4rem;
+}
+.title-1-light {
+  @extend .title-1;
+  @include font-weight-light;
+}
+.title-1-regular{
+  @extend .title-1;
+  @include font-weight-regular;
+}
+.title-1-medium {
+  @extend .title-1;
+  @include font-weight-medium;
+}
+
+
+.title-2 {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 700;
+}
+.title-2-light{
+  @extend .title-2;
+  @include font-weight-light;
+}
+.title-2-regular{
+  @extend .title-2;
+  @include font-weight-regular;
+}
+.title-2-medium {
+  @extend .title-2;
+  @include font-weight-medium;
+}
+
+
+.subtitle-1 {
+  font-size: 1.5rem;
+  line-height: 2.250rem;
+  font-weight: 700;
+}
+.subtitle-1-light{
+  @extend .subtitle-1;
+  @include font-weight-light;
+}
+.subtitle-1-regular{
+  @extend .subtitle-1;
+  @include font-weight-regular;
+}
+.subtitle-1-medium {
+  @extend .subtitle-1;
+  @include font-weight-medium;
+}
+
+
+
+.subtitle-2-medium {
+  @extend .title-1;
+  @include font-weight-medium;
+}
+.title-2-bold {
+  @extend .title-1;
+  @include font-weight-bold;
+}
+
+.title-2-light {
+  @extend .title-2;
+  @include font-weight-light;
+}
+.subtitle-2-medium {
+  @extend .title-2;
+  @include font-weight-medium;
+}
+.title-2-bold {
+  @extend .title-2;
+  @include font-weight-bold;
+}
+
+.subtitle-1-medium {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 500;
+}
+.subtitle-1 {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 400;
+}
+.subtitle-1-light {
+  @extend .subtitle-1;
+  @include font-weight-light;
+}
+.subtitle-1-medium {
+  @extend .subtitle-1;
+  @include font-weight-medium;
+}
+.subtitle-1-bold {
+  @extend .subtitle-1;
+  @include font-weight-bold;
+}
+
+
+.subtitle-2 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+}
+.subtitle-2-light {
+  @extend .subtitle-2;
+  @include font-weight-light;
+}
+.subtitle-2-medium {
+  @extend .subtitle-2;
+  @include font-weight-medium;
+}
+.subtitle-2-bold {
+  @extend .subtitle-2;
+  @include font-weight-bold;
+}
+
+
+.text-button-1 {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+
+.body-1 {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.body-1-light {
+  @extend .body-1;
+  @include font-weight-light;
+}
+.body-2-medium {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.body-1-medium {
+  @extend .body-1;
+  @include font-weight-medium;
+}
+.body-1-bold {
+  @extend .body-1;
+  @include font-weight-bold;
+}
+
+
+.body-2 {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.body-2-light {
+  @extend .body-2;
+  @include font-weight-light;
+}
+.body-2-medium {
+  @extend .body-2;
+  @include font-weight-medium;
+}
+.body-2-bold {
+  @extend .body-2;
+  @include font-weight-bold;
+}
+
+
+.body-3 {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.body-3-light {
+  @extend .body-3;
+  @include font-weight-light;
+}
+.body-3-medium {
+  @extend .body-3;
+  @include font-weight-medium;
+}
+.body-3-bold {
+  @extend .body-3;
+  @include font-weight-bold;
+}
+
+
+.caption {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+}
+.caption-light {
+  @extend .caption;
+  @include font-weight-light;
+}
+.caption-medium {
+  @extend .caption;
+  @include font-weight-medium;
+}
+.caption-bold {
+  @extend .caption;
+  @include font-weight-bold;
+}
+
+.link-text {
+  color: $color-wishket;
+  display: inline-block;
+}
+
+.no-size {
+  font-size: 0;
+}
