@@ -2,7 +2,6 @@
 @mixin textinput($padding, $brand-color, $placeholder-color, $font-color, $font-size, $line-height){
   position:relative;
   padding-bottom:28px;
-
   >input{
     display: block;
     border-radius:4px;
@@ -21,8 +20,15 @@
       background:$color-gray10;
       color:$color-gray300;
     }
+    &:hover, &:focus{
+      border-color:$brand-color;
+      &:disabled{
+        &:hover, &:focus{
+          border-color:$color-gray200;
+        }
+      }
+    }
   }
-
   >span{
     position:absolute;
     font-size:0.813rem;
@@ -35,7 +41,6 @@
       right:0.813rem;
     }
   }
-
   &.error{
     >input{
       color:$color-red500;
@@ -43,17 +48,6 @@
     }
     >span{
       color:$color-red500;
-    }
-  }
-
-  &:hover, &:focus{
-    >input{
-      border-color:$brand-color;
-      &:disabled{
-        &:hover, &:focus{
-          border-color:$color-gray200;
-        }
-      }
     }
   }
 }
@@ -84,13 +78,11 @@
 
 
 //label input style
-@mixin labelInput($padding, $brand-color, $placeholder-color, $font-color, $font-size, $line-height){
-  position:relative;
-
+@mixin labelInput($icon-position, $brand-color, $font-color, $font-size, $line-height){
+  position:relative;  
   >input{
     display: block;
     border-radius:4px;
-    padding:$padding;
     border:1px solid $color-gray200;
     font-size:$font-size;
     line-height: $line-height;
@@ -98,21 +90,60 @@
     font-weight:400;
     background:#fff;
     width:100%;
+    transition:all .3s;
+    @if $icon-position == icon-default {
+      padding:25px 13px 9px 13px;
+    } @else if $icon-position == icon-right {
+      padding:25px 44px 9px 13px;
+    } @else if $icon-position == icon-left {
+      padding:25px 13px 9px 44px;
+    }
     &::placeholder{
-      color:$placeholder-color;
+      text-indent: -9999999px;
     }
     &:disabled{
       background:$color-gray10;
       color:$color-gray300;
     }
+    &:hover, &:focus{
+      border-color:$brand-color;
+      &:disabled{
+        &:hover, &:focus{
+          border-color:$color-gray200;
+        }
+      }
+    }
+    &:focus, &:valid{
+      +label{
+        transform:translateY(-20px);
+      }
+    }
   }
 
   >label{
+    position:absolute;
+    @if $icon-position == icon-left {
+      left:44px;
+    } @else{
+      left:13px;
+    }
+    top:50%;
+    transform: translateY(-50%);
     font-size:0.688rem;
+    line-height:0.875rem;
     color:$brand-color;
-
+    transition:all .3s;
   }
-
+  >i{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    @if $icon-position == icon-right {
+      right:16px;
+    } @else if $icon-position == icon-left {
+      left:16px;
+    }
+  }
   &.error{
     >input{
       color:$color-red500;
@@ -125,5 +156,118 @@
 }
 
 .label-input-wishket{
-  @include labelInput(17px 53px 17px 13px, $color-wishket500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  @include labelInput(icon-default, $color-wishket500, $color-gray600, 0.875rem, 1.50rem);
+  &.icon-right{
+    @include labelInput(icon-right, $color-wishket500, $color-gray600, 0.875rem, 1.50rem);
+  }
+  &.icon-left{
+    @include labelInput(icon-left, $color-wishket500, $color-gray600, 0.875rem, 1.50rem);
+  }
+}
+
+.label-input-client{
+  @include labelInput(icon-default, $color-client500, $color-gray600, 0.875rem, 1.50rem);
+  &.icon-right{
+    @include labelInput(icon-right, $color-client500, $color-gray600, 0.875rem, 1.50rem);
+  }
+  &.icon-left{
+    @include labelInput(icon-left, $color-client500, $color-gray600, 0.875rem, 1.50rem);
+  }
+}
+
+.label-input-partner{
+  @include labelInput(icon-default, $color-partner500, $color-gray600, 0.875rem, 1.50rem);
+  &.icon-right{
+    @include labelInput(icon-right, $color-partner500, $color-gray600, 0.875rem, 1.50rem);
+  }
+  &.icon-left{
+    @include labelInput(icon-left, $color-partner500, $color-gray600, 0.875rem, 1.50rem);
+  }
+}
+
+
+//search input style
+@mixin searchInput($padding, $brand-color, $brand-color-10, $placeholder-color, $font-color, $font-size, $line-height){
+  position:relative;
+  display: block;
+  border-radius:4px;
+  border:1px solid $color-gray200;
+  font-size:$font-size;
+  color:$font-color;
+  font-weight:400;
+  background:#fff;
+  width:100%;
+  transition:all .3s;
+  line-height: $line-height;
+  padding:$padding;
+  >input{
+    border:none;
+    font-size:inherit;
+    font-weight: inherit;
+    color:inherit;
+    &::placeholder{
+      color:$placeholder-color;
+    }
+    &:disabled{
+      background:$color-gray10;
+      color:$color-gray300;
+    }
+  }
+  >button{
+    position:relative;
+    padding:2px 22px 2px 8px;
+    border-radius:8px;
+    font-size:0.813rem;
+    line-height:1.25rem;
+    color:$color-gray600;
+    background:$color-gray100;
+    border:none;
+    margin-right:5px;
+    >i>svg{
+      position: absolute;
+      top:50%;
+      transform:translateY(-50%);
+      right:4px;
+      width:16px;
+      height:auto;
+    }
+  }
+  >ul.search-box{
+    position: absolute;
+    left:0;
+    bottom:-140px;
+    border:solid 1px $color-gray200;
+    background:#fff;
+    border-radius: 4px;
+    padding:9px 0;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+    >li{
+      padding: 7px 16px;
+      background:#fff;
+      cursor:pointer;
+      &:hover{
+        background:$brand-color-10;
+      }
+    }
+  }
+  &:hover, &:focus, &:active{
+    border-color:$brand-color;
+    &:disabled{
+      &:hover, &:focus{
+        border-color:$color-gray200;
+      }
+    }
+  }
+}
+
+.search-input-client{
+  @include searchInput(9px 13px, $color-client500, $color-client10, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+}
+
+.search-input-wishket{
+  @include searchInput(9px 13px, $color-wishket500, $color-wishket10, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+}
+
+.search-input-partner{
+  @include searchInput(9px 13px, $color-partner500, $color-partner10, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
 }

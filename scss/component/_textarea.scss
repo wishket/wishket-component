@@ -1,0 +1,36 @@
+// @mixin textArea($type, $brand-color){
+//   position: relative;
+//   >textarea{
+//     display:block;
+//     padding:9px 13px;
+//     border:1px solid $color-gray200;
+//     border-radius:4px;
+//     width:100%;
+//     &::placeholder{
+//       color:$color-gray300;
+//     }
+//     &:disabled{
+//       background:$color-gray10;
+//       color:$color-gray300;
+//     }
+//     &:hover, &:focus{
+//       border-color:$brand-color;
+//       &:disabled{
+//         &:hover, &:focus{
+//           border-color:$color-gray200;
+//         }
+//       }
+//     }
+//     @if $type == default{
+//       resize:none;
+//     } @else{
+//       resize: ;
+//     }
+//   }
+  
+  
+// }
+
+// .textarea-partner{
+//   @include textArea(default, $color-partner500);
+// }

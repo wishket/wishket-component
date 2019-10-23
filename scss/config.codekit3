@@ -35,6 +35,14 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/base/_font.scss_bak": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/base/_font.scss_bak",
+		"oF": 0
+		},
 	"/base/_normalize.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -83,6 +91,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/component/_input.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/component/_textarea.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/component/_textarea.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

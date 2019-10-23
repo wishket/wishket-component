@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>test</title>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/input.js"></script>
     <link rel="stylesheet" href="./css/component.css">
     <link rel="stylesheet" href="./css/guide.css">
 </head>
 <body>
-  <div style='width:1200px; margin:0 auto; padding:40px;'>
+  <div>
     <section class='inputbox'>
       <div class='text-input-wishket'>
         <input type='text' placeholder="플레이스 홀더"/>
@@ -42,12 +43,91 @@
         <span>헬퍼 텍스트 상세내용</span>
       </div>
     </section>
-    <section>
+    <section class='labelbox'>
+      <div class='label-input-wishket icon-right'>
+        <input type='text' id='test1' placeholder="플레이스 홀더" data-ui='ui-input' required/>
+        <label for='test1'>레이블</label>
+        <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>
+      </div>
+      <div class='label-input-wishket icon-left'>
+        <input type='text' id=''test2 placeholder="플레이스 홀더" required/>
+        <label for='test2'>레이블</label>
+        <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>
+      </div>
       <div class='label-input-wishket'>
-        <input type='text' placeholder=""/>
+        <input type='text' id='test3' placeholder="플레이스 홀더" required/>
+        <label for='test3'>레이블</label>
+      </div>
+    </section>
+    <section>
+      <div class='text-input-client'>
+        <input type='password' value='sadfdfsdadfsa'/>
+      </div>
+
+    </section>
+    <section class='search'>
+      <div class='search-input-client'>
+        <button type='button'>
+          Photoshop
+          <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd" stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 5l6 6M11 5l-6 6"/></g></svg></i>
+        </button>
+        <button type='button'>
+          Illustrator
+          <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd" stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 5l6 6M11 5l-6 6"/></g></svg></i>
+        </button>
+        <input type='text' placeholder="플레이스 홀더"/>
+        <ul class='search-box'>
+          <li>list list list list list 1</li>
+          <li>list list list list list 1</li>
+          <li>list list list list list 1</li>
+          <li>list list list list list 1</li>
+        </ul>
+      </div>
+      <div class='search-input-partner'>
+          <button type='button'>
+            Photoshop
+            <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd" stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 5l6 6M11 5l-6 6"/></g></svg></i>
+          </button>
+          <button type='button'>
+            Illustrator
+            <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd" stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 5l6 6M11 5l-6 6"/></g></svg></i>
+          </button>
+          <input type='text' placeholder="플레이스 홀더"/>
+          <ul class='search-box'>
+            <li>list list list list list 1</li>
+            <li>list list list list list 1</li>
+            <li>list list list list list 1</li>
+            <li>list list list list list 1</li>
+          </ul>
+        </div>
+        <div class='search-input-wishket'>
+          <button type='button'>
+            Photoshop
+            <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd" stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 5l6 6M11 5l-6 6"/></g></svg></i>
+          </button>
+          <button type='button'>
+            Illustrator
+            <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd" stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 5l6 6M11 5l-6 6"/></g></svg></i>
+          </button>
+          <input type='text' placeholder="플레이스 홀더"/>
+          <ul class='search-box'>
+            <li>list list list list list 1</li>
+            <li>list list list list list 1</li>
+            <li>list list list list list 1</li>
+            <li>list list list list list 1</li>
+          </ul>
+        </div>
+    </section>
+    <section>
+      <div class="textarea-box">
+        <textarea></textarea>
+        <span>헬퍼 텍스트 상세내용</span>
+        <span>0/0</span>
       </div>
     </section>
   </div>
+  <script>
+  </script>
 </body>
 
 </html>
