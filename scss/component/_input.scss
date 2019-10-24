@@ -35,8 +35,14 @@
     font-weight: 400;
     bottom:0;
     color:$color-gray400;
-    left:0.813rem;
-    &:nth-child(3){
+    &.helper-text{
+      left:0.813rem;
+      text-overflow: ellipsis;
+      width: 80%;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    &.word-length{
       left:auto;
       right:0.813rem;
     }
@@ -64,15 +70,15 @@
   @include textinput(9px 13px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
 }
 
-.text-input-wishket-small{
+.text-input-wishket.input-small{
   @include textinput(9px 13px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
 }
 
-.text-input-partner-small{
+.text-input-partner.input-small{
   @include textinput(9px 13px, $color-partner500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
 }
 
-.text-input-client-small{
+.text-input-client.input-small{
   @include textinput(9px 13px, $color-client500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
 }
 
@@ -99,7 +105,7 @@
       padding:25px 13px 9px 44px;
     }
     &::placeholder{
-      text-indent: -9999999px;
+      text-indent: -999999px;
     }
     &:disabled{
       background:$color-gray10;
