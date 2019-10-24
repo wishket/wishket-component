@@ -13,12 +13,65 @@
 <body>
   <div>
     <section class='inputbox'>
-      <div class='text-input-wishket'>
-        <input type='text' placeholder="플레이스 홀더"/>
-        <span>헬퍼 텍스트 상세내용</span>
-        <span>0/0</span>
+      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1' data-input-theme='wishket' type='text' placeholder="플레이스 홀더" maxlength="300"/>
+      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용 2' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300"/>
+      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용 3' data-input-theme='partner' type='text' placeholder="플레이스 홀더" maxlength="300"/>
+      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용 4' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" disabled/>
+      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용 123as' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-size='s'/>
+
+      <input 
+        id='test2'
+        data-input-type='label-input' 
+        data-input-theme='client'
+        data-input-label='레이블 입니다.'
+        type='text' 
+        placeholder="플레이스 홀더" 
+        data-input-size='s'
+        data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
+        data-icon-position='right'
+      />
+
+      <input 
+        id='test3'
+        data-input-type='label-input' 
+        data-input-theme='client'
+        data-input-label='레이블 입니다.'
+        type='text' 
+        placeholder="플레이스 홀더" 
+        data-input-size='s'
+        data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
+        data-icon-position='left'
+      />
+
+      <input 
+        id='test3'
+        data-input-type='label-input' 
+        data-input-theme='client'
+        data-input-label='아이콘은 있지만 포지션 없을떄'
+        type='text' 
+        placeholder="플레이스 홀더" 
+        data-input-size='s'
+        data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
+        data-icon-position=''
+      />
+
+      <div class='label-input-wishket icon-right'>
+        <input type='text' id='test1' placeholder="플레이스 홀더" data-ui='ui-input' required/>
+        <label for='test1'>레이블</label>
+        
       </div>
-      <div class='text-input-partner'>
+      <!-- <div data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용' data-input-theme='partner'>
+        <input type='text' placeholder="플레이스 홀더"/>
+      </div>
+      <div data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용' data-input-theme='client'>
+        <input type='text' placeholder="플레이스 홀더"/>
+      </div> -->
+      <!-- <input data-input-type='label-input' data-label='Name' data-input-helper='핼퍼 텍스트 상세 내용' data-input-theme='wishket' type='text' placeholder="플레이스 홀더"/>
+      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용' data-input-theme='wishket' type='text' placeholder="플레이스 홀더"/>
+      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용' data-input-theme='wishket' type='text' placeholder="플레이스 홀더"/>
+      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용' data-input-theme='wishket' type='text' placeholder="플레이스 홀더"/> -->
+
+      <!-- <div class='text-input-partner'>
         <input type='text' placeholder="플레이스 홀더"/>
         <span>헬퍼 텍스트 상세내용</span>
         <span>0/0</span>
@@ -57,7 +110,7 @@
       <div class='label-input-wishket'>
         <input type='text' id='test3' placeholder="플레이스 홀더" required/>
         <label for='test3'>레이블</label>
-      </div>
+      </div> -->
     </section>
     <section>
       <div class='text-input-client'>
@@ -124,9 +177,24 @@
         <span>헬퍼 텍스트 상세내용</span>
         <span>0/0</span>
       </div>
+
+      <div class='inner'>
+
+      </div>
     </section>
   </div>
   <script>
+    // $(window).load(function(){
+    //   alert('로드 입니다.');
+    // });
+
+    $(document).ready(function(){
+      $.uiInput.setting();
+    });
+
+    $(window).on('load', function(){
+    });
+    
   </script>
 </body>
 
