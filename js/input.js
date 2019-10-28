@@ -1,5 +1,6 @@
 ;(function ( $, window, document, undefined ) {
   $.uiInput = {
+    //인풋 셋팅 type label-input, text-input
     setting:function(){
       const target = $('[data-input-type]');
       target.each(function(){
@@ -10,6 +11,8 @@
           $.uiInput.textInput($(this), size);
         }else if(type === 'label-input'){
           $.uiInput.labelInput($(this), size);
+        }else{
+          $.uiInput.textInput($(this), size);
         }
       });
     },
@@ -30,19 +33,26 @@
       const theme = target.attr('data-input-theme');
       const forName = target.attr('id');
       const icon = target.attr('data-input-icon');
-      const value = target.val();
       let iconPosition = target.attr('data-icon-position');
-      iconPosition = $.uiInput.getIconPosition(iconPosition);
-      console.log(icon);
+      if(icon && iconPosition != undefined){
+        iconPosition = $.uiInput.getIconPosition(iconPosition);
+      }
       target.wrap(`<div class='label-input-${theme} ${iconPosition}'></div>`)
       target.after(`<label for='${forName}'>${labelText}</label>`);
-      target.bind('foucs',function(){
+      target.bind('focus',function(){
         target.parent().addClass('label-effect');
+      });
+      target.bind('blur', function(){
+        const value = target.val();
+        if(!value){
+          target.parent().removeClass('label-effect');
+        }
       });
       if(icon != undefined && iconPosition){
         target.after(icon);
       }
     },
+    //input size
     getSize:function(size){
       if(size === 's'){
         return 'input-small'
@@ -64,5 +74,11 @@
       }
     }
   }
-
 })( jQuery, window, document );
+
+(function($){
+  $.fn.getValueChk = function(type){
+    const value = $(this).val() ? true : false;
+    return value;
+  }
+})(jQuery);

@@ -28,6 +28,11 @@
         }
       }
     }
+    &[type='password']{
+      font-size:1.3rem;
+      letter-spacing: -2px;
+      font-family: Consolas, Courier, monospace;
+    }
   }
   >span{
     position:absolute;
@@ -119,10 +124,10 @@
         }
       }
     }
-    &:focus, &:valid{
-      +label{
-        transform:translateY(-20px);
-      }
+    &[type='password']{
+      font-size:1.3rem;
+      letter-spacing: -2px;
+      font-family: Consolas, Courier, monospace;
     }
   }
 
@@ -158,6 +163,9 @@
     >label{
       color:$color-red500;
     }
+  }
+  &.label-effect > label{
+    transform:translateY(-20px);
   }
 }
 

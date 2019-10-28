@@ -7,7 +7,7 @@
 		"uuidString": "B29D11C8-4712-489D-BE98-1FD7A207331B"
 		}
 	],
-"creatorBuild": "31924",
+"creatorBuild": "31934",
 "files": {
 	"/base/_color.scss": {
 		"aP": 0,
@@ -80,6 +80,19 @@
 		"oAP": "/Users/jaehyun/source/wishket-component/css/component.css",
 		"oF": 6,
 		"oS": 3,
+		"uL": 1
+		},
+	"/component/_checkbox.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/component/_checkbox.css",
+		"oF": 0,
+		"oS": 0,
 		"uL": 1
 		},
 	"/component/_input.scss": {
@@ -2063,7 +2076,6 @@
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 1,
 		"enableJavascript": 0,
-		"ieCompatibility": 0,
 		"mathStyle": 0,
 		"outputStyle": 0,
 		"rewriteURLStyle": 0,

@@ -7,118 +7,86 @@
     <title>test</title>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/input.js"></script>
+    <script type="text/javascript" src="./js/checkbox.js"></script>
     <link rel="stylesheet" href="./css/component.css">
     <link rel="stylesheet" href="./css/guide.css">
 </head>
 <body>
   <div>
     <section class='inputbox'>
-      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1' data-input-theme='wishket' type='text' placeholder="플레이스 홀더" maxlength="300"/>
-      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용 2' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300"/>
-      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용 3' data-input-theme='partner' type='text' placeholder="플레이스 홀더" maxlength="300"/>
-      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용 4' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" disabled/>
-      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용 123as' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-size='s'/>
+      <input id='hoho' data-input-type='text-input' class='value01' data-input-theme='wishket' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1' />
+      <input data-input-type='text-input' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 2'/>
+      <input data-input-type='text-input' data-input-theme='partner' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 3'/>
+      <input data-input-type='text-input' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" disabled data-input-helper='핼퍼 텍스트 상세 내용 4'/>
+      <input data-input-type='text-input' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-size='s' data-input-helper='핼퍼 텍스트 상세 내용 123as' />
 
-      <input 
+      <input
         id='test2'
-        data-input-type='label-input' 
+        data-input-type='label-input'
         data-input-theme='client'
         data-input-label='레이블 입니다.'
-        type='text' 
-        placeholder="플레이스 홀더" 
-        data-input-size='s'
+        type='text'
+        placeholder="플레이스 홀더"
         data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
         data-icon-position='right'
       />
 
-      <input 
+      <input
         id='test3'
-        data-input-type='label-input' 
+        data-input-type='label-input'
         data-input-theme='client'
         data-input-label='레이블 입니다.'
-        type='text' 
-        placeholder="플레이스 홀더" 
-        data-input-size='s'
+        type='text'
+        placeholder="플레이스 홀더"
         data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
         data-icon-position='left'
       />
 
-      <input 
-        id='test3'
-        data-input-type='label-input' 
+      <input
+        id='test4'
+        data-input-type='label-input'
         data-input-theme='client'
         data-input-label='아이콘은 있지만 포지션 없을떄'
-        type='text' 
-        placeholder="플레이스 홀더" 
-        data-input-size='s'
+        type='text'
+        placeholder="플레이스 홀더"
         data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
         data-icon-position=''
       />
 
-      <div class='label-input-wishket icon-right'>
-        <input type='text' id='test1' placeholder="플레이스 홀더" data-ui='ui-input' required/>
-        <label for='test1'>레이블</label>
-        
-      </div>
-      <!-- <div data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용' data-input-theme='partner'>
-        <input type='text' placeholder="플레이스 홀더"/>
-      </div>
-      <div data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용' data-input-theme='client'>
-        <input type='text' placeholder="플레이스 홀더"/>
-      </div> -->
-      <!-- <input data-input-type='label-input' data-label='Name' data-input-helper='핼퍼 텍스트 상세 내용' data-input-theme='wishket' type='text' placeholder="플레이스 홀더"/>
-      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용' data-input-theme='wishket' type='text' placeholder="플레이스 홀더"/>
-      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용' data-input-theme='wishket' type='text' placeholder="플레이스 홀더"/>
-      <input data-input-type='text-input' data-input-helper='핼퍼 텍스트 상세 내용' data-input-theme='wishket' type='text' placeholder="플레이스 홀더"/> -->
+      <input
+        id='test5'
+        data-input-type='label-input'
+        data-input-theme='client'
+        data-input-label='포지션은 있지만 아이콘이 없을떄'
+        type='text'
+        placeholder="플레이스 홀더"
+        data-input-icon=''
+        data-icon-position='left'
+      />
 
-      <!-- <div class='text-input-partner'>
-        <input type='text' placeholder="플레이스 홀더"/>
-        <span>헬퍼 텍스트 상세내용</span>
-        <span>0/0</span>
-      </div>
-      <div class='text-input-client'>
-        <input type='text' placeholder="플레이스 홀더"/>
-        <span>헬퍼 텍스트 상세내용</span>
-        <span>0/0</span>
-      </div>
-      <div class='text-input-client'>
-        <input type='text' placeholder="플레이스 홀더" disabled/>
-        <span>헬퍼 텍스트 상세내용</span>
-        <span>0/0</span>
-      </div>
-      <div class='text-input-client error'>
-        <input type='text' placeholder="플레이스 홀더" value='에러 텍스트'/>
-        <span>에러 텍스트 상세내용</span>
-        <span>0/0</span>
-      </div>
-      <div class='text-input-client-small'>
-        <input type='text' placeholder="플레이스 홀더"/>
-        <span>헬퍼 텍스트 상세내용</span>
-      </div>
+      <input
+        id='test6'
+        data-input-type='label-input'
+        data-input-theme='client'
+        data-input-label='포지션은 있지만 아이콘이 없을떄'
+        type='password'
+        placeholder="플레이스 홀더"
+        data-input-icon=''
+        data-icon-position='left'
+      />
     </section>
-    <section class='labelbox'>
-      <div class='label-input-wishket icon-right'>
-        <input type='text' id='test1' placeholder="플레이스 홀더" data-ui='ui-input' required/>
-        <label for='test1'>레이블</label>
-        <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>
-      </div>
-      <div class='label-input-wishket icon-left'>
-        <input type='text' id=''test2 placeholder="플레이스 홀더" required/>
-        <label for='test2'>레이블</label>
-        <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>
-      </div>
-      <div class='label-input-wishket'>
-        <input type='text' id='test3' placeholder="플레이스 홀더" required/>
-        <label for='test3'>레이블</label>
-      </div> -->
-    </section>
-    <section>
-      <div class='text-input-client'>
-        <input type='password' value='sadfdfsdadfsa'/>
-      </div>
-
-    </section>
-    <section class='search'>
+    <!-- <section class='search'>
+      <input
+        id='test7'
+        data-input-type='tel-input'
+        data-input-theme='client'
+        data-input-label='포지션은 있지만 아이콘이 없을떄'
+        data-number-type='xxx-xxxx-xxxx'
+        type='number'
+        placeholder="플레이스 홀더"
+        data-input-icon=''
+        data-icon-position='left'
+      />
       <div class='search-input-client'>
         <button type='button'>
           Photoshop
@@ -181,20 +149,76 @@
       <div class='inner'>
 
       </div>
+    </section> -->
+
+    <!-- <input
+      id='test2'
+      data-input-type='label-input'
+      data-input-theme='client'
+      data-input-label='레이블 입니다.'
+      type='text'
+      placeholder="플레이스 홀더"
+      data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
+      data-icon-position='right'
+    /> -->
+
+    <section id='check' >
+      <label class='checkbox-wishket'>
+        <span>
+          <input id='chc01' type='checkbox'/>
+          <span></span>
+        </span>
+        <span>체크박스01</span>
+      </label>
+      <label class='checkbox-partner'>
+          <span>
+            <input id='chc01' type='checkbox'/>
+            <span></span>
+          </span>
+          <span>체크박스01</span>
+        </label>
+        <label class='checkbox-client'>
+            <span>
+              <input id='chc01' type='checkbox'/>
+              <span></span>
+            </span>
+            <span>체크박스01</span>
+          </label>
+
+          <label class='checkbox-client detail-text'>
+            <span>
+              <input id='chc01' type='checkbox'/>
+              <span></span>
+            </span>
+            <div>
+              <span>체크박스01</span>
+              <p>체크박스 상세 내용</p>
+            </div>
+          </label>
+
+    <CheckBox 
+      class='checkchekc'
+      data-checkbox-type='group'
+      data-checkbox-theme='client'
+      data-options='["apple", "Pear"]'
+    />
+
+    <CheckBox 
+      class='checkchekc'
+      data-checkbox-type='single'
+      data-checkbox-theme='client'
+      data-options='orabge'
+    />
     </section>
   </div>
   <script>
-    // $(window).load(function(){
-    //   alert('로드 입니다.');
-    // });
-
-    $(document).ready(function(){
+    $(document).ready(function(value){
       $.uiInput.setting();
+      $.uiCheckbox.setting();
     });
 
     $(window).on('load', function(){
     });
-    
   </script>
 </body>
 
