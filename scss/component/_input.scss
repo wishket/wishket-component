@@ -140,9 +140,9 @@
     }
     top:50%;
     transform: translateY(-50%);
-    font-size:0.688rem;
+    font-size:0.875rem;
     line-height:0.875rem;
-    color:$brand-color;
+    color:$color-gray300;
     transition:all .3s;
   }
   >i{
@@ -166,6 +166,8 @@
   }
   &.label-effect > label{
     transform:translateY(-20px);
+    font-size:0.688rem;
+    color:$brand-color;
   }
 }
 

@@ -1,10 +1,10 @@
-@mixin checkbox($type, $brand-color, $not-check-color, $arrow-color, $font-color, $font-size, $line-height, $detail-font-color, $detail-line-height, $detail-font-size){
+@mixin checkbox($type, $brand-color, $not-check-color, $arrow-color, $font-color, $font-size, $line-height, $detail-font-color, $detail-line-height, $detail-font-size, $focus-color){
   margin:0;
   padding:0;
   color:rgba(0,0,0,0.65);
-  margin:0 0 8px;
+  margin:0 12px 8px 0;
   cursor:pointer;
-  display: block;
+  display: inline-block;
   >span:first-child{
     display:inline-block;
     position:relative;
@@ -18,6 +18,8 @@
       left:0;
       border:1px solid $not-check-color;
       border-radius:2px;
+    }
+    >span.arrow{
       &:after{
         position: absolute;
         top: 48%;
@@ -32,6 +34,22 @@
         opacity: 0;
         transition: all .1s cubic-bezier(.71, -0.46, .88, .6),opacity .1s;
         content: ' ';
+      }
+    }
+    >span.minus-icon{
+      &:before{
+        top:50%;
+        left:50%;
+        display: table;
+        width: 8px;
+        height: 1.6px;
+        border:1.6px solid #fff;
+        background:#fff;
+        border:none;
+        border-radius:2px;
+        transform: scale(0) translate(-50%, -50%);
+        opacity: 0;
+        transition: all .1s cubic-bezier(.71, -0.46, .88, .6),opacity .1s;
       }
     }
     >input{
@@ -63,7 +81,37 @@
           -webkit-transition: all .2s cubic-bezier(.12, .4, .29, 1.46) .1s;
           transition: all .2s cubic-bezier(.12, .4, .29, 1.46) .1s;
           content: ' ';
+          visibility: visible;
         }
+        &:before{
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      &:checked + span.minus-icon{
+        &:after{
+          opacity: 0;
+          visibility: hidden;
+        }
+        &:before{
+          position: absolute;
+          display: table;
+          border-color:$arrow-color;
+          border-top: 0;
+          border-left: 0;
+          border-right:0;
+          -webkit-transform: scale(1) translate(-50%, -50%);
+          -ms-transform: scale(1) translate(-50%, -50%);
+          transform: scale(1) translate(-50%, -50%);
+          opacity: 1;
+          -webkit-transition: all .2s cubic-bezier(.12, .4, .29, 1.46) .1s;
+          transition: all .2s cubic-bezier(.12, .4, .29, 1.46) .1s;
+          content: ' ';
+          visibility: visible;
+        }
+      }
+      &:focus + span{
+        border-color:$focus-color;
       }
     }
   }
@@ -123,7 +171,7 @@
         color:$color-gray300;
       }
     }
-    &:hover{
+    &:hover, &:focus{
       >span:first-child > span{
         border-color:$color-gray200;
       }
@@ -132,22 +180,37 @@
 }
 
 .checkbox-wishket{
-  @include checkbox(default, $color-wishket500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false);
+  @include checkbox(default, $color-wishket500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false, $color-wishket700);
   &.detail-text{
-    @include checkbox(detail, $color-wishket500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem);
+    @include checkbox(detail, $color-wishket500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-wishket700);
   } 
 }
 
 .checkbox-partner{
-  @include checkbox(default, $color-partner500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false);
+  @include checkbox(default, $color-partner500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false, $color-partner700);
   &.detail-text{
-    @include checkbox(detail, $color-partner500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem);
+    @include checkbox(detail, $color-partner500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-partner700);
   } 
 }
 
 .checkbox-client{
-  @include checkbox(default, $color-client500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false);
+  @include checkbox(default, $color-client500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false, $color-client700);
   &.detail-text{
-    @include checkbox(detail, $color-client500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem);
+    @include checkbox(detail, $color-client500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-client700);
   } 
+}
+
+.tree-checkbox{
+  >label{
+    margin:0 0 12px 0;
+  }
+  >.child-list{
+    padding-left:28px;
+  }
+  >span:first-child{
+  }
+  >span:last-child{
+    font-size:0.875rem;
+    color:$color-gray900;
+  }
 }

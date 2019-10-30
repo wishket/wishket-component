@@ -61,7 +61,7 @@
       }else if(size === 'xl'){
         return 'input-xlarge'
       }else{
-        return false
+        return
       }
     },
     getIconPosition:function(position){
@@ -70,7 +70,7 @@
       }else if(position === 'left'){
         return 'icon-left'
       }else{
-        return false
+        return
       }
     }
   }
