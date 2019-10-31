@@ -27,13 +27,12 @@
       const value = target.attr('data-checkbox-value') == undefined ? `value = '${target.attr('data-checkbox-label')}'` : `value = '${target.attr('data-checkbox-value')}'`;
       const label = target.attr('data-checkbox-label') == undefined ? `${target.attr('data-checkbox-value')}` : `${target.attr('data-checkbox-label')}`;
       const addonInput = target.data('addon-input');
-      console.log('a');
-      console.log(addonInput);
+      const addonFunction = addonInput ? `onChange="addonCheck(${name})"` : '';
       let checkboxWrap = '';
       if(detailText){
         checkboxWrap = ``;
         checkboxWrap += `<span>`;
-        checkboxWrap += ` <input ${wrapId} ${wrapClass} ${name} type='checkbox' ${value} ${defaultOption} ${value} ${disabled}/>`;
+        checkboxWrap += ` <input ${wrapId} ${wrapClass} ${name} type='checkbox' ${value} ${defaultOption} ${value} ${disabled} ${addonFunction}/>`;
         checkboxWrap += ` <span class="arrow"></span>`;
         checkboxWrap += `</span>`;
         checkboxWrap += `<div>`;
@@ -43,37 +42,26 @@
       }else {
         checkboxWrap = ``;
         checkboxWrap += `<span>`;
-        checkboxWrap += ` <input ${wrapId} ${wrapClass} ${name} type='checkbox' ${defaultOption} ${value} ${disabled}/>`;
+        checkboxWrap += ` <input ${wrapId} ${wrapClass} ${name} type='checkbox' ${defaultOption} ${value} ${disabled} ${addonFunction}/>`;
         checkboxWrap += ` <span class="arrow"></span>`;
         checkboxWrap += `</span>`;
         checkboxWrap += `<span>${label}</span>`;
       }
-      console.log('A point');
-      console.log($(this));
-      target.replaceWith(`<label class='checkbox-${theme} ${detaileClass} ${disabled}'>${checkboxWrap}</label>`);
-      console.log('C point');
-      console.log($(this));
-{/* <div class="text-input-wishket undefined"><input id="hoho" data-input-type="text-input" class="value01" data-input-theme="wishket" type="text" placeholder="플레이스 홀더"></div> */}
-
       if(addonInput){
         let addonInputBox = ``;
         $.each(addonInput, function(index, item){
           const itemId = item.id == undefined ? '' : `id='${item.id}'`;
-          const itemClass = item.class == undefined ? '' : `class=${item.class}`;
+          const itemClass = item.class == undefined ? '' : `class='${item.class}'`;
           const placeholder = item.placeholder == undefined ? '' : `placeholder='${item.placeholder}'`;
-          const position = item.position == undefined ? '' : item.position;
           const itemTheme = item.theme == undefined ? theme : item.theme;
           const inputType = item.type == undefined ? 'text' : item.inputType;
-  
           addonInputBox += `<div class='text-input-${itemTheme}'>`;
-          addonInputBox += ` <input ${itemId} ${itemClass} type='${inputType}' ${placeholder} />`;
+          addonInputBox += ` <input ${itemId} ${itemClass} ${name} type='text' ${placeholder} disabled/>`;
           addonInputBox += `</div>`;
         });
-        console.log(addonInputBox);
-        console.log('B point');
-        console.log($(this));
-
-        target.after(addonInputBox)  
+        target.replaceWith(`<div class='addon'><label class='checkbox-${theme} ${detaileClass} ${disabled}'>${checkboxWrap}</label> ${addonInputBox}</div>`);
+      }else{
+        target.replaceWith(`<label class='checkbox-${theme} ${detaileClass} ${disabled}'>${checkboxWrap}</label>`);
       }
     },
     group:function(target, size){
@@ -140,8 +128,6 @@
         const itemName = item.name == undefined ? '' : `name='${item.name}'`;
         let childList = '';
         let titleList = '';
-        console.log('check');
-        console.log(itemName);
         if(depth === 1){
           titleList += `<div>`;
           titleList += `  <label class='checkbox-${theme} ${itemDisabled} ${disabled}'>`;
@@ -187,7 +173,6 @@ function treeCheck(name, type){
   const checkLength = $(`input:checkbox[name="${name}"]:checked`).length;
   const parentTarget = $(`input[data-tree-type="${name}-parent"]`);
   const childTarget = $(`input[data-tree-type="${name}-child"]`);
-  // const childTarget = $(`input:checkbox[name="${name}"]`);
   if(type === 'parent'){
     if(length > checkLength){
       parentTarget.next().removeClass('minus-icon');
@@ -224,36 +209,13 @@ function treeCheck(name, type){
   }
 }
 
-(function($){
-  $.fn.getCheckVal = function(type){
-    let value;
-    if(type === 'group'){
-      $.each($(this), function(index, item){
-        const check = $(this).prop('checked') ? true : false;
-      });
-    }else{
-    }
-    return value;
-  },
-  $.fn.checkInput = function(){
-    const theme = $(this).attr('data-checkbox-theme');
-    let box;
-    box += '<input data-input-theme="wishket" type="text" placeholder="플레이스 홀더"  />';
-    $(this).after(box);
-    $(this).click(function() {
-      const check = $(this).is(":checked");
-      if(check === true){
-        box ='';
-        box += ``;
-        box += ``;
-        box += ``;
-        box += ``;
-      }else{
-        box ='';
-        box += '<input data-input-theme="wishket" type="text" placeholder="플레이스 홀더" disabled/>';
-      }
-    });
+function addonCheck(name){
+  const checkInput = $(`input:checkbox[name="${name}"]`);
+  const textInput= $(`input:text[name="${name}"]`);
+  const check = checkInput.is(":checked");
+  if(check === false){
+    textInput.attr('disabled', true);
+  }else{
+    textInput.attr('disabled', false);
   }
-
-  
-})(jQuery);
+}

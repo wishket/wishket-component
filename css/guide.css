@@ -6,6 +6,10 @@
   margin-bottom:40px;
 }
 
+#check > div{
+  margin-bottom:40px;
+}
+
 body > div{
   padding:100px 40px 200px 40px;
   max-width:1200px;
