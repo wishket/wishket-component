@@ -164,10 +164,22 @@
 
     <section id='check' >
 
-    <CheckBox data-checkbox-type='single' data-checkbox-name='single01' data-checkbox-theme='client' data-checkbox-disabled='true'></CheckBox>
-    <CheckBox data-checkbox-type='single' data-checkbox-name='single02' data-checkbox-theme='partner' ></CheckBox>
+    <CheckBox id='kkk' class='sample' data-checkbox-type='single' data-checkbox-value='value01' data-checkbox-name='single01' data-checkbox-theme='client' data-checkbox-title='체크박스xhxhhxhxhxh' data-checkbox-default=true data-checkbox-disabled=true></CheckBox>
+    <CheckBox data-checkbox-type='single' data-checkbox-name='single01' data-checkbox-label='label01' data-checkbox-theme='client' data-checkbox-title='체크박스xhxhhxhxhxh' data-checkbox-default='checked'></CheckBox>
+    <CheckBox data-checkbox-type='single' data-checkbox-name='single02' data-checkbox-value='value02' data-checkbox-label='label02' data-checkbox-theme='partner' ></CheckBox>
     <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-options='체크박스 teststests' data-checkbox-detaile='hohohohoho reststset'></CheckBox>
-    <CheckBox data-checkbox-type='group' data-checkbox-name='group01' data-checkbox-theme='client' data-options='[{"label":"사과", "value":"사과"}, {"label":"배", "value":"배"}, {"label":"토마토", "value":"토마토", "detail": "hohoho상세페이지"}]'></CheckBox>
+    <CheckBox 
+      id='group01'
+      class='group02'
+      data-checkbox-type='group'
+      data-checkbox-name='group01'
+      data-checkbox-theme='client'
+      data-options='[
+        {"value":"사과", "disabled":"true"}, 
+        {"label":"배", "id" : "sample Group01", "default":"true"}, 
+        {"label":"토마토", "value":"토마토2", "detail": "hohoho상세페이지", "class":"sampleG"}
+      ]'>
+    </CheckBox>
     <CheckBox
       data-checkbox-type='tree'
       data-checkbox-name='tree01'
@@ -176,6 +188,9 @@
     >
     </CheckBox>
     <CheckBox id='checkboxtest' data-checkbox-type='single' data-checkbox-theme='wishket' data-options='체크박스' data-checkbox-input=''></CheckBox>
+  
+
+
     <!-- <CheckBox id='dodo5' class='checkchekc' data-checkbox-type='single' data-checkbox-name='name01' data-checkbox-theme='client' data-options='체크박스 teststests'></CheckBox>
     <CheckBox id='dodo6' class='checkchekc' data-checkbox-type='single' data-checkbox-theme='client' data-options='체크박스 teststests' data-checkbox-detaile='hohohohoho reststset'></CheckBox> -->
     <!-- <label class='checkchekc' data-checkbox-type='single' data-checkbox-theme='client' data-options='체크박스'></label> -->
@@ -185,11 +200,15 @@
     $(document).ready(function(value){
       $.uiInput.setting();
       $.uiCheckbox.setting();
-      $('#checkboxtest').checkInput();
+      // $('#checkboxtest').checkInput();
     });
 
     $(window).on('load', function(){
     });
+
+    function handleChange(text, number){
+
+    }
   </script>
 </body>
 

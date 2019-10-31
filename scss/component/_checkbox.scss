@@ -156,9 +156,18 @@
   }
 
   &.disabled{
-    >span:first-child > span{
-      background:$color-gray50;
+    >span:first-child{
+      > span{
+        background:$color-gray50;
+      }
+      >input{
+        &:checked + span{
+          background:$color-gray200;
+          border-color:$color-gray200;
+        }
+      } 
     }
+    
     @if $type == detail {
       >div{
         >span, >p{
