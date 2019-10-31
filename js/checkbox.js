@@ -16,34 +16,24 @@
       });
     },
     single:function(target, size){
-      // const labelText = target.attr('data-checkbox-label') == undefined || target.attr('data-checkbox-label') == false ? 'data-checkbox-title속성 추가 필요' : target.attr('data-checkbox-title');
       const theme = target.attr('data-checkbox-theme');
       const detailText = target.attr('data-checkbox-detaile');
       const detaileClass = detailText == undefined || detailText == false ? '' : 'detail-text';
       const name = target.attr('data-checkbox-name') ? `name='${target.attr('data-checkbox-name')}'` : '';
       const disabled = target.attr('data-checkbox-disabled') == undefined || target.attr('data-checkbox-disabled') == false ? '' : 'disabled';
-      const idTag = target.attr('id') == undefined || target.attr('id') == false ? '' : `id='${target.attr('id')}'`;
-      const classTag = target.attr('class') == undefined || target.attr('class') == false ? '' : `class='${target.attr('class')}'`;
+      const wrapId = target.attr('id') == undefined || target.attr('id') == false ? '' : `id='${target.attr('id')}'`;
+      const wrapClass = target.attr('class') == undefined || target.attr('class') == false ? '' : `class='${target.attr('class')}'`;
       const defaultOption = target.attr('data-checkbox-default') == undefined || target.attr('data-checkbox-default') == false ? '' : 'checked="checked"';
       const value = target.attr('data-checkbox-value') == undefined ? `value = '${target.attr('data-checkbox-label')}'` : `value = '${target.attr('data-checkbox-value')}'`;
       const label = target.attr('data-checkbox-label') == undefined ? `${target.attr('data-checkbox-value')}` : `${target.attr('data-checkbox-label')}`;
-      // const functionData = targrt.data('function-data');
-      // if(functionData == undefined || false){
-      //   console.log('undefined 여야지 제발');
-      // }else{
-      //   console.log('값이 있음');
-      //   target.bind('click',function(e){
-      //     const functionTarget = eval(functionData)
-      //     if (typeof functionTarget == 'function') {
-      //       functionTarget();
-      //     }
-      //   });
-      // }
+      const addonInput = target.data('addon-input');
+      console.log('a');
+      console.log(addonInput);
       let checkboxWrap = '';
       if(detailText){
         checkboxWrap = ``;
         checkboxWrap += `<span>`;
-        checkboxWrap += ` <input ${idTag} ${classTag} ${name} type='checkbox' ${value} ${defaultOption} ${value} ${disabled}/>`;
+        checkboxWrap += ` <input ${wrapId} ${wrapClass} ${name} type='checkbox' ${value} ${defaultOption} ${value} ${disabled}/>`;
         checkboxWrap += ` <span class="arrow"></span>`;
         checkboxWrap += `</span>`;
         checkboxWrap += `<div>`;
@@ -53,12 +43,38 @@
       }else {
         checkboxWrap = ``;
         checkboxWrap += `<span>`;
-        checkboxWrap += ` <input ${idTag} ${classTag} ${name} type='checkbox' ${defaultOption} ${value} ${disabled}/>`;
+        checkboxWrap += ` <input ${wrapId} ${wrapClass} ${name} type='checkbox' ${defaultOption} ${value} ${disabled}/>`;
         checkboxWrap += ` <span class="arrow"></span>`;
         checkboxWrap += `</span>`;
         checkboxWrap += `<span>${label}</span>`;
       }
+      console.log('A point');
+      console.log($(this));
       target.replaceWith(`<label class='checkbox-${theme} ${detaileClass} ${disabled}'>${checkboxWrap}</label>`);
+      console.log('C point');
+      console.log($(this));
+{/* <div class="text-input-wishket undefined"><input id="hoho" data-input-type="text-input" class="value01" data-input-theme="wishket" type="text" placeholder="플레이스 홀더"></div> */}
+
+      if(addonInput){
+        let addonInputBox = ``;
+        $.each(addonInput, function(index, item){
+          const itemId = item.id == undefined ? '' : `id='${item.id}'`;
+          const itemClass = item.class == undefined ? '' : `class=${item.class}`;
+          const placeholder = item.placeholder == undefined ? '' : `placeholder='${item.placeholder}'`;
+          const position = item.position == undefined ? '' : item.position;
+          const itemTheme = item.theme == undefined ? theme : item.theme;
+          const inputType = item.type == undefined ? 'text' : item.inputType;
+  
+          addonInputBox += `<div class='text-input-${itemTheme}'>`;
+          addonInputBox += ` <input ${itemId} ${itemClass} type='${inputType}' ${placeholder} />`;
+          addonInputBox += `</div>`;
+        });
+        console.log(addonInputBox);
+        console.log('B point');
+        console.log($(this));
+
+        target.after(addonInputBox)  
+      }
     },
     group:function(target, size){
       const options = target.data('options');
@@ -109,50 +125,48 @@
     tree:function(target, size){
       const options = target.data('options');
       const theme = target.attr('data-checkbox-theme');
-      const name = target.attr('data-checkbox-name');
-      const nameTag = name == undefined || false ? '' : `name='${name}'`;
       const wrapId = target.attr('id') == undefined || false ? '' : `id='${target.attr('id')}'`;
       const wrapClass = target.attr('class') == undefined ? '' : `class='${target.attr('class')}'`;
       const disabled = target.attr('data-checkbox-disabled') == undefined || target.attr('data-checkbox-disabled') == false ? '' : 'disabled';
-      let childList = '';
-      let titleList = '';
+      let treeList = '';
       $.each(options, function(index, item){
         const depth = item.depth;
         const value = item.value == undefined ? `value = '${item.label}'` : `value = '${item.value}'`;
+        const label = item.label == undefined ? item.value : item.label;
         const itemId = item.id == undefined ? '' : `id='${item.id}'`;
-
         const itemClass = item.class == undefined ? '' : `class='${item.class}'`;
         const itemDefault = item.default == undefined || item.default == false ? '' : 'checked="checked"'
-        const itemDetaile = item.detail;
-        const itemDetaileClass = item.detail ? 'detail-text' : '';
         const itemDisabled = item.disabled == undefined || item.disabled == false ? '' : 'disabled';
-
+        const itemName = item.name == undefined ? '' : `name='${item.name}'`;
+        let childList = '';
+        let titleList = '';
+        console.log('check');
+        console.log(itemName);
         if(depth === 1){
-          titleList += `<label class='checkbox-${theme} ${disabled}'>`;
-          titleList += `  <span>`;
-          titleList += `    <input ${value} type='checkbox' data-tree-type='${name}-parent' ${disabled} onChange="treeCheck('${name}', 'parent')" />`;
-          titleList += `    <span class='arrow'></span>`;
-          titleList += `  </span>`;
-          titleList += `  <span>${item.label}</span>`;
-          titleList += `</label>`;
+          titleList += `<div>`;
+          titleList += `  <label class='checkbox-${theme} ${itemDisabled} ${disabled}'>`;
+          titleList += `    <span>`;
+          titleList += `      <input ${itemId} ${value} ${itemClass} type='checkbox' data-tree-type='${item.name}-parent' ${itemDefault} ${disabled} ${itemDisabled} onChange="treeCheck('${item.name}', 'parent')" />`;
+          titleList += `      <span class='arrow'></span>`;
+          titleList += `    </span>`;
+          titleList += `    <span>${label}</span>`;
+          titleList += `  </label>`;
+          titleList += `</div>`;
         }else{
           childList += `<li>`;
-          childList += `  <label class='checkbox-${theme} ${disabled}'>`;
+          childList += `  <label class='checkbox-${theme} ${itemDisabled} ${disabled}'>`;
           childList += `    <span>`;
-          childList += `      <input ${value} ${nameTag} type='checkbox' data-tree-type='${name}-child' ${disabled} onChange="treeCheck('${name}', 'child')" />`;
+          childList += `      <input ${itemId} ${value} ${itemClass} ${itemName} type='checkbox' data-tree-type='${item.name}-child' ${itemDefault} ${disabled} ${itemDisabled} onChange="treeCheck('${item.name}', 'child')" />`;
           childList += `      <span class='arrow'></span>`;
           childList += `    </span>`;
-          childList += `    <span>${item.label}</span>`;
+          childList += `    <span>${label}</span>`;
           childList += `  </label>`;
           childList += `</li>`;
         }
+        treeList += `${titleList}`;
+        treeList += `<ul class='child-list'>${childList}</ul>`
       });
-      target.replaceWith(`<div ${wrapId} class='tree-checkbox'>${titleList}<ul class='child-list'>${childList}</ul></div>`);
-      // $(`input[${nameTag}]`).bind('click',function(){
-      //   $(`input[${nameTag}]`).each(function(index, item){
-      //     const cheeck = $(this).is(':checked');
-      //   });
-      // });
+      target.replaceWith(`<div ${wrapId} class='tree-checkbox'>${treeList}</div>`);
     },
     getSize:function(size){
       if(size === 's'){
@@ -172,7 +186,8 @@ function treeCheck(name, type){
   const length = $(`input:checkbox[name="${name}"]`).length;
   const checkLength = $(`input:checkbox[name="${name}"]:checked`).length;
   const parentTarget = $(`input[data-tree-type="${name}-parent"]`);
-  const childTarget = $(`input:checkbox[name="${name}"]`);
+  const childTarget = $(`input[data-tree-type="${name}-child"]`);
+  // const childTarget = $(`input:checkbox[name="${name}"]`);
   if(type === 'parent'){
     if(length > checkLength){
       parentTarget.next().removeClass('minus-icon');
@@ -182,28 +197,31 @@ function treeCheck(name, type){
         $(this).prop('checked', true);
       });
     }else{
-      parentTarget.next().removeClass('minus-icon');
-      parentTarget.next().addClass('arrow');
-      parentTarget.prop('checked', false);
-      childTarget.each(function(){
-        $(this).prop('checked', false);
-      });
+      if(childTarget.length > 0){
+        parentTarget.next().removeClass('minus-icon');
+        parentTarget.next().addClass('arrow');
+        parentTarget.prop('checked', false);
+        childTarget.each(function(){
+          $(this).prop('checked', false);
+        });
+      }
     }
   }else{
     if(length > checkLength){
-      parentTarget.next().removeClass('arrow');
-      parentTarget.next().addClass('minus-icon');
-      parentTarget.prop('checked', true);
+      if(checkLength == 0){
+        parentTarget.prop('checked', false);
+        parentTarget.next().removeClass('minus-icon');
+        parentTarget.next().addClass('arrow');
+      }else{
+        parentTarget.next().removeClass('arrow');
+        parentTarget.next().addClass('minus-icon');
+        parentTarget.prop('checked', true);
+      }
     }else{
       parentTarget.next().removeClass('minus-icon');
       parentTarget.next().addClass('arrow');
     }
   }
-  // if(treeType == `${name}-parent`){
-  //   console.log('bdddafdasdf');
-  // }else{
-  //   console.log('ttt');
-  // }
 }
 
 (function($){
@@ -226,7 +244,6 @@ function treeCheck(name, type){
       const check = $(this).is(":checked");
       if(check === true){
         box ='';
-        
         box += ``;
         box += ``;
         box += ``;

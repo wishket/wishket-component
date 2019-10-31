@@ -164,31 +164,50 @@
 
     <section id='check' >
 
-    <CheckBox id='kkk' class='sample' data-checkbox-type='single' data-checkbox-value='value01' data-checkbox-name='single01' data-checkbox-theme='client' data-checkbox-title='체크박스xhxhhxhxhxh' data-checkbox-default=true data-checkbox-disabled=true></CheckBox>
-    <CheckBox data-checkbox-type='single' data-checkbox-name='single01' data-checkbox-label='label01' data-checkbox-theme='client' data-checkbox-title='체크박스xhxhhxhxhxh' data-checkbox-default='checked'></CheckBox>
+    <CheckBox id='kkk' class='sample' data-checkbox-type='single' data-checkbox-value='value01' data-checkbox-name='single01' data-checkbox-theme='client' data-checkbox-default=true data-checkbox-disabled=true></CheckBox>
+    <CheckBox data-checkbox-type='single' data-checkbox-name='single01' data-checkbox-label='label01' data-checkbox-theme='client' data-checkbox-default='checked'></CheckBox>
     <CheckBox data-checkbox-type='single' data-checkbox-name='single02' data-checkbox-value='value02' data-checkbox-label='label02' data-checkbox-theme='partner' ></CheckBox>
     <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-options='체크박스 teststests' data-checkbox-detaile='hohohohoho reststset'></CheckBox>
-    <CheckBox 
+    <CheckBox
       id='group01'
       class='group02'
       data-checkbox-type='group'
       data-checkbox-name='group01'
       data-checkbox-theme='client'
       data-options='[
-        {"value":"사과", "disabled":"true"}, 
-        {"label":"배", "id" : "sample Group01", "default":"true"}, 
+        {"value":"사과", "disabled":"true"},
+        {"label":"배", "id" : "sample Group01", "default":"true"},
         {"label":"토마토", "value":"토마토2", "detail": "hohoho상세페이지", "class":"sampleG"}
       ]'>
     </CheckBox>
     <CheckBox
       data-checkbox-type='tree'
-      data-checkbox-name='tree01'
       data-checkbox-theme='partner'
-      data-options='[{"label":"개발", "value":"web", "depth":1}, {"label":"애플리케이션", "value":"apple", "depth":2}, {"label":"워드프레스", "value":"web", "depth":2}, {"label":"퍼블리싱", "value":"web", "depth":2}]'
+      data-options='[{"label":"개발", "value":"web", "depth":1, "name" : "tree01"}, 
+      {"label":"애플리케이션", "value":"apple", "depth":2, "name" : "tree01"}, {"label":"워드프레스", "value":"web", "depth":2, "name" : "tree01"}, {"label":"퍼블리싱", "value":"web", "depth":2, "name":"tree01"}, 
+      {"label":"개발", "value":"web", "depth":1, "name":"tree02"}, 
+      {"label":"개발", "value":"web", "depth":1, "name":"tree03"}, 
+      {"label":"애플리케이션", "value":"apple", "depth":2, "name":"tree03"}, {"label":"워드프레스", "value":"web", "depth":2, "name":"tree03"}, {"label":"퍼블리싱", "value":"web", "depth":2, "name":"tree03"}]'
     >
     </CheckBox>
-    <CheckBox id='checkboxtest' data-checkbox-type='single' data-checkbox-theme='wishket' data-options='체크박스' data-checkbox-input=''></CheckBox>
-  
+    <CheckBox
+      id='checkboxtest'
+      data-checkbox-type='single'
+      data-checkbox-theme='wishket'
+      data-options='체크박스'
+      data-checkbox-input=''
+      data-checkbox-label='213'
+      data-checkbox-addon='input'
+      data-addon-input='[{
+        "position":"right",
+        "id":"addonId",
+        "class":"addonClass",
+        "placeholder":"플레스홀더",
+        "theme": "wishket",
+        "type" : "text"
+      }]'
+    >
+    </CheckBox>
 
 
     <!-- <CheckBox id='dodo5' class='checkchekc' data-checkbox-type='single' data-checkbox-name='name01' data-checkbox-theme='client' data-options='체크박스 teststests'></CheckBox>
