@@ -1,10 +1,10 @@
-@mixin checkbox($type, $brand-color, $not-check-color, $arrow-color, $font-color, $font-size, $line-height, $detail-font-color, $detail-line-height, $detail-font-size, $focus-color){
+@mixin radio($type, $brand-color, $not-check-color, $arrow-color, $font-color, $font-size, $line-height, $detail-font-color, $detail-line-height, $detail-font-size, $focus-color){
   margin:0;
   padding:0;
   color:rgba(0,0,0,0.65);
   margin:0 12px 8px 0;
-  display:block;
   cursor:pointer;
+  display: block;
   >span:first-child{
     display:inline-block;
     position:relative;
@@ -17,39 +17,23 @@
       top:0;
       left:0;
       border:1px solid $not-check-color;
-      border-radius:2px;
+      border-radius:50%;
     }
-    >span.arrow{
+    >span{
       &:after{
         position: absolute;
-        top: 48%;
-        left: 21.45%;
+        top: 3px;
+        left: 3px;
         display: table;
-        width: 5.71428571px;
-        height: 9.14285714px;
-        border: 1.6px solid #fff;
-        border-top: 0;
-        border-left: 0;
-        transform: rotate(45deg) scale(0) translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+        border-radius:50%;
+        transform:scale(0) translate(-50%, -50%);
+        background:$brand-color;
         opacity: 0;
         transition: all .1s cubic-bezier(.71, -0.46, .88, .6),opacity .1s;
         content: ' ';
-      }
-    }
-    >span.minus-icon{
-      &:before{
-        top:50%;
-        left:50%;
-        display: table;
-        width: 8px;
-        height: 1.6px;
-        border:1.6px solid #fff;
-        background:#fff;
-        border:none;
-        border-radius:2px;
-        transform: scale(0) translate(-50%, -50%);
-        opacity: 0;
-        transition: all .1s cubic-bezier(.71, -0.46, .88, .6),opacity .1s;
+        transform-origin:center;
       }
     }
     >input{
@@ -61,45 +45,18 @@
       opacity:0;
       width:0px;
       height:0px;
-      &[type='checkbox']{
+      &[type='radio']{
         box-sizing:border-box;
         padding:0;
       }
       &:checked + span{
-        background:$brand-color;
         border-color:$brand-color;
         &:after{
           position: absolute;
           display: table;
           border-color:$arrow-color;
-          border-top: 0;
-          border-left: 0;
-          -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-          -ms-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-          transform: rotate(45deg) scale(1) translate(-50%, -50%);
-          opacity: 1;
-          -webkit-transition: all .2s cubic-bezier(.12, .4, .29, 1.46) .1s;
-          transition: all .2s cubic-bezier(.12, .4, .29, 1.46) .1s;
-          content: ' ';
-          visibility: visible;
-        }
-        &:before{
-          opacity: 0;
-          visibility: hidden;
-        }
-      }
-      &:checked + span.minus-icon{
-        &:after{
-          opacity: 0;
-          visibility: hidden;
-        }
-        &:before{
-          position: absolute;
-          display: table;
-          border-color:$arrow-color;
-          border-top: 0;
-          border-left: 0;
-          border-right:0;
+          top:50%;
+          left:50%;
           -webkit-transform: scale(1) translate(-50%, -50%);
           -ms-transform: scale(1) translate(-50%, -50%);
           transform: scale(1) translate(-50%, -50%);
@@ -165,8 +122,9 @@
           background:$color-gray200;
           border-color:$color-gray200;
         }
-      }
+      } 
     }
+    
     @if $type == detail {
       >div{
         >span, >p{
@@ -187,10 +145,10 @@
   }
 }
 
-.checkbox-wishket{
-  @include checkbox(default, $color-wishket500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false, $color-wishket700);
+.radio-wishket{
+  @include radio(default, $color-wishket500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false, $color-wishket700);
   &.detail-text{
-    @include checkbox(detail, $color-wishket500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-wishket700);
+    @include radio(detail, $color-wishket500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-wishket700);
   }
   &.horizontal{
     display:inline-block;
@@ -198,10 +156,10 @@
   }
 }
 
-.checkbox-partner{
-  @include checkbox(default, $color-partner500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false, $color-partner700);
+.radio-partner{
+  @include radio(default, $color-partner500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false, $color-partner700);
   &.detail-text{
-    @include checkbox(detail, $color-partner500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-partner700);
+    @include radio(detail, $color-partner500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-partner700);
   }
   &.horizontal{
     display:inline-block;
@@ -209,31 +167,14 @@
   }
 }
 
-.checkbox-client{
-  @include checkbox(default, $color-client500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false, $color-client700);
+.radio-client{
+  @include radio(default, $color-client500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false, $color-client700);
   &.detail-text{
-    @include checkbox(detail, $color-client500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-client700);
+    @include radio(detail, $color-client500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-client700);
   }
   &.horizontal{
     display:inline-block;
     margin-right:40px;
-  }
-}
-
-.tree-checkbox{
-  >label{
-    margin:0 0 12px 0;
-  }
-  >ul > li{
-    &.child-list{
-      padding-left:28px;
-    }
-  }
-  >span:first-child{
-  }
-  >span:last-child{
-    font-size:0.875rem;
-    color:$color-gray900;
   }
 }
 
@@ -247,4 +188,8 @@
     padding-bottom:0;
     flex:1;
   }
+}
+
+.horizontal{
+  display: inline-block;
 }

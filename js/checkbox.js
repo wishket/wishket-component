@@ -26,8 +26,9 @@
       const defaultOption = target.attr('data-checkbox-default') == undefined || target.attr('data-checkbox-default') == false ? '' : 'checked="checked"';
       const value = target.attr('data-checkbox-value') == undefined ? `value = '${target.attr('data-checkbox-label')}'` : `value = '${target.attr('data-checkbox-value')}'`;
       const label = target.attr('data-checkbox-label') == undefined ? `${target.attr('data-checkbox-value')}` : `${target.attr('data-checkbox-label')}`;
+      const horizontal = target.attr('data-horizontal') == undefined || target.attr('data-horizontal') == false ? '' : 'horizontal';
       const addonInput = target.data('addon-input');
-      const addonFunction = addonInput ? `onChange="addonCheck(${name})"` : '';
+      const addonFunction = addonInput ? `onChange="addonCheck('checkbox', ${name})"` : '';
       let checkboxWrap = '';
       if(detailText){
         checkboxWrap = ``;
@@ -59,9 +60,9 @@
           addonInputBox += ` <input ${itemId} ${itemClass} ${name} type='text' ${placeholder} disabled/>`;
           addonInputBox += `</div>`;
         });
-        target.replaceWith(`<div class='addon'><label class='checkbox-${theme} ${detaileClass} ${disabled}'>${checkboxWrap}</label> ${addonInputBox}</div>`);
+        target.replaceWith(`<div class='addon'><label class='checkbox-${theme} ${horizontal} ${detaileClass} ${disabled}'>${checkboxWrap}</label> ${addonInputBox}</div>`);
       }else{
-        target.replaceWith(`<label class='checkbox-${theme} ${detaileClass} ${disabled}'>${checkboxWrap}</label>`);
+        target.replaceWith(`<label class='checkbox-${theme} ${detaileClass} ${horizontal} ${disabled}'>${checkboxWrap}</label>`);
       }
     },
     group:function(target, size){
@@ -73,6 +74,7 @@
       const detaileClass = detailText ? 'detail-text' : '';
       const wrapId = target.attr('id') == undefined ? '' : `id='${target.attr('id')}'`;
       const wrapClass = target.attr('class') == undefined ? '' : `class='${target.attr('class')}'`;
+      const horizontal = target.attr('data-horizontal') == undefined || target.attr('data-horizontal') == false ? '' : 'horizontal';
       let groupCheckbox = '';
       $.each(options, function(index, item){
         const value = item.value == undefined ? `value = '${item.label}'` : `value = '${item.value}'`;
@@ -86,7 +88,7 @@
         let checkboxWrap = '';
         if(itemDetaile){
           checkboxWrap = ``;
-          checkboxWrap += `<label class='checkbox-${theme} ${itemDetaileClass} ${disabled} ${itemDisabled}'>`;
+          checkboxWrap += `<label class='checkbox-${theme} ${horizontal} ${itemDetaileClass} ${disabled} ${itemDisabled}'>`;
           checkboxWrap += ` <span>`;
           checkboxWrap += `   <input ${itemId} ${itemClass} ${value} ${name} type='checkbox' ${disabled} ${itemDisabled} ${itemDefault}/>`;
           checkboxWrap += `   <span class='arrow'></span>`;
@@ -98,7 +100,7 @@
           checkboxWrap += `</label>`;
         }else {
           checkboxWrap = ``;
-          checkboxWrap += `<label class='checkbox-${theme} ${disabled} ${itemDisabled}'>`;
+          checkboxWrap += `<label class='checkbox-${theme} ${horizontal} ${disabled} ${itemDisabled}'>`;
           checkboxWrap += ` <span>`;
           checkboxWrap += `   <input ${itemId} ${itemClass} ${value} ${name} type='checkbox' ${disabled} ${itemDisabled} ${itemDefault}/>`;
           checkboxWrap += `   <span class='arrow'></span>`;
@@ -129,7 +131,7 @@
         let childList = '';
         let titleList = '';
         if(depth === 1){
-          titleList += `<div>`;
+          titleList += `<li>`;
           titleList += `  <label class='checkbox-${theme} ${itemDisabled} ${disabled}'>`;
           titleList += `    <span>`;
           titleList += `      <input ${itemId} ${value} ${itemClass} type='checkbox' data-tree-type='${item.name}-parent' ${itemDefault} ${disabled} ${itemDisabled} onChange="treeCheck('${item.name}', 'parent')" />`;
@@ -137,9 +139,9 @@
           titleList += `    </span>`;
           titleList += `    <span>${label}</span>`;
           titleList += `  </label>`;
-          titleList += `</div>`;
+          titleList += `</li>`;
         }else{
-          childList += `<li>`;
+          childList += `<li class='child-list'>`;
           childList += `  <label class='checkbox-${theme} ${itemDisabled} ${disabled}'>`;
           childList += `    <span>`;
           childList += `      <input ${itemId} ${value} ${itemClass} ${itemName} type='checkbox' data-tree-type='${item.name}-child' ${itemDefault} ${disabled} ${itemDisabled} onChange="treeCheck('${item.name}', 'child')" />`;
@@ -150,9 +152,9 @@
           childList += `</li>`;
         }
         treeList += `${titleList}`;
-        treeList += `<ul class='child-list'>${childList}</ul>`
+        treeList += `${childList}`;
       });
-      target.replaceWith(`<div ${wrapId} class='tree-checkbox'>${treeList}</div>`);
+      target.replaceWith(`<div ${wrapId} class='tree-checkbox'><ul>${treeList}</ul></div>`);
     },
     getSize:function(size){
       if(size === 's'){
@@ -209,13 +211,25 @@ function treeCheck(name, type){
   }
 }
 
-function addonCheck(name){
-  const checkInput = $(`input:checkbox[name="${name}"]`);
-  const textInput= $(`input:text[name="${name}"]`);
-  const check = checkInput.is(":checked");
-  if(check === false){
-    textInput.attr('disabled', true);
-  }else{
-    textInput.attr('disabled', false);
+function addonCheck(type, name, id, scale){
+  let radioTarget;
+  if(type === 'checkbox'){
+    const checkbox = $(`input:checkbox[name="${name}"]`);
+    const textInput= $(`input:text[name="${name}"]`);
+    const check = checkbox.is(":checked");
+    if(check === false){
+      textInput.attr('disabled', true);
+    }else{
+      textInput.attr('disabled', false);
+    }
+  }else{  // radio
+    const textInput= $(`input:text[name="${name}"]`);
+    const targetId = id.getAttribute('id');
+    const check = $(`#${targetId}`).is(":checked");
+    if(check === false){
+      textInput.attr('disabled', true);
+    }else{
+      textInput.attr('disabled', false);
+    }
   }
 }
