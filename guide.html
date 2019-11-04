@@ -9,6 +9,8 @@
     <script type="text/javascript" src="./js/input.js"></script>
     <script type="text/javascript" src="./js/checkbox.js"></script>
     <script type="text/javascript" src="./js/radio.js"></script>
+    <script type="text/javascript" src="./js/toggle.js"></script>
+    <script type="text/javascript" src="./js/chip.js"></script>
     <link rel="stylesheet" href="./css/component.css">
     <link rel="stylesheet" href="./css/guide.css">
 </head>
@@ -225,6 +227,9 @@
         ></RadioBox>
     </section>
     <section>
+      <button id='gogogo' data-toggle-type data-theme="wishket" aria-checked='true' data-toggle-text='토글 상세 질문 내용 입니다.ㄴㅇㅁㄹㅇㄴㄴ'></button>
+      <button data-toggle-type data-theme="partner" aria-checked='false' data-toggle-text='두번째 토글 상세 질문 내용 입니다.ㄴㅇㅁㄹㅇㄴㄴ'></button>
+      <button data-toggle-type data-theme="client" aria-checked='false' data-toggle-text='세번째 토글 상세 질문 내용 입니다.ㄴㅇㅁㄹㅇㄴㄴ'></button>
       <!--
       <div class='select-wishket'>
          <div>
@@ -239,8 +244,24 @@
           <li>마마마마</li>
         </ul>
       </div>-->
-
-
+    </section>
+    <section>
+      <button data-chip-type='choice' data-theme='wishket'>
+        테스트1
+      </button>
+      <button data-chip-type='choice' type='button' data-theme='client'>
+        <i><svg viewBox="0 0 32 32"><path d="M6 2 L26 2 L26 30 L16 24 L6 30 Z"></path></svg></i>
+        왼쪽 아이콘
+      </button>
+      <button data-chip-type='choice' type='button' data-theme='partner'>
+        오른쪽 아이콘
+        <i><svg viewBox="0 0 32 32"><path d="M16 0 A16 16 0 0 0 0 16 A16 16 0 0 0 16 32 A16 16 0 0 0 32 16 A16 16 0 0 0 16 0 M5 11.5 A12 12 0 0 1 11 5 A46 46 0 0 1 13.5 9.25 A46 46 0 0 1 5 11.5 M15 4 A12 12 0 0 1 21.5 5.25 A46 46 0 0 1 17 7.75 A50 50 0 0 0 15 4 M4 16 A50 50 0 0 0 15 13 A46 46 0 0 1 16 15.5 A26 26 0 0 0 6 22.5 A12 12 0 0 1 4 16 M18.5 11.5 A50 50 0 0 0 25 8 A12 12 0 0 1 28 13.75 A26 26 0 0 0 19.75 14.5 A50 50 0 0 0 18.5 11.5 M17 19.5 A46 46 0 0 1 18 28 A12 12 0 0 1 8.75 25.5 A22 22 0 0 1 17 19.5 M20.75 18.25 A22 22 0 0 1 28 17.75 A12 12 0 0 1 22 26.5 A50 50 0 0 0 20.75 18.25 "></path></svg></i>
+      </button>
+      <button data-chip-type='choice' type='button' data-theme='partner'>
+        <i><svg viewBox="0 0 32 32"><path d="M6 2 L26 2 L26 30 L16 24 L6 30 Z"></path></svg></i>
+        둘다 아이콘
+        <i><svg viewBox="0 0 32 32"><path d="M16 0 A16 16 0 0 0 0 16 A16 16 0 0 0 16 32 A16 16 0 0 0 32 16 A16 16 0 0 0 16 0 M5 11.5 A12 12 0 0 1 11 5 A46 46 0 0 1 13.5 9.25 A46 46 0 0 1 5 11.5 M15 4 A12 12 0 0 1 21.5 5.25 A46 46 0 0 1 17 7.75 A50 50 0 0 0 15 4 M4 16 A50 50 0 0 0 15 13 A46 46 0 0 1 16 15.5 A26 26 0 0 0 6 22.5 A12 12 0 0 1 4 16 M18.5 11.5 A50 50 0 0 0 25 8 A12 12 0 0 1 28 13.75 A26 26 0 0 0 19.75 14.5 A50 50 0 0 0 18.5 11.5 M17 19.5 A46 46 0 0 1 18 28 A12 12 0 0 1 8.75 25.5 A22 22 0 0 1 17 19.5 M20.75 18.25 A22 22 0 0 1 28 17.75 A12 12 0 0 1 22 26.5 A50 50 0 0 0 20.75 18.25 "></path></svg></i>
+      </button>
     </section>
   </div>
   <script>
@@ -248,6 +269,8 @@
       $.uiInput.setting();
       $.uiCheckbox.setting();
       $.uiRadio.setting();
+      $.uiToggle.setting();
+      $.uiChip.setting();
     });
 
     $(window).on('load', function(){
