@@ -34,7 +34,7 @@
       const forName = target.attr('id');
       const icon = target.attr('data-input-icon');
       let iconPosition = target.attr('data-icon-position');
-      if(icon && iconPosition != undefined){
+      if(icon && iconPosition){
         iconPosition = $.uiInput.getIconPosition(iconPosition);
       }
       target.wrap(`<div class='label-input-${theme} ${iconPosition}'></div>`)
@@ -48,7 +48,7 @@
           target.parent().removeClass('label-effect');
         }
       });
-      if(icon != undefined && iconPosition){
+      if(icon && iconPosition){
         target.after(icon);
       }
     },

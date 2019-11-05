@@ -96,7 +96,6 @@
           radioWrap += `<div class='addon'>`;
           radioWrap += `  <label class='radio-${theme} ${disabled} ${itemDisabled}'>`;
           radioWrap += `    <span>`;
-          // radioWrap += `      <input id='${dataAddOn}' ${itemClass} ${value} ${nameTag} type='radio' ${disabled} ${itemDisabled} ${itemDefault} onChange="addonCheck('radio', '${nameTag}', ${dataAddOn})" />`;
           radioWrap += `      <input id='${dataAddOn}' ${itemClass} ${value} ${nameTag} type='radio' ${disabled} ${itemDisabled} ${itemDefault} onChange="addonCheck('radio', ${nameTag}, ${dataAddOn})" />`;
           radioWrap += `    <span class='arrow'></span>`;
           radioWrap += `    </span>`;
@@ -113,7 +112,6 @@
             radioWrap = ``;
             radioWrap += `<label class='radio-${theme} ${horizontal} ${itemDetaileClass} ${disabled} ${itemDisabled}'>`;
             radioWrap += ` <span>`;
-            // radioWrap += `   <input ${itemId} ${itemClass} ${value} ${nameTag} type='radio' ${disabled} ${itemDisabled} />`;
             radioWrap += `   <input ${itemId} ${itemClass} ${value} ${nameTag} type='radio' ${disabled} ${itemDisabled} ${itemDefault} ${dataAddonEvent} />`;
             radioWrap += `   <span class='arrow'></span>`;
             radioWrap += ` </span>`;
@@ -145,7 +143,7 @@
       }else if(size === 'xl'){
         return 'input-xlarge'
       }else{
-        return
+        return '';
       }
     },
   }

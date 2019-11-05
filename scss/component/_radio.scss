@@ -8,7 +8,7 @@
   >span:first-child{
     display:inline-block;
     position:relative;
-    top:0.1rem;
+    top:0.28rem;
     >span{
       position:relative;
       display:inline-block;
@@ -105,13 +105,11 @@
       line-height: $line-height;
     }
   }
-
   &:hover{
     >span:first-child > span{
       border-color:$brand-color;
     }
   }
-
   &.disabled{
     >span:first-child{
       > span{
@@ -122,9 +120,8 @@
           background:$color-gray200;
           border-color:$color-gray200;
         }
-      } 
+      }
     }
-    
     @if $type == detail {
       >div{
         >span, >p{

@@ -182,18 +182,6 @@
       >
       </CheckBox>
       <CheckBox
-        id='group01'
-        class='group02'
-        data-checkbox-type='group'
-        data-checkbox-name='tree01'
-        data-checkbox-theme='client'
-        data-options='[
-          {"value":"트리 테스트1", "disabled":"true"},
-          {"label":"트리 테스트2", "id" : "sample Group01", "default":"true"},
-          {"label":"트리 테스트3", "value":"토마토2", "detail": "hohoho상세페이지", "class":"sampleG"}]'
-      >
-      </CheckBox>
-      <CheckBox
         data-checkbox-type='tree'
         data-checkbox-theme='partner'
         data-options='[
@@ -214,15 +202,35 @@
         data-checkbox-value='addoinInput01'
         data-checkbox-label='213'
         data-checkbox-addon='input'
+        data-addon-id='addoninputtest'
         data-checkbox-name='tree01'
         data-addon-input='[{
-          "id":"addonId",
           "class":"addonClass",
           "placeholder":"플레스홀더",
           "theme": "wishket"
         }]'
       >
       </CheckBox>
+      <div>
+        <CheckBox
+          data-checkbox-type='group'
+          data-checkbox-name='tree01'
+          data-checkbox-theme='client'
+          data-options='[
+            {"value":"그룹 인풋 테스트1", "disabled":"true"},
+            {"label":"그룹 인풋 테스트2", "id" : "sample Group01", "default":"true"},
+            {
+              "id":"groupAddonCheck",
+              "label":"그룹 인풋 테스트3",
+              "value":"토마토2",
+              "addonType":"input",
+              "addonId":"groupAddonText",
+              "placeholder":"플레스홀더 제발"
+            }
+          ]'
+        >
+        </CheckBox>
+      </div>
     </section>
     <section id='radio'>
       <RadioBox data-radio-type='group' data-radio-name='aaaa12' data-theme='client'
@@ -247,7 +255,15 @@
         data-options='[
         {"value":"사과"},
         {"label":"배", "id" : "sample Group01", "default":"check"},
-        {"label":"토마토", "value":"토마토2", "detail": "hohoho상세페이지", "class":"sampleG", "addonType":"input", "placeholder":"토마토토마토토토토토토톡"}]'
+        {
+          "label":"토마토",
+          "detail": "hohoho상세페이지",
+          "id":"checkInput",
+          "addonType":"input",
+          "addonId":"textInput",
+          "placeholder":"토마토토마토토토토토토톡"
+        }
+        ]'
       ></RadioBox>
     </section>
     <section>
@@ -271,20 +287,15 @@
     </section>
     <section>
       <button data-chip-type='choice' data-theme='wishket'>
-        테스트1
+        wishket
       </button>
       <button data-chip-type='choice' type='button' data-theme='client'>
-        <i><svg viewBox="0 0 32 32"><path d="M6 2 L26 2 L26 30 L16 24 L6 30 Z"></path></svg></i>
-        왼쪽 아이콘
+        client
       </button>
       <button data-chip-type='choice' type='button' data-theme='partner'>
-        오른쪽 아이콘
-        <i><svg viewBox="0 0 32 32"><path d="M16 0 A16 16 0 0 0 0 16 A16 16 0 0 0 16 32 A16 16 0 0 0 32 16 A16 16 0 0 0 16 0 M5 11.5 A12 12 0 0 1 11 5 A46 46 0 0 1 13.5 9.25 A46 46 0 0 1 5 11.5 M15 4 A12 12 0 0 1 21.5 5.25 A46 46 0 0 1 17 7.75 A50 50 0 0 0 15 4 M4 16 A50 50 0 0 0 15 13 A46 46 0 0 1 16 15.5 A26 26 0 0 0 6 22.5 A12 12 0 0 1 4 16 M18.5 11.5 A50 50 0 0 0 25 8 A12 12 0 0 1 28 13.75 A26 26 0 0 0 19.75 14.5 A50 50 0 0 0 18.5 11.5 M17 19.5 A46 46 0 0 1 18 28 A12 12 0 0 1 8.75 25.5 A22 22 0 0 1 17 19.5 M20.75 18.25 A22 22 0 0 1 28 17.75 A12 12 0 0 1 22 26.5 A50 50 0 0 0 20.75 18.25 "></path></svg></i>
-      </button>
-      <button data-chip-type='choice' type='button' data-theme='partner'>
-        <i><svg viewBox="0 0 32 32"><path d="M6 2 L26 2 L26 30 L16 24 L6 30 Z"></path></svg></i>
-        둘다 아이콘
-        <i><svg viewBox="0 0 32 32"><path d="M16 0 A16 16 0 0 0 0 16 A16 16 0 0 0 16 32 A16 16 0 0 0 32 16 A16 16 0 0 0 16 0 M5 11.5 A12 12 0 0 1 11 5 A46 46 0 0 1 13.5 9.25 A46 46 0 0 1 5 11.5 M15 4 A12 12 0 0 1 21.5 5.25 A46 46 0 0 1 17 7.75 A50 50 0 0 0 15 4 M4 16 A50 50 0 0 0 15 13 A46 46 0 0 1 16 15.5 A26 26 0 0 0 6 22.5 A12 12 0 0 1 4 16 M18.5 11.5 A50 50 0 0 0 25 8 A12 12 0 0 1 28 13.75 A26 26 0 0 0 19.75 14.5 A50 50 0 0 0 18.5 11.5 M17 19.5 A46 46 0 0 1 18 28 A12 12 0 0 1 8.75 25.5 A22 22 0 0 1 17 19.5 M20.75 18.25 A22 22 0 0 1 28 17.75 A12 12 0 0 1 22 26.5 A50 50 0 0 0 20.75 18.25 "></path></svg></i>
+        <!-- <i><svg viewBox="0 0 32 32"><path d="M6 2 L26 2 L26 30 L16 24 L6 30 Z"></path></svg></i> -->
+        partner
+        <!-- <i><svg viewBox="0 0 32 32"><path d="M16 0 A16 16 0 0 0 0 16 A16 16 0 0 0 16 32 A16 16 0 0 0 32 16 A16 16 0 0 0 16 0 M5 11.5 A12 12 0 0 1 11 5 A46 46 0 0 1 13.5 9.25 A46 46 0 0 1 5 11.5 M15 4 A12 12 0 0 1 21.5 5.25 A46 46 0 0 1 17 7.75 A50 50 0 0 0 15 4 M4 16 A50 50 0 0 0 15 13 A46 46 0 0 1 16 15.5 A26 26 0 0 0 6 22.5 A12 12 0 0 1 4 16 M18.5 11.5 A50 50 0 0 0 25 8 A12 12 0 0 1 28 13.75 A26 26 0 0 0 19.75 14.5 A50 50 0 0 0 18.5 11.5 M17 19.5 A46 46 0 0 1 18 28 A12 12 0 0 1 8.75 25.5 A22 22 0 0 1 17 19.5 M20.75 18.25 A22 22 0 0 1 28 17.75 A12 12 0 0 1 22 26.5 A50 50 0 0 0 20.75 18.25 "></path></svg></i> -->
       </button>
     </section>
   </div>
