@@ -128,13 +128,14 @@
         const itemDefault = item.default == undefined || item.default == false ? '' : 'checked="checked"'
         const itemDisabled = item.disabled == undefined || item.disabled == false ? '' : 'disabled';
         const itemName = item.name == undefined ? '' : `name='${item.name}'`;
+        const treeName = !item.tree ? null : 'data-tree="'+item.tree+'"'
         let childList = '';
         let titleList = '';
         if(depth === 1){
           titleList += `<li>`;
           titleList += `  <label class='checkbox-${theme} ${itemDisabled} ${disabled}'>`;
           titleList += `    <span>`;
-          titleList += `      <input ${itemId} ${value} ${itemClass} type='checkbox' data-tree-type='${item.name}-parent' ${itemDefault} ${disabled} ${itemDisabled} onChange="treeCheck('${item.name}', 'parent')" />`;
+          titleList += `      <input ${itemId} ${value} ${itemClass} ${itemName} type='checkbox' data-tree-type='${item.tree}-parent' ${itemDefault} ${disabled} ${itemDisabled} onChange="treeCheck('${item.tree}', 'parent')" />`;
           titleList += `      <span class='arrow'></span>`;
           titleList += `    </span>`;
           titleList += `    <span>${label}</span>`;
@@ -144,7 +145,7 @@
           childList += `<li class='child-list'>`;
           childList += `  <label class='checkbox-${theme} ${itemDisabled} ${disabled}'>`;
           childList += `    <span>`;
-          childList += `      <input ${itemId} ${value} ${itemClass} ${itemName} type='checkbox' data-tree-type='${item.name}-child' ${itemDefault} ${disabled} ${itemDisabled} onChange="treeCheck('${item.name}', 'child')" />`;
+          childList += `      <input ${itemId} ${value} ${itemClass} ${itemName} ${treeName} type='checkbox' data-tree-type='${item.tree}-child' ${itemDefault} ${disabled} ${itemDisabled} onChange="treeCheck('${item.tree}', 'child')" />`;
           childList += `      <span class='arrow'></span>`;
           childList += `    </span>`;
           childList += `    <span>${label}</span>`;
@@ -171,8 +172,8 @@
 })( jQuery, window, document );
 
 function treeCheck(name, type){
-  const length = $(`input:checkbox[name="${name}"]`).length;
-  const checkLength = $(`input:checkbox[name="${name}"]:checked`).length;
+  const length = $(`input:checkbox[data-tree="${name}"]`).length;
+  const checkLength = $(`input:checkbox[data-tree="${name}"]:checked`).length;
   const parentTarget = $(`input[data-tree-type="${name}-parent"]`);
   const childTarget = $(`input[data-tree-type="${name}-child"]`);
   if(type === 'parent'){
@@ -212,11 +213,10 @@ function treeCheck(name, type){
 }
 
 function addonCheck(type, name, id, scale){
-  let radioTarget;
   if(type === 'checkbox'){
-    const checkbox = $(`input:checkbox[name="${name}"]`);
-    const textInput= $(`input:text[name="${name}"]`);
-    const check = checkbox.is(":checked");
+    const textInput= $(`input:[data-name="${name}"]`);
+    const targetId = id.getAttribute('id');
+    const check = $('#'+targetId+'').is(":checked");
     if(check === false){
       textInput.attr('disabled', true);
     }else{
@@ -225,7 +225,7 @@ function addonCheck(type, name, id, scale){
   }else{  // radio
     const textInput= $(`input:text[name="${name}"]`);
     const targetId = id.getAttribute('id');
-    const check = $(`#${targetId}`).is(":checked");
+    const check = $('#'+targetId+'').is(":checked");
     if(check === false){
       textInput.attr('disabled', true);
     }else{

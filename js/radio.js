@@ -66,14 +66,16 @@
     group:function(target, size){
       const options = target.data('options');
       const theme = target.attr('data-theme');
-      const name = target.attr('data-radio-name') == undefined ? '' : `name='${target.attr('data-radio-name')}'`;
+      const name = target.attr('data-radio-name') == undefined ? '' : `${target.attr('data-radio-name')}'`;
+      const nameTag = target.attr('data-radio-name') == undefined ? '' : `name='${target.attr('data-radio-name')}'`;
       const disabled = target.attr('data-radio-disabled') == undefined || target.attr('data-radio-disabled') == false ? '' : 'disabled';
       const detailText = target.attr('data-radio-detaile');
       const detaileClass = detailText ? 'detail-text' : '';
       const wrapId = target.attr('id') == undefined ? '' : `id='${target.attr('id')}'`;
       const wrapClass = target.attr('class') == undefined ? '' : `class='${target.attr('class')}'`;
-      const dataAddOn = target.attr('data-addon-id') ? target.attr('data-addon-id') : '';
+      const dataAddOn = target.attr('data-addon-id') ? target.attr('data-addon-id') : false;
       const horizontal = target.attr('data-horizontal') == undefined || target.attr('data-horizontal') == false ? '' : 'horizontal';
+      const dataAddonEvent = !dataAddOn ? '' : `onChange="addonCheck('radio', ${nameTag}, ${dataAddOn})"`;
       let groupradio = '';
       $.each(options, function(index, item){
         const value = item.value == undefined ? `value = '${item.label}'` : `value = '${item.value}'`;
@@ -94,13 +96,14 @@
           radioWrap += `<div class='addon'>`;
           radioWrap += `  <label class='radio-${theme} ${disabled} ${itemDisabled}'>`;
           radioWrap += `    <span>`;
-          radioWrap += `      <input id='${dataAddOn}' ${itemClass} ${value} ${name} type='radio' ${disabled} ${itemDisabled} ${itemDefault} onChange="addonCheck('radio', ${name}, ${dataAddOn})" />`;
+          // radioWrap += `      <input id='${dataAddOn}' ${itemClass} ${value} ${nameTag} type='radio' ${disabled} ${itemDisabled} ${itemDefault} onChange="addonCheck('radio', '${nameTag}', ${dataAddOn})" />`;
+          radioWrap += `      <input id='${dataAddOn}' ${itemClass} ${value} ${nameTag} type='radio' ${disabled} ${itemDisabled} ${itemDefault} onChange="addonCheck('radio', ${nameTag}, ${dataAddOn})" />`;
           radioWrap += `    <span class='arrow'></span>`;
           radioWrap += `    </span>`;
           radioWrap += `      <span>${label}</span>`;
           radioWrap += `  </label>`;
           radioWrap += `  <div class='text-input-${theme}'>`;
-          radioWrap += `    <input ${addonId} ${addonClass} ${name} type='text' ${placeholder} disabled/>`;
+          radioWrap += `    <input ${addonId} ${addonClass} ${nameTag} type='text' ${placeholder} disabled/>`;
           radioWrap += `  </div>`;
           radioWrap += `</div>`;
           radioWrap += `</div>`;
@@ -110,7 +113,8 @@
             radioWrap = ``;
             radioWrap += `<label class='radio-${theme} ${horizontal} ${itemDetaileClass} ${disabled} ${itemDisabled}'>`;
             radioWrap += ` <span>`;
-            radioWrap += `   <input ${itemId} ${itemClass} ${value} ${name} type='radio' ${disabled} ${itemDisabled} ${itemDefault} />`;
+            // radioWrap += `   <input ${itemId} ${itemClass} ${value} ${nameTag} type='radio' ${disabled} ${itemDisabled} />`;
+            radioWrap += `   <input ${itemId} ${itemClass} ${value} ${nameTag} type='radio' ${disabled} ${itemDisabled} ${itemDefault} ${dataAddonEvent} />`;
             radioWrap += `   <span class='arrow'></span>`;
             radioWrap += ` </span>`;
             radioWrap += ` <div>`;
@@ -122,7 +126,7 @@
             radioWrap = ``;
             radioWrap += `<label class='radio-${theme} ${horizontal} ${disabled} ${itemDisabled}'>`;
             radioWrap += ` <span>`;
-            radioWrap += `   <input ${itemId} ${itemClass} ${value} ${name} type='radio' ${disabled} ${itemDisabled} ${itemDefault} />`;
+            radioWrap += `   <input ${itemId} ${itemClass} ${value} ${nameTag} type='radio' ${disabled} ${itemDisabled} ${itemDefault} ${itemDetaileClass} ${dataAddonEvent} />`;
             radioWrap += `   <span class='arrow'></span>`;
             radioWrap += ` </span>`;
             radioWrap += ` <span>${label}</span>`;
