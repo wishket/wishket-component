@@ -74,8 +74,6 @@
       const wrapClass = target.attr('class') == undefined ? '' : `class='${target.attr('class')}'`;
       const dataAddOn = target.attr('data-addon-id') ? target.attr('data-addon-id') : '';
       const horizontal = target.attr('data-horizontal') == undefined || target.attr('data-horizontal') == false ? '' : 'horizontal';
-      console.log('bbb');
-      console.log(dataAddOn);
       let groupradio = '';
       $.each(options, function(index, item){
         const value = item.value == undefined ? `value = '${item.label}'` : `value = '${item.value}'`;
@@ -87,7 +85,6 @@
         const itemDetaileClass = item.detail ? 'detail-text' : '';
         const itemDisabled = item.disabled == undefined || item.disabled == false ? '' : 'disabled';
         let radioWrap = '';
-        //애드온 타입
         if(item.addonType){
           const addonId = item.addonId == undefined ? '' : `id='${item.addonId}'`;
           const addonClass = item.addonClass == undefined ? '' : `id='${item.addonClass}'`;
@@ -113,7 +110,7 @@
             radioWrap = ``;
             radioWrap += `<label class='radio-${theme} ${horizontal} ${itemDetaileClass} ${disabled} ${itemDisabled}'>`;
             radioWrap += ` <span>`;
-            radioWrap += `   <input ${itemId} ${itemClass} ${value} ${name} type='radio' ${disabled} ${itemDisabled} ${itemDefault} onChange="addonCheck('radio', ${name}, ${dataAddOn})" />`;
+            radioWrap += `   <input ${itemId} ${itemClass} ${value} ${name} type='radio' ${disabled} ${itemDisabled} ${itemDefault} />`;
             radioWrap += `   <span class='arrow'></span>`;
             radioWrap += ` </span>`;
             radioWrap += ` <div>`;
@@ -125,7 +122,7 @@
             radioWrap = ``;
             radioWrap += `<label class='radio-${theme} ${horizontal} ${disabled} ${itemDisabled}'>`;
             radioWrap += ` <span>`;
-            radioWrap += `   <input ${itemId} ${itemClass} ${value} ${name} type='radio' ${disabled} ${itemDisabled} ${itemDefault} onChange="addonCheck('radio', ${name}, ${dataAddOn})" />`;
+            radioWrap += `   <input ${itemId} ${itemClass} ${value} ${name} type='radio' ${disabled} ${itemDisabled} ${itemDefault} />`;
             radioWrap += `   <span class='arrow'></span>`;
             radioWrap += ` </span>`;
             radioWrap += ` <span>${label}</span>`;

@@ -187,25 +187,43 @@
           {"label":"토마토", "value":"토마토2", "detail": "hohoho상세페이지", "class":"sampleG"}]'
       >
       </CheckBox>
+
+      <CheckBox
+        id='group01'
+        class='group02'
+        data-checkbox-type='group'
+        data-checkbox-name='tree01'
+        data-checkbox-theme='client'
+        data-options='[
+          {"value":"트리 테스트1", "disabled":"true"},
+          {"label":"트리 테스트2", "id" : "sample Group01", "default":"true"},
+          {"label":"트리 테스트3", "value":"토마토2", "detail": "hohoho상세페이지", "class":"sampleG"}]'
+      >
+      </CheckBox>
+
+
       <CheckBox
         data-checkbox-type='tree'
         data-checkbox-theme='partner'
-        data-options='[{"label":"개발", "value":"web", "depth":1, "name" : "tree01"},
-        {"label":"애플리케이션", "value":"apple", "depth":2, "name" : "tree01"}, {"label":"워드프레스", "value":"web", "depth":2, "name" : "tree01"}, {"label":"퍼블리싱", "value":"web", "depth":2, "name":"tree01"}, 
-        {"label":"개발", "value":"web", "depth":1, "name":"tree02"},
-        {"label":"개발", "value":"web", "depth":1, "name":"tree03"},
-        {"label":"애플리케이션", "value":"apple", "depth":2, "name":"tree03"}, {"label":"워드프레스", "value":"web", "depth":2, "name":"tree03"}, {"label":"퍼블리싱", "value":"web", "depth":2, "name":"tree03"}]'
+        data-options='[
+        {"label":"트리테스트", "value":"apple", "depth":1, "name" : "tree01", "tree":"treeName01"}, 
+        {"label":"애플리케이션", "value":"apple", "depth":2, "name" : "tree01", "tree":"treeName01"}, 
+        {"label":"워드프레스", "value":"web", "depth":2, "name" : "tree01", "tree":"treeName01"}, 
+        {"label":"퍼블리싱", "value":"web", "depth":2, "name":"tree01", "tree":"treeName01"}, 
+        {"label":"개발", "value":"web", "depth":1, "name":"tree03", "tree":"treeName02"},
+        {"label":"애플리케이션", "value":"apple", "depth":2, "name":"tree03", "tree":"treeName02"}, 
+        {"label":"워드프레스", "value":"web", "depth":2, "name":"tree03", "tree":"treeName02"}, 
+        {"label":"퍼블리싱", "value":"web", "depth":2, "name":"tree03", "tree":"treeName02"}]'
       >
       </CheckBox>
       <CheckBox
         id='checkboxtest'
         data-checkbox-type='single'
         data-checkbox-theme='wishket'
-        data-options='체크박스'
         data-checkbox-value='addoinInput01'
         data-checkbox-label='213'
         data-checkbox-addon='input'
-        data-checkbox-name='addonInput03'
+        data-checkbox-name='tree01'
         data-addon-input='[{
           "id":"addonId",
           "class":"addonClass",
@@ -216,15 +234,21 @@
       </CheckBox>
     </section>
     <section id='radio'>
-        <!-- <RadioBox data-radio-type='single' data-radio-name='rsingle03' data-radio-label='label03' data-theme='client' data-radio-default='checked'></RadioBox> -->
-        <RadioBox data-radio-type='group' data-radio-name='rsingle12' data-radio-label='label12' data-theme='partner' data-radio-default='checked'
-          data-addon-id='testtest'
-          data-horizontal=true
-          data-options='[
-          {"value":"사과"},
-          {"label":"배", "id" : "sample Group01", "default":"check"},
-          {"label":"토마토", "value":"토마토2", "detail": "hohoho상세페이지", "class":"sampleG", "addonType":"input", "placeholder":"토마토토마토토토토토토톡"}]'
-        ></RadioBox>
+      <RadioBox data-radio-type='group' data-radio-name='aaaa12' data-radio-label='aaaa12' data-theme='partner'
+        data-addon-id='radiotest'
+        data-options='[
+          {"value":"사과", "detail":"adsfdadafdafs"},
+          {"value":"배배배", "detail":"adsfdadafdafs"}
+        ]'>
+      </RadioBox>
+      <RadioBox data-radio-type='group' data-radio-name='rsingle12' data-radio-label='label12' data-theme='partner'
+        data-addon-id='testtest'
+        data-horizontal=true
+        data-options='[
+        {"value":"사과"},
+        {"label":"배", "id" : "sample Group01", "default":"check"},
+        {"label":"토마토", "value":"토마토2", "detail": "hohoho상세페이지", "class":"sampleG", "addonType":"input", "placeholder":"토마토토마토토토토토토톡"}]'
+      ></RadioBox>
     </section>
     <section>
       <button id='gogogo' data-toggle-type data-theme="wishket" aria-checked='true' data-toggle-text='토글 상세 질문 내용 입니다.ㄴㅇㅁㄹㅇㄴㄴ'></button>
