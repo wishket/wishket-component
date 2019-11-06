@@ -248,3 +248,78 @@
     flex:1;
   }
 }
+
+@mixin chip($type, $default-color, $hover-color, $brand-color, $brand-font-color, $font-size, $line-height){
+  position:relative;
+  display:inline-block;
+  &:hover{
+    >span{
+      background:$hover-color;
+    }
+  }
+  >input{
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    width:0px;
+    height:0px;
+    &[type='checkbox']{
+      box-sizing:border-box;
+      padding:0;
+    }
+    &:checked + span{
+      background:$brand-color;
+      color:$brand-font-color;
+    }
+  }
+  >span{
+    border-radius:1rem;
+    padding:4px 16px;
+    background:$default-color;
+    font-size:$font-size;
+    line-height:$line-height;
+    color:$color-gray600;
+    display:inline-block;
+    >i{
+      height: 18px;
+      vertical-align: middle;
+      display: inline-block;
+      >svg{
+        height:inherit;
+      }
+    }
+  }
+
+  &.disabled{
+    >input{
+      &:checked + span{
+        background:$color-gray200;
+        border-color:$color-gray200;
+      }
+    }
+    >span{
+      background:$color-gray100;
+      opacity: 40%;
+    }
+    &:hover, &:focus{
+      c> span{
+        border-color:$color-gray200;
+      }
+    }
+  }
+}
+
+.chip-choice-client{
+  @include chip(choice, $color-gray100, $color-gray200, $color-client50, $color-client500, 0.875rem, 1.5rem);
+}
+
+.chip-choice-partner{
+  @include chip(choice, $color-gray100, $color-gray200, $color-partner50, $color-partner500, 0.875rem, 1.5rem);
+}
+
+.chip-choice-wishket{
+  @include chip(choice, $color-gray100, $color-gray200, $color-wishket50, $color-wishket500, 0.875rem, 1.5rem);
+}
