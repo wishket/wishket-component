@@ -135,9 +135,6 @@
       target.replaceWith(`<div ${wrapId} ${wrapClass}>${groupCheckbox}</div>`);
     },
     chip:function(target, size){
-      console.log('ttt');
-      console.log(target.attr('data-checkbox-value'));
-      console.log(target.attr('data-checkbox-label'));
       const theme = target.attr('data-checkbox-theme');
       const name = target.attr('data-checkbox-name') ? 'name="'+target.attr('data-checkbox-name')+'"' : '';
       const disabled = !target.attr('data-checkbox-disabled') ? '' : 'disabled';
