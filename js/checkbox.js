@@ -19,133 +19,135 @@
       });
     },
     single:function(target, size){
-      const theme = target.attr('data-checkbox-theme');
-      const detailText = target.attr('data-checkbox-detaile');
-      const detaileClass = detailText == undefined || detailText == false ? '' : 'detail-text';
-      const name = target.attr('data-checkbox-name') ? `name='${target.attr('data-checkbox-name')}'` : '';
-      const disabled = target.attr('data-checkbox-disabled') == undefined || target.attr('data-checkbox-disabled') == false ? '' : 'disabled';
-      const id = target.attr('id');
-      const wrapId = target.attr('id') == undefined || target.attr('id') == false ? '' : `id='${target.attr('id')}'`;
-      const wrapClass = target.attr('class') == undefined || target.attr('class') == false ? '' : `class='${target.attr('class')}'`;
-      const defaultOption = target.attr('data-checkbox-default') == undefined || target.attr('data-checkbox-default') == false ? '' : 'checked="checked"';
-      const value = target.attr('data-checkbox-value') == undefined ? `value = '${target.attr('data-checkbox-label')}'` : `value = '${target.attr('data-checkbox-value')}'`;
-      const label = target.attr('data-checkbox-label') == undefined ? `${target.attr('data-checkbox-value')}` : `${target.attr('data-checkbox-label')}`;
-      const horizontal = target.attr('data-horizontal') == undefined || target.attr('data-horizontal') == false ? '' : 'horizontal';
-      const addonInput = target.data('addon-input');
+      const theme = target.attr("data-checkbox-theme");
+      const detailText = target.attr("data-checkbox-detaile");
+      const detaileClass = !detailText ? '' : 'detail-text';
+      const name = target.attr("data-checkbox-name") ? 'name="'+target.attr("data-checkbox-name")+'" ' : '';
+      const disabled = !target.attr("data-checkbox-disabled") ? '' : 'disabled ';
+      const id = target.attr("id");
+      const wrapId = !target.attr("id") ? '' : 'id="'+target.attr("id")+'" ';
+      const wrapClass = !target.attr("class") ? '' : 'class="'+target.attr("class")+'" ';
+      const defaultOption = !target.attr("data-checkbox-default") ? '' : 'checked="checked" ';
+      const value = !target.attr("data-checkbox-value") ? 'value="'+target.attr("data-checkbox-label")+'" ' : 'value="'+target.attr("data-checkbox-value")+'" ';
+      const label = !target.attr('data-checkbox-label') ? target.attr("data-checkbox-value") : target.attr("data-checkbox-label");
+      const horizontal = !target.attr("data-horizontal") ? '' : "horizontal ";
+      const addonInput = target.data("addon-input");
       const dataAddOn = target.attr('data-addon-id') ? target.attr('data-addon-id') : '';
+      //여기 다시
       const addonFunction = !addonInput ? '' : `onChange="addonCheck('checkbox', '${dataAddOn}', '${id}')"`;
       let checkboxWrap = '';
       if(detailText){
-        checkboxWrap = ``;
-        checkboxWrap += `<span>`;
-        checkboxWrap += ` <input ${wrapId} ${wrapClass} ${name} type='checkbox' ${value} ${defaultOption} ${value} ${disabled} ${addonFunction}/>`;
-        checkboxWrap += ` <span class="arrow"></span>`;
-        checkboxWrap += `</span>`;
-        checkboxWrap += `<div>`;
-        checkboxWrap += `  <span>${label}</span>`;
-        checkboxWrap += `  <p>${detailText}</p>`;
-        checkboxWrap += `</div>`;
+        checkboxWrap =
+          '<span>'  +
+          '  <input '+wrapId+wrapClass+name+value+defaultOption+disabled+addonFunction+' type="checkbox" />'  +
+          '  <span class="arrow"></span>'  +
+          '</span>'  +
+          '<div>'  +
+          '  <span>'+label+'</span>'  +
+          '  <p>'+detailText+'</p>'  +
+          '</div>';
       }else {
-        checkboxWrap = ``;
-        checkboxWrap += `<span>`;
-        checkboxWrap += ` <input ${wrapId} ${wrapClass} ${name} type='checkbox' ${defaultOption} ${value} ${disabled} ${addonFunction}/>`;
-        checkboxWrap += ` <span class="arrow"></span>`;
-        checkboxWrap += `</span>`;
-        checkboxWrap += `<span>${label}</span>`;
+        checkboxWrap =
+          '<span>'  +
+          '  <input '+wrapId+wrapClass+name+defaultOption+value+disabled+addonFunction+' type="checkbox" />'  +
+          '  <span class="arrow"></span>'  +
+          '</span>'  +
+          '<span>'+label+'</span>';
       }
       if(addonInput){
         let addonInputBox = ``;
         $.each(addonInput, function(index, item){
-          const itemClass = item.class == undefined ? '' : `class='${item.class}'`;
-          const placeholder = item.placeholder == undefined ? '' : `placeholder='${item.placeholder}'`;
-          const itemTheme = item.theme == undefined ? theme : item.theme;
-          addonInputBox += `<div class='text-input-${itemTheme}'>`;
-          addonInputBox += ` <input id=${dataAddOn} ${itemClass} ${name} type='text' ${placeholder} disabled/>`;
-          addonInputBox += `</div>`;
+          const itemClass = !item.class ? '' : 'class="'+item.class+'" ';
+          const placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'" ';
+          const itemTheme = !item.theme ? theme : item.theme;
+          addonInputBox =
+            '<div class="text-input-'+itemTheme+'" >'  +
+            '  <input id="'+dataAddOn+'" '+itemClass+name+placeholder+' type="text" disabled/>'  +
+            '</div>';
         });
-        target.replaceWith(`<div class='addon'><label class='checkbox-${theme} ${horizontal} ${detaileClass} ${disabled}'>${checkboxWrap}</label> ${addonInputBox}</div>`);
+        target.replaceWith('<div class="addon"><label class="checkbox-'+theme+' '+horizontal+detaileClass+disabled+'">'+checkboxWrap+'</label>'+addonInputBox+'</div>');
       }else{
-        target.replaceWith(`<label class='checkbox-${theme} ${detaileClass} ${horizontal} ${disabled}'>${checkboxWrap}</label>`);
+        target.replaceWith('<label class="checkbox-'+theme+' '+detaileClass+horizontal+disabled+'">'+checkboxWrap+'</label>')
       }
     },
     group:function(target, size){
       const options = target.data('options');
       const theme = target.attr('data-checkbox-theme');
-      const name = target.attr('data-checkbox-name') == undefined ? '' : `name='${target.attr('data-checkbox-name')}'`;
-      const disabled = target.attr('data-checkbox-disabled') == undefined || target.attr('data-checkbox-disabled') == false ? '' : 'disabled';
-      const detailText = target.attr('data-checkbox-detaile');
-      const detaileClass = detailText ? 'detail-text' : '';
-      const wrapId = target.attr('id') == undefined ? '' : `id='${target.attr('id')}'`;
-      const wrapClass = target.attr('class') == undefined ? '' : `class='${target.attr('class')}'`;
-      const horizontal = target.attr('data-horizontal') == undefined || target.attr('data-horizontal') == false ? '' : 'horizontal';
+      const name = !target.attr('data-checkbox-name') ? '' : 'name="'+target.attr("data-checkbox-name")+'" ';
+      const disabled = !target.attr('data-checkbox-disabled') ? '' : 'disabled ';
+      const wrapId = !target.attr('id') ? '' : 'id="'+target.attr("id")+'" ';
+      const wrapClass = !target.attr('class') ? '' : 'class="'+target.attr("class")+'" ';
+      const horizontal = !target.attr('data-horizontal') ? '' : 'horizontal ';
+
       let groupCheckbox = '';
       $.each(options, function(index, item){
-        const value = item.value == undefined ? `value = '${item.label}'` : `value = '${item.value}'`;
-        const label = item.label == undefined ? item.value : item.label;
-        const itemId = item.id == undefined ? '' : `id='${item.id}'`;
-        const itemClass = item.class == undefined ? '' : `class='${item.class}'`;
-        const itemDefault = item.default == undefined || item.default == false ? '' : 'checked="checked"'
+        const value = !item.value ? 'value="'+item.label+'" ' : 'value="'+item.value+'" ';
+        const label = !item.label ? item.value : item.label;
+        const itemId = !item.id ? '' : 'id="'+item.id+'" ';
+        const itemClass = !item.class ? '' : 'class="'+item.class+'" ';
+        const itemDefault = !item.default ? '' : 'checked="checked" '
         const itemDetaile = item.detail;
-        const itemDetaileClass = item.detail ? 'detail-text' : '';
-        const itemDisabled = item.disabled == undefined || item.disabled == false ? '' : 'disabled'
+        const itemDetaileClass = item.detail ? 'detail-text ' : '';
+        const itemDisabled = !item.disabled ? '' : 'disabled'
         const itemAddon = !item.addonId ? '' : item.addonId;
         let checkboxWrap = '';
         if(itemAddon){
-          const placeholder = item.placeholder == undefined ? '' : `placeholder='${item.placeholder}'`;
-          checkboxWrap = '';
-          checkboxWrap += '<div class="addon">';
-          checkboxWrap += ' <label class="checkbox-'+theme+' '+horizontal+disabled+itemDisabled+'">';
-          checkboxWrap += '   <span>';
-          checkboxWrap += `     <input ${itemId} ${itemClass} ${value} ${name} ${disabled} ${itemDisabled} ${itemDefault} type="checkbox" onChange="addonCheck('checkbox', '${item.addonId}', '${item.id}')" />`;
-          checkboxWrap += '     <span class="arrow"></span>';
-          checkboxWrap += '   </span>';
-          checkboxWrap += '   <span>'+label+'</span>';
-          checkboxWrap += ' </label>';
-          checkboxWrap += ' <div class="text-input-'+theme+'">';
-          checkboxWrap += '   <input id="'+item.addonId+'" '+itemClass+name+placeholder+'type="text" disabled/>';
-          checkboxWrap += ' </div>';
-          checkboxWrap += '</div>';
+          const placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'" ';
+          checkboxWrap =
+            '<div class="addon">'  +
+            '  <label class="checkbox-'+theme+' '+horizontal+disabled+itemDisabled+'">'  +
+            '    <span>'  +
+            '      <input '+itemId+itemClass+value+name+disabled+itemDisabled+itemDefault+' type="checkbox" onChange="addonCheck(\'checkbox\', \''+item.addonId+'\', \''+item.id+'\')" />'  +
+            '      <span class="arrow"></span>'  +
+            '    </span>'  +
+            '    <span>'+label+'</span>'  +
+            '  </label>'  +
+            '  <div class="text-input-'+theme+'">'  +
+            '    <input id="'+item.addonId+'" '+itemClass+name+placeholder+'type="text" disabled/>'  +
+            '  </div>'  +
+            '</div>';
           groupCheckbox += checkboxWrap;
         }else{
           if(itemDetaile){
-            checkboxWrap = ``;
-            checkboxWrap += `<label class='checkbox-${theme} ${horizontal} ${itemDetaileClass} ${disabled} ${itemDisabled}'>`;
-            checkboxWrap += ` <span>`;
-            checkboxWrap += `   <input ${itemId} ${itemClass} ${value} ${name} type='checkbox' ${disabled} ${itemDisabled} ${itemDefault}/>`;
-            checkboxWrap += `   <span class='arrow'></span>`;
-            checkboxWrap += ` </span>`;
-            checkboxWrap += ` <div>`;
-            checkboxWrap += `   <span>${label}</span>`;
-            checkboxWrap += `    <p>${itemDetaile}</p>`;
-            checkboxWrap += ` </div>`;
-            checkboxWrap += `</label>`;
+            checkboxWrap =
+              '<label class="checkbox-'+theme+' '+horizontal+itemDetaileClass+disabled+itemDisabled+' ">' +
+              '  <span>'  +
+              '    <input '+itemId+itemClass+value+disabled+name+itemDisabled+itemDefault+' type="checkbox" />' +
+              '    <span class="arrow"></span>' +
+              '  </span>' +
+              '  <div>' +
+              '    <span>'+label+'</span>'  +
+              '    <p>'+itemDetaile+'</p>'  +
+              '  </div>'  +
+              '</label>';
           }else {
-            checkboxWrap = ``;
-            checkboxWrap += `<label class='checkbox-${theme} ${horizontal} ${disabled} ${itemDisabled}'>`;
-            checkboxWrap += ` <span>`;
-            checkboxWrap += `   <input ${itemId} ${itemClass} ${value} ${name} type='checkbox' ${disabled} ${itemDisabled} ${itemDefault}/>`;
-            checkboxWrap += `   <span class='arrow'></span>`;
-            checkboxWrap += ` </span>`;
-            checkboxWrap += ` <span>${label}</span>`;
-            checkboxWrap += `</label>`;
+            checkboxWrap =
+              '<label class="checkbox-'+theme+' '+horizontal+disabled+itemDisabled+'">'  +
+              '  <span>'  +
+              '    <input '+itemId+itemClass+value+name+disabled+itemDisabled+itemDefault+' type="checkbox" />'  +
+              '    <span class="arrow"></span>'  +
+              '  </span>'  +
+              '  <span>'+label+'</span>'  +
+              '</label>';
           }
           groupCheckbox += checkboxWrap;
         }
       });
-      target.replaceWith(`<div ${wrapId} ${wrapClass}>${groupCheckbox}</div>`);
+    
+      target.replaceWith('<div '+wrapId+wrapClass+'>'+groupCheckbox+'</div>');
     },
     chip:function(target, size){
       const theme = target.attr('data-checkbox-theme');
       const name = target.attr('data-checkbox-name') ? 'name="'+target.attr('data-checkbox-name')+'"' : '';
       const disabled = !target.attr('data-checkbox-disabled') ? '' : 'disabled';
-      const id = target.attr('id');
       const wrapId = !target.attr('id') ? '' : 'id="'+target.attr("id")+'"';
       const wrapClass = !target.attr("class") ? '' : 'class="'+target.attr("class")+'"';
       const defaultOption = !target.attr('data-checkbox-default') ? '' : 'checked="checked"';
       const value = !target.attr('data-checkbox-value') ? '' : 'value="'+target.attr('data-checkbox-value')+'"';
       const label = !target.attr('data-checkbox-label') ? target.attr('data-checkbox-value') : target.attr('data-checkbox-label');
+      const vertical = target.attr("data-vertical") ? 'vertical' : ''
       const checkboxWrap =
-        '<label class="chip-choice-'+theme+' '+disabled+'">' +
+        '<label class="chip-choice-'+theme+' '+disabled+' '+vertical+'">' +
         '  <input '+wrapId+' '+wrapClass+' '+name+' '+disabled+' '+defaultOption+' '+value+' type="checkbox" />' +
         '  <span>'+label+'</span>' +
         '</label>';
@@ -160,41 +162,44 @@
       let treeList = '';
       $.each(options, function(index, item){
         const depth = item.depth;
-        const value = item.value == undefined ? `value = '${item.label}'` : `value = '${item.value}'`;
-        const label = item.label == undefined ? item.value : item.label;
-        const itemId = item.id == undefined ? '' : `id='${item.id}'`;
-        const itemClass = item.class == undefined ? '' : `class='${item.class}'`;
-        const itemDefault = item.default == undefined || item.default == false ? '' : 'checked="checked"'
-        const itemDisabled = item.disabled == undefined || item.disabled == false ? '' : 'disabled';
-        const itemName = item.name == undefined ? '' : `name='${item.name}'`;
+        const value = !item.value ? 'value="'+item.label+'" ' : 'value="'+item.value+'" ';
+        const label = !item.label ? item.value : item.label;
+        const itemId = !item.id ? '' : 'id="'+item.id+'" ';
+        const itemClass = !item.class ? '' : 'class="'+item.class+'" ';
+        const itemDefault = !item.default ? '' : 'checked="checked" '
+        const itemDisabled = !item.disabled ? '' : 'disabled';
+        const itemName = !item.name ? '' : 'name="'+item.name+'"';
         const treeName = !item.tree ? null : 'data-tree="'+item.tree+'"'
         let childList = '';
         let titleList = '';
         if(depth === 1){
-          titleList += `<li>`;
-          titleList += `  <label class='checkbox-${theme} ${itemDisabled} ${disabled}'>`;
-          titleList += `    <span>`;
-          titleList += `      <input ${itemId} ${value} ${itemClass} ${itemName} type='checkbox' data-tree-type='${item.tree}-parent' ${itemDefault} ${disabled} ${itemDisabled} onChange="treeCheck('${item.tree}', 'parent')" />`;
-          titleList += `      <span class='arrow'></span>`;
-          titleList += `    </span>`;
-          titleList += `    <span>${label}</span>`;
-          titleList += `  </label>`;
-          titleList += `</li>`;
+          titleList =
+            '<li>'  +
+            '  <label class="checkbox-'+theme+' '+itemDisabled+disabled+'">'  +
+            '    <span>'  +
+            '      <input '+itemId+value+itemClass+itemName+itemDefault+disabled+itemDisabled+' type="checkbox" data-tree-type="'+item.tree+'-parent" onChange="treeCheck(\''+item.tree+'\', \'parent\')" />' +
+            '      <span class="arrow"></span>' +
+            '    </span>' +
+            '    <span>'+label+'</span>'  +
+            '  </label>'  +
+            '</li>';
         }else{
-          childList += `<li class='child-list'>`;
-          childList += `  <label class='checkbox-${theme} ${itemDisabled} ${disabled}'>`;
-          childList += `    <span>`;
-          childList += `      <input ${itemId} ${value} ${itemClass} ${itemName} ${treeName} type='checkbox' data-tree-type='${item.tree}-child' ${itemDefault} ${disabled} ${itemDisabled} onChange="treeCheck('${item.tree}', 'child')" />`;
-          childList += `      <span class='arrow'></span>`;
-          childList += `    </span>`;
-          childList += `    <span>${label}</span>`;
-          childList += `  </label>`;
-          childList += `</li>`;
+          childList =
+            '<li class="child-list">' +
+            '  <label class="checkbox-'+theme+' '+itemDisabled+disabled+'">' +
+            '    <span>' +
+            '      <input '+itemId+value+itemClass+itemName+treeName+itemDefault+disabled+itemDisabled+' type="checkbox" data-tree-type="'+item.tree+'-child" onChange="treeCheck(\''+item.tree+'\', \'child\')" />' +
+            '      <span class="arrow"></span>' +
+            '    </span>' +
+            '    <span>'+label+'</span>' +
+            '  </label>' +
+            '</li>';
+            '';
         }
-        treeList += `${titleList}`;
-        treeList += `${childList}`;
+        treeList += titleList;
+        treeList += childList;
       });
-      target.replaceWith(`<div ${wrapId} class='tree-checkbox'><ul>${treeList}</ul></div>`);
+      target.replaceWith('<div '+wrapId+' class="tree-checkbox"><ul>'+treeList+'</ul></div>');
     },
     getSize:function(size){
       if(size === 's'){
@@ -262,8 +267,7 @@ function addonCheck(type, name, id, scale){
     }
   }else{  // radio
     const textInput= $(`input:text[name="${name}"]`);
-    const targetId = id.getAttribute('id');
-    const check = $('#'+targetId+'').is(":checked");
+    const check = $('#'+id+'').is(":checked");
     if(check === false){
       textInput.attr('disabled', true);
     }else{

@@ -1,10 +1,4 @@
 @mixin toggle($padding, $brand-color, $font-color, $font-size, $line-height){
-  // margin: 0;
-  // padding: 0;
-  // display: inline-block;
-  // vertical-align: middle;
-  // text-align: center;
-  // font-size:0.875rem;
   margin-bottom:16px;
   >input{
     display:none;
@@ -24,7 +18,7 @@
     background:none;
     &.off{
       position: relative;
-      margin-right:3px;
+      margin-right:8px;
       &:after{
         content:'';
         position:absolute;

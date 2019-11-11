@@ -2,13 +2,14 @@
   margin:0;
   padding:0;
   color:rgba(0,0,0,0.65);
-  margin:0 12px 8px 0;
+  margin:0 0 8px 0;
   display:block;
   cursor:pointer;
   >span:first-child{
     display:inline-block;
     position:relative;
-    top:0.1rem;
+    top:0.2rem;
+    float:left;
     >span{
       position:relative;
       display:inline-block;
@@ -121,15 +122,17 @@
       display:inline-block;
       user-select: none;
       cursor: pointer;
+      float:left;
+      width:calc(100% - 16px);
       >span{
-        padding:0 8px;
+        padding:0 0 0 8px;
         font-weight:400;
         font-size:$font-size;
         color:$font-color;
         line-height: $line-height;
       }
       >p{
-        padding:0 8px;
+        padding:0 0 0 8px;
         font-weight:400;
         font-size:$detail-font-size;
         color:$detail-font-color;
@@ -146,6 +149,8 @@
       font-size:$font-size;
       color:$font-color;
       line-height: $line-height;
+      float: left;
+      width:calc(100% - 16px);
     }
   }
 
@@ -185,6 +190,12 @@
       }
     }
   }
+
+  &:after{
+    content:'';
+    clear: both;
+    display:block;
+  }
 }
 
 .checkbox-wishket{
@@ -220,14 +231,12 @@
   }
 }
 
-.tree-checkbox{
+.treeview{
   >label{
     margin:0 0 12px 0;
   }
-  >ul > li{
-    &.child-list{
-      padding-left:28px;
-    }
+  ul{
+    padding-left:28px;
   }
   >span:first-child{
   }
@@ -252,6 +261,8 @@
 @mixin chip($type, $default-color, $hover-color, $brand-color, $brand-font-color, $font-size, $line-height){
   position:relative;
   display:inline-block;
+  user-select:none;
+  margin:4px 4px 8px 4px;
   &:hover{
     >span{
       background:$hover-color;
@@ -283,6 +294,7 @@
     line-height:$line-height;
     color:$color-gray600;
     display:inline-block;
+    cursor:pointer;
     >i{
       height: 18px;
       vertical-align: middle;
@@ -303,14 +315,27 @@
     >span{
       background:$color-gray100;
       opacity: 40%;
+      cursor:not-allowed;
     }
     &:hover, &:focus{
-      c> span{
+      > span{
         border-color:$color-gray200;
       }
     }
   }
+
+  &.vertical{
+    display:inline-block;
+    width:100%;
+    margin:4px 4px 8px 4px;
+  }
 }
+
+.chip-box{
+  margin:-4px;
+}
+
+
 
 .chip-choice-client{
   @include chip(choice, $color-gray100, $color-gray200, $color-client50, $color-client500, 0.875rem, 1.5rem);
@@ -322,4 +347,8 @@
 
 .chip-choice-wishket{
   @include chip(choice, $color-gray100, $color-gray200, $color-wishket50, $color-wishket500, 0.875rem, 1.5rem);
+}
+
+.child-list{
+  padding-left:28px;
 }

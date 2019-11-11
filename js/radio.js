@@ -16,124 +16,126 @@
     single:function(target, size){
       const theme = target.attr('data-theme');
       const detailText = target.attr('data-radio-detaile');
-      const detaileClass = detailText == undefined || detailText == false ? '' : 'detail-text';
-      const name = target.attr('data-radio-name') ? `name='${target.attr('data-radio-name')}'` : '';
-      const disabled = target.attr('data-radio-disabled') == undefined || target.attr('data-radio-disabled') == false ? '' : 'disabled';
-      const wrapId = target.attr('id') == undefined || target.attr('id') == false ? '' : `id='${target.attr('id')}'`;
-      const wrapClass = target.attr('class') == undefined || target.attr('class') == false ? '' : `class='${target.attr('class')}'`;
-      const defaultOption = target.attr('data-radio-default') == undefined || target.attr('data-radio-default') == false ? '' : 'checked="checked"';
-      const value = target.attr('data-radio-value') == undefined ? `value = '${target.attr('data-radio-label')}'` : `value = '${target.attr('data-radio-value')}'`;
-      const label = target.attr('data-radio-label') == undefined ? `${target.attr('data-radio-value')}` : `${target.attr('data-radio-label')}`;
-      const horizontal = target.attr('data-horizontal') == undefined || target.attr('data-horizontal') == false ? '' : 'horizontal';
+      const detaileClass = !detailText ? '' : 'detail-text';
+      const name = target.attr('data-radio-name') ? 'name="'+target.attr("data-radio-name")+'"' : '';
+      const disabled = !target.attr('data-radio-disabled') ? '' : 'disabled';
+      const wrapId = !target.attr('id') ? '' : `id='${target.attr('id')}'`;
+      const wrapClass = !target.attr('class') ? '' : 'class="'+target.attr("class")+'"';
+      const defaultOption = !target.attr('data-radio-default') ? '' : 'checked="checked"';
+      const value = !target.attr('data-radio-value') ? 'value="'+target.attr("data-radio-label")+'"' : 'value="'+target.attr("data-radio-value")+'"';
+      const label = !target.attr('data-radio-label') ? target.attr("data-radio-value") : target.attr("data-radio-label");
+      const horizontal = !target.attr('data-horizontal') ? '' : 'horizontal';
       const addonInput = target.data('addon-input');
-      const addonFunction = addonInput ? `onChange="addonCheck(${name})"` : '';
+      const addonFunction = addonInput ? 'onChange="addonCheck('+name+')"' : '';
       let radioWrap = '';
       if(detailText){
-        radioWrap = ``;
-        radioWrap += `<span>`;
-        radioWrap += ` <input ${wrapId} ${wrapClass} ${name} type='radio' ${value} ${defaultOption} ${value} ${disabled} ${addonFunction}/>`;
-        radioWrap += ` <span></span>`;
-        radioWrap += `</span>`;
-        radioWrap += `<div>`;
-        radioWrap += `  <span>${label}</span>`;
-        radioWrap += `  <p>${detailText}</p>`;
-        radioWrap += `</div>`;
+        radioWrap =
+          '<span>'  +
+          '  <input '+wrapId+wrapClass+name+value+defaultOption+value+disabled+addonFunction+' type="radio"'  +
+          '  <span><span class="dot"></span></span>'  +
+          '</span>'  +
+          '<div>'  +
+          '  <span>'+label+'</span>'  +
+          '  <p>'+detailText+'</p>'  +
+          '</div>';
       }else {
-        radioWrap = ``;
-        radioWrap += `<span>`;
-        radioWrap += ` <input ${wrapId} ${wrapClass} ${name} type='radio' ${defaultOption} ${value} ${disabled} ${addonFunction}/>`;
-        radioWrap += ` <span></span>`;
-        radioWrap += `</span>`;
-        radioWrap += `<span>${label}</span>`;
+        radioWrap =
+          '<span>'  +
+          '  <input '+wrapId+wrapClass+name+defaultOption+value+disabled+addonFunction+' type="radio" />' +
+          '  <span><span class="dot"></span></span>'  +
+          '</span>'  +
+          '<span>'+label+'</span>';
       }
       if(addonInput){
-        let addonInputBox = ``;
+        let addonInputBox = '';
         $.each(addonInput, function(index, item){
-          const itemId = item.id == undefined ? '' : `id='${item.id}'`;
-          const itemClass = item.class == undefined ? '' : `class='${item.class}'`;
-          const placeholder = item.placeholder == undefined ? '' : `placeholder='${item.placeholder}'`;
-          const itemTheme = item.theme == undefined ? theme : item.theme;
-          const inputType = item.type == undefined ? 'text' : item.inputType;
-          addonInputBox += `<div class='text-input-${itemTheme}'>`;
-          addonInputBox += ` <input ${itemId} ${itemClass} ${name} type='text' ${placeholder} disabled/>`;
-          addonInputBox += `</div>`;
+          const itemId = !item.id ? '' : 'id="'+item.id+'"';
+          const itemClass = !item.class ? '' : `class='${item.class}'`;
+          const placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'"';
+          const itemTheme = !item.theme ? theme : item.theme;
+          const inputType = !item.type ? 'text' : item.inputType;
+          addonInputBox =
+            '<div class="text-input-'+itemTheme+'">'
+            '  <input '+itemId+itemClass+name+placeholder+' type="text" disabled/>'
+            '</div>'
         });
-        target.replaceWith(`<div class='addon'><label class='radio-${theme} ${detaileClass} ${disabled}'>${radioWrap}</label> ${addonInputBox}</div>`);
+        target.replaceWith('<div class="addon clearfix"><label class="radio-'+theme+' '+detaileClass+disabled+'">'+radioWrap+'</label> '+addonInputBox+'</div>')
       }else{
-        target.replaceWith(`<label class='radio-${theme} ${horizontal} ${detaileClass} ${disabled}'>${radioWrap}</label>`);
+        target.replaceWith('<label class="clearfix radio-'+theme+' '+horizontal+' '+detaileClass+' '+disabled+'">'+radioWrap+'</label>');
       }
     },
     group:function(target, size){
       const options = target.data('options');
       const theme = target.attr('data-theme');
-      const name = target.attr('data-radio-name') == undefined ? '' : `${target.attr('data-radio-name')}'`;
-      const nameTag = target.attr('data-radio-name') == undefined ? '' : `name='${target.attr('data-radio-name')}'`;
-      const disabled = target.attr('data-radio-disabled') == undefined || target.attr('data-radio-disabled') == false ? '' : 'disabled';
+      const name = !target.attr('data-radio-name') ? undefined : target.attr("data-radio-name");
+      const nameTag = !name ? '' : 'name="'+name+'"';
+      const disabled = !target.attr('data-radio-disabled') ? '' : 'disabled';
       const detailText = target.attr('data-radio-detaile');
       const detaileClass = detailText ? 'detail-text' : '';
-      const wrapId = target.attr('id') == undefined ? '' : `id='${target.attr('id')}'`;
-      const wrapClass = target.attr('class') == undefined ? '' : `class='${target.attr('class')}'`;
+      const wrapId = !target.attr('id') ? '' : 'id="'+target.attr("id")+'"';
+      const wrapClass = !target.attr('class') ? '' : 'class="'+target.attr("class")+'"';
       const dataAddOn = target.attr('data-addon-id') ? target.attr('data-addon-id') : false;
-      const horizontal = target.attr('data-horizontal') == undefined || target.attr('data-horizontal') == false ? '' : 'horizontal';
-      const dataAddonEvent = !dataAddOn ? '' : `onChange="addonCheck('radio', ${nameTag}, ${dataAddOn})"`;
+      const horizontal = !target.attr('data-horizontal') ? '' : 'horizontal';
+      const dataAddonEvent = !dataAddOn ? '' : 'onChange="addonCheck(\'radio\',\''+name+'\',\''+dataAddOn+'\')"';
+      
       let groupradio = '';
       $.each(options, function(index, item){
-        const value = item.value == undefined ? `value = '${item.label}'` : `value = '${item.value}'`;
-        const label = item.label == undefined ? item.value : item.label;
-        const itemId = item.id == undefined ? '' : `id='${item.id}'`;
-        const itemClass = item.class == undefined ? '' : `class='${item.class}'`;
-        const itemDefault = item.default == undefined || item.default == false ? '' : 'checked="checked"';
+        const value = !item.value ? 'value="'+item.label+'"' : 'value="'+item.value+'"';
+        const label = !item.label ? item.value : item.label;
+        const itemId = !item.id ? '' : 'id="'+item.id+'"';
+        const itemClass = !item.class? '' : 'class="'+item.class+'"';
+        const itemDefault = !item.default ? '' : 'checked="checked"';
         const itemDetaile = item.detail;
         const itemDetaileClass = item.detail ? 'detail-text' : '';
-        const itemDisabled = item.disabled == undefined || item.disabled == false ? '' : 'disabled';
+        const itemDisabled = !item.disabled ? '' : 'disabled';
         let radioWrap = '';
         if(item.addonType){
-          const addonId = item.addonId == undefined ? '' : `id='${item.addonId}'`;
-          const addonClass = item.addonClass == undefined ? '' : `id='${item.addonClass}'`;
-          const placeholder = item.placeholder == undefined ? '' : `placeholder='${item.placeholder}'`;
-          radioWrap = ``;
-          radioWrap += `<div class='${horizontal}'>`;
-          radioWrap += `<div class='addon'>`;
-          radioWrap += `  <label class='radio-${theme} ${disabled} ${itemDisabled}'>`;
-          radioWrap += `    <span>`;
-          radioWrap += `      <input id='${dataAddOn}' ${itemClass} ${value} ${nameTag} type='radio' ${disabled} ${itemDisabled} ${itemDefault} onChange="addonCheck('radio', ${nameTag}, ${dataAddOn})" />`;
-          radioWrap += `    <span class='arrow'></span>`;
-          radioWrap += `    </span>`;
-          radioWrap += `      <span>${label}</span>`;
-          radioWrap += `  </label>`;
-          radioWrap += `  <div class='text-input-${theme}'>`;
-          radioWrap += `    <input ${addonId} ${addonClass} ${nameTag} type='text' ${placeholder} disabled/>`;
-          radioWrap += `  </div>`;
-          radioWrap += `</div>`;
-          radioWrap += `</div>`;
+          const addonId = !item.addonId ? '' : 'id="'+item.addonId+'"';
+          const addonClass = !item.addonClass ? '' : 'id="'+item.addonClass+'"';
+          const placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'"';
+          radioWrap =
+            '<div class="'+horizontal+'">'  +
+            ' <div class="addon">'  +
+            '   <label class="radio-'+theme+' '+disabled+' '+itemDisabled+'">'  +
+            '     <span>' +
+            '       <input id="'+dataAddOn+'" '+itemClass+' '+value+' '+nameTag+' '+disabled+' '+itemDisabled+' '+itemDefault+' onChange="addonCheck(\'radio\',\''+name+'\',\''+dataAddOn+'\')" type="radio" />'  +
+            '       <span><span class="dot"></span></span>' +
+            '     </span>'  +
+            '     <span>'+label+'</span>' +
+            '   </label>' +
+            '   <div class="text-input-'+theme+'">' +
+            '     <input '+addonId+' '+addonClass+' '+nameTag+' '+placeholder+' disabled type="text" />'  +
+            '   </div>' +
+            ' </div>' +
+            '</div>';
           groupradio += radioWrap;
         }else{
           if(itemDetaile){
-            radioWrap = ``;
-            radioWrap += `<label class='radio-${theme} ${horizontal} ${itemDetaileClass} ${disabled} ${itemDisabled}'>`;
-            radioWrap += ` <span>`;
-            radioWrap += `   <input ${itemId} ${itemClass} ${value} ${nameTag} type='radio' ${disabled} ${itemDisabled} ${itemDefault} ${dataAddonEvent} />`;
-            radioWrap += `   <span class='arrow'></span>`;
-            radioWrap += ` </span>`;
-            radioWrap += ` <div>`;
-            radioWrap += `   <span>${label}</span>`;
-            radioWrap += `    <p>${itemDetaile}</p>`;
-            radioWrap += ` </div>`;
-            radioWrap += `</label>`;
+            radioWrap =
+              '<label class="radio-'+theme+' '+horizontal+' '+itemDetaileClass+' '+disabled+' '+itemDisabled+'">' +
+              ' <span>' +
+              '   <input '+itemId+' '+itemClass+' '+value+' '+nameTag+' '+disabled+' '+itemDisabled+' '+itemDefault+' '+dataAddonEvent+' type="radio" />' +
+              '   <span><span class="dot"></span></span>' +
+              ' </span>'  +
+              ' <div>'  +
+              '   <span>'+label+'</span>' +
+              '   <p>'+itemDetaile+'</p>' +
+              ' </div>' +
+              '</label>';
           }else {
-            radioWrap = ``;
-            radioWrap += `<label class='radio-${theme} ${horizontal} ${disabled} ${itemDisabled}'>`;
-            radioWrap += ` <span>`;
-            radioWrap += `   <input ${itemId} ${itemClass} ${value} ${nameTag} type='radio' ${disabled} ${itemDisabled} ${itemDefault} ${itemDetaileClass} ${dataAddonEvent} />`;
-            radioWrap += `   <span class='arrow'></span>`;
-            radioWrap += ` </span>`;
-            radioWrap += ` <span>${label}</span>`;
-            radioWrap += `</label>`;
+            radioWrap =
+              '<label class="radio-'+theme+' '+horizontal+' '+disabled+' '+itemDisabled+'">'  +
+              ' <span>' +
+              '   <input '+itemId+' '+itemClass+' '+value+' '+nameTag+' '+disabled+' '+itemDisabled+' '+itemDefault+' '+itemDetaileClass+' '+dataAddonEvent+' type="radio" />'  +
+              '   <span><span class="dot"></span></span>' +
+              ' </span>'  +
+              ' <span>'+label+'</span>' +
+              '</label>';
           }
           groupradio += radioWrap;
         }
       });
-      target.replaceWith(`<div ${wrapId} ${wrapClass}>${groupradio}</div>`);
+      target.replaceWith('<div '+wrapId+' class="clearfix '+wrapClass+'">'+groupradio+'</div>')
     },
     getSize:function(size){
       if(size === 's'){

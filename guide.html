@@ -164,10 +164,10 @@
       <CheckBox data-checkbox-type='single' data-horizontal=true data-checkbox-name='single01' data-checkbox-label='label01' data-checkbox-theme='client' data-checkbox-default='checked'></CheckBox>
       <CheckBox data-checkbox-type='single' data-horizontal=true data-checkbox-name='single01' data-checkbox-label='label01' data-checkbox-theme='client' data-checkbox-default='checked'></CheckBox>
       <CheckBox data-checkbox-type='single' data-checkbox-name='single02' data-checkbox-value='value02' data-checkbox-label='label02' data-checkbox-theme='partner' ></CheckBox>
-      <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-options='체크박스 teststests' data-checkbox-detaile='hohohohoho reststset'></CheckBox>
-      <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-options='체크박스 teststests' data-checkbox-detaile='hohohohoho reststset'></CheckBox>
-      <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-options='체크박스 teststests' data-checkbox-detaile='hohohohoho reststset'></CheckBox>
-      <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-options='체크박스 teststests' data-checkbox-detaile='hohohohoho reststset'></CheckBox>
+      <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-checkbox-label="테스트" data-options='체크박스 teststests' data-checkbox-detaile='hohohohoho reststset'></CheckBox>
+      <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-checkbox-label="테스트" data-options='체크박스 teststests' data-checkbox-detaile='hohohohoho reststset'></CheckBox>
+      <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-checkbox-label="테스트" data-options='체크박스 teststests' data-checkbox-detaile='hohohohoho reststset'></CheckBox>
+      <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-checkbox-label="상세 텍스트" data-options='체크박스 teststests' data-checkbox-detaile='마디씩 위에 잠, 별이 소녀들의 아무 멀리 까닭입니다. 나의 책상을 하나에 이네들은 보고, 벌써 벌레는 노루, 까닭입니다. 노새, 헤일 별 밤이 언덕 위에 덮어 별빛이 거외다. 않은 한 위에 자랑처럼 동경과 내린 벌레는 아무 이름자 있습니다. 하나의 하나에 소학교 까닭입니다. 가난한 무덤 겨울이 까닭이요, 별에도 당신은 어머니, 까닭입니다. 했던 이름자를 때 소녀들의 있습니다. 하나에 하나 둘 소녀들의 쉬이 사랑과 까닭입니다. 별 둘 라이너 가을 나는 소학교 추억과 봅니다.'></CheckBox>
       <CheckBox
         id='group01'
         class='group02'
@@ -178,7 +178,19 @@
         data-options='[
           {"value":"사과", "disabled":"true"},
           {"label":"배", "id" : "sample Group01", "default":"true"},
-          {"label":"토마토", "value":"토마토2", "detail": "hohoho상세페이지", "class":"sampleG"}]'
+          {"label":"토마토", "value":"토마토2", "detail": "hohohohoho reststsethohohohstset", "class":"sampleG"}]'
+      >
+      </CheckBox>
+      <CheckBox
+        id='group02'
+        class='group02'
+        data-checkbox-type='group'
+        data-checkbox-name='group02'
+        data-checkbox-theme='client'
+        data-options='[
+          {"value":"사과", "disabled":"true"},
+          {"label":"배", "id" : "sample Group01", "default":"true"},
+          {"label":"토마토", "value":"토마토2", "detail": "hohohohoho reststsethohohohstset", "class":"sampleG"}]'
       >
       </CheckBox>
       <CheckBox
@@ -211,31 +223,29 @@
         }]'
       >
       </CheckBox>
-      <div>
-        <CheckBox
-          data-checkbox-type='group'
-          data-checkbox-name='tree01'
-          data-checkbox-theme='client'
-          data-options='[
-            {"value":"그룹 인풋 테스트1", "disabled":"true"},
-            {"label":"그룹 인풋 테스트2", "id" : "sample Group01", "default":"true"},
-            {
-              "id":"groupAddonCheck",
-              "label":"그룹 인풋 테스트3",
-              "value":"토마토2",
-              "addonType":"input",
-              "addonId":"groupAddonText",
-              "placeholder":"플레스홀더 제발"
-            }
-          ]'
-        >
-        </CheckBox>
-      </div>
+      <CheckBox
+        data-checkbox-type='group'
+        data-checkbox-name='tree01'
+        data-checkbox-theme='client'
+        data-options='[
+          {"value":"그룹 인풋 테스트1", "disabled":"true"},
+          {"label":"그룹 인풋 테스트2", "id" : "sample Group01", "default":"true"},
+          {
+            "id":"groupAddonCheck",
+            "label":"그룹 인풋 테스트3",
+            "value":"토마토2",
+            "addonType":"input",
+            "addonId":"groupAddonText",
+            "placeholder":"플레스홀더 제발"
+          }
+        ]'
+      >
+      </CheckBox>
     </section>
     <section id='radio'>
       <RadioBox data-radio-type='group' data-radio-name='aaaa12' data-theme='client'
         data-options='[
-          {"value":"사과", "detail":"adsfdadafdafs"},
+          {"value":"사과", "detail":"adsfdadafdafs", "disabled":"disabled", "default":"checked"},
           {"value":"배배배", "detail":"adsfdadafdafs"},
           {"value":"토마토", "detail":"토마토마토마토마토"},
           {"value":"바나나", "detail":"바나나바나바나"}
@@ -254,7 +264,7 @@
         data-horizontal=true
         data-options='[
         {"value":"사과"},
-        {"label":"배", "id" : "sample Group01", "default":"check"},
+        {"label":"배", "id" : "sample Group01"},
         {
           "label":"토마토",
           "detail": "hohoho상세페이지",
@@ -265,11 +275,23 @@
         }
         ]'
       ></RadioBox>
+      <RadioBox data-radio-type='group' data-radio-name='rsingle13' data-theme='wishket'
+        data-addon-id='rsingle13Addon'
+        data-options='[
+        {"value":"사과"},
+        {"label":"배", "id" : "sample Group02"},
+        {
+          "label":"토마토",
+          "detail": "hohoho상세페이지",
+          "id":"checkInput12",
+          "addonType":"input",
+          "addonId":"textInput12",
+          "placeholder":"토마토토마토토토토토토톡"
+        }
+        ]'
+      ></RadioBox>
     </section>
     <section>
-      <button id='gogogo' data-toggle-type data-theme="wishket" aria-checked='true' data-toggle-text='토글 상세 질문 내용 입니다.ㄴㅇㅁㄹㅇㄴㄴ'></button>
-      <button data-toggle-type data-theme="partner" aria-checked='' data-toggle-text='두번째 토글 상세 질문 내용 입니다.ㄴㅇㅁㄹㅇㄴㄴ'></button>
-      <button data-toggle-type data-theme="client" aria-checked='' data-toggle-text='세번째 토글 상세 질문 내용 입니다.ㄴㅇㅁㄹㅇㄴㄴ'></button>
 
       <div class="toggle theme-wishket">
         <p>토글 상세 질문 내용</p>
@@ -306,10 +328,20 @@
       </div>-->
     </section>
     <section>
-      <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value01' data-checkbox-name='chipvalue' data-checkbox-theme='client' data-checkbox-default=true ></CheckBox>
-      <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value02' data-checkbox-name='chipvalue' data-checkbox-theme='partner' data-checkbox-default=true ></CheckBox>
-      <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value03' data-checkbox-name='chipvalue' data-checkbox-theme='wishket' data-checkbox-disabled=true></CheckBox>
+      <div class="chip-box">
+        <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value01' data-checkbox-name='chipvalue' data-checkbox-theme='client' data-vertical=true data-checkbox-default=true></CheckBox>
+        <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value01' data-checkbox-name='chipvalue' data-checkbox-theme='client' data-vertical=true data-checkbox-default=true></CheckBox>
+        <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value02' data-checkbox-name='chipvalue' data-checkbox-theme='partner' data-checkbox-default=true ></CheckBox>
+        <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value03' data-checkbox-name='chipvalue' data-checkbox-theme='wishket' data-checkbox-disabled=true></CheckBox>
+      </div>
     </section>
+    <select name="select-test01">
+      <option>test1</option>
+      <option>test2</option>
+      <option>test3</option>
+      <option>test4</option>
+      <option>test5</option>
+    </select>
   </div>
   <script>
     $(document).ready(function(value){
@@ -317,6 +349,7 @@
       $.uiCheckbox.setting();
       $.uiRadio.setting();
       $.uiToggle.setting();
+      // $('select[name="select-test01"]').uiSelect();
       // $("input[type='radio'], input[type='checkbox']").uiRadio();
     });
     $(window).on('load', function(){
