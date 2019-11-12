@@ -164,10 +164,14 @@
       color:$color-red500;
     }
   }
-  &.label-effect > label{
-    transform:translateY(-20px);
-    font-size:0.688rem;
-    color:$brand-color;
+  &.label-effect{
+    >input:focus ~ label{
+      color:$brand-color !important;
+    }
+    > label{
+      transform:translateY(-20px);
+      font-size:0.688rem; 
+    }
   }
 }
 
