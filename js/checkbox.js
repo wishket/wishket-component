@@ -19,6 +19,7 @@
       });
     },
     single:function(target, size){
+      let label;
       const theme = target.attr("data-checkbox-theme");
       const detailText = target.attr("data-checkbox-detaile");
       const detaileClass = !detailText ? '' : 'detail-text';
@@ -29,12 +30,16 @@
       const wrapClass = !target.attr("class") ? '' : 'class="'+target.attr("class")+'" ';
       const defaultOption = !target.attr("data-checkbox-default") ? '' : 'checked="checked" ';
       const value = !target.attr("data-checkbox-value") ? 'value="'+target.attr("data-checkbox-label")+'" ' : 'value="'+target.attr("data-checkbox-value")+'" ';
-      const label = !target.attr('data-checkbox-label') ? target.attr("data-checkbox-value") : target.attr("data-checkbox-label");
       const horizontal = !target.attr("data-horizontal") ? '' : "horizontal ";
       const addonInput = target.data("addon-input");
       const dataAddOn = target.attr('data-addon-id') ? target.attr('data-addon-id') : '';
       //여기 다시
       const addonFunction = !addonInput ? '' : `onChange="addonCheck('checkbox', '${dataAddOn}', '${id}')"`;
+      if(addonInput){
+        label ='';
+      }else{
+        label = !target.attr('data-checkbox-label') ? target.attr("data-checkbox-value") : target.attr("data-checkbox-label");
+      }
       let checkboxWrap = '';
       if(detailText){
         checkboxWrap =
@@ -100,7 +105,7 @@
             '      <input '+itemId+itemClass+value+name+disabled+itemDisabled+itemDefault+' type="checkbox" onChange="addonCheck(\'checkbox\', \''+item.addonId+'\', \''+item.id+'\')" />'  +
             '      <span class="arrow"></span>'  +
             '    </span>'  +
-            '    <span>'+label+'</span>'  +
+            '    <span></span>'  +
             '  </label>'  +
             '  <div class="text-input-'+theme+'">'  +
             '    <input id="'+item.addonId+'" '+itemClass+name+placeholder+'type="text" disabled/>'  +

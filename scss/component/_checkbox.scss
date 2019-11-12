@@ -118,21 +118,21 @@
   }
   @if $type == detail {
     >div{
+      float:left;
       vertical-align:top;
       display:inline-block;
       user-select: none;
       cursor: pointer;
-      float:left;
       width:calc(100% - 16px);
       >span{
-        padding:0 0 0 8px;
+        padding:0 0 0 12px;
         font-weight:400;
         font-size:$font-size;
         color:$font-color;
         line-height: $line-height;
       }
       >p{
-        padding:0 0 0 8px;
+        padding:0 0 0 12px;
         font-weight:400;
         font-size:$detail-font-size;
         color:$detail-font-color;
@@ -144,7 +144,7 @@
     >span:last-child{
       user-select: none;
       cursor: pointer;
-      padding:0 8px;
+      padding:0 0 0 12px;
       font-weight:400;
       font-size:$font-size;
       color:$font-color;
@@ -247,14 +247,17 @@
 }
 
 .addon{
-  display: flex;
   align-items:center;
   >label{
     margin-bottom:0;
+    width:16px;
+    float:left;
   }
   >div{
+    margin-left:12px;
     padding-bottom:0;
-    flex:1;
+    float:left;
+    width:calc(100% - 12px);
   }
 }
 
