@@ -236,22 +236,52 @@
       </div>
     </section>
     <section clase="select">
-      <select id="select-example01" class="ui-label-select label-select theme-wishket" name="ui-select-example" style="margin-bottom:300px">
-        <option value="1">서울특별시</option>
-        <option value="2">부산광역시</option>
-        <option value="3">울산광역시</option>
-        <option value="4">대구광역시</option>
-        <option value="5">인청광역시</option>
+      <select id="select-example01" class="ui-label-select theme-wishket" name="ui-select-example" style="margin-bottom:300px" data-width="300px">
+        <option>광역시</option>
+        <option value="1">서울특별시1</option>
+        <option value="2">부산광역시2</option>
+        <option value="3">울산광역시3</option>
+        <option value="4">대구광역시4</option>
+        <option value="5">인청광역시5</option>
+        <option value="6">서울특별시6</option>
+        <option value="7">부산광역시7</option>
+        <option value="8">울산광역시8</option>
+        <option value="9">대구광역시9</option>
+        <option value="10">인청광역시10인청광역시10인청광역시10인청광역시10인청광역시10</option>
+        <option value="11">서울특별시11</option>
+        <option value="12">부산광역시12</option>
+        <option value="13">울산광역시13</option>
+        <option value="14">대구광역시14</option>
+        <option value="15">인청광역시15</option>
+        <option value="16">서울특별시16</option>
       </select>
 
-      <div>
-        <select id="select-example02" class="ui-label-select label-select theme-wishket" name="ui-select-example02" style="margin-bottom:100px">
-          <option value="1">강남구</option>
-          <option value="2">서초구</option>
-          <option value="3">관악구</option>
-          <option value="4">동작구</option>
-        </select>
-      </div>
+      <select id="select-example02" class="ui-label-select theme-wishket" name="ui-select-example02" style="margin-bottom:100px" >
+        <option>구동리 옵션</option>
+        <option value="1">강남구</option>
+        <option value="2">서초구</option>
+        <option value="3">관악구</option>
+        <option value="4">동작구</option>
+      </select>
+
+      <select id="select-example02" class="ui-label-select theme-wishket" name="ui-select-example02" style="margin-bottom:100px" >
+        <option>레이블 옵션</option>
+        <option value="1">강남구</option>
+        <option value="2">서초구</option>
+        <option value="3">관악구</option>
+        <option value="4">동작구</option>
+      </select>
+
+      <select id="select-example03" class="ui-label-select theme-wishket" name="ui-select-example03" style="margin-bottom:100px" >
+        <option>자동차</option>
+        <option value="1">도요타</option>
+        <option value="2">기아</option>
+        <option value="3">현대</option>
+        <option value="4">아우디</option>
+        <option value="5">벤츠</option>
+        <option value="6">BMW</option>
+        <option value="7">푸조</option>
+      </select>
       <!-- <div class="ui-label-select theme-client active" style="margin-bottom:300px;">
         <span class="select-box ">
           <span class="label">레이블</span>
@@ -287,8 +317,7 @@
       $.uiCheckbox.setting();
       $.uiRadio.setting();
       $.uiToggle.setting();
-      $("#select-example01").uiSelect();
-      $("#select-example02").uiSelect();
+      $("#select-example01, #select-example02, #select-example03").uiSelect();
     });
     $(window).on('load', function(){
     });
