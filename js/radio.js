@@ -19,7 +19,7 @@
       const detaileClass = !detailText ? '' : 'detail-text';
       const name = target.attr('data-radio-name') ? 'name="'+target.attr("data-radio-name")+'"' : '';
       const disabled = !target.attr('data-radio-disabled') ? '' : 'disabled';
-      const wrapId = !target.attr('id') ? '' : `id='${target.attr('id')}'`;
+      const wrapId = !target.attr('id') ? '' : 'id="'+target.attr("id")+'" ';
       const wrapClass = !target.attr('class') ? '' : 'class="'+target.attr("class")+'"';
       const defaultOption = !target.attr('data-radio-default') ? '' : 'checked="checked"';
       const value = !target.attr('data-radio-value') ? 'value="'+target.attr("data-radio-label")+'"' : 'value="'+target.attr("data-radio-value")+'"';
@@ -50,7 +50,7 @@
         let addonInputBox = '';
         $.each(addonInput, function(index, item){
           const itemId = !item.id ? '' : 'id="'+item.id+'"';
-          const itemClass = !item.class ? '' : `class='${item.class}'`;
+          const itemClass = !item.class ? '' : 'class="'+item.class+'" ';
           const placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'"';
           const itemTheme = !item.theme ? theme : item.theme;
           const inputType = !item.type ? 'text' : item.inputType;
@@ -101,7 +101,7 @@
             '       <input id="'+dataAddOn+'" '+itemClass+' '+value+' '+nameTag+' '+disabled+' '+itemDisabled+' '+itemDefault+' onChange="addonCheck(\'radio\',\''+name+'\',\''+dataAddOn+'\')" type="radio" />'  +
             '       <span><span class="dot"></span></span>' +
             '     </span>'  +
-            '     <span>'+label+'</span>' +
+            '     <span> </span>' +
             '   </label>' +
             '   <div class="text-input-'+theme+'">' +
             '     <input '+addonId+' '+addonClass+' '+nameTag+' '+placeholder+' disabled type="text" />'  +

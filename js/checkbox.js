@@ -34,7 +34,8 @@
       const addonInput = target.data("addon-input");
       const dataAddOn = target.attr('data-addon-id') ? target.attr('data-addon-id') : '';
       //여기 다시
-      const addonFunction = !addonInput ? '' : `onChange="addonCheck('checkbox', '${dataAddOn}', '${id}')"`;
+      const addonFunction = !addonInput ? '' : 'onChange="addonCheck(\'checkbox\', \''+dataAddOn+'\', \''+id+'\')"';
+      
       if(addonInput){
         label ='';
       }else{
@@ -60,7 +61,7 @@
           '<span>'+label+'</span>';
       }
       if(addonInput){
-        let addonInputBox = ``;
+        let addonInputBox = '';
         $.each(addonInput, function(index, item){
           const itemClass = !item.class ? '' : 'class="'+item.class+'" ';
           const placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'" ';
@@ -161,9 +162,9 @@
     tree:function(target, size){
       const options = target.data('options');
       const theme = target.attr('data-checkbox-theme');
-      const wrapId = target.attr('id') == undefined || false ? '' : `id='${target.attr('id')}'`;
-      const wrapClass = target.attr('class') == undefined ? '' : `class='${target.attr('class')}'`;
-      const disabled = target.attr('data-checkbox-disabled') == undefined || target.attr('data-checkbox-disabled') == false ? '' : 'disabled';
+      const wrapId = !target.attr("id") ? '' : 'id="'+target.attr("id")+' "';
+      const wrapClass = !target.attr("class") ? '' : 'class="'+target.attr("clas")+' "';
+      const disabled = !target.attr('data-checkbox-disabled') ? '' : 'disabled';
       let treeList = '';
       $.each(options, function(index, item){
         const depth = item.depth;
@@ -221,10 +222,10 @@
 })( jQuery, window, document );
 
 function treeCheck(name, type){
-  const length = $(`input:checkbox[data-tree="${name}"]`).length;
-  const checkLength = $(`input:checkbox[data-tree="${name}"]:checked`).length;
-  const parentTarget = $(`input[data-tree-type="${name}-parent"]`);
-  const childTarget = $(`input[data-tree-type="${name}-child"]`);
+  const length = $('input:checkbox[data-tree="'+name+'"]').length;
+  const checkLength = $('input:checkbox[data-tree="'+name+'"]:checked').length;
+  const parentTarget = $('input[data-tree-type="'+name+'-parent"]');
+  const childTarget = $('input[data-tree-type="'+name+'-child"]');
   if(type === 'parent'){
     if(length > checkLength){
       parentTarget.next().removeClass('minus-icon');
@@ -271,7 +272,7 @@ function addonCheck(type, name, id, scale){
       textInput.attr('disabled', false);
     }
   }else{  // radio
-    const textInput= $(`input:text[name="${name}"]`);
+    const textInput= $('input:text[name="'+name+'"]');
     const check = $('#'+id+'').is(":checked");
     if(check === false){
       textInput.attr('disabled', true);

@@ -20,12 +20,12 @@
       const helperText = target.attr('data-input-helper');
       const theme = target.attr('data-input-theme');
       const maxlength = target.attr('maxlength');
-      target.wrap(`<div class='text-input-${theme} ${size}'></div>`);
-      target.after(`<span class='helper-text'>${helperText}</span>`);
-      target.after(`<span class='word-length'>0/${maxlength}</span>`);
+      target.wrap('<div class="text-input-'+theme+' '+size+'"></div>');
+      target.after('<span class="helper-text">'+helperText+'</span>');
+      target.after('<span class="word-length">0/'+maxlength+'</span>');
       target.bind('change keydown keyup',function(){
         const count = target.val().length;
-        target.next().html(`${count}/${maxlength}`);
+        target.next().html(''+count+'/'+maxlength+'');
      });
     },
     labelInput:function(target, size){
@@ -37,8 +37,9 @@
       if(icon && iconPosition){
         iconPosition = $.uiInput.getIconPosition(iconPosition);
       }
-      target.wrap(`<div class='label-input-${theme} ${iconPosition}'></div>`)
-      target.after(`<label for='${forName}'>${labelText}</label>`);
+      target.wrap('<div class="label-input-'+theme+' '+iconPosition+'"></div>');
+      target.after('<label for="'+forName+'">'+labelText+'</label>');
+      target.after('<label for="'+forName+'">'+labelText+'</label>');
       target.bind('focus',function(){
         target.parent().addClass('label-effect');
       });
