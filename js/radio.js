@@ -101,7 +101,7 @@
             '       <input id="'+dataAddOn+'" '+itemClass+' '+value+' '+nameTag+' '+disabled+' '+itemDisabled+' '+itemDefault+' onChange="addonCheck(\'radio\',\''+name+'\',\''+dataAddOn+'\')" type="radio" />'  +
             '       <span><span class="dot"></span></span>' +
             '     </span>'  +
-            '     <span> </span>' +
+            '     <span style="display:none;"></span>' +
             '   </label>' +
             '   <div class="text-input-'+theme+'">' +
             '     <input '+addonId+' '+addonClass+' '+nameTag+' '+placeholder+' disabled type="text" />'  +
