@@ -2835,8 +2835,7 @@ button {
   font-weight: 400;
   cursor: pointer;
   display: inline-block;
-  min-width: 260px;
-  margin-bottom: 32px; }
+  min-width: 260px; }
   .ui-label-select.theme-wishket > .select-box {
     position: relative;
     padding: 25px 51px 9px 13px;
@@ -2930,8 +2929,7 @@ button {
   font-weight: 400;
   cursor: pointer;
   display: inline-block;
-  min-width: 260px;
-  margin-bottom: 32px; }
+  min-width: 260px; }
   .ui-label-select.theme-client > .select-box {
     position: relative;
     padding: 25px 51px 9px 13px;
@@ -3025,8 +3023,7 @@ button {
   font-weight: 400;
   cursor: pointer;
   display: inline-block;
-  min-width: 260px;
-  margin-bottom: 32px; }
+  min-width: 260px; }
   .ui-label-select.theme-partner > .select-box {
     position: relative;
     padding: 25px 51px 9px 13px;
@@ -3137,13 +3134,17 @@ button {
   display: none; }
 
 .ui-autocomplete.theme-wishket {
-  padding: 8px;
+  padding: 4px 8px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  color: #616161; }
+  color: #616161;
+  display: flex;
+  flex-wrap: wrap; }
   .ui-autocomplete.theme-wishket > input {
+    min-width: 30px;
+    flex: 1;
     border: 0;
     margin: 0 4px;
     font-size: 0.875rem;
@@ -3159,7 +3160,7 @@ button {
     background: #eeeeee;
     font-size: 0.813rem;
     line-height: 1.25rem;
-    margin: 0 4px;
+    margin: 4px;
     position: relative; }
     .ui-autocomplete.theme-wishket > .autocomplete-label > i {
       position: absolute;
@@ -3173,13 +3174,17 @@ button {
     color: #bdbdbd; }
 
 .ui-autocomplete.theme-client {
-  padding: 8px;
+  padding: 4px 8px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  color: #616161; }
+  color: #616161;
+  display: flex;
+  flex-wrap: wrap; }
   .ui-autocomplete.theme-client > input {
+    min-width: 30px;
+    flex: 1;
     border: 0;
     margin: 0 4px;
     font-size: 0.875rem;
@@ -3195,7 +3200,7 @@ button {
     background: #eeeeee;
     font-size: 0.813rem;
     line-height: 1.25rem;
-    margin: 0 4px;
+    margin: 4px;
     position: relative; }
     .ui-autocomplete.theme-client > .autocomplete-label > i {
       position: absolute;
@@ -3209,13 +3214,17 @@ button {
     color: #bdbdbd; }
 
 .ui-autocomplete.theme-partner {
-  padding: 8px;
+  padding: 4px 8px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  color: #616161; }
+  color: #616161;
+  display: flex;
+  flex-wrap: wrap; }
   .ui-autocomplete.theme-partner > input {
+    min-width: 30px;
+    flex: 1;
     border: 0;
     margin: 0 4px;
     font-size: 0.875rem;
@@ -3231,7 +3240,7 @@ button {
     background: #eeeeee;
     font-size: 0.813rem;
     line-height: 1.25rem;
-    margin: 0 4px;
+    margin: 4px;
     position: relative; }
     .ui-autocomplete.theme-partner > .autocomplete-label > i {
       position: absolute;
