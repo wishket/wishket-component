@@ -11,6 +11,8 @@
     <script type="text/javascript" src="./js/radio.js"></script>
     <script type="text/javascript" src="./js/toggle.js"></script>
     <script type="text/javascript" src="./js/select.js"></script>
+    <script type="text/javascript" src="./js/autocomplete.js"></script>
+    <script type="text/javascript" src="./js/test.js"></script>
     <link rel="stylesheet" href="./css/component.css">
     <link rel="stylesheet" href="./css/guide.css">
 </head>
@@ -243,7 +245,7 @@
         <option value="3">울산광역시3</option>
         <option value="4">대구광역시4</option>
         <option value="5">인청광역시5</option>
-        <option value="6">서울특별시6</option>
+        <option value="6" selected>서울특별시6</option>
         <option value="7">부산광역시7</option>
         <option value="8">울산광역시8</option>
         <option value="9">대구광역시9</option>
@@ -282,6 +284,18 @@
         <option value="6">BMW</option>
         <option value="7">푸조</option>
       </select>
+
+      <input id="autocomple-example01" class="ui-autocomplete theme-partner" value='photoshop, illustrator, sketch' placeholder="아 제발" type="text" />
+      <input id="autocomple-example02" class="ui-autocomplete theme-wishket" placeholder="플레이스 홀더" type="text" />
+      <input id="autocomple-example02" class="ui-autocomplete theme-client" placeholder="플레이스 홀더2" type="text" />
+
+      <div class="ui-autocomplete theme-partner">
+        <span class="autocomplete-label">Photoshop<i class="i-close"></i></span>
+        <span class="autocomplete-label">Illustrator<i class="i-close"></i></span>
+        <span class="autocomplete-label">Sketch<i class="i-close"></i></span>
+        <span class="autocomplete-label">Zeplin<i class="i-close"></i></span>
+        <input type="text" placeholder="플레이스 홀더"/>
+      </div>
       <!-- <div class="ui-label-select theme-client active" style="margin-bottom:300px;">
         <span class="select-box ">
           <span class="label">레이블</span>
@@ -309,6 +323,9 @@
           <li>동작구</li>
         </ul>
       </div> -->
+
+      <div class="control-wrapper"><input id="skills" name="skills" type="hidden"><div class="tag-input-group"><div class="tag-select-box empty-box" id="select_box">하단 검색 영역에서 관련 기술을 입력해주세요.</div><div class="tag-input-addons"><input id="tag" maxlength="100" onkeypress="if(event.keyCode == 13 || event.keyCode == 188 || event.keyCode == 44){addDirectly(this); return false;}" type="text"><ul class="tag-search-result-list unvisible" id="result_list"></ul></div><p class="tag-help-block">프로젝트와 관련된 기술을 입력해주세요. (예: Photoshop, Android, HTML5, Python, Django)</p></div></div>
+
     </section>
   </div>
   <script>
@@ -318,6 +335,12 @@
       $.uiRadio.setting();
       $.uiToggle.setting();
       $("#select-example01, #select-example02, #select-example03").uiSelect();
+      $("#autocomple-example01, #autocomple-example02").uiAutoComple();
+
+
+      $("#select-example01").on("change", function(){
+        console.log('체인지 테스트');
+      });
     });
     $(window).on('load', function(){
     });

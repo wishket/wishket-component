@@ -20,6 +20,8 @@
           selectNode = this.node;
 
       this.node.style.display = "none";
+
+
       //셀렉트박스 width값 설정 default 100%
       const width = this.node.getAttribute("data-width") ? this.node.getAttribute("data-width") : "100%";
       const dropDown = $selectBox.children(".select-dropdown");
@@ -71,8 +73,10 @@
         }
         node.getElementsByClassName("select-name")[0].innerText = currentText;
         const selectName = selectNode.getAttribute("name");
+        
         e.target.classList.add("current");
         $("select[name="+selectName+"]").val(selectValue).prop("selected", true);
+        $("select[name="+selectName+"]").trigger("change");
         this.toggle(null, dropDown, "open");
       }
     },
@@ -110,7 +114,6 @@
       createSelect += '</div>';
 
       this.$node.after(createSelect);
-
       this.practice();
     },
   };

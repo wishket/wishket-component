@@ -5,9 +5,8 @@
   cursor: pointer;
   display:inline-block;
   min-width:260px;
-  // margin-bottom:32px;
-  // 잠시
-  margin-bottom:130px;
+  margin-bottom:32px;
+  
   >.select-box{
     position:relative;
     padding:25px 51px 9px 13px;
@@ -66,7 +65,7 @@
       &.select{
         color:$brand-color;
       }
-      &:hover{
+      &:hover, &:focus{
         background:$brand-hover-color;
 
       }
@@ -111,7 +110,7 @@
       }
     }
   }
-  &:hover{
+  &:hover, &:focus{
     >.select-box{
       border-color:$brand-color;
       >p{
