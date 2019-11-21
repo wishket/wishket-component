@@ -10,7 +10,8 @@
     <script type="text/javascript" src="./js/checkbox.js"></script>
     <script type="text/javascript" src="./js/radio.js"></script>
     <script type="text/javascript" src="./js/toggle.js"></script>
-    <script type="text/javascript" src="./js/select.js"></script>
+    <!-- <script type="text/javascript" src="./js/select.js"></script> -->
+    <script type="text/javascript" src="./js/select_bak.js"></script>
     <script type="text/javascript" src="./js/autocomplete.js"></script>
     <script type="text/javascript" src="./js/test.js"></script>
     <link rel="stylesheet" href="./css/component.css">
@@ -285,17 +286,32 @@
         <option value="7">푸조</option>
       </select>
 
-      <input id="autocomple-example01" class="ui-autocomplete theme-partner" value='photoshop, illustrator, sketch' placeholder="아 제발" type="text" />
+      <input id="autocomple-example01" class="ui-autocomplete theme-partner" value='photoshop*!*illustrator*!*sketch' placeholder="님아.. 그 강을 건너지 마오" type="text" data-help-text="헬퍼 텍스트 상세 내용"/>
       <input id="autocomple-example02" class="ui-autocomplete theme-wishket" placeholder="플레이스 홀더" type="text" />
-      <input id="autocomple-example02" class="ui-autocomplete theme-client" placeholder="플레이스 홀더2" type="text" />
+      <input id="autocomple-example03" class="ui-autocomplete theme-client" placeholder="플레이스 홀더2" type="text" />
 
+      <div class="autocompletebox">
       <div class="ui-autocomplete theme-partner">
         <span class="autocomplete-label">Photoshop<i class="i-close"></i></span>
         <span class="autocomplete-label">Illustrator<i class="i-close"></i></span>
         <span class="autocomplete-label">Sketch<i class="i-close"></i></span>
         <span class="autocomplete-label">Zeplin<i class="i-close"></i></span>
+        <!-- <span class="autocomplete-label">Photoshop<i class="i-close"></i></span>
+        <span class="autocomplete-label">Illustrator<i class="i-close"></i></span>
+        <span class="autocomplete-label">Sketch<i class="i-close"></i></span>
+        <span class="autocomplete-label">Zeplin<i class="i-close"></i></span> -->
         <input type="text" placeholder="플레이스 홀더"/>
       </div>
+      <ul class="tag-dropdown open">
+        <li><strong>‘asdfdas’</strong>  입력</li>
+        <li>dsaffa</li>
+        <li>dsaffa</li>
+        <li>dsaffa</li>
+        <li>dsaffa</li>
+        <li>dsaffa</li>
+      </ul>
+      </div>
+
       <!-- <div class="ui-label-select theme-client active" style="margin-bottom:300px;">
         <span class="select-box ">
           <span class="label">레이블</span>
@@ -324,28 +340,37 @@
         </ul>
       </div> -->
 
-      <div class="control-wrapper"><input id="skills" name="skills" type="hidden"><div class="tag-input-group"><div class="tag-select-box empty-box" id="select_box">하단 검색 영역에서 관련 기술을 입력해주세요.</div><div class="tag-input-addons"><input id="tag" maxlength="100" onkeypress="if(event.keyCode == 13 || event.keyCode == 188 || event.keyCode == 44){addDirectly(this); return false;}" type="text"><ul class="tag-search-result-list unvisible" id="result_list"></ul></div><p class="tag-help-block">프로젝트와 관련된 기술을 입력해주세요. (예: Photoshop, Android, HTML5, Python, Django)</p></div></div>
-
     </section>
   </div>
   <script>
-    $(document).ready(function(value){
+    $(document).ready(function(){
       $.uiInput.setting();
       $.uiCheckbox.setting();
       $.uiRadio.setting();
       $.uiToggle.setting();
       $("#select-example01, #select-example02, #select-example03").uiSelect();
-      $("#autocomple-example01, #autocomple-example02").uiAutoComple();
-
-
-      $("#select-example01").on("change", function(){
-        console.log('체인지 테스트');
+      $("#autocomple-example01").uiAutoComple({
+        labelmaxcount : 2,
+        textlength : 40,
+        url: "url",
       });
+      $("#autocomple-example02").uiAutoComple({
+        labelmaxcount : 3,
+        textlength : 50,
+        url: "url",
+      });
+      $("#autocomple-example03").uiAutoComple();
+
+      // $("#select-example01").on("change", function(){
+      //   console.log('체인지 테스트');
+      // });
+
+      // $("#autocomple-example01").on("change", function(){
+      //   console.log("autocomple 체인지 테스트");
+      // });
     });
     $(window).on('load', function(){
     });
-    function handleChange(text, number){
-    }
   </script>
 </body>
 

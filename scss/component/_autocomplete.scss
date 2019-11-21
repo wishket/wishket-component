@@ -1,0 +1,110 @@
+@mixin autocomplete($type, $brand-color, $brand-hover-color){
+  padding:4px 8px;
+  border:1px solid $color-gray200;
+  border-radius:4px;
+  font-size:0.875rem;
+  line-height: 1.5rem;
+  color:$color-gray600;
+  display:flex;
+  flex-wrap: wrap;
+  transition: all .2s cubic-bezier(.71, -0.46, .88, .6);
+  >input{
+    min-width: 30px;
+    flex:1;
+    border:0;
+    margin:0 4px;
+    font-size:0.875rem;
+    line-height:2rem;
+    color:$color-gray600;
+    // &::placeholder, , &::-ms-input-placeholder{
+    &::placeholder, &::-webkit-input-placeholder{
+      color:$color-gray300;
+    }
+  }
+  >.autocomplete-label{
+    position:absolute;
+    display:inline-block;
+    padding:2px 22px 2px 8px;
+    border-radius: 8px;
+    background:$color-gray100;
+    font-size:0.813rem;
+    line-height: 1.25rem;
+    margin:4px;
+    position:relative;
+    >i{
+      cursor: pointer;
+      position: absolute;
+      top:50%;
+      right:5px;
+      width:16px;
+      height:16px;
+      transform:translateY(-50%);
+      background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%239E9E9E' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.6'%3E%3Cpath d='M5 5l6 6M11 5l-6 6'/%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+    &.error{
+      color:$color-red500;
+    }
+  }
+  &::placeholder{
+    color:$color-gray300;
+  }
+  &+.tag-dropdown{
+    position: absolute;
+    z-index:100;
+    left:0;
+    top:42px;
+    padding:9px 1px;
+    border-radius: 4px;
+    width:inherit;
+    max-width: 100%;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+    border:1px solid $color-gray200;
+    background:$color-white;
+    display:none;
+    opacity: 0;
+    max-width: 100%;
+    >li{
+      cursor:pointer;
+      padding:8px 16px;
+      color:$color-gray600;
+      font-size:0.75rem;
+      overflow:hidden;
+      text-overflow: ellipsis;
+      word-break: keep-all;
+      white-space: nowrap;
+      >strong{
+        color:$brand-color;
+      }
+      &:hover, &:active{
+        background:$brand-hover-color;
+      }
+    }
+    &.open{
+      display:block;
+      opacity: 1;
+    }
+  }
+  &.active{
+    border-color:$brand-color;
+  }
+}
+
+.autocompletebox{
+  position: relative;
+}
+
+.hiddenInput{
+  display:none;
+}
+
+.ui-autocomplete{
+  &.theme-wishket{
+    @include autocomplete(default, $color-partner500, $color-partner10);
+  }
+  &.theme-client{
+    @include autocomplete(default, $color-client500, $color-client10);
+  }
+  &.theme-partner{
+    @include autocomplete(default, $color-wishket500, $color-wishket10);
+  }
+}
