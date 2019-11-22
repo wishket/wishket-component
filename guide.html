@@ -210,21 +210,21 @@
     </section>
     <section>
       <div class="toggle theme-wishket">
-        <p>토글 상세 질문 내용</p>
-        <button class="on">on</button>
+        <p>토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용</p>
         <button class="off">off</button>
+        <button class="on">on</button>
         <input id="testddd1" type="text" value=""/>
       </div>
       <div class="toggle theme-client">
         <p>토글 상세 질문 내용</p>
-        <button class="on">on</button>
         <button class="off">off</button>
+        <button class="on">on</button>
         <input id="testddd2" type="text" value=""/>
       </div>
       <div class="toggle theme-partner">
         <p>토글 상세 질문 내용</p>
-        <button class="on">on</button>
         <button class="off">off</button>
+        <button class="on">on</button>
         <input id="testddd3" type="text" value=""/>
       </div>
     </section>
@@ -239,7 +239,7 @@
       </div>
     </section>
     <section clase="select">
-      <select id="select-example01" class="ui-label-select theme-wishket" name="ui-select-example" style="margin-bottom:300px" data-width="300px">
+      <select id="select-example01" class="ui-label-select theme-wishket" style="margin-bottom:300px" data-width="300px">
         <option>광역시</option>
         <option value="1">서울특별시1</option>
         <option value="2">부산광역시2</option>
@@ -368,6 +368,10 @@
       // $("#autocomple-example01").on("change", function(){
       //   console.log("autocomple 체인지 테스트");
       // });
+
+      $("#testddd3").on("change", function(){
+        console.log($(this).val());
+      })
     });
     $(window).on('load', function(){
     });

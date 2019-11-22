@@ -9,6 +9,9 @@
       });
     },
     toggle:function(target, size){
+      console.log(target);
+      target.children("p").height();
+      target.height(target.children("p").height());
       target.find("button").on("click", function(){
         const type = $(this).eq(0).text();
         const input = target.children("input");
@@ -19,13 +22,15 @@
         }
         if(type === 'on'){
           input.val('true');
+          console.log()
+          $(this).parent().children(".active").removeClass("active");
           $(this).addClass("active");
-          $(this).next().removeClass("active");
         }else{
           input.val('false');
+          $(this).parent().children(".active").removeClass("active");
           $(this).addClass("active");
-          $(this).prev().removeClass("active");
         }
+        input.change();
       });
     },
     getSize:function(size){
