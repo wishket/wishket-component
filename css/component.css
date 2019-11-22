@@ -3176,7 +3176,6 @@ button {
     position: absolute;
     z-index: 100;
     left: 0;
-    top: 42px;
     padding: 9px 1px;
     border-radius: 4px;
     width: inherit;
@@ -3256,7 +3255,6 @@ button {
     position: absolute;
     z-index: 100;
     left: 0;
-    top: 42px;
     padding: 9px 1px;
     border-radius: 4px;
     width: inherit;
@@ -3336,7 +3334,6 @@ button {
     position: absolute;
     z-index: 100;
     left: 0;
-    top: 42px;
     padding: 9px 1px;
     border-radius: 4px;
     width: inherit;
