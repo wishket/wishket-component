@@ -3201,7 +3201,7 @@ button {
       .ui-autocomplete.theme-wishket + .tag-dropdown > li > .count-data {
         margin-left: 8px;
         color: #9e9e9e; }
-      .ui-autocomplete.theme-wishket + .tag-dropdown > li:hover, .ui-autocomplete.theme-wishket + .tag-dropdown > li:active, .ui-autocomplete.theme-wishket + .tag-dropdown > li:focus {
+      .ui-autocomplete.theme-wishket + .tag-dropdown > li:hover, .ui-autocomplete.theme-wishket + .tag-dropdown > li:active, .ui-autocomplete.theme-wishket + .tag-dropdown > li:focus, .ui-autocomplete.theme-wishket + .tag-dropdown > li.list-selected {
         background: #f5fffc; }
     .ui-autocomplete.theme-wishket + .tag-dropdown.open {
       display: block;
@@ -3281,7 +3281,7 @@ button {
       .ui-autocomplete.theme-client + .tag-dropdown > li > .count-data {
         margin-left: 8px;
         color: #9e9e9e; }
-      .ui-autocomplete.theme-client + .tag-dropdown > li:hover, .ui-autocomplete.theme-client + .tag-dropdown > li:active, .ui-autocomplete.theme-client + .tag-dropdown > li:focus {
+      .ui-autocomplete.theme-client + .tag-dropdown > li:hover, .ui-autocomplete.theme-client + .tag-dropdown > li:active, .ui-autocomplete.theme-client + .tag-dropdown > li:focus, .ui-autocomplete.theme-client + .tag-dropdown > li.list-selected {
         background: #f5f9ff; }
     .ui-autocomplete.theme-client + .tag-dropdown.open {
       display: block;
@@ -3361,7 +3361,7 @@ button {
       .ui-autocomplete.theme-partner + .tag-dropdown > li > .count-data {
         margin-left: 8px;
         color: #9e9e9e; }
-      .ui-autocomplete.theme-partner + .tag-dropdown > li:hover, .ui-autocomplete.theme-partner + .tag-dropdown > li:active, .ui-autocomplete.theme-partner + .tag-dropdown > li:focus {
+      .ui-autocomplete.theme-partner + .tag-dropdown > li:hover, .ui-autocomplete.theme-partner + .tag-dropdown > li:active, .ui-autocomplete.theme-partner + .tag-dropdown > li:focus, .ui-autocomplete.theme-partner + .tag-dropdown > li.list-selected {
         background: #f2fcff; }
     .ui-autocomplete.theme-partner + .tag-dropdown.open {
       display: block;

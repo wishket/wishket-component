@@ -5,6 +5,7 @@
   const defaults = {
     labelmaxcount : 10,  //라벨 최대갯수
     textlength : 100,  //인풋 텍스트 글자수
+    listwidth : "inherit",
   }
   let selectData;
   let UiAutoComple = function (node, options){
@@ -24,13 +25,19 @@
       const target = this;
       const $tagBox = $(this.node).next().children(".ui-autocomplete");
       const $dropDown = $(this.node).next().children(".tag-dropdown");
+      $dropDown.css("width", this.settings.listwidth);
       $(document).on("click", ".i-close", function(e){
         target.inputSync(false, $(this).parent());
         target.addLabel("remove", $(this).parent());
       });
       $tagBox.children().on("keyup", function(e){
-        target.keyEventSearch(e, $(this), $dropDown);
+        if(e.keyCode == '40' || e.keyCode == '37' || e.keyCode == '39' || e.keyCode == '38' || e.keyCode == '13'){
+          target.keyboardAccessibility($(this), e.keyCode);
+        }else{
+          target.keyEventSearch(e, $(this), $dropDown);
+        }
       });
+
     },
 
     //키이벤트
@@ -38,6 +45,7 @@
       const self = this;
       let value = target.val();
       const textlength = this.settings.textlength;
+
 
       //글자수 체크
       if(target.val().length > textlength){
@@ -50,34 +58,6 @@
         this.toggle(true, target.parent(), "active");
       }else{
         this.toggle(false, $dropDown, "open")
-        this.toggle(false, target.parent(), "active");
-      }
-
-      //엔터
-      if(e.keyCode == '13' && value){
-        let stop = true;
-        const labelMaxLength = this.settings.labelmaxcount;
-        const labelCurrentLength = $dropDown.prev().children("span").length;
-        if(labelMaxLength > labelCurrentLength){
-          $dropDown.prev().children("span").each(function () {
-            if($(this).text()=== value){
-              stop = false;
-              const label = $(this);
-              label.addClass("error");
-              setTimeout(function(i){
-                  label.removeClass("error");
-              }, 2000);
-              $(this).siblings("input").val("");
-            }
-          });
-          if(stop){
-            this.addLabel("add", value, target);
-          }
-        }else{
-          console.log("더 이상 추가가 힘들어요.");
-          target.val("");
-        }
-        this.toggle(false, $dropDown, "open");
         this.toggle(false, target.parent(), "active");
       }
 
@@ -105,15 +85,15 @@
         url: "/tag/?startwith=" + value + selected_string,
         method: "GET",
         success: function (data) {
+          event.preventDefault();
           $dropDown.html("");
           if(data.length > 0){
-            console.log("a");
             for (let i = 0; i < data.length; i++) {
               const listName = data[i].name.replace(new RegExp('('+value+')(?!([^<]+)?>)','g'), '<strong>$1</strong>');
-              $dropDown.append("<li data-tag='"+data[i].name+"'><strong>‘</strong>"+listName+"<strong>’</strong> 입력</li>");
+              $dropDown.append("<li class='dropdown-list' data-tag='"+data[i].name+"' tabindex='0'><strong>‘</strong>"+listName+"<strong>’</strong> <span class='count-data'>"+data[i].count+"</span></li>");
             }
           }else{
-            $dropDown.append("<li data-tag='"+value+"'><strong>‘"+value+"’</strong> 입력</li>");
+            $dropDown.append("<li class='dropdown-list' data-tag='"+value+"' tabindex='0'><strong>‘"+value+"’</strong> 입력</li>");
           }
           $dropDown.children().on("click", function(){
             const value = $(this).data("tag");
@@ -170,6 +150,102 @@
       }else{
         node.removeClass(className);
       }
+    },
+
+    keyboardAccessibility: function(node, keycode){
+      const self = this;
+      const list = node.parent().next().children("li");
+      const $dropDown = node.parent().next();
+      if(keycode == '40'){
+        list.each(function(){
+          if($(this).hasClass("list-selected")){
+            if($(this).next(".dropdown-list")[0]){
+              self.toggle(true, $(this).next(), "list-selected");
+              self.toggle(false, $(this), "list-selected");
+            }
+            self.toggle(false, list.first(), "list-selected");
+            return false;
+          }else{
+            self.toggle(true, list.first(), "list-selected");
+          }
+        });
+      }else if(keycode == '38'){
+        list.each(function(){
+          if($(this).hasClass("list-selected")){
+            if($(this).next(".dropdown-list")[0]){
+              self.toggle(true, $(this).prev(), "list-selected");
+              self.toggle(false, $(this), "list-selected");
+            }else{
+              self.toggle(true, $(this).prev(), "list-selected");
+              self.toggle(false, $(this), "list-selected");
+            }
+          }
+        });
+      }else if(keycode == '13'){
+        if(list.hasClass("list-selected")){
+          const dataTag = node.parent().next().children(".list-selected").attr("data-tag");
+
+          let stop = true;
+          const labelMaxLength = this.settings.labelmaxcount;
+          const labelCurrentLength = $dropDown.prev().children("span").length;
+          if(labelMaxLength > labelCurrentLength){
+            $dropDown.prev().children("span").each(function () {
+              if($(this).text()=== dataTag){
+                stop = false;
+                const label = $(this);
+                label.addClass("error");
+                setTimeout(function(i){
+                    label.removeClass("error");
+                }, 2000);
+                $(this).siblings("input").val("");
+              }
+            });
+            if(stop){
+              this.addLabel("add", dataTag, node);
+            }
+          }else{
+            console.log("더 이상 추가가 힘들어요.");
+            node.val("");
+          }
+          this.toggle(false, $dropDown, "open");
+          this.toggle(false, node.parent(), "active");
+        }else{
+          let stop = true;
+          const labelMaxLength = this.settings.labelmaxcount;
+          const labelCurrentLength = $dropDown.prev().children("span").length;
+          const value = node.val();
+          if(labelMaxLength > labelCurrentLength){
+            $dropDown.prev().children("span").each(function () {
+              if($(this).text()=== value){
+                stop = false;
+                const label = $(this);
+                label.addClass("error");
+                setTimeout(function(i){
+                    label.removeClass("error");
+                }, 2000);
+                $(this).siblings("input").val("");
+              }
+            });
+            if(stop){
+              this.addLabel("add", value, node);
+            }
+          }else{
+            console.log("더 이상 추가가 힘들어요.");
+            node.val("");
+          }
+          this.toggle(false, $dropDown, "open");
+          this.toggle(false, node.parent(), "active");
+        }
+      }
+
+
+
+      // if(e.keyCode == '40'){  //화살표 아래
+      //   node.parent().next().children(":first").focus();
+      // }else if(e.keyCode == '38'){  //화살표 위
+      //
+      // }
+      return false;
     },
 
     //라벨 추가, 제거

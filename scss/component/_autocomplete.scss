@@ -75,7 +75,11 @@
       >strong{
         color:$brand-color;
       }
-      &:hover, &:active{
+      >.count-data{
+        margin-left:8px;
+        color:$color-gray400;
+      }
+      &:hover, &:active, &:focus, &.list-selected{
         background:$brand-hover-color;
       }
     }
