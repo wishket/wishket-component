@@ -1,5 +1,9 @@
 @mixin toggle($padding, $brand-color, $font-color, $font-size, $line-height){
   margin-bottom:16px;
+  display:flex;
+  display: -ms-flexbox;
+  align-items:center;
+  min-height:32px;
   >input{
     display:none;
   }
@@ -7,7 +11,7 @@
     cursor: pointer;
     margin: 0;
     padding: 0;
-    float:right;
+    margin-left:8px;
     display: inline-block;
     width:32px;
     height:32px;
@@ -18,7 +22,6 @@
     background:none;
     &.off{
       position: relative;
-      margin-right:8px;
       &:after{
         content:'';
         position:absolute;
@@ -60,11 +63,10 @@
     }
   }
   >p{
-    float:left;
-    width:calc(100% - 100px);
+    width:calc(100% - 96px);
     font-size:$font-size;
     color:$font-color;
-    line-height:$line-height;
+    margin-right:auto
   }
   &:after{
     content:'';
@@ -79,12 +81,12 @@
 
 .toggle{
   &.theme-wishket{
-    @include toggle(9px 13px, $color-wishket500, $color-gray600, 0.875rem, 2rem);
+    @include toggle(9px 13px, $color-wishket500, $color-gray900, 0.875rem, 2rem);
   }
   &.theme-partner{
-    @include toggle(9px 13px, $color-partner500, $color-gray600, 0.875rem, 2rem);
+    @include toggle(9px 13px, $color-partner500, $color-gray900, 0.875rem, 2rem);
   }
   &.theme-client{
-    @include toggle(9px 13px, $color-client500, $color-gray600, 0.875rem, 2rem);
+    @include toggle(9px 13px, $color-client500, $color-gray900, 0.875rem, 2rem);
   }
 }

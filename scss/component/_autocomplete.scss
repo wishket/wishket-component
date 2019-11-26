@@ -16,11 +16,28 @@
     font-size:0.875rem;
     line-height:2rem;
     color:$color-gray600;
+
     // &::placeholder, , &::-ms-input-placeholder{
     &::placeholder, &::-webkit-input-placeholder{
       color:$color-gray300;
     }
+
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      line-height: 1em;
+      margin:6px 4px;
+      // line-height:32px;
+    }
   }
+
+  input[type=text]::-ms-clear {
+    display:none;
+  }
+
+  input:-ms-input-placeholder{
+    color:$color-gray300;
+  }
+
   >.autocomplete-label{
     position:absolute;
     display:inline-block;
@@ -52,7 +69,6 @@
     position: absolute;
     z-index:100;
     left:0;
-    top:42px;
     padding:9px 1px;
     border-radius: 4px;
     width:inherit;

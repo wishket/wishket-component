@@ -23,11 +23,13 @@
     >span.arrow{
       &:after{
         position: absolute;
-        top: 48%;
-        left: 21.45%;
+        top: 44%;
+        left: 22%;
         display: table;
-        width: 5.71428571px;
-        height: 9.14285714px;
+        width:4px;
+        height:8px;
+        // width: 5.71428571px;
+        // height: 9.14285714px;
         border: 1.6px solid #fff;
         border-top: 0;
         border-left: 0;
@@ -35,6 +37,12 @@
         opacity: 0;
         transition: all .1s cubic-bezier(.71, -0.46, .88, .6),opacity .1s;
         content: ' ';
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          top:44%;
+          left:20.5%;
+          width:4px;
+          height:8px;
+        }
       }
     }
     >span.minus-icon{
@@ -154,7 +162,7 @@
     }
   }
 
-  &:hover{
+  &:hover, &:focus{
     >span:first-child > span{
       border-color:$brand-color;
     }
@@ -266,7 +274,7 @@
   display:inline-block;
   user-select:none;
   margin:4px 4px 8px 4px;
-  &:hover{
+  &:hover, &:focus{
     >span{
       background:$hover-color;
     }

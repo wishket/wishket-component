@@ -17,7 +17,9 @@
           $selectBox = this.$node.next(),
           selectNode = this.node;
 
-      // this.node.style.display = "none";
+      // display 제거
+      this.node.style.display = "none";
+      
 
       const width = this.node.getAttribute("data-width") ? this.node.getAttribute("data-width") : "100%";
       const dropDown = $selectBox.children(".select-dropdown");
@@ -26,12 +28,14 @@
       
       //close
       $(document).on("click.ui-label-select", function(e){
-        const target = String(e.target.classList.value);
+        const target = String(e.target.classList);
         if(target === "select-box" || target === "current" || target === "select-label" || target === "select-icon" || target === "select-name"){
           // $(document).find(".select-dropdown.open").removeClass("open");
           // $(this).find(".select-dropdown.open") ? $(document).find(".select-dropdown.open").removeClass("open") : null;
+          
         }else{
           dropDown.removeClass("open");
+          dropDown.parent().children(".select-box").children(".select-icon").removeClass("active");
           const currentCheck = dropDown.children().hasClass("current");
           currentCheck ? null : dropDown.parent().removeClass("active");
         }
@@ -42,15 +46,15 @@
         if($(this).hasClass("active")){
           self.open(e, $(this), selectNode, dropDown);
         }else{
-          console.log("not active class");
           self.open(e, $(this), selectNode, dropDown);
           self.toggle(true, $(this), "active");
+          // self.toggle(true, $(this).children(".select-box").children(".select-icon"), "active");
         }
       });
     
       $selectBox.children(".select-dropdown").children().on("click", function(){
         self.listSelectClick($(this));
-        
+        self.toggle(false, $(this).parent().prev().children(".select-icon"), "active");
       });
 
       $selectBox.on("keydown", function(e){
@@ -82,15 +86,20 @@
     open: function(e, node, selectNode, dropDown){
       if(dropDown.hasClass("open")){
         $(document).find(".select-dropdown.open").removeClass("open");
-        console.log("active remove!!");
+        if(node.children(".select-box").children(".select-name").text() === ''){
+          this.toggle(false, node, "active");
+          this.toggle(false, node.children(".select-box").children(".select-icon"), "active");
+        }else{
+          this.toggle(false, node.children(".select-box").children(".select-icon"), "active");
+        }
       }else{
         $(document).find(".select-dropdown.open").removeClass("open");
         dropDown.addClass("open");
+        this.toggle(true, node.children(".select-box").children(".select-icon"), "active");
       }
     },
 
     toggle: function(state, node, classNmae){
-      
       if(state){
         node.addClass(classNmae);
       }else{
@@ -122,15 +131,16 @@
       option.each(function(){
         const value = this.value;
         const text = this.innerText;
-        let selectedClass = $(this).attr("selected") ? 'class="current"' : '';
+        let selected = $(this).attr("selected") ? 'current' : '';
+        let disabled = $(this).attr("disabled") ? 'disabled' : '';
+        let getClass = selected || disabled ? ' class="'+selected+' '+disabled+'"' : ''
         if($(this).attr("selected")){
           $(this).parent().next().addClass("selected");
           $(this).parent().next().addClass("active");
           $(this).parent().next().children(".select-box").children(".select-name").text($(this).text());
         }
-        selectDropdown.append('<li data-select-value="'+value+'" '+selectedClass+'>'+text+'</li>')
+        selectDropdown.append('<li data-select-value="'+value+'"'+getClass+'>'+text+'</li>')
       });
-
       this.practice();
     },
   };

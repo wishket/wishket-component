@@ -39,7 +39,6 @@
       }
       target.wrap('<div class="label-input-'+theme+' '+iconPosition+'"></div>');
       target.after('<label for="'+forName+'">'+labelText+'</label>');
-      target.after('<label for="'+forName+'">'+labelText+'</label>');
       target.bind('focus',function(){
         target.parent().addClass('label-effect');
       });

@@ -16,34 +16,41 @@
     transition: all .2s cubic-bezier(.71, -0.46, .88, .6);
     .select-label{
       position:absolute;
-      top:50%;
       left:13px;
-      transform:translateY(-50%);
       font-size:0.875rem;
-      transition: all .1s cubic-bezier(.71, -0.46, .88, .6);
+      transition: all .3s;
+      &.basic{
+        transform:translateY(-50%);
+        top:50%;
+      }
     }
     >p{
-      visibility: hidden;
       display:none;
       font-size:0.875rem;
       line-height: 1.500rem;
       opacity: 0;
-      transition: all .3s cubic-bezier(.71, -0.46, .88, .6);
+      transition: all .3s cubic-bezier(.71, -0.46, .88, .6), dispay .1s .3s cubic-bezier(.71, -0.46, .88, .6);
     }
     >i{
       position:absolute;
       right: 13px;
       top: 50%;
-      transform:translateY(-50%);
+      transform:translateY(-50%) rotate(.001deg);
       >svg{
         transition: all .2s cubic-bezier(.71, -0.46, .88, .6);
+      }
+      &.active{
+        >svg{
+          transform: rotate(180deg);
+        }
       }
     }
   }
   >.select-dropdown{
-    display:none;
+    opacity: 0;
     visibility: hidden;
     position:absolute;
+    transition: all .3s cubic-bezier(.71, -0.46, .88, .6), opacity .1s cubic-bezier(.71, -0.46, .88, .6);
     top:57px;
     border-radius: 4px;
     padding:9px 0;
@@ -60,19 +67,31 @@
       overflow: hidden;
       word-break: keep-all;
       text-overflow: ellipsis;
+      &.disabled{
+        color:$color-gray300;
+        pointer-events: none;
+      }
+      &.current{
+        color:$brand-color;
+      }
       &.select{
         color:$brand-color;
       }
       &:hover, &:focus{
-        background:$brand-hover-color;
-
+        background:$brand-hover-color; 
       }
+      
     }
     &.open{
       visibility: visible;
-      display:block;
+      opacity: 1;
       >li.current{
         color:$brand-color;
+      }
+      >li.disabled{
+        &:hover{
+          background:#fff;
+        }
       }
     }
   }
@@ -80,13 +99,12 @@
     >.select-box{
       >.select-label{
         position:absolute;
-        top:14px;
+        transform:translateY(-26px);
         font-size:0.688rem;
         line-height: 1.5rem;
         color:$color-gray300;
       }
       >p{
-        visibility: visible;
         display:block;
         opacity: 1;
         overflow: hidden;
@@ -101,11 +119,11 @@
       >.select-label{
         color:$brand-color;
       }
-      >i{
-        >svg{
-          transform:rotate(180deg);
-        }
-      }
+      // >i{
+      //   >svg{
+      //     transform:rotate(180deg);
+      //   }
+      // }
     }
   }
   &:hover, &:focus{
