@@ -73,7 +73,7 @@
         });
         target.replaceWith('<div class="addon"><label class="checkbox-'+theme+' '+horizontal+detaileClass+disabled+'">'+checkboxWrap+'</label>'+addonInputBox+'</div>');
       }else{
-        target.replaceWith('<label class="checkbox-'+theme+' '+detaileClass+horizontal+disabled+'">'+checkboxWrap+'</label>')
+        target.replaceWith('<div><label class="checkbox-'+theme+' '+detaileClass+horizontal+disabled+'">'+checkboxWrap+'</label></div>');
       }
     },
     group:function(target, size){
@@ -116,6 +116,7 @@
         }else{
           if(itemDetaile){
             checkboxWrap =
+              '<div>' +
               '<label class="checkbox-'+theme+' '+horizontal+itemDetaileClass+disabled+itemDisabled+' ">' +
               '  <span>'  +
               '    <input '+itemId+itemClass+value+disabled+name+itemDisabled+itemDefault+' type="checkbox" />' +
@@ -125,16 +126,19 @@
               '    <span>'+label+'</span>'  +
               '    <p>'+itemDetaile+'</p>'  +
               '  </div>'  +
-              '</label>';
+              '</label>' +
+              '</div>';
           }else {
             checkboxWrap =
+              '<div>' +
               '<label class="checkbox-'+theme+' '+horizontal+disabled+itemDisabled+'">'  +
               '  <span>'  +
               '    <input '+itemId+itemClass+value+name+disabled+itemDisabled+itemDefault+' type="checkbox" />'  +
               '    <span class="arrow"></span>'  +
               '  </span>'  +
               '  <span>'+label+'</span>'  +
-              '</label>';
+              '</label>' +
+              '</div>';
           }
           groupCheckbox += checkboxWrap;
         }

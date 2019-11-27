@@ -112,6 +112,7 @@
         }else{
           if(itemDetaile){
             radioWrap =
+              '<div>' +
               '<label class="radio-'+theme+' '+horizontal+' '+itemDetaileClass+' '+disabled+' '+itemDisabled+'">' +
               ' <span>' +
               '   <input '+itemId+' '+itemClass+' '+value+' '+nameTag+' '+disabled+' '+itemDisabled+' '+itemDefault+' '+dataAddonEvent+' type="radio" />' +
@@ -121,16 +122,19 @@
               '   <span>'+label+'</span>' +
               '   <p>'+itemDetaile+'</p>' +
               ' </div>' +
-              '</label>';
+              '</label>' +
+              '</div>';
           }else {
             radioWrap =
-              '<label class="radio-'+theme+' '+horizontal+' '+disabled+' '+itemDisabled+'">'  +
-              ' <span>' +
-              '   <input '+itemId+' '+itemClass+' '+value+' '+nameTag+' '+disabled+' '+itemDisabled+' '+itemDefault+' '+itemDetaileClass+' '+dataAddonEvent+' type="radio" />'  +
-              '   <span><span class="dot"></span></span>' +
-              ' </span>'  +
-              ' <span>'+label+'</span>' +
-              '</label>';
+              '<div>' +
+              ' <label class="radio-'+theme+' '+horizontal+' '+disabled+' '+itemDisabled+'">'  +
+              '   <span>' +
+              '     <input '+itemId+' '+itemClass+' '+value+' '+nameTag+' '+disabled+' '+itemDisabled+' '+itemDefault+' '+itemDetaileClass+' '+dataAddonEvent+' type="radio" />'  +
+              '     <span><span class="dot"></span></span>' +
+              '   </span>'  +
+              '   <span>'+label+'</span>' +
+              ' </label>' +
+              '</div>';
           }
           groupradio += radioWrap;
         }
