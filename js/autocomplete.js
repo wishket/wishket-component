@@ -37,7 +37,6 @@
           target.keyEventSearch(e, $(this), $dropDown);
         }
       });
-
     },
 
     //키이벤트
@@ -45,20 +44,24 @@
       const self = this;
       let value = target.val();
       const textlength = this.settings.textlength;
+      this.stringReplace(value, target);
 
-
-      //글자수 체크
+        //글자수 체크
       if(target.val().length > textlength){
-        value = target.val(value.slice(0, textlength));
+        target.val(value.slice(0, textlength));
       }
 
+      const dropdownPostion = target.parent().width() - target.width() - 16;
       //드롭다운 액션
-      if(value){
-        this.toggle(true, $dropDown, "open");
-        this.toggle(true, target.parent(), "active");
-      }else{
+
+      if(value.replace(/ /gi, '') === ''){
+        $dropDown.css("left", dropdownPostion);
         this.toggle(false, $dropDown, "open")
         this.toggle(false, target.parent(), "active");
+      }else{
+        $dropDown.css("left", dropdownPostion);
+        this.toggle(true, $dropDown, "open");
+        this.toggle(true, target.parent(), "active");
       }
 
       //백스페이스시 삭제
@@ -71,9 +74,8 @@
       let selected = [];
       const selectedsLabel = $dropDown.prev().children("span");
       if(selectedsLabel.length > 0){
-        selected = this.$node.val().replace(/=/gi, '');
+        selected = value.replace(/=/gi, '');
       }
-
 
       let selected_string = (selected !== [] ? "&selected=" + selected : "");
       selected_string = selected_string.replace(/#/gi, '%23');
@@ -144,6 +146,14 @@
     //   }
     // },
 
+    stringReplace: function (value, node){
+      // selected_string = selected_string.replace(/#/gi, '%23');
+      // selected_string = selected_string.replace(/:/gi, '');
+      // selected_string = selected_string.replace(/\//gi, '%2F');
+      // value.
+        node.val(value.replace("*!*", ""));
+    },
+
     toggle: function(state, node, className){
       if(state){
         node.addClass(className);
@@ -181,10 +191,11 @@
             }
           }
         });
-      }else if(keycode == '13'){
+      }else if(keycode == '13'){  //엔터
         if(list.hasClass("list-selected")){
-          const dataTag = node.parent().next().children(".list-selected").attr("data-tag");
-
+          let dataTag = node.parent().next().children(".list-selected").attr("data-tag");
+          dataTag = dataTag.replace(/  +/g, ' ');
+          dataTag = dataTag.trim();
           let stop = true;
           const labelMaxLength = this.settings.labelmaxcount;
           const labelCurrentLength = $dropDown.prev().children("span").length;
@@ -213,7 +224,9 @@
           let stop = true;
           const labelMaxLength = this.settings.labelmaxcount;
           const labelCurrentLength = $dropDown.prev().children("span").length;
-          const value = node.val();
+          let value = node.val();
+          value = value.replace(/  +/g, ' ');
+          value = value.trim();
           if(labelMaxLength > labelCurrentLength){
             $dropDown.prev().children("span").each(function () {
               if($(this).text()=== value){
@@ -238,8 +251,6 @@
         }
       }
 
-
-
       // if(e.keyCode == '40'){  //화살표 아래
       //   node.parent().next().children(":first").focus();
       // }else if(e.keyCode == '38'){  //화살표 위
@@ -262,6 +273,8 @@
         tag.remove();
         this.$node.next().children(".tag-dropdown").css("top", this.$node.next().height());
       }else{
+        tag = tag.replace(/  +/g, ' ');
+        tag = tag.trim();
         $tagBox.before("<span class=\"autocomplete-label\">"+tag+"<i class=\"i-close\"></i></span>");
         this.inputSync(true, tag);
         target.val("");
@@ -272,6 +285,8 @@
 
     //인풋 싱크
     inputSync: function(state, tag){
+      tag = tag.trim();
+      tag = tag.replace(/  +/g, ' ');
       if(state){
         const currentValue = this.$node.val();
         if(!this.$node.val()){

@@ -2626,13 +2626,15 @@ button {
     padding: 0;
     margin-left: 8px;
     display: inline-block;
+    overflow: hidden;
     width: 32px;
     height: 32px;
     border-radius: 50%;
     background: none;
     text-indent: -9999px;
     border: 1px solid #e0e0e0;
-    background: none; }
+    background: none;
+    transition: all .3s; }
     .toggle.theme-wishket button.off {
       position: relative; }
       .toggle.theme-wishket button.off:after {
@@ -2690,13 +2692,15 @@ button {
     padding: 0;
     margin-left: 8px;
     display: inline-block;
+    overflow: hidden;
     width: 32px;
     height: 32px;
     border-radius: 50%;
     background: none;
     text-indent: -9999px;
     border: 1px solid #e0e0e0;
-    background: none; }
+    background: none;
+    transition: all .3s; }
     .toggle.theme-partner button.off {
       position: relative; }
       .toggle.theme-partner button.off:after {
@@ -2754,13 +2758,15 @@ button {
     padding: 0;
     margin-left: 8px;
     display: inline-block;
+    overflow: hidden;
     width: 32px;
     height: 32px;
     border-radius: 50%;
     background: none;
     text-indent: -9999px;
     border: 1px solid #e0e0e0;
-    background: none; }
+    background: none;
+    transition: all .3s; }
     .toggle.theme-client button.off {
       position: relative; }
       .toggle.theme-client button.off:after {
@@ -3124,7 +3130,7 @@ button {
   flex-wrap: wrap;
   transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
   .ui-autocomplete.theme-wishket > input {
-    min-width: 30px;
+    min-width: 180px;
     flex: 1;
     border: 0;
     margin: 0 4px;
@@ -3211,7 +3217,7 @@ button {
   flex-wrap: wrap;
   transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
   .ui-autocomplete.theme-client > input {
-    min-width: 30px;
+    min-width: 180px;
     flex: 1;
     border: 0;
     margin: 0 4px;
@@ -3298,7 +3304,7 @@ button {
   flex-wrap: wrap;
   transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
   .ui-autocomplete.theme-partner > input {
-    min-width: 30px;
+    min-width: 180px;
     flex: 1;
     border: 0;
     margin: 0 4px;
