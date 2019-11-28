@@ -16,7 +16,8 @@
 
 html {
   height: 100%;
-  font-size: 16px; }
+  font-size: 16px;
+  -webkit-text-size-adjust: none; }
 
 body {
   height: 100%; }
@@ -199,15 +200,14 @@ button {
   font-size: 0; }
 
 .text-input-wishket {
-  position: relative;
-  padding-bottom: 28px; }
+  position: relative; }
   .text-input-wishket > input {
     display: block;
     border-radius: 4px;
-    padding: 8px 13px;
+    padding: 8px 12px;
     border: 1px solid #e0e0e0;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+    font-size: 14px;
+    line-height: 24px;
     color: #616161;
     font-weight: 400;
     background: #fff;
@@ -224,7 +224,7 @@ button {
       .text-input-wishket > input:hover:disabled:hover, .text-input-wishket > input:hover:disabled:focus, .text-input-wishket > input:focus:disabled:hover, .text-input-wishket > input:focus:disabled:focus {
         border-color: #e0e0e0; }
     .text-input-wishket > input[type='password'] {
-      font-size: 1.3rem;
+      font-size: 20px;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -237,36 +237,37 @@ button {
   .text-input-wishket input[type=text]::-ms-clear {
     display: none; }
   .text-input-wishket > span {
-    position: absolute;
-    font-size: 0.813rem;
+    font-size: 13px;
     font-weight: 400;
     bottom: 0;
-    color: #9e9e9e; }
+    color: #9e9e9e;
+    line-height: 20px; }
     .text-input-wishket > span.helper-text {
-      left: 0.813rem;
-      text-overflow: ellipsis;
-      width: 80%;
-      overflow: hidden;
-      white-space: nowrap; }
+      width: calc(100% - 100px);
+      padding: 8px 12px 0 12px;
+      float: left; }
     .text-input-wishket > span.word-length {
-      left: auto;
-      right: 0.813rem; }
+      float: right;
+      padding: 8px 12px 0 0; }
   .text-input-wishket.error > input {
     color: #e52929;
     border-color: #e52929; }
   .text-input-wishket.error > span {
     color: #e52929; }
+  .text-input-wishket:after {
+    content: '';
+    clear: both;
+    display: block; }
 
 .text-input-partner {
-  position: relative;
-  padding-bottom: 28px; }
+  position: relative; }
   .text-input-partner > input {
     display: block;
     border-radius: 4px;
-    padding: 8px 13px;
+    padding: 8px 12px;
     border: 1px solid #e0e0e0;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+    font-size: 14px;
+    line-height: 24px;
     color: #616161;
     font-weight: 400;
     background: #fff;
@@ -283,7 +284,7 @@ button {
       .text-input-partner > input:hover:disabled:hover, .text-input-partner > input:hover:disabled:focus, .text-input-partner > input:focus:disabled:hover, .text-input-partner > input:focus:disabled:focus {
         border-color: #e0e0e0; }
     .text-input-partner > input[type='password'] {
-      font-size: 1.3rem;
+      font-size: 20px;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -296,36 +297,37 @@ button {
   .text-input-partner input[type=text]::-ms-clear {
     display: none; }
   .text-input-partner > span {
-    position: absolute;
-    font-size: 0.813rem;
+    font-size: 13px;
     font-weight: 400;
     bottom: 0;
-    color: #9e9e9e; }
+    color: #9e9e9e;
+    line-height: 20px; }
     .text-input-partner > span.helper-text {
-      left: 0.813rem;
-      text-overflow: ellipsis;
-      width: 80%;
-      overflow: hidden;
-      white-space: nowrap; }
+      width: calc(100% - 100px);
+      padding: 8px 12px 0 12px;
+      float: left; }
     .text-input-partner > span.word-length {
-      left: auto;
-      right: 0.813rem; }
+      float: right;
+      padding: 8px 12px 0 0; }
   .text-input-partner.error > input {
     color: #e52929;
     border-color: #e52929; }
   .text-input-partner.error > span {
     color: #e52929; }
+  .text-input-partner:after {
+    content: '';
+    clear: both;
+    display: block; }
 
 .text-input-client {
-  position: relative;
-  padding-bottom: 28px; }
+  position: relative; }
   .text-input-client > input {
     display: block;
     border-radius: 4px;
-    padding: 8px 13px;
+    padding: 8px 12px;
     border: 1px solid #e0e0e0;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+    font-size: 14px;
+    line-height: 24px;
     color: #616161;
     font-weight: 400;
     background: #fff;
@@ -342,7 +344,7 @@ button {
       .text-input-client > input:hover:disabled:hover, .text-input-client > input:hover:disabled:focus, .text-input-client > input:focus:disabled:hover, .text-input-client > input:focus:disabled:focus {
         border-color: #e0e0e0; }
     .text-input-client > input[type='password'] {
-      font-size: 1.3rem;
+      font-size: 20px;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -355,36 +357,37 @@ button {
   .text-input-client input[type=text]::-ms-clear {
     display: none; }
   .text-input-client > span {
-    position: absolute;
-    font-size: 0.813rem;
+    font-size: 13px;
     font-weight: 400;
     bottom: 0;
-    color: #9e9e9e; }
+    color: #9e9e9e;
+    line-height: 20px; }
     .text-input-client > span.helper-text {
-      left: 0.813rem;
-      text-overflow: ellipsis;
-      width: 80%;
-      overflow: hidden;
-      white-space: nowrap; }
+      width: calc(100% - 100px);
+      padding: 8px 12px 0 12px;
+      float: left; }
     .text-input-client > span.word-length {
-      left: auto;
-      right: 0.813rem; }
+      float: right;
+      padding: 8px 12px 0 0; }
   .text-input-client.error > input {
     color: #e52929;
     border-color: #e52929; }
   .text-input-client.error > span {
     color: #e52929; }
+  .text-input-client:after {
+    content: '';
+    clear: both;
+    display: block; }
 
 .text-input-wishket.input-small {
-  position: relative;
-  padding-bottom: 28px; }
+  position: relative; }
   .text-input-wishket.input-small > input {
     display: block;
     border-radius: 4px;
-    padding: 8px 13px;
+    padding: 8px 12px;
     border: 1px solid #e0e0e0;
-    font-size: 0.813rem;
-    line-height: 1.25rem;
+    font-size: 13px;
+    line-height: 20px;
     color: #616161;
     font-weight: 400;
     background: #fff;
@@ -401,7 +404,7 @@ button {
       .text-input-wishket.input-small > input:hover:disabled:hover, .text-input-wishket.input-small > input:hover:disabled:focus, .text-input-wishket.input-small > input:focus:disabled:hover, .text-input-wishket.input-small > input:focus:disabled:focus {
         border-color: #e0e0e0; }
     .text-input-wishket.input-small > input[type='password'] {
-      font-size: 1.3rem;
+      font-size: 20px;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -414,36 +417,37 @@ button {
   .text-input-wishket.input-small input[type=text]::-ms-clear {
     display: none; }
   .text-input-wishket.input-small > span {
-    position: absolute;
-    font-size: 0.813rem;
+    font-size: 13px;
     font-weight: 400;
     bottom: 0;
-    color: #9e9e9e; }
+    color: #9e9e9e;
+    line-height: 20px; }
     .text-input-wishket.input-small > span.helper-text {
-      left: 0.813rem;
-      text-overflow: ellipsis;
-      width: 80%;
-      overflow: hidden;
-      white-space: nowrap; }
+      width: calc(100% - 100px);
+      padding: 8px 12px 0 12px;
+      float: left; }
     .text-input-wishket.input-small > span.word-length {
-      left: auto;
-      right: 0.813rem; }
+      float: right;
+      padding: 8px 12px 0 0; }
   .text-input-wishket.input-small.error > input {
     color: #e52929;
     border-color: #e52929; }
   .text-input-wishket.input-small.error > span {
     color: #e52929; }
+  .text-input-wishket.input-small:after {
+    content: '';
+    clear: both;
+    display: block; }
 
 .text-input-partner.input-small {
-  position: relative;
-  padding-bottom: 28px; }
+  position: relative; }
   .text-input-partner.input-small > input {
     display: block;
     border-radius: 4px;
-    padding: 8px 13px;
+    padding: 8px 12px;
     border: 1px solid #e0e0e0;
-    font-size: 0.813rem;
-    line-height: 1.25rem;
+    font-size: 13px;
+    line-height: 20px;
     color: #616161;
     font-weight: 400;
     background: #fff;
@@ -460,7 +464,7 @@ button {
       .text-input-partner.input-small > input:hover:disabled:hover, .text-input-partner.input-small > input:hover:disabled:focus, .text-input-partner.input-small > input:focus:disabled:hover, .text-input-partner.input-small > input:focus:disabled:focus {
         border-color: #e0e0e0; }
     .text-input-partner.input-small > input[type='password'] {
-      font-size: 1.3rem;
+      font-size: 20px;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -473,36 +477,37 @@ button {
   .text-input-partner.input-small input[type=text]::-ms-clear {
     display: none; }
   .text-input-partner.input-small > span {
-    position: absolute;
-    font-size: 0.813rem;
+    font-size: 13px;
     font-weight: 400;
     bottom: 0;
-    color: #9e9e9e; }
+    color: #9e9e9e;
+    line-height: 20px; }
     .text-input-partner.input-small > span.helper-text {
-      left: 0.813rem;
-      text-overflow: ellipsis;
-      width: 80%;
-      overflow: hidden;
-      white-space: nowrap; }
+      width: calc(100% - 100px);
+      padding: 8px 12px 0 12px;
+      float: left; }
     .text-input-partner.input-small > span.word-length {
-      left: auto;
-      right: 0.813rem; }
+      float: right;
+      padding: 8px 12px 0 0; }
   .text-input-partner.input-small.error > input {
     color: #e52929;
     border-color: #e52929; }
   .text-input-partner.input-small.error > span {
     color: #e52929; }
+  .text-input-partner.input-small:after {
+    content: '';
+    clear: both;
+    display: block; }
 
 .text-input-client.input-small {
-  position: relative;
-  padding-bottom: 28px; }
+  position: relative; }
   .text-input-client.input-small > input {
     display: block;
     border-radius: 4px;
-    padding: 8px 13px;
+    padding: 8px 12px;
     border: 1px solid #e0e0e0;
-    font-size: 0.813rem;
-    line-height: 1.25rem;
+    font-size: 13px;
+    line-height: 20px;
     color: #616161;
     font-weight: 400;
     background: #fff;
@@ -519,7 +524,7 @@ button {
       .text-input-client.input-small > input:hover:disabled:hover, .text-input-client.input-small > input:hover:disabled:focus, .text-input-client.input-small > input:focus:disabled:hover, .text-input-client.input-small > input:focus:disabled:focus {
         border-color: #e0e0e0; }
     .text-input-client.input-small > input[type='password'] {
-      font-size: 1.3rem;
+      font-size: 20px;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -532,25 +537,27 @@ button {
   .text-input-client.input-small input[type=text]::-ms-clear {
     display: none; }
   .text-input-client.input-small > span {
-    position: absolute;
-    font-size: 0.813rem;
+    font-size: 13px;
     font-weight: 400;
     bottom: 0;
-    color: #9e9e9e; }
+    color: #9e9e9e;
+    line-height: 20px; }
     .text-input-client.input-small > span.helper-text {
-      left: 0.813rem;
-      text-overflow: ellipsis;
-      width: 80%;
-      overflow: hidden;
-      white-space: nowrap; }
+      width: calc(100% - 100px);
+      padding: 8px 12px 0 12px;
+      float: left; }
     .text-input-client.input-small > span.word-length {
-      left: auto;
-      right: 0.813rem; }
+      float: right;
+      padding: 8px 12px 0 0; }
   .text-input-client.input-small.error > input {
     color: #e52929;
     border-color: #e52929; }
   .text-input-client.input-small.error > span {
     color: #e52929; }
+  .text-input-client.input-small:after {
+    content: '';
+    clear: both;
+    display: block; }
 
 .label-input-wishket {
   position: relative; }
@@ -558,18 +565,18 @@ button {
     display: block;
     border-radius: 4px;
     border: 1px solid #e0e0e0;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+    font-size: 14px;
+    line-height: 24px;
     color: #616161;
     font-weight: 400;
     background: #fff;
     width: 100%;
     transition: all .3s;
-    padding: 24px 13px 8px 13px; }
+    padding: 24px 12px 8px 12px; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       .label-input-wishket > input {
         line-height: 1em;
-        padding: 29px 13px 8px 13px; } }
+        padding: 29px 12px 8px 12px; } }
     .label-input-wishket > input::placeholder, .label-input-wishket > input::-webkit-input-placeholder {
       text-indent: -999999px; }
     .label-input-wishket > input:disabled {
@@ -580,7 +587,7 @@ button {
       .label-input-wishket > input:hover:disabled:hover, .label-input-wishket > input:hover:disabled:focus, .label-input-wishket > input:focus:disabled:hover, .label-input-wishket > input:focus:disabled:focus {
         border-color: #e0e0e0; }
     .label-input-wishket > input[type='password'] {
-      font-size: 1.3rem;
+      font-size: 20px;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
   .label-input-wishket input:-ms-input-placeholder {
@@ -592,8 +599,8 @@ button {
     left: 13px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 0.875rem;
-    line-height: 0.875rem;
+    font-size: 14px;
+    line-height: 14px;
     color: #bdbdbd;
     transition: all .3s; }
   .label-input-wishket > i {
@@ -609,25 +616,25 @@ button {
     color: #3ba3c7 !important; }
   .label-input-wishket.label-effect > label {
     transform: translateY(-20px);
-    font-size: 0.688rem; }
+    font-size: 11px; }
   .label-input-wishket.icon-right {
     position: relative; }
     .label-input-wishket.icon-right > input {
       display: block;
       border-radius: 4px;
       border: 1px solid #e0e0e0;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
+      font-size: 14px;
+      line-height: 24px;
       color: #616161;
       font-weight: 400;
       background: #fff;
       width: 100%;
       transition: all .3s;
-      padding: 24px 44px 8px 13px; }
+      padding: 24px 44px 8px 12px; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .label-input-wishket.icon-right > input {
           line-height: 1em;
-          padding: 29px 44px 8px 13px; } }
+          padding: 29px 44px 8px 12px; } }
       .label-input-wishket.icon-right > input::placeholder, .label-input-wishket.icon-right > input::-webkit-input-placeholder {
         text-indent: -999999px; }
       .label-input-wishket.icon-right > input:disabled {
@@ -638,7 +645,7 @@ button {
         .label-input-wishket.icon-right > input:hover:disabled:hover, .label-input-wishket.icon-right > input:hover:disabled:focus, .label-input-wishket.icon-right > input:focus:disabled:hover, .label-input-wishket.icon-right > input:focus:disabled:focus {
           border-color: #e0e0e0; }
       .label-input-wishket.icon-right > input[type='password'] {
-        font-size: 1.3rem;
+        font-size: 20px;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
     .label-input-wishket.icon-right input:-ms-input-placeholder {
@@ -650,15 +657,15 @@ button {
       left: 13px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 0.875rem;
-      line-height: 0.875rem;
+      font-size: 14px;
+      line-height: 14px;
       color: #bdbdbd;
       transition: all .3s; }
     .label-input-wishket.icon-right > i {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      right: 16px; }
+      right: 12px; }
     .label-input-wishket.icon-right.error > input {
       color: #e52929;
       border-color: #e52929; }
@@ -668,25 +675,25 @@ button {
       color: #3ba3c7 !important; }
     .label-input-wishket.icon-right.label-effect > label {
       transform: translateY(-20px);
-      font-size: 0.688rem; }
+      font-size: 11px; }
   .label-input-wishket.icon-left {
     position: relative; }
     .label-input-wishket.icon-left > input {
       display: block;
       border-radius: 4px;
       border: 1px solid #e0e0e0;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
+      font-size: 14px;
+      line-height: 24px;
       color: #616161;
       font-weight: 400;
       background: #fff;
       width: 100%;
       transition: all .3s;
-      padding: 24px 13px 8px 44px; }
+      padding: 24px 12px 8px 44px; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .label-input-wishket.icon-left > input {
           line-height: 1em;
-          padding: 29px 13px 8px 44px; } }
+          padding: 29px 12px 8px 44px; } }
       .label-input-wishket.icon-left > input::placeholder, .label-input-wishket.icon-left > input::-webkit-input-placeholder {
         text-indent: -999999px; }
       .label-input-wishket.icon-left > input:disabled {
@@ -697,7 +704,7 @@ button {
         .label-input-wishket.icon-left > input:hover:disabled:hover, .label-input-wishket.icon-left > input:hover:disabled:focus, .label-input-wishket.icon-left > input:focus:disabled:hover, .label-input-wishket.icon-left > input:focus:disabled:focus {
           border-color: #e0e0e0; }
       .label-input-wishket.icon-left > input[type='password'] {
-        font-size: 1.3rem;
+        font-size: 20px;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
     .label-input-wishket.icon-left input:-ms-input-placeholder {
@@ -709,15 +716,15 @@ button {
       left: 44px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 0.875rem;
-      line-height: 0.875rem;
+      font-size: 14px;
+      line-height: 14px;
       color: #bdbdbd;
       transition: all .3s; }
     .label-input-wishket.icon-left > i {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: 16px; }
+      left: 12px; }
     .label-input-wishket.icon-left.error > input {
       color: #e52929;
       border-color: #e52929; }
@@ -727,7 +734,7 @@ button {
       color: #3ba3c7 !important; }
     .label-input-wishket.icon-left.label-effect > label {
       transform: translateY(-20px);
-      font-size: 0.688rem; }
+      font-size: 11px; }
 
 .label-input-client {
   position: relative; }
@@ -735,18 +742,18 @@ button {
     display: block;
     border-radius: 4px;
     border: 1px solid #e0e0e0;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+    font-size: 14px;
+    line-height: 24px;
     color: #616161;
     font-weight: 400;
     background: #fff;
     width: 100%;
     transition: all .3s;
-    padding: 24px 13px 8px 13px; }
+    padding: 24px 12px 8px 12px; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       .label-input-client > input {
         line-height: 1em;
-        padding: 29px 13px 8px 13px; } }
+        padding: 29px 12px 8px 12px; } }
     .label-input-client > input::placeholder, .label-input-client > input::-webkit-input-placeholder {
       text-indent: -999999px; }
     .label-input-client > input:disabled {
@@ -757,7 +764,7 @@ button {
       .label-input-client > input:hover:disabled:hover, .label-input-client > input:hover:disabled:focus, .label-input-client > input:focus:disabled:hover, .label-input-client > input:focus:disabled:focus {
         border-color: #e0e0e0; }
     .label-input-client > input[type='password'] {
-      font-size: 1.3rem;
+      font-size: 20px;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
   .label-input-client input:-ms-input-placeholder {
@@ -769,8 +776,8 @@ button {
     left: 13px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 0.875rem;
-    line-height: 0.875rem;
+    font-size: 14px;
+    line-height: 14px;
     color: #bdbdbd;
     transition: all .3s; }
   .label-input-client > i {
@@ -786,25 +793,25 @@ button {
     color: #2e6baa !important; }
   .label-input-client.label-effect > label {
     transform: translateY(-20px);
-    font-size: 0.688rem; }
+    font-size: 11px; }
   .label-input-client.icon-right {
     position: relative; }
     .label-input-client.icon-right > input {
       display: block;
       border-radius: 4px;
       border: 1px solid #e0e0e0;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
+      font-size: 14px;
+      line-height: 24px;
       color: #616161;
       font-weight: 400;
       background: #fff;
       width: 100%;
       transition: all .3s;
-      padding: 24px 44px 8px 13px; }
+      padding: 24px 44px 8px 12px; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .label-input-client.icon-right > input {
           line-height: 1em;
-          padding: 29px 44px 8px 13px; } }
+          padding: 29px 44px 8px 12px; } }
       .label-input-client.icon-right > input::placeholder, .label-input-client.icon-right > input::-webkit-input-placeholder {
         text-indent: -999999px; }
       .label-input-client.icon-right > input:disabled {
@@ -815,7 +822,7 @@ button {
         .label-input-client.icon-right > input:hover:disabled:hover, .label-input-client.icon-right > input:hover:disabled:focus, .label-input-client.icon-right > input:focus:disabled:hover, .label-input-client.icon-right > input:focus:disabled:focus {
           border-color: #e0e0e0; }
       .label-input-client.icon-right > input[type='password'] {
-        font-size: 1.3rem;
+        font-size: 20px;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
     .label-input-client.icon-right input:-ms-input-placeholder {
@@ -827,15 +834,15 @@ button {
       left: 13px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 0.875rem;
-      line-height: 0.875rem;
+      font-size: 14px;
+      line-height: 14px;
       color: #bdbdbd;
       transition: all .3s; }
     .label-input-client.icon-right > i {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      right: 16px; }
+      right: 12px; }
     .label-input-client.icon-right.error > input {
       color: #e52929;
       border-color: #e52929; }
@@ -845,25 +852,25 @@ button {
       color: #2e6baa !important; }
     .label-input-client.icon-right.label-effect > label {
       transform: translateY(-20px);
-      font-size: 0.688rem; }
+      font-size: 11px; }
   .label-input-client.icon-left {
     position: relative; }
     .label-input-client.icon-left > input {
       display: block;
       border-radius: 4px;
       border: 1px solid #e0e0e0;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
+      font-size: 14px;
+      line-height: 24px;
       color: #616161;
       font-weight: 400;
       background: #fff;
       width: 100%;
       transition: all .3s;
-      padding: 24px 13px 8px 44px; }
+      padding: 24px 12px 8px 44px; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .label-input-client.icon-left > input {
           line-height: 1em;
-          padding: 29px 13px 8px 44px; } }
+          padding: 29px 12px 8px 44px; } }
       .label-input-client.icon-left > input::placeholder, .label-input-client.icon-left > input::-webkit-input-placeholder {
         text-indent: -999999px; }
       .label-input-client.icon-left > input:disabled {
@@ -874,7 +881,7 @@ button {
         .label-input-client.icon-left > input:hover:disabled:hover, .label-input-client.icon-left > input:hover:disabled:focus, .label-input-client.icon-left > input:focus:disabled:hover, .label-input-client.icon-left > input:focus:disabled:focus {
           border-color: #e0e0e0; }
       .label-input-client.icon-left > input[type='password'] {
-        font-size: 1.3rem;
+        font-size: 20px;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
     .label-input-client.icon-left input:-ms-input-placeholder {
@@ -886,15 +893,15 @@ button {
       left: 44px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 0.875rem;
-      line-height: 0.875rem;
+      font-size: 14px;
+      line-height: 14px;
       color: #bdbdbd;
       transition: all .3s; }
     .label-input-client.icon-left > i {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: 16px; }
+      left: 12px; }
     .label-input-client.icon-left.error > input {
       color: #e52929;
       border-color: #e52929; }
@@ -904,7 +911,7 @@ button {
       color: #2e6baa !important; }
     .label-input-client.icon-left.label-effect > label {
       transform: translateY(-20px);
-      font-size: 0.688rem; }
+      font-size: 11px; }
 
 .label-input-partner {
   position: relative; }
@@ -912,18 +919,18 @@ button {
     display: block;
     border-radius: 4px;
     border: 1px solid #e0e0e0;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+    font-size: 14px;
+    line-height: 24px;
     color: #616161;
     font-weight: 400;
     background: #fff;
     width: 100%;
     transition: all .3s;
-    padding: 24px 13px 8px 13px; }
+    padding: 24px 12px 8px 12px; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       .label-input-partner > input {
         line-height: 1em;
-        padding: 29px 13px 8px 13px; } }
+        padding: 29px 12px 8px 12px; } }
     .label-input-partner > input::placeholder, .label-input-partner > input::-webkit-input-placeholder {
       text-indent: -999999px; }
     .label-input-partner > input:disabled {
@@ -934,7 +941,7 @@ button {
       .label-input-partner > input:hover:disabled:hover, .label-input-partner > input:hover:disabled:focus, .label-input-partner > input:focus:disabled:hover, .label-input-partner > input:focus:disabled:focus {
         border-color: #e0e0e0; }
     .label-input-partner > input[type='password'] {
-      font-size: 1.3rem;
+      font-size: 20px;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
   .label-input-partner input:-ms-input-placeholder {
@@ -946,8 +953,8 @@ button {
     left: 13px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 0.875rem;
-    line-height: 0.875rem;
+    font-size: 14px;
+    line-height: 14px;
     color: #bdbdbd;
     transition: all .3s; }
   .label-input-partner > i {
@@ -963,25 +970,25 @@ button {
     color: #00a878 !important; }
   .label-input-partner.label-effect > label {
     transform: translateY(-20px);
-    font-size: 0.688rem; }
+    font-size: 11px; }
   .label-input-partner.icon-right {
     position: relative; }
     .label-input-partner.icon-right > input {
       display: block;
       border-radius: 4px;
       border: 1px solid #e0e0e0;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
+      font-size: 14px;
+      line-height: 24px;
       color: #616161;
       font-weight: 400;
       background: #fff;
       width: 100%;
       transition: all .3s;
-      padding: 24px 44px 8px 13px; }
+      padding: 24px 44px 8px 12px; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .label-input-partner.icon-right > input {
           line-height: 1em;
-          padding: 29px 44px 8px 13px; } }
+          padding: 29px 44px 8px 12px; } }
       .label-input-partner.icon-right > input::placeholder, .label-input-partner.icon-right > input::-webkit-input-placeholder {
         text-indent: -999999px; }
       .label-input-partner.icon-right > input:disabled {
@@ -992,7 +999,7 @@ button {
         .label-input-partner.icon-right > input:hover:disabled:hover, .label-input-partner.icon-right > input:hover:disabled:focus, .label-input-partner.icon-right > input:focus:disabled:hover, .label-input-partner.icon-right > input:focus:disabled:focus {
           border-color: #e0e0e0; }
       .label-input-partner.icon-right > input[type='password'] {
-        font-size: 1.3rem;
+        font-size: 20px;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
     .label-input-partner.icon-right input:-ms-input-placeholder {
@@ -1004,15 +1011,15 @@ button {
       left: 13px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 0.875rem;
-      line-height: 0.875rem;
+      font-size: 14px;
+      line-height: 14px;
       color: #bdbdbd;
       transition: all .3s; }
     .label-input-partner.icon-right > i {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      right: 16px; }
+      right: 12px; }
     .label-input-partner.icon-right.error > input {
       color: #e52929;
       border-color: #e52929; }
@@ -1022,25 +1029,25 @@ button {
       color: #00a878 !important; }
     .label-input-partner.icon-right.label-effect > label {
       transform: translateY(-20px);
-      font-size: 0.688rem; }
+      font-size: 11px; }
   .label-input-partner.icon-left {
     position: relative; }
     .label-input-partner.icon-left > input {
       display: block;
       border-radius: 4px;
       border: 1px solid #e0e0e0;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
+      font-size: 14px;
+      line-height: 24px;
       color: #616161;
       font-weight: 400;
       background: #fff;
       width: 100%;
       transition: all .3s;
-      padding: 24px 13px 8px 44px; }
+      padding: 24px 12px 8px 44px; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .label-input-partner.icon-left > input {
           line-height: 1em;
-          padding: 29px 13px 8px 44px; } }
+          padding: 29px 12px 8px 44px; } }
       .label-input-partner.icon-left > input::placeholder, .label-input-partner.icon-left > input::-webkit-input-placeholder {
         text-indent: -999999px; }
       .label-input-partner.icon-left > input:disabled {
@@ -1051,7 +1058,7 @@ button {
         .label-input-partner.icon-left > input:hover:disabled:hover, .label-input-partner.icon-left > input:hover:disabled:focus, .label-input-partner.icon-left > input:focus:disabled:hover, .label-input-partner.icon-left > input:focus:disabled:focus {
           border-color: #e0e0e0; }
       .label-input-partner.icon-left > input[type='password'] {
-        font-size: 1.3rem;
+        font-size: 20px;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
     .label-input-partner.icon-left input:-ms-input-placeholder {
@@ -1063,15 +1070,15 @@ button {
       left: 44px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 0.875rem;
-      line-height: 0.875rem;
+      font-size: 14px;
+      line-height: 14px;
       color: #bdbdbd;
       transition: all .3s; }
     .label-input-partner.icon-left > i {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: 16px; }
+      left: 12px; }
     .label-input-partner.icon-left.error > input {
       color: #e52929;
       border-color: #e52929; }
@@ -1081,19 +1088,18 @@ button {
       color: #00a878 !important; }
     .label-input-partner.icon-left.label-effect > label {
       transform: translateY(-20px);
-      font-size: 0.688rem; }
+      font-size: 11px; }
 
 .checkbox-wishket {
   margin: 0;
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
-  margin: 0 0 8px 0;
+  margin: 0;
   display: inline-block;
   cursor: pointer; }
   .checkbox-wishket > span:first-child {
-    display: inline-block;
     position: relative;
-    top: 0.2rem;
+    top: 4px;
     float: left; }
     .checkbox-wishket > span:first-child > span {
       position: relative;
@@ -1106,37 +1112,24 @@ button {
       border-radius: 2px; }
     .checkbox-wishket > span:first-child > span.arrow:after {
       position: absolute;
-      top: 44%;
-      left: 22%;
-      display: table;
-      width: 4px;
-      height: 8px;
-      border: 1.6px solid #fff;
-      border-top: 0;
-      border-left: 0;
-      transform: rotate(45deg) scale(0) translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       opacity: 0;
-      transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
-      content: ' '; }
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        .checkbox-wishket > span:first-child > span.arrow:after {
-          top: 44%;
-          left: 20.5%;
-          width: 4px;
-          height: 8px; } }
+      width: 10px;
+      height: 8px;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.8L4 7L9 1' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      content: ''; }
     .checkbox-wishket > span:first-child > span.minus-icon:before {
       top: 50%;
       left: 50%;
-      display: table;
-      width: 8px;
-      height: 1.6px;
-      border: 1.6px solid #fff;
-      background: #fff;
-      border: none;
-      border-radius: 2px;
-      transform: scale(0) translate(-50%, -50%);
-      opacity: 0;
-      transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s; }
+      width: 10px;
+      height: 2px;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='2' viewBox='0 0 10 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1H9' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      opacity: 0; }
     .checkbox-wishket > span:first-child > input {
       position: absolute;
       top: 0;
@@ -1158,12 +1151,7 @@ button {
           border-color: #ffffff;
           border-top: 0;
           border-left: 0;
-          -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-          -ms-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-          transform: rotate(45deg) scale(1) translate(-50%, -50%);
           opacity: 1;
-          -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-          transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
           content: ' ';
           visibility: visible; }
         .checkbox-wishket > span:first-child > input:checked + span:before {
@@ -1174,32 +1162,20 @@ button {
         visibility: hidden; }
       .checkbox-wishket > span:first-child > input:checked + span.minus-icon:before {
         position: absolute;
-        display: table;
-        border-color: #ffffff;
-        border-top: 0;
-        border-left: 0;
-        border-right: 0;
-        -webkit-transform: scale(1) translate(-50%, -50%);
-        -ms-transform: scale(1) translate(-50%, -50%);
-        transform: scale(1) translate(-50%, -50%);
         opacity: 1;
-        -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-        transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-        content: ' ';
+        content: '';
         visibility: visible; }
-      .checkbox-wishket > span:first-child > input:focus + span {
-        border-color: #3391ba; }
   .checkbox-wishket > span:last-child {
     user-select: none;
     cursor: pointer;
     padding: 0 0 0 12px;
     font-weight: 400;
-    font-size: 0.875rem;
+    font-size: 14px;
     color: #212121;
-    line-height: 1.5rem;
+    line-height: 24px;
     float: left;
     width: calc(100% - 16px); }
-  .checkbox-wishket:hover > span:first-child > span, .checkbox-wishket:focus > span:first-child > span {
+  .checkbox-wishket:hover > span:first-child > span {
     border-color: #3ba3c7; }
   .checkbox-wishket.disabled > span:first-child > span {
     background: #f5f5f5; }
@@ -1208,7 +1184,7 @@ button {
     border-color: #e0e0e0; }
   .checkbox-wishket.disabled > span:last-child {
     color: #bdbdbd; }
-  .checkbox-wishket.disabled:hover > span:first-child > span, .checkbox-wishket.disabled:focus > span:first-child > span {
+  .checkbox-wishket.disabled:hover > span:first-child > span {
     border-color: #e0e0e0; }
   .checkbox-wishket:after {
     content: '';
@@ -1218,13 +1194,12 @@ button {
     margin: 0;
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
-    margin: 0 0 8px 0;
+    margin: 0;
     display: inline-block;
     cursor: pointer; }
     .checkbox-wishket.detail-text > span:first-child {
-      display: inline-block;
       position: relative;
-      top: 0.2rem;
+      top: 4px;
       float: left; }
       .checkbox-wishket.detail-text > span:first-child > span {
         position: relative;
@@ -1237,37 +1212,24 @@ button {
         border-radius: 2px; }
       .checkbox-wishket.detail-text > span:first-child > span.arrow:after {
         position: absolute;
-        top: 44%;
-        left: 22%;
-        display: table;
-        width: 4px;
-        height: 8px;
-        border: 1.6px solid #fff;
-        border-top: 0;
-        border-left: 0;
-        transform: rotate(45deg) scale(0) translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         opacity: 0;
-        transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
-        content: ' '; }
-        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-          .checkbox-wishket.detail-text > span:first-child > span.arrow:after {
-            top: 44%;
-            left: 20.5%;
-            width: 4px;
-            height: 8px; } }
+        width: 10px;
+        height: 8px;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.8L4 7L9 1' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        content: ''; }
       .checkbox-wishket.detail-text > span:first-child > span.minus-icon:before {
         top: 50%;
         left: 50%;
-        display: table;
-        width: 8px;
-        height: 1.6px;
-        border: 1.6px solid #fff;
-        background: #fff;
-        border: none;
-        border-radius: 2px;
-        transform: scale(0) translate(-50%, -50%);
-        opacity: 0;
-        transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s; }
+        width: 10px;
+        height: 2px;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='2' viewBox='0 0 10 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1H9' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        opacity: 0; }
       .checkbox-wishket.detail-text > span:first-child > input {
         position: absolute;
         top: 0;
@@ -1289,12 +1251,7 @@ button {
             border-color: #ffffff;
             border-top: 0;
             border-left: 0;
-            -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-            -ms-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-            transform: rotate(45deg) scale(1) translate(-50%, -50%);
             opacity: 1;
-            -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-            transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
             content: ' ';
             visibility: visible; }
           .checkbox-wishket.detail-text > span:first-child > input:checked + span:before {
@@ -1305,41 +1262,28 @@ button {
           visibility: hidden; }
         .checkbox-wishket.detail-text > span:first-child > input:checked + span.minus-icon:before {
           position: absolute;
-          display: table;
-          border-color: #ffffff;
-          border-top: 0;
-          border-left: 0;
-          border-right: 0;
-          -webkit-transform: scale(1) translate(-50%, -50%);
-          -ms-transform: scale(1) translate(-50%, -50%);
-          transform: scale(1) translate(-50%, -50%);
           opacity: 1;
-          -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-          transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-          content: ' ';
+          content: '';
           visibility: visible; }
-        .checkbox-wishket.detail-text > span:first-child > input:focus + span {
-          border-color: #3391ba; }
     .checkbox-wishket.detail-text > div {
       float: left;
       vertical-align: top;
-      display: inline-block;
       user-select: none;
       cursor: pointer;
       width: calc(100% - 16px); }
       .checkbox-wishket.detail-text > div > span {
         padding: 0 0 0 12px;
         font-weight: 400;
-        font-size: 0.875rem;
+        font-size: 14px;
         color: #212121;
-        line-height: 1.5rem; }
+        line-height: 24px; }
       .checkbox-wishket.detail-text > div > p {
         padding: 0 0 0 12px;
         font-weight: 400;
-        font-size: 0.813rem;
+        font-size: 13px;
         color: #616161;
-        line-height: 1.25rem; }
-    .checkbox-wishket.detail-text:hover > span:first-child > span, .checkbox-wishket.detail-text:focus > span:first-child > span {
+        line-height: 20px; }
+    .checkbox-wishket.detail-text:hover > span:first-child > span {
       border-color: #3ba3c7; }
     .checkbox-wishket.detail-text.disabled > span:first-child > span {
       background: #f5f5f5; }
@@ -1348,7 +1292,7 @@ button {
       border-color: #e0e0e0; }
     .checkbox-wishket.detail-text.disabled > div > span, .checkbox-wishket.detail-text.disabled > div > p {
       color: #bdbdbd; }
-    .checkbox-wishket.detail-text.disabled:hover > span:first-child > span, .checkbox-wishket.detail-text.disabled:focus > span:first-child > span {
+    .checkbox-wishket.detail-text.disabled:hover > span:first-child > span {
       border-color: #e0e0e0; }
     .checkbox-wishket.detail-text:after {
       content: '';
@@ -1362,13 +1306,12 @@ button {
   margin: 0;
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
-  margin: 0 0 8px 0;
+  margin: 0;
   display: inline-block;
   cursor: pointer; }
   .checkbox-partner > span:first-child {
-    display: inline-block;
     position: relative;
-    top: 0.2rem;
+    top: 4px;
     float: left; }
     .checkbox-partner > span:first-child > span {
       position: relative;
@@ -1381,37 +1324,24 @@ button {
       border-radius: 2px; }
     .checkbox-partner > span:first-child > span.arrow:after {
       position: absolute;
-      top: 44%;
-      left: 22%;
-      display: table;
-      width: 4px;
-      height: 8px;
-      border: 1.6px solid #fff;
-      border-top: 0;
-      border-left: 0;
-      transform: rotate(45deg) scale(0) translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       opacity: 0;
-      transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
-      content: ' '; }
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        .checkbox-partner > span:first-child > span.arrow:after {
-          top: 44%;
-          left: 20.5%;
-          width: 4px;
-          height: 8px; } }
+      width: 10px;
+      height: 8px;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.8L4 7L9 1' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      content: ''; }
     .checkbox-partner > span:first-child > span.minus-icon:before {
       top: 50%;
       left: 50%;
-      display: table;
-      width: 8px;
-      height: 1.6px;
-      border: 1.6px solid #fff;
-      background: #fff;
-      border: none;
-      border-radius: 2px;
-      transform: scale(0) translate(-50%, -50%);
-      opacity: 0;
-      transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s; }
+      width: 10px;
+      height: 2px;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='2' viewBox='0 0 10 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1H9' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      opacity: 0; }
     .checkbox-partner > span:first-child > input {
       position: absolute;
       top: 0;
@@ -1433,12 +1363,7 @@ button {
           border-color: #ffffff;
           border-top: 0;
           border-left: 0;
-          -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-          -ms-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-          transform: rotate(45deg) scale(1) translate(-50%, -50%);
           opacity: 1;
-          -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-          transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
           content: ' ';
           visibility: visible; }
         .checkbox-partner > span:first-child > input:checked + span:before {
@@ -1449,32 +1374,20 @@ button {
         visibility: hidden; }
       .checkbox-partner > span:first-child > input:checked + span.minus-icon:before {
         position: absolute;
-        display: table;
-        border-color: #ffffff;
-        border-top: 0;
-        border-left: 0;
-        border-right: 0;
-        -webkit-transform: scale(1) translate(-50%, -50%);
-        -ms-transform: scale(1) translate(-50%, -50%);
-        transform: scale(1) translate(-50%, -50%);
         opacity: 1;
-        -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-        transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-        content: ' ';
+        content: '';
         visibility: visible; }
-      .checkbox-partner > span:first-child > input:focus + span {
-        border-color: #009168; }
   .checkbox-partner > span:last-child {
     user-select: none;
     cursor: pointer;
     padding: 0 0 0 12px;
     font-weight: 400;
-    font-size: 0.875rem;
+    font-size: 14px;
     color: #212121;
-    line-height: 1.5rem;
+    line-height: 24px;
     float: left;
     width: calc(100% - 16px); }
-  .checkbox-partner:hover > span:first-child > span, .checkbox-partner:focus > span:first-child > span {
+  .checkbox-partner:hover > span:first-child > span {
     border-color: #00a878; }
   .checkbox-partner.disabled > span:first-child > span {
     background: #f5f5f5; }
@@ -1483,7 +1396,7 @@ button {
     border-color: #e0e0e0; }
   .checkbox-partner.disabled > span:last-child {
     color: #bdbdbd; }
-  .checkbox-partner.disabled:hover > span:first-child > span, .checkbox-partner.disabled:focus > span:first-child > span {
+  .checkbox-partner.disabled:hover > span:first-child > span {
     border-color: #e0e0e0; }
   .checkbox-partner:after {
     content: '';
@@ -1493,13 +1406,12 @@ button {
     margin: 0;
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
-    margin: 0 0 8px 0;
+    margin: 0;
     display: inline-block;
     cursor: pointer; }
     .checkbox-partner.detail-text > span:first-child {
-      display: inline-block;
       position: relative;
-      top: 0.2rem;
+      top: 4px;
       float: left; }
       .checkbox-partner.detail-text > span:first-child > span {
         position: relative;
@@ -1512,37 +1424,24 @@ button {
         border-radius: 2px; }
       .checkbox-partner.detail-text > span:first-child > span.arrow:after {
         position: absolute;
-        top: 44%;
-        left: 22%;
-        display: table;
-        width: 4px;
-        height: 8px;
-        border: 1.6px solid #fff;
-        border-top: 0;
-        border-left: 0;
-        transform: rotate(45deg) scale(0) translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         opacity: 0;
-        transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
-        content: ' '; }
-        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-          .checkbox-partner.detail-text > span:first-child > span.arrow:after {
-            top: 44%;
-            left: 20.5%;
-            width: 4px;
-            height: 8px; } }
+        width: 10px;
+        height: 8px;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.8L4 7L9 1' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        content: ''; }
       .checkbox-partner.detail-text > span:first-child > span.minus-icon:before {
         top: 50%;
         left: 50%;
-        display: table;
-        width: 8px;
-        height: 1.6px;
-        border: 1.6px solid #fff;
-        background: #fff;
-        border: none;
-        border-radius: 2px;
-        transform: scale(0) translate(-50%, -50%);
-        opacity: 0;
-        transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s; }
+        width: 10px;
+        height: 2px;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='2' viewBox='0 0 10 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1H9' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        opacity: 0; }
       .checkbox-partner.detail-text > span:first-child > input {
         position: absolute;
         top: 0;
@@ -1564,12 +1463,7 @@ button {
             border-color: #ffffff;
             border-top: 0;
             border-left: 0;
-            -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-            -ms-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-            transform: rotate(45deg) scale(1) translate(-50%, -50%);
             opacity: 1;
-            -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-            transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
             content: ' ';
             visibility: visible; }
           .checkbox-partner.detail-text > span:first-child > input:checked + span:before {
@@ -1580,41 +1474,28 @@ button {
           visibility: hidden; }
         .checkbox-partner.detail-text > span:first-child > input:checked + span.minus-icon:before {
           position: absolute;
-          display: table;
-          border-color: #ffffff;
-          border-top: 0;
-          border-left: 0;
-          border-right: 0;
-          -webkit-transform: scale(1) translate(-50%, -50%);
-          -ms-transform: scale(1) translate(-50%, -50%);
-          transform: scale(1) translate(-50%, -50%);
           opacity: 1;
-          -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-          transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-          content: ' ';
+          content: '';
           visibility: visible; }
-        .checkbox-partner.detail-text > span:first-child > input:focus + span {
-          border-color: #009168; }
     .checkbox-partner.detail-text > div {
       float: left;
       vertical-align: top;
-      display: inline-block;
       user-select: none;
       cursor: pointer;
       width: calc(100% - 16px); }
       .checkbox-partner.detail-text > div > span {
         padding: 0 0 0 12px;
         font-weight: 400;
-        font-size: 0.875rem;
+        font-size: 14px;
         color: #212121;
-        line-height: 1.5rem; }
+        line-height: 24px; }
       .checkbox-partner.detail-text > div > p {
         padding: 0 0 0 12px;
         font-weight: 400;
-        font-size: 0.813rem;
+        font-size: 13px;
         color: #616161;
-        line-height: 1.25rem; }
-    .checkbox-partner.detail-text:hover > span:first-child > span, .checkbox-partner.detail-text:focus > span:first-child > span {
+        line-height: 20px; }
+    .checkbox-partner.detail-text:hover > span:first-child > span {
       border-color: #00a878; }
     .checkbox-partner.detail-text.disabled > span:first-child > span {
       background: #f5f5f5; }
@@ -1623,7 +1504,7 @@ button {
       border-color: #e0e0e0; }
     .checkbox-partner.detail-text.disabled > div > span, .checkbox-partner.detail-text.disabled > div > p {
       color: #bdbdbd; }
-    .checkbox-partner.detail-text.disabled:hover > span:first-child > span, .checkbox-partner.detail-text.disabled:focus > span:first-child > span {
+    .checkbox-partner.detail-text.disabled:hover > span:first-child > span {
       border-color: #e0e0e0; }
     .checkbox-partner.detail-text:after {
       content: '';
@@ -1637,13 +1518,12 @@ button {
   margin: 0;
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
-  margin: 0 0 8px 0;
+  margin: 0;
   display: inline-block;
   cursor: pointer; }
   .checkbox-client > span:first-child {
-    display: inline-block;
     position: relative;
-    top: 0.2rem;
+    top: 4px;
     float: left; }
     .checkbox-client > span:first-child > span {
       position: relative;
@@ -1656,37 +1536,24 @@ button {
       border-radius: 2px; }
     .checkbox-client > span:first-child > span.arrow:after {
       position: absolute;
-      top: 44%;
-      left: 22%;
-      display: table;
-      width: 4px;
-      height: 8px;
-      border: 1.6px solid #fff;
-      border-top: 0;
-      border-left: 0;
-      transform: rotate(45deg) scale(0) translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       opacity: 0;
-      transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
-      content: ' '; }
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        .checkbox-client > span:first-child > span.arrow:after {
-          top: 44%;
-          left: 20.5%;
-          width: 4px;
-          height: 8px; } }
+      width: 10px;
+      height: 8px;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.8L4 7L9 1' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      content: ''; }
     .checkbox-client > span:first-child > span.minus-icon:before {
       top: 50%;
       left: 50%;
-      display: table;
-      width: 8px;
-      height: 1.6px;
-      border: 1.6px solid #fff;
-      background: #fff;
-      border: none;
-      border-radius: 2px;
-      transform: scale(0) translate(-50%, -50%);
-      opacity: 0;
-      transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s; }
+      width: 10px;
+      height: 2px;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='2' viewBox='0 0 10 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1H9' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      opacity: 0; }
     .checkbox-client > span:first-child > input {
       position: absolute;
       top: 0;
@@ -1708,12 +1575,7 @@ button {
           border-color: #ffffff;
           border-top: 0;
           border-left: 0;
-          -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-          -ms-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-          transform: rotate(45deg) scale(1) translate(-50%, -50%);
           opacity: 1;
-          -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-          transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
           content: ' ';
           visibility: visible; }
         .checkbox-client > span:first-child > input:checked + span:before {
@@ -1724,32 +1586,20 @@ button {
         visibility: hidden; }
       .checkbox-client > span:first-child > input:checked + span.minus-icon:before {
         position: absolute;
-        display: table;
-        border-color: #ffffff;
-        border-top: 0;
-        border-left: 0;
-        border-right: 0;
-        -webkit-transform: scale(1) translate(-50%, -50%);
-        -ms-transform: scale(1) translate(-50%, -50%);
-        transform: scale(1) translate(-50%, -50%);
         opacity: 1;
-        -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-        transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-        content: ' ';
+        content: '';
         visibility: visible; }
-      .checkbox-client > span:first-child > input:focus + span {
-        border-color: #1f578c; }
   .checkbox-client > span:last-child {
     user-select: none;
     cursor: pointer;
     padding: 0 0 0 12px;
     font-weight: 400;
-    font-size: 0.875rem;
+    font-size: 14px;
     color: #212121;
-    line-height: 1.5rem;
+    line-height: 24px;
     float: left;
     width: calc(100% - 16px); }
-  .checkbox-client:hover > span:first-child > span, .checkbox-client:focus > span:first-child > span {
+  .checkbox-client:hover > span:first-child > span {
     border-color: #2e6baa; }
   .checkbox-client.disabled > span:first-child > span {
     background: #f5f5f5; }
@@ -1758,7 +1608,7 @@ button {
     border-color: #e0e0e0; }
   .checkbox-client.disabled > span:last-child {
     color: #bdbdbd; }
-  .checkbox-client.disabled:hover > span:first-child > span, .checkbox-client.disabled:focus > span:first-child > span {
+  .checkbox-client.disabled:hover > span:first-child > span {
     border-color: #e0e0e0; }
   .checkbox-client:after {
     content: '';
@@ -1768,13 +1618,12 @@ button {
     margin: 0;
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
-    margin: 0 0 8px 0;
+    margin: 0;
     display: inline-block;
     cursor: pointer; }
     .checkbox-client.detail-text > span:first-child {
-      display: inline-block;
       position: relative;
-      top: 0.2rem;
+      top: 4px;
       float: left; }
       .checkbox-client.detail-text > span:first-child > span {
         position: relative;
@@ -1787,37 +1636,24 @@ button {
         border-radius: 2px; }
       .checkbox-client.detail-text > span:first-child > span.arrow:after {
         position: absolute;
-        top: 44%;
-        left: 22%;
-        display: table;
-        width: 4px;
-        height: 8px;
-        border: 1.6px solid #fff;
-        border-top: 0;
-        border-left: 0;
-        transform: rotate(45deg) scale(0) translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         opacity: 0;
-        transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s;
-        content: ' '; }
-        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-          .checkbox-client.detail-text > span:first-child > span.arrow:after {
-            top: 44%;
-            left: 20.5%;
-            width: 4px;
-            height: 8px; } }
+        width: 10px;
+        height: 8px;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.8L4 7L9 1' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        content: ''; }
       .checkbox-client.detail-text > span:first-child > span.minus-icon:before {
         top: 50%;
         left: 50%;
-        display: table;
-        width: 8px;
-        height: 1.6px;
-        border: 1.6px solid #fff;
-        background: #fff;
-        border: none;
-        border-radius: 2px;
-        transform: scale(0) translate(-50%, -50%);
-        opacity: 0;
-        transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s; }
+        width: 10px;
+        height: 2px;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='2' viewBox='0 0 10 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1H9' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        opacity: 0; }
       .checkbox-client.detail-text > span:first-child > input {
         position: absolute;
         top: 0;
@@ -1839,12 +1675,7 @@ button {
             border-color: #ffffff;
             border-top: 0;
             border-left: 0;
-            -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-            -ms-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-            transform: rotate(45deg) scale(1) translate(-50%, -50%);
             opacity: 1;
-            -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-            transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
             content: ' ';
             visibility: visible; }
           .checkbox-client.detail-text > span:first-child > input:checked + span:before {
@@ -1855,41 +1686,28 @@ button {
           visibility: hidden; }
         .checkbox-client.detail-text > span:first-child > input:checked + span.minus-icon:before {
           position: absolute;
-          display: table;
-          border-color: #ffffff;
-          border-top: 0;
-          border-left: 0;
-          border-right: 0;
-          -webkit-transform: scale(1) translate(-50%, -50%);
-          -ms-transform: scale(1) translate(-50%, -50%);
-          transform: scale(1) translate(-50%, -50%);
           opacity: 1;
-          -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-          transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
-          content: ' ';
+          content: '';
           visibility: visible; }
-        .checkbox-client.detail-text > span:first-child > input:focus + span {
-          border-color: #1f578c; }
     .checkbox-client.detail-text > div {
       float: left;
       vertical-align: top;
-      display: inline-block;
       user-select: none;
       cursor: pointer;
       width: calc(100% - 16px); }
       .checkbox-client.detail-text > div > span {
         padding: 0 0 0 12px;
         font-weight: 400;
-        font-size: 0.875rem;
+        font-size: 14px;
         color: #212121;
-        line-height: 1.5rem; }
+        line-height: 24px; }
       .checkbox-client.detail-text > div > p {
         padding: 0 0 0 12px;
         font-weight: 400;
-        font-size: 0.813rem;
+        font-size: 13px;
         color: #616161;
-        line-height: 1.25rem; }
-    .checkbox-client.detail-text:hover > span:first-child > span, .checkbox-client.detail-text:focus > span:first-child > span {
+        line-height: 20px; }
+    .checkbox-client.detail-text:hover > span:first-child > span {
       border-color: #2e6baa; }
     .checkbox-client.detail-text.disabled > span:first-child > span {
       background: #f5f5f5; }
@@ -1898,7 +1716,7 @@ button {
       border-color: #e0e0e0; }
     .checkbox-client.detail-text.disabled > div > span, .checkbox-client.detail-text.disabled > div > p {
       color: #bdbdbd; }
-    .checkbox-client.detail-text.disabled:hover > span:first-child > span, .checkbox-client.detail-text.disabled:focus > span:first-child > span {
+    .checkbox-client.detail-text.disabled:hover > span:first-child > span {
       border-color: #e0e0e0; }
     .checkbox-client.detail-text:after {
       content: '';
@@ -1908,22 +1726,24 @@ button {
     display: inline-block;
     margin-right: 40px; }
 
-.treeview > label {
-  margin: 0 0 12px 0; }
+.group-checkbox > li {
+  list-style: none;
+  margin-bottom: 12px; }
+  .group-checkbox > li:last-child {
+    margin-bottom: 0; }
 
-.treeview ul {
-  padding-left: 28px; }
-
-.treeview > span:last-child {
-  font-size: 0.875rem;
-  color: #212121; }
+.tree-checkbox > ul > li {
+  margin-bottom: 12px; }
+  .tree-checkbox > ul > li:last-child {
+    margin-bottom: 0; }
 
 .addon {
   align-items: center; }
   .addon > label {
     margin-bottom: 0;
     width: 16px;
-    float: left; }
+    float: left;
+    margin-top: -8px; }
   .addon > div {
     margin-left: 12px;
     padding-bottom: 0;
@@ -1931,14 +1751,18 @@ button {
     width: calc(100% - 12px); }
 
 .chip-box {
-  margin: -4px; }
+  margin: -8px; }
+  .chip-box:after {
+    content: '';
+    clear: both;
+    display: block; }
 
 .chip-choice-client {
   position: relative;
-  display: inline-block;
+  float: left;
   user-select: none;
-  margin: 4px 4px 8px 4px; }
-  .chip-choice-client:hover > span, .chip-choice-client:focus > span {
+  margin: 6px; }
+  .chip-choice-client:hover > span {
     background: #e0e0e0; }
   .chip-choice-client > input {
     position: absolute;
@@ -1956,11 +1780,11 @@ button {
       background: #e3edfa;
       color: #2e6baa; }
   .chip-choice-client > span {
-    border-radius: 1rem;
+    border-radius: 16px;
     padding: 4px 16px;
     background: #eeeeee;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+    font-size: 14px;
+    line-height: 24px;
     color: #616161;
     display: inline-block;
     cursor: pointer; }
@@ -1977,7 +1801,7 @@ button {
     background: #eeeeee;
     opacity: 40%;
     cursor: not-allowed; }
-  .chip-choice-client.disabled:hover > span, .chip-choice-client.disabled:focus > span {
+  .chip-choice-client.disabled:hover > span {
     border-color: #e0e0e0; }
   .chip-choice-client.vertical {
     display: inline-block;
@@ -1986,10 +1810,10 @@ button {
 
 .chip-choice-partner {
   position: relative;
-  display: inline-block;
+  float: left;
   user-select: none;
-  margin: 4px 4px 8px 4px; }
-  .chip-choice-partner:hover > span, .chip-choice-partner:focus > span {
+  margin: 6px; }
+  .chip-choice-partner:hover > span {
     background: #e0e0e0; }
   .chip-choice-partner > input {
     position: absolute;
@@ -2007,11 +1831,11 @@ button {
       background: #ebfff9;
       color: #00a878; }
   .chip-choice-partner > span {
-    border-radius: 1rem;
+    border-radius: 16px;
     padding: 4px 16px;
     background: #eeeeee;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+    font-size: 14px;
+    line-height: 24px;
     color: #616161;
     display: inline-block;
     cursor: pointer; }
@@ -2028,7 +1852,7 @@ button {
     background: #eeeeee;
     opacity: 40%;
     cursor: not-allowed; }
-  .chip-choice-partner.disabled:hover > span, .chip-choice-partner.disabled:focus > span {
+  .chip-choice-partner.disabled:hover > span {
     border-color: #e0e0e0; }
   .chip-choice-partner.vertical {
     display: inline-block;
@@ -2037,10 +1861,10 @@ button {
 
 .chip-choice-wishket {
   position: relative;
-  display: inline-block;
+  float: left;
   user-select: none;
-  margin: 4px 4px 8px 4px; }
-  .chip-choice-wishket:hover > span, .chip-choice-wishket:focus > span {
+  margin: 6px; }
+  .chip-choice-wishket:hover > span {
     background: #e0e0e0; }
   .chip-choice-wishket > input {
     position: absolute;
@@ -2058,11 +1882,11 @@ button {
       background: #e8faff;
       color: #3ba3c7; }
   .chip-choice-wishket > span {
-    border-radius: 1rem;
+    border-radius: 16px;
     padding: 4px 16px;
     background: #eeeeee;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+    font-size: 14px;
+    line-height: 24px;
     color: #616161;
     display: inline-block;
     cursor: pointer; }
@@ -2079,7 +1903,7 @@ button {
     background: #eeeeee;
     opacity: 40%;
     cursor: not-allowed; }
-  .chip-choice-wishket.disabled:hover > span, .chip-choice-wishket.disabled:focus > span {
+  .chip-choice-wishket.disabled:hover > span {
     border-color: #e0e0e0; }
   .chip-choice-wishket.vertical {
     display: inline-block;
@@ -2093,13 +1917,12 @@ button {
   margin: 0;
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
-  margin: 0 0px 8px 0;
+  margin: 0;
   cursor: pointer;
   display: inline-block; }
   .radio-wishket > span:first-child {
-    display: inline-block;
     position: relative;
-    top: 0.28rem;
+    top: 4px;
     float: left; }
     .radio-wishket > span:first-child > span {
       position: relative;
@@ -2112,12 +1935,8 @@ button {
         height: 8px;
         background: #3ba3c7;
         border-radius: 50%;
-        -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-        transform: scale(0);
         opacity: 0;
-        display: block;
-        transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s; }
+        display: block; }
     .radio-wishket > span:first-child > input {
       position: absolute;
       top: 0;
@@ -2134,9 +1953,6 @@ button {
         border-color: #3ba3c7; }
         .radio-wishket > span:first-child > input:checked + span > .dot {
           border-color: #ffffff;
-          -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-          transform: scale(1);
           background: #3ba3c7;
           opacity: 1; }
       .radio-wishket > span:first-child > input:focus + span {
@@ -2148,9 +1964,9 @@ button {
     cursor: pointer;
     padding: 0 8px;
     font-weight: 400;
-    font-size: 0.875rem;
+    font-size: 14px;
     color: #212121;
-    line-height: 1.5rem; }
+    line-height: 24px; }
   .radio-wishket:hover > span:first-child > span {
     border-color: #3ba3c7; }
   .radio-wishket.disabled > span:first-child > span {
@@ -2171,13 +1987,12 @@ button {
     margin: 0;
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
-    margin: 0 0px 8px 0;
+    margin: 0;
     cursor: pointer;
     display: inline-block; }
     .radio-wishket.detail-text > span:first-child {
-      display: inline-block;
       position: relative;
-      top: 0.28rem;
+      top: 4px;
       float: left; }
       .radio-wishket.detail-text > span:first-child > span {
         position: relative;
@@ -2190,12 +2005,8 @@ button {
           height: 8px;
           background: #3ba3c7;
           border-radius: 50%;
-          -webkit-transform: scale(0);
-          -ms-transform: scale(0);
-          transform: scale(0);
           opacity: 0;
-          display: block;
-          transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s; }
+          display: block; }
       .radio-wishket.detail-text > span:first-child > input {
         position: absolute;
         top: 0;
@@ -2212,9 +2023,6 @@ button {
           border-color: #3ba3c7; }
           .radio-wishket.detail-text > span:first-child > input:checked + span > .dot {
             border-color: #ffffff;
-            -webkit-transform: scale(1);
-            -ms-transform: scale(1);
-            transform: scale(1);
             background: #3ba3c7;
             opacity: 1; }
         .radio-wishket.detail-text > span:first-child > input:focus + span {
@@ -2223,21 +2031,20 @@ button {
       float: left;
       width: calc(100% - 16px);
       vertical-align: top;
-      display: inline-block;
       user-select: none;
       cursor: pointer; }
       .radio-wishket.detail-text > div > span {
         padding: 0 0 0 12px;
         font-weight: 400;
-        font-size: 0.875rem;
+        font-size: 14px;
         color: #212121;
-        line-height: 1.5rem; }
+        line-height: 24px; }
       .radio-wishket.detail-text > div > p {
         padding: 0 0 0 12px;
         font-weight: 400;
-        font-size: 0.813rem;
+        font-size: 13px;
         color: #616161;
-        line-height: 1.25rem; }
+        line-height: 20px; }
     .radio-wishket.detail-text:hover > span:first-child > span {
       border-color: #3ba3c7; }
     .radio-wishket.detail-text.disabled > span:first-child > span {
@@ -2262,13 +2069,12 @@ button {
   margin: 0;
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
-  margin: 0 0px 8px 0;
+  margin: 0;
   cursor: pointer;
   display: inline-block; }
   .radio-partner > span:first-child {
-    display: inline-block;
     position: relative;
-    top: 0.28rem;
+    top: 4px;
     float: left; }
     .radio-partner > span:first-child > span {
       position: relative;
@@ -2281,12 +2087,8 @@ button {
         height: 8px;
         background: #00a878;
         border-radius: 50%;
-        -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-        transform: scale(0);
         opacity: 0;
-        display: block;
-        transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s; }
+        display: block; }
     .radio-partner > span:first-child > input {
       position: absolute;
       top: 0;
@@ -2303,9 +2105,6 @@ button {
         border-color: #00a878; }
         .radio-partner > span:first-child > input:checked + span > .dot {
           border-color: #ffffff;
-          -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-          transform: scale(1);
           background: #00a878;
           opacity: 1; }
       .radio-partner > span:first-child > input:focus + span {
@@ -2317,9 +2116,9 @@ button {
     cursor: pointer;
     padding: 0 8px;
     font-weight: 400;
-    font-size: 0.875rem;
+    font-size: 14px;
     color: #212121;
-    line-height: 1.5rem; }
+    line-height: 24px; }
   .radio-partner:hover > span:first-child > span {
     border-color: #00a878; }
   .radio-partner.disabled > span:first-child > span {
@@ -2340,13 +2139,12 @@ button {
     margin: 0;
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
-    margin: 0 0px 8px 0;
+    margin: 0;
     cursor: pointer;
     display: inline-block; }
     .radio-partner.detail-text > span:first-child {
-      display: inline-block;
       position: relative;
-      top: 0.28rem;
+      top: 4px;
       float: left; }
       .radio-partner.detail-text > span:first-child > span {
         position: relative;
@@ -2359,12 +2157,8 @@ button {
           height: 8px;
           background: #00a878;
           border-radius: 50%;
-          -webkit-transform: scale(0);
-          -ms-transform: scale(0);
-          transform: scale(0);
           opacity: 0;
-          display: block;
-          transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s; }
+          display: block; }
       .radio-partner.detail-text > span:first-child > input {
         position: absolute;
         top: 0;
@@ -2381,9 +2175,6 @@ button {
           border-color: #00a878; }
           .radio-partner.detail-text > span:first-child > input:checked + span > .dot {
             border-color: #ffffff;
-            -webkit-transform: scale(1);
-            -ms-transform: scale(1);
-            transform: scale(1);
             background: #00a878;
             opacity: 1; }
         .radio-partner.detail-text > span:first-child > input:focus + span {
@@ -2392,21 +2183,20 @@ button {
       float: left;
       width: calc(100% - 16px);
       vertical-align: top;
-      display: inline-block;
       user-select: none;
       cursor: pointer; }
       .radio-partner.detail-text > div > span {
         padding: 0 0 0 12px;
         font-weight: 400;
-        font-size: 0.875rem;
+        font-size: 14px;
         color: #212121;
-        line-height: 1.5rem; }
+        line-height: 24px; }
       .radio-partner.detail-text > div > p {
         padding: 0 0 0 12px;
         font-weight: 400;
-        font-size: 0.813rem;
+        font-size: 13px;
         color: #616161;
-        line-height: 1.25rem; }
+        line-height: 20px; }
     .radio-partner.detail-text:hover > span:first-child > span {
       border-color: #00a878; }
     .radio-partner.detail-text.disabled > span:first-child > span {
@@ -2431,13 +2221,12 @@ button {
   margin: 0;
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
-  margin: 0 0px 8px 0;
+  margin: 0;
   cursor: pointer;
   display: inline-block; }
   .radio-client > span:first-child {
-    display: inline-block;
     position: relative;
-    top: 0.28rem;
+    top: 4px;
     float: left; }
     .radio-client > span:first-child > span {
       position: relative;
@@ -2450,12 +2239,8 @@ button {
         height: 8px;
         background: #2e6baa;
         border-radius: 50%;
-        -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-        transform: scale(0);
         opacity: 0;
-        display: block;
-        transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s; }
+        display: block; }
     .radio-client > span:first-child > input {
       position: absolute;
       top: 0;
@@ -2472,9 +2257,6 @@ button {
         border-color: #2e6baa; }
         .radio-client > span:first-child > input:checked + span > .dot {
           border-color: #ffffff;
-          -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-          transform: scale(1);
           background: #2e6baa;
           opacity: 1; }
       .radio-client > span:first-child > input:focus + span {
@@ -2486,9 +2268,9 @@ button {
     cursor: pointer;
     padding: 0 8px;
     font-weight: 400;
-    font-size: 0.875rem;
+    font-size: 14px;
     color: #212121;
-    line-height: 1.5rem; }
+    line-height: 24px; }
   .radio-client:hover > span:first-child > span {
     border-color: #2e6baa; }
   .radio-client.disabled > span:first-child > span {
@@ -2509,13 +2291,12 @@ button {
     margin: 0;
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
-    margin: 0 0px 8px 0;
+    margin: 0;
     cursor: pointer;
     display: inline-block; }
     .radio-client.detail-text > span:first-child {
-      display: inline-block;
       position: relative;
-      top: 0.28rem;
+      top: 4px;
       float: left; }
       .radio-client.detail-text > span:first-child > span {
         position: relative;
@@ -2528,12 +2309,8 @@ button {
           height: 8px;
           background: #2e6baa;
           border-radius: 50%;
-          -webkit-transform: scale(0);
-          -ms-transform: scale(0);
-          transform: scale(0);
           opacity: 0;
-          display: block;
-          transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s; }
+          display: block; }
       .radio-client.detail-text > span:first-child > input {
         position: absolute;
         top: 0;
@@ -2550,9 +2327,6 @@ button {
           border-color: #2e6baa; }
           .radio-client.detail-text > span:first-child > input:checked + span > .dot {
             border-color: #ffffff;
-            -webkit-transform: scale(1);
-            -ms-transform: scale(1);
-            transform: scale(1);
             background: #2e6baa;
             opacity: 1; }
         .radio-client.detail-text > span:first-child > input:focus + span {
@@ -2561,21 +2335,20 @@ button {
       float: left;
       width: calc(100% - 16px);
       vertical-align: top;
-      display: inline-block;
       user-select: none;
       cursor: pointer; }
       .radio-client.detail-text > div > span {
         padding: 0 0 0 12px;
         font-weight: 400;
-        font-size: 0.875rem;
+        font-size: 14px;
         color: #212121;
-        line-height: 1.5rem; }
+        line-height: 24px; }
       .radio-client.detail-text > div > p {
         padding: 0 0 0 12px;
         font-weight: 400;
-        font-size: 0.813rem;
+        font-size: 13px;
         color: #616161;
-        line-height: 1.25rem; }
+        line-height: 20px; }
     .radio-client.detail-text:hover > span:first-child > span {
       border-color: #2e6baa; }
     .radio-client.detail-text.disabled > span:first-child > span {
@@ -2607,6 +2380,11 @@ button {
 
 .horizontal {
   display: inline-block; }
+
+.group-radio > li {
+  margin-bottom: 12px; }
+  .group-radio > li:last-child {
+    margin-bottom: 0; }
 
 > span {
   padding: 0 4px;
@@ -2670,7 +2448,7 @@ button {
           background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.2C8.87188 11.2 11.2 8.87188 11.2 6C11.2 3.12812 8.87188 0.800003 6 0.800003C3.12812 0.800003 0.800003 3.12812 0.800003 6C0.800003 8.87188 3.12812 11.2 6 11.2Z' stroke='white' stroke-width='1.6'/%3E%3C/svg%3E%0A"); }
   .toggle.theme-wishket > p {
     width: calc(100% - 96px);
-    font-size: 0.875rem;
+    font-size: 14px;
     color: #212121;
     margin-right: auto; }
   .toggle.theme-wishket:after {
@@ -2736,7 +2514,7 @@ button {
           background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.2C8.87188 11.2 11.2 8.87188 11.2 6C11.2 3.12812 8.87188 0.800003 6 0.800003C3.12812 0.800003 0.800003 3.12812 0.800003 6C0.800003 8.87188 3.12812 11.2 6 11.2Z' stroke='white' stroke-width='1.6'/%3E%3C/svg%3E%0A"); }
   .toggle.theme-partner > p {
     width: calc(100% - 96px);
-    font-size: 0.875rem;
+    font-size: 14px;
     color: #212121;
     margin-right: auto; }
   .toggle.theme-partner:after {
@@ -2802,7 +2580,7 @@ button {
           background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.2C8.87188 11.2 11.2 8.87188 11.2 6C11.2 3.12812 8.87188 0.800003 6 0.800003C3.12812 0.800003 0.800003 3.12812 0.800003 6C0.800003 8.87188 3.12812 11.2 6 11.2Z' stroke='white' stroke-width='1.6'/%3E%3C/svg%3E%0A"); }
   .toggle.theme-client > p {
     width: calc(100% - 96px);
-    font-size: 0.875rem;
+    font-size: 14px;
     color: #212121;
     margin-right: auto; }
   .toggle.theme-client:after {
@@ -2819,30 +2597,30 @@ button {
   min-width: 260px; }
   .ui-label-select.theme-wishket > .select-box {
     position: relative;
-    padding: 25px 51px 9px 13px;
+    padding: 25px 51px 9px 12px;
     border: 1px solid #e0e0e0;
-    font-size: 0.875rem;
+    font-size: 14px;
     border-radius: 4px;
     display: block;
-    height: 3.625rem;
+    height: 58px;
     transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
     .ui-label-select.theme-wishket > .select-box .select-label {
       position: absolute;
-      left: 13px;
-      font-size: 0.875rem;
+      left: 12px;
+      font-size: 14px;
       transition: all .3s; }
       .ui-label-select.theme-wishket > .select-box .select-label.basic {
         transform: translateY(-50%);
         top: 50%; }
     .ui-label-select.theme-wishket > .select-box > p {
       display: none;
-      font-size: 0.875rem;
-      line-height: 1.500rem;
+      font-size: 14px;
+      line-height: 24px;
       opacity: 0;
       transition: all 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6), dispay 0.1s 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
     .ui-label-select.theme-wishket > .select-box > i {
       position: absolute;
-      right: 13px;
+      right: 12px;
       top: 50%;
       transform: translateY(-50%) rotate(0.001deg); }
       .ui-label-select.theme-wishket > .select-box > i > svg {
@@ -2865,8 +2643,8 @@ button {
     overflow: auto; }
     .ui-label-select.theme-wishket > .select-dropdown > li {
       padding: 8px 16px;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
+      font-size: 14px;
+      line-height: 24px;
       overflow: hidden;
       word-break: keep-all;
       text-overflow: ellipsis; }
@@ -2889,8 +2667,8 @@ button {
   .ui-label-select.theme-wishket.active > .select-box > .select-label {
     position: absolute;
     transform: translateY(-26px);
-    font-size: 0.688rem;
-    line-height: 1.5rem;
+    font-size: 10px;
+    line-height: 24px;
     color: #bdbdbd; }
   .ui-label-select.theme-wishket.active > .select-box > p {
     display: block;
@@ -2920,30 +2698,30 @@ button {
   min-width: 260px; }
   .ui-label-select.theme-client > .select-box {
     position: relative;
-    padding: 25px 51px 9px 13px;
+    padding: 25px 51px 9px 12px;
     border: 1px solid #e0e0e0;
-    font-size: 0.875rem;
+    font-size: 14px;
     border-radius: 4px;
     display: block;
-    height: 3.625rem;
+    height: 58px;
     transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
     .ui-label-select.theme-client > .select-box .select-label {
       position: absolute;
-      left: 13px;
-      font-size: 0.875rem;
+      left: 12px;
+      font-size: 14px;
       transition: all .3s; }
       .ui-label-select.theme-client > .select-box .select-label.basic {
         transform: translateY(-50%);
         top: 50%; }
     .ui-label-select.theme-client > .select-box > p {
       display: none;
-      font-size: 0.875rem;
-      line-height: 1.500rem;
+      font-size: 14px;
+      line-height: 24px;
       opacity: 0;
       transition: all 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6), dispay 0.1s 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
     .ui-label-select.theme-client > .select-box > i {
       position: absolute;
-      right: 13px;
+      right: 12px;
       top: 50%;
       transform: translateY(-50%) rotate(0.001deg); }
       .ui-label-select.theme-client > .select-box > i > svg {
@@ -2966,8 +2744,8 @@ button {
     overflow: auto; }
     .ui-label-select.theme-client > .select-dropdown > li {
       padding: 8px 16px;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
+      font-size: 14px;
+      line-height: 24px;
       overflow: hidden;
       word-break: keep-all;
       text-overflow: ellipsis; }
@@ -2990,8 +2768,8 @@ button {
   .ui-label-select.theme-client.active > .select-box > .select-label {
     position: absolute;
     transform: translateY(-26px);
-    font-size: 0.688rem;
-    line-height: 1.5rem;
+    font-size: 10px;
+    line-height: 24px;
     color: #bdbdbd; }
   .ui-label-select.theme-client.active > .select-box > p {
     display: block;
@@ -3021,30 +2799,30 @@ button {
   min-width: 260px; }
   .ui-label-select.theme-partner > .select-box {
     position: relative;
-    padding: 25px 51px 9px 13px;
+    padding: 25px 51px 9px 12px;
     border: 1px solid #e0e0e0;
-    font-size: 0.875rem;
+    font-size: 14px;
     border-radius: 4px;
     display: block;
-    height: 3.625rem;
+    height: 58px;
     transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
     .ui-label-select.theme-partner > .select-box .select-label {
       position: absolute;
-      left: 13px;
-      font-size: 0.875rem;
+      left: 12px;
+      font-size: 14px;
       transition: all .3s; }
       .ui-label-select.theme-partner > .select-box .select-label.basic {
         transform: translateY(-50%);
         top: 50%; }
     .ui-label-select.theme-partner > .select-box > p {
       display: none;
-      font-size: 0.875rem;
-      line-height: 1.500rem;
+      font-size: 14px;
+      line-height: 24px;
       opacity: 0;
       transition: all 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6), dispay 0.1s 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
     .ui-label-select.theme-partner > .select-box > i {
       position: absolute;
-      right: 13px;
+      right: 12px;
       top: 50%;
       transform: translateY(-50%) rotate(0.001deg); }
       .ui-label-select.theme-partner > .select-box > i > svg {
@@ -3067,8 +2845,8 @@ button {
     overflow: auto; }
     .ui-label-select.theme-partner > .select-dropdown > li {
       padding: 8px 16px;
-      font-size: 0.875rem;
-      line-height: 1.5rem;
+      font-size: 14px;
+      line-height: 24px;
       overflow: hidden;
       word-break: keep-all;
       text-overflow: ellipsis; }
@@ -3091,8 +2869,8 @@ button {
   .ui-label-select.theme-partner.active > .select-box > .select-label {
     position: absolute;
     transform: translateY(-26px);
-    font-size: 0.688rem;
-    line-height: 1.5rem;
+    font-size: 10px;
+    line-height: 24px;
     color: #bdbdbd; }
   .ui-label-select.theme-partner.active > .select-box > p {
     display: block;
@@ -3123,8 +2901,8 @@ button {
   padding: 4px 8px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
+  font-size: 14px;
+  line-height: 24px;
   color: #616161;
   display: flex;
   flex-wrap: wrap;
@@ -3134,14 +2912,14 @@ button {
     flex: 1;
     border: 0;
     margin: 0 4px;
-    font-size: 0.875rem;
-    line-height: 2rem;
+    font-size: 14px;
+    line-height: 32px;
     color: #616161; }
     .ui-autocomplete.theme-wishket > input::placeholder, .ui-autocomplete.theme-wishket > input::-webkit-input-placeholder {
       color: #bdbdbd; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       .ui-autocomplete.theme-wishket > input {
-        line-height: 1em;
+        line-height: 16px;
         margin: 6px 4px; } }
   .ui-autocomplete.theme-wishket input[type=text]::-ms-clear {
     display: none; }
@@ -3153,15 +2931,15 @@ button {
     padding: 2px 22px 2px 8px;
     border-radius: 8px;
     background: #eeeeee;
-    font-size: 0.813rem;
-    line-height: 1.25rem;
+    font-size: 13px;
+    line-height: 20px;
     margin: 4px;
     position: relative; }
     .ui-autocomplete.theme-wishket > .autocomplete-label > i {
       cursor: pointer;
       position: absolute;
       top: 50%;
-      right: 5px;
+      right: 4px;
       width: 16px;
       height: 16px;
       transform: translateY(-50%);
@@ -3188,7 +2966,7 @@ button {
       cursor: pointer;
       padding: 8px 16px;
       color: #616161;
-      font-size: 0.75rem;
+      font-size: 12px;
       overflow: hidden;
       text-overflow: ellipsis;
       word-break: keep-all;
@@ -3210,8 +2988,8 @@ button {
   padding: 4px 8px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
+  font-size: 14px;
+  line-height: 24px;
   color: #616161;
   display: flex;
   flex-wrap: wrap;
@@ -3221,14 +2999,14 @@ button {
     flex: 1;
     border: 0;
     margin: 0 4px;
-    font-size: 0.875rem;
-    line-height: 2rem;
+    font-size: 14px;
+    line-height: 32px;
     color: #616161; }
     .ui-autocomplete.theme-client > input::placeholder, .ui-autocomplete.theme-client > input::-webkit-input-placeholder {
       color: #bdbdbd; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       .ui-autocomplete.theme-client > input {
-        line-height: 1em;
+        line-height: 16px;
         margin: 6px 4px; } }
   .ui-autocomplete.theme-client input[type=text]::-ms-clear {
     display: none; }
@@ -3240,15 +3018,15 @@ button {
     padding: 2px 22px 2px 8px;
     border-radius: 8px;
     background: #eeeeee;
-    font-size: 0.813rem;
-    line-height: 1.25rem;
+    font-size: 13px;
+    line-height: 20px;
     margin: 4px;
     position: relative; }
     .ui-autocomplete.theme-client > .autocomplete-label > i {
       cursor: pointer;
       position: absolute;
       top: 50%;
-      right: 5px;
+      right: 4px;
       width: 16px;
       height: 16px;
       transform: translateY(-50%);
@@ -3275,7 +3053,7 @@ button {
       cursor: pointer;
       padding: 8px 16px;
       color: #616161;
-      font-size: 0.75rem;
+      font-size: 12px;
       overflow: hidden;
       text-overflow: ellipsis;
       word-break: keep-all;
@@ -3297,8 +3075,8 @@ button {
   padding: 4px 8px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
+  font-size: 14px;
+  line-height: 24px;
   color: #616161;
   display: flex;
   flex-wrap: wrap;
@@ -3308,14 +3086,14 @@ button {
     flex: 1;
     border: 0;
     margin: 0 4px;
-    font-size: 0.875rem;
-    line-height: 2rem;
+    font-size: 14px;
+    line-height: 32px;
     color: #616161; }
     .ui-autocomplete.theme-partner > input::placeholder, .ui-autocomplete.theme-partner > input::-webkit-input-placeholder {
       color: #bdbdbd; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       .ui-autocomplete.theme-partner > input {
-        line-height: 1em;
+        line-height: 16px;
         margin: 6px 4px; } }
   .ui-autocomplete.theme-partner input[type=text]::-ms-clear {
     display: none; }
@@ -3327,15 +3105,15 @@ button {
     padding: 2px 22px 2px 8px;
     border-radius: 8px;
     background: #eeeeee;
-    font-size: 0.813rem;
-    line-height: 1.25rem;
+    font-size: 13px;
+    line-height: 20px;
     margin: 4px;
     position: relative; }
     .ui-autocomplete.theme-partner > .autocomplete-label > i {
       cursor: pointer;
       position: absolute;
       top: 50%;
-      right: 5px;
+      right: 4px;
       width: 16px;
       height: 16px;
       transform: translateY(-50%);
@@ -3362,7 +3140,7 @@ button {
       cursor: pointer;
       padding: 8px 16px;
       color: #616161;
-      font-size: 0.75rem;
+      font-size: 12px;
       overflow: hidden;
       text-overflow: ellipsis;
       word-break: keep-all;

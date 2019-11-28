@@ -2,13 +2,12 @@
   margin:0;
   padding:0;
   color:rgba(0,0,0,0.65);
-  margin:0 0 8px 0;
+  margin:0;
   display:inline-block;
   cursor:pointer;
   >span:first-child{
-    display:inline-block;
     position:relative;
-    top:0.2rem;
+    top:4px;
     float:left;
     >span{
       position:relative;
@@ -23,42 +22,29 @@
     >span.arrow{
       &:after{
         position: absolute;
-        top: 44%;
-        left: 22%;
-        display: table;
-        width:4px;
-        height:8px;
-        // width: 5.71428571px;
-        // height: 9.14285714px;
-        border: 1.6px solid #fff;
-        border-top: 0;
-        border-left: 0;
-        transform: rotate(45deg) scale(0) translate(-50%, -50%);
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
         opacity: 0;
-        transition: all .1s cubic-bezier(.71, -0.46, .88, .6),opacity .1s;
-        content: ' ';
-        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-          top:44%;
-          left:20.5%;
-          width:4px;
-          height:8px;
-        }
+        // transition: all .1s cubic-bezier(.71, -0.46, .88, .6),opacity .1s;
+        width:10px;
+        height:8px;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.8L4 7L9 1' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        content: '';
       }
     }
     >span.minus-icon{
       &:before{
         top:50%;
         left:50%;
-        display: table;
-        width: 8px;
-        height: 1.6px;
-        border:1.6px solid #fff;
-        background:#fff;
-        border:none;
-        border-radius:2px;
-        transform: scale(0) translate(-50%, -50%);
+        width: 10px;
+        height: 2px;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='2' viewBox='0 0 10 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1H9' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        transform:translate(-50%, -50%);
+        -webkit-transform:translate(-50%, -50%);
+        -ms-transform:translate(-50%, -50%);
         opacity: 0;
-        transition: all .1s cubic-bezier(.71, -0.46, .88, .6),opacity .1s;
+        // transition: all .1s cubic-bezier(.71, -0.46, .88, .6), opacity .1s;
       }
     }
     >input{
@@ -83,12 +69,9 @@
           border-color:$arrow-color;
           border-top: 0;
           border-left: 0;
-          -webkit-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-          -ms-transform: rotate(45deg) scale(1) translate(-50%, -50%);
-          transform: rotate(45deg) scale(1) translate(-50%, -50%);
           opacity: 1;
-          -webkit-transition: all .2s cubic-bezier(.12, .4, .29, 1.46) .1s;
-          transition: all .2s cubic-bezier(.12, .4, .29, 1.46) .1s;
+          // -webkit-transition: all .2s cubic-bezier(.12, .4, .29, 1.46) .1s;
+          // transition: all .2s cubic-bezier(.12, .4, .29, 1.46) .1s;
           content: ' ';
           visibility: visible;
         }
@@ -104,23 +87,10 @@
         }
         &:before{
           position: absolute;
-          display: table;
-          border-color:$arrow-color;
-          border-top: 0;
-          border-left: 0;
-          border-right:0;
-          -webkit-transform: scale(1) translate(-50%, -50%);
-          -ms-transform: scale(1) translate(-50%, -50%);
-          transform: scale(1) translate(-50%, -50%);
           opacity: 1;
-          -webkit-transition: all .2s cubic-bezier(.12, .4, .29, 1.46) .1s;
-          transition: all .2s cubic-bezier(.12, .4, .29, 1.46) .1s;
-          content: ' ';
+          content: '';
           visibility: visible;
         }
-      }
-      &:focus + span{
-        border-color:$focus-color;
       }
     }
   }
@@ -128,7 +98,6 @@
     >div{
       float:left;
       vertical-align:top;
-      display:inline-block;
       user-select: none;
       cursor: pointer;
       width:calc(100% - 16px);
@@ -162,7 +131,7 @@
     }
   }
 
-  &:hover, &:focus{
+  &:hover{
     >span:first-child > span{
       border-color:$brand-color;
     }
@@ -192,7 +161,7 @@
         color:$color-gray300;
       }
     }
-    &:hover, &:focus{
+    &:hover{
       >span:first-child > span{
         border-color:$color-gray200;
       }
@@ -207,9 +176,9 @@
 }
 
 .checkbox-wishket{
-  @include checkbox(default, $color-wishket500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false, $color-wishket700);
+  @include checkbox(default, $color-wishket500, $color-gray200, $color-white, $color-gray900, 14px, 24px, false, false, false, $color-wishket700);
   &.detail-text{
-    @include checkbox(detail, $color-wishket500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-wishket700);
+    @include checkbox(detail, $color-wishket500, $color-gray200, $color-white, $color-gray900, 14px, 24px, $color-gray600, 20px, 13px, $color-wishket700);
   }
   &.horizontal{
     display:inline-block;
@@ -218,9 +187,9 @@
 }
 
 .checkbox-partner{
-  @include checkbox(default, $color-partner500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false, $color-partner700);
+  @include checkbox(default, $color-partner500, $color-gray200, $color-white, $color-gray900, 14px, 24px, false, false, false, $color-partner700);
   &.detail-text{
-    @include checkbox(detail, $color-partner500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-partner700);
+    @include checkbox(detail, $color-partner500, $color-gray200, $color-white, $color-gray900, 14px, 24px, $color-gray600, 20px, 13px, $color-partner700);
   }
   &.horizontal{
     display:inline-block;
@@ -229,9 +198,9 @@
 }
 
 .checkbox-client{
-  @include checkbox(default, $color-client500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false, $color-client700);
+  @include checkbox(default, $color-client500, $color-gray200, $color-white, $color-gray900, 14px, 24px, false, false, false, $color-client700);
   &.detail-text{
-    @include checkbox(detail, $color-client500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-client700);
+    @include checkbox(detail, $color-client500, $color-gray200, $color-white, $color-gray900, 14px, 24px, $color-gray600, 20px, 13px, $color-client700);
   }
   &.horizontal{
     display:inline-block;
@@ -239,18 +208,22 @@
   }
 }
 
-.treeview{
-  >label{
-    margin:0 0 12px 0;
+.group-checkbox{
+  >li{
+    list-style: none;
+    margin-bottom:12px;
+    &:last-child{
+      margin-bottom:0;
+    }
   }
-  ul{
-    padding-left:28px;
-  }
-  >span:first-child{
-  }
-  >span:last-child{
-    font-size:0.875rem;
-    color:$color-gray900;
+}
+
+.tree-checkbox{
+  >ul >li{
+    margin-bottom:12px;
+    &:last-child{
+      margin-bottom:0;
+    }
   }
 }
 
@@ -260,6 +233,7 @@
     margin-bottom:0;
     width:16px;
     float:left;
+    margin-top:-8px;
   }
   >div{
     margin-left:12px;
@@ -271,10 +245,10 @@
 
 @mixin chip($type, $default-color, $hover-color, $brand-color, $brand-font-color, $font-size, $line-height){
   position:relative;
-  display:inline-block;
+  float:left;
   user-select:none;
-  margin:4px 4px 8px 4px;
-  &:hover, &:focus{
+  margin:6px;
+  &:hover{
     >span{
       background:$hover-color;
     }
@@ -298,7 +272,7 @@
     }
   }
   >span{
-    border-radius:1rem;
+    border-radius:16px;
     padding:4px 16px;
     background:$default-color;
     font-size:$font-size;
@@ -328,7 +302,7 @@
       opacity: 40%;
       cursor:not-allowed;
     }
-    &:hover, &:focus{
+    &:hover{
       > span{
         border-color:$color-gray200;
       }
@@ -343,21 +317,26 @@
 }
 
 .chip-box{
-  margin:-4px;
+  margin:-8px;
+  &:after{
+    content:'';
+    clear: both;
+    display:block;
+  }
 }
 
 
 
 .chip-choice-client{
-  @include chip(choice, $color-gray100, $color-gray200, $color-client50, $color-client500, 0.875rem, 1.5rem);
+  @include chip(choice, $color-gray100, $color-gray200, $color-client50, $color-client500, 14px, 24px);
 }
 
 .chip-choice-partner{
-  @include chip(choice, $color-gray100, $color-gray200, $color-partner50, $color-partner500, 0.875rem, 1.5rem);
+  @include chip(choice, $color-gray100, $color-gray200, $color-partner50, $color-partner500, 14px, 24px);
 }
 
 .chip-choice-wishket{
-  @include chip(choice, $color-gray100, $color-gray200, $color-wishket50, $color-wishket500, 0.875rem, 1.5rem);
+  @include chip(choice, $color-gray100, $color-gray200, $color-wishket50, $color-wishket500, 14px, 24px);
 }
 
 .child-list{

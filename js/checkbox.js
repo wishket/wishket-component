@@ -82,7 +82,7 @@
       const name = !target.attr('data-checkbox-name') ? '' : 'name="'+target.attr("data-checkbox-name")+'" ';
       const disabled = !target.attr('data-checkbox-disabled') ? '' : 'disabled ';
       const wrapId = !target.attr('id') ? '' : 'id="'+target.attr("id")+'" ';
-      const wrapClass = !target.attr('class') ? '' : 'class="'+target.attr("class")+'" ';
+      const wrapClass = !target.attr('class') ? '' : target.attr("class");
       const horizontal = !target.attr('data-horizontal') ? '' : 'horizontal ';
 
       let groupCheckbox = '';
@@ -100,7 +100,7 @@
         if(itemAddon){
           const placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'" ';
           checkboxWrap =
-            '<div class="addon">'  +
+            '<li class="addon">'  +
             '  <label class="checkbox-'+theme+' '+horizontal+disabled+itemDisabled+'">'  +
             '    <span>'  +
             '      <input '+itemId+itemClass+value+name+disabled+itemDisabled+itemDefault+' type="checkbox" onChange="addonCheck(\'checkbox\', \''+item.addonId+'\', \''+item.id+'\')" />'  +
@@ -111,12 +111,12 @@
             '  <div class="text-input-'+theme+'">'  +
             '    <input id="'+item.addonId+'" '+itemClass+name+placeholder+'type="text" disabled/>'  +
             '  </div>'  +
-            '</div>';
+            '</li>';
           groupCheckbox += checkboxWrap;
         }else{
           if(itemDetaile){
             checkboxWrap =
-              '<div>' +
+              '<li>' +
               '<label class="checkbox-'+theme+' '+horizontal+itemDetaileClass+disabled+itemDisabled+' ">' +
               '  <span>'  +
               '    <input '+itemId+itemClass+value+disabled+name+itemDisabled+itemDefault+' type="checkbox" />' +
@@ -127,10 +127,10 @@
               '    <p>'+itemDetaile+'</p>'  +
               '  </div>'  +
               '</label>' +
-              '</div>';
+              '</li>';
           }else {
             checkboxWrap =
-              '<div>' +
+              '<li>' +
               '<label class="checkbox-'+theme+' '+horizontal+disabled+itemDisabled+'">'  +
               '  <span>'  +
               '    <input '+itemId+itemClass+value+name+disabled+itemDisabled+itemDefault+' type="checkbox" />'  +
@@ -138,13 +138,12 @@
               '  </span>'  +
               '  <span>'+label+'</span>'  +
               '</label>' +
-              '</div>';
+              '</li>';
           }
           groupCheckbox += checkboxWrap;
         }
       });
-    
-      target.replaceWith('<div '+wrapId+wrapClass+'>'+groupCheckbox+'</div>');
+      target.replaceWith('<div '+wrapId+wrapClass+' class="'+wrapClass+'"><ul class="group-checkbox">'+groupCheckbox+'</ul></div>');
     },
     chip:function(target, size){
       const theme = target.attr('data-checkbox-theme');

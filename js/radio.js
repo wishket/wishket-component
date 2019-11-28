@@ -94,7 +94,7 @@
           const addonClass = !item.addonClass ? '' : 'id="'+item.addonClass+'"';
           const placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'"';
           radioWrap =
-            '<div class="'+horizontal+'">'  +
+            '<li class="'+horizontal+'">'  +
             ' <div class="addon">'  +
             '   <label class="radio-'+theme+' '+disabled+' '+itemDisabled+'">'  +
             '     <span>' +
@@ -107,12 +107,12 @@
             '     <input '+addonId+' '+addonClass+' '+nameTag+' '+placeholder+' disabled type="text" />'  +
             '   </div>' +
             ' </div>' +
-            '</div>';
+            '</li>';
           groupradio += radioWrap;
         }else{
           if(itemDetaile){
             radioWrap =
-              '<div>' +
+              '<li>' +
               '<label class="radio-'+theme+' '+horizontal+' '+itemDetaileClass+' '+disabled+' '+itemDisabled+'">' +
               ' <span>' +
               '   <input '+itemId+' '+itemClass+' '+value+' '+nameTag+' '+disabled+' '+itemDisabled+' '+itemDefault+' '+dataAddonEvent+' type="radio" />' +
@@ -123,10 +123,10 @@
               '   <p>'+itemDetaile+'</p>' +
               ' </div>' +
               '</label>' +
-              '</div>';
+              '</li>';
           }else {
             radioWrap =
-              '<div>' +
+              '<li>' +
               ' <label class="radio-'+theme+' '+horizontal+' '+disabled+' '+itemDisabled+'">'  +
               '   <span>' +
               '     <input '+itemId+' '+itemClass+' '+value+' '+nameTag+' '+disabled+' '+itemDisabled+' '+itemDefault+' '+itemDetaileClass+' '+dataAddonEvent+' type="radio" />'  +
@@ -134,12 +134,12 @@
               '   </span>'  +
               '   <span>'+label+'</span>' +
               ' </label>' +
-              '</div>';
+              '</li>';
           }
           groupradio += radioWrap;
         }
       });
-      target.replaceWith('<div '+wrapId+' class="clearfix '+wrapClass+'">'+groupradio+'</div>')
+      target.replaceWith('<div '+wrapId+' class="clearfix '+wrapClass+'"><ul class="group-radio">'+groupradio+'</ul></div>')
     },
     getSize:function(size){
       if(size === 's'){

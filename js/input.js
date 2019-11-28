@@ -27,6 +27,7 @@
         const count = target.val().length;
         target.next().html(''+count+'/'+maxlength+'');
      });
+     target.siblings(".helper-text").width(target.width() - target.siblings(".word-length").width() * 2);
     },
     labelInput:function(target, size){
       const labelText = target.attr('data-input-label');

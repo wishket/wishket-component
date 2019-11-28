@@ -14,6 +14,6 @@ section{
   margin-bottom:40px;
 }
 
-#check > div{
-  margin-bottom:40px;
+.ui-label-select, .ui-autocomplete{
+  margin-bottom:100px;
 }

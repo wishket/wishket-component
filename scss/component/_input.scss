@@ -1,7 +1,6 @@
 //text input stlye
 @mixin textinput($padding, $brand-color, $placeholder-color, $font-color, $font-size, $line-height){
   position:relative;
-  padding-bottom:28px;
   >input{
     display: block;
     border-radius:4px;
@@ -31,7 +30,7 @@
       }
     }
     &[type='password']{
-      font-size:1.3rem;
+      font-size:20px;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace;
     }
@@ -51,21 +50,19 @@
   }
 
   >span{
-    position:absolute;
-    font-size:0.813rem;
+    font-size:13px;
     font-weight: 400;
     bottom:0;
     color:$color-gray400;
+    line-height:20px;
     &.helper-text{
-      left:0.813rem;
-      text-overflow: ellipsis;
-      width: 80%;
-      overflow: hidden;
-      white-space: nowrap;
+      width: calc(100% - 100px);
+      padding:8px 12px 0 12px;
+      float:left;
     }
     &.word-length{
-      left:auto;
-      right:0.813rem;
+      float:right;
+      padding:8px 12px 0 0;
     }
   }
   &.error{
@@ -77,30 +74,36 @@
       color:$color-red500;
     }
   }
+
+  &:after{
+    content:'';
+    clear: both;
+    display:block;
+  }
 }
 
 .text-input-wishket{
-  @include textinput(8px 13px, $color-wishket500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  @include textinput(8px 12px, $color-wishket500, $color-gray300, $color-gray600, 14px, 24px);
 }
 
 .text-input-partner{
-  @include textinput(8px 13px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  @include textinput(8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
 }
 
 .text-input-client{
-  @include textinput(8px 13px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  @include textinput(8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
 }
 
 .text-input-wishket.input-small{
-  @include textinput(8px 13px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  @include textinput(8px 12px, $color-wishket500, $color-gray300, $color-gray600, 13px, 20px);
 }
 
 .text-input-partner.input-small{
-  @include textinput(8px 13px, $color-partner500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  @include textinput(8px 12px, $color-partner500, $color-gray300, $color-gray600, 13px, 20px);
 }
 
 .text-input-client.input-small{
-  @include textinput(8px 13px, $color-client500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  @include textinput(8px 12px, $color-client500, $color-gray300, $color-gray600, 13px, 20px);
 }
 
 
@@ -119,22 +122,22 @@
     width:100%;
     transition:all .3s;
     @if $icon-position == icon-default {
-      padding:24px 13px 8px 13px;
+      padding:24px 12px 8px 12px;
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         line-height: 1em;
-        padding:29px 13px 8px 13px;
+        padding:29px 12px 8px 12px;
       }
     } @else if $icon-position == icon-right {
-      padding:24px 44px 8px 13px;
+      padding:24px 44px 8px 12px;
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         line-height: 1em;
-        padding:29px 44px 8px 13px;
+        padding:29px 44px 8px 12px;
       }
     } @else if $icon-position == icon-left {
-      padding:24px 13px 8px 44px;
+      padding:24px 12px 8px 44px;
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         line-height: 1em;
-        padding:29px 13px 8px 44px;
+        padding:29px 12px 8px 44px;
       }
     }
     &::placeholder, &::-webkit-input-placeholder{
@@ -153,7 +156,7 @@
       }
     }
     &[type='password']{
-      font-size:1.3rem;
+      font-size:20px;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace;
     }
@@ -176,8 +179,8 @@
     }
     top:50%;
     transform: translateY(-50%);
-    font-size:0.875rem;
-    line-height:0.875rem;
+    font-size:14px;
+    line-height:14px;
     color:$color-gray300;
     transition:all .3s;
   }
@@ -186,9 +189,9 @@
     top:50%;
     transform: translateY(-50%);
     @if $icon-position == icon-right {
-      right:16px;
+      right:12px;
     } @else if $icon-position == icon-left {
-      left:16px;
+      left:12px;
     }
   }
   &.error{
@@ -206,37 +209,37 @@
     }
     > label{
       transform:translateY(-20px);
-      font-size:0.688rem; 
+      font-size:11px; 
     }
   }
 }
 
 .label-input-wishket{
-  @include labelInput(icon-default, $color-wishket500, $color-gray600, 0.875rem, 1.50rem);
+  @include labelInput(icon-default, $color-wishket500, $color-gray600, 14px, 24px);
   &.icon-right{
-    @include labelInput(icon-right, $color-wishket500, $color-gray600, 0.875rem, 1.50rem);
+    @include labelInput(icon-right, $color-wishket500, $color-gray600, 14px, 24px);
   }
   &.icon-left{
-    @include labelInput(icon-left, $color-wishket500, $color-gray600, 0.875rem, 1.50rem);
+    @include labelInput(icon-left, $color-wishket500, $color-gray600, 14px, 24px);
   }
 }
 
 .label-input-client{
-  @include labelInput(icon-default, $color-client500, $color-gray600, 0.875rem, 1.50rem);
+  @include labelInput(icon-default, $color-client500, $color-gray600, 14px, 24px);
   &.icon-right{
-    @include labelInput(icon-right, $color-client500, $color-gray600, 0.875rem, 1.50rem);
+    @include labelInput(icon-right, $color-client500, $color-gray600, 14px, 24px);
   }
   &.icon-left{
-    @include labelInput(icon-left, $color-client500, $color-gray600, 0.875rem, 1.50rem);
+    @include labelInput(icon-left, $color-client500, $color-gray600, 14px, 24px);
   }
 }
 
 .label-input-partner{
-  @include labelInput(icon-default, $color-partner500, $color-gray600, 0.875rem, 1.50rem);
+  @include labelInput(icon-default, $color-partner500, $color-gray600, 14px, 24px);
   &.icon-right{
-    @include labelInput(icon-right, $color-partner500, $color-gray600, 0.875rem, 1.50rem);
+    @include labelInput(icon-right, $color-partner500, $color-gray600, 14px, 24px);
   }
   &.icon-left{
-    @include labelInput(icon-left, $color-partner500, $color-gray600, 0.875rem, 1.50rem);
+    @include labelInput(icon-left, $color-partner500, $color-gray600, 14px, 24px);
   }
 }

@@ -7,17 +7,17 @@
   min-width:260px;
   >.select-box{
     position:relative;
-    padding:25px 51px 9px 13px;
+    padding:25px 51px 9px 12px;
     border:1px solid $color-gray200;
-    font-size:0.875rem;
+    font-size:14px;
     border-radius:4px;
     display:block;
-    height:3.625rem;
+    height:58px;
     transition: all .2s cubic-bezier(.71, -0.46, .88, .6);
     .select-label{
       position:absolute;
-      left:13px;
-      font-size:0.875rem;
+      left:12px;
+      font-size:14px;
       transition: all .3s;
       &.basic{
         transform:translateY(-50%);
@@ -26,14 +26,14 @@
     }
     >p{
       display:none;
-      font-size:0.875rem;
-      line-height: 1.500rem;
+      font-size:14px;
+      line-height: 24px;
       opacity: 0;
       transition: all .3s cubic-bezier(.71, -0.46, .88, .6), dispay .1s .3s cubic-bezier(.71, -0.46, .88, .6);
     }
     >i{
       position:absolute;
-      right: 13px;
+      right: 12px;
       top: 50%;
       transform:translateY(-50%) rotate(.001deg);
       >svg{
@@ -62,8 +62,8 @@
     overflow:auto;
     >li{
       padding:8px 16px;
-      font-size:0.875rem;
-      line-height: 1.5rem;
+      font-size:14px;
+      line-height: 24px;
       overflow: hidden;
       word-break: keep-all;
       text-overflow: ellipsis;
@@ -100,8 +100,8 @@
       >.select-label{
         position:absolute;
         transform:translateY(-26px);
-        font-size:0.688rem;
-        line-height: 1.5rem;
+        font-size:10px;
+        line-height: 24px;
         color:$color-gray300;
       }
       >p{

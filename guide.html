@@ -15,13 +15,14 @@
     <!-- <script type="text/javascript" src="./js/select_bak.js"></script> -->
     <script type="text/javascript" src="./js/autocomplete.js"></script>
     <script type="text/javascript" src="./js/test.js"></script>
+    <script type="text/javascript" src="./js/toggle2.js"></script>
     <link rel="stylesheet" href="./css/component.css">
     <link rel="stylesheet" href="./css/guide.css">
 </head>
 <body>
   <div>
     <section class='inputbox'>
-      <input id='hoho' data-input-type='text-input' class='value01' data-input-theme='wishket' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1' />
+      <input id='hoho' data-input-type='text-input' class='value01' data-input-theme='wishket' type='text' placeholder="플레이스 홀더" maxlength="22300" data-input-helper='핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1' />
       <input data-input-type='text-input' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 2'/>
       <input data-input-type='text-input' data-input-theme='partner' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 3'/>
       <input data-input-type='text-input' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" disabled data-input-helper='핼퍼 텍스트 상세 내용 4'/>
@@ -177,22 +178,7 @@
           {"value":"바나나", "detail":"바나나바나바나"}
         ]'>
       </RadioBox>
-      <!-- <RadioBox data-radio-type='group' data-radio-name='rsingle12' data-theme='partner'
-        data-addon-id='rsingle12Addon'
-        data-horizontal=true
-        data-options='[
-        {"value":"사과"},
-        {"label":"배", "id" : "sample Group01"},
-        {
-          "label":"토마토",
-          "detail": "hohoho상세페이지",
-          "id":"checkInput",
-          "addonType":"input",
-          "addonId":"textInput",
-          "placeholder":"토마토토마토토토토토토톡"
-        }
-        ]'
-      ></RadioBox> -->
+      
       <RadioBox data-radio-type='group' data-radio-name='rsingle13' data-theme='wishket'
         data-addon-id='rsingle13Addon'
         data-options='[
@@ -212,8 +198,8 @@
     <section>
       <div class="toggle theme-wishket">
         <p>토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용</p>
-        <button class="off">off</button>
-        <button class="on">on</button>
+        <button class="off">off<span></span></button>
+        <button class="on">on<span></span></button>
         <input id="testddd1" type="text" value=""/>
       </div>
       <div class="toggle theme-client">
@@ -291,56 +277,8 @@
       <input id="autocomple-example02" class="ui-autocomplete theme-wishket" placeholder="플레이스 홀더" type="text" />
       <input id="autocomple-example03" class="ui-autocomplete theme-client" placeholder="플레이스 홀더2" type="text" />
 
-      <div class="autocompletebox">
-      <div class="ui-autocomplete theme-partner">
-        <span class="autocomplete-label">Photoshop<i class="i-close"></i></span>
-        <span class="autocomplete-label">Illustrator<i class="i-close"></i></span>
-        <span class="autocomplete-label">Sketch<i class="i-close"></i></span>
-        <span class="autocomplete-label">Zeplin<i class="i-close"></i></span>
-        <!-- <span class="autocomplete-label">Photoshop<i class="i-close"></i></span>
-        <span class="autocomplete-label">Illustrator<i class="i-close"></i></span>
-        <span class="autocomplete-label">Sketch<i class="i-close"></i></span>
-        <span class="autocomplete-label">Zeplin<i class="i-close"></i></span> -->
-        <input type="text" placeholder="플레이스 홀더"/>
-      </div>
-      <ul class="tag-dropdown open">
-        <li><strong>‘asdfdas’</strong>  입력</li>
-        <li>dsaffa</li>
-        <li>dsaffa</li>
-        <li>dsaffa</li>
-        <li>dsaffa</li>
-        <li>dsaffa</li>
-      </ul>
-      </div>
-
-      <!-- <div class="ui-label-select theme-client active" style="margin-bottom:300px;">
-        <span class="select-box ">
-          <span class="label">레이블</span>
-          <p>서울특별시</p>
-          <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill="none" fill-rule="evenodd" stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M1 4l6 6 6-6"/></svg></i>
-        </span>
-        <ul class="select-dropdown">
-          <li>서울특별시</li>
-          <li class="select">부산광역시</li>
-          <li>울산광역시</li>
-          <li>대구광역시</li>
-          <li>인청광역시</li>
-        </ul>
-      </div>
-      <div class="ui-label-select theme-wishket">
-        <span class="select-box">
-          <span class="label">구 동 리</span>
-          <p>강남구</p>
-          <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill="none" fill-rule="evenodd" stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M1 4l6 6 6-6"/></svg></i>
-        </span>
-        <ul class="select-dropdown">
-          <li>강남구</li>
-          <li>서초구</li>
-          <li>관악구</li>
-          <li>동작구</li>
-        </ul>
-      </div> -->
-
+      <p>토글2 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용</p>
+      <input id="toggle2test" class="toggle theme-wishket" type="text" value=""/>
     </section>
   </div>
   <script>
@@ -350,6 +288,7 @@
       $.uiRadio.setting();
       $.uiToggle.setting();
       $("#select-example01, #select-example02, #select-example03").uiSelect();
+
       $("#autocomple-example01").uiAutoComple({
         labelmaxcount : 2,
         textlength : 40,
@@ -361,7 +300,8 @@
         url: "url",
       });
       $("#autocomple-example03").uiAutoComple();
-
+      $("#toggle2test").uiToggle2();
+      
       // $("#select-example01").on("change", function(){
       //   console.log('체인지 테스트');
       // });
@@ -370,9 +310,10 @@
       //   console.log("autocomple 체인지 테스트");
       // });
 
-      $("#testddd3").on("change", function(){
-        console.log($(this).val());
-      })
+      // $("#toggle2test").on("change", function(){
+      //   console.log("change test");
+      //   console.log($(this).val());
+      // })
     });
     $(window).on('load', function(){
     });
