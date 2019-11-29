@@ -5,7 +5,7 @@
       target.each(function(){
         const type   = $(this).attr('data-checkbox-type');
         let size = target.attr('data-checkobx-size');
-        size = $.uiInput.getSize(size);
+        size = $.uiCheckbox.getSize(size);
         if(type === 'group'){
           $.uiCheckbox.group($(this), size);
         }else if(type === 'tree'){
@@ -35,7 +35,7 @@
       const dataAddOn = target.attr('data-addon-id') ? target.attr('data-addon-id') : '';
       //여기 다시
       const addonFunction = !addonInput ? '' : 'onChange="addonCheck(\'checkbox\', \''+dataAddOn+'\', \''+id+'\')"';
-      
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? " mobile" : " pc";
       if(addonInput){
         label ='';
       }else{
@@ -71,9 +71,9 @@
             '  <input id="'+dataAddOn+'" '+itemClass+name+placeholder+' type="text" disabled/>'  +
             '</div>';
         });
-        target.replaceWith('<div class="addon"><label class="checkbox-'+theme+' '+horizontal+detaileClass+disabled+'">'+checkboxWrap+'</label>'+addonInputBox+'</div>');
+        target.replaceWith('<div class="addon"><label class="checkbox-'+theme+' '+horizontal+detaileClass+disabled+isMobile+'">'+checkboxWrap+'</label>'+addonInputBox+'</div>');
       }else{
-        target.replaceWith('<div><label class="checkbox-'+theme+' '+detaileClass+horizontal+disabled+'">'+checkboxWrap+'</label></div>');
+        target.replaceWith('<div><label class="checkbox-'+theme+' '+detaileClass+horizontal+disabled+isMobile+'">'+checkboxWrap+'</label></div>');
       }
     },
     group:function(target, size){
@@ -84,7 +84,7 @@
       const wrapId = !target.attr('id') ? '' : 'id="'+target.attr("id")+'" ';
       const wrapClass = !target.attr('class') ? '' : 'class="'+target.attr("class")+'" ';
       const horizontal = !target.attr('data-horizontal') ? '' : 'horizontal ';
-
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? " mobile" : " pc";
       let groupCheckbox = '';
       $.each(options, function(index, item){
         const value = !item.value ? 'value="'+item.label+'" ' : 'value="'+item.value+'" ';
@@ -101,7 +101,7 @@
           const placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'" ';
           checkboxWrap =
             '<div class="addon">'  +
-            '  <label class="checkbox-'+theme+' '+horizontal+disabled+itemDisabled+'">'  +
+            '  <label class="checkbox-'+theme+' '+horizontal+disabled+itemDisabled+isMobile+'">'  +
             '    <span>'  +
             '      <input '+itemId+itemClass+value+name+disabled+itemDisabled+itemDefault+' type="checkbox" onChange="addonCheck(\'checkbox\', \''+item.addonId+'\', \''+item.id+'\')" />'  +
             '      <span class="arrow"></span>'  +
@@ -117,7 +117,7 @@
           if(itemDetaile){
             checkboxWrap =
               '<div>' +
-              '<label class="checkbox-'+theme+' '+horizontal+itemDetaileClass+disabled+itemDisabled+' ">' +
+              '<label class="checkbox-'+theme+' '+horizontal+itemDetaileClass+disabled+itemDisabled+isMobile+' ">' +
               '  <span>'  +
               '    <input '+itemId+itemClass+value+disabled+name+itemDisabled+itemDefault+' type="checkbox" />' +
               '    <span class="arrow"></span>' +
@@ -131,7 +131,7 @@
           }else {
             checkboxWrap =
               '<div>' +
-              '<label class="checkbox-'+theme+' '+horizontal+disabled+itemDisabled+'">'  +
+              '<label class="checkbox-'+theme+' '+horizontal+disabled+itemDisabled+isMobile+'">'  +
               '  <span>'  +
               '    <input '+itemId+itemClass+value+name+disabled+itemDisabled+itemDefault+' type="checkbox" />'  +
               '    <span class="arrow"></span>'  +
@@ -167,8 +167,8 @@
       const options = target.data('options');
       const theme = target.attr('data-checkbox-theme');
       const wrapId = !target.attr("id") ? '' : 'id="'+target.attr("id")+' "';
-      const wrapClass = !target.attr("class") ? '' : 'class="'+target.attr("clas")+' "';
       const disabled = !target.attr('data-checkbox-disabled') ? '' : 'disabled';
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? " mobile" : " pc";
       let treeList = '';
       $.each(options, function(index, item){
         const depth = item.depth;
@@ -185,7 +185,7 @@
         if(depth === 1){
           titleList =
             '<li>'  +
-            '  <label class="checkbox-'+theme+' '+itemDisabled+disabled+'">'  +
+            '  <label class="checkbox-'+theme+' '+itemDisabled+disabled+isMobile+'">'  +
             '    <span>'  +
             '      <input '+itemId+value+itemClass+itemName+itemDefault+disabled+itemDisabled+' type="checkbox" data-tree-type="'+item.tree+'-parent" onChange="treeCheck(\''+item.tree+'\', \'parent\')" />' +
             '      <span class="arrow"></span>' +
@@ -196,7 +196,7 @@
         }else{
           childList =
             '<li class="child-list">' +
-            '  <label class="checkbox-'+theme+' '+itemDisabled+disabled+'">' +
+            '  <label class="checkbox-'+theme+' '+itemDisabled+disabled+isMobile+'">' +
             '    <span>' +
             '      <input '+itemId+value+itemClass+itemName+treeName+itemDefault+disabled+itemDisabled+' type="checkbox" data-tree-type="'+item.tree+'-child" onChange="treeCheck(\''+item.tree+'\', \'child\')" />' +
             '      <span class="arrow"></span>' +
