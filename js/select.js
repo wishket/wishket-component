@@ -1,7 +1,7 @@
 ;(function ($, window) {
   "use strict";
-  let newObject = {}
-  let UiSelect = function (node){
+  var newObject = {}
+  var UiSelect = function (node){
     this.node = node;
     this.$node = $(this.node);
     this.init();
@@ -13,7 +13,7 @@
     },
 
     practice: function(selected){
-      let self = this,
+      var self = this,
           $selectBox = this.$node.next(),
           selectNode = this.node;
 
@@ -21,14 +21,14 @@
       this.node.style.display = "none";
       
 
-      const width = this.node.getAttribute("data-width") ? this.node.getAttribute("data-width") : "100%";
-      const dropDown = $selectBox.children(".select-dropdown");
+      var width = this.node.getAttribute("data-width") ? this.node.getAttribute("data-width") : "100%";
+      var dropDown = $selectBox.children(".select-dropdown");
       dropDown.css('width', width);
       $selectBox.css('width', width);
       
       //close
       $(document).on("click.ui-label-select", function(e){
-        const target = String(e.target.classList);
+        var target = String(e.target.classList);
         if(target === "select-box" || target === "current" || target === "select-label" || target === "select-icon" || target === "select-name"){
           // $(document).find(".select-dropdown.open").removeClass("open");
           // $(this).find(".select-dropdown.open") ? $(document).find(".select-dropdown.open").removeClass("open") : null;
@@ -36,7 +36,7 @@
         }else{
           dropDown.removeClass("open");
           dropDown.parent().children(".select-box").children(".select-icon").removeClass("active");
-          const currentCheck = dropDown.children().hasClass("current");
+          var currentCheck = dropDown.children().hasClass("current");
           currentCheck ? null : dropDown.parent().removeClass("active");
         }
       });
@@ -65,19 +65,18 @@
           e.preventDefault();
         }else if(e.keyCode == '27'){
           //esc
-          console.log('esc');
         }
       });
     },
     
     listSelectClick: function(node){
-      const self = this;
-      const selectValue = node.attr('data-select-value');
+      var self = this;
+      var selectValue = node.attr('data-select-value');
       node.parent().parent().prev().val(selectValue).prop("selected", true);
       this.$node.trigger("change");
       self.toggle(false, node.siblings(".current"),"current");
       node.parent().children("li").each(function(){
-        const listValue = node.attr("data-select-value");
+        var listValue = node.attr("data-select-value");
         listValue === selectValue ? self.toggle(true, node, "current") : null;
       });
       node.parent().prev().children(".select-name").text(node.text());
@@ -108,13 +107,13 @@
     },
 
     createHtml: function(){
-      const label = this.$node.find("option:first").text();
+      var label = this.$node.find("option:first").text();
       $(this.node).find("option:first").remove();
-      const option = this.$node.find("option");
-      const wrapClass = this.$node.attr("class");
-      const disabled = this.$node.attr("diabled") ? ' disabled' : '';
+      var option = this.$node.find("option");
+      var wrapClass = this.$node.attr("class");
+      var disabled = this.$node.attr("diabled") ? ' disabled' : '';
 
-      let createSelect =
+      var createSelect =
         '<div class="'+wrapClass+disabled+'" tabindex="0">' +
         '  <span class="select-box">' +
         '    <span class="select-label basic">'+label+'</span>' +
@@ -126,14 +125,14 @@
         '</div>';
       this.$node.after(createSelect);
 
-      const selectDropdown = this.$node.next().children(".select-dropdown");
+      var selectDropdown = this.$node.next().children(".select-dropdown");
 
       option.each(function(){
-        const value = this.value;
-        const text = this.innerText;
-        let selected = $(this).attr("selected") ? 'current' : '';
-        let disabled = $(this).attr("disabled") ? 'disabled' : '';
-        let getClass = selected || disabled ? ' class="'+selected+' '+disabled+'"' : ''
+        var value = this.value;
+        var text = this.innerText;
+        var selected = $(this).attr("selected") ? 'current' : '';
+        var disabled = $(this).attr("disabled") ? 'disabled' : '';
+        var getClass = selected || disabled ? ' class="'+selected+' '+disabled+'"' : ''
         if($(this).attr("selected")){
           $(this).parent().next().addClass("selected");
           $(this).parent().next().addClass("active");

@@ -1,14 +1,14 @@
 ;(function ($, window) {
   "use strict";
-  let newObject = {}
+  var newObject = {}
   //디폴트 설정
-  const defaults = {
+  var defaults = {
     labelmaxcount : 10,  //라벨 최대갯수
     textlength : 100,  //인풋 텍스트 글자수
     listwidth : "inherit",
   }
-  let selectData;
-  let UiAutoComple = function (node, options){
+  var selectData;
+  var UiAutoComple = function (node, options){
     this.node = node;
     this.$node = $(this.node);
     this.settings = $.extend({}, defaults, options);
@@ -22,9 +22,9 @@
     },
 
     practice: function(){
-      const target = this;
-      const $tagBox = $(this.node).next().children(".ui-autocomplete");
-      const $dropDown = $(this.node).next().children(".tag-dropdown");
+      var target = this;
+      var $tagBox = $(this.node).next().children(".ui-autocompvare");
+      var $dropDown = $(this.node).next().children(".tag-dropdown");
       $dropDown.css("width", this.settings.listwidth);
 
       $(document).on("click", ".i-close", function(e){
@@ -43,9 +43,9 @@
 
     //키이벤트
     keyEventSearch: function(e, target, $dropDown){
-      const self = this;
-      let value = target.val();
-      const textlength = this.settings.textlength;
+      var self = this;
+      var value = target.val();
+      var textlength = this.settings.textlength;
       this.stringReplace(value, target);
 
         //글자수 체크
@@ -53,7 +53,7 @@
         target.val(value.slice(0, textlength));
       }
 
-      const dropdownPostion = target.parent().width() - target.width() - 16;
+      var dropdownPostion = target.parent().width() - target.width() - 16;
 
       if(value.replace(/ /gi, '') === ''){
         $dropDown.css("left", dropdownPostion);
@@ -65,13 +65,13 @@
         this.toggle(true, target.parent(), "active");
       }
 
-      let selected = [];
-      const selectedsLabel = $dropDown.prev().children("span");
+      var selected = [];
+      var selectedsLabel = $dropDown.prev().children("span");
       if(selectedsLabel.length > 0){
         selected = value.replace(/=/gi, '');
       }
 
-      let selected_string = (selected !== [] ? "&selected=" + selected : "");
+      var selected_string = (selected !== [] ? "&selected=" + selected : "");
       selected_string = selected_string.replace(/#/gi, '%23');
       selected_string = selected_string.replace(/:/gi, '');
       selected_string = selected_string.replace(/\//gi, '%2F');
@@ -84,23 +84,23 @@
           event.preventDefault();
           $dropDown.html("");
           if(data.length > 0){
-            for (let i = 0; i < data.length; i++) {
-              const listName = data[i].name.replace(new RegExp('('+value+')(?!([^<]+)?>)','g'), '<strong>$1</strong>');
+            for (var i = 0; i < data.length; i++) {
+              var listName = data[i].name.replace(new RegExp('('+value+')(?!([^<]+)?>)','g'), '<strong>$1</strong>');
               $dropDown.append("<li class='dropdown-list' data-tag='"+data[i].name+"' tabindex='0'><strong>‘</strong>"+listName+"<strong>’</strong> <span class='count-data'>"+data[i].count+"</span></li>");
             }
           }else{
             $dropDown.append("<li class='dropdown-list' data-tag='"+value+"' tabindex='0'><strong>‘"+value+"’</strong> 입력</li>");
           }
           $dropDown.children().on("click", function(){
-            const value = $(this).data("tag");
-            let stop = true;
-            const labelMaxLength = self.settings.labelmaxcount;
-            const labelCurrentLength = $dropDown.prev().children("span").length;
+            var value = $(this).data("tag");
+            var stop = true;
+            var labelMaxLength = self.settings.labelmaxcount;
+            var labelCurrentLength = $dropDown.prev().children("span").length;
             if(labelMaxLength > labelCurrentLength){
               $dropDown.prev().children("span").each(function () {
                 if($(this).text()=== value){
                   stop = false;
-                  const label = $(this);
+                  var label = $(this);
                   label.addClass("error");
                   setTimeout(function(i){
                     label.removeClass("error");
@@ -136,9 +136,9 @@
     },
 
     keyboardAccessibility: function(node, keycode){
-      const self = this;
-      const list = node.parent().next().children("li");
-      const $dropDown = node.parent().next();
+      var self = this;
+      var list = node.parent().next().children("li");
+      var $dropDown = node.parent().next();
       if(keycode == '40'){
         list.each(function(){
           if($(this).hasClass("list-selected")){
@@ -167,17 +167,17 @@
       }else if(keycode == '13'){  //엔터
         if(node.val() !== ' '){
           if(list.hasClass("list-selected")){
-            let dataTag = node.parent().next().children(".list-selected").attr("data-tag");
+            var dataTag = node.parent().next().children(".list-selected").attr("data-tag");
             dataTag = dataTag.replace(/  +/g, ' ');
             dataTag = dataTag.trim();
-            let stop = true;
-            const labelMaxLength = this.settings.labelmaxcount;
-            const labelCurrentLength = $dropDown.prev().children("span").length;
+            var stop = true;
+            var labelMaxLength = this.settings.labelmaxcount;
+            var labelCurrentLength = $dropDown.prev().children("span").length;
             if(labelMaxLength > labelCurrentLength){
               $dropDown.prev().children("span").each(function () {
                 if($(this).text()=== dataTag){
                   stop = false;
-                  const label = $(this);
+                  var label = $(this);
                   label.addClass("error");
                   setTimeout(function(i){
                       label.removeClass("error");
@@ -195,17 +195,17 @@
             this.toggle(false, $dropDown, "open");
             this.toggle(false, node.parent(), "active");
           }else{
-            let stop = true;
-            const labelMaxLength = this.settings.labelmaxcount;
-            const labelCurrentLength = $dropDown.prev().children("span").length;
-            let value = node.val();
+            var stop = true;
+            var labelMaxLength = this.settings.labelmaxcount;
+            var labelCurrentLength = $dropDown.prev().children("span").length;
+            var value = node.val();
             value = value.replace(/  +/g, ' ');
             value = value.trim();
             if(labelMaxLength > labelCurrentLength){
               $dropDown.prev().children("span").each(function () {
                 if($(this).text()=== value){
                   stop = false;
-                  const label = $(this);
+                  var label = $(this);
                   label.addClass("error");
                   setTimeout(function(i){
                       label.removeClass("error");
@@ -230,12 +230,12 @@
 
     //라벨 추가, 제거
     addLabel: function(type, tag, target){
-      const $tagBox = this.$node.next().children(".ui-autocomplete").children(".tag-input");
+      var $tagBox = this.$node.next().children(".ui-autocompvare").children(".tag-input");
       if(type === "create"){
         tag = tag.split('*!*');
         if(tag.length > 1){
-          for(let i=0; i<tag.length; i++){
-            $tagBox.before("<span class=\"autocomplete-label\">"+tag[i]+"<i class=\"i-close\"></i></span>");
+          for(var i=0; i<tag.length; i++){
+            $tagBox.before("<span class=\"autocompvare-label\">"+tag[i]+"<i class=\"i-close\"></i></span>");
           }
         }
       }else if(type === "remove"){
@@ -244,7 +244,7 @@
       }else{
         tag = tag.replace(/  +/g, ' ');
         tag = tag.trim();
-        $tagBox.before("<span class=\"autocomplete-label\">"+tag+"<i class=\"i-close\"></i></span>");
+        $tagBox.before("<span class=\"autocompvare-label\">"+tag+"<i class=\"i-close\"></i></span>");
         this.inputSync(true, tag);
         target.val("");
         this.$node.next().children(".tag-dropdown").css("top", this.$node.next().height());
@@ -257,7 +257,7 @@
       tag = tag.trim();
       tag = tag.replace(/  +/g, ' ');
       if(state){
-        const currentValue = this.$node.val();
+        var currentValue = this.$node.val();
         if(!this.$node.val()){
           this.$node.val(tag);
         }else{
@@ -265,8 +265,8 @@
           this.$node.trigger("change");
         }
       }else{
-        const currentValue = this.$node.val().split('*!*');
-        const findValue = currentValue.indexOf(tag);
+        var currentValue = this.$node.val().split('*!*');
+        var findValue = currentValue.indexOf(tag);
         currentValue.splice(findValue, 1);
         this.$node.val(currentValue.join('*!*'));
         this.$node.trigger("change");
@@ -275,11 +275,11 @@
 
     //생성
     createHtml: function(value){
-      const wrapClass = this.node.getAttribute("class") ? 'class="'+this.node.getAttribute("class")+'" ' : '';
-      const placeholder = this.node.getAttribute("placeholder") ? 'placeholder="'+this.node.getAttribute("placeholder")+'"' : '';
+      var wrapClass = this.node.getAttribute("class") ? 'class="'+this.node.getAttribute("class")+'" ' : '';
+      var placeholder = this.node.getAttribute("placeholder") ? 'placeholder="'+this.node.getAttribute("placeholder")+'"' : '';
       this.node.classList.add("hiddenInput");
-      const createHtml =
-        '<div class="autocompletebox">' +
+      var createHtml =
+        '<div class="autocompvarebox">' +
         '  <div '+wrapClass+'>' +
         '    <input class="tag-input" type="text" '+placeholder+' />' +
         '  </div>' +
@@ -287,7 +287,7 @@
         '  </ul>' +
         '</div>';
       this.$node.after(createHtml);
-      let loadTag = this.$node.attr("value");
+      var loadTag = this.$node.attr("value");
       loadTag ? this.addLabel("create", loadTag) : null;
       this.practice();
     },

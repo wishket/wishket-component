@@ -1,11 +1,12 @@
 ;(function ( $, window, document, undefined ) {
+  "use strict";
   $.uiInput = {
     //인풋 셋팅 type label-input, text-input
     setting:function(){
-      const target = $('[data-input-type]');
+      var target = $("input[data-input-type]");
       target.each(function(){
-        const type   = $(this).attr('data-input-type');
-        let size = target.attr('data-input-size');
+        var type   = $(this).attr('data-input-type');
+        var size = target.attr('data-input-size');
         size = $.uiInput.getSize(size);
         if(type === 'text-input'){
           $.uiInput.textInput($(this), size);
@@ -17,23 +18,24 @@
       });
     },
     textInput:function(target, size){
-      const helperText = target.attr('data-input-helper');
-      const theme = target.attr('data-input-theme');
-      const maxlength = target.attr('maxlength');
+      var helperText = target.attr('data-input-helper');
+      var theme = target.attr('data-input-theme');
+      var maxlength = target.attr('maxlength');
       target.wrap('<div class="text-input-'+theme+' '+size+'"></div>');
-      target.after('<span class="helper-text">'+helperText+'</span>');
       target.after('<span class="word-length">0/'+maxlength+'</span>');
-      target.bind('change keydown keyup',function(){
-        const count = target.val().length;
-        target.next().html(''+count+'/'+maxlength+'');
-     });
+      target.after('<span class="helper-text">'+helperText+'</span>');
+      target.on('change keydown keyup',function(){
+        var count = target.val().length;
+        target.siblings(".word-length").html(''+count+'/'+maxlength+'');
+      });
+      target.siblings(".helper-text").width(target.width() - (target.siblings(".word-length").width()*2));
     },
     labelInput:function(target, size){
-      const labelText = target.attr('data-input-label');
-      const theme = target.attr('data-input-theme');
-      const forName = target.attr('id');
-      const icon = target.attr('data-input-icon');
-      let iconPosition = target.attr('data-icon-position');
+      var labelText = target.attr('data-input-label');
+      var theme = target.attr('data-input-theme');
+      var forName = target.attr('id');
+      var icon = target.attr('data-input-icon');
+      var iconPosition = target.attr('data-icon-position');
       if(icon && iconPosition){
         iconPosition = $.uiInput.getIconPosition(iconPosition);
       }
@@ -43,7 +45,7 @@
         target.parent().addClass('label-effect');
       });
       target.bind('blur', function(){
-        const value = target.val();
+        var value = target.val();
         if(!value){
           target.parent().removeClass('label-effect');
         }
@@ -78,7 +80,7 @@
 
 (function($){
   $.fn.getValueChk = function(type){
-    const value = $(this).val() ? true : false;
+    var value = $(this).val() ? true : false;
     return value;
   }
 })(jQuery);

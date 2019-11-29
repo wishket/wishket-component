@@ -1,10 +1,10 @@
 ;(function ( $, window, document, undefined ) {
   $.uiCheckbox = {
     setting:function(){
-      const target = $('[data-checkbox-type]');
+      var target = $('[data-checkbox-type]');
       target.each(function(){
-        const type   = $(this).attr('data-checkbox-type');
-        let size = target.attr('data-checkobx-size');
+        var type   = $(this).attr('data-checkbox-type');
+        var size = target.attr('data-checkobx-size');
         size = $.uiCheckbox.getSize(size);
         if(type === 'group'){
           $.uiCheckbox.group($(this), size);
@@ -19,29 +19,29 @@
       });
     },
     single:function(target, size){
-      let label;
-      const theme = target.attr("data-checkbox-theme");
-      const detailText = target.attr("data-checkbox-detaile");
-      const detaileClass = !detailText ? '' : 'detail-text';
-      const name = target.attr("data-checkbox-name") ? 'name="'+target.attr("data-checkbox-name")+'" ' : '';
-      const disabled = !target.attr("data-checkbox-disabled") ? '' : 'disabled ';
-      const id = target.attr("id");
-      const wrapId = !target.attr("id") ? '' : 'id="'+target.attr("id")+'" ';
-      const wrapClass = !target.attr("class") ? '' : 'class="'+target.attr("class")+'" ';
-      const defaultOption = !target.attr("data-checkbox-default") ? '' : 'checked="checked" ';
-      const value = !target.attr("data-checkbox-value") ? 'value="'+target.attr("data-checkbox-label")+'" ' : 'value="'+target.attr("data-checkbox-value")+'" ';
-      const horizontal = !target.attr("data-horizontal") ? '' : "horizontal ";
-      const addonInput = target.data("addon-input");
-      const dataAddOn = target.attr('data-addon-id') ? target.attr('data-addon-id') : '';
+      var label;
+      var theme = target.attr("data-checkbox-theme");
+      var detailText = target.attr("data-checkbox-detaile");
+      var detaileClass = !detailText ? '' : 'detail-text';
+      var name = target.attr("data-checkbox-name") ? 'name="'+target.attr("data-checkbox-name")+'" ' : '';
+      var disabled = !target.attr("data-checkbox-disabled") ? '' : 'disabled ';
+      var id = target.attr("id");
+      var wrapId = !target.attr("id") ? '' : 'id="'+target.attr("id")+'" ';
+      var wrapClass = !target.attr("class") ? '' : 'class="'+target.attr("class")+'" ';
+      var defaultOption = !target.attr("data-checkbox-default") ? '' : 'checked="checked" ';
+      var value = !target.attr("data-checkbox-value") ? 'value="'+target.attr("data-checkbox-label")+'" ' : 'value="'+target.attr("data-checkbox-value")+'" ';
+      var horizontal = !target.attr("data-horizontal") ? '' : "horizontal ";
+      var addonInput = target.data("addon-input");
+      var dataAddOn = target.attr('data-addon-id') ? target.attr('data-addon-id') : '';
       //여기 다시
-      const addonFunction = !addonInput ? '' : 'onChange="addonCheck(\'checkbox\', \''+dataAddOn+'\', \''+id+'\')"';
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? " mobile" : " pc";
+      var addonFunction = !addonInput ? '' : 'onChange="addonCheck(\'checkbox\', \''+dataAddOn+'\', \''+id+'\')"';
+      var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? " mobile" : " pc";
       if(addonInput){
         label ='';
       }else{
         label = !target.attr('data-checkbox-label') ? target.attr("data-checkbox-value") : target.attr("data-checkbox-label");
       }
-      let checkboxWrap = '';
+      var checkboxWrap = '';
       if(detailText){
         checkboxWrap =
           '<span>'  +
@@ -61,11 +61,11 @@
           '<span>'+label+'</span>';
       }
       if(addonInput){
-        let addonInputBox = '';
+        var addonInputBox = '';
         $.each(addonInput, function(index, item){
-          const itemClass = !item.class ? '' : 'class="'+item.class+'" ';
-          const placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'" ';
-          const itemTheme = !item.theme ? theme : item.theme;
+          var itemClass = !item.class ? '' : 'class="'+item.class+'" ';
+          var placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'" ';
+          var itemTheme = !item.theme ? theme : item.theme;
           addonInputBox =
             '<div class="text-input-'+itemTheme+'" >'  +
             '  <input id="'+dataAddOn+'" '+itemClass+name+placeholder+' type="text" disabled/>'  +
@@ -77,28 +77,28 @@
       }
     },
     group:function(target, size){
-      const options = target.data('options');
-      const theme = target.attr('data-checkbox-theme');
-      const name = !target.attr('data-checkbox-name') ? '' : 'name="'+target.attr("data-checkbox-name")+'" ';
-      const disabled = !target.attr('data-checkbox-disabled') ? '' : 'disabled ';
-      const wrapId = !target.attr('id') ? '' : 'id="'+target.attr("id")+'" ';
-      const wrapClass = !target.attr('class') ? '' : 'class="'+target.attr("class")+'" ';
-      const horizontal = !target.attr('data-horizontal') ? '' : 'horizontal ';
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? " mobile" : " pc";
-      let groupCheckbox = '';
+      var options = target.data('options');
+      var theme = target.attr('data-checkbox-theme');
+      var name = !target.attr('data-checkbox-name') ? '' : 'name="'+target.attr("data-checkbox-name")+'" ';
+      var disabled = !target.attr('data-checkbox-disabled') ? '' : 'disabled ';
+      var wrapId = !target.attr('id') ? '' : 'id="'+target.attr("id")+'" ';
+      var wrapClass = !target.attr('class') ? '' : 'class="'+target.attr("class")+'" ';
+      var horizontal = !target.attr('data-horizontal') ? '' : 'horizontal ';
+      var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? " mobile" : " pc";
+      var groupCheckbox = '';
       $.each(options, function(index, item){
-        const value = !item.value ? 'value="'+item.label+'" ' : 'value="'+item.value+'" ';
-        const label = !item.label ? item.value : item.label;
-        const itemId = !item.id ? '' : 'id="'+item.id+'" ';
-        const itemClass = !item.class ? '' : 'class="'+item.class+'" ';
-        const itemDefault = !item.default ? '' : 'checked="checked" '
-        const itemDetaile = item.detail;
-        const itemDetaileClass = item.detail ? 'detail-text ' : '';
-        const itemDisabled = !item.disabled ? '' : 'disabled'
-        const itemAddon = !item.addonId ? '' : item.addonId;
-        let checkboxWrap = '';
+        var value = !item.value ? 'value="'+item.label+'" ' : 'value="'+item.value+'" ';
+        var label = !item.label ? item.value : item.label;
+        var itemId = !item.id ? '' : 'id="'+item.id+'" ';
+        var itemClass = !item.class ? '' : 'class="'+item.class+'" ';
+        var itemDefault = !item.default ? '' : 'checked="checked" '
+        var itemDetaile = item.detail;
+        var itemDetaileClass = item.detail ? 'detail-text ' : '';
+        var itemDisabled = !item.disabled ? '' : 'disabled'
+        var itemAddon = !item.addonId ? '' : item.addonId;
+        var checkboxWrap = '';
         if(itemAddon){
-          const placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'" ';
+          var placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'" ';
           checkboxWrap =
             '<div class="addon">'  +
             '  <label class="checkbox-'+theme+' '+horizontal+disabled+itemDisabled+isMobile+'">'  +
@@ -147,16 +147,16 @@
       target.replaceWith('<div '+wrapId+wrapClass+'>'+groupCheckbox+'</div>');
     },
     chip:function(target, size){
-      const theme = target.attr('data-checkbox-theme');
-      const name = target.attr('data-checkbox-name') ? 'name="'+target.attr('data-checkbox-name')+'"' : '';
-      const disabled = !target.attr('data-checkbox-disabled') ? '' : 'disabled';
-      const wrapId = !target.attr('id') ? '' : 'id="'+target.attr("id")+'"';
-      const wrapClass = !target.attr("class") ? '' : 'class="'+target.attr("class")+'"';
-      const defaultOption = !target.attr('data-checkbox-default') ? '' : 'checked="checked"';
-      const value = !target.attr('data-checkbox-value') ? '' : 'value="'+target.attr('data-checkbox-value')+'"';
-      const label = !target.attr('data-checkbox-label') ? target.attr('data-checkbox-value') : target.attr('data-checkbox-label');
-      const vertical = target.attr("data-vertical") ? 'vertical' : ''
-      const checkboxWrap =
+      var theme = target.attr('data-checkbox-theme');
+      var name = target.attr('data-checkbox-name') ? 'name="'+target.attr('data-checkbox-name')+'"' : '';
+      var disabled = !target.attr('data-checkbox-disabled') ? '' : 'disabled';
+      var wrapId = !target.attr('id') ? '' : 'id="'+target.attr("id")+'"';
+      var wrapClass = !target.attr("class") ? '' : 'class="'+target.attr("class")+'"';
+      var defaultOption = !target.attr('data-checkbox-default') ? '' : 'checked="checked"';
+      var value = !target.attr('data-checkbox-value') ? '' : 'value="'+target.attr('data-checkbox-value')+'"';
+      var label = !target.attr('data-checkbox-label') ? target.attr('data-checkbox-value') : target.attr('data-checkbox-label');
+      var vertical = target.attr("data-vertical") ? 'vertical' : ''
+      var checkboxWrap =
         '<label class="chip-choice-'+theme+' '+disabled+' '+vertical+'">' +
         '  <input '+wrapId+' '+wrapClass+' '+name+' '+disabled+' '+defaultOption+' '+value+' type="checkbox" />' +
         '  <span>'+label+'</span>' +
@@ -164,24 +164,24 @@
       target.replaceWith(checkboxWrap);
     },
     tree:function(target, size){
-      const options = target.data('options');
-      const theme = target.attr('data-checkbox-theme');
-      const wrapId = !target.attr("id") ? '' : 'id="'+target.attr("id")+' "';
-      const disabled = !target.attr('data-checkbox-disabled') ? '' : 'disabled';
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? " mobile" : " pc";
-      let treeList = '';
+      var options = target.data('options');
+      var theme = target.attr('data-checkbox-theme');
+      var wrapId = !target.attr("id") ? '' : 'id="'+target.attr("id")+' "';
+      var disabled = !target.attr('data-checkbox-disabled') ? '' : 'disabled';
+      var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? " mobile" : " pc";
+      var treeList = '';
       $.each(options, function(index, item){
-        const depth = item.depth;
-        const value = !item.value ? 'value="'+item.label+'" ' : 'value="'+item.value+'" ';
-        const label = !item.label ? item.value : item.label;
-        const itemId = !item.id ? '' : 'id="'+item.id+'" ';
-        const itemClass = !item.class ? '' : 'class="'+item.class+'" ';
-        const itemDefault = !item.default ? '' : 'checked="checked" '
-        const itemDisabled = !item.disabled ? '' : 'disabled';
-        const itemName = !item.name ? '' : 'name="'+item.name+'"';
-        const treeName = !item.tree ? null : 'data-tree="'+item.tree+'"'
-        let childList = '';
-        let titleList = '';
+        var depth = item.depth;
+        var value = !item.value ? 'value="'+item.label+'" ' : 'value="'+item.value+'" ';
+        var label = !item.label ? item.value : item.label;
+        var itemId = !item.id ? '' : 'id="'+item.id+'" ';
+        var itemClass = !item.class ? '' : 'class="'+item.class+'" ';
+        var itemDefault = !item.default ? '' : 'checked="checked" '
+        var itemDisabled = !item.disabled ? '' : 'disabled';
+        var itemName = !item.name ? '' : 'name="'+item.name+'"';
+        var treeName = !item.tree ? null : 'data-tree="'+item.tree+'"'
+        var childList = '';
+        var titleList = '';
         if(depth === 1){
           titleList =
             '<li>'  +
@@ -226,10 +226,10 @@
 })( jQuery, window, document );
 
 function treeCheck(name, type){
-  const length = $('input:checkbox[data-tree="'+name+'"]').length;
-  const checkLength = $('input:checkbox[data-tree="'+name+'"]:checked').length;
-  const parentTarget = $('input[data-tree-type="'+name+'-parent"]');
-  const childTarget = $('input[data-tree-type="'+name+'-child"]');
+  var length = $('input:checkbox[data-tree="'+name+'"]').length;
+  var checkLength = $('input:checkbox[data-tree="'+name+'"]:checked').length;
+  var parentTarget = $('input[data-tree-type="'+name+'-parent"]');
+  var childTarget = $('input[data-tree-type="'+name+'-child"]');
   if(type === 'parent'){
     if(length > checkLength){
       parentTarget.next().removeClass('minus-icon');
@@ -268,16 +268,16 @@ function treeCheck(name, type){
 
 function addonCheck(type, name, id, scale){
   if(type === 'checkbox'){
-    const check = $('#'+id+'').is(":checked");
-    const textInput= $('#'+name+'');
+    var check = $('#'+id+'').is(":checked");
+    var textInput= $('#'+name+'');
     if(check === false){
       textInput.attr('disabled', true);
     }else{
       textInput.attr('disabled', false);
     }
   }else{  // radio
-    const textInput= $('input:text[name="'+name+'"]');
-    const check = $('#'+id+'').is(":checked");
+    var textInput= $('input:text[name="'+name+'"]');
+    var check = $('#'+id+'').is(":checked");
     if(check === false){
       textInput.attr('disabled', true);
     }else{

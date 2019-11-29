@@ -1,7 +1,7 @@
 //text input stlye
 @mixin textinput($padding, $brand-color, $placeholder-color, $font-color, $font-size, $line-height){
   position:relative;
-  padding-bottom:28px;
+  // padding-bottom:28px;
   >input{
     display: block;
     border-radius:4px;
@@ -51,21 +51,17 @@
   }
 
   >span{
-    position:absolute;
     font-size:0.813rem;
     font-weight: 400;
     bottom:0;
     color:$color-gray400;
     &.helper-text{
-      left:0.813rem;
-      text-overflow: ellipsis;
-      width: 80%;
-      overflow: hidden;
-      white-space: nowrap;
+      float:left;
+      padding:8px 0.813rem 0 0.813rem;
     }
     &.word-length{
-      left:auto;
-      right:0.813rem;
+      float: right;
+      padding:8px 0.813rem 0 0;
     }
   }
   &.error{
@@ -76,6 +72,12 @@
     >span{
       color:$color-red500;
     }
+  }
+
+  &:after{
+    clear: both;
+    display: block;
+    content:'';
   }
 }
 
