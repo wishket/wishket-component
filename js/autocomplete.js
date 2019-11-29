@@ -26,10 +26,12 @@
       const $tagBox = $(this.node).next().children(".ui-autocomplete");
       const $dropDown = $(this.node).next().children(".tag-dropdown");
       $dropDown.css("width", this.settings.listwidth);
+
       $(document).on("click", ".i-close", function(e){
-        target.inputSync(false, $(this).parent());
+        target.inputSync(false, $(this).parent().text());
         target.addLabel("remove", $(this).parent());
       });
+
       $tagBox.children().on("keyup", function(e){
         if(e.keyCode == '40' || e.keyCode == '37' || e.keyCode == '39' || e.keyCode == '38' || e.keyCode == '13'){
           target.keyboardAccessibility($(this), e.keyCode);
@@ -52,7 +54,6 @@
       }
 
       const dropdownPostion = target.parent().width() - target.width() - 16;
-      //드롭다운 액션
 
       if(value.replace(/ /gi, '') === ''){
         $dropDown.css("left", dropdownPostion);
@@ -63,13 +64,6 @@
         this.toggle(true, $dropDown, "open");
         this.toggle(true, target.parent(), "active");
       }
-
-      //백스페이스시 삭제
-      // else if(e.keyCode == '8' && !value){
-      //   const target = this.$node.next().children(".ui-autocomplete").children(".tag-input").prev();
-      //   this.addLabel("remove", target);
-      //   this.inputSync(false, target);
-      // }
 
       let selected = [];
       const selectedsLabel = $dropDown.prev().children("span");
@@ -129,29 +123,8 @@
       });
     },
 
-    // //input width
-    // widthChange: function(node){
-    //   //node 기준 .ui-autocomplete
-    //   const fullWidth = parseInt(node.width());
-    //   const label = node.children(".autocomplete-label");
-    //   let labelWidth = 0;
-    //   if(label.length > 0){
-    //     label.each(function(){
-    //       labelWidth = labelWidth + parseInt($(this).outerWidth() + 20);
-    //     });
-    //     node.children(".tag-input").width(fullWidth - labelWidth);
-    //     console.log(fullWidth - labelWidth +' input 변경 width');
-    //   }else{
-    //     node.children(".tag-input").width(fullWidth - 8);
-    //   }
-    // },
-
     stringReplace: function (value, node){
-      // selected_string = selected_string.replace(/#/gi, '%23');
-      // selected_string = selected_string.replace(/:/gi, '');
-      // selected_string = selected_string.replace(/\//gi, '%2F');
-      // value.
-        node.val(value.replace("*!*", ""));
+      node.val(value.replace("*!*", ""));
     },
 
     toggle: function(state, node, className){
@@ -192,70 +165,66 @@
           }
         });
       }else if(keycode == '13'){  //엔터
-        if(list.hasClass("list-selected")){
-          let dataTag = node.parent().next().children(".list-selected").attr("data-tag");
-          dataTag = dataTag.replace(/  +/g, ' ');
-          dataTag = dataTag.trim();
-          let stop = true;
-          const labelMaxLength = this.settings.labelmaxcount;
-          const labelCurrentLength = $dropDown.prev().children("span").length;
-          if(labelMaxLength > labelCurrentLength){
-            $dropDown.prev().children("span").each(function () {
-              if($(this).text()=== dataTag){
-                stop = false;
-                const label = $(this);
-                label.addClass("error");
-                setTimeout(function(i){
-                    label.removeClass("error");
-                }, 2000);
-                $(this).siblings("input").val("");
+        if(node.val() !== ' '){
+          if(list.hasClass("list-selected")){
+            let dataTag = node.parent().next().children(".list-selected").attr("data-tag");
+            dataTag = dataTag.replace(/  +/g, ' ');
+            dataTag = dataTag.trim();
+            let stop = true;
+            const labelMaxLength = this.settings.labelmaxcount;
+            const labelCurrentLength = $dropDown.prev().children("span").length;
+            if(labelMaxLength > labelCurrentLength){
+              $dropDown.prev().children("span").each(function () {
+                if($(this).text()=== dataTag){
+                  stop = false;
+                  const label = $(this);
+                  label.addClass("error");
+                  setTimeout(function(i){
+                      label.removeClass("error");
+                  }, 2000);
+                  $(this).siblings("input").val("");
+                }
+              });
+              if(stop){
+                this.addLabel("add", dataTag, node);
               }
-            });
-            if(stop){
-              this.addLabel("add", dataTag, node);
+            }else{
+              console.log("더 이상 추가가 힘들어요.");
+              node.val("");
             }
+            this.toggle(false, $dropDown, "open");
+            this.toggle(false, node.parent(), "active");
           }else{
-            console.log("더 이상 추가가 힘들어요.");
-            node.val("");
-          }
-          this.toggle(false, $dropDown, "open");
-          this.toggle(false, node.parent(), "active");
-        }else{
-          let stop = true;
-          const labelMaxLength = this.settings.labelmaxcount;
-          const labelCurrentLength = $dropDown.prev().children("span").length;
-          let value = node.val();
-          value = value.replace(/  +/g, ' ');
-          value = value.trim();
-          if(labelMaxLength > labelCurrentLength){
-            $dropDown.prev().children("span").each(function () {
-              if($(this).text()=== value){
-                stop = false;
-                const label = $(this);
-                label.addClass("error");
-                setTimeout(function(i){
-                    label.removeClass("error");
-                }, 2000);
-                $(this).siblings("input").val("");
+            let stop = true;
+            const labelMaxLength = this.settings.labelmaxcount;
+            const labelCurrentLength = $dropDown.prev().children("span").length;
+            let value = node.val();
+            value = value.replace(/  +/g, ' ');
+            value = value.trim();
+            if(labelMaxLength > labelCurrentLength){
+              $dropDown.prev().children("span").each(function () {
+                if($(this).text()=== value){
+                  stop = false;
+                  const label = $(this);
+                  label.addClass("error");
+                  setTimeout(function(i){
+                      label.removeClass("error");
+                  }, 2000);
+                  $(this).siblings("input").val("");
+                }
+              });
+              if(stop){
+                this.addLabel("add", value, node);
               }
-            });
-            if(stop){
-              this.addLabel("add", value, node);
+            }else{
+              console.log("더 이상 추가가 힘들어요.");
+              node.val("");
             }
-          }else{
-            console.log("더 이상 추가가 힘들어요.");
-            node.val("");
+            this.toggle(false, $dropDown, "open");
+            this.toggle(false, node.parent(), "active");
           }
-          this.toggle(false, $dropDown, "open");
-          this.toggle(false, node.parent(), "active");
         }
       }
-
-      // if(e.keyCode == '40'){  //화살표 아래
-      //   node.parent().next().children(":first").focus();
-      // }else if(e.keyCode == '38'){  //화살표 위
-      //
-      // }
       return false;
     },
 
@@ -297,7 +266,7 @@
         }
       }else{
         const currentValue = this.$node.val().split('*!*');
-        const findValue = currentValue.indexOf(tag.text());
+        const findValue = currentValue.indexOf(tag);
         currentValue.splice(findValue, 1);
         this.$node.val(currentValue.join('*!*'));
         this.$node.trigger("change");
