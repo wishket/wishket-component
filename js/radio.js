@@ -95,7 +95,7 @@
           var addonClass = !item.addonClass ? '' : 'id="'+item.addonClass+'"';
           var placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'"';
           radioWrap =
-            '<div class="'+horizontal+'">'  +
+            '<li class="'+horizontal+'">'  +
             ' <div class="addon">'  +
             '   <label class="radio-'+theme+' '+disabled+' '+itemDisabled+'">'  +
             '     <span>' +
@@ -108,13 +108,13 @@
             '     <input '+addonId+' '+addonClass+' '+nameTag+' '+placeholder+' disabled type="text" />'  +
             '   </div>' +
             ' </div>' +
-            '</div>';
+            '</li>';
           groupradio += radioWrap;
         }else{
           if(itemDetaile){
             radioWrap =
-              '<div>' +
-              '<label class="radio-'+theme+' '+horizontal+' '+itemDetaileClass+' '+disabled+' '+itemDisabled+'">' +
+              '<li class="'+horizontal+'">' +
+              '<label class="radio-'+theme+' '+itemDetaileClass+' '+disabled+' '+itemDisabled+'">' +
               ' <span>' +
               '   <input '+itemId+' '+itemClass+' '+value+' '+nameTag+' '+disabled+' '+itemDisabled+' '+itemDefault+' '+dataAddonEvent+' type="radio" />' +
               '   <span><span class="dot"></span></span>' +
@@ -124,23 +124,23 @@
               '   <p>'+itemDetaile+'</p>' +
               ' </div>' +
               '</label>' +
-              '</div>';
+              '</li>';
           }else {
             radioWrap =
-              '<div>' +
-              ' <label class="radio-'+theme+' '+horizontal+' '+disabled+' '+itemDisabled+'">'  +
+              '<li class="'+horizontal+'">' +
+              ' <label class="radio-'+theme+' '+disabled+' '+itemDisabled+'">'  +
               '   <span>' +
               '     <input '+itemId+' '+itemClass+' '+value+' '+nameTag+' '+disabled+' '+itemDisabled+' '+itemDefault+' '+itemDetaileClass+' '+dataAddonEvent+' type="radio" />'  +
               '     <span><span class="dot"></span></span>' +
               '   </span>'  +
               '   <span>'+label+'</span>' +
               ' </label>' +
-              '</div>';
+              '</li>';
           }
           groupradio += radioWrap;
         }
       });
-      target.replaceWith('<div '+wrapId+' class="clearfix '+wrapClass+'">'+groupradio+'</div>')
+      target.replaceWith('<ul '+wrapId+' class="clearfix radio-group'+wrapClass+'">'+groupradio+'</ul>')
     },
     getSize:function(size){
       if(size === 's'){

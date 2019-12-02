@@ -1,12 +1,9 @@
 @mixin radio($type, $brand-color, $not-check-color, $arrow-color, $font-color, $font-size, $line-height, $detail-font-color, $detail-line-height, $detail-font-size, $focus-color){
-  margin:0;
   padding:0;
   color:rgba(0,0,0,0.65);
-  margin:0 0px 8px 0;
   cursor:pointer;
   display: inline-block;
   >span:first-child{
-    display:inline-block;
     position:relative;
     top:0.28rem;
     float:left;
@@ -63,7 +60,6 @@
       float:left;
       width:calc(100% - 16px);
       vertical-align:top;
-      display:inline-block;
       user-select: none;
       cursor: pointer;
       >span{
@@ -184,6 +180,24 @@
   }
 }
 
-.horizontal{
-  display: inline-block;
+.radio-group{
+  &:after{
+    content:'';
+    display:block;
+    clear: both;
+  }
+  >li{
+    margin:0 0 12px 0;
+    line-height: 0;
+    &:last-child{
+      margin:0;
+    }
+  }
+  >li.horizontal{
+    float:left;
+    margin:0 40px 0 0;
+    &:last-child{
+      margin:0;
+    }
+  }
 }

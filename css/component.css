@@ -1990,10 +1990,8 @@ button {
   padding-left: 28px; }
 
 .radio-wishket {
-  margin: 0;
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
-  margin: 0 0px 8px 0;
   cursor: pointer;
   display: inline-block; }
   .radio-wishket > span:first-child {
@@ -2067,10 +2065,8 @@ button {
     clear: both;
     display: block; }
   .radio-wishket.detail-text {
-    margin: 0;
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
-    margin: 0 0px 8px 0;
     cursor: pointer;
     display: inline-block; }
     .radio-wishket.detail-text > span:first-child {
@@ -2156,10 +2152,8 @@ button {
     margin-right: 40px; }
 
 .radio-partner {
-  margin: 0;
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
-  margin: 0 0px 8px 0;
   cursor: pointer;
   display: inline-block; }
   .radio-partner > span:first-child {
@@ -2233,10 +2227,8 @@ button {
     clear: both;
     display: block; }
   .radio-partner.detail-text {
-    margin: 0;
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
-    margin: 0 0px 8px 0;
     cursor: pointer;
     display: inline-block; }
     .radio-partner.detail-text > span:first-child {
@@ -2322,10 +2314,8 @@ button {
     margin-right: 40px; }
 
 .radio-client {
-  margin: 0;
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
-  margin: 0 0px 8px 0;
   cursor: pointer;
   display: inline-block; }
   .radio-client > span:first-child {
@@ -2399,10 +2389,8 @@ button {
     clear: both;
     display: block; }
   .radio-client.detail-text {
-    margin: 0;
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
-    margin: 0 0px 8px 0;
     cursor: pointer;
     display: inline-block; }
     .radio-client.detail-text > span:first-child {
@@ -2496,8 +2484,22 @@ button {
     padding-bottom: 0;
     flex: 1; }
 
-.horizontal {
-  display: inline-block; }
+.radio-group:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.radio-group > li {
+  margin: 0 0 12px 0;
+  line-height: 0; }
+  .radio-group > li:last-child {
+    margin: 0; }
+
+.radio-group > li.horizontal {
+  float: left;
+  margin: 0 40px 0 0; }
+  .radio-group > li.horizontal:last-child {
+    margin: 0; }
 
 > span {
   padding: 0 4px;
