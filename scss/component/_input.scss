@@ -57,11 +57,11 @@
     color:$color-gray400;
     &.helper-text{
       float:left;
-      padding:8px 0.813rem 0 0.813rem;
+      padding:8px 12px 0 12px;
     }
     &.word-length{
       float: right;
-      padding:8px 0.813rem 0 0;
+      padding:8px 12px 0 0;
     }
   }
   &.error{
@@ -82,27 +82,27 @@
 }
 
 .text-input-wishket{
-  @include textinput(8px 13px, $color-wishket500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  @include textinput(8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
 }
 
 .text-input-partner{
-  @include textinput(8px 13px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  @include textinput(8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
 }
 
 .text-input-client{
-  @include textinput(8px 13px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  @include textinput(8px 12px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
 }
 
 .text-input-wishket.input-small{
-  @include textinput(8px 13px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  @include textinput(8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
 }
 
 .text-input-partner.input-small{
-  @include textinput(8px 13px, $color-partner500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  @include textinput(8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
 }
 
 .text-input-client.input-small{
-  @include textinput(8px 13px, $color-client500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  @include textinput(8px 12px, $color-client500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
 }
 
 
@@ -121,22 +121,22 @@
     width:100%;
     transition:all .3s;
     @if $icon-position == icon-default {
-      padding:24px 13px 8px 13px;
+      padding:24px 12px 8px 12px;
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         line-height: 1em;
-        padding:29px 13px 8px 13px;
+        padding:29px 12px 8px 12px;
       }
     } @else if $icon-position == icon-right {
       padding:24px 44px 8px 13px;
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         line-height: 1em;
-        padding:29px 44px 8px 13px;
+        padding:29px 44px 8px 12px;
       }
     } @else if $icon-position == icon-left {
-      padding:24px 13px 8px 44px;
+      padding:24px 12px 8px 44px;
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         line-height: 1em;
-        padding:29px 13px 8px 44px;
+        padding:29px 12px 8px 44px;
       }
     }
     &::placeholder, &::-webkit-input-placeholder{
