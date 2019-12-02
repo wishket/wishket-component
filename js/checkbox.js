@@ -4,17 +4,15 @@
       var target = $('[data-checkbox-type]');
       target.each(function(){
         var type   = $(this).attr('data-checkbox-type');
-        var size = target.attr('data-checkobx-size');
-        size = $.uiCheckbox.getSize(size);
         if(type === 'group'){
-          $.uiCheckbox.group($(this), size);
+          $.uiCheckbox.group($(this));
         }else if(type === 'tree'){
-          $.uiCheckbox.tree($(this), size);
+          $.uiCheckbox.tree($(this));
         }else if(type === 'chip-choice'){
-          $.uiCheckbox.chip($(this), size);
+          $.uiCheckbox.chip($(this));
         }
         else{
-          $.uiCheckbox.single($(this), size);
+          $.uiCheckbox.single($(this));
         }
       });
     },
@@ -33,7 +31,6 @@
       var horizontal = !target.attr("data-horizontal") ? '' : "horizontal ";
       var addonInput = target.data("addon-input");
       var dataAddOn = target.attr('data-addon-id') ? target.attr('data-addon-id') : '';
-      //여기 다시
       var addonFunction = !addonInput ? '' : 'onChange="addonCheck(\'checkbox\', \''+dataAddOn+'\', \''+id+'\')"';
       var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? " mobile" : " pc";
       if(addonInput){
@@ -82,7 +79,7 @@
       var name = !target.attr('data-checkbox-name') ? '' : 'name="'+target.attr("data-checkbox-name")+'" ';
       var disabled = !target.attr('data-checkbox-disabled') ? '' : 'disabled ';
       var wrapId = !target.attr('id') ? '' : 'id="'+target.attr("id")+'" ';
-      var wrapClass = !target.attr('class') ? '' : 'class="'+target.attr("class")+'" ';
+      var wrapClass = target.attr('class');
       var horizontal = !target.attr('data-horizontal') ? '' : 'horizontal ';
       var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? " mobile" : " pc";
       var groupCheckbox = '';
@@ -100,7 +97,7 @@
         if(itemAddon){
           var placeholder = !item.placeholder ? '' : 'placeholder="'+item.placeholder+'" ';
           checkboxWrap =
-            '<div class="addon">'  +
+            '<li class="addon">'  +
             '  <label class="checkbox-'+theme+' '+horizontal+disabled+itemDisabled+isMobile+'">'  +
             '    <span>'  +
             '      <input '+itemId+itemClass+value+name+disabled+itemDisabled+itemDefault+' type="checkbox" onChange="addonCheck(\'checkbox\', \''+item.addonId+'\', \''+item.id+'\')" />'  +
@@ -111,13 +108,13 @@
             '  <div class="text-input-'+theme+'">'  +
             '    <input id="'+item.addonId+'" '+itemClass+name+placeholder+'type="text" disabled/>'  +
             '  </div>'  +
-            '</div>';
+            '</li>';
           groupCheckbox += checkboxWrap;
         }else{
           if(itemDetaile){
             checkboxWrap =
-              '<div>' +
-              '<label class="checkbox-'+theme+' '+horizontal+itemDetaileClass+disabled+itemDisabled+isMobile+' ">' +
+            '<li class="'+horizontal+'">' +
+              '<label class="checkbox-'+theme+' '+itemDetaileClass+disabled+itemDisabled+isMobile+' ">' +
               '  <span>'  +
               '    <input '+itemId+itemClass+value+disabled+name+itemDisabled+itemDefault+' type="checkbox" />' +
               '    <span class="arrow"></span>' +
@@ -127,24 +124,24 @@
               '    <p>'+itemDetaile+'</p>'  +
               '  </div>'  +
               '</label>' +
-              '</div>';
+              '</li>';
           }else {
             checkboxWrap =
-              '<div>' +
-              '<label class="checkbox-'+theme+' '+horizontal+disabled+itemDisabled+isMobile+'">'  +
+              '<li class="'+horizontal+'">' +
+              '<label class="checkbox-'+theme+' '+disabled+itemDisabled+isMobile+'">'  +
               '  <span>'  +
               '    <input '+itemId+itemClass+value+name+disabled+itemDisabled+itemDefault+' type="checkbox" />'  +
               '    <span class="arrow"></span>'  +
               '  </span>'  +
               '  <span>'+label+'</span>'  +
               '</label>' +
-              '</div>';
+              '</li>';
           }
           groupCheckbox += checkboxWrap;
         }
       });
     
-      target.replaceWith('<div '+wrapId+wrapClass+'>'+groupCheckbox+'</div>');
+      target.replaceWith('<ul '+wrapId+' class="check-group '+wrapClass+'">'+groupCheckbox+'</ul>');
     },
     chip:function(target, size){
       var theme = target.attr('data-checkbox-theme');
@@ -210,18 +207,7 @@
         treeList += childList;
       });
       target.replaceWith('<div '+wrapId+' class="tree-checkbox"><ul>'+treeList+'</ul></div>');
-    },
-    getSize:function(size){
-      if(size === 's'){
-        return 'input-small'
-      }else if(size === 'l'){
-        return 'input-large'
-      }else if(size === 'xl'){
-        return 'input-xlarge'
-      }else{
-        return
-      }
-    },
+    }
   }
 })( jQuery, window, document );
 

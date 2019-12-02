@@ -1,8 +1,6 @@
 @mixin checkbox($type, $brand-color, $not-check-color, $arrow-color, $font-color, $font-size, $line-height, $detail-font-color, $detail-line-height, $detail-font-size, $focus-color){
-  margin:0;
   padding:0;
   color:rgba(0,0,0,0.65);
-  margin:0 0 8px 0;
   display:inline-block;
   cursor:pointer;
   >span:first-child{
@@ -192,20 +190,12 @@
   &.detail-text{
     @include checkbox(detail, $color-wishket500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-wishket700);
   }
-  &.horizontal{
-    display:inline-block;
-    margin-right:40px;
-  }
 }
 
 .checkbox-partner{
   @include checkbox(default, $color-partner500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, false, false, false, $color-partner700);
   &.detail-text{
     @include checkbox(detail, $color-partner500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-partner700);
-  }
-  &.horizontal{
-    display:inline-block;
-    margin-right:40px;
   }
 }
 
@@ -214,22 +204,39 @@
   &.detail-text{
     @include checkbox(detail, $color-client500, $color-gray200, $color-white, $color-gray900, 0.875rem, 1.50rem, $color-gray600, 1.25rem, 0.813rem, $color-client700);
   }
-  &.horizontal{
-    display:inline-block;
-    margin-right:40px;
+}
+
+.check-group{
+  &:after{
+    clear: both;
+    display: block;
+    content:'';
+  }
+  >li{
+    margin:0 0 12px 0;
+    line-height: 0;
+    &:last-child{
+      margin:0;
+    }
+  }
+  >li.horizontal{
+    margin:0 40px 0 0;
+    float:left;
+    &:last-child{
+      margin:0;
+    }
   }
 }
 
-.treeview{
-  >label{
-    margin:0 0 12px 0;
-  }
-  ul{
-    padding-left:28px;
-  }
-  >span:last-child{
-    font-size:0.875rem;
-    color:$color-gray900;
+.tree-checkbox{
+  >ul{
+    >li{
+      margin:0 0 12px 0;
+      line-height: 0;
+      &:last-child{
+        margin:0;
+      }
+    }
   }
 }
 
