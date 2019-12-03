@@ -23,7 +23,7 @@
 
     practice: function(){
       var target = this;
-      var $tagBox = $(this.node).next().children(".ui-autocompvare");
+      var $tagBox = $(this.node).next().children(".ui-autocomplete");
       var $dropDown = $(this.node).next().children(".tag-dropdown");
       $dropDown.css("width", this.settings.listwidth);
 
@@ -230,12 +230,12 @@
 
     //라벨 추가, 제거
     addLabel: function(type, tag, target){
-      var $tagBox = this.$node.next().children(".ui-autocompvare").children(".tag-input");
+      var $tagBox = this.$node.next().children(".ui-autocomplete").children(".tag-input");
       if(type === "create"){
         tag = tag.split('*!*');
         if(tag.length > 1){
           for(var i=0; i<tag.length; i++){
-            $tagBox.before("<span class=\"autocompvare-label\">"+tag[i]+"<i class=\"i-close\"></i></span>");
+            $tagBox.before("<span class=\"autocomplete-label\">"+tag[i]+"<i class=\"i-close\"></i></span>");
           }
         }
       }else if(type === "remove"){
@@ -244,7 +244,7 @@
       }else{
         tag = tag.replace(/  +/g, ' ');
         tag = tag.trim();
-        $tagBox.before("<span class=\"autocompvare-label\">"+tag+"<i class=\"i-close\"></i></span>");
+        $tagBox.before("<span class=\"autocomplete-label\">"+tag+"<i class=\"i-close\"></i></span>");
         this.inputSync(true, tag);
         target.val("");
         this.$node.next().children(".tag-dropdown").css("top", this.$node.next().height());
@@ -279,7 +279,7 @@
       var placeholder = this.node.getAttribute("placeholder") ? 'placeholder="'+this.node.getAttribute("placeholder")+'"' : '';
       this.node.classList.add("hiddenInput");
       var createHtml =
-        '<div class="autocompvarebox">' +
+        '<div class="autocompletebox">' +
         '  <div '+wrapClass+'>' +
         '    <input class="tag-input" type="text" '+placeholder+' />' +
         '  </div>' +
