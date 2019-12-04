@@ -5,6 +5,16 @@
   cursor: pointer;
   display:inline-block;
   min-width:260px;
+  line-height: 0;
+  >.selectBg{
+    position:absolute;
+    width:100%;
+    height: 100%;
+    z-index:3;
+    top:0;
+    left:0;
+    text-indent: -9999999px;
+  }
   >.select-box{
     position:relative;
     padding:25px 51px 9px 13px;
@@ -25,7 +35,6 @@
       }
     }
     >p{
-      display:none;
       font-size:0.875rem;
       line-height: 1.500rem;
       opacity: 0;
@@ -52,6 +61,7 @@
     position:absolute;
     transition: all .3s cubic-bezier(.71, -0.46, .88, .6), opacity .1s cubic-bezier(.71, -0.46, .88, .6);
     top:57px;
+    width:100%;
     border-radius: 4px;
     padding:9px 0;
     border:1px solid $color-gray200;
@@ -80,7 +90,9 @@
       &:hover, &:focus{
         background:$brand-hover-color; 
       }
-      
+      &.selected-hover{
+        background:$brand-hover-color;
+      }
     }
     &.open{
       visibility: visible;
@@ -126,7 +138,7 @@
       // }
     }
   }
-  &:hover, &:focus{
+  &:hover{
     >.select-box{
       border-color:$brand-color;
       >p{

@@ -1,101 +1,61 @@
 ;(function ($, window) {
   "use strict";
   var newObject = {}
-  var UiSelect = function (node){
+
+  var defaults = {
+    width : "100%", //width
+  }
+
+  var UiSelect = function (node, options){
     this.node = node;
     this.$node = $(this.node);
+    this.settings = $.extend({}, defaults, options);
     this.init();
   };
 
   UiSelect.prototype = {
     init: function(){
       this.createHtml();
+      this.$node.hide();
+      this.$node.next().css('width', this.settings.width);
     },
 
-    practice: function(selected){
-      var self = this,
-          $selectBox = this.$node.next(),
-          selectNode = this.node;
-
-      // display 제거
-      this.node.style.display = "none";
-      
-
-      var width = this.node.getAttribute("data-width") ? this.node.getAttribute("data-width") : "100%";
-      var dropDown = $selectBox.children(".select-dropdown");
-      dropDown.css('width', width);
-      $selectBox.css('width', width);
-      
-      //close
-      $(document).on("click.ui-label-select", function(e){
-        var target = String(e.target.classList);
-        if(target === "select-box" || target === "current" || target === "select-label" || target === "select-icon" || target === "select-name"){
-          // $(document).find(".select-dropdown.open").removeClass("open");
-          // $(this).find(".select-dropdown.open") ? $(document).find(".select-dropdown.open").removeClass("open") : null;
-          
-        }else{
-          dropDown.removeClass("open");
-          dropDown.parent().children(".select-box").children(".select-icon").removeClass("active");
-          var currentCheck = dropDown.children().hasClass("current");
-          currentCheck ? null : dropDown.parent().removeClass("active");
-        }
-      });
-
-      //open
-      $selectBox.on("click", function(e){
-        if($(this).hasClass("active")){
-          self.open(e, $(this), selectNode, dropDown);
-        }else{
-          self.open(e, $(this), selectNode, dropDown);
-          self.toggle(true, $(this), "active");
-          // self.toggle(true, $(this).children(".select-box").children(".select-icon"), "active");
-        }
-      });
-    
-      $selectBox.children(".select-dropdown").children().on("click", function(){
-        self.listSelectClick($(this));
-        self.toggle(false, $(this).parent().prev().children(".select-icon"), "active");
-      });
-
-      $selectBox.on("keydown", function(e){
-        if(e.keyCode == '13'){
-          //엔터
-        }else if(e.keyCode == '32'){
-          //스페이스
-          e.preventDefault();
-        }else if(e.keyCode == '27'){
-          //esc
-        }
-      });
-    },
-    
-    listSelectClick: function(node){
+    practice: function(){
       var self = this;
-      var selectValue = node.attr('data-select-value');
-      node.parent().parent().prev().val(selectValue).prop("selected", true);
-      this.$node.trigger("change");
-      self.toggle(false, node.siblings(".current"),"current");
-      node.parent().children("li").each(function(){
-        var listValue = node.attr("data-select-value");
-        listValue === selectValue ? self.toggle(true, node, "current") : null;
-      });
-      node.parent().prev().children(".select-name").text(node.text());
-    },
+      var divSelect = this.$node.next();
 
-    open: function(e, node, selectNode, dropDown){
-      if(dropDown.hasClass("open")){
-        $(document).find(".select-dropdown.open").removeClass("open");
-        if(node.children(".select-box").children(".select-name").text() === ''){
-          this.toggle(false, node, "active");
-          this.toggle(false, node.children(".select-box").children(".select-icon"), "active");
-        }else{
-          this.toggle(false, node.children(".select-box").children(".select-icon"), "active");
+      //셀렉트 클릭
+      divSelect.on("click", function(e){
+        var value = $(e.target).attr("data-select-value");
+        var otherSelector = $("div.ui-label-select").not($(this));
+
+        //선택한 셀렉트 제외한 셀렉트 닫기
+        otherSelector.each(function(){
+          $(this).hasClass("selected") ? null : $(this).removeClass("active");
+          $(this).children(".select-dropdown").removeClass("open");
+          $(this).children(".select-box").children(".select-icon").removeClass("active");
+        });
+
+        //option 선택
+        if(value){
+          $(this).children(".select-box").children(".select-name").text($(e.target).text());
+          self.toggle(false, $(this).children(".select-dropdown"), "open");
+          self.toggle(true, $(this), "selected");
+          self.toggle(false, $(this).children(".select-dropdown").children(".current"), "current");
+          self.toggle(true, $(e.target), "current");
+          self.selectSync(value);
         }
-      }else{
-        $(document).find(".select-dropdown.open").removeClass("open");
-        dropDown.addClass("open");
-        this.toggle(true, node.children(".select-box").children(".select-icon"), "active");
-      }
+
+        if(divSelect.children(".select-dropdown").hasClass("open")){
+          self.toggle(false, $(this).children(".select-dropdown"), "open");
+          self.toggle(false, $(this).children(".select-box").children(".select-icon"), "active");
+          divSelect.hasClass("selected") ? null : self.toggle(false, $(this), "active");
+        }else{
+          self.toggle(true, $(this).children(".select-dropdown"), "open");
+          self.toggle(true, $(this).children(".select-box").children(".select-icon"), "active");
+          self.toggle(true, $(this), "active");
+        }
+      });
     },
 
     toggle: function(state, node, classNmae){
@@ -104,6 +64,11 @@
       }else{
         node.removeClass(classNmae);
       }
+    },
+
+    selectSync: function(value){
+      this.$node.val(value).prop("selected", true);
+      this.$node.trigger("change");
     },
 
     createHtml: function(){
@@ -120,6 +85,7 @@
         '    <p class="select-name"></p>' +
         '    <i class="select-icon"><svg class="select-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill="none" fill-rule="evenodd" stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M1 4l6 6 6-6"/></svg></i>' +
         '  </span>' +
+        '  <p class="selectBg"></p>' +
         '  <ul class="select-dropdown">' +
         '  </ul>' +
         '</div>';
@@ -143,9 +109,20 @@
       this.practice();
     },
   };
-  $.fn.uiSelect=function(){
+  $.fn.uiSelect=function(options){
+    //close
+    $(document).on("click", function(e){
+      if(!$(e.target).hasClass('selectBg') && !$(e.target).hasClass("ui-label-select")){
+        $("div.ui-label-select").each(function(){
+          $(this).hasClass("selected") ? null : $(this).removeClass("active");
+          $(this).children(".select-dropdown").removeClass("open");
+          $(this).children(".select-box").children(".select-icon").removeClass("active");
+        });
+      }
+    });
+
     return this.each(function(i){
-      newObject[i] = new UiSelect(this);
+      newObject[i] = new UiSelect(this, options);
     });
   };
 })(jQuery, window);
