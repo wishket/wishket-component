@@ -53,7 +53,12 @@
         target.val(value.slice(0, textlength));
       }
 
-      var dropdownPostion = target.parent().width() - target.width() - 16;
+      var dropdownPostion;
+      if(target.parent().width() === target.width() + 8){
+        dropdownPostion = 0;
+      }else{
+        dropdownPostion = target.parent().width() - target.width() - 16;
+      }
 
       if(value.replace(/ /gi, '') === ''){
         $dropDown.css("left", dropdownPostion);
@@ -194,6 +199,8 @@
             }
             this.toggle(false, $dropDown, "open");
             this.toggle(false, node.parent(), "active");
+          }else if(!node.val()){
+            return
           }else{
             var stop = true;
             var labelMaxLength = this.settings.labelmaxcount;
@@ -275,7 +282,7 @@
 
     //생성
     createHtml: function(value){
-      var wrapClass = this.node.getAttribute("class") ? 'class="'+this.node.getAttribute("class")+'" ' : '';
+      var wrapClass = this.node.getAttribute("class") ? 'class="ui-autocomplete '+this.node.getAttribute("class")+'" ' : '';
       var placeholder = this.node.getAttribute("placeholder") ? 'placeholder="'+this.node.getAttribute("placeholder")+'"' : '';
       this.node.classList.add("hiddenInput");
       var createHtml =
