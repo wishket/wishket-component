@@ -11,337 +11,594 @@
     <script type="text/javascript" src="./js/checkbox.js"></script>
     <script type="text/javascript" src="./js/radio.js"></script>
     <script type="text/javascript" src="./js/toggle.js"></script>
-    <script type="text/javascript" src="./js/select.js"></script>
+    <script type="text/javascript" src="./js/select2.js"></script>
     <!-- <script type="text/javascript" src="./js/select_bak.js"></script> -->
     <script type="text/javascript" src="./js/autocomplete.js"></script>
-    <script type="text/javascript" src="./js/test.js"></script>
     <link rel="stylesheet" href="./css/component.css">
     <link rel="stylesheet" href="./css/guide.css">
 </head>
 <body>
-  <div>
-    <section class='inputbox'>
-      <input id='hoho' data-input-type='text-input' class='value01' data-input-theme='wishket' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1 핼퍼 텍스트 상세 내용 1' />
-      <input data-input-type='text-input' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 2'/>
-      <input data-input-type='text-input' data-input-theme='partner' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 3'/>
-      <input data-input-type='text-input' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" disabled data-input-helper='핼퍼 텍스트 상세 내용 4'/>
-      <input data-input-type='text-input' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-size='s' data-input-helper='핼퍼 텍스트 상세 내용 123as' />
-      <input
-        id='test2'
-        data-input-type='label-input'
-        data-input-theme='client'
-        data-input-label='레이블 입니다.'
-        type='text'
-        placeholder="플레이스 홀더"
-        data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
-        data-icon-position='right'
-      />
-      <input
-        id='test3'
-        data-input-type='label-input'
-        data-input-theme='client'
-        data-input-label='레이블 입니다.'
-        type='text'
-        placeholder="플레이스 홀더"
-        data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
-        data-icon-position='left'
-      />
-      <input
-        id='test4'
-        data-input-type='label-input'
-        data-input-theme='client'
-        data-input-label='아이콘은 있지만 포지션 없을떄'
-        type='text'
-        placeholder="플레이스 홀더"
-        data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
-        data-icon-position=''
-      />
-      <input
-        id='test5'
-        data-input-type='label-input'
-        data-input-theme='client'
-        data-input-label='포지션은 있지만 아이콘이 없을떄'
-        type='text'
-        placeholder="플레이스 홀더"
-        data-input-icon=''
-        data-icon-position='left'
-      />
-      <input
-        id='test6'
-        data-input-type='label-input'
-        data-input-theme='client'
-        data-input-label='포지션은 있지만 아이콘이 없을떄'
-        type='password'
-        placeholder="플레이스 홀더"
-        data-input-icon=''
-        data-icon-position='left'
-      />
-    </section>
-    <section id='check' >
-      <CheckBox id='kkk' class='sample' data-checkbox-type='single' data-checkbox-value='value01' data-checkbox-name='single01' data-checkbox-theme='client' data-checkbox-default=true data-checkbox-disabled=true></CheckBox>
-      <CheckBox data-checkbox-type='single' data-horizontal=true data-checkbox-name='single01' data-checkbox-label='label01' data-checkbox-theme='client' data-checkbox-default='checked'></CheckBox>
-      <CheckBox data-checkbox-type='single' data-horizontal=true data-checkbox-name='single01' data-checkbox-label='label01' data-checkbox-theme='client' data-checkbox-default='checked'></CheckBox>
-      <CheckBox data-checkbox-type='single' data-checkbox-name='single02' data-checkbox-value='value02' data-checkbox-label='label02' data-checkbox-theme='partner' ></CheckBox>
-      <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-checkbox-label="테스트" data-options='체크박스 teststests' data-checkbox-detaile='hohohohoho reststset'></CheckBox>
-      <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-checkbox-label="테스트" data-options='체크박스 teststests' data-checkbox-detaile='hohohohoho reststset'></CheckBox>
-      <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-checkbox-label="테스트" data-options='체크박스 teststests' data-checkbox-detaile='hohohohoho reststset'></CheckBox>
-      <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-checkbox-label="상세 텍스트" data-options='체크박스 teststests' data-checkbox-detaile='마디씩 위에 잠, 별이 소녀들의 아무 멀리 까닭입니다. 나의 책상을 하나에 이네들은 보고, 벌써 벌레는 노루, 까닭입니다. 노새, 헤일 별 밤이 언덕 위에 덮어 별빛이 거외다. 않은 한 위에 자랑처럼 동경과 내린 벌레는 아무 이름자 있습니다. 하나의 하나에 소학교 까닭입니다. 가난한 무덤 겨울이 까닭이요, 별에도 당신은 어머니, 까닭입니다. 했던 이름자를 때 소녀들의 있습니다. 하나에 하나 둘 소녀들의 쉬이 사랑과 까닭입니다. 별 둘 라이너 가을 나는 소학교 추억과 봅니다.'></CheckBox>
-      <CheckBox
-        id='group01'
-        class='group02'
-        data-checkbox-type='group'
-        data-checkbox-name='group01'
-        data-checkbox-theme='client'
-        data-horizontal=true
-        data-options='[
-          {"value":"사과", "disabled":"true"},
-          {"label":"배", "id" : "sample Group01", "default":"true"},
-          {"label":"토마토", "value":"토마토2", "detail": "hohohohoho reststsethohohohstset", "class":"sampleG"}]'
-      >
-      </CheckBox>
-      <CheckBox
-        id='group02'
-        class='group02'
-        data-checkbox-type='group'
-        data-checkbox-name='group02'
-        data-checkbox-theme='client'
-        data-options='[
-          {"value":"사과", "disabled":"true"},
-          {"label":"배", "id" : "sample Group01", "default":"true"},
-          {"label":"토마토", "value":"토마토2", "detail": "hohohohoho reststsethohohohstset", "class":"sampleG"}]'
-      >
-      </CheckBox>
-      <CheckBox
-        data-checkbox-type='tree'
-        data-checkbox-theme='partner'
-        data-options='[
-        {"label":"트리테스트", "value":"apple", "depth":1, "name" : "tree01", "tree":"treeName01"}, 
-        {"label":"애플리케이션", "value":"apple", "depth":2, "name" : "tree01", "tree":"treeName01"}, 
-        {"label":"워드프레스", "value":"web", "depth":2, "name" : "tree01", "tree":"treeName01"}, 
-        {"label":"퍼블리싱", "value":"web", "depth":2, "name":"tree01", "tree":"treeName01"}, 
-        {"label":"개발", "value":"web", "depth":1, "name":"tree03", "tree":"treeName02"},
-        {"label":"애플리케이션", "value":"apple", "depth":2, "name":"tree03", "tree":"treeName02"}, 
-        {"label":"워드프레스", "value":"web", "depth":2, "name":"tree03", "tree":"treeName02"}, 
-        {"label":"퍼블리싱", "value":"web", "depth":2, "name":"tree03", "tree":"treeName02"}]'
-      >
-      </CheckBox>
-      <CheckBox
-        id='checkboxtest'
-        data-checkbox-type='single'
-        data-checkbox-theme='wishket'
-        data-checkbox-value='addoinInput01'
-        data-checkbox-label='213'
-        data-checkbox-addon='input'
-        data-addon-id='addoninputtest'
-        data-checkbox-name='tree01'
-        data-addon-input='[{
-          "class":"addonClass",
-          "placeholder":"플레스홀더",
-          "theme": "wishket"
-        }]'
-      >
-      </CheckBox>
-      <CheckBox
-        data-checkbox-type='group'
-        data-checkbox-name='tree01'
-        data-checkbox-theme='client'
-        data-options='[
-          {"value":"그룹 인풋 테스트1", "disabled":"true"},
-          {"label":"그룹 인풋 테스트2", "id" : "sample Group01", "default":"true"},
-          {
-            "id":"groupAddonCheck",
-            "label":"그룹 인풋 테스트3",
-            "value":"토마토2",
-            "addonType":"input",
-            "addonId":"groupAddonText",
-            "placeholder":"플레스홀더 제발"
-          }
-        ]'
-      >
-      </CheckBox>
-    </section>
-    <section id='radio'>
-      <RadioBox data-radio-type='group' data-radio-name='aaaa12' data-theme='client'
-        data-options='[
-          {"value":"사과", "detail":"adsfdadafdafs", "disabled":"disabled", "default":"checked"},
-          {"value":"배배배", "detail":"adsfdadafdafs"},
-          {"value":"토마토", "detail":"토마토마토마토마토토마토마토마토마토토마토마토마토마토토마토마토마토마토토마토마토마토마토토마토마토마토마토토마토마토마토마토토마토마토마토마토토마토마토마토마토토마토마토마토마토"},
-          {"value":"바나나", "detail":"바나나바나바나"}
-        ]'>
-      </RadioBox>
-      <RadioBox data-radio-type='group' data-radio-name='hohoho' data-theme='wishket'
-        data-options='[
-          {"value":"사과", "detail":"adsfdadafdafs"},
-          {"value":"배배배", "detail":"adsfdadafdafs"},
-          {"value":"토마토", "detail":"토마토마토마토마토"},
-          {"value":"바나나", "detail":"바나나바나바나"}
-        ]'>
-      </RadioBox>
-      <!-- <RadioBox data-radio-type='group' data-radio-name='rsingle12' data-theme='partner'
-        data-addon-id='rsingle12Addon'
-        data-horizontal=true
-        data-options='[
-        {"value":"사과"},
-        {"label":"배", "id" : "sample Group01"},
-        {
-          "label":"토마토",
-          "detail": "hohoho상세페이지",
-          "id":"checkInput",
-          "addonType":"input",
-          "addonId":"textInput",
-          "placeholder":"토마토토마토토토토토토톡"
-        }
-        ]'
-      ></RadioBox> -->
-      <RadioBox data-radio-type='group' data-radio-name='rsingle13' data-theme='wishket'
-        data-addon-id='rsingle13Addon'
-        data-options='[
-        {"value":"사과"},
-        {"label":"배", "id" : "sample Group02"},
-        {
-          "label":"토마토",
-          "detail": "hohoho상세페이지",
-          "id":"checkInput12",
-          "addonType":"input",
-          "addonId":"textInput12",
-          "placeholder":"토마토토마토토토토토토톡"
-        }
-        ]'
-      ></RadioBox>
-    </section>
-    <section>
-      <div class="toggle theme-wishket">
-        <p>토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용</p>
-        <button class="off">off</button>
-        <button class="on">on</button>
-        <input id="testddd1" type="text" value=""/>
+  <div class="wrap">
+    <header>
+      <div>
+        <p class="title-2"><span class="title-2-light">03</span> Components</p>
       </div>
-      <div class="toggle theme-client">
-        <p>토글 상세 질문 내용</p>
-        <button class="on">on</button>
-        <button class="off">off</button>
-        <input id="testddd2" type="text" value=""/>
+    </header>
+    <div class="guide-content-wrap">
+      <div class="guide-content">
+        <h2 class="subtitle-1-bold hr">Input</h2>
+        <section id="title-input" >
+          <section id='text-input'>
+            <h3 class="subtitle-2-bold">Text</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $.uiInput.setting();<br />});</code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>data-input-type</td>
+                  <td>타입을 설정 <label>text-input</label> <label>label-input</label></td>
+                </tr>
+                <tr>
+                  <td>data-input-theme</td>
+                  <td>테마 설정 <label>client</label> <label>partner</label> <label>wishket</label></td>
+                </tr>
+                <tr>
+                  <td>data-input-helper</td>
+                  <td>헬퍼 텍스트 예)핼퍼 텍스트 상세 내용 1 &#60;br /> 핼퍼 텍스트 상세 내용 1</td>
+                </tr>
+                <tr>
+                  <td>maxlength</td>
+                  <td>최대 글자수</td>
+                </tr>
+              </tbody>
+            </table>
+            <input id='hoho' data-input-type='text-input' class='value01' data-input-theme='wishket' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 1' />
+            <input data-input-type='text-input' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 2'/>
+            <input data-input-type='text-input' data-input-theme='partner' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 3'/>
+            <input data-input-type='text-input' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" disabled data-input-helper='핼퍼 텍스트 상세 내용 4'/>
+          </section>
+          <hr class="guide-hr" />
+          <section id="label-text">
+            <h3 class="subtitle-2-bold">Text (with Label)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $.uiInput.setting();<br />});</code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>data-input-type</td>
+                  <td>타입을 설정 <label>text-input</label> <label>label-input</label></td>
+                </tr>
+                <tr>
+                  <td>data-input-theme</td>
+                  <td>테마 설정 <label>client</label> <label>partner</label> <label>wishket</label></td>
+                </tr>
+                <tr>
+                  <td>data-input-label</td>
+                  <td>레이블 텍스트</td>
+                </tr>
+                <tr>
+                  <td>data-input-helper</td>
+                  <td>헬퍼 텍스트 예)핼퍼 텍스트 상세 내용 1 &#60;br /> 핼퍼 텍스트 상세 내용 1</td>
+                </tr>
+                <tr>
+                  <td>data-input-icon</td>
+                  <td>아이콘</td>
+                </tr>
+                <tr>
+                  <td>data-input-icon</td>
+                  <td>아이콘 위치 <label>right</label> <label>left</label></td>
+                </tr>
+              </tbody>
+            </table>
+            <input
+              id='test2'
+              data-input-type='label-input'
+              data-input-theme='wishket'
+              data-input-label='레이블 입니다.'
+              type='text'
+              placeholder="플레이스 홀더"
+              data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
+              data-icon-position='right'
+            />
+            <input
+              id='test3'
+              data-input-type='label-input'
+              data-input-theme='partner'
+              data-input-label='레이블 입니다.'
+              type='text'
+              placeholder="플레이스 홀더"
+              data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
+              data-icon-position='left'
+            />
+            <input
+              id='test4'
+              data-input-type='label-input'
+              data-input-theme='client'
+              data-input-label='아이콘은 있지만 포지션 없을떄'
+              type='text'
+              placeholder="플레이스 홀더"
+              data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
+              data-icon-position=''
+            />
+            <input
+              id='test5'
+              data-input-type='label-input'
+              data-input-theme='client'
+              data-input-label='포지션은 있지만 아이콘이 없을떄'
+              type='text'
+              placeholder="플레이스 홀더"
+              data-input-icon=''
+              data-icon-position='left'
+              disabled
+            />
+          </section>
+          <hr class="guide-hr" />
+          <section id="guide-uiselect">
+            <h3 class="subtitle-2-bold">Select (with Label)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/select.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".ui-label-select").uiSelect();<br />});<br /><br />&#60;select id="select-example02" class="ui-label-select theme-partner" name="ui-select-example02"><br />  &#60;option>구동리 옵션&#60;/option>  //label 텍스트<br />  &#60;option value="1">강남구&#60;/option><br />  &#60;option value="2" selected>서초구&#60;/option><br />  &#60;option value="3">관악구&#60;/option><br />  &#60;option value="4">동작구&#60;/option><br />&#60;/select>
+            </code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>width</td>
+                  <td>셀렉트의 너비를 설정 초기값은 100% 입니다.</td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td>theme-색상 설정</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <select id="select-example01" class="theme-wishket">
+              <option>광역시</option>
+              <option value="1">서울특별시1</option>
+              <option value="2">부산광역시2</option>
+              <option value="3">울산광역시3</option>
+              <option value="4">대구광역시4</option>
+              <option value="5">인청광역시5</option>
+              <option value="6">서울특별시6</option>
+              <option value="7">부산광역시7</option>
+              <option value="8">울산광역시8</option>
+              <option value="9">대구광역시9</option>
+              <option value="10">인청광역시10인청광역시10인청광역시10인청광역시10인청광역시10</option>
+              <option value="11">서울특별시11</option>
+              <option value="12">부산광역시12</option>
+              <option value="13">울산광역시13</option>
+              <option value="14">대구광역시14</option>
+              <option value="15">인청광역시15</option>
+              <option value="16">서울특별시16</option>
+            </select>
+    
+            <select id="select-example02" class="theme-partner" name="ui-select-example02">
+              <option>구동리 옵션</option>
+              <option value="1">강남구</option>
+              <option value="2" selected>서초구</option>
+              <option value="3">관악구</option>
+              <option value="4">동작구</option>
+            </select>
+    
+            <select id="select-example03" class="theme-client" name="ui-select-example03">
+              <option>자동차</option>
+              <option value="1">도요타</option>
+              <option value="2">기아</option>
+              <option value="3">현대</option>
+              <option value="4">아우디</option>
+              <option value="5">벤츠</option>
+              <option value="6">BMW</option>
+              <option value="7">푸조</option>
+            </select>
+    
+            <select id="select-example04" class="theme-client" name="ui-select-example04">
+              <option>휴대폰</option>
+              <option value="1">아이폰</option>
+              <option value="2">갤럭시</option>
+              <option value="3">모토로라 레이저</option>
+              <option value="4">블랙베리</option>
+            </select>
+          </section>
+
+          <hr class="guide-hr" />
+
+          <section id="uiautocomplete">
+            <h3 class="subtitle-2-bold">Autocomplete</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/autocomplete.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".autocomple").uiAutoComple({<br />    labelmaxcount : 2,<br />    textlength : 40<br />  });<br />});<br /><br />&#60;input class="autocomple ui-autocomplete theme-wishket" placeholder="플레이스 홀더" type="text" /
+            </code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>labelmaxcount</td>
+                  <td>라벨 선택 가능한 수</td>
+                </tr>
+                <tr>
+                  <td>textlength</td>
+                  <td>인풋 텍스트 글자수</td>
+                </tr>
+                <tr>
+                  <td>listwidth</td>
+                  <td>드롭다운 width길이 조정 초기값 inherit</td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td>색상 설정 <label>theme-partner</label> <label>theme-wishket</label> <label>theme-client</label></td>
+                </tr>
+              </tbody>
+            </table>
+            <input id="autocomple-example01" class="theme-partner" value='photoshop*!*illustrator*!*sketch' placeholder="플레이스 홀더" type="text" data-help-text="헬퍼 텍스트 상세 내용"/>
+            <input id="autocomple-example02" class="theme-wishket" placeholder="플레이스 홀더" type="text" />
+            <input id="autocomple-example03" class="theme-client" placeholder="플레이스 홀더2" type="text" />
+          </section>
+
+          <hr class="guide-hr" />
+
+          <section id='check' >
+            <h3 class="subtitle-2-bold">Checkbox</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/checkbox.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $.uiCheckbox.setting();<br />});</code></pre>
+            <p>html</p>
+            <pre class="language-javascript"><code>&#60;CheckBox data-checkbox-type='single' data-checkbox-value='value01' data-checkbox-name='single01' data-checkbox-theme='client' data-checkbox-default=true data-checkbox-disabled=true></CheckBox></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>data-checkbox-type</td>
+                  <td>타입을 설정 <label>single</label></td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-theme</td>
+                  <td>테마 설정 <label>client</label> <label>partner</label> <label>wishket</label></td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-value</td>
+                  <td>input value 설정</td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-name</td>
+                  <td>input name 설정</td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-default</td>
+                  <td>기본 체크 여부 <label>true</label> <label>false</label></td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-disabled</td>
+                  <td>disabled 여부</td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-detaile</td>
+                  <td>체크박스 텍스트</td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-addon</td>
+                  <td>addon 설정 <label>input</label></td>
+                </tr>
+                <tr>
+                  <td>id</td>
+                  <td>id 설정 addon 사용시 필수</td>
+                </tr>
+                <tr>
+                  <td>data-addon-input</td>
+                  <td><label>class</label> addon class 설정, <label>placeholder</label> 인풋 placeholder 설정, <label>theme</label> addon theme 설정</td>
+                </tr>
+              </tbody>
+            </table>
+            <CheckBox data-checkbox-type='single' data-checkbox-value='value01' data-checkbox-name='single01' data-checkbox-theme='client' data-checkbox-default=true></CheckBox>
+            <CheckBox data-checkbox-type='single' data-horizontal=true data-checkbox-name='single01' data-checkbox-label='label01' data-checkbox-theme='partner' data-checkbox-default='checked'></CheckBox>
+            <CheckBox data-checkbox-type='single' data-horizontal=true data-checkbox-name='single01' data-checkbox-label='label01' data-checkbox-theme='wishket' ></CheckBox>
+            <CheckBox data-checkbox-type='single' data-checkbox-name='single02' data-checkbox-value='value02' data-checkbox-label='label02' data-checkbox-theme='partner' data-checkbox-default='checked' data-checkbox-disabled=true></CheckBox>
+            <CheckBox data-checkbox-type='single' data-checkbox-theme='wishket' data-checkbox-label="상세 텍스트" data-options='체크박스 teststests' data-checkbox-detaile='마디씩 위에 잠, 별이 소녀들의 아무 멀리 까닭입니다. 나의 책상을 하나에 이네들은 보고, 벌써 벌레는 노루, 까닭입니다. 노새, 헤일 별 밤이 언덕 위에 덮어 별빛이 거외다. 않은 한 위에 자랑처럼 동경과 내린 벌레는 아무 이름자 있습니다. 하나의 하나에 소학교 까닭입니다. 가난한 무덤 겨울이 까닭이요, 별에도 당신은 어머니, 까닭입니다. 했던 이름자를 때 소녀들의 있습니다. 하나에 하나 둘 소녀들의 쉬이 사랑과 까닭입니다. 별 둘 라이너 가을 나는 소학교 추억과 봅니다.'></CheckBox>
+            <CheckBox
+              id='checkboxtest'
+              data-checkbox-type='single'
+              data-checkbox-theme='wishket'
+              data-checkbox-value='addoinInput01'
+              data-checkbox-label='213'
+              data-checkbox-addon='input'
+              data-addon-id='addoninputtest'
+              data-addon-input='[{
+                "class":"addonClass",
+                "placeholder":"플레스홀더",
+                "theme": "wishket"
+              }]'
+            >
+            </CheckBox>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>data-checkbox-type</td>
+                  <td>타입을 설정<label>group</label></td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-theme</td>
+                  <td>테마 설정 <label>client</label> <label>partner</label> <label>wishket</label></td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-name</td>
+                  <td>input name 설정</td>
+                </tr>
+                <tr>
+                  <td>data-options</td>
+                  <td>
+                    <label>value</label> value값, <label>lable</label> label값, <label>disabled</label> disabled 여부, <label>default</label> default 체크 여부, <label>detail</label> 디테일 텍스트 추가, 
+                    <label>addonType</label> addonType설정 input, <label>id</label> id값 추가 애드온 설정시 필수 , <label>addonId</label> addonId값 추가 애드온 설정시 필수, <label>placeholder</label> placeholder 텍스트
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <CheckBox
+                id='group01'
+                class='group02'
+                data-checkbox-type='group'
+                data-checkbox-name='group01'
+                data-checkbox-theme='wishket'
+                data-horizontal=true
+                data-options='[
+                  {"value":"사과", "disabled":"true"},
+                  {"label":"배", "id" : "sample Group01", "default":"true"},
+                  {"label":"토마토", "value":"토마토2", "detail": "hohohohoho reststsethohohohstset", "class":"sampleG"}]'
+              >
+              </CheckBox>
+              <CheckBox
+                id='group02'
+                class='group02'
+                data-checkbox-type='group'
+                data-checkbox-name='group02'
+                data-checkbox-theme='partner'
+                data-options='[
+                  {"value":"사과", "disabled":"true"},
+                  {"label":"배", "id" : "sample Group01", "default":"true"},
+                  {"label":"토마토", "value":"토마토2", "detail": "hohohohoho reststsethohohohstset", "class":"sampleG"}]'
+              >
+              </CheckBox>
+              <CheckBox
+                data-checkbox-type='group'
+                data-checkbox-name='tree01'
+                data-checkbox-theme='client'
+                data-options='[
+                  {"value":"그룹 인풋 테스트1", "disabled":"true"},
+                  {"label":"그룹 인풋 테스트2", "id" : "sample Group01", "default":"true"},
+                  {
+                    "label":"그룹 인풋 테스트3",
+                    "value":"토마토2",
+                    "addonType":"input",
+                    "id":"groupAddonCheck",
+                    "addonId":"groupAddonText",
+                    "placeholder":"플레스홀더 제발"
+                  }
+                ]'
+              >
+              </CheckBox>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="tree-check">
+            <h3 class="subtitle-2-bold">Tree</h3>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>data-checkbox-type</td>
+                  <td>타입을 설정 <label>single</label></td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-theme</td>
+                  <td>테마 설정 <label>client</label> <label>partner</label> <label>wishket</label></td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-value</td>
+                  <td>input value 설정</td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-name</td>
+                  <td>input name 설정</td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-default</td>
+                  <td>기본 체크 여부 <label>true</label> <label>false</label></td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-disabled</td>
+                  <td>disabled 여부</td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-detaile</td>
+                  <td>체크박스 텍스트</td>
+                </tr>
+                <tr>
+                  <td>data-checkbox-addon</td>
+                  <td>addon 설정 <label>input</label></td>
+                </tr>
+                <tr>
+                  <td>id</td>
+                  <td>id 설정 addon 사용시 필수</td>
+                </tr>
+                <tr>
+                  <td>data-addon-input</td>
+                  <td><label>class</label> addon class 설정, <label>placeholder</label> 인풋 placeholder 설정, <label>theme</label> addon theme 설정</td>
+                </tr>
+              </tbody>
+            </table>
+            <CheckBox
+              data-checkbox-type='tree'
+              data-checkbox-theme='partner'
+              data-options='[
+              {"label":"트리테스트", "value":"apple", "depth":1, "name" : "tree01", "tree":"treeName01"}, 
+              {"label":"애플리케이션", "value":"apple", "depth":2, "name" : "tree01", "tree":"treeName01"}, 
+              {"label":"워드프레스", "value":"web", "depth":2, "name" : "tree01", "tree":"treeName01"}, 
+              {"label":"퍼블리싱", "value":"web", "depth":2, "name":"tree01", "tree":"treeName01"}, 
+              {"label":"개발", "value":"web", "depth":1, "name":"tree03", "tree":"treeName02"},
+              {"label":"애플리케이션", "value":"apple", "depth":2, "name":"tree03", "tree":"treeName02"}, 
+              {"label":"워드프레스", "value":"web", "depth":2, "name":"tree03", "tree":"treeName02"}, 
+              {"label":"퍼블리싱", "value":"web", "depth":2, "name":"tree03", "tree":"treeName02"}]'
+            >
+            </CheckBox>
+          </section>
+          <section id='radio'>
+            <RadioBox data-radio-type='group' data-radio-name='aaaa12' data-theme='client'
+              data-options='[
+                {"value":"사과", "detail":"adsfdadafdafs", "disabled":"disabled", "default":"checked"},
+                {"value":"배배배", "detail":"adsfdadafdafs"},
+                {"value":"토마토", "detail":"토마토마토마토마토토마토마토마토마토토마토마토마토마토토마토마토마토마토토마토마토마토마토토마토마토마토마토토마토마토마토마토토마토마토마토마토토마토마토마토마토토마토마토마토마토"},
+                {"value":"바나나", "detail":"바나나바나바나"}
+              ]'>
+            </RadioBox>
+            <RadioBox data-radio-type='group' data-radio-name='hohoho' data-theme='wishket'
+              data-options='[
+                {"value":"사과", "detail":"adsfdadafdafs"},
+                {"value":"배배배", "detail":"adsfdadafdafs"},
+                {"value":"토마토", "detail":"토마토마토마토마토"},
+                {"value":"바나나", "detail":"바나나바나바나"}
+              ]'>
+            </RadioBox>
+            <RadioBox data-radio-type='group' data-radio-name='radiohorizontal' data-theme='wishket' data-horizontal=true
+              data-options='[
+                {"value":"사과", "detail":"adsfdadafdafs"},
+                {"value":"배배배", "detail":"adsfdadafdafs"},
+                {"value":"토마토", "detail":"토마토마토마토마토"},
+                {"value":"바나나", "detail":"바나나바나바나"}
+              ]'>
+            </RadioBox>
+            <!-- <RadioBox data-radio-type='group' data-radio-name='rsingle12' data-theme='partner'
+              data-addon-id='rsingle12Addon'
+              data-horizontal=true
+              data-options='[
+              {"value":"사과"},
+              {"label":"배", "id" : "sample Group01"},
+              {
+                "label":"토마토",
+                "detail": "hohoho상세페이지",
+                "id":"checkInput",
+                "addonType":"input",
+                "addonId":"textInput",
+                "placeholder":"토마토토마토토토토토토톡"
+              }
+              ]'
+            ></RadioBox> -->
+            <RadioBox data-radio-type='group' data-radio-name='rsingle13' data-theme='wishket'
+              data-addon-id='rsingle13Addon'
+              data-options='[
+              {"value":"사과"},
+              {"label":"배", "id" : "sample Group02"},
+              {
+                "label":"토마토",
+                "detail": "hohoho상세페이지",
+                "id":"checkInput12",
+                "addonType":"input",
+                "addonId":"textInput12",
+                "placeholder":"토마토토마토토토토토토톡"
+              }
+              ]'
+            ></RadioBox>
+          </section>
+    
+          <section>
+            <div class="toggle theme-wishket">
+              <p>토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용</p>
+              <button class="off">off</button>
+              <button class="on">on</button>
+              <input id="testddd1" type="text" value=""/>
+            </div>
+            <div class="toggle theme-client">
+              <p>토글 상세 질문 내용</p>
+              <button class="on">on</button>
+              <button class="off">off</button>
+              <input id="testddd2" type="text" value=""/>
+            </div>
+            <div class="toggle theme-partner">
+              <p>토글 상세 질문 내용</p>
+              <button class="off">off</button>
+              <button class="on">on</button>
+              <input id="testddd3" type="text" value=""/>
+            </div>
+          </section>
+          <section>
+            <div class="chip-box">
+              <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value01' data-checkbox-name='chipvalue' data-checkbox-theme='partner' data-checkbox-default=true ></CheckBox>
+              <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value02' data-checkbox-name='chipvalue' data-checkbox-theme='wishket' ></CheckBox>
+              <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value03' data-checkbox-name='chipvalue' data-checkbox-theme='client' data-checkbox-default=true ></CheckBox>
+              <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value04' data-checkbox-name='chipvalue' data-checkbox-theme='wishket' ></CheckBox>
+              <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value05' data-checkbox-name='chipvalue' data-checkbox-theme='partner' data-checkbox-default=true ></CheckBox>
+              <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value06' data-checkbox-name='chipvalue' data-checkbox-theme='wishket' data-checkbox-disabled=true></CheckBox>
+            </div>
+          </section>
+        </section>
+        <h2 class="subtitle-1-bold hr">Alerts</h2>
+        <section id="title-alerts" style="height:1000px;">
+          <hr class="guide-hr"/>
+        </section>
       </div>
-      <div class="toggle theme-partner">
-        <p>토글 상세 질문 내용</p>
-        <button class="off">off</button>
-        <button class="on">on</button>
-        <input id="testddd3" type="text" value=""/>
-      </div>
-    </section>
-    <section>
-      <div class="chip-box">
-        <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value01' data-checkbox-name='chipvalue' data-checkbox-theme='partner' data-checkbox-default=true ></CheckBox>
-        <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value02' data-checkbox-name='chipvalue' data-checkbox-theme='wishket' ></CheckBox>
-        <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value03' data-checkbox-name='chipvalue' data-checkbox-theme='client' data-checkbox-default=true ></CheckBox>
-        <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value04' data-checkbox-name='chipvalue' data-checkbox-theme='wishket' ></CheckBox>
-        <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value05' data-checkbox-name='chipvalue' data-checkbox-theme='partner' data-checkbox-default=true ></CheckBox>
-        <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value06' data-checkbox-name='chipvalue' data-checkbox-theme='wishket' data-checkbox-disabled=true></CheckBox>
-      </div>
-    </section>
-    <section clase="select">
-      <select id="select-example01" class="ui-label-select theme-wishket" style="margin-bottom:300px" data-width="300px">
-        <option>광역시</option>
-        <option value="1" disabled>서울특별시1</option>
-        <option value="2">부산광역시2</option>
-        <option value="3">울산광역시3</option>
-        <option value="4">대구광역시4</option>
-        <option value="5">인청광역시5</option>
-        <option value="6" selected>서울특별시6</option>
-        <option value="7">부산광역시7</option>
-        <option value="8">울산광역시8</option>
-        <option value="9">대구광역시9</option>
-        <option value="10">인청광역시10인청광역시10인청광역시10인청광역시10인청광역시10</option>
-        <option value="11">서울특별시11</option>
-        <option value="12">부산광역시12</option>
-        <option value="13">울산광역시13</option>
-        <option value="14">대구광역시14</option>
-        <option value="15">인청광역시15</option>
-        <option value="16">서울특별시16</option>
-      </select>
-
-      <select id="select-example02" class="ui-label-select theme-wishket" name="ui-select-example02" style="margin-bottom:100px" >
-        <option>구동리 옵션</option>
-        <option value="1">강남구</option>
-        <option value="2">서초구</option>
-        <option value="3">관악구</option>
-        <option value="4">동작구</option>
-      </select>
-
-      <select id="select-example02" class="ui-label-select theme-wishket" name="ui-select-example02" style="margin-bottom:100px" >
-        <option>레이블 옵션</option>
-        <option value="1">강남구</option>
-        <option value="2">서초구</option>
-        <option value="3">관악구</option>
-        <option value="4">동작구</option>
-      </select>
-
-      <select id="select-example03" class="ui-label-select theme-wishket" name="ui-select-example03" style="margin-bottom:100px" >
-        <option>자동차</option>
-        <option value="1">도요타</option>
-        <option value="2">기아</option>
-        <option value="3">현대</option>
-        <option value="4">아우디</option>
-        <option value="5">벤츠</option>
-        <option value="6">BMW</option>
-        <option value="7">푸조</option>
-      </select>
-
-      <input id="autocomple-example01" class="ui-autocomplete theme-partner" value='photoshop*!*illustrator*!*sketch' placeholder="플레이스 홀더" type="text" data-help-text="헬퍼 텍스트 상세 내용"/>
-      <input id="autocomple-example02" class="ui-autocomplete theme-wishket" placeholder="플레이스 홀더" type="text" />
-      <input id="autocomple-example03" class="ui-autocomplete theme-client" placeholder="플레이스 홀더2" type="text" />
-
-      <div class="autocompletebox">
-      <div class="ui-autocomplete theme-partner">
-        <span class="autocomplete-label">Photoshop<i class="i-close"></i></span>
-        <span class="autocomplete-label">Illustrator<i class="i-close"></i></span>
-        <span class="autocomplete-label">Sketch<i class="i-close"></i></span>
-        <span class="autocomplete-label">Zeplin<i class="i-close"></i></span>
-        <!-- <span class="autocomplete-label">Photoshop<i class="i-close"></i></span>
-        <span class="autocomplete-label">Illustrator<i class="i-close"></i></span>
-        <span class="autocomplete-label">Sketch<i class="i-close"></i></span>
-        <span class="autocomplete-label">Zeplin<i class="i-close"></i></span> -->
-        <input type="text" placeholder="플레이스 홀더"/>
-      </div>
-      <ul class="tag-dropdown open">
-        <li><strong>‘asdfdas’</strong>  입력</li>
-        <li>dsaffa</li>
-        <li>dsaffa</li>
-        <li>dsaffa</li>
-        <li>dsaffa</li>
-        <li>dsaffa</li>
-      </ul>
-      </div>
-
-      <!-- <div class="ui-label-select theme-client active" style="margin-bottom:300px;">
-        <span class="select-box ">
-          <span class="label">레이블</span>
-          <p>서울특별시</p>
-          <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill="none" fill-rule="evenodd" stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M1 4l6 6 6-6"/></svg></i>
-        </span>
-        <ul class="select-dropdown">
-          <li>서울특별시</li>
-          <li class="select">부산광역시</li>
-          <li>울산광역시</li>
-          <li>대구광역시</li>
-          <li>인청광역시</li>
+      <nav>
+        <ul class="guide-aside">
+          <li>
+            <a href="#title-input" class="body-2-light">Input</a>
+            <ul>
+              <li><a href="#text-input" class="body-2-light">Text</a></li>
+              <li><a href="#label-text" class="body-2-light">Text (with Label)</a></li>
+              <li><a href="#guide-uiselect" class="body-2-light">Select (with Label)</a></li>
+              <li><a href="#uiautocomplete" class="body-2-light">Autocomplete</a></li>
+              <li><a href="#check" class="body-2-light">Checkbox</a></li>
+              <li><a href="#tree-check" class="body-2-light">Tree</a></li>
+              <!-- 
+              <li><a href="#uiautocomplete" class="body-2-light">21321312</a></li>
+              <li><a href="#uiautocomplete" class="body-2-light">21321312</a></li>
+              <li><a href="#uiautocomplete" class="body-2-light">21321312</a></li> 
+              -->
+            </ul>
+          </li>
+          <li>
+            <a href="#title-alerts" class="body-2-light">Alerts</a>
+            <ul>
+              <li><a href="#text-input" class="body-2-light">Text</a></li>
+              <li><a href="#test" class="body-2-light">Text(Small)</a></li>
+              <li><a href="#test" class="body-2-light">Text (with Label)</a></li>
+            </ul>
+          </li>
         </ul>
-      </div>
-      <div class="ui-label-select theme-wishket">
-        <span class="select-box">
-          <span class="label">구 동 리</span>
-          <p>강남구</p>
-          <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill="none" fill-rule="evenodd" stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M1 4l6 6 6-6"/></svg></i>
-        </span>
-        <ul class="select-dropdown">
-          <li>강남구</li>
-          <li>서초구</li>
-          <li>관악구</li>
-          <li>동작구</li>
-        </ul>
-      </div> -->
-
-    </section>
+      </nav>
+    </div>
   </div>
   <script>
     $(document).ready(function(){
@@ -349,7 +606,12 @@
       $.uiCheckbox.setting();
       $.uiRadio.setting();
       $.uiToggle.setting();
-      $("#select-example01, #select-example02, #select-example03").uiSelect();
+
+      $("#select-example04, #select-example05, #select-example06").uiSelect();
+      $("#select-example01, #select-example02, #select-example03").uiSelect({
+        type: "label-select"
+      });
+      
       $("#autocomple-example01").uiAutoComple({
         labelmaxcount : 2,
         textlength : 40,
@@ -370,9 +632,52 @@
       //   console.log("autocomple 체인지 테스트");
       // });
 
-      $("#testddd3").on("change", function(){
-        console.log($(this).val());
-      })
+      // $("#testddd3").on("change", function(){
+      //   console.log($(this).val());
+      // })
+
+      //nav 이벤트
+      $(document).on("scroll", scrollSpy);
+
+      function scrollSpy(e){
+        var isScroll = false;
+        var scrollPosition = $(document).scrollTop()
+        $('.guide-aside > li > a').each(function(){
+          var currentLink = $(this);
+          var currentScroll = $(currentLink.attr("href"));
+          if (currentScroll.position().top <= scrollPosition && currentScroll.position().top + currentScroll.height() > scrollPosition) {
+            $('.guide-aside > li > a').removeClass("active");
+            currentLink.addClass("active");
+            isScroll= true;
+          }else{
+            currentLink.removeClass("active");
+          }
+        });
+        if(isScroll){
+          childrenScrollSpy();
+        }
+      }
+
+      function childrenScrollSpy(isScroll, e){
+        var scrollPosition = $(document).scrollTop();
+        $('.guide-aside > li > a.active + ul > li > a').each(function(){
+          var childrenCurrentLink = $(this);
+          var childrenCurrentScroll = $(childrenCurrentLink.attr("href"));
+          if (childrenCurrentScroll.position().top <= scrollPosition && childrenCurrentScroll.position().top + childrenCurrentScroll.height() > scrollPosition && childrenCurrentScroll.position() != undefined) {
+            $('.guide-aside > li > ul > li').removeClass("active");
+            childrenCurrentLink.addClass("active");
+          }else{
+            childrenCurrentLink.removeClass("active");
+          }
+        });
+      }
+
+      $('.guide-aside a').on("click", function(e){
+        e.preventDefault();
+        var $target = $(this.hash);
+        $('html').animate( { scrollTop : $target.offset().top }, 500 );
+        console.log($target.position().top);
+      });
     });
     $(window).on('load', function(){
     });
