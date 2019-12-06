@@ -21,6 +21,7 @@
       var helperText = target.attr('data-input-helper');
       var theme = target.attr('data-input-theme');
       var maxlength = target.attr('maxlength');
+      console.log(size);
       target.wrap('<div class="text-input-'+theme+' '+size+'"></div>');
       target.after('<span class="word-length">0/'+maxlength+'</span>');
       target.after('<span class="helper-text">'+helperText+'</span>');
@@ -63,7 +64,7 @@
       }else if(size === 'xl'){
         return 'input-xlarge'
       }else{
-        return
+        return ''
       }
     },
     getIconPosition:function(position){
@@ -72,7 +73,7 @@
       }else if(position === 'left'){
         return 'icon-left'
       }else{
-        return
+        return ''
       }
     }
   }
