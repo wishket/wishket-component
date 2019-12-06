@@ -31,6 +31,8 @@
       target.siblings(".helper-text").width(target.width() - (target.siblings(".word-length").width()*2));
     },
     labelInput:function(target, size){
+      var labelValue = target.attr("value");
+      console.log(labelValue);
       var labelText = target.attr('data-input-label');
       var theme = target.attr('data-input-theme');
       var forName = target.attr('id');
@@ -41,6 +43,7 @@
       }
       target.wrap('<div class="label-input-'+theme+' '+iconPosition+'"></div>');
       target.after('<label for="'+forName+'">'+labelText+'</label>');
+      labelValue ? target.parent().addClass('label-effect') : null;
       target.bind('focus',function(){
         target.parent().addClass('label-effect');
       });
