@@ -619,16 +619,18 @@ button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%); }
-  .label-input-wishket.error > input {
-    color: #e52929;
-    border-color: #e52929; }
-  .label-input-wishket.error > label {
-    color: #e52929; }
   .label-input-wishket.label-effect > input:focus ~ label {
     color: #3ba3c7 !important; }
   .label-input-wishket.label-effect > label {
     transform: translateY(-20px);
     font-size: 0.688rem; }
+  .label-input-wishket.error > input {
+    color: #e52929;
+    border-color: #e52929; }
+  .label-input-wishket.error > label {
+    color: #e52929; }
+  .label-input-wishket.error > input:focus ~ label {
+    color: #e52929 !important; }
   .label-input-wishket.icon-right {
     position: relative; }
     .label-input-wishket.icon-right > input {
@@ -678,16 +680,18 @@ button {
       top: 50%;
       transform: translateY(-50%);
       right: 16px; }
-    .label-input-wishket.icon-right.error > input {
-      color: #e52929;
-      border-color: #e52929; }
-    .label-input-wishket.icon-right.error > label {
-      color: #e52929; }
     .label-input-wishket.icon-right.label-effect > input:focus ~ label {
       color: #3ba3c7 !important; }
     .label-input-wishket.icon-right.label-effect > label {
       transform: translateY(-20px);
       font-size: 0.688rem; }
+    .label-input-wishket.icon-right.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .label-input-wishket.icon-right.error > label {
+      color: #e52929; }
+    .label-input-wishket.icon-right.error > input:focus ~ label {
+      color: #e52929 !important; }
   .label-input-wishket.icon-left {
     position: relative; }
     .label-input-wishket.icon-left > input {
@@ -737,16 +741,18 @@ button {
       top: 50%;
       transform: translateY(-50%);
       left: 16px; }
-    .label-input-wishket.icon-left.error > input {
-      color: #e52929;
-      border-color: #e52929; }
-    .label-input-wishket.icon-left.error > label {
-      color: #e52929; }
     .label-input-wishket.icon-left.label-effect > input:focus ~ label {
       color: #3ba3c7 !important; }
     .label-input-wishket.icon-left.label-effect > label {
       transform: translateY(-20px);
       font-size: 0.688rem; }
+    .label-input-wishket.icon-left.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .label-input-wishket.icon-left.error > label {
+      color: #e52929; }
+    .label-input-wishket.icon-left.error > input:focus ~ label {
+      color: #e52929 !important; }
 
 .label-input-client {
   position: relative; }
@@ -796,16 +802,18 @@ button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%); }
-  .label-input-client.error > input {
-    color: #e52929;
-    border-color: #e52929; }
-  .label-input-client.error > label {
-    color: #e52929; }
   .label-input-client.label-effect > input:focus ~ label {
     color: #2e6baa !important; }
   .label-input-client.label-effect > label {
     transform: translateY(-20px);
     font-size: 0.688rem; }
+  .label-input-client.error > input {
+    color: #e52929;
+    border-color: #e52929; }
+  .label-input-client.error > label {
+    color: #e52929; }
+  .label-input-client.error > input:focus ~ label {
+    color: #e52929 !important; }
   .label-input-client.icon-right {
     position: relative; }
     .label-input-client.icon-right > input {
@@ -855,16 +863,18 @@ button {
       top: 50%;
       transform: translateY(-50%);
       right: 16px; }
-    .label-input-client.icon-right.error > input {
-      color: #e52929;
-      border-color: #e52929; }
-    .label-input-client.icon-right.error > label {
-      color: #e52929; }
     .label-input-client.icon-right.label-effect > input:focus ~ label {
       color: #2e6baa !important; }
     .label-input-client.icon-right.label-effect > label {
       transform: translateY(-20px);
       font-size: 0.688rem; }
+    .label-input-client.icon-right.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .label-input-client.icon-right.error > label {
+      color: #e52929; }
+    .label-input-client.icon-right.error > input:focus ~ label {
+      color: #e52929 !important; }
   .label-input-client.icon-left {
     position: relative; }
     .label-input-client.icon-left > input {
@@ -914,16 +924,18 @@ button {
       top: 50%;
       transform: translateY(-50%);
       left: 16px; }
-    .label-input-client.icon-left.error > input {
-      color: #e52929;
-      border-color: #e52929; }
-    .label-input-client.icon-left.error > label {
-      color: #e52929; }
     .label-input-client.icon-left.label-effect > input:focus ~ label {
       color: #2e6baa !important; }
     .label-input-client.icon-left.label-effect > label {
       transform: translateY(-20px);
       font-size: 0.688rem; }
+    .label-input-client.icon-left.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .label-input-client.icon-left.error > label {
+      color: #e52929; }
+    .label-input-client.icon-left.error > input:focus ~ label {
+      color: #e52929 !important; }
 
 .label-input-partner {
   position: relative; }
@@ -973,16 +985,18 @@ button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%); }
-  .label-input-partner.error > input {
-    color: #e52929;
-    border-color: #e52929; }
-  .label-input-partner.error > label {
-    color: #e52929; }
   .label-input-partner.label-effect > input:focus ~ label {
     color: #00a878 !important; }
   .label-input-partner.label-effect > label {
     transform: translateY(-20px);
     font-size: 0.688rem; }
+  .label-input-partner.error > input {
+    color: #e52929;
+    border-color: #e52929; }
+  .label-input-partner.error > label {
+    color: #e52929; }
+  .label-input-partner.error > input:focus ~ label {
+    color: #e52929 !important; }
   .label-input-partner.icon-right {
     position: relative; }
     .label-input-partner.icon-right > input {
@@ -1032,16 +1046,18 @@ button {
       top: 50%;
       transform: translateY(-50%);
       right: 16px; }
-    .label-input-partner.icon-right.error > input {
-      color: #e52929;
-      border-color: #e52929; }
-    .label-input-partner.icon-right.error > label {
-      color: #e52929; }
     .label-input-partner.icon-right.label-effect > input:focus ~ label {
       color: #00a878 !important; }
     .label-input-partner.icon-right.label-effect > label {
       transform: translateY(-20px);
       font-size: 0.688rem; }
+    .label-input-partner.icon-right.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .label-input-partner.icon-right.error > label {
+      color: #e52929; }
+    .label-input-partner.icon-right.error > input:focus ~ label {
+      color: #e52929 !important; }
   .label-input-partner.icon-left {
     position: relative; }
     .label-input-partner.icon-left > input {
@@ -1091,16 +1107,18 @@ button {
       top: 50%;
       transform: translateY(-50%);
       left: 16px; }
-    .label-input-partner.icon-left.error > input {
-      color: #e52929;
-      border-color: #e52929; }
-    .label-input-partner.icon-left.error > label {
-      color: #e52929; }
     .label-input-partner.icon-left.label-effect > input:focus ~ label {
       color: #00a878 !important; }
     .label-input-partner.icon-left.label-effect > label {
       transform: translateY(-20px);
       font-size: 0.688rem; }
+    .label-input-partner.icon-left.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .label-input-partner.icon-left.error > label {
+      color: #e52929; }
+    .label-input-partner.icon-left.error > input:focus ~ label {
+      color: #e52929 !important; }
 
 .checkbox-wishket {
   padding: 0;
@@ -1203,8 +1221,8 @@ button {
   .checkbox-wishket.disabled > span:first-child > span {
     background: #f5f5f5; }
   .checkbox-wishket.disabled > span:first-child > input:checked + span {
-    background: #e0e0e0;
-    border-color: #e0e0e0; }
+    background: #e0e0e0 !important;
+    border-color: #e0e0e0 !important; }
   .checkbox-wishket.disabled > span:last-child {
     color: #bdbdbd; }
   .checkbox-wishket.disabled:hover > span:first-child > span {
@@ -1308,7 +1326,8 @@ button {
         font-weight: 400;
         font-size: 0.875rem;
         color: #212121;
-        line-height: 1.5rem; }
+        line-height: 1.5rem;
+        display: block; }
       .checkbox-wishket.detail-text > div > p {
         padding: 0 0 0 12px;
         font-weight: 400;
@@ -1322,8 +1341,8 @@ button {
     .checkbox-wishket.detail-text.disabled > span:first-child > span {
       background: #f5f5f5; }
     .checkbox-wishket.detail-text.disabled > span:first-child > input:checked + span {
-      background: #e0e0e0;
-      border-color: #e0e0e0; }
+      background: #e0e0e0 !important;
+      border-color: #e0e0e0 !important; }
     .checkbox-wishket.detail-text.disabled > div > span, .checkbox-wishket.detail-text.disabled > div > p {
       color: #bdbdbd; }
     .checkbox-wishket.detail-text.disabled:hover > span:first-child > span {
@@ -1434,8 +1453,8 @@ button {
   .checkbox-partner.disabled > span:first-child > span {
     background: #f5f5f5; }
   .checkbox-partner.disabled > span:first-child > input:checked + span {
-    background: #e0e0e0;
-    border-color: #e0e0e0; }
+    background: #e0e0e0 !important;
+    border-color: #e0e0e0 !important; }
   .checkbox-partner.disabled > span:last-child {
     color: #bdbdbd; }
   .checkbox-partner.disabled:hover > span:first-child > span {
@@ -1539,7 +1558,8 @@ button {
         font-weight: 400;
         font-size: 0.875rem;
         color: #212121;
-        line-height: 1.5rem; }
+        line-height: 1.5rem;
+        display: block; }
       .checkbox-partner.detail-text > div > p {
         padding: 0 0 0 12px;
         font-weight: 400;
@@ -1553,8 +1573,8 @@ button {
     .checkbox-partner.detail-text.disabled > span:first-child > span {
       background: #f5f5f5; }
     .checkbox-partner.detail-text.disabled > span:first-child > input:checked + span {
-      background: #e0e0e0;
-      border-color: #e0e0e0; }
+      background: #e0e0e0 !important;
+      border-color: #e0e0e0 !important; }
     .checkbox-partner.detail-text.disabled > div > span, .checkbox-partner.detail-text.disabled > div > p {
       color: #bdbdbd; }
     .checkbox-partner.detail-text.disabled:hover > span:first-child > span {
@@ -1665,8 +1685,8 @@ button {
   .checkbox-client.disabled > span:first-child > span {
     background: #f5f5f5; }
   .checkbox-client.disabled > span:first-child > input:checked + span {
-    background: #e0e0e0;
-    border-color: #e0e0e0; }
+    background: #e0e0e0 !important;
+    border-color: #e0e0e0 !important; }
   .checkbox-client.disabled > span:last-child {
     color: #bdbdbd; }
   .checkbox-client.disabled:hover > span:first-child > span {
@@ -1770,7 +1790,8 @@ button {
         font-weight: 400;
         font-size: 0.875rem;
         color: #212121;
-        line-height: 1.5rem; }
+        line-height: 1.5rem;
+        display: block; }
       .checkbox-client.detail-text > div > p {
         padding: 0 0 0 12px;
         font-weight: 400;
@@ -1784,8 +1805,8 @@ button {
     .checkbox-client.detail-text.disabled > span:first-child > span {
       background: #f5f5f5; }
     .checkbox-client.detail-text.disabled > span:first-child > input:checked + span {
-      background: #e0e0e0;
-      border-color: #e0e0e0; }
+      background: #e0e0e0 !important;
+      border-color: #e0e0e0 !important; }
     .checkbox-client.detail-text.disabled > div > span, .checkbox-client.detail-text.disabled > div > p {
       color: #bdbdbd; }
     .checkbox-client.detail-text.disabled:hover > span:first-child > span {
@@ -2124,7 +2145,8 @@ button {
         font-weight: 400;
         font-size: 0.875rem;
         color: #212121;
-        line-height: 1.5rem; }
+        line-height: 1.5rem;
+        display: block; }
       .radio-wishket.detail-text > div > p {
         padding: 0 0 0 12px;
         font-weight: 400;
@@ -2286,7 +2308,8 @@ button {
         font-weight: 400;
         font-size: 0.875rem;
         color: #212121;
-        line-height: 1.5rem; }
+        line-height: 1.5rem;
+        display: block; }
       .radio-partner.detail-text > div > p {
         padding: 0 0 0 12px;
         font-weight: 400;
@@ -2448,7 +2471,8 @@ button {
         font-weight: 400;
         font-size: 0.875rem;
         color: #212121;
-        line-height: 1.5rem; }
+        line-height: 1.5rem;
+        display: block; }
       .radio-client.detail-text > div > p {
         padding: 0 0 0 12px;
         font-weight: 400;
@@ -2704,7 +2728,8 @@ button {
   cursor: pointer;
   display: inline-block;
   min-width: 260px;
-  line-height: 0; }
+  line-height: 0;
+  background: #fff; }
   .ui-label-select.theme-wishket > .selectBg {
     position: absolute;
     width: 100%;
@@ -2730,10 +2755,14 @@ button {
       .ui-label-select.theme-wishket > .select-box .select-label.basic {
         transform: translateY(-50%);
         top: 50%; }
-    .ui-label-select.theme-wishket > .select-box > p {
+    .ui-label-select.theme-wishket > .select-box > p.select-name {
       font-size: 0.875rem;
       line-height: 1.500rem;
       opacity: 0;
+      height: 24px;
+      overflow: hidden;
+      word-break: keep-all;
+      text-overflow: ellipsis;
       transition: all 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6), dispay 0.1s 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
     .ui-label-select.theme-wishket > .select-box > i {
       position: absolute;
@@ -2791,21 +2820,13 @@ button {
     line-height: 1.5rem;
     color: #bdbdbd; }
   .ui-label-select.theme-wishket.active > .select-box > p {
-    display: block;
-    opacity: 1;
-    overflow: hidden;
-    word-break: keep-all;
-    text-overflow: ellipsis; }
+    opacity: 1; }
   .ui-label-select.theme-wishket.open > .select-box {
     border-color: #00a878; }
     .ui-label-select.theme-wishket.open > .select-box > .select-label {
       color: #00a878; }
   .ui-label-select.theme-wishket:hover > .select-box {
     border-color: #00a878; }
-    .ui-label-select.theme-wishket:hover > .select-box > p {
-      visibility: visible;
-      display: block;
-      opacity: 1; }
     .ui-label-select.theme-wishket:hover > .select-box > .select-label {
       color: #00a878; }
 
@@ -2816,7 +2837,8 @@ button {
   cursor: pointer;
   display: inline-block;
   min-width: 260px;
-  line-height: 0; }
+  line-height: 0;
+  background: #fff; }
   .ui-label-select.theme-client > .selectBg {
     position: absolute;
     width: 100%;
@@ -2842,10 +2864,14 @@ button {
       .ui-label-select.theme-client > .select-box .select-label.basic {
         transform: translateY(-50%);
         top: 50%; }
-    .ui-label-select.theme-client > .select-box > p {
+    .ui-label-select.theme-client > .select-box > p.select-name {
       font-size: 0.875rem;
       line-height: 1.500rem;
       opacity: 0;
+      height: 24px;
+      overflow: hidden;
+      word-break: keep-all;
+      text-overflow: ellipsis;
       transition: all 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6), dispay 0.1s 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
     .ui-label-select.theme-client > .select-box > i {
       position: absolute;
@@ -2903,21 +2929,13 @@ button {
     line-height: 1.5rem;
     color: #bdbdbd; }
   .ui-label-select.theme-client.active > .select-box > p {
-    display: block;
-    opacity: 1;
-    overflow: hidden;
-    word-break: keep-all;
-    text-overflow: ellipsis; }
+    opacity: 1; }
   .ui-label-select.theme-client.open > .select-box {
     border-color: #2e6baa; }
     .ui-label-select.theme-client.open > .select-box > .select-label {
       color: #2e6baa; }
   .ui-label-select.theme-client:hover > .select-box {
     border-color: #2e6baa; }
-    .ui-label-select.theme-client:hover > .select-box > p {
-      visibility: visible;
-      display: block;
-      opacity: 1; }
     .ui-label-select.theme-client:hover > .select-box > .select-label {
       color: #2e6baa; }
 
@@ -2928,7 +2946,8 @@ button {
   cursor: pointer;
   display: inline-block;
   min-width: 260px;
-  line-height: 0; }
+  line-height: 0;
+  background: #fff; }
   .ui-label-select.theme-partner > .selectBg {
     position: absolute;
     width: 100%;
@@ -2954,10 +2973,14 @@ button {
       .ui-label-select.theme-partner > .select-box .select-label.basic {
         transform: translateY(-50%);
         top: 50%; }
-    .ui-label-select.theme-partner > .select-box > p {
+    .ui-label-select.theme-partner > .select-box > p.select-name {
       font-size: 0.875rem;
       line-height: 1.500rem;
       opacity: 0;
+      height: 24px;
+      overflow: hidden;
+      word-break: keep-all;
+      text-overflow: ellipsis;
       transition: all 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6), dispay 0.1s 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
     .ui-label-select.theme-partner > .select-box > i {
       position: absolute;
@@ -3015,26 +3038,19 @@ button {
     line-height: 1.5rem;
     color: #bdbdbd; }
   .ui-label-select.theme-partner.active > .select-box > p {
-    display: block;
-    opacity: 1;
-    overflow: hidden;
-    word-break: keep-all;
-    text-overflow: ellipsis; }
+    opacity: 1; }
   .ui-label-select.theme-partner.open > .select-box {
     border-color: #3ba3c7; }
     .ui-label-select.theme-partner.open > .select-box > .select-label {
       color: #3ba3c7; }
   .ui-label-select.theme-partner:hover > .select-box {
     border-color: #3ba3c7; }
-    .ui-label-select.theme-partner:hover > .select-box > p {
-      visibility: visible;
-      display: block;
-      opacity: 1; }
     .ui-label-select.theme-partner:hover > .select-box > .select-label {
       color: #3ba3c7; }
 
 .autocompletebox {
-  position: relative; }
+  position: relative;
+  background: #fff; }
 
 .hiddenInput {
   display: none; }

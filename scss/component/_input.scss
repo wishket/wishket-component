@@ -193,6 +193,15 @@
       left:16px;
     }
   }
+  &.label-effect{
+    >input:focus ~ label{
+      color:$brand-color !important;
+    }
+    > label{
+      transform:translateY(-20px);
+      font-size:0.688rem; 
+    }
+  }
   &.error{
     >input{
       color:$color-red500;
@@ -201,14 +210,8 @@
     >label{
       color:$color-red500;
     }
-  }
-  &.label-effect{
     >input:focus ~ label{
-      color:$brand-color !important;
-    }
-    > label{
-      transform:translateY(-20px);
-      font-size:0.688rem; 
+      color:$color-red500 !important;
     }
   }
 }

@@ -112,6 +112,7 @@
         font-size:$font-size;
         color:$font-color;
         line-height: $line-height;
+        display:block;
       }
       >p{
         padding:0 0 0 12px;
@@ -154,8 +155,8 @@
       }
       >input{
         &:checked + span{
-          background:$color-gray200;
-          border-color:$color-gray200;
+          background:$color-gray200 !important;
+          border-color:$color-gray200 !important;
         }
       }
     }
