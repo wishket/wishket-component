@@ -86,7 +86,7 @@
         url: "/tag/?startwith=" + value + selected_string,
         method: "GET",
         success: function (data) {
-          event.preventDefault();
+          e.preventDefault();
           $dropDown.html("");
           if(data.length > 0){
             for (var i = 0; i < data.length; i++) {
@@ -249,13 +249,15 @@
         tag.remove();
         this.$node.next().children(".tag-dropdown").css("top", this.$node.next().height());
       }else{
-        tag = tag.replace(/  +/g, ' ');
-        tag = tag.trim();
-        $tagBox.before("<span class=\"autocomplete-label\">"+tag+"<i class=\"i-close\"></i></span>");
-        this.inputSync(true, tag);
-        target.val("");
-        this.$node.next().children(".tag-dropdown").css("top", this.$node.next().height());
-        // this.widthChange(target.parent());
+        if(tag !== ''){
+          tag = tag.replace(/  +/g, ' ');
+          tag = tag.trim();
+          $tagBox.before("<span class=\"autocomplete-label\">"+tag+"<i class=\"i-close\"></i></span>");
+          this.inputSync(true, tag);
+          target.val("");
+          this.$node.next().children(".tag-dropdown").css("top", this.$node.next().height());
+          // this.widthChange(target.parent());
+        }
       }
     },
 
