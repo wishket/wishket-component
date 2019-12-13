@@ -1,8 +1,8 @@
 //text input stlye
-@mixin textinput($padding, $brand-color, $placeholder-color, $font-color, $font-size, $line-height){
+@mixin textinput($icon-position, $padding, $brand-color, $placeholder-color, $font-color, $font-size, $line-height){
   position:relative;
   // padding-bottom:28px;
-  >input{
+  >div>input{
     display: block;
     border-radius:4px;
     padding:$padding;
@@ -14,6 +14,27 @@
     background:#fff;
     width:100%;
     height: inherit;
+
+    @if $icon-position == icon-default {
+      padding:8px 12px 8px 12px;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        line-height: 1em;
+        padding:8px 12px 8px 12px;
+      }
+    } @else if $icon-position == icon-right {
+      padding:8px 38px 8px 12px;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        line-height: 1em;
+        padding:12px 38px 8px 12px;
+      }
+    } @else if $icon-position == icon-left {
+      padding:8px 12px 8px 38px;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        line-height: 1em;
+        padding:8px 12px 8px 38px;
+      }
+    }
+
     &::placeholder, &::-webkit-input-placeholder{
       color:$placeholder-color;
       line-height:inherit;
@@ -50,14 +71,34 @@
     display:none;
   }
 
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  >div>i{
+    position:absolute;
+    top:19px;
+    transform: translateY(-50%);
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    }
+  }
+
   >span{
     font-size:0.813rem;
     font-weight: 400;
     bottom:0;
     color:$color-gray400;
-    &.helper-text{
+    &.helper-text, &.error-text{
       float:left;
       padding:8px 12px 0 12px;
+    }
+    &.error-text{
+      display:none;
     }
     &.word-length{
       float: right;
@@ -65,7 +106,7 @@
     }
   }
   &.error{
-    >input{
+    >div>input{
       color:$color-red500;
       border-color:$color-red500;
     }
@@ -82,29 +123,43 @@
 }
 
 .text-input-wishket{
-  @include textinput(8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  @include textinput(icon-default, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  &.input-small{
+    @include textinput(icon-default, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  }
+  &.icon-right{
+    @include textinput(icon-right, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  }
+  &.icon-left{
+    @include textinput(icon-left, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  }
 }
 
 .text-input-partner{
-  @include textinput(8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  @include textinput(icon-default, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  &.input-small{
+    @include textinput(icon-default, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  }
+  &.icon-right{
+    @include textinput(icon-right, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  }
+  &.icon-left{
+    @include textinput(icon-left, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  }
 }
 
 .text-input-client{
-  @include textinput(8px 12px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  @include textinput(icon-default, 8px 12px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  &.input-small{
+    @include textinput(icon-default, 8px 12px, $color-client500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  }
+  &.icon-right{
+    @include textinput(icon-right, 8px 12px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  }
+  &.icon-left{
+    @include textinput(icon-left, 8px 12px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  }
 }
-
-.text-input-wishket.input-small{
-  @include textinput(8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
-}
-
-.text-input-partner.input-small{
-  @include textinput(8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
-}
-
-.text-input-client.input-small{
-  @include textinput(8px 12px, $color-client500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
-}
-
 
 //label input style
 @mixin labelInput($icon-position, $brand-color, $font-color, $font-size, $line-height){
@@ -169,6 +224,12 @@
     display:none;
   }
 
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
   >label{
     position:absolute;
     @if $icon-position == icon-left {
@@ -215,6 +276,13 @@
       color:$color-red500 !important;
     }
   }
+  +.error-text{
+    color:$color-red500;
+    padding:8px 12px 0 12px;
+    font-size:0.813rem;
+    font-weight: 400;
+    display:block;
+  }
 }
 
 .label-input-wishket{
@@ -244,5 +312,149 @@
   }
   &.icon-left{
     @include labelInput(icon-left, $color-partner500, $color-gray600, 0.875rem, 1.50rem);
+  }
+}
+
+
+@mixin defaultinput($icon-position, $padding, $brand-color, $placeholder-color, $font-color, $font-size, $line-height){
+  position:relative;
+  // padding-bottom:28px;
+  >input{
+    display: block;
+    border-radius:4px;
+    padding:$padding;
+    border:1px solid $color-gray200;
+    font-size:$font-size;
+    line-height: $line-height;
+    color:$font-color;
+    font-weight:400;
+    background:#fff;
+    width:100%;
+    height: inherit;
+
+    @if $icon-position == icon-default {
+      padding:8px 12px 8px 12px;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        line-height: 1em;
+        padding:8px 12px 8px 12px;
+      }
+    } @else if $icon-position == icon-right {
+      padding:8px 38px 8px 12px;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        line-height: 1em;
+        padding:12px 38px 8px 12px;
+      }
+    } @else if $icon-position == icon-left {
+      padding:8px 12px 8px 38px;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        line-height: 1em;
+        padding:8px 12px 8px 38px;
+      }
+    }
+
+    &::placeholder, &::-webkit-input-placeholder{
+      color:$placeholder-color;
+      line-height:inherit;
+    }
+    &:disabled{
+      background:$color-gray10;
+      color:$color-gray300;
+    }
+    &:hover, &:focus{
+      border-color:$brand-color;
+      &:disabled{
+        &:hover, &:focus{
+          border-color:$color-gray200;
+        }
+      }
+    }
+    &[type='password']{
+      font-size:1.3rem;
+      letter-spacing: -2px;
+      font-family: Consolas, Courier, monospace;
+    }
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      line-height: 1em;
+      padding:11px 13px;
+    }
+  }
+  input:-ms-input-placeholder{
+    color:$placeholder-color;
+    line-height:inherit;
+  }
+
+  input[type=text]::-ms-clear {
+    display:none;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  >i{
+    position:absolute;
+    top:19px;
+    transform: translateY(-50%);
+    line-height: 0;
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    }
+  }
+
+  &.error{
+    >input{
+      color:$color-red500;
+      border-color:$color-red500;
+    }
+  }
+
+  &:after{
+    clear: both;
+    display: block;
+    content:'';
+  }
+}
+
+.default-input-wishket{
+  @include defaultinput(icon-default, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  &.input-small{
+    @include defaultinput(icon-default, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  }
+  &.icon-right{
+    @include defaultinput(icon-right, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  }
+  &.icon-left{
+    @include defaultinput(icon-left, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  }
+}
+
+.default-input-partner{
+  @include defaultinput(icon-default, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  &.input-small{
+    @include defaultinput(icon-default, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  }
+  &.icon-right{
+    @include defaultinput(icon-right, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  }
+  &.icon-left{
+    @include defaultinput(icon-left, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  }
+}
+
+.default-input-client{
+  @include defaultinput(icon-default, 8px 12px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  &.input-small{
+    @include defaultinput(icon-default, 8px 12px, $color-client500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  }
+  &.icon-right{
+    @include defaultinput(icon-right, 8px 12px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  }
+  &.icon-left{
+    @include defaultinput(icon-left, 8px 12px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
   }
 }

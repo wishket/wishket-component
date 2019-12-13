@@ -21,7 +21,7 @@
       this.$node.css("display", "none");
     },
 
-    practice: function(){
+    wait: function(){
       var target = this;
       var $tagBox = $(this.node).next().children(".ui-autocomplete");
       var $dropDown = $(this.node).next().children(".tag-dropdown");
@@ -298,7 +298,7 @@
       this.$node.after(createHtml);
       var loadTag = this.$node.attr("value");
       loadTag ? this.addLabel("create", loadTag) : null;
-      this.practice();
+      this.wait();
     },
   };
 

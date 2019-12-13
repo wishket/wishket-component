@@ -225,7 +225,7 @@ button {
 
 .text-input-wishket {
   position: relative; }
-  .text-input-wishket > input {
+  .text-input-wishket > div > input {
     display: block;
     border-radius: 4px;
     padding: 8px 12px;
@@ -236,23 +236,28 @@ button {
     font-weight: 400;
     background: #fff;
     width: 100%;
-    height: inherit; }
-    .text-input-wishket > input::placeholder, .text-input-wishket > input::-webkit-input-placeholder {
+    height: inherit;
+    padding: 8px 12px 8px 12px; }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .text-input-wishket > div > input {
+        line-height: 1em;
+        padding: 8px 12px 8px 12px; } }
+    .text-input-wishket > div > input::placeholder, .text-input-wishket > div > input::-webkit-input-placeholder {
       color: #bdbdbd;
       line-height: inherit; }
-    .text-input-wishket > input:disabled {
+    .text-input-wishket > div > input:disabled {
       background: #fafafa;
       color: #bdbdbd; }
-    .text-input-wishket > input:hover, .text-input-wishket > input:focus {
+    .text-input-wishket > div > input:hover, .text-input-wishket > div > input:focus {
       border-color: #3ba3c7; }
-      .text-input-wishket > input:hover:disabled:hover, .text-input-wishket > input:hover:disabled:focus, .text-input-wishket > input:focus:disabled:hover, .text-input-wishket > input:focus:disabled:focus {
+      .text-input-wishket > div > input:hover:disabled:hover, .text-input-wishket > div > input:hover:disabled:focus, .text-input-wishket > div > input:focus:disabled:hover, .text-input-wishket > div > input:focus:disabled:focus {
         border-color: #e0e0e0; }
-    .text-input-wishket > input[type='password'] {
+    .text-input-wishket > div > input[type='password'] {
       font-size: 1.3rem;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      .text-input-wishket > input {
+      .text-input-wishket > div > input {
         line-height: 1em;
         padding: 11px 13px; } }
   .text-input-wishket input:-ms-input-placeholder {
@@ -260,18 +265,28 @@ button {
     line-height: inherit; }
   .text-input-wishket input[type=text]::-ms-clear {
     display: none; }
+  .text-input-wishket input[type="number"]::-webkit-outer-spin-button,
+  .text-input-wishket input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  .text-input-wishket > div > i {
+    position: absolute;
+    top: 19px;
+    transform: translateY(-50%); }
   .text-input-wishket > span {
     font-size: 0.813rem;
     font-weight: 400;
     bottom: 0;
     color: #9e9e9e; }
-    .text-input-wishket > span.helper-text {
+    .text-input-wishket > span.helper-text, .text-input-wishket > span.error-text {
       float: left;
       padding: 8px 12px 0 12px; }
+    .text-input-wishket > span.error-text {
+      display: none; }
     .text-input-wishket > span.word-length {
       float: right;
       padding: 8px 12px 0 0; }
-  .text-input-wishket.error > input {
+  .text-input-wishket.error > div > input {
     color: #e52929;
     border-color: #e52929; }
   .text-input-wishket.error > span {
@@ -280,10 +295,228 @@ button {
     clear: both;
     display: block;
     content: ''; }
+  .text-input-wishket.input-small {
+    position: relative; }
+    .text-input-wishket.input-small > div > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.813rem;
+      line-height: 1.25rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 12px 8px 12px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-wishket.input-small > div > input {
+          line-height: 1em;
+          padding: 8px 12px 8px 12px; } }
+      .text-input-wishket.input-small > div > input::placeholder, .text-input-wishket.input-small > div > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .text-input-wishket.input-small > div > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .text-input-wishket.input-small > div > input:hover, .text-input-wishket.input-small > div > input:focus {
+        border-color: #3ba3c7; }
+        .text-input-wishket.input-small > div > input:hover:disabled:hover, .text-input-wishket.input-small > div > input:hover:disabled:focus, .text-input-wishket.input-small > div > input:focus:disabled:hover, .text-input-wishket.input-small > div > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .text-input-wishket.input-small > div > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-wishket.input-small > div > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .text-input-wishket.input-small input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .text-input-wishket.input-small input[type=text]::-ms-clear {
+      display: none; }
+    .text-input-wishket.input-small input[type="number"]::-webkit-outer-spin-button,
+    .text-input-wishket.input-small input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .text-input-wishket.input-small > div > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%); }
+    .text-input-wishket.input-small > span {
+      font-size: 0.813rem;
+      font-weight: 400;
+      bottom: 0;
+      color: #9e9e9e; }
+      .text-input-wishket.input-small > span.helper-text, .text-input-wishket.input-small > span.error-text {
+        float: left;
+        padding: 8px 12px 0 12px; }
+      .text-input-wishket.input-small > span.error-text {
+        display: none; }
+      .text-input-wishket.input-small > span.word-length {
+        float: right;
+        padding: 8px 12px 0 0; }
+    .text-input-wishket.input-small.error > div > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .text-input-wishket.input-small.error > span {
+      color: #e52929; }
+    .text-input-wishket.input-small:after {
+      clear: both;
+      display: block;
+      content: ''; }
+  .text-input-wishket.icon-right {
+    position: relative; }
+    .text-input-wishket.icon-right > div > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.813rem;
+      line-height: 1.25rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 38px 8px 12px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-wishket.icon-right > div > input {
+          line-height: 1em;
+          padding: 12px 38px 8px 12px; } }
+      .text-input-wishket.icon-right > div > input::placeholder, .text-input-wishket.icon-right > div > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .text-input-wishket.icon-right > div > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .text-input-wishket.icon-right > div > input:hover, .text-input-wishket.icon-right > div > input:focus {
+        border-color: #3ba3c7; }
+        .text-input-wishket.icon-right > div > input:hover:disabled:hover, .text-input-wishket.icon-right > div > input:hover:disabled:focus, .text-input-wishket.icon-right > div > input:focus:disabled:hover, .text-input-wishket.icon-right > div > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .text-input-wishket.icon-right > div > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-wishket.icon-right > div > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .text-input-wishket.icon-right input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .text-input-wishket.icon-right input[type=text]::-ms-clear {
+      display: none; }
+    .text-input-wishket.icon-right input[type="number"]::-webkit-outer-spin-button,
+    .text-input-wishket.icon-right input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .text-input-wishket.icon-right > div > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      right: 12px; }
+    .text-input-wishket.icon-right > span {
+      font-size: 0.813rem;
+      font-weight: 400;
+      bottom: 0;
+      color: #9e9e9e; }
+      .text-input-wishket.icon-right > span.helper-text, .text-input-wishket.icon-right > span.error-text {
+        float: left;
+        padding: 8px 12px 0 12px; }
+      .text-input-wishket.icon-right > span.error-text {
+        display: none; }
+      .text-input-wishket.icon-right > span.word-length {
+        float: right;
+        padding: 8px 12px 0 0; }
+    .text-input-wishket.icon-right.error > div > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .text-input-wishket.icon-right.error > span {
+      color: #e52929; }
+    .text-input-wishket.icon-right:after {
+      clear: both;
+      display: block;
+      content: ''; }
+  .text-input-wishket.icon-left {
+    position: relative; }
+    .text-input-wishket.icon-left > div > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.813rem;
+      line-height: 1.25rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 12px 8px 38px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-wishket.icon-left > div > input {
+          line-height: 1em;
+          padding: 8px 12px 8px 38px; } }
+      .text-input-wishket.icon-left > div > input::placeholder, .text-input-wishket.icon-left > div > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .text-input-wishket.icon-left > div > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .text-input-wishket.icon-left > div > input:hover, .text-input-wishket.icon-left > div > input:focus {
+        border-color: #3ba3c7; }
+        .text-input-wishket.icon-left > div > input:hover:disabled:hover, .text-input-wishket.icon-left > div > input:hover:disabled:focus, .text-input-wishket.icon-left > div > input:focus:disabled:hover, .text-input-wishket.icon-left > div > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .text-input-wishket.icon-left > div > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-wishket.icon-left > div > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .text-input-wishket.icon-left input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .text-input-wishket.icon-left input[type=text]::-ms-clear {
+      display: none; }
+    .text-input-wishket.icon-left input[type="number"]::-webkit-outer-spin-button,
+    .text-input-wishket.icon-left input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .text-input-wishket.icon-left > div > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      left: 12px; }
+    .text-input-wishket.icon-left > span {
+      font-size: 0.813rem;
+      font-weight: 400;
+      bottom: 0;
+      color: #9e9e9e; }
+      .text-input-wishket.icon-left > span.helper-text, .text-input-wishket.icon-left > span.error-text {
+        float: left;
+        padding: 8px 12px 0 12px; }
+      .text-input-wishket.icon-left > span.error-text {
+        display: none; }
+      .text-input-wishket.icon-left > span.word-length {
+        float: right;
+        padding: 8px 12px 0 0; }
+    .text-input-wishket.icon-left.error > div > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .text-input-wishket.icon-left.error > span {
+      color: #e52929; }
+    .text-input-wishket.icon-left:after {
+      clear: both;
+      display: block;
+      content: ''; }
 
 .text-input-partner {
   position: relative; }
-  .text-input-partner > input {
+  .text-input-partner > div > input {
     display: block;
     border-radius: 4px;
     padding: 8px 12px;
@@ -294,23 +527,28 @@ button {
     font-weight: 400;
     background: #fff;
     width: 100%;
-    height: inherit; }
-    .text-input-partner > input::placeholder, .text-input-partner > input::-webkit-input-placeholder {
+    height: inherit;
+    padding: 8px 12px 8px 12px; }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .text-input-partner > div > input {
+        line-height: 1em;
+        padding: 8px 12px 8px 12px; } }
+    .text-input-partner > div > input::placeholder, .text-input-partner > div > input::-webkit-input-placeholder {
       color: #bdbdbd;
       line-height: inherit; }
-    .text-input-partner > input:disabled {
+    .text-input-partner > div > input:disabled {
       background: #fafafa;
       color: #bdbdbd; }
-    .text-input-partner > input:hover, .text-input-partner > input:focus {
+    .text-input-partner > div > input:hover, .text-input-partner > div > input:focus {
       border-color: #00a878; }
-      .text-input-partner > input:hover:disabled:hover, .text-input-partner > input:hover:disabled:focus, .text-input-partner > input:focus:disabled:hover, .text-input-partner > input:focus:disabled:focus {
+      .text-input-partner > div > input:hover:disabled:hover, .text-input-partner > div > input:hover:disabled:focus, .text-input-partner > div > input:focus:disabled:hover, .text-input-partner > div > input:focus:disabled:focus {
         border-color: #e0e0e0; }
-    .text-input-partner > input[type='password'] {
+    .text-input-partner > div > input[type='password'] {
       font-size: 1.3rem;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      .text-input-partner > input {
+      .text-input-partner > div > input {
         line-height: 1em;
         padding: 11px 13px; } }
   .text-input-partner input:-ms-input-placeholder {
@@ -318,18 +556,28 @@ button {
     line-height: inherit; }
   .text-input-partner input[type=text]::-ms-clear {
     display: none; }
+  .text-input-partner input[type="number"]::-webkit-outer-spin-button,
+  .text-input-partner input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  .text-input-partner > div > i {
+    position: absolute;
+    top: 19px;
+    transform: translateY(-50%); }
   .text-input-partner > span {
     font-size: 0.813rem;
     font-weight: 400;
     bottom: 0;
     color: #9e9e9e; }
-    .text-input-partner > span.helper-text {
+    .text-input-partner > span.helper-text, .text-input-partner > span.error-text {
       float: left;
       padding: 8px 12px 0 12px; }
+    .text-input-partner > span.error-text {
+      display: none; }
     .text-input-partner > span.word-length {
       float: right;
       padding: 8px 12px 0 0; }
-  .text-input-partner.error > input {
+  .text-input-partner.error > div > input {
     color: #e52929;
     border-color: #e52929; }
   .text-input-partner.error > span {
@@ -338,10 +586,228 @@ button {
     clear: both;
     display: block;
     content: ''; }
+  .text-input-partner.input-small {
+    position: relative; }
+    .text-input-partner.input-small > div > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.813rem;
+      line-height: 1.25rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 12px 8px 12px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-partner.input-small > div > input {
+          line-height: 1em;
+          padding: 8px 12px 8px 12px; } }
+      .text-input-partner.input-small > div > input::placeholder, .text-input-partner.input-small > div > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .text-input-partner.input-small > div > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .text-input-partner.input-small > div > input:hover, .text-input-partner.input-small > div > input:focus {
+        border-color: #00a878; }
+        .text-input-partner.input-small > div > input:hover:disabled:hover, .text-input-partner.input-small > div > input:hover:disabled:focus, .text-input-partner.input-small > div > input:focus:disabled:hover, .text-input-partner.input-small > div > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .text-input-partner.input-small > div > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-partner.input-small > div > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .text-input-partner.input-small input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .text-input-partner.input-small input[type=text]::-ms-clear {
+      display: none; }
+    .text-input-partner.input-small input[type="number"]::-webkit-outer-spin-button,
+    .text-input-partner.input-small input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .text-input-partner.input-small > div > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%); }
+    .text-input-partner.input-small > span {
+      font-size: 0.813rem;
+      font-weight: 400;
+      bottom: 0;
+      color: #9e9e9e; }
+      .text-input-partner.input-small > span.helper-text, .text-input-partner.input-small > span.error-text {
+        float: left;
+        padding: 8px 12px 0 12px; }
+      .text-input-partner.input-small > span.error-text {
+        display: none; }
+      .text-input-partner.input-small > span.word-length {
+        float: right;
+        padding: 8px 12px 0 0; }
+    .text-input-partner.input-small.error > div > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .text-input-partner.input-small.error > span {
+      color: #e52929; }
+    .text-input-partner.input-small:after {
+      clear: both;
+      display: block;
+      content: ''; }
+  .text-input-partner.icon-right {
+    position: relative; }
+    .text-input-partner.icon-right > div > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 38px 8px 12px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-partner.icon-right > div > input {
+          line-height: 1em;
+          padding: 12px 38px 8px 12px; } }
+      .text-input-partner.icon-right > div > input::placeholder, .text-input-partner.icon-right > div > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .text-input-partner.icon-right > div > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .text-input-partner.icon-right > div > input:hover, .text-input-partner.icon-right > div > input:focus {
+        border-color: #00a878; }
+        .text-input-partner.icon-right > div > input:hover:disabled:hover, .text-input-partner.icon-right > div > input:hover:disabled:focus, .text-input-partner.icon-right > div > input:focus:disabled:hover, .text-input-partner.icon-right > div > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .text-input-partner.icon-right > div > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-partner.icon-right > div > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .text-input-partner.icon-right input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .text-input-partner.icon-right input[type=text]::-ms-clear {
+      display: none; }
+    .text-input-partner.icon-right input[type="number"]::-webkit-outer-spin-button,
+    .text-input-partner.icon-right input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .text-input-partner.icon-right > div > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      right: 12px; }
+    .text-input-partner.icon-right > span {
+      font-size: 0.813rem;
+      font-weight: 400;
+      bottom: 0;
+      color: #9e9e9e; }
+      .text-input-partner.icon-right > span.helper-text, .text-input-partner.icon-right > span.error-text {
+        float: left;
+        padding: 8px 12px 0 12px; }
+      .text-input-partner.icon-right > span.error-text {
+        display: none; }
+      .text-input-partner.icon-right > span.word-length {
+        float: right;
+        padding: 8px 12px 0 0; }
+    .text-input-partner.icon-right.error > div > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .text-input-partner.icon-right.error > span {
+      color: #e52929; }
+    .text-input-partner.icon-right:after {
+      clear: both;
+      display: block;
+      content: ''; }
+  .text-input-partner.icon-left {
+    position: relative; }
+    .text-input-partner.icon-left > div > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 12px 8px 38px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-partner.icon-left > div > input {
+          line-height: 1em;
+          padding: 8px 12px 8px 38px; } }
+      .text-input-partner.icon-left > div > input::placeholder, .text-input-partner.icon-left > div > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .text-input-partner.icon-left > div > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .text-input-partner.icon-left > div > input:hover, .text-input-partner.icon-left > div > input:focus {
+        border-color: #00a878; }
+        .text-input-partner.icon-left > div > input:hover:disabled:hover, .text-input-partner.icon-left > div > input:hover:disabled:focus, .text-input-partner.icon-left > div > input:focus:disabled:hover, .text-input-partner.icon-left > div > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .text-input-partner.icon-left > div > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-partner.icon-left > div > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .text-input-partner.icon-left input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .text-input-partner.icon-left input[type=text]::-ms-clear {
+      display: none; }
+    .text-input-partner.icon-left input[type="number"]::-webkit-outer-spin-button,
+    .text-input-partner.icon-left input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .text-input-partner.icon-left > div > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      left: 12px; }
+    .text-input-partner.icon-left > span {
+      font-size: 0.813rem;
+      font-weight: 400;
+      bottom: 0;
+      color: #9e9e9e; }
+      .text-input-partner.icon-left > span.helper-text, .text-input-partner.icon-left > span.error-text {
+        float: left;
+        padding: 8px 12px 0 12px; }
+      .text-input-partner.icon-left > span.error-text {
+        display: none; }
+      .text-input-partner.icon-left > span.word-length {
+        float: right;
+        padding: 8px 12px 0 0; }
+    .text-input-partner.icon-left.error > div > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .text-input-partner.icon-left.error > span {
+      color: #e52929; }
+    .text-input-partner.icon-left:after {
+      clear: both;
+      display: block;
+      content: ''; }
 
 .text-input-client {
   position: relative; }
-  .text-input-client > input {
+  .text-input-client > div > input {
     display: block;
     border-radius: 4px;
     padding: 8px 12px;
@@ -352,23 +818,28 @@ button {
     font-weight: 400;
     background: #fff;
     width: 100%;
-    height: inherit; }
-    .text-input-client > input::placeholder, .text-input-client > input::-webkit-input-placeholder {
+    height: inherit;
+    padding: 8px 12px 8px 12px; }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .text-input-client > div > input {
+        line-height: 1em;
+        padding: 8px 12px 8px 12px; } }
+    .text-input-client > div > input::placeholder, .text-input-client > div > input::-webkit-input-placeholder {
       color: #bdbdbd;
       line-height: inherit; }
-    .text-input-client > input:disabled {
+    .text-input-client > div > input:disabled {
       background: #fafafa;
       color: #bdbdbd; }
-    .text-input-client > input:hover, .text-input-client > input:focus {
+    .text-input-client > div > input:hover, .text-input-client > div > input:focus {
       border-color: #2e6baa; }
-      .text-input-client > input:hover:disabled:hover, .text-input-client > input:hover:disabled:focus, .text-input-client > input:focus:disabled:hover, .text-input-client > input:focus:disabled:focus {
+      .text-input-client > div > input:hover:disabled:hover, .text-input-client > div > input:hover:disabled:focus, .text-input-client > div > input:focus:disabled:hover, .text-input-client > div > input:focus:disabled:focus {
         border-color: #e0e0e0; }
-    .text-input-client > input[type='password'] {
+    .text-input-client > div > input[type='password'] {
       font-size: 1.3rem;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      .text-input-client > input {
+      .text-input-client > div > input {
         line-height: 1em;
         padding: 11px 13px; } }
   .text-input-client input:-ms-input-placeholder {
@@ -376,18 +847,28 @@ button {
     line-height: inherit; }
   .text-input-client input[type=text]::-ms-clear {
     display: none; }
+  .text-input-client input[type="number"]::-webkit-outer-spin-button,
+  .text-input-client input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  .text-input-client > div > i {
+    position: absolute;
+    top: 19px;
+    transform: translateY(-50%); }
   .text-input-client > span {
     font-size: 0.813rem;
     font-weight: 400;
     bottom: 0;
     color: #9e9e9e; }
-    .text-input-client > span.helper-text {
+    .text-input-client > span.helper-text, .text-input-client > span.error-text {
       float: left;
       padding: 8px 12px 0 12px; }
+    .text-input-client > span.error-text {
+      display: none; }
     .text-input-client > span.word-length {
       float: right;
       padding: 8px 12px 0 0; }
-  .text-input-client.error > input {
+  .text-input-client.error > div > input {
     color: #e52929;
     border-color: #e52929; }
   .text-input-client.error > span {
@@ -396,180 +877,224 @@ button {
     clear: both;
     display: block;
     content: ''; }
-
-.text-input-wishket.input-small {
-  position: relative; }
-  .text-input-wishket.input-small > input {
-    display: block;
-    border-radius: 4px;
-    padding: 8px 12px;
-    border: 1px solid #e0e0e0;
-    font-size: 0.813rem;
-    line-height: 1.25rem;
-    color: #616161;
-    font-weight: 400;
-    background: #fff;
-    width: 100%;
-    height: inherit; }
-    .text-input-wishket.input-small > input::placeholder, .text-input-wishket.input-small > input::-webkit-input-placeholder {
+  .text-input-client.input-small {
+    position: relative; }
+    .text-input-client.input-small > div > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.813rem;
+      line-height: 1.25rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 12px 8px 12px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-client.input-small > div > input {
+          line-height: 1em;
+          padding: 8px 12px 8px 12px; } }
+      .text-input-client.input-small > div > input::placeholder, .text-input-client.input-small > div > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .text-input-client.input-small > div > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .text-input-client.input-small > div > input:hover, .text-input-client.input-small > div > input:focus {
+        border-color: #2e6baa; }
+        .text-input-client.input-small > div > input:hover:disabled:hover, .text-input-client.input-small > div > input:hover:disabled:focus, .text-input-client.input-small > div > input:focus:disabled:hover, .text-input-client.input-small > div > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .text-input-client.input-small > div > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-client.input-small > div > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .text-input-client.input-small input:-ms-input-placeholder {
       color: #bdbdbd;
       line-height: inherit; }
-    .text-input-wishket.input-small > input:disabled {
-      background: #fafafa;
-      color: #bdbdbd; }
-    .text-input-wishket.input-small > input:hover, .text-input-wishket.input-small > input:focus {
-      border-color: #3ba3c7; }
-      .text-input-wishket.input-small > input:hover:disabled:hover, .text-input-wishket.input-small > input:hover:disabled:focus, .text-input-wishket.input-small > input:focus:disabled:hover, .text-input-wishket.input-small > input:focus:disabled:focus {
-        border-color: #e0e0e0; }
-    .text-input-wishket.input-small > input[type='password'] {
-      font-size: 1.3rem;
-      letter-spacing: -2px;
-      font-family: Consolas, Courier, monospace; }
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      .text-input-wishket.input-small > input {
-        line-height: 1em;
-        padding: 11px 13px; } }
-  .text-input-wishket.input-small input:-ms-input-placeholder {
-    color: #bdbdbd;
-    line-height: inherit; }
-  .text-input-wishket.input-small input[type=text]::-ms-clear {
-    display: none; }
-  .text-input-wishket.input-small > span {
-    font-size: 0.813rem;
-    font-weight: 400;
-    bottom: 0;
-    color: #9e9e9e; }
-    .text-input-wishket.input-small > span.helper-text {
-      float: left;
-      padding: 8px 12px 0 12px; }
-    .text-input-wishket.input-small > span.word-length {
-      float: right;
-      padding: 8px 12px 0 0; }
-  .text-input-wishket.input-small.error > input {
-    color: #e52929;
-    border-color: #e52929; }
-  .text-input-wishket.input-small.error > span {
-    color: #e52929; }
-  .text-input-wishket.input-small:after {
-    clear: both;
-    display: block;
-    content: ''; }
-
-.text-input-partner.input-small {
-  position: relative; }
-  .text-input-partner.input-small > input {
-    display: block;
-    border-radius: 4px;
-    padding: 8px 12px;
-    border: 1px solid #e0e0e0;
-    font-size: 0.813rem;
-    line-height: 1.25rem;
-    color: #616161;
-    font-weight: 400;
-    background: #fff;
-    width: 100%;
-    height: inherit; }
-    .text-input-partner.input-small > input::placeholder, .text-input-partner.input-small > input::-webkit-input-placeholder {
+    .text-input-client.input-small input[type=text]::-ms-clear {
+      display: none; }
+    .text-input-client.input-small input[type="number"]::-webkit-outer-spin-button,
+    .text-input-client.input-small input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .text-input-client.input-small > div > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%); }
+    .text-input-client.input-small > span {
+      font-size: 0.813rem;
+      font-weight: 400;
+      bottom: 0;
+      color: #9e9e9e; }
+      .text-input-client.input-small > span.helper-text, .text-input-client.input-small > span.error-text {
+        float: left;
+        padding: 8px 12px 0 12px; }
+      .text-input-client.input-small > span.error-text {
+        display: none; }
+      .text-input-client.input-small > span.word-length {
+        float: right;
+        padding: 8px 12px 0 0; }
+    .text-input-client.input-small.error > div > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .text-input-client.input-small.error > span {
+      color: #e52929; }
+    .text-input-client.input-small:after {
+      clear: both;
+      display: block;
+      content: ''; }
+  .text-input-client.icon-right {
+    position: relative; }
+    .text-input-client.icon-right > div > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 38px 8px 12px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-client.icon-right > div > input {
+          line-height: 1em;
+          padding: 12px 38px 8px 12px; } }
+      .text-input-client.icon-right > div > input::placeholder, .text-input-client.icon-right > div > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .text-input-client.icon-right > div > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .text-input-client.icon-right > div > input:hover, .text-input-client.icon-right > div > input:focus {
+        border-color: #2e6baa; }
+        .text-input-client.icon-right > div > input:hover:disabled:hover, .text-input-client.icon-right > div > input:hover:disabled:focus, .text-input-client.icon-right > div > input:focus:disabled:hover, .text-input-client.icon-right > div > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .text-input-client.icon-right > div > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-client.icon-right > div > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .text-input-client.icon-right input:-ms-input-placeholder {
       color: #bdbdbd;
       line-height: inherit; }
-    .text-input-partner.input-small > input:disabled {
-      background: #fafafa;
-      color: #bdbdbd; }
-    .text-input-partner.input-small > input:hover, .text-input-partner.input-small > input:focus {
-      border-color: #00a878; }
-      .text-input-partner.input-small > input:hover:disabled:hover, .text-input-partner.input-small > input:hover:disabled:focus, .text-input-partner.input-small > input:focus:disabled:hover, .text-input-partner.input-small > input:focus:disabled:focus {
-        border-color: #e0e0e0; }
-    .text-input-partner.input-small > input[type='password'] {
-      font-size: 1.3rem;
-      letter-spacing: -2px;
-      font-family: Consolas, Courier, monospace; }
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      .text-input-partner.input-small > input {
-        line-height: 1em;
-        padding: 11px 13px; } }
-  .text-input-partner.input-small input:-ms-input-placeholder {
-    color: #bdbdbd;
-    line-height: inherit; }
-  .text-input-partner.input-small input[type=text]::-ms-clear {
-    display: none; }
-  .text-input-partner.input-small > span {
-    font-size: 0.813rem;
-    font-weight: 400;
-    bottom: 0;
-    color: #9e9e9e; }
-    .text-input-partner.input-small > span.helper-text {
-      float: left;
-      padding: 8px 12px 0 12px; }
-    .text-input-partner.input-small > span.word-length {
-      float: right;
-      padding: 8px 12px 0 0; }
-  .text-input-partner.input-small.error > input {
-    color: #e52929;
-    border-color: #e52929; }
-  .text-input-partner.input-small.error > span {
-    color: #e52929; }
-  .text-input-partner.input-small:after {
-    clear: both;
-    display: block;
-    content: ''; }
-
-.text-input-client.input-small {
-  position: relative; }
-  .text-input-client.input-small > input {
-    display: block;
-    border-radius: 4px;
-    padding: 8px 12px;
-    border: 1px solid #e0e0e0;
-    font-size: 0.813rem;
-    line-height: 1.25rem;
-    color: #616161;
-    font-weight: 400;
-    background: #fff;
-    width: 100%;
-    height: inherit; }
-    .text-input-client.input-small > input::placeholder, .text-input-client.input-small > input::-webkit-input-placeholder {
+    .text-input-client.icon-right input[type=text]::-ms-clear {
+      display: none; }
+    .text-input-client.icon-right input[type="number"]::-webkit-outer-spin-button,
+    .text-input-client.icon-right input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .text-input-client.icon-right > div > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      right: 12px; }
+    .text-input-client.icon-right > span {
+      font-size: 0.813rem;
+      font-weight: 400;
+      bottom: 0;
+      color: #9e9e9e; }
+      .text-input-client.icon-right > span.helper-text, .text-input-client.icon-right > span.error-text {
+        float: left;
+        padding: 8px 12px 0 12px; }
+      .text-input-client.icon-right > span.error-text {
+        display: none; }
+      .text-input-client.icon-right > span.word-length {
+        float: right;
+        padding: 8px 12px 0 0; }
+    .text-input-client.icon-right.error > div > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .text-input-client.icon-right.error > span {
+      color: #e52929; }
+    .text-input-client.icon-right:after {
+      clear: both;
+      display: block;
+      content: ''; }
+  .text-input-client.icon-left {
+    position: relative; }
+    .text-input-client.icon-left > div > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 12px 8px 38px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-client.icon-left > div > input {
+          line-height: 1em;
+          padding: 8px 12px 8px 38px; } }
+      .text-input-client.icon-left > div > input::placeholder, .text-input-client.icon-left > div > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .text-input-client.icon-left > div > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .text-input-client.icon-left > div > input:hover, .text-input-client.icon-left > div > input:focus {
+        border-color: #2e6baa; }
+        .text-input-client.icon-left > div > input:hover:disabled:hover, .text-input-client.icon-left > div > input:hover:disabled:focus, .text-input-client.icon-left > div > input:focus:disabled:hover, .text-input-client.icon-left > div > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .text-input-client.icon-left > div > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .text-input-client.icon-left > div > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .text-input-client.icon-left input:-ms-input-placeholder {
       color: #bdbdbd;
       line-height: inherit; }
-    .text-input-client.input-small > input:disabled {
-      background: #fafafa;
-      color: #bdbdbd; }
-    .text-input-client.input-small > input:hover, .text-input-client.input-small > input:focus {
-      border-color: #2e6baa; }
-      .text-input-client.input-small > input:hover:disabled:hover, .text-input-client.input-small > input:hover:disabled:focus, .text-input-client.input-small > input:focus:disabled:hover, .text-input-client.input-small > input:focus:disabled:focus {
-        border-color: #e0e0e0; }
-    .text-input-client.input-small > input[type='password'] {
-      font-size: 1.3rem;
-      letter-spacing: -2px;
-      font-family: Consolas, Courier, monospace; }
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      .text-input-client.input-small > input {
-        line-height: 1em;
-        padding: 11px 13px; } }
-  .text-input-client.input-small input:-ms-input-placeholder {
-    color: #bdbdbd;
-    line-height: inherit; }
-  .text-input-client.input-small input[type=text]::-ms-clear {
-    display: none; }
-  .text-input-client.input-small > span {
-    font-size: 0.813rem;
-    font-weight: 400;
-    bottom: 0;
-    color: #9e9e9e; }
-    .text-input-client.input-small > span.helper-text {
-      float: left;
-      padding: 8px 12px 0 12px; }
-    .text-input-client.input-small > span.word-length {
-      float: right;
-      padding: 8px 12px 0 0; }
-  .text-input-client.input-small.error > input {
-    color: #e52929;
-    border-color: #e52929; }
-  .text-input-client.input-small.error > span {
-    color: #e52929; }
-  .text-input-client.input-small:after {
-    clear: both;
-    display: block;
-    content: ''; }
+    .text-input-client.icon-left input[type=text]::-ms-clear {
+      display: none; }
+    .text-input-client.icon-left input[type="number"]::-webkit-outer-spin-button,
+    .text-input-client.icon-left input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .text-input-client.icon-left > div > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      left: 12px; }
+    .text-input-client.icon-left > span {
+      font-size: 0.813rem;
+      font-weight: 400;
+      bottom: 0;
+      color: #9e9e9e; }
+      .text-input-client.icon-left > span.helper-text, .text-input-client.icon-left > span.error-text {
+        float: left;
+        padding: 8px 12px 0 12px; }
+      .text-input-client.icon-left > span.error-text {
+        display: none; }
+      .text-input-client.icon-left > span.word-length {
+        float: right;
+        padding: 8px 12px 0 0; }
+    .text-input-client.icon-left.error > div > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .text-input-client.icon-left.error > span {
+      color: #e52929; }
+    .text-input-client.icon-left:after {
+      clear: both;
+      display: block;
+      content: ''; }
 
 .label-input-wishket {
   position: relative; }
@@ -606,6 +1131,10 @@ button {
     text-indent: -999999px; }
   .label-input-wishket input[type=text]::-ms-clear {
     display: none; }
+  .label-input-wishket input[type="number"]::-webkit-outer-spin-button,
+  .label-input-wishket input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
   .label-input-wishket > label {
     position: absolute;
     left: 13px;
@@ -632,6 +1161,12 @@ button {
     color: #e52929; }
   .label-input-wishket.error > input:focus ~ label {
     color: #e52929 !important; }
+  .label-input-wishket + .error-text {
+    color: #e52929;
+    padding: 8px 12px 0 12px;
+    font-size: 0.813rem;
+    font-weight: 400;
+    display: block; }
   .label-input-wishket.icon-right {
     position: relative; }
     .label-input-wishket.icon-right > input {
@@ -667,6 +1202,10 @@ button {
       text-indent: -999999px; }
     .label-input-wishket.icon-right input[type=text]::-ms-clear {
       display: none; }
+    .label-input-wishket.icon-right input[type="number"]::-webkit-outer-spin-button,
+    .label-input-wishket.icon-right input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
     .label-input-wishket.icon-right > label {
       position: absolute;
       left: 13px;
@@ -694,6 +1233,12 @@ button {
       color: #e52929; }
     .label-input-wishket.icon-right.error > input:focus ~ label {
       color: #e52929 !important; }
+    .label-input-wishket.icon-right + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
   .label-input-wishket.icon-left {
     position: relative; }
     .label-input-wishket.icon-left > input {
@@ -729,6 +1274,10 @@ button {
       text-indent: -999999px; }
     .label-input-wishket.icon-left input[type=text]::-ms-clear {
       display: none; }
+    .label-input-wishket.icon-left input[type="number"]::-webkit-outer-spin-button,
+    .label-input-wishket.icon-left input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
     .label-input-wishket.icon-left > label {
       position: absolute;
       left: 44px;
@@ -756,6 +1305,12 @@ button {
       color: #e52929; }
     .label-input-wishket.icon-left.error > input:focus ~ label {
       color: #e52929 !important; }
+    .label-input-wishket.icon-left + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
 
 .label-input-client {
   position: relative; }
@@ -792,6 +1347,10 @@ button {
     text-indent: -999999px; }
   .label-input-client input[type=text]::-ms-clear {
     display: none; }
+  .label-input-client input[type="number"]::-webkit-outer-spin-button,
+  .label-input-client input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
   .label-input-client > label {
     position: absolute;
     left: 13px;
@@ -818,6 +1377,12 @@ button {
     color: #e52929; }
   .label-input-client.error > input:focus ~ label {
     color: #e52929 !important; }
+  .label-input-client + .error-text {
+    color: #e52929;
+    padding: 8px 12px 0 12px;
+    font-size: 0.813rem;
+    font-weight: 400;
+    display: block; }
   .label-input-client.icon-right {
     position: relative; }
     .label-input-client.icon-right > input {
@@ -853,6 +1418,10 @@ button {
       text-indent: -999999px; }
     .label-input-client.icon-right input[type=text]::-ms-clear {
       display: none; }
+    .label-input-client.icon-right input[type="number"]::-webkit-outer-spin-button,
+    .label-input-client.icon-right input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
     .label-input-client.icon-right > label {
       position: absolute;
       left: 13px;
@@ -880,6 +1449,12 @@ button {
       color: #e52929; }
     .label-input-client.icon-right.error > input:focus ~ label {
       color: #e52929 !important; }
+    .label-input-client.icon-right + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
   .label-input-client.icon-left {
     position: relative; }
     .label-input-client.icon-left > input {
@@ -915,6 +1490,10 @@ button {
       text-indent: -999999px; }
     .label-input-client.icon-left input[type=text]::-ms-clear {
       display: none; }
+    .label-input-client.icon-left input[type="number"]::-webkit-outer-spin-button,
+    .label-input-client.icon-left input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
     .label-input-client.icon-left > label {
       position: absolute;
       left: 44px;
@@ -942,6 +1521,12 @@ button {
       color: #e52929; }
     .label-input-client.icon-left.error > input:focus ~ label {
       color: #e52929 !important; }
+    .label-input-client.icon-left + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
 
 .label-input-partner {
   position: relative; }
@@ -978,6 +1563,10 @@ button {
     text-indent: -999999px; }
   .label-input-partner input[type=text]::-ms-clear {
     display: none; }
+  .label-input-partner input[type="number"]::-webkit-outer-spin-button,
+  .label-input-partner input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
   .label-input-partner > label {
     position: absolute;
     left: 13px;
@@ -1004,6 +1593,12 @@ button {
     color: #e52929; }
   .label-input-partner.error > input:focus ~ label {
     color: #e52929 !important; }
+  .label-input-partner + .error-text {
+    color: #e52929;
+    padding: 8px 12px 0 12px;
+    font-size: 0.813rem;
+    font-weight: 400;
+    display: block; }
   .label-input-partner.icon-right {
     position: relative; }
     .label-input-partner.icon-right > input {
@@ -1039,6 +1634,10 @@ button {
       text-indent: -999999px; }
     .label-input-partner.icon-right input[type=text]::-ms-clear {
       display: none; }
+    .label-input-partner.icon-right input[type="number"]::-webkit-outer-spin-button,
+    .label-input-partner.icon-right input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
     .label-input-partner.icon-right > label {
       position: absolute;
       left: 13px;
@@ -1066,6 +1665,12 @@ button {
       color: #e52929; }
     .label-input-partner.icon-right.error > input:focus ~ label {
       color: #e52929 !important; }
+    .label-input-partner.icon-right + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
   .label-input-partner.icon-left {
     position: relative; }
     .label-input-partner.icon-left > input {
@@ -1101,6 +1706,10 @@ button {
       text-indent: -999999px; }
     .label-input-partner.icon-left input[type=text]::-ms-clear {
       display: none; }
+    .label-input-partner.icon-left input[type="number"]::-webkit-outer-spin-button,
+    .label-input-partner.icon-left input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
     .label-input-partner.icon-left > label {
       position: absolute;
       left: 44px;
@@ -1128,6 +1737,717 @@ button {
       color: #e52929; }
     .label-input-partner.icon-left.error > input:focus ~ label {
       color: #e52929 !important; }
+    .label-input-partner.icon-left + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
+
+.default-input-wishket {
+  position: relative; }
+  .default-input-wishket > input {
+    display: block;
+    border-radius: 4px;
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: #616161;
+    font-weight: 400;
+    background: #fff;
+    width: 100%;
+    height: inherit;
+    padding: 8px 12px 8px 12px; }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .default-input-wishket > input {
+        line-height: 1em;
+        padding: 8px 12px 8px 12px; } }
+    .default-input-wishket > input::placeholder, .default-input-wishket > input::-webkit-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .default-input-wishket > input:disabled {
+      background: #fafafa;
+      color: #bdbdbd; }
+    .default-input-wishket > input:hover, .default-input-wishket > input:focus {
+      border-color: #3ba3c7; }
+      .default-input-wishket > input:hover:disabled:hover, .default-input-wishket > input:hover:disabled:focus, .default-input-wishket > input:focus:disabled:hover, .default-input-wishket > input:focus:disabled:focus {
+        border-color: #e0e0e0; }
+    .default-input-wishket > input[type='password'] {
+      font-size: 1.3rem;
+      letter-spacing: -2px;
+      font-family: Consolas, Courier, monospace; }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .default-input-wishket > input {
+        line-height: 1em;
+        padding: 11px 13px; } }
+  .default-input-wishket input:-ms-input-placeholder {
+    color: #bdbdbd;
+    line-height: inherit; }
+  .default-input-wishket input[type=text]::-ms-clear {
+    display: none; }
+  .default-input-wishket input[type="number"]::-webkit-outer-spin-button,
+  .default-input-wishket input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  .default-input-wishket > i {
+    position: absolute;
+    top: 19px;
+    transform: translateY(-50%);
+    line-height: 0; }
+  .default-input-wishket.error > input {
+    color: #e52929;
+    border-color: #e52929; }
+  .default-input-wishket:after {
+    clear: both;
+    display: block;
+    content: ''; }
+  .default-input-wishket.input-small {
+    position: relative; }
+    .default-input-wishket.input-small > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.813rem;
+      line-height: 1.25rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 12px 8px 12px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-wishket.input-small > input {
+          line-height: 1em;
+          padding: 8px 12px 8px 12px; } }
+      .default-input-wishket.input-small > input::placeholder, .default-input-wishket.input-small > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .default-input-wishket.input-small > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .default-input-wishket.input-small > input:hover, .default-input-wishket.input-small > input:focus {
+        border-color: #3ba3c7; }
+        .default-input-wishket.input-small > input:hover:disabled:hover, .default-input-wishket.input-small > input:hover:disabled:focus, .default-input-wishket.input-small > input:focus:disabled:hover, .default-input-wishket.input-small > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .default-input-wishket.input-small > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-wishket.input-small > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .default-input-wishket.input-small input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .default-input-wishket.input-small input[type=text]::-ms-clear {
+      display: none; }
+    .default-input-wishket.input-small input[type="number"]::-webkit-outer-spin-button,
+    .default-input-wishket.input-small input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .default-input-wishket.input-small > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      line-height: 0; }
+    .default-input-wishket.input-small.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .default-input-wishket.input-small:after {
+      clear: both;
+      display: block;
+      content: ''; }
+  .default-input-wishket.icon-right {
+    position: relative; }
+    .default-input-wishket.icon-right > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.813rem;
+      line-height: 1.25rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 38px 8px 12px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-wishket.icon-right > input {
+          line-height: 1em;
+          padding: 12px 38px 8px 12px; } }
+      .default-input-wishket.icon-right > input::placeholder, .default-input-wishket.icon-right > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .default-input-wishket.icon-right > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .default-input-wishket.icon-right > input:hover, .default-input-wishket.icon-right > input:focus {
+        border-color: #3ba3c7; }
+        .default-input-wishket.icon-right > input:hover:disabled:hover, .default-input-wishket.icon-right > input:hover:disabled:focus, .default-input-wishket.icon-right > input:focus:disabled:hover, .default-input-wishket.icon-right > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .default-input-wishket.icon-right > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-wishket.icon-right > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .default-input-wishket.icon-right input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .default-input-wishket.icon-right input[type=text]::-ms-clear {
+      display: none; }
+    .default-input-wishket.icon-right input[type="number"]::-webkit-outer-spin-button,
+    .default-input-wishket.icon-right input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .default-input-wishket.icon-right > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      line-height: 0;
+      right: 12px; }
+    .default-input-wishket.icon-right.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .default-input-wishket.icon-right:after {
+      clear: both;
+      display: block;
+      content: ''; }
+  .default-input-wishket.icon-left {
+    position: relative; }
+    .default-input-wishket.icon-left > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.813rem;
+      line-height: 1.25rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 12px 8px 38px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-wishket.icon-left > input {
+          line-height: 1em;
+          padding: 8px 12px 8px 38px; } }
+      .default-input-wishket.icon-left > input::placeholder, .default-input-wishket.icon-left > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .default-input-wishket.icon-left > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .default-input-wishket.icon-left > input:hover, .default-input-wishket.icon-left > input:focus {
+        border-color: #3ba3c7; }
+        .default-input-wishket.icon-left > input:hover:disabled:hover, .default-input-wishket.icon-left > input:hover:disabled:focus, .default-input-wishket.icon-left > input:focus:disabled:hover, .default-input-wishket.icon-left > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .default-input-wishket.icon-left > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-wishket.icon-left > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .default-input-wishket.icon-left input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .default-input-wishket.icon-left input[type=text]::-ms-clear {
+      display: none; }
+    .default-input-wishket.icon-left input[type="number"]::-webkit-outer-spin-button,
+    .default-input-wishket.icon-left input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .default-input-wishket.icon-left > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      line-height: 0;
+      left: 12px; }
+    .default-input-wishket.icon-left.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .default-input-wishket.icon-left:after {
+      clear: both;
+      display: block;
+      content: ''; }
+
+.default-input-partner {
+  position: relative; }
+  .default-input-partner > input {
+    display: block;
+    border-radius: 4px;
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: #616161;
+    font-weight: 400;
+    background: #fff;
+    width: 100%;
+    height: inherit;
+    padding: 8px 12px 8px 12px; }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .default-input-partner > input {
+        line-height: 1em;
+        padding: 8px 12px 8px 12px; } }
+    .default-input-partner > input::placeholder, .default-input-partner > input::-webkit-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .default-input-partner > input:disabled {
+      background: #fafafa;
+      color: #bdbdbd; }
+    .default-input-partner > input:hover, .default-input-partner > input:focus {
+      border-color: #00a878; }
+      .default-input-partner > input:hover:disabled:hover, .default-input-partner > input:hover:disabled:focus, .default-input-partner > input:focus:disabled:hover, .default-input-partner > input:focus:disabled:focus {
+        border-color: #e0e0e0; }
+    .default-input-partner > input[type='password'] {
+      font-size: 1.3rem;
+      letter-spacing: -2px;
+      font-family: Consolas, Courier, monospace; }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .default-input-partner > input {
+        line-height: 1em;
+        padding: 11px 13px; } }
+  .default-input-partner input:-ms-input-placeholder {
+    color: #bdbdbd;
+    line-height: inherit; }
+  .default-input-partner input[type=text]::-ms-clear {
+    display: none; }
+  .default-input-partner input[type="number"]::-webkit-outer-spin-button,
+  .default-input-partner input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  .default-input-partner > i {
+    position: absolute;
+    top: 19px;
+    transform: translateY(-50%);
+    line-height: 0; }
+  .default-input-partner.error > input {
+    color: #e52929;
+    border-color: #e52929; }
+  .default-input-partner:after {
+    clear: both;
+    display: block;
+    content: ''; }
+  .default-input-partner.input-small {
+    position: relative; }
+    .default-input-partner.input-small > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.813rem;
+      line-height: 1.25rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 12px 8px 12px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-partner.input-small > input {
+          line-height: 1em;
+          padding: 8px 12px 8px 12px; } }
+      .default-input-partner.input-small > input::placeholder, .default-input-partner.input-small > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .default-input-partner.input-small > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .default-input-partner.input-small > input:hover, .default-input-partner.input-small > input:focus {
+        border-color: #00a878; }
+        .default-input-partner.input-small > input:hover:disabled:hover, .default-input-partner.input-small > input:hover:disabled:focus, .default-input-partner.input-small > input:focus:disabled:hover, .default-input-partner.input-small > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .default-input-partner.input-small > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-partner.input-small > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .default-input-partner.input-small input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .default-input-partner.input-small input[type=text]::-ms-clear {
+      display: none; }
+    .default-input-partner.input-small input[type="number"]::-webkit-outer-spin-button,
+    .default-input-partner.input-small input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .default-input-partner.input-small > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      line-height: 0; }
+    .default-input-partner.input-small.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .default-input-partner.input-small:after {
+      clear: both;
+      display: block;
+      content: ''; }
+  .default-input-partner.icon-right {
+    position: relative; }
+    .default-input-partner.icon-right > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 38px 8px 12px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-partner.icon-right > input {
+          line-height: 1em;
+          padding: 12px 38px 8px 12px; } }
+      .default-input-partner.icon-right > input::placeholder, .default-input-partner.icon-right > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .default-input-partner.icon-right > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .default-input-partner.icon-right > input:hover, .default-input-partner.icon-right > input:focus {
+        border-color: #00a878; }
+        .default-input-partner.icon-right > input:hover:disabled:hover, .default-input-partner.icon-right > input:hover:disabled:focus, .default-input-partner.icon-right > input:focus:disabled:hover, .default-input-partner.icon-right > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .default-input-partner.icon-right > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-partner.icon-right > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .default-input-partner.icon-right input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .default-input-partner.icon-right input[type=text]::-ms-clear {
+      display: none; }
+    .default-input-partner.icon-right input[type="number"]::-webkit-outer-spin-button,
+    .default-input-partner.icon-right input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .default-input-partner.icon-right > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      line-height: 0;
+      right: 12px; }
+    .default-input-partner.icon-right.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .default-input-partner.icon-right:after {
+      clear: both;
+      display: block;
+      content: ''; }
+  .default-input-partner.icon-left {
+    position: relative; }
+    .default-input-partner.icon-left > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 12px 8px 38px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-partner.icon-left > input {
+          line-height: 1em;
+          padding: 8px 12px 8px 38px; } }
+      .default-input-partner.icon-left > input::placeholder, .default-input-partner.icon-left > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .default-input-partner.icon-left > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .default-input-partner.icon-left > input:hover, .default-input-partner.icon-left > input:focus {
+        border-color: #00a878; }
+        .default-input-partner.icon-left > input:hover:disabled:hover, .default-input-partner.icon-left > input:hover:disabled:focus, .default-input-partner.icon-left > input:focus:disabled:hover, .default-input-partner.icon-left > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .default-input-partner.icon-left > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-partner.icon-left > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .default-input-partner.icon-left input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .default-input-partner.icon-left input[type=text]::-ms-clear {
+      display: none; }
+    .default-input-partner.icon-left input[type="number"]::-webkit-outer-spin-button,
+    .default-input-partner.icon-left input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .default-input-partner.icon-left > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      line-height: 0;
+      left: 12px; }
+    .default-input-partner.icon-left.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .default-input-partner.icon-left:after {
+      clear: both;
+      display: block;
+      content: ''; }
+
+.default-input-client {
+  position: relative; }
+  .default-input-client > input {
+    display: block;
+    border-radius: 4px;
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: #616161;
+    font-weight: 400;
+    background: #fff;
+    width: 100%;
+    height: inherit;
+    padding: 8px 12px 8px 12px; }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .default-input-client > input {
+        line-height: 1em;
+        padding: 8px 12px 8px 12px; } }
+    .default-input-client > input::placeholder, .default-input-client > input::-webkit-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .default-input-client > input:disabled {
+      background: #fafafa;
+      color: #bdbdbd; }
+    .default-input-client > input:hover, .default-input-client > input:focus {
+      border-color: #2e6baa; }
+      .default-input-client > input:hover:disabled:hover, .default-input-client > input:hover:disabled:focus, .default-input-client > input:focus:disabled:hover, .default-input-client > input:focus:disabled:focus {
+        border-color: #e0e0e0; }
+    .default-input-client > input[type='password'] {
+      font-size: 1.3rem;
+      letter-spacing: -2px;
+      font-family: Consolas, Courier, monospace; }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .default-input-client > input {
+        line-height: 1em;
+        padding: 11px 13px; } }
+  .default-input-client input:-ms-input-placeholder {
+    color: #bdbdbd;
+    line-height: inherit; }
+  .default-input-client input[type=text]::-ms-clear {
+    display: none; }
+  .default-input-client input[type="number"]::-webkit-outer-spin-button,
+  .default-input-client input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  .default-input-client > i {
+    position: absolute;
+    top: 19px;
+    transform: translateY(-50%);
+    line-height: 0; }
+  .default-input-client.error > input {
+    color: #e52929;
+    border-color: #e52929; }
+  .default-input-client:after {
+    clear: both;
+    display: block;
+    content: ''; }
+  .default-input-client.input-small {
+    position: relative; }
+    .default-input-client.input-small > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.813rem;
+      line-height: 1.25rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 12px 8px 12px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-client.input-small > input {
+          line-height: 1em;
+          padding: 8px 12px 8px 12px; } }
+      .default-input-client.input-small > input::placeholder, .default-input-client.input-small > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .default-input-client.input-small > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .default-input-client.input-small > input:hover, .default-input-client.input-small > input:focus {
+        border-color: #2e6baa; }
+        .default-input-client.input-small > input:hover:disabled:hover, .default-input-client.input-small > input:hover:disabled:focus, .default-input-client.input-small > input:focus:disabled:hover, .default-input-client.input-small > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .default-input-client.input-small > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-client.input-small > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .default-input-client.input-small input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .default-input-client.input-small input[type=text]::-ms-clear {
+      display: none; }
+    .default-input-client.input-small input[type="number"]::-webkit-outer-spin-button,
+    .default-input-client.input-small input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .default-input-client.input-small > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      line-height: 0; }
+    .default-input-client.input-small.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .default-input-client.input-small:after {
+      clear: both;
+      display: block;
+      content: ''; }
+  .default-input-client.icon-right {
+    position: relative; }
+    .default-input-client.icon-right > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 38px 8px 12px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-client.icon-right > input {
+          line-height: 1em;
+          padding: 12px 38px 8px 12px; } }
+      .default-input-client.icon-right > input::placeholder, .default-input-client.icon-right > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .default-input-client.icon-right > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .default-input-client.icon-right > input:hover, .default-input-client.icon-right > input:focus {
+        border-color: #2e6baa; }
+        .default-input-client.icon-right > input:hover:disabled:hover, .default-input-client.icon-right > input:hover:disabled:focus, .default-input-client.icon-right > input:focus:disabled:hover, .default-input-client.icon-right > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .default-input-client.icon-right > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-client.icon-right > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .default-input-client.icon-right input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .default-input-client.icon-right input[type=text]::-ms-clear {
+      display: none; }
+    .default-input-client.icon-right input[type="number"]::-webkit-outer-spin-button,
+    .default-input-client.icon-right input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .default-input-client.icon-right > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      line-height: 0;
+      right: 12px; }
+    .default-input-client.icon-right.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .default-input-client.icon-right:after {
+      clear: both;
+      display: block;
+      content: ''; }
+  .default-input-client.icon-left {
+    position: relative; }
+    .default-input-client.icon-left > input {
+      display: block;
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #e0e0e0;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+      color: #616161;
+      font-weight: 400;
+      background: #fff;
+      width: 100%;
+      height: inherit;
+      padding: 8px 12px 8px 38px; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-client.icon-left > input {
+          line-height: 1em;
+          padding: 8px 12px 8px 38px; } }
+      .default-input-client.icon-left > input::placeholder, .default-input-client.icon-left > input::-webkit-input-placeholder {
+        color: #bdbdbd;
+        line-height: inherit; }
+      .default-input-client.icon-left > input:disabled {
+        background: #fafafa;
+        color: #bdbdbd; }
+      .default-input-client.icon-left > input:hover, .default-input-client.icon-left > input:focus {
+        border-color: #2e6baa; }
+        .default-input-client.icon-left > input:hover:disabled:hover, .default-input-client.icon-left > input:hover:disabled:focus, .default-input-client.icon-left > input:focus:disabled:hover, .default-input-client.icon-left > input:focus:disabled:focus {
+          border-color: #e0e0e0; }
+      .default-input-client.icon-left > input[type='password'] {
+        font-size: 1.3rem;
+        letter-spacing: -2px;
+        font-family: Consolas, Courier, monospace; }
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .default-input-client.icon-left > input {
+          line-height: 1em;
+          padding: 11px 13px; } }
+    .default-input-client.icon-left input:-ms-input-placeholder {
+      color: #bdbdbd;
+      line-height: inherit; }
+    .default-input-client.icon-left input[type=text]::-ms-clear {
+      display: none; }
+    .default-input-client.icon-left input[type="number"]::-webkit-outer-spin-button,
+    .default-input-client.icon-left input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+    .default-input-client.icon-left > i {
+      position: absolute;
+      top: 19px;
+      transform: translateY(-50%);
+      line-height: 0;
+      left: 12px; }
+    .default-input-client.icon-left.error > input {
+      color: #e52929;
+      border-color: #e52929; }
+    .default-input-client.icon-left:after {
+      clear: both;
+      display: block;
+      content: ''; }
 
 .checkbox-wishket {
   padding: 0;
@@ -2073,7 +3393,7 @@ button {
     width: calc(100% - 16px);
     user-select: none;
     cursor: pointer;
-    padding: 0 8px;
+    padding: 0 12px;
     font-weight: 400;
     font-size: 0.875rem;
     color: #212121;
@@ -2236,7 +3556,7 @@ button {
     width: calc(100% - 16px);
     user-select: none;
     cursor: pointer;
-    padding: 0 8px;
+    padding: 0 12px;
     font-weight: 400;
     font-size: 0.875rem;
     color: #212121;
@@ -2399,7 +3719,7 @@ button {
     width: calc(100% - 16px);
     user-select: none;
     cursor: pointer;
-    padding: 0 8px;
+    padding: 0 12px;
     font-weight: 400;
     font-size: 0.875rem;
     color: #212121;

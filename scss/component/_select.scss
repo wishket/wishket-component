@@ -6,6 +6,7 @@
   display:inline-block;
   min-width:260px;
   line-height: 0;
+  background:#fff;
   >.selectBg{
     position:absolute;
     width:100%;
@@ -34,10 +35,14 @@
         top:50%;
       }
     }
-    >p{
+    >p.select-name{
       font-size:0.875rem;
       line-height: 1.500rem;
       opacity: 0;
+      height:24px;
+      overflow: hidden;
+      word-break: keep-all;
+      text-overflow: ellipsis;
       transition: all .3s cubic-bezier(.71, -0.46, .88, .6), dispay .1s .3s cubic-bezier(.71, -0.46, .88, .6);
     }
     >i{
@@ -117,11 +122,7 @@
         color:$color-gray300;
       }
       >p{
-        display:block;
         opacity: 1;
-        overflow: hidden;
-        word-break: keep-all;
-        text-overflow: ellipsis;
       }
     }
   }
@@ -141,11 +142,6 @@
   &:hover{
     >.select-box{
       border-color:$brand-color;
-      >p{
-        visibility: visible;
-        display:block;
-        opacity: 1;
-      }
       >.select-label{
         color:$brand-color;
       }

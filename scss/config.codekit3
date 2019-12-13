@@ -17,7 +17,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/base/_color.css",
+		"oAP": "/build/base/_color.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -30,7 +30,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/base/_font.css",
+		"oAP": "/build/base/_font.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -40,7 +40,7 @@
 		"ft": 8192,
 		"hM": 0,
 		"oA": 1,
-		"oAP": "/base/_font.scss_bak",
+		"oAP": "/build/base/_font.scss_bak",
 		"oF": 0
 		},
 	"/base/_normalize.scss": {
@@ -51,7 +51,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/base/_normalize.css",
+		"oAP": "/build/base/_normalize.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -77,7 +77,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/base/_typography.css",
+		"oAP": "/build/base/_typography.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -103,8 +103,8 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/component/_autocomplete.css",
-		"oF": 0,
+		"oAP": "/build/component/_autocomplete.css",
+		"oF": 1,
 		"oS": 0,
 		"uL": 1
 		},
@@ -116,7 +116,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/component/_checkbox.css",
+		"oAP": "/build/component/_checkbox.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -129,7 +129,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/component/_input.css",
+		"oAP": "/build/component/_input.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -142,7 +142,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/component/_radio.css",
+		"oAP": "/build/component/_radio.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -155,7 +155,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/component/_select.css",
+		"oAP": "/build/component/_select.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -168,7 +168,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/component/_select_backup.css",
+		"oAP": "/build/component/_select_backup.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -181,7 +181,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/component/_textarea.css",
+		"oAP": "/build/component/_textarea.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -194,7 +194,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "/component/_toggle.css",
+		"oAP": "/build/component/_toggle.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -206,9 +206,9 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
-		"oAP": "/variable/_mixin.css",
-		"oF": 0,
+		"oA": 0,
+		"oAP": "/build/variable/_mixin.css",
+		"oF": 1,
 		"oS": 0,
 		"uL": 1
 		}
@@ -222,7 +222,8 @@
 	"displayValue": "scss",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets-red",
-	"iconImageWasSetByUser": 0
+	"iconImageWasSetByUser": 0,
+	"lastBuiltDate": 597809664.90927196
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -516,7 +517,7 @@
 	"bowerUseExactVersion": 0,
 	"browserRefreshDelay": 0,
 	"browserslistString": ">0.2%, last 2 versions, Firefox ESR, not dead",
-	"buildFolderActive": 0,
+	"buildFolderActive": 1,
 	"buildFolderName": "build",
 	"cleanBuild": 1,
 	"coffeeLintFlags2": {
@@ -2602,7 +2603,7 @@
 		},
 	"uglifyMangleNames": 1,
 	"uglifyReservedNamesString": "$,exports,require",
-	"websiteRelativeRoot": ""
+	"websiteRelativeRoot": "/build"
 	},
 "settingsFileVersion": "3"
 }

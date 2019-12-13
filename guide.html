@@ -196,7 +196,7 @@
               <option value="3">관악구</option>
               <option value="4">동작구</option>
             </select>
-    
+
             <select id="select-example03" class="theme-client" name="ui-select-example03">
               <option>자동차</option>
               <option value="1">도요타</option>
@@ -207,7 +207,7 @@
               <option value="6">BMW</option>
               <option value="7">푸조</option>
             </select>
-    
+
             <select id="select-example04" class="theme-client" name="ui-select-example04">
               <option>휴대폰</option>
               <option value="1">아이폰</option>
@@ -260,9 +260,7 @@
           <section id='check' >
             <h3 class="subtitle-2-bold">Checkbox</h3>
             <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
-            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/checkbox.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $.uiCheckbox.setting();<br />});</code></pre>
-            <p>html</p>
-            <pre class="language-javascript"><code>&#60;CheckBox data-checkbox-type='single' data-checkbox-value='value01' data-checkbox-name='single01' data-checkbox-theme='client' data-checkbox-default=true data-checkbox-disabled=true></CheckBox></code></pre>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/checkbox.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $.uiCheckbox.setting();<br />});<br /><br />&#60;CheckBox<br />  data-checkbox-type='single'<br />  data-checkbox-value='value01'<br />  data-checkbox-name='single01'<br />  data-checkbox-theme='client'<br />  data-checkbox-default=true<br />  data-checkbox-disabled=true<br />>&#60;/CheckBox></code></pre>
             <table class="guide-table">
               <thead>
                 <tr>
@@ -333,6 +331,9 @@
               }]'
             >
             </CheckBox>
+
+            <hr class="guide-hr" />
+            <h3 class="subtitle-2-bold">Checkbox Group</h3>
             <table class="guide-table">
               <thead>
                 <tr>
@@ -411,56 +412,9 @@
           <hr class="guide-hr" />
           <section id="tree-check">
             <h3 class="subtitle-2-bold">Tree</h3>
-            <table class="guide-table">
-              <thead>
-                <tr>
-                  <th>구분</th>
-                  <th>설명</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>data-checkbox-type</td>
-                  <td>타입을 설정 <label>single</label></td>
-                </tr>
-                <tr>
-                  <td>data-checkbox-theme</td>
-                  <td>테마 설정 <label>client</label> <label>partner</label> <label>wishket</label></td>
-                </tr>
-                <tr>
-                  <td>data-checkbox-value</td>
-                  <td>input value 설정</td>
-                </tr>
-                <tr>
-                  <td>data-checkbox-name</td>
-                  <td>input name 설정</td>
-                </tr>
-                <tr>
-                  <td>data-checkbox-default</td>
-                  <td>기본 체크 여부 <label>true</label> <label>false</label></td>
-                </tr>
-                <tr>
-                  <td>data-checkbox-disabled</td>
-                  <td>disabled 여부</td>
-                </tr>
-                <tr>
-                  <td>data-checkbox-detaile</td>
-                  <td>체크박스 텍스트</td>
-                </tr>
-                <tr>
-                  <td>data-checkbox-addon</td>
-                  <td>addon 설정 <label>input</label></td>
-                </tr>
-                <tr>
-                  <td>id</td>
-                  <td>id 설정 addon 사용시 필수</td>
-                </tr>
-                <tr>
-                  <td>data-addon-input</td>
-                  <td><label>class</label> addon class 설정, <label>placeholder</label> 인풋 placeholder 설정, <label>theme</label> addon theme 설정</td>
-                </tr>
-              </tbody>
-            </table>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/checkbox.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $.uiCheckbox.setting();<br />});<br />&#60;CheckBox<br />  data-checkbox-type='tree'<br />  data-checkbox-theme='partner'<br />  data-options='[<br />    {"label":"트리테스트", "value":"apple", "depth":1, "name" : "tree01", "tree":"treeName01"}, <br />    {"label":"애플리케이션", "value":"apple", "depth":2, "name" : "tree01", "tree":"treeName01"}, <br />    {"label":"워드프레스", "value":"web", "depth":2, "name" : "tree01", "tree":"treeName01"}, <br />    {"label":"퍼블리싱", "value":"web", "depth":2, "name":"tree01", "tree":"treeName01"},<br />    {"label":"개발", "value":"web", "depth":1, "name":"tree03", "tree":"treeName02"},<br />    {"label":"애플리케이션", "value":"apple", "depth":2, "name":"tree03", "tree":"treeName02"}, <br />    {"label":"워드프레스", "value":"web", "depth":2, "name":"tree03", "tree":"treeName02"},<br />    {"label":"퍼블리싱", "value":"web", "depth":2, "name":"tree03", "tree":"treeName02"}<br />  ]'<br />><br />&#60;/CheckBox>
+            </code></pre>
             <CheckBox
               data-checkbox-type='tree'
               data-checkbox-theme='partner'
@@ -676,7 +630,6 @@
         e.preventDefault();
         var $target = $(this.hash);
         $('html').animate( { scrollTop : $target.offset().top }, 500 );
-        console.log($target.position().top);
       });
     });
     $(window).on('load', function(){

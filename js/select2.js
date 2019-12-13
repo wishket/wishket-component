@@ -4,23 +4,44 @@
 
   var defaults = {
     width: "100%", //width
+    type: "default-select", //type
   }
 
   var UiSelect = function (node, options){
     this.node = node;
     this.$node = $(this.node);
     this.settings = $.extend({}, defaults, options);
-    this.init();
+    if(this.settings.type === 'default-select'){
+      this.defaultInit();
+      
+    }else if(this.settings.type === 'label-select'){
+      this.labelInit();
+    }
+    
   };
 
   UiSelect.prototype = {
-    init: function(){
-      this.createHtml();
+    toggle: function(state, node, classNmae){
+      if(state){
+        node.addClass(classNmae);
+      }else{
+        node.removeClass(classNmae);
+      }
+    },
+
+    selectSync: function(value){
+      this.$node.val(value).prop("selected", true);
+      this.$node.trigger("change");
+    },
+
+    //label input
+    labelInit: function(){
+      this.labelCreateHtml();
       this.$node.hide();
       this.$node.next().css('width', this.settings.width);
     },
 
-    practice: function(){
+    labelPractice: function(){
       var self = this;
       var divSelect = this.$node.next();
 
@@ -58,20 +79,7 @@
       });
     },
 
-    toggle: function(state, node, classNmae){
-      if(state){
-        node.addClass(classNmae);
-      }else{
-        node.removeClass(classNmae);
-      }
-    },
-
-    selectSync: function(value){
-      this.$node.val(value).prop("selected", true);
-      this.$node.trigger("change");
-    },
-
-    createHtml: function(){
+    labelCreateHtml: function(){
       var label = this.$node.find("option:first").text();
       $(this.node).find("option:first").remove();
       var option = this.$node.find("option");
@@ -106,11 +114,17 @@
         }
         selectDropdown.append('<li data-select-value="'+value+'"'+getClass+'>'+text+'</li>')
       });
-      this.practice();
+      this.labelPractice();
     },
+
+    //default
+    defaultInit: function(){
+      
+    }
   };
+
   $.fn.uiSelect=function(options){
-    //close
+    //label select close
     $(document).on("click", function(e){
       if(!$(e.target).hasClass('selectBg') && !$(e.target).hasClass("ui-label-select")){
         $("div.ui-label-select").each(function(){
