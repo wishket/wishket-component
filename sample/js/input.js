@@ -50,13 +50,9 @@
 
     numberKeyEvent: function(){
       this.$node.on('keypress',function(){
-        var number = $(this).val().split("");
-        for(var i=1; i<=$(this).val().length + 1; i++){
-          if(i % 3 == 0 ){
-            console.log(number);
-            console.log("뭐고 이거");
-          }
-        }
+        var number = $(this).val().replace(/\D/g, "");
+        number = number.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        $(this).val(number);
       });
     },
 
