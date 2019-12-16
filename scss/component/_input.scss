@@ -1,4 +1,6 @@
 //text input stlye
+.error-text{display: none;}
+
 @mixin textinput($icon-position, $padding, $brand-color, $placeholder-color, $font-color, $font-size, $line-height){
   position:relative;
   // padding-bottom:28px;
@@ -372,6 +374,11 @@
       font-size:1.3rem;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace;
+      &::placeholder, &::-webkit-input-placeholder{
+        font-family: NotoSansKR !important;
+        font-size:$font-size !important;
+        letter-spacing: 0 !important;
+      }
     }
 
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -396,7 +403,7 @@
 
   >i{
     position:absolute;
-    top:19px;
+    top:50%;
     transform: translateY(-50%);
     line-height: 0;
     @if $icon-position == icon-right {
@@ -410,6 +417,13 @@
     >input{
       color:$color-red500;
       border-color:$color-red500;
+    }
+    +.error-text{
+      color:$color-red500;
+      padding:8px 12px 0 12px;
+      font-size:0.813rem;
+      font-weight: 400;
+      display:block;
     }
   }
 

@@ -58,10 +58,15 @@
                 </tr>
               </tbody>
             </table>
-            <input id='hoho' data-input-type='text-input' class='value01' data-input-theme='wishket' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 1' />
-            <input data-input-type='text-input' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 2'/>
-            <input data-input-type='text-input' data-input-theme='partner' type='text' placeholder="플레이스 홀더" maxlength="300" data-input-helper='핼퍼 텍스트 상세 내용 3'/>
-            <input data-input-type='text-input' data-input-theme='client' type='text' placeholder="플레이스 홀더" maxlength="300" disabled data-input-helper='핼퍼 텍스트 상세 내용 4'/>
+            <div>
+              <input data-type="text" type="text" class="theme-wishket input-sample" placeholder="123213231" maxlength="10"/>
+              <span class="helper-text">헬퍼헬퍼헬퍼</span>
+            </div>
+            <div>
+              <input data-type="text" type="text" class="theme-wishket input-sample" placeholder="123213231" maxlength="10"/>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg></i>
+              <span class="helper-text">헬퍼헬퍼헬퍼</span>
+            </div>
           </section>
           <hr class="guide-hr" />
           <section id="label-text">
@@ -102,47 +107,65 @@
                 </tr>
               </tbody>
             </table>
-            <input
-              id='test2'
-              data-input-type='label-input'
-              data-input-theme='wishket'
-              data-input-label='레이블 입니다.'
-              type='text'
-              placeholder="플레이스 홀더"
-              data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
-              data-icon-position='right'
-            />
-            <input
-              id='test3'
-              data-input-type='label-input'
-              data-input-theme='partner'
-              data-input-label='레이블 입니다.'
-              type='text'
-              placeholder="플레이스 홀더"
-              data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
-              data-icon-position='left'
-            />
-            <input
-              id='test4'
-              data-input-type='label-input'
-              data-input-theme='client'
-              data-input-label='아이콘은 있지만 포지션 없을떄'
-              type='text'
-              placeholder="플레이스 홀더"
-              data-input-icon='<i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"/><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"/></g></svg></i>'
-              data-icon-position=''
-            />
-            <input
-              id='test5'
-              data-input-type='label-input'
-              data-input-theme='client'
-              data-input-label='포지션은 있지만 아이콘이 없을떄'
-              type='text'
-              placeholder="플레이스 홀더"
-              data-input-icon=''
-              data-icon-position='left'
-              disabled
-            />
+            <div>
+              <label>label</label>
+              <input data-type="label" type="text" class="theme-partner input-sample" placeholder="123213231" maxlength="10"/>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg></i>
+            </div>
+            <div>
+              <label>label</label>
+              <input data-type="label" type="text" value="test" class="theme-partner input-sample" placeholder="123213231" maxlength="10"/>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="password-input">
+            <h3 class="subtitle-2-bold">Password</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".password-sample").uiInput();<br />});<br /><br />&#60;input type="password" class="theme-partner password-sample" placeholder="password"/></code></pre>
+
+            <div>
+              <input type="password" value="test" class="theme-partner password-sample" placeholder="password"/>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="password-input">
+            <h3 class="subtitle-2-bold">Password (with Label)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".password-sample").uiInput();<br />});<br /><br />&#60;input type="password" data-type="label" class="theme-partner password-sample" placeholder="password"/></code></pre>
+            <div>
+              <label>비밀번호</label>
+              <input data-type="label" type="password" value="test" class="theme-partner password-sample" placeholder="password"/>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="password-input">
+            <h3 class="subtitle-2-bold">Tel</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".tel-sample").uiInput({<br />    inputType: "tel",<br />  });<br />});<br /><br />&#60;input type="text" class="theme-wishket tel-sample" placeholder="000-0000-0000" maxlength="13"/></code></pre>
+
+            <div>
+              <input type="text" class="theme-wishket tel-sample" placeholder="000-0000-0000" maxlength="13"/>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="tel-input">
+            <h3 class="subtitle-2-bold">Tel (with Label)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".tel-sample").uiInput({<br />    inputType: "tel",<br />  });<br />});<br /><br />&#60;input data-type="label" type="text" class="theme-partner tel-sample" placeholder="000-0000-0000" maxlength="13"/></code></pre>
+            <div>
+              <label>전화번호</label>
+              <input data-type="label" type="text" class="theme-partner tel-sample" placeholder="000-0000-0000" maxlength="13"/>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="tel-input">
+            <h3 class="subtitle-2-bold">Price</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".price-sample").uiInput({<br />    inputType: "price",<br />  });<br />});<br /><br />&#60;input data-type="label" type="text" class="theme-partner tel-sample" placeholder="000-0000-0000" maxlength="13"/></code></pre>
+            <div>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 2l-2 10L7 2 4 12 2 2"/><path stroke="#9E9E9E" stroke-width="1.2" d="M.4 5.8h13.2"/></g></svg></i>
+              <input type="text" class="theme-partner price-sample" placeholder="금액" maxlength="10"/>
+            </div>
           </section>
           <hr class="guide-hr" />
           <section id="guide-uiselect">
@@ -531,6 +554,8 @@
             <ul>
               <li><a href="#text-input" class="body-2-light">Text</a></li>
               <li><a href="#label-text" class="body-2-light">Text (with Label)</a></li>
+              <li><a href="#password-input" class="body-2-light">Password</a></li>
+              
               <li><a href="#guide-uiselect" class="body-2-light">Select (with Label)</a></li>
               <li><a href="#uiautocomplete" class="body-2-light">Autocomplete</a></li>
               <li><a href="#check" class="body-2-light">Checkbox</a></li>
@@ -556,7 +581,16 @@
   </div>
   <script>
     $(document).ready(function(){
-      $.uiInput.setting();
+      $(".input-sample, .password-sample").uiInput();
+
+      $(".tel-sample").uiInput({
+        inputType: "tel",
+      });
+
+      $(".price-sample").uiInput({
+        inputType: "price",
+      });
+
       $.uiCheckbox.setting();
       $.uiRadio.setting();
       $.uiToggle.setting();

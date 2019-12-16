@@ -223,6 +223,9 @@ button {
 .no-size {
   font-size: 0; }
 
+.error-text {
+  display: none; }
+
 .text-input-wishket {
   position: relative; }
   .text-input-wishket > div > input {
@@ -1777,6 +1780,10 @@ button {
       font-size: 1.3rem;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
+      .default-input-wishket > input[type='password']::placeholder, .default-input-wishket > input[type='password']::-webkit-input-placeholder {
+        font-family: NotoSansKR !important;
+        font-size: 0.875rem !important;
+        letter-spacing: 0 !important; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       .default-input-wishket > input {
         line-height: 1em;
@@ -1792,12 +1799,18 @@ button {
     margin: 0; }
   .default-input-wishket > i {
     position: absolute;
-    top: 19px;
+    top: 50%;
     transform: translateY(-50%);
     line-height: 0; }
   .default-input-wishket.error > input {
     color: #e52929;
     border-color: #e52929; }
+  .default-input-wishket.error + .error-text {
+    color: #e52929;
+    padding: 8px 12px 0 12px;
+    font-size: 0.813rem;
+    font-weight: 400;
+    display: block; }
   .default-input-wishket:after {
     clear: both;
     display: block;
@@ -1835,6 +1848,10 @@ button {
         font-size: 1.3rem;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
+        .default-input-wishket.input-small > input[type='password']::placeholder, .default-input-wishket.input-small > input[type='password']::-webkit-input-placeholder {
+          font-family: NotoSansKR !important;
+          font-size: 0.813rem !important;
+          letter-spacing: 0 !important; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .default-input-wishket.input-small > input {
           line-height: 1em;
@@ -1850,12 +1867,18 @@ button {
       margin: 0; }
     .default-input-wishket.input-small > i {
       position: absolute;
-      top: 19px;
+      top: 50%;
       transform: translateY(-50%);
       line-height: 0; }
     .default-input-wishket.input-small.error > input {
       color: #e52929;
       border-color: #e52929; }
+    .default-input-wishket.input-small.error + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
     .default-input-wishket.input-small:after {
       clear: both;
       display: block;
@@ -1893,6 +1916,10 @@ button {
         font-size: 1.3rem;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
+        .default-input-wishket.icon-right > input[type='password']::placeholder, .default-input-wishket.icon-right > input[type='password']::-webkit-input-placeholder {
+          font-family: NotoSansKR !important;
+          font-size: 0.813rem !important;
+          letter-spacing: 0 !important; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .default-input-wishket.icon-right > input {
           line-height: 1em;
@@ -1908,13 +1935,19 @@ button {
       margin: 0; }
     .default-input-wishket.icon-right > i {
       position: absolute;
-      top: 19px;
+      top: 50%;
       transform: translateY(-50%);
       line-height: 0;
       right: 12px; }
     .default-input-wishket.icon-right.error > input {
       color: #e52929;
       border-color: #e52929; }
+    .default-input-wishket.icon-right.error + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
     .default-input-wishket.icon-right:after {
       clear: both;
       display: block;
@@ -1952,6 +1985,10 @@ button {
         font-size: 1.3rem;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
+        .default-input-wishket.icon-left > input[type='password']::placeholder, .default-input-wishket.icon-left > input[type='password']::-webkit-input-placeholder {
+          font-family: NotoSansKR !important;
+          font-size: 0.813rem !important;
+          letter-spacing: 0 !important; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .default-input-wishket.icon-left > input {
           line-height: 1em;
@@ -1967,13 +2004,19 @@ button {
       margin: 0; }
     .default-input-wishket.icon-left > i {
       position: absolute;
-      top: 19px;
+      top: 50%;
       transform: translateY(-50%);
       line-height: 0;
       left: 12px; }
     .default-input-wishket.icon-left.error > input {
       color: #e52929;
       border-color: #e52929; }
+    .default-input-wishket.icon-left.error + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
     .default-input-wishket.icon-left:after {
       clear: both;
       display: block;
@@ -2012,6 +2055,10 @@ button {
       font-size: 1.3rem;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
+      .default-input-partner > input[type='password']::placeholder, .default-input-partner > input[type='password']::-webkit-input-placeholder {
+        font-family: NotoSansKR !important;
+        font-size: 0.875rem !important;
+        letter-spacing: 0 !important; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       .default-input-partner > input {
         line-height: 1em;
@@ -2027,12 +2074,18 @@ button {
     margin: 0; }
   .default-input-partner > i {
     position: absolute;
-    top: 19px;
+    top: 50%;
     transform: translateY(-50%);
     line-height: 0; }
   .default-input-partner.error > input {
     color: #e52929;
     border-color: #e52929; }
+  .default-input-partner.error + .error-text {
+    color: #e52929;
+    padding: 8px 12px 0 12px;
+    font-size: 0.813rem;
+    font-weight: 400;
+    display: block; }
   .default-input-partner:after {
     clear: both;
     display: block;
@@ -2070,6 +2123,10 @@ button {
         font-size: 1.3rem;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
+        .default-input-partner.input-small > input[type='password']::placeholder, .default-input-partner.input-small > input[type='password']::-webkit-input-placeholder {
+          font-family: NotoSansKR !important;
+          font-size: 0.813rem !important;
+          letter-spacing: 0 !important; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .default-input-partner.input-small > input {
           line-height: 1em;
@@ -2085,12 +2142,18 @@ button {
       margin: 0; }
     .default-input-partner.input-small > i {
       position: absolute;
-      top: 19px;
+      top: 50%;
       transform: translateY(-50%);
       line-height: 0; }
     .default-input-partner.input-small.error > input {
       color: #e52929;
       border-color: #e52929; }
+    .default-input-partner.input-small.error + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
     .default-input-partner.input-small:after {
       clear: both;
       display: block;
@@ -2128,6 +2191,10 @@ button {
         font-size: 1.3rem;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
+        .default-input-partner.icon-right > input[type='password']::placeholder, .default-input-partner.icon-right > input[type='password']::-webkit-input-placeholder {
+          font-family: NotoSansKR !important;
+          font-size: 0.875rem !important;
+          letter-spacing: 0 !important; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .default-input-partner.icon-right > input {
           line-height: 1em;
@@ -2143,13 +2210,19 @@ button {
       margin: 0; }
     .default-input-partner.icon-right > i {
       position: absolute;
-      top: 19px;
+      top: 50%;
       transform: translateY(-50%);
       line-height: 0;
       right: 12px; }
     .default-input-partner.icon-right.error > input {
       color: #e52929;
       border-color: #e52929; }
+    .default-input-partner.icon-right.error + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
     .default-input-partner.icon-right:after {
       clear: both;
       display: block;
@@ -2187,6 +2260,10 @@ button {
         font-size: 1.3rem;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
+        .default-input-partner.icon-left > input[type='password']::placeholder, .default-input-partner.icon-left > input[type='password']::-webkit-input-placeholder {
+          font-family: NotoSansKR !important;
+          font-size: 0.875rem !important;
+          letter-spacing: 0 !important; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .default-input-partner.icon-left > input {
           line-height: 1em;
@@ -2202,13 +2279,19 @@ button {
       margin: 0; }
     .default-input-partner.icon-left > i {
       position: absolute;
-      top: 19px;
+      top: 50%;
       transform: translateY(-50%);
       line-height: 0;
       left: 12px; }
     .default-input-partner.icon-left.error > input {
       color: #e52929;
       border-color: #e52929; }
+    .default-input-partner.icon-left.error + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
     .default-input-partner.icon-left:after {
       clear: both;
       display: block;
@@ -2247,6 +2330,10 @@ button {
       font-size: 1.3rem;
       letter-spacing: -2px;
       font-family: Consolas, Courier, monospace; }
+      .default-input-client > input[type='password']::placeholder, .default-input-client > input[type='password']::-webkit-input-placeholder {
+        font-family: NotoSansKR !important;
+        font-size: 0.875rem !important;
+        letter-spacing: 0 !important; }
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       .default-input-client > input {
         line-height: 1em;
@@ -2262,12 +2349,18 @@ button {
     margin: 0; }
   .default-input-client > i {
     position: absolute;
-    top: 19px;
+    top: 50%;
     transform: translateY(-50%);
     line-height: 0; }
   .default-input-client.error > input {
     color: #e52929;
     border-color: #e52929; }
+  .default-input-client.error + .error-text {
+    color: #e52929;
+    padding: 8px 12px 0 12px;
+    font-size: 0.813rem;
+    font-weight: 400;
+    display: block; }
   .default-input-client:after {
     clear: both;
     display: block;
@@ -2305,6 +2398,10 @@ button {
         font-size: 1.3rem;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
+        .default-input-client.input-small > input[type='password']::placeholder, .default-input-client.input-small > input[type='password']::-webkit-input-placeholder {
+          font-family: NotoSansKR !important;
+          font-size: 0.813rem !important;
+          letter-spacing: 0 !important; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .default-input-client.input-small > input {
           line-height: 1em;
@@ -2320,12 +2417,18 @@ button {
       margin: 0; }
     .default-input-client.input-small > i {
       position: absolute;
-      top: 19px;
+      top: 50%;
       transform: translateY(-50%);
       line-height: 0; }
     .default-input-client.input-small.error > input {
       color: #e52929;
       border-color: #e52929; }
+    .default-input-client.input-small.error + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
     .default-input-client.input-small:after {
       clear: both;
       display: block;
@@ -2363,6 +2466,10 @@ button {
         font-size: 1.3rem;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
+        .default-input-client.icon-right > input[type='password']::placeholder, .default-input-client.icon-right > input[type='password']::-webkit-input-placeholder {
+          font-family: NotoSansKR !important;
+          font-size: 0.875rem !important;
+          letter-spacing: 0 !important; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .default-input-client.icon-right > input {
           line-height: 1em;
@@ -2378,13 +2485,19 @@ button {
       margin: 0; }
     .default-input-client.icon-right > i {
       position: absolute;
-      top: 19px;
+      top: 50%;
       transform: translateY(-50%);
       line-height: 0;
       right: 12px; }
     .default-input-client.icon-right.error > input {
       color: #e52929;
       border-color: #e52929; }
+    .default-input-client.icon-right.error + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
     .default-input-client.icon-right:after {
       clear: both;
       display: block;
@@ -2422,6 +2535,10 @@ button {
         font-size: 1.3rem;
         letter-spacing: -2px;
         font-family: Consolas, Courier, monospace; }
+        .default-input-client.icon-left > input[type='password']::placeholder, .default-input-client.icon-left > input[type='password']::-webkit-input-placeholder {
+          font-family: NotoSansKR !important;
+          font-size: 0.875rem !important;
+          letter-spacing: 0 !important; }
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         .default-input-client.icon-left > input {
           line-height: 1em;
@@ -2437,13 +2554,19 @@ button {
       margin: 0; }
     .default-input-client.icon-left > i {
       position: absolute;
-      top: 19px;
+      top: 50%;
       transform: translateY(-50%);
       line-height: 0;
       left: 12px; }
     .default-input-client.icon-left.error > input {
       color: #e52929;
       border-color: #e52929; }
+    .default-input-client.icon-left.error + .error-text {
+      color: #e52929;
+      padding: 8px 12px 0 12px;
+      font-size: 0.813rem;
+      font-weight: 400;
+      display: block; }
     .default-input-client.icon-left:after {
       clear: both;
       display: block;
@@ -4644,3 +4767,69 @@ button {
       opacity: 1; }
   .ui-autocomplete.theme-partner.active {
     border-color: #3ba3c7; }
+
+.ui-textarea.theme-wishket {
+  position: relative;
+  display: block;
+  padding: 9px 13px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  width: 100%;
+  min-height: 200px;
+  font-size: 0.875rem;
+  color: #616161;
+  line-height: 1.5rem;
+  resize: none; }
+  .ui-textarea.theme-wishket::placeholder {
+    color: #bdbdbd; }
+  .ui-textarea.theme-wishket:disabled {
+    background: #fafafa;
+    color: #bdbdbd; }
+  .ui-textarea.theme-wishket:hover, .ui-textarea.theme-wishket:focus {
+    border-color: #3ba3c7; }
+    .ui-textarea.theme-wishket:hover:disabled:hover, .ui-textarea.theme-wishket:hover:disabled:focus, .ui-textarea.theme-wishket:focus:disabled:hover, .ui-textarea.theme-wishket:focus:disabled:focus {
+      border-color: #e0e0e0; }
+
+.ui-textarea.theme-partner {
+  position: relative;
+  display: block;
+  padding: 9px 13px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  width: 100%;
+  min-height: 200px;
+  font-size: 0.875rem;
+  color: #616161;
+  line-height: 1.5rem;
+  resize: none; }
+  .ui-textarea.theme-partner::placeholder {
+    color: #bdbdbd; }
+  .ui-textarea.theme-partner:disabled {
+    background: #fafafa;
+    color: #bdbdbd; }
+  .ui-textarea.theme-partner:hover, .ui-textarea.theme-partner:focus {
+    border-color: #00a878; }
+    .ui-textarea.theme-partner:hover:disabled:hover, .ui-textarea.theme-partner:hover:disabled:focus, .ui-textarea.theme-partner:focus:disabled:hover, .ui-textarea.theme-partner:focus:disabled:focus {
+      border-color: #e0e0e0; }
+
+.ui-textarea.theme-client {
+  position: relative;
+  display: block;
+  padding: 9px 13px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  width: 100%;
+  min-height: 200px;
+  font-size: 0.875rem;
+  color: #616161;
+  line-height: 1.5rem;
+  resize: none; }
+  .ui-textarea.theme-client::placeholder {
+    color: #bdbdbd; }
+  .ui-textarea.theme-client:disabled {
+    background: #fafafa;
+    color: #bdbdbd; }
+  .ui-textarea.theme-client:hover, .ui-textarea.theme-client:focus {
+    border-color: #2e6baa; }
+    .ui-textarea.theme-client:hover:disabled:hover, .ui-textarea.theme-client:hover:disabled:focus, .ui-textarea.theme-client:focus:disabled:hover, .ui-textarea.theme-client:focus:disabled:focus {
+      border-color: #e0e0e0; }

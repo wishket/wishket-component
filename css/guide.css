@@ -75,8 +75,8 @@ header > ul > li{
   margin-bottom:32px;
 }
 
-.guide-content section >div[class*="text-input-"],
-.guide-content section >div[class*="label-input-"],
+.guide-content section >div>div[class*="text-input-"],
+.guide-content section >div>div[class*="label-input-"],
 .guide-content section >div >label[class*="checkbox-"],
 .guide-content section >div >ul.check-group,
 .guide-content section >div.ui-label-select,
