@@ -24,7 +24,7 @@
     border-radius:4px;
     display:block;
     height:3.625rem;
-    transition: all .2s cubic-bezier(.71, -0.46, .88, .6);
+    transition: all .2s;
     .select-label{
       position:absolute;
       left:13px;
@@ -43,7 +43,7 @@
       overflow: hidden;
       word-break: keep-all;
       text-overflow: ellipsis;
-      transition: all .3s cubic-bezier(.71, -0.46, .88, .6), dispay .1s .3s cubic-bezier(.71, -0.46, .88, .6);
+      transition: all .3s, dispay .1s .3s;
     }
     >i{
       position:absolute;
@@ -51,7 +51,7 @@
       top: 50%;
       transform:translateY(-50%) rotate(.001deg);
       >svg{
-        transition: all .2s cubic-bezier(.71, -0.46, .88, .6);
+        transition: all .2s;
       }
       &.active{
         >svg{
@@ -64,7 +64,7 @@
     opacity: 0;
     visibility: hidden;
     position:absolute;
-    transition: all .3s cubic-bezier(.71, -0.46, .88, .6), opacity .1s cubic-bezier(.71, -0.46, .88, .6);
+    transition: all .3s, opacity .1s;
     top:57px;
     width:100%;
     border-radius: 4px;

@@ -3,10 +3,11 @@
   color:rgba(0,0,0,0.65);
   cursor:pointer;
   display: inline-block;
+  position: relative;
   >span:first-child{
-    position:relative;
-    top:0.28rem;
-    float:left;
+    position: absolute;
+    top:4px;
+    left:0;
     >span{
       position:relative;
       display:inline-block;
@@ -57,13 +58,11 @@
   }
   @if $type == detail {
     >div{
-      float:left;
-      width:calc(100% - 16px);
+      padding-left:28px;
       vertical-align:top;
       user-select: none;
       cursor: pointer;
       >span{
-        padding:0 0 0 12px;
         font-weight:400;
         font-size:$font-size;
         color:$font-color;
@@ -71,7 +70,6 @@
         display:block;
       }
       >p{
-        padding:0 0 0 12px;
         font-weight:400;
         font-size:$detail-font-size;
         color:$detail-font-color;
@@ -81,11 +79,9 @@
   }
   @else{
     >span:last-child{
-      float:left;
-      width:calc(100% - 16px);
+      padding-left:28px;;
       user-select: none;
       cursor: pointer;
-      padding:0 12px;
       font-weight:400;
       font-size:$font-size;
       color:$font-color;
@@ -174,6 +170,10 @@
   align-items:center;
   >label{
     margin-bottom:0;
+    height:16px;
+    >span:first-child{
+      top:0;
+    }
   }
   >div{
     padding-bottom:0;
@@ -192,6 +192,9 @@
     line-height: 0;
     &:last-child{
       margin:0;
+      >.addon{
+        margin-bottom:0;
+      }
     }
   }
   >li.horizontal{

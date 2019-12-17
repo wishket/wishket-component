@@ -2576,17 +2576,18 @@ button {
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
   display: inline-block;
-  cursor: pointer; }
+  cursor: pointer;
+  position: relative; }
   .checkbox-wishket > span:first-child {
-    position: relative;
-    top: 0.2rem;
-    float: left; }
+    position: absolute;
+    top: 0;
+    left: 0; }
     .checkbox-wishket > span:first-child > span {
       position: relative;
       display: inline-block;
       width: 16px;
       height: 16px;
-      top: 0;
+      top: 3px;
       left: 0;
       border: 1px solid #e0e0e0;
       border-radius: 2px; }
@@ -2659,13 +2660,12 @@ button {
   .checkbox-wishket > span:last-child {
     user-select: none;
     cursor: pointer;
-    padding: 0 0 0 12px;
     font-weight: 400;
     font-size: 0.875rem;
     color: #212121;
     line-height: 1.5rem;
-    float: left;
-    width: calc(100% - 16px); }
+    padding-left: 28px;
+    display: inline-block; }
   .checkbox-wishket:hover > span:first-child > span {
     border-color: #3ba3c7; }
   .checkbox-wishket.mobile:hover > span:first-child > span {
@@ -2687,17 +2687,18 @@ button {
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
     display: inline-block;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative; }
     .checkbox-wishket.detail-text > span:first-child {
-      position: relative;
-      top: 0.2rem;
-      float: left; }
+      position: absolute;
+      top: 0;
+      left: 0; }
       .checkbox-wishket.detail-text > span:first-child > span {
         position: relative;
         display: inline-block;
         width: 16px;
         height: 16px;
-        top: 0;
+        top: 3px;
         left: 0;
         border: 1px solid #e0e0e0;
         border-radius: 2px; }
@@ -2768,20 +2769,17 @@ button {
           transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
           visibility: visible; }
     .checkbox-wishket.detail-text > div {
-      float: left;
       vertical-align: top;
       user-select: none;
       cursor: pointer;
-      width: calc(100% - 16px); }
+      padding-left: 28px; }
       .checkbox-wishket.detail-text > div > span {
-        padding: 0 0 0 12px;
         font-weight: 400;
         font-size: 0.875rem;
         color: #212121;
         line-height: 1.5rem;
         display: block; }
       .checkbox-wishket.detail-text > div > p {
-        padding: 0 0 0 12px;
         font-weight: 400;
         font-size: 0.813rem;
         color: #616161;
@@ -2808,17 +2806,18 @@ button {
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
   display: inline-block;
-  cursor: pointer; }
+  cursor: pointer;
+  position: relative; }
   .checkbox-partner > span:first-child {
-    position: relative;
-    top: 0.2rem;
-    float: left; }
+    position: absolute;
+    top: 0;
+    left: 0; }
     .checkbox-partner > span:first-child > span {
       position: relative;
       display: inline-block;
       width: 16px;
       height: 16px;
-      top: 0;
+      top: 3px;
       left: 0;
       border: 1px solid #e0e0e0;
       border-radius: 2px; }
@@ -2891,13 +2890,12 @@ button {
   .checkbox-partner > span:last-child {
     user-select: none;
     cursor: pointer;
-    padding: 0 0 0 12px;
     font-weight: 400;
     font-size: 0.875rem;
     color: #212121;
     line-height: 1.5rem;
-    float: left;
-    width: calc(100% - 16px); }
+    padding-left: 28px;
+    display: inline-block; }
   .checkbox-partner:hover > span:first-child > span {
     border-color: #00a878; }
   .checkbox-partner.mobile:hover > span:first-child > span {
@@ -2919,17 +2917,18 @@ button {
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
     display: inline-block;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative; }
     .checkbox-partner.detail-text > span:first-child {
-      position: relative;
-      top: 0.2rem;
-      float: left; }
+      position: absolute;
+      top: 0;
+      left: 0; }
       .checkbox-partner.detail-text > span:first-child > span {
         position: relative;
         display: inline-block;
         width: 16px;
         height: 16px;
-        top: 0;
+        top: 3px;
         left: 0;
         border: 1px solid #e0e0e0;
         border-radius: 2px; }
@@ -3000,20 +2999,17 @@ button {
           transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
           visibility: visible; }
     .checkbox-partner.detail-text > div {
-      float: left;
       vertical-align: top;
       user-select: none;
       cursor: pointer;
-      width: calc(100% - 16px); }
+      padding-left: 28px; }
       .checkbox-partner.detail-text > div > span {
-        padding: 0 0 0 12px;
         font-weight: 400;
         font-size: 0.875rem;
         color: #212121;
         line-height: 1.5rem;
         display: block; }
       .checkbox-partner.detail-text > div > p {
-        padding: 0 0 0 12px;
         font-weight: 400;
         font-size: 0.813rem;
         color: #616161;
@@ -3040,17 +3036,18 @@ button {
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
   display: inline-block;
-  cursor: pointer; }
+  cursor: pointer;
+  position: relative; }
   .checkbox-client > span:first-child {
-    position: relative;
-    top: 0.2rem;
-    float: left; }
+    position: absolute;
+    top: 0;
+    left: 0; }
     .checkbox-client > span:first-child > span {
       position: relative;
       display: inline-block;
       width: 16px;
       height: 16px;
-      top: 0;
+      top: 3px;
       left: 0;
       border: 1px solid #e0e0e0;
       border-radius: 2px; }
@@ -3123,13 +3120,12 @@ button {
   .checkbox-client > span:last-child {
     user-select: none;
     cursor: pointer;
-    padding: 0 0 0 12px;
     font-weight: 400;
     font-size: 0.875rem;
     color: #212121;
     line-height: 1.5rem;
-    float: left;
-    width: calc(100% - 16px); }
+    padding-left: 28px;
+    display: inline-block; }
   .checkbox-client:hover > span:first-child > span {
     border-color: #2e6baa; }
   .checkbox-client.mobile:hover > span:first-child > span {
@@ -3151,17 +3147,18 @@ button {
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
     display: inline-block;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative; }
     .checkbox-client.detail-text > span:first-child {
-      position: relative;
-      top: 0.2rem;
-      float: left; }
+      position: absolute;
+      top: 0;
+      left: 0; }
       .checkbox-client.detail-text > span:first-child > span {
         position: relative;
         display: inline-block;
         width: 16px;
         height: 16px;
-        top: 0;
+        top: 3px;
         left: 0;
         border: 1px solid #e0e0e0;
         border-radius: 2px; }
@@ -3232,20 +3229,17 @@ button {
           transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
           visibility: visible; }
     .checkbox-client.detail-text > div {
-      float: left;
       vertical-align: top;
       user-select: none;
       cursor: pointer;
-      width: calc(100% - 16px); }
+      padding-left: 28px; }
       .checkbox-client.detail-text > div > span {
-        padding: 0 0 0 12px;
         font-weight: 400;
         font-size: 0.875rem;
         color: #212121;
         line-height: 1.5rem;
         display: block; }
       .checkbox-client.detail-text > div > p {
-        padding: 0 0 0 12px;
         font-weight: 400;
         font-size: 0.813rem;
         color: #616161;
@@ -3297,11 +3291,12 @@ button {
     margin-bottom: 0;
     width: 16px;
     float: left; }
+    .addon > label > span > input[type='checkbox'] + span {
+      top: 0; }
   .addon > div {
     margin-left: 12px;
     padding-bottom: 0;
-    float: left;
-    width: calc(100% - 12px); }
+    float: left; }
 
 .chip-box {
   margin: -4px; }
@@ -3466,11 +3461,12 @@ button {
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
   cursor: pointer;
-  display: inline-block; }
+  display: inline-block;
+  position: relative; }
   .radio-wishket > span:first-child {
-    position: relative;
-    top: 0.28rem;
-    float: left; }
+    position: absolute;
+    top: 4px;
+    left: 0; }
     .radio-wishket > span:first-child > span {
       position: relative;
       display: inline-block;
@@ -3512,11 +3508,9 @@ button {
       .radio-wishket > span:first-child > input:focus + span {
         border-color: #3391ba; }
   .radio-wishket > span:last-child {
-    float: left;
-    width: calc(100% - 16px);
+    padding-left: 28px;
     user-select: none;
     cursor: pointer;
-    padding: 0 12px;
     font-weight: 400;
     font-size: 0.875rem;
     color: #212121;
@@ -3541,11 +3535,12 @@ button {
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
     cursor: pointer;
-    display: inline-block; }
+    display: inline-block;
+    position: relative; }
     .radio-wishket.detail-text > span:first-child {
-      position: relative;
-      top: 0.28rem;
-      float: left; }
+      position: absolute;
+      top: 4px;
+      left: 0; }
       .radio-wishket.detail-text > span:first-child > span {
         position: relative;
         display: inline-block;
@@ -3587,20 +3582,17 @@ button {
         .radio-wishket.detail-text > span:first-child > input:focus + span {
           border-color: #3391ba; }
     .radio-wishket.detail-text > div {
-      float: left;
-      width: calc(100% - 16px);
+      padding-left: 28px;
       vertical-align: top;
       user-select: none;
       cursor: pointer; }
       .radio-wishket.detail-text > div > span {
-        padding: 0 0 0 12px;
         font-weight: 400;
         font-size: 0.875rem;
         color: #212121;
         line-height: 1.5rem;
         display: block; }
       .radio-wishket.detail-text > div > p {
-        padding: 0 0 0 12px;
         font-weight: 400;
         font-size: 0.813rem;
         color: #616161;
@@ -3629,11 +3621,12 @@ button {
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
   cursor: pointer;
-  display: inline-block; }
+  display: inline-block;
+  position: relative; }
   .radio-partner > span:first-child {
-    position: relative;
-    top: 0.28rem;
-    float: left; }
+    position: absolute;
+    top: 4px;
+    left: 0; }
     .radio-partner > span:first-child > span {
       position: relative;
       display: inline-block;
@@ -3675,11 +3668,9 @@ button {
       .radio-partner > span:first-child > input:focus + span {
         border-color: #009168; }
   .radio-partner > span:last-child {
-    float: left;
-    width: calc(100% - 16px);
+    padding-left: 28px;
     user-select: none;
     cursor: pointer;
-    padding: 0 12px;
     font-weight: 400;
     font-size: 0.875rem;
     color: #212121;
@@ -3704,11 +3695,12 @@ button {
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
     cursor: pointer;
-    display: inline-block; }
+    display: inline-block;
+    position: relative; }
     .radio-partner.detail-text > span:first-child {
-      position: relative;
-      top: 0.28rem;
-      float: left; }
+      position: absolute;
+      top: 4px;
+      left: 0; }
       .radio-partner.detail-text > span:first-child > span {
         position: relative;
         display: inline-block;
@@ -3750,20 +3742,17 @@ button {
         .radio-partner.detail-text > span:first-child > input:focus + span {
           border-color: #009168; }
     .radio-partner.detail-text > div {
-      float: left;
-      width: calc(100% - 16px);
+      padding-left: 28px;
       vertical-align: top;
       user-select: none;
       cursor: pointer; }
       .radio-partner.detail-text > div > span {
-        padding: 0 0 0 12px;
         font-weight: 400;
         font-size: 0.875rem;
         color: #212121;
         line-height: 1.5rem;
         display: block; }
       .radio-partner.detail-text > div > p {
-        padding: 0 0 0 12px;
         font-weight: 400;
         font-size: 0.813rem;
         color: #616161;
@@ -3792,11 +3781,12 @@ button {
   padding: 0;
   color: rgba(0, 0, 0, 0.65);
   cursor: pointer;
-  display: inline-block; }
+  display: inline-block;
+  position: relative; }
   .radio-client > span:first-child {
-    position: relative;
-    top: 0.28rem;
-    float: left; }
+    position: absolute;
+    top: 4px;
+    left: 0; }
     .radio-client > span:first-child > span {
       position: relative;
       display: inline-block;
@@ -3838,11 +3828,9 @@ button {
       .radio-client > span:first-child > input:focus + span {
         border-color: #1f578c; }
   .radio-client > span:last-child {
-    float: left;
-    width: calc(100% - 16px);
+    padding-left: 28px;
     user-select: none;
     cursor: pointer;
-    padding: 0 12px;
     font-weight: 400;
     font-size: 0.875rem;
     color: #212121;
@@ -3867,11 +3855,12 @@ button {
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
     cursor: pointer;
-    display: inline-block; }
+    display: inline-block;
+    position: relative; }
     .radio-client.detail-text > span:first-child {
-      position: relative;
-      top: 0.28rem;
-      float: left; }
+      position: absolute;
+      top: 4px;
+      left: 0; }
       .radio-client.detail-text > span:first-child > span {
         position: relative;
         display: inline-block;
@@ -3913,20 +3902,17 @@ button {
         .radio-client.detail-text > span:first-child > input:focus + span {
           border-color: #1f578c; }
     .radio-client.detail-text > div {
-      float: left;
-      width: calc(100% - 16px);
+      padding-left: 28px;
       vertical-align: top;
       user-select: none;
       cursor: pointer; }
       .radio-client.detail-text > div > span {
-        padding: 0 0 0 12px;
         font-weight: 400;
         font-size: 0.875rem;
         color: #212121;
         line-height: 1.5rem;
         display: block; }
       .radio-client.detail-text > div > p {
-        padding: 0 0 0 12px;
         font-weight: 400;
         font-size: 0.813rem;
         color: #616161;
@@ -3955,7 +3941,10 @@ button {
   display: flex;
   align-items: center; }
   .addon > label {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    height: 16px; }
+    .addon > label > span:first-child {
+      top: 0; }
   .addon > div {
     padding-bottom: 0;
     flex: 1; }
@@ -3970,6 +3959,8 @@ button {
   line-height: 0; }
   .radio-group > li:last-child {
     margin: 0; }
+    .radio-group > li:last-child > .addon {
+      margin-bottom: 0; }
 
 .radio-group > li.horizontal {
   float: left;
@@ -4198,7 +4189,7 @@ button {
     border-radius: 4px;
     display: block;
     height: 3.625rem;
-    transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
+    transition: all .2s; }
     .ui-label-select.theme-wishket > .select-box .select-label {
       position: absolute;
       left: 13px;
@@ -4215,21 +4206,21 @@ button {
       overflow: hidden;
       word-break: keep-all;
       text-overflow: ellipsis;
-      transition: all 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6), dispay 0.1s 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
+      transition: all .3s, dispay .1s .3s; }
     .ui-label-select.theme-wishket > .select-box > i {
       position: absolute;
       right: 13px;
       top: 50%;
       transform: translateY(-50%) rotate(0.001deg); }
       .ui-label-select.theme-wishket > .select-box > i > svg {
-        transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
+        transition: all .2s; }
       .ui-label-select.theme-wishket > .select-box > i.active > svg {
         transform: rotate(180deg); }
   .ui-label-select.theme-wishket > .select-dropdown {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    transition: all 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6);
+    transition: all .3s, opacity .1s;
     top: 57px;
     width: 100%;
     border-radius: 4px;
@@ -4307,7 +4298,7 @@ button {
     border-radius: 4px;
     display: block;
     height: 3.625rem;
-    transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
+    transition: all .2s; }
     .ui-label-select.theme-client > .select-box .select-label {
       position: absolute;
       left: 13px;
@@ -4324,21 +4315,21 @@ button {
       overflow: hidden;
       word-break: keep-all;
       text-overflow: ellipsis;
-      transition: all 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6), dispay 0.1s 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
+      transition: all .3s, dispay .1s .3s; }
     .ui-label-select.theme-client > .select-box > i {
       position: absolute;
       right: 13px;
       top: 50%;
       transform: translateY(-50%) rotate(0.001deg); }
       .ui-label-select.theme-client > .select-box > i > svg {
-        transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
+        transition: all .2s; }
       .ui-label-select.theme-client > .select-box > i.active > svg {
         transform: rotate(180deg); }
   .ui-label-select.theme-client > .select-dropdown {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    transition: all 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6);
+    transition: all .3s, opacity .1s;
     top: 57px;
     width: 100%;
     border-radius: 4px;
@@ -4416,7 +4407,7 @@ button {
     border-radius: 4px;
     display: block;
     height: 3.625rem;
-    transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
+    transition: all .2s; }
     .ui-label-select.theme-partner > .select-box .select-label {
       position: absolute;
       left: 13px;
@@ -4433,21 +4424,21 @@ button {
       overflow: hidden;
       word-break: keep-all;
       text-overflow: ellipsis;
-      transition: all 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6), dispay 0.1s 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
+      transition: all .3s, dispay .1s .3s; }
     .ui-label-select.theme-partner > .select-box > i {
       position: absolute;
       right: 13px;
       top: 50%;
       transform: translateY(-50%) rotate(0.001deg); }
       .ui-label-select.theme-partner > .select-box > i > svg {
-        transition: all 0.2s cubic-bezier(0.71, -0.46, 0.88, 0.6); }
+        transition: all .2s; }
       .ui-label-select.theme-partner > .select-box > i.active > svg {
         transform: rotate(180deg); }
   .ui-label-select.theme-partner > .select-dropdown {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    transition: all 0.3s cubic-bezier(0.71, -0.46, 0.88, 0.6), opacity 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6);
+    transition: all .3s, opacity .1s;
     top: 57px;
     width: 100%;
     border-radius: 4px;
@@ -4768,68 +4759,158 @@ button {
   .ui-autocomplete.theme-partner.active {
     border-color: #3ba3c7; }
 
-.ui-textarea.theme-wishket {
+.ui-textarea-wishket > textarea {
   position: relative;
   display: block;
-  padding: 9px 13px;
+  padding: 8px 12px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   width: 100%;
   min-height: 200px;
   font-size: 0.875rem;
   color: #616161;
-  line-height: 1.5rem;
-  resize: none; }
-  .ui-textarea.theme-wishket::placeholder {
+  line-height: 1.5rem; }
+  .ui-textarea-wishket > textarea::placeholder {
     color: #bdbdbd; }
-  .ui-textarea.theme-wishket:disabled {
+  .ui-textarea-wishket > textarea:disabled {
     background: #fafafa;
     color: #bdbdbd; }
-  .ui-textarea.theme-wishket:hover, .ui-textarea.theme-wishket:focus {
+  .ui-textarea-wishket > textarea:hover, .ui-textarea-wishket > textarea:focus {
     border-color: #3ba3c7; }
-    .ui-textarea.theme-wishket:hover:disabled:hover, .ui-textarea.theme-wishket:hover:disabled:focus, .ui-textarea.theme-wishket:focus:disabled:hover, .ui-textarea.theme-wishket:focus:disabled:focus {
+    .ui-textarea-wishket > textarea:hover:disabled:hover, .ui-textarea-wishket > textarea:hover:disabled:focus, .ui-textarea-wishket > textarea:focus:disabled:hover, .ui-textarea-wishket > textarea:focus:disabled:focus {
       border-color: #e0e0e0; }
 
-.ui-textarea.theme-partner {
+.ui-textarea-wishket > span {
+  font-size: 0.813rem;
+  font-weight: 400;
+  font-size: 13px;
+  font-weight: 400;
+  color: #9e9e9e;
+  display: inline-block; }
+  .ui-textarea-wishket > span.helper-text, .ui-textarea-wishket > span.error-text {
+    float: left;
+    padding: 8px 12px 0 12px; }
+  .ui-textarea-wishket > span.error-text {
+    display: none; }
+  .ui-textarea-wishket > span.word-length {
+    float: right;
+    padding: 8px 12px 0 0; }
+
+.ui-textarea-wishket.error > div > input {
+  color: #e52929;
+  border-color: #e52929; }
+
+.ui-textarea-wishket.error > span {
+  color: #e52929; }
+
+.ui-textarea-wishket:after {
+  clear: both;
+  content: '';
+  display: block; }
+
+.ui-textarea-wishket > textarea {
+  resize: none; }
+
+.ui-textarea-partner > textarea {
   position: relative;
   display: block;
-  padding: 9px 13px;
+  padding: 8px 12px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   width: 100%;
   min-height: 200px;
   font-size: 0.875rem;
   color: #616161;
-  line-height: 1.5rem;
-  resize: none; }
-  .ui-textarea.theme-partner::placeholder {
+  line-height: 1.5rem; }
+  .ui-textarea-partner > textarea::placeholder {
     color: #bdbdbd; }
-  .ui-textarea.theme-partner:disabled {
+  .ui-textarea-partner > textarea:disabled {
     background: #fafafa;
     color: #bdbdbd; }
-  .ui-textarea.theme-partner:hover, .ui-textarea.theme-partner:focus {
+  .ui-textarea-partner > textarea:hover, .ui-textarea-partner > textarea:focus {
     border-color: #00a878; }
-    .ui-textarea.theme-partner:hover:disabled:hover, .ui-textarea.theme-partner:hover:disabled:focus, .ui-textarea.theme-partner:focus:disabled:hover, .ui-textarea.theme-partner:focus:disabled:focus {
+    .ui-textarea-partner > textarea:hover:disabled:hover, .ui-textarea-partner > textarea:hover:disabled:focus, .ui-textarea-partner > textarea:focus:disabled:hover, .ui-textarea-partner > textarea:focus:disabled:focus {
       border-color: #e0e0e0; }
 
-.ui-textarea.theme-client {
+.ui-textarea-partner > span {
+  font-size: 0.813rem;
+  font-weight: 400;
+  font-size: 13px;
+  font-weight: 400;
+  color: #9e9e9e;
+  display: inline-block; }
+  .ui-textarea-partner > span.helper-text, .ui-textarea-partner > span.error-text {
+    float: left;
+    padding: 8px 12px 0 12px; }
+  .ui-textarea-partner > span.error-text {
+    display: none; }
+  .ui-textarea-partner > span.word-length {
+    float: right;
+    padding: 8px 12px 0 0; }
+
+.ui-textarea-partner.error > div > input {
+  color: #e52929;
+  border-color: #e52929; }
+
+.ui-textarea-partner.error > span {
+  color: #e52929; }
+
+.ui-textarea-partner:after {
+  clear: both;
+  content: '';
+  display: block; }
+
+.ui-textarea-partner > textarea {
+  resize: none; }
+
+.ui-textarea-client > textarea {
   position: relative;
   display: block;
-  padding: 9px 13px;
+  padding: 8px 12px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   width: 100%;
   min-height: 200px;
   font-size: 0.875rem;
   color: #616161;
-  line-height: 1.5rem;
-  resize: none; }
-  .ui-textarea.theme-client::placeholder {
+  line-height: 1.5rem; }
+  .ui-textarea-client > textarea::placeholder {
     color: #bdbdbd; }
-  .ui-textarea.theme-client:disabled {
+  .ui-textarea-client > textarea:disabled {
     background: #fafafa;
     color: #bdbdbd; }
-  .ui-textarea.theme-client:hover, .ui-textarea.theme-client:focus {
+  .ui-textarea-client > textarea:hover, .ui-textarea-client > textarea:focus {
     border-color: #2e6baa; }
-    .ui-textarea.theme-client:hover:disabled:hover, .ui-textarea.theme-client:hover:disabled:focus, .ui-textarea.theme-client:focus:disabled:hover, .ui-textarea.theme-client:focus:disabled:focus {
+    .ui-textarea-client > textarea:hover:disabled:hover, .ui-textarea-client > textarea:hover:disabled:focus, .ui-textarea-client > textarea:focus:disabled:hover, .ui-textarea-client > textarea:focus:disabled:focus {
       border-color: #e0e0e0; }
+
+.ui-textarea-client > span {
+  font-size: 0.813rem;
+  font-weight: 400;
+  font-size: 13px;
+  font-weight: 400;
+  color: #9e9e9e;
+  display: inline-block; }
+  .ui-textarea-client > span.helper-text, .ui-textarea-client > span.error-text {
+    float: left;
+    padding: 8px 12px 0 12px; }
+  .ui-textarea-client > span.error-text {
+    display: none; }
+  .ui-textarea-client > span.word-length {
+    float: right;
+    padding: 8px 12px 0 0; }
+
+.ui-textarea-client.error > div > input {
+  color: #e52929;
+  border-color: #e52929; }
+
+.ui-textarea-client.error > span {
+  color: #e52929; }
+
+.ui-textarea-client:after {
+  clear: both;
+  content: '';
+  display: block; }
+
+.ui-textarea-client > textarea {
+  resize: none; }

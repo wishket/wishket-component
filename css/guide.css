@@ -59,8 +59,9 @@ header > ul > li{
 }
 
 .guide-content-wrap{
-  max-width:1080px;
+  max-width:1160px;
   position: relative;
+  padding:0 40px;
   margin:40px auto;
   display:flex;
 }
@@ -80,16 +81,13 @@ header > ul > li{
 .guide-content section >div >label[class*="checkbox-"],
 .guide-content section >div >ul.check-group,
 .guide-content section >div.ui-label-select,
+.guide-content section#textarea-input > div,
 .guide-content section >.autocompletebox{
   margin-bottom:24px;
 }
 
 .guide-content > section div.addon >label{
   margin-bottom:0;
-}
-
-.addon{
-  margin-bottom:24px;
 }
 
 .guide-content-wrap >nav{

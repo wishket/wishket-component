@@ -20,13 +20,18 @@
         }else if(type === 'text'){
           this.createHtml('text');
         }else{
-          this.createHtml();
+          if(this.settings.inputType==='textArea'){
+            this.createTextArea();
+          }else{
+            this.createHtml();
+          }
         }
       }
     },
 
     wait: function(type){
       var self = this;
+      console.log(this.settings.inputType);
       if(type === 'label'){
         var value = this.$node.val();
         value ? self.toggle(true, this.$node.parent(),'label-effect') : null;
@@ -50,6 +55,9 @@
         self.priceKeyEvent();
       }else if(this.settings.inputType === "tel"){
         self.telKeyEvent();
+      }
+      else if(this.settings.inputType === "textArea"){
+        self.textKeyEvent("textArea");
       }
     },
 
@@ -109,21 +117,33 @@
           if(type === 'text'){
             self.toggle(true, $(this).parent().parent(), "error");
             $(this).parent().siblings("span.helper-text").hide();
+            self.error(true, $(this).parent().siblings("span.error-text"), '글자수를 초과하였습니다.');
+          }else if(type === 'textArea'){
+            self.toggle(true, $(this).parent(), "error");
+            $(this).siblings("span.helper-text").hide();
+            self.error(true, $(this).siblings("span.error-text"), '글자수를 초과하였습니다.');
           }else{
             self.toggle(true, $(this).parent(), "error");
+            self.error(true, $(this).parent().siblings("span.error-text"), '글자수를 초과하였습니다.');
           }
-          self.error(true, $(this).parent().siblings("span.error-text"), '글자수를 초과하였습니다.');
         }else{
           if(type === 'text'){
             self.toggle(false, $(this).parent().parent(), "error");
             $(this).parent().siblings("span.helper-text").show();
+            self.error(false, $(this).parent().siblings("span.error-text"));
+          }else if(type === 'textArea'){
+            self.toggle(false, $(this).parent(), "error");
+            $(this).siblings("span.helper-text").show();
+            self.error(false, $(this).siblings("span.error-text"));
           }else{
             self.toggle(false, $(this).parent(), "error");
+            self.error(false, $(this).parent().siblings("span.error-text"));
           }
-          self.error(false, $(this).parent().siblings("span.error-text"));
         }
         if(type === 'text'){
           $(this).parent().siblings(".word-length").html(''+count+'/'+maxlength+'');
+        }else if(type === 'textArea'){
+          $(this).siblings(".word-length").html(''+count+'/'+maxlength+'');
         }
       });
     },
@@ -144,7 +164,7 @@
       theme = theme ? theme.split("theme-")[1] : '';
       var iconRight= this.$node.next('i');
       var iconLeft = this.$node.prev('i');
-      var iconClass = iconRight.length > 0 ? 'icon-right ' : '' + iconLeft.length > 0 ? 'icon-left ' : '';
+      var iconClass = iconRight.length === 1 && iconLeft.length === 1 ? 'icon-left-right' : (iconRight.length > 0 ? 'icon-right ' : '' + iconLeft.length > 0 ? 'icon-left ' : '');
       if(type === 'label'){
         var label = this.$node.siblings("label");
         this.$node.wrap('<div class="label-input-'+theme+' '+iconClass+'"></div>');
@@ -165,6 +185,21 @@
       iconLeft ? this.$node.parent().prepend(iconLeft) : null;
       iconRight ? this.$node.parent().append(iconRight) : null;
       this.wait(type);
+    },
+
+    createTextArea:function(){
+      var theme;
+      if(this.$node.attr("class") && this.$node.attr("class").match(/(theme-)\w+/g)){
+        theme = this.$node.attr("class").match(/(theme-)\w+/g)[0];
+      }
+      theme = theme ? theme.split("theme-")[1] : '';
+      var helperText = this.$node.siblings("span.helper-text");
+      var maxlength = this.$node.attr("maxlength");
+      this.$node.wrap('<div class="ui-textarea-'+theme+'"></div>');
+      this.$node.parent().append(helperText);
+      this.$node.after("<span class='error-text'>에러상세 메시지</span>");
+      this.$node.after("<span class='word-length'>0/"+maxlength+"</span>");
+      this.wait();
     },
 
     toggle: function(state, node, className){
