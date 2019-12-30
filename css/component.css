@@ -2071,7 +2071,8 @@ button {
     font-weight: 400;
     font-size: 0.875rem;
     color: #212121;
-    line-height: 1.5rem; }
+    line-height: 1.5rem;
+    display: block; }
   .radio-wishket:hover > span:first-child > span {
     border-color: #3ba3c7; }
   .radio-wishket.disabled > span:first-child > span {
@@ -2231,7 +2232,8 @@ button {
     font-weight: 400;
     font-size: 0.875rem;
     color: #212121;
-    line-height: 1.5rem; }
+    line-height: 1.5rem;
+    display: block; }
   .radio-partner:hover > span:first-child > span {
     border-color: #00a878; }
   .radio-partner.disabled > span:first-child > span {
@@ -2391,7 +2393,8 @@ button {
     font-weight: 400;
     font-size: 0.875rem;
     color: #212121;
-    line-height: 1.5rem; }
+    line-height: 1.5rem;
+    display: block; }
   .radio-client:hover > span:first-child > span {
     border-color: #2e6baa; }
   .radio-client.disabled > span:first-child > span {
