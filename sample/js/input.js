@@ -1,12 +1,13 @@
 ;(function ($, window) {
   "use strict";
-  let newObject = {}
-  let defaults = {
+  var newObject = {}
+  var defaults = {
+    inputType: "default",
   }
-  let UiInput = function (node, options){
+  var UiInput = function (node, options){
+    this.settings = $.extend({}, defaults, options);
     this.node = node;
     this.$node = $(this.node);
-    this.settings = $.extend({}, defaults, options);
     this.init();
   };
 
@@ -26,13 +27,16 @@
 
     wait: function(type){
       var self = this;
-      var inputType = this.$node.attr("type");
       if(type === 'label'){
         var value = this.$node.val();
         value ? self.toggle(true, this.$node.parent(),'label-effect') : null;
-        this.$node.on('focus', function(){
+        this.$node.on('focus click', function(){
           self.toggle(true, $(this).parent(), "label-effect");
         });
+        this.$node.siblings("label").on('click', function(){
+          self.toggle(true, $(this).parent(), "label-effect");
+          $(this).siblings("input").focus();
+        })
         this.$node.on('blur', function(){
           var value = $(this).val();
           if(!value){
@@ -40,19 +44,58 @@
           }
         });
       }
-
-      if(inputType === 'text'){
+      if(this.settings.inputType === "default"){
         self.textKeyEvent(type);
-      }else if(inputType === 'number'){
-        self.numberKeyEvent();
+      }else if(this.settings.inputType === "money"){
+        self.moneyKeyEvent();
+      }else if(this.settings.inputType === "tel"){
+        self.telKeyEvent();
       }
     },
 
-    numberKeyEvent: function(){
-      this.$node.on('keypress',function(){
+    telKeyEvent: function(){
+      var self = this;
+      this.$node.on('keyup keydown', function(){
+        var number = $(this).val().replace(/[^0-9]/g, "");
+        var telNumber = '';
+        if(number.substr(0, 2).indexOf("02") === 0){
+          if(number.length < 3){
+            telNumber = number;
+          }else if(number.length < 7){
+            telNumber = number.substr(0, 2)+"-"+number.substr(2, 4);
+          }else{
+            telNumber = number.substr(0, 2)+"-"+number.substr(2, 4)+"-"+number.substr(6,4);
+          }
+        }else{
+          if(number.length < 4){
+            telNumber = number;
+          }else if(number.length < 8){
+            telNumber = number.substr(0, 3)+"-"+number.substr(3, 4);
+          }else{
+            telNumber = number.substr(0, 3)+"-"+number.substr(3, 4)+"-"+number.substr(7,4);
+          }
+        }
+        $(this).val(telNumber)
+      });
+    },
+
+    moneyKeyEvent: function(){
+      var self = this;
+      var maxlength = this.$node.attr("maxlength");
+      maxlength = Number(maxlength) + Math.floor(maxlength/3);
+      this.$node.on('keyup change keydown keypress',function(){
+        var count = $(this).val().length;
+        $(this).attr("maxlength", maxlength);
         var number = $(this).val().replace(/\D/g, "");
         number = number.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         $(this).val(number);
+        if(count >= maxlength){
+          self.toggle(true, $(this).parent(), "error");
+          self.error(true, $(this).parent().siblings("span.error-text"), '글자수를 초과하였습니다.');
+        }else{
+          self.toggle(false, $(this).parent(), "error");
+          self.error(false, $(this).parent().siblings("span.error-text"));
+        }
       });
     },
 
@@ -116,7 +159,8 @@
         this.$node.after("<span class='error-text'>에러상세 메시지</span>");
         this.$node.wrap("<div></div>");
       }else{
-        this.$node.wrap('<div class="default-input-'+theme+' '+iconClass+'"></div>')
+        this.$node.wrap('<div class="default-input-'+theme+' '+iconClass+'"></div>');
+        this.$node.parent().after("<span class='error-text'>에러상세 메시지</span>");
       }
       iconLeft ? this.$node.parent().prepend(iconLeft) : null;
       iconRight ? this.$node.parent().append(iconRight) : null;

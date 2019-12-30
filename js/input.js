@@ -31,7 +31,6 @@
 
     wait: function(type){
       var self = this;
-      console.log(this.settings.inputType);
       if(type === 'label'){
         var value = this.$node.val();
         value ? self.toggle(true, this.$node.parent(),'label-effect') : null;
@@ -83,7 +82,8 @@
             telNumber = number.substr(0, 3)+"-"+number.substr(3, 4)+"-"+number.substr(7,4);
           }
         }
-        $(this).val(telNumber)
+        $(this).val(telNumber);
+        $(this).nextAll('.text-unit') ? ( $(this).val() ? $(this).nextAll('.text-unit').addClass("active") : $(this).nextAll('.text-unit').removeClass("active") ) : null;
       });
     },
 
@@ -104,6 +104,7 @@
           self.toggle(false, $(this).parent(), "error");
           self.error(false, $(this).parent().siblings("span.error-text"));
         }
+        $(this).nextAll('.text-unit') ? ( $(this).val() ? $(this).nextAll('.text-unit').addClass("active") : $(this).nextAll('.text-unit').removeClass("active") ) : null;
       });
     },
 
@@ -145,6 +146,8 @@
         }else if(type === 'textArea'){
           $(this).siblings(".word-length").html(''+count+'/'+maxlength+'');
         }
+
+        $(this).nextAll('.text-unit') ? ( $(this).val() ? $(this).nextAll('.text-unit').addClass("active") : $(this).nextAll('.text-unit').removeClass("active") ) : null;
       });
     },
 
@@ -156,15 +159,19 @@
       }
     },
 
-    createHtml: function(type){
+    createHtml: function(type, node){
       var theme;
       if(this.$node.attr("class") && this.$node.attr("class").match(/(theme-)\w+/g)){
         theme = this.$node.attr("class").match(/(theme-)\w+/g)[0];
       }
       theme = theme ? theme.split("theme-")[1] : '';
-      var iconRight= this.$node.next('i');
-      var iconLeft = this.$node.prev('i');
-      var iconClass = iconRight.length === 1 && iconLeft.length === 1 ? 'icon-left-right' : (iconRight.length > 0 ? 'icon-right ' : '' + iconLeft.length > 0 ? 'icon-left ' : '');
+      var iconRight = this.$node.next('i').length > 0 ? this.$node.next('i') : this.$node.next('.text-unit');
+      var iconLeft = this.$node.prev('i').length > 0 ? this.$node.prev('i') : this.$node.prev('.text-unit');
+      var iconClass = iconRight.length === 1 && iconLeft.length === 1 ? 'icon-left-right ' : (iconRight.length > 0 ? 'icon-right ' : '' + iconLeft.length > 0 ? 'icon-left ' : '');
+      iconClass === "icon-left-right " ? iconLeft.addClass("first") : null;
+      this.$node.next('.text-unit').length > 0 ? ( this.$node.val() ? this.$node.next('.text-unit').addClass("active") : null ) : null;
+      this.$node.css("padding-right", iconRight.width() + 24);
+
       if(type === 'label'){
         var label = this.$node.siblings("label");
         this.$node.wrap('<div class="label-input-'+theme+' '+iconClass+'"></div>');

@@ -95,6 +95,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/component/_alerts.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/build/component/_alerts.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/component/_autocomplete.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -130,6 +143,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/build/component/_input.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/component/_palette.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/build/component/_palette.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -223,7 +249,7 @@
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets-red",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 597809664.90927196
+	"lastBuiltDate": 598514455.34812105
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,

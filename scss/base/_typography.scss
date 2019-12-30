@@ -225,6 +225,25 @@
   @include font-weight-bold;
 }
 
+.caption-2{
+  font-size:11px;
+  line-height: 14px;
+  font-weight:400;
+}
+
+.caption-2-light {
+  @extend .caption-2;
+  @include font-weight-light;
+}
+.caption-2-medium {
+  @extend .caption-2;
+  @include font-weight-medium;
+}
+.caption-2-bold {
+  @extend .caption-2;
+  @include font-weight-bold;
+}
+
 .link-text {
   color: $color-wishket;
   display: inline-block;

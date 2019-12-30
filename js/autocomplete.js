@@ -6,6 +6,7 @@
     labelmaxcount : 10,  //라벨 최대갯수
     textlength : 100,  //인풋 텍스트 글자수
     listwidth : "inherit",
+    test : false
   }
   var selectData;
   var UiAutoComple = function (node, options){
@@ -82,50 +83,86 @@
       selected_string = selected_string.replace(/\//gi, '%2F');
       selected_string = selected_string.replace(/\+/gi, '%2B');
 
-      $.ajax({
-        url: "/tag/?startwith=" + value + selected_string,
-        method: "GET",
-        success: function (data) {
-          e.preventDefault();
-          $dropDown.html("");
-          if(data.length > 0){
-            for (var i = 0; i < data.length; i++) {
-              var listName = data[i].name.replace(new RegExp('('+value+')(?!([^<]+)?>)','g'), '<strong>$1</strong>');
-              $dropDown.append("<li class='dropdown-list' data-tag='"+data[i].name+"' tabindex='0'><strong>‘</strong>"+listName+"<strong>’</strong> <span class='count-data'>"+data[i].count+"</span></li>");
+      if(this.settings.test){
+        console.log("test");
+        e.preventDefault();
+        $dropDown.html("");
+        $dropDown.append("<li class='dropdown-list' data-tag='"+value+"' tabindex='0'><strong>‘"+value+"’</strong> 입력</li>");
+        $dropDown.children().on("click", function(){
+          var value = $(this).data("tag");
+          var stop = true;
+          var labelMaxLength = self.settings.labelmaxcount;
+          var labelCurrentLength = $dropDown.prev().children("span").length;
+          console.log(value);
+          if(labelMaxLength > labelCurrentLength){
+            $dropDown.prev().children("span").each(function () {
+              if($(this).text()=== value){
+                stop = false;
+                var label = $(this);
+                label.addClass("error");
+                setTimeout(function(i){
+                  label.removeClass("error");
+                }, 2000);
+                $(this).siblings("input").val("");
+              }
+            });
+            if(stop){
+              self.addLabel("add", value, target);
+              self.inputSync(true, value);
             }
           }else{
-            $dropDown.append("<li class='dropdown-list' data-tag='"+value+"' tabindex='0'><strong>‘"+value+"’</strong> 입력</li>");
+            console.log("더 이상 추가가 힘들어요.");
+            $dropDown.prev().children("input").val("");
           }
-          $dropDown.children().on("click", function(){
-            var value = $(this).data("tag");
-            var stop = true;
-            var labelMaxLength = self.settings.labelmaxcount;
-            var labelCurrentLength = $dropDown.prev().children("span").length;
-            if(labelMaxLength > labelCurrentLength){
-              $dropDown.prev().children("span").each(function () {
-                if($(this).text()=== value){
-                  stop = false;
-                  var label = $(this);
-                  label.addClass("error");
-                  setTimeout(function(i){
-                    label.removeClass("error");
-                  }, 2000);
-                  $(this).siblings("input").val("");
-                }
-              });
-              if(stop){
-                self.addLabel("add", value, target);
-                self.inputSync(true, value);
+          self.toggle(false, $dropDown, "open");
+          self.toggle(false, $dropDown.prev(), "active");
+        });
+      }else{
+        $.ajax({
+          url: "/tag/?startwith=" + value + selected_string,
+          method: "GET",
+          success: function (data) {
+            e.preventDefault();
+            $dropDown.html("");
+            if(data.length > 0){
+              for (var i = 0; i < data.length; i++) {
+                var listName = data[i].name.replace(new RegExp('('+value+')(?!([^<]+)?>)','g'), '<strong>$1</strong>');
+                $dropDown.append("<li class='dropdown-list' data-tag='"+data[i].name+"' tabindex='0'><strong>‘</strong>"+listName+"<strong>’</strong> <span class='count-data'>"+data[i].count+"</span></li>");
               }
             }else{
-              console.log("더 이상 추가가 힘들어요.");
-              $dropDown.prev().children("input").val("");
+              $dropDown.append("<li class='dropdown-list' data-tag='"+value+"' tabindex='0'><strong>‘"+value+"’</strong> 입력</li>");
             }
-            self.toggle(false, $dropDown, "open");
-            self.toggle(false, $dropDown.prev(), "active");
-          });
-        }
-      });
+            $dropDown.children().on("click", function(){
+              var value = $(this).data("tag");
+              var stop = true;
+              var labelMaxLength = self.settings.labelmaxcount;
+              var labelCurrentLength = $dropDown.prev().children("span").length;
+              if(labelMaxLength > labelCurrentLength){
+                $dropDown.prev().children("span").each(function () {
+                  if($(this).text()=== value){
+                    stop = false;
+                    var label = $(this);
+                    label.addClass("error");
+                    setTimeout(function(i){
+                      label.removeClass("error");
+                    }, 2000);
+                    $(this).siblings("input").val("");
+                  }
+                });
+                if(stop){
+                  self.addLabel("add", value, target);
+                  self.inputSync(true, value);
+                }
+              }else{
+                console.log("더 이상 추가가 힘들어요.");
+                $dropDown.prev().children("input").val("");
+              }
+              self.toggle(false, $dropDown, "open");
+              self.toggle(false, $dropDown.prev(), "active");
+            });
+          }
+        });
+      }
     },
 
     stringReplace: function (value, node){

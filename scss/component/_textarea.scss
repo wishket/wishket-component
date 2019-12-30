@@ -10,6 +10,10 @@
     font-size:0.875rem;
     color:$color-gray600;
     line-height: 1.5rem;
+    resize:none;
+    &.expand{
+      resize:auto;
+    }
     &::placeholder{
       color:$color-gray300;
     }
@@ -60,16 +64,6 @@
     clear: both;
     content:'';
     display:block;
-  }
-
-  @if $type == default{
-    >textarea{
-      resize:none;
-    }
-  } @else{
-    >textarea{
-      resize:none;
-    }
   }
 }
 

@@ -35,6 +35,17 @@
         line-height: 1em;
         padding:8px 12px 8px 38px;
       }
+    } @else if $icon-position == icon-left-right {
+      padding:8px 38px 8px 38px;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        line-height: 1em;
+        padding:8px 38px 8px 38px;
+      }
+    }
+
+    &.size-s{
+      font-size:13px;
+      line-height: 20px;
     }
 
     &::placeholder, &::-webkit-input-placeholder{
@@ -44,6 +55,11 @@
     &:disabled{
       background:$color-gray10;
       color:$color-gray300;
+    }
+    &:focus{
+      ~.text-unit{
+        opacity: 1;
+      }
     }
     &:hover, &:focus{
       border-color:$brand-color;
@@ -79,14 +95,55 @@
       margin: 0;
   }
 
-  >div>i{
+  div>i{
     position:absolute;
     top:19px;
     transform: translateY(-50%);
+    line-height: 0;
     @if $icon-position == icon-right {
       right:12px;
     } @else if $icon-position == icon-left {
       left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:unset;
+      }
+      &:last-child{
+        right:12px;
+        left:unset;
+      }
+    }
+  }
+  >div{
+    position: relative;
+  }
+  div>.text-unit{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:14px;
+    color:$color-gray400;
+    opacity: 0;
+    transition:all .3s;
+    &.active{
+      opacity: 1;
+    }
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:unset;
+      }
+      &:last-child{
+        right:12px;
+        left:unset;
+      }
     }
   }
 
@@ -135,6 +192,9 @@
   &.icon-left{
     @include textinput(icon-left, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
   }
+  &.icon-left-right{
+    @include textinput(icon-left-right, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
+  }
 }
 
 .text-input-partner{
@@ -148,6 +208,9 @@
   &.icon-left{
     @include textinput(icon-left, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
   }
+  &.icon-left-right{
+    @include textinput(icon-left-right, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  }
 }
 
 .text-input-client{
@@ -160,6 +223,9 @@
   }
   &.icon-left{
     @include textinput(icon-left, 8px 12px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  }
+  &.icon-left-right{
+    @include textinput(icon-left-right, 8px 12px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
   }
 }
 
@@ -184,7 +250,7 @@
         padding:29px 12px 8px 12px;
       }
     } @else if $icon-position == icon-right {
-      padding:24px 44px 8px 13px;
+      padding:24px 44px 8px 12px;
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         line-height: 1em;
         padding:29px 44px 8px 12px;
@@ -195,6 +261,16 @@
         line-height: 1em;
         padding:29px 12px 8px 44px;
       }
+    } @else if $icon-position == icon-left-right {
+      padding:24px 44px 8px 44px;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        line-height: 1em;
+        padding:29px 44px 8px 44px;
+      }
+    }
+    &.size-s{
+      font-size:13px;
+      line-height: 20px;
     }
     &::placeholder, &::-webkit-input-placeholder{
       text-indent: -999999px;
@@ -209,6 +285,11 @@
         &:hover, &:focus{
           border-color:$color-gray200;
         }
+      }
+    }
+    &:focus{
+      ~.text-unit{
+        opacity: 1;
       }
     }
     &[type='password']{
@@ -236,6 +317,8 @@
     position:absolute;
     @if $icon-position == icon-left {
       left:44px;
+    } @else if $icon-position == icon-left-right{
+      left:44px;
     } @else{
       left:13px;
     }
@@ -247,16 +330,56 @@
     transition:all .3s;
     padding-right:44px;
   }
+  
   >i{
     position:absolute;
     top:50%;
     transform: translateY(-50%);
+    line-height: 0;
     @if $icon-position == icon-right {
-      right:16px;
+      right:12px;
     } @else if $icon-position == icon-left {
-      left:16px;
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:unset;
+      }
+      &:last-child{
+        right:12px;
+        left:unset;
+      }
     }
   }
+
+  >.text-unit{
+    position:absolute;
+    bottom:14px;
+    font-size:14px;
+    color:$color-gray400;
+    opacity: 0;
+    transition:all .3s;
+    &.active{
+      opacity: 1;
+    }
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:unset;
+      }
+      &:last-child{
+        right:12px;
+        left:unset;
+      }
+    }
+  }
+
   &.label-effect{
     >input:focus ~ label{
       color:$brand-color !important;
@@ -295,6 +418,9 @@
   &.icon-left{
     @include labelInput(icon-left, $color-wishket500, $color-gray600, 0.875rem, 1.50rem);
   }
+  &.icon-left-right{
+    @include labelInput(icon-left-right, $color-wishket500, $color-gray600, 0.875rem, 1.50rem);
+  }
 }
 
 .label-input-client{
@@ -305,6 +431,9 @@
   &.icon-left{
     @include labelInput(icon-left, $color-client500, $color-gray600, 0.875rem, 1.50rem);
   }
+  &.icon-left-right{
+    @include labelInput(icon-left-right, $color-client500, $color-gray600, 0.875rem, 1.50rem);
+  }
 }
 
 .label-input-partner{
@@ -314,6 +443,9 @@
   }
   &.icon-left{
     @include labelInput(icon-left, $color-partner500, $color-gray600, 0.875rem, 1.50rem);
+  }
+  &.icon-left-right{
+    @include labelInput(icon-left-right, $color-partner500, $color-gray600, 0.875rem, 1.50rem);
   }
 }
 
@@ -352,8 +484,17 @@
         line-height: 1em;
         padding:8px 12px 8px 38px;
       }
+    } @else if $icon-position == icon-left-right {
+      padding:8px 38px 8px 38px;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        line-height: 1em;
+        padding:8px 38px 8px 38px;
+      }
     }
-
+    &.size-s{
+      font-size:13px;
+      line-height: 20px;
+    }
     &::placeholder, &::-webkit-input-placeholder{
       color:$placeholder-color;
       line-height:inherit;
@@ -370,6 +511,12 @@
         }
       }
     }
+    &:focus{
+      ~.text-unit{
+        opacity: 1;
+      }
+    }
+
     &[type='password']{
       font-size:1.3rem;
       letter-spacing: -2px;
@@ -410,6 +557,44 @@
       right:12px;
     } @else if $icon-position == icon-left {
       left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:unset;
+      }
+      &:last-child{
+        right:12px;
+        left:unset;
+      }
+    }
+  }
+
+  >.text-unit{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:14px;
+    color:$color-gray400;
+    opacity: 0;
+    transition:all .3s;
+    &.active{
+      opacity: 1;
+    }
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:unset;
+      }
+      &:last-child{
+        right:12px;
+        left:unset;
+      }
     }
   }
 
@@ -445,6 +630,9 @@
   &.icon-left{
     @include defaultinput(icon-left, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.813rem, 1.250rem);
   }
+  &.icon-left-right{
+    @include defaultinput(icon-left-right, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  }
 }
 
 .default-input-partner{
@@ -458,6 +646,9 @@
   &.icon-left{
     @include defaultinput(icon-left, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
   }
+  &.icon-left-right{
+    @include defaultinput(icon-left-right, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  }
 }
 
 .default-input-client{
@@ -470,5 +661,8 @@
   }
   &.icon-left{
     @include defaultinput(icon-left, 8px 12px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
+  }
+  &.icon-left-right{
+    @include defaultinput(icon-left-right, 8px 12px, $color-client500, $color-gray300, $color-gray600, 0.875rem, 1.50rem);
   }
 }

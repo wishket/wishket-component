@@ -147,6 +147,24 @@
       }
     }
   }
+
+  &.wrapdisabled{
+    >.select-box{
+      background-color:$color-gray10;
+      border-color:$color-gray200;
+      &:focus, &:hover{
+        background-color:$color-gray10 !important;
+        border-color:$color-gray200 !important;
+      }
+    }
+    .select-label{
+      color:$color-gray300 !important;
+    }
+    .select-icon{
+      opacity: .4;
+    }
+  }
+
 }
 
 .ui-label-select{

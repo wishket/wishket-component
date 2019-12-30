@@ -15,30 +15,6 @@
 </head>
 <body style="padding: 40px;">
   <div>
-      <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg></i>
-    <input data-type="text" type="text" class="theme-wishket" placeholder="123213231" maxlength="10"/>
-    <span class="helper-text">헬퍼헬퍼헬퍼</span>
-  </div>
-  <div>
-      <input data-type="text" type="text" class="theme-wishket" placeholder="123213231" maxlength="10"/>
-      <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg></i>
-      <span class="helper-text">헬퍼헬퍼헬퍼</span>
-    </div>
-  <div>
-    <label>label</label>
-    <input data-type="label" type="text" class="theme-partner" placeholder="123213231" maxlength="10"/>
-    <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg></i>
-  </div>
-  <div>
-    <label>label</label>
-    <input data-type="label" type="text" value="test" class="theme-partner" placeholder="123213231" maxlength="10"/>
-  </div>
-  <div>
-    <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 2l-2 10L7 2 4 12 2 2"/><path stroke="#9E9E9E" stroke-width="1.2" d="M.4 5.8h13.2"/></g></svg></i>
-    <input type="number" class="theme-partner" placeholder="123213231" />
-  </div>
-
-  <div>
     <ul class="check-group">
       <li>
         <input id="123312" type="checkbox" class="theme-wishket adsfkodfsak" value="adsfa" name="asdfdfsaas"/>
@@ -89,8 +65,16 @@
   </div>
 <script>
   $(document).ready(function(){
-    $("input[type='text'][class^='theme-']").uiInput();
-    $("input[type='number'][class^='theme-']").uiInput();
+    $(".input-sample").uiInput();
+    $(".money-sample").uiInput({
+      inputType: "money",
+    });
+    $(".tel-sample").uiInput({
+      inputType: "tel",
+    });
+    $(".textarea-sample").uiInput({
+      inputType: "textArea",
+    })
     $("input:checkbox, input:radio").uiRadioCheck();
   });
 </script>
