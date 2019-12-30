@@ -4,6 +4,7 @@
 
   var defaults = {
     width: "100%", //width
+    type: "default"
   }
 
   var UiSelect = function (node, options){
