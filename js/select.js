@@ -80,17 +80,30 @@
       var option = this.$node.find("option");
       var wrapClass = this.$node.attr("class");
       var wrapDisabled = this.$node.attr("disabled") ? ' wrapdisabled' : '';
-      var createSelect =
-        '<div class="ui-label-select  '+wrapClass+wrapDisabled+'" tabindex="0">' +
-        '  <span class="select-box">' +
-        '    <span class="select-label basic">'+label+'</span>' +
-        '    <p class="select-name"></p>' +
-        '    <i class="select-icon"><svg class="select-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill="none" fill-rule="evenodd" stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M1 4l6 6 6-6"/></svg></i>' +
-        '  </span>' +
-        '  <p class="selectBg"></p>' +
-        '  <ul class="select-dropdown">' +
-        '  </ul>' +
-        '</div>';
+      if(this.settings.type === "label"){        
+        var createSelect =
+          '<div class="ui-label-select '+wrapClass+wrapDisabled+'" tabindex="0">' +
+          '  <span class="select-box">' +
+          '    <span class="select-label basic">'+label+'</span>' +
+          '    <p class="select-name"></p>' +
+          '    <i class="select-icon"><svg class="select-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill="none" fill-rule="evenodd" stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M1 4l6 6 6-6"/></svg></i>' +
+          '  </span>' +
+          '  <p class="selectBg"></p>' +
+          '  <ul class="select-dropdown">' +
+          '  </ul>' +
+          '</div>';
+      }else{
+        var createSelect =
+          '<div class="ui-select '+wrapClass+wrapDisabled+'" tabindex="0">' +
+          '  <span class="select-box">' +
+          '    <p class="select-name">'+label+'</p>' +
+          '    <i class="select-icon"><svg class="select-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill="none" fill-rule="evenodd" stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M1 4l6 6 6-6"/></svg></i>' +
+          '  </span>' +
+          '  <p class="selectBg"></p>' +
+          '  <ul class="select-dropdown">' +
+          '  </ul>' +
+          '</div>';
+      }
       this.$node.after(createSelect);
 
       var selectDropdown = this.$node.next().children(".select-dropdown");
@@ -114,8 +127,8 @@
   $.fn.uiSelect=function(options){
     //close
     $(document).on("click", function(e){
-      if(!$(e.target).hasClass('selectBg') && !$(e.target).hasClass("ui-label-select")){
-        $("div.ui-label-select").each(function(){
+      if(!$(e.target).hasClass('selectBg') && !$(e.target).hasClass("ui-label-select") && !$(e.target).hasClass("ui-select")){
+        $("div.ui-label-select, div.ui-select").each(function(){
           $(this).hasClass("selected") ? null : $(this).removeClass("active");
           $(this).children(".select-dropdown").removeClass("open");
           $(this).children(".select-box").children(".select-icon").removeClass("active");

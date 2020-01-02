@@ -1,4 +1,169 @@
-@mixin select($type, $brand-color, $brand-hover-color){
+@mixin select($type, $brand-color, $brand-hover-color, $font-size, $line-height){
+  position: relative;
+  color:$color-gray600;
+  font-weight: 400;
+  cursor: pointer;
+  display:inline-block;
+  min-width:260px;
+  line-height: 0;
+  background:#fff;
+  >.selectBg{
+    position:absolute;
+    width:100%;
+    height: 100%;
+    z-index:3;
+    top:0;
+    left:0;
+    text-indent: -9999999px;
+  }
+  >.select-box{
+    position:relative;
+    padding:8px 42px 8px 12px;
+    border:1px solid $color-gray200;
+    font-size:$font-size;
+    border-radius:4px;
+    display:block;
+    transition: all .2s;
+    >p.select-name{
+      font-size:$font-size;
+      line-height:$line-height;
+      opacity: 1;
+      padding-right:42px;
+      overflow: hidden;
+      word-break: keep-all;
+      text-overflow: ellipsis;
+      transition: all .3s, dispay .1s .3s;
+    }
+    >i{
+      position:absolute;
+      right: 13px;
+      top: 50%;
+      transform:translateY(-50%) rotate(.001deg);
+      >svg{
+        transition: all .2s;
+      }
+      &.active{
+        >svg{
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  >.select-dropdown{
+    opacity: 0;
+    visibility: hidden;
+    position:absolute;
+    transition: all .3s, opacity .1s;
+    top:41px;
+    width:100%;
+    border-radius: 4px;
+    padding:9px 0;
+    border:1px solid $color-gray200;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+    z-index:777;
+    background:#fff;
+    max-height:270px;
+    overflow:auto;
+    >li{
+      padding:8px 16px;
+      font-size:$font-size;
+      line-height:$line-height;
+      overflow: hidden;
+      word-break: keep-all;
+      text-overflow: ellipsis;
+      &.disabled{
+        color:$color-gray300;
+        pointer-events: none;
+      }
+      &.current{
+        color:$brand-color;
+      }
+      &.select{
+        color:$brand-color;
+      }
+      &:hover, &:focus{
+        background:$brand-hover-color; 
+      }
+      &.selected-hover{
+        background:$brand-hover-color;
+      }
+    }
+    &.open{
+      visibility: visible;
+      opacity: 1;
+      >li.current{
+        color:$brand-color;
+      }
+      >li.disabled{
+        &:hover{
+          background:#fff;
+        }
+      }
+    }
+  }
+  &.open{
+    >.select-box{
+      border-color:$brand-color;
+      >.select-label{
+        color:$brand-color;
+      }
+      // >i{
+      //   >svg{
+      //     transform:rotate(180deg);
+      //   }
+      // }
+    }
+  }
+  &:hover{
+    >.select-box{
+      border-color:$brand-color;
+      >.select-label{
+        color:$brand-color;
+      }
+    }
+  }
+
+  &.wrapdisabled{
+    >.select-box{
+      background-color:$color-gray10;
+      border-color:$color-gray200;
+      &:focus, &:hover{
+        background-color:$color-gray10 !important;
+        border-color:$color-gray200 !important;
+      }
+    }
+    .select-label{
+      color:$color-gray300 !important;
+    }
+    .select-icon{
+      opacity: .4;
+    }
+  }
+
+}
+
+.ui-select{
+  &.theme-wishket{
+    @include select(default, $color-partner500, $color-partner10, 14px, 24px);
+    &.select-small{
+      @include select(default, $color-partner500, $color-partner10, 13px, 20px);
+    }
+  }
+  &.theme-client{
+    @include select(default, $color-client500, $color-client10, 14px, 24px);
+    &.select-small{
+      @include select(default, $color-client500, $color-client10, 13px, 20px);
+    }
+  }
+  &.theme-partner{
+    @include select(default, $color-wishket500, $color-wishket10, 14px, 24px);
+    &.select-small{
+      @include select(default, $color-wishket500, $color-wishket10, 13px, 20px);
+    }
+  }
+}
+
+@mixin label-select($type, $brand-color, $brand-hover-color){
   position: relative;
   color:$color-gray600;
   font-weight: 400;
@@ -169,12 +334,12 @@
 
 .ui-label-select{
   &.theme-wishket{
-    @include select(default, $color-partner500, $color-partner10);
+    @include label-select(default, $color-partner500, $color-partner10);
   }
   &.theme-client{
-    @include select(default, $color-client500, $color-client10);
+    @include label-select(default, $color-client500, $color-client10);
   }
   &.theme-partner{
-    @include select(default, $color-wishket500, $color-wishket10);
+    @include label-select(default, $color-wishket500, $color-wishket10);
   }
 }
