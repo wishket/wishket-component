@@ -4,6 +4,7 @@
   let defaults = {
     type: "default",
     align: "vertical",
+    width: "inherit"
   }
   let UiRadioCheck = function (node, options){
     this.node = node;
@@ -19,10 +20,66 @@
         this.createHtml('checkbox', this.$node.find("input"));
       }else{
         if(type === 'checkbox'){
-          this.createHtml('checkbox');
+          this.settings.type === "default" ? this.createHtml('checkbox') : (this.settings.type === "card-checkbox" ? this.createCard('card-checkbox') : this.createCard('card-checkbox-wide'))
         }else if(type === 'radio'){
-          this.createHtml('radio');
+          this.settings.type === "default" ? this.createHtml('radio') : (this.settings.type === "card-radio" ? this.createCard('card-radio') : this.createCard('card-radio-wide'))
         }
+      }
+    },
+
+    toggle: function(state, node, className){
+      if(state){
+        node.addClass(className);
+      }else{
+        node.removeClass(className);
+      }
+    },
+
+    createCard: function(type){
+      var self = this;
+      var disabled = this.$node.attr("disabled") ? ' disabled' : '';
+      var inputName = this.$node.attr("name");
+      var theme;
+      
+      if(this.$node.attr("class") && this.$node.attr("class").match(/(theme-)\w+/g)){
+        theme = this.$node.attr("class").match(/(theme-)\w+/g)[0];
+      }
+      var cardImg = this.$node.siblings(".card-img-box");
+      var cardText = this.$node.siblings(".card-text");
+      if(type === "card-radio"){
+        this.$node.wrap('<label class="card-radio '+theme+disabled+'"><span></span></label>');
+        this.$node.after('<span><span class="dot"></span></span>');
+      }else if(type === "card-radio-wide"){
+        this.$node.wrap('<label class="card-radio-wide '+theme+disabled+'"><span></span></label>');
+        this.$node.after('<span><span class="dot"></span></span>');
+      }else if(type === "card-checkbox"){
+        this.$node.wrap('<label class="card-checkbox '+theme+disabled+'"><span></span></label>');
+        this.$node.after('<span class="arrow"></span>');
+      }else if(type === "card-checkbox-wide"){
+        this.$node.wrap('<label class="card-checkbox-wide '+theme+disabled+'"><span></span></label>');
+        this.$node.after('<span class="arrow"></span>');
+      }
+      
+      this.$node.parent().parent().append(cardImg);
+      this.$node.parent().parent().append(cardText);
+      this.$node.parent().parent().css("width", this.settings.width);
+      type === "card-radio-wide" || type === "card-checkbox-wide" ? (this.$node.parent().siblings(".card-text").children(".subtext").height() > 30 ? this.$node.parent().parent().css("padding", "16px 16px 16px 116px") : null) : null;
+      this.$node.is(":checked") === true ? self.toggle(true, this.$node.parent().parent(), "selected") : null;
+      this.$node.on("change", function(){
+        if(type === "card-radio" || type === "card-radio-wide"){
+          self.toggle(false, $("input[name="+inputName+"]").parent().parent(), 'selected');
+          self.toggle(true, $(this).parent().parent(), "selected");
+        }else{
+          $(this).is(":checked") === true ? self.toggle(true, $(this).parent().parent(), "selected") : self.toggle(false, $(this).parent().parent(), "selected");
+        }
+      });
+    },
+
+    treeCheck: function(state, node){
+      if(state){
+        node.prop("checked", true);
+      }else{
+        node.prop("checked", false);
       }
     },
 
@@ -67,17 +124,73 @@
           }
         });
 
-        node.on("change", function(){
-          var parent = $(this).parentsUntil('.tree-sample').siblings("label");
-          // console.log(parent);
-          if(parent.parent().parent().length > 0){
-            // console.log(parent.parent().parent().siblings("label"));
-            console.log($(this));
-            parent.each(function(){
-              console.log($(this));
+        node.on("click", function(){
+          var parent = $(this).parentsUntil('.tree-checkbox').siblings("label");
+          var isChecked = $(this).is(":checked");
+          if(isChecked === true){
+            console.log("checked true");
+            self.treeCheck(true, $(this).parent().parent().parent().find("input[type='checkbox']"));
+            self.treeCheck(true, parent.children().children("input"));
+            self.toggle(false, parent.children().children("span"), "arrow");
+            self.toggle(true, parent.children().children("span"), "minus-icon");
+            parent.siblings(".sub-tree").each(function(){
+              var listCheck;
+              $(this).find("input[type='checkbox']").each(function(){
+                if($(this).is(":checked") === false){
+                  listCheck = false;
+                  return false;
+                }
+                listCheck = true;
+              });
+              if(listCheck){
+                self.toggle(true, $(this).siblings("label").children().children("span.minus-icon"), "arrow");
+                self.toggle(false, $(this).siblings("label").children().children("span.minus-icon"), "minus-icon");
+              }
             });
+          }else{
+            if($(this).siblings("span").hasClass("arrow")){
+              self.treeCheck(false, $(this).parent().parent().parent().find("input[type='checkbox']"));
+              parent.siblings(".sub-tree").each(function(){
+                if($(this).find("input[type='checkbox']").is(":checked")){
+                  self.toggle(true, $(this).siblings("label").children().children("span.arrow"), "minus-icon");
+                  self.toggle(false, $(this).siblings("label").children().children("span.arrow"), "arrow")
+                }else{
+                  var listCheck;
+                  self.treeCheck(false, $(this).siblings("label").children().children("input[type='checkbox']"));
+                  $(this).parentsUntil('.tree-checkbox').siblings("label").siblings(".sub-tree").each(function(){
+                    $(this).find("input").each(function(){
+                      if($(this).is(":checked") === true){
+                        listCheck = true;
+                        return false;
+                      };
+                      listCheck = false;
+                    });
+                    if(!listCheck){
+                      self.treeCheck(false, $(this).parentsUntil('.tree-checkbox').children("label").children().children("input"));
+                    }
+                  });
+                }
+              });
+            }else{
+              self.toggle(false, $(this).parent().parent().parent().find("input[type='checkbox']").siblings("span"), "minus-icon");
+              self.toggle(true, $(this).parent().parent().parent().find("input[type='checkbox']").siblings("span"), "arrow");
+              self.treeCheck(true, $(this).parent().parent().parent().find("input[type='checkbox']"));
+              parent.each(function(){
+                var listCheck;
+                $(this).siblings(".sub-tree").find("input[type='checkbox']").each(function(){
+                  if($(this).is(":checked") === false){
+                    listCheck = false;
+                    return false;
+                  };
+                  listCheck = true;
+                });
+                if(listCheck){
+                  self.toggle(false, $(this).children().children("span"), "minus-icon");
+                  self.toggle(true, $(this).children().children("span"), "arrow");
+                }
+              });
+            }
           }
-          parent.css("background", "red")
         });
       }else{
         if(addon.length > 0){
@@ -108,7 +221,7 @@
           }
         }
 
-        this.$node.on("change", function(){
+        this.$node.on("change click", function(){
           if(type==='radio'){
             if(addon.length > 0){
               var addonInput = $(this).parent().parent().parent().parent().parent().find(".addon-input");
@@ -122,7 +235,7 @@
               if($(this).is(":checked")){
                 self.addonEvent(true, 'checkbox', addonInput, $(this).parent().parent().siblings("div").children());
               }else{
-                self.addonEvent(false, 'checkbox', addonInput, $(this).parent().parent().siblings("div").children()); 
+                self.addonEvent(false, 'checkbox', addonInput, $(this).parent().parent().siblings("div").children());
               }
             }
           }
