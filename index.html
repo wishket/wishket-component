@@ -11,7 +11,6 @@
     <script type="text/javascript" src="./js/radiocheck.js"></script>
     <script type="text/javascript" src="./js/toggle.js"></script>
     <script type="text/javascript" src="./js/select.js"></script>
-    <!-- <script type="text/javascript" src="./js/select_bak.js"></script> -->
     <script type="text/javascript" src="./js/autocomplete.js"></script>
     <link rel="stylesheet" href="./css/component.css">
     <link rel="stylesheet" href="./css/guide.css">
@@ -941,17 +940,9 @@
           </section>
           <hr class="guide-hr" />
           <section id="guide-uiselect">
-            <h3 class="subtitle-2-bold">Select (with Label)</h3>
+            <h3 class="subtitle-2-bold">Select</h3>
             <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
-            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/select.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".ui-label-select").uiSelect();<br />});<br /><br />&#60;select id="select-example02" class="ui-label-select theme-partner" name="ui-select-example02"><br />  &#60;option>구동리 옵션&#60;/option>  //label 텍스트<br />  &#60;option value="1">강남구&#60;/option><br />  &#60;option value="2" selected>서초구&#60;/option><br />  &#60;option value="3">관악구&#60;/option><br />  &#60;option value="4">동작구&#60;/option><br />&#60;/select>
-            </code></pre>
-            
-          </section>
-          <hr class="guide-hr" />
-          <section id="guide-uiselect">
-            <h3 class="subtitle-2-bold">Select (with Label)</h3>
-            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
-            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/select.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".ui-label-select").uiSelect();<br />});<br /><br />&#60;select id="select-example02" class="ui-label-select theme-partner" name="ui-select-example02"><br />  &#60;option>구동리 옵션&#60;/option>  //label 텍스트<br />  &#60;option value="1">강남구&#60;/option><br />  &#60;option value="2" selected>서초구&#60;/option><br />  &#60;option value="3">관악구&#60;/option><br />  &#60;option value="4">동작구&#60;/option><br />&#60;/select>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/select.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".ui-label-select").uiSelect();<br />});<br /><br />&#60;select id="select-example02" class="theme-partner" name="ui-select-example02"><br />  &#60;option>구동리 옵션&#60;/option>  //label 텍스트<br />  &#60;option value="1">강남구&#60;/option><br />  &#60;option value="2" selected>서초구&#60;/option><br />  &#60;option value="3">관악구&#60;/option><br />  &#60;option value="4">동작구&#60;/option><br />&#60;/select>
             </code></pre>
             <table class="guide-table">
               <thead>
@@ -966,8 +957,136 @@
                   <td>셀렉트의 너비를 설정 초기값은 100% 입니다.</td>
                 </tr>
                 <tr>
+                  <td>type</td>
+                  <td><label>label</label> <label>default</label></td>
+                </tr>
+                <tr>
                   <td>class</td>
-                  <td>theme-색상 설정</td>
+                  <td><label>theme-색상</label> 설정 <label>select-small</label> select small 설정</td>
+                </tr>
+              </tbody>
+            </table>
+            <select id="select-example05" class="theme-wishket">
+                <option>옵션 타이틀</option>
+                <option value="1">서울특별시1</option>
+                <option value="2">부산광역시2</option>
+                <option value="3">울산광역시3</option>
+                <option value="4">대구광역시4</option>
+                <option value="5">인청광역시5</option>
+              </select>
+  
+              <select id="select-example06" class="theme-partner" name="ui-select-example06">
+                <option>옵션 타이틀</option>
+                <option value="1">강남구</option>
+                <option value="2" selected>서초구</option>
+                <option value="3">관악구</option>
+                <option value="4">동작구</option>
+              </select>
+  
+              <select id="select-example07" class="theme-client" name="ui-select-example07">
+                <option>옵션 타이틀</option>
+                <option value="1">도요타</option>
+                <option value="2">기아</option>
+                <option value="3">현대</option>
+                <option value="4">아우디</option>
+              </select>
+  
+              <select id="select-example08" class="theme-client" name="ui-select-example08" disabled>
+                <option>옵션 타이틀</option>
+                <option value="1">아이폰</option>
+                <option value="2">갤럭시</option>
+                <option value="3">모토로라 레이저</option>
+                <option value="4">블랙베리</option>
+              </select>
+
+          </section>
+          <hr class="guide-hr" />
+          <section id="guide-uiselect">
+            <h3 class="subtitle-2-bold">Select (Small)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/select.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".ui-label-select").uiSelect();<br />});<br /><br />&#60;select id="select-example02" class="theme-partner select-small" name="ui-select-example02"><br />  &#60;option>구동리 옵션&#60;/option>  //label 텍스트<br />  &#60;option value="1">강남구&#60;/option><br />  &#60;option value="2" selected>서초구&#60;/option><br />  &#60;option value="3">관악구&#60;/option><br />  &#60;option value="4">동작구&#60;/option><br />&#60;/select>
+            </code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>width</td>
+                  <td>셀렉트의 너비를 설정 초기값은 100% 입니다.</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td><label>label</label> <label>default</label></td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td><label>theme-색상</label> 설정 <label>select-small</label> select small 설정</td>
+                </tr>
+              </tbody>
+            </table>
+            <select id="select-example09" class="theme-wishket select-small">
+                <option>옵션 타이틀</option>
+                <option value="1">서울특별시1</option>
+                <option value="2">부산광역시2</option>
+                <option value="3">울산광역시3</option>
+                <option value="4">대구광역시4</option>
+                <option value="5">인청광역시5</option>
+              </select>
+  
+              <select id="select-example10" class="theme-partner select-small" name="ui-select-example06">
+                <option>옵션 타이틀</option>
+                <option value="1">강남구</option>
+                <option value="2" selected>서초구</option>
+                <option value="3">관악구</option>
+                <option value="4">동작구</option>
+              </select>
+  
+              <select id="select-example11" class="theme-client select-small" name="ui-select-example07">
+                <option>옵션 타이틀</option>
+                <option value="1">도요타</option>
+                <option value="2">기아</option>
+                <option value="3">현대</option>
+                <option value="4">아우디</option>
+              </select>
+  
+              <select id="select-example12" class="theme-client select-small" name="ui-select-example08" disabled>
+                <option>옵션 타이틀</option>
+                <option value="1">아이폰</option>
+                <option value="2">갤럭시</option>
+                <option value="3">모토로라 레이저</option>
+                <option value="4">블랙베리</option>
+              </select>
+
+          </section>
+          <hr class="guide-hr" />
+          <section id="guide-ui-label-select">
+            <h3 class="subtitle-2-bold">Select (with Label)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/select.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".ui-label-select").uiSelect({<br />    type: "label"<br />  });<br />});<br /><br />&#60;select id="select-example02" class="theme-partner" name="ui-select-example02"><br />  &#60;option>구동리 옵션&#60;/option>  //label 텍스트<br />  &#60;option value="1">강남구&#60;/option><br />  &#60;option value="2" selected>서초구&#60;/option><br />  &#60;option value="3">관악구&#60;/option><br />  &#60;option value="4">동작구&#60;/option><br />&#60;/select>
+            </code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>width</td>
+                  <td>셀렉트의 너비를 설정 초기값은 100% 입니다.</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td><label>label</label> <label>default</label></td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td><label>theme-색상</label> 설정</td>
                 </tr>
               </tbody>
             </table>
@@ -978,18 +1097,6 @@
               <option value="2">부산광역시2</option>
               <option value="3">울산광역시3</option>
               <option value="4">대구광역시4</option>
-              <option value="5">인청광역시5</option>
-              <option value="6">서울특별시6</option>
-              <option value="7">부산광역시7</option>
-              <option value="8">울산광역시8</option>
-              <option value="9">대구광역시9</option>
-              <option value="10">인청광역시10인청광역시10인청광역시10인청광역시10인청광역시10</option>
-              <option value="11">서울특별시11</option>
-              <option value="12">부산광역시12</option>
-              <option value="13">울산광역시13</option>
-              <option value="14">대구광역시14</option>
-              <option value="15">인청광역시15</option>
-              <option value="16">서울특별시16</option>
             </select>
 
             <select id="select-example02" class="theme-partner" name="ui-select-example02">
@@ -1006,9 +1113,6 @@
               <option value="2">기아</option>
               <option value="3">현대</option>
               <option value="4">아우디</option>
-              <option value="5">벤츠</option>
-              <option value="6">BMW</option>
-              <option value="7">푸조</option>
             </select>
 
             <select id="select-example04" class="theme-client" name="ui-select-example04" disabled>
@@ -1067,6 +1171,276 @@
               </li>
             </ul>
           </section>
+          <hr class="guide-hr" />
+          <section id="select-card-radio">
+            <h3 class="subtitle-2-bold">Select Card_Radio</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/radiocheck.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".card-radio-sample").uiRadioCheck({<br />    type: "card-radio",<br />    width: "22%"<br />  });<br />});<br /><br />&#60;input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" /><br />&#60;div class="card-img-box"><br />  &#60;img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="선택 전 이미지"/><br />  &#60;img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="선택 후 이미지"/><br />&#60;/div><br />&#60;div class="card-text">라디오 타이틀&#60;/div></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ul class 추가</td>
+                  <td><label>radio-group</label></td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td><label>card-radio</label>로 셋팅</td>
+                </tr>
+                <tr>
+                  <td>width</td>
+                  <td><label>width</label>가로값</td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label> <label>theme-partner</label> <label>theme-client</label></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div>
+              <ul class="card-box">
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" checked/>
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀</div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀</div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀</div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" disabled/>
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀</div>
+                </li>
+              </ul>
+
+              <ul class="card-box">
+                <li>
+                  <input type="radio" class="theme-partner card-radio-sample" value="value" name="card-radio-sample-name2" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀<br />라디오 타이틀</div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-partner card-radio-sample" value="value" name="card-radio-sample-name2" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀<br />라디오 타이틀</div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-partner card-radio-sample" value="value" name="card-radio-sample-name2" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀<br />라디오 타이틀</div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" disabled/>
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀<br />라디오 타이틀</div>
+                </li>
+              </ul>
+
+              <ul class="card-box">
+                <li>
+                  <input type="radio" class="theme-wishket card-radio-sample" value="value" name="card-radio-sample-name3"/>
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-wishket card-radio-sample" value="value" name="card-radio-sample-name3" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-wishket card-radio-sample" value="value" name="card-radio-sample-name3" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name3" disabled checked/>
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용</p>
+                  </div>
+                </li>
+              </ul>
+
+              <ul class="card-box">
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name4" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name4" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name4" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name4" disabled checked/>
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id='card-radio-wide' >
+            <h3 class="subtitle-2-bold">Select Card_Radio_Wide (Subtext)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/radiocheck.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".card-radio-wide-sample").uiRadioCheck({<br />    type: "card-radio-wide",<br />    width: "720px"<br />  });<br />});<br /><br />&#60;input type="radio" class="theme-client card-radio-wide-sample" value="value" name="card-radio-wide-sample-name" /><br />&#60;div class="card-img-box"><br />  &#60;img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="선택 전 이미지"/><br />  &#60;img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="선택 후 이미지"/><br />&#60;/div><br />&#60;div class="card-text"><br />  라디오 타이틀<br />  &#60;p class="subtext">선택 항목 상세 내용&#60;/p><br />&#60;/div></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label><label>theme-partner</label><label>theme-client</label></td>
+                </tr>
+                <tr>
+                  <td>addon 설정</td>
+                  <td>인풋뒤에 추가 <label>&#60;input class="addon-input" type="text" placeholder="체리 주세요."/></label></td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <input type="radio" class="theme-client card-radio-wide-sample" value="value" name="card-radio-wide-sample-name1" />
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+              </div>
+              <div class="card-text">
+                라디오 타이틀
+                <p class="subtext">선택 항목 상세 내용</p>
+              </div>
+            </div>
+            <div>
+              <input type="radio" class="theme-client card-radio-wide-sample" value="value" name="card-radio-wide-sample-name1" />
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+              </div>
+              <div class="card-text">
+                라디오 타이틀
+                <p class="subtext">
+                  선택 항목 상세 내용<br />
+                  선택 항목 상세 내용
+                </p>
+              </div>
+            </div>
+            <div>
+              <input type="radio" class="theme-client card-radio-wide-sample" value="value" name="card-radio-wide-sample-name1" />
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+              </div>
+              <div class="card-text">
+                라디오 타이틀
+                <p class="subtext">선택 항목 상세 내용</p>
+              </div>
+            </div>
+            <div>
+              <input type="radio" class="theme-client card-radio-wide-sample" value="value" name="card-radio-wide-sample-name1" disabled checked/>
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+              </div>
+              <div class="card-text">
+                라디오 타이틀
+                <p class="subtext">선택 항목 상세 내용</p>
+              </div>
+            </div>
+          </section>
+
           <hr class="guide-hr" />
 
           <section id='check' >
@@ -1160,18 +1534,50 @@
               <li>
                 <input type="checkbox" class="theme-wishket" value="value" name="name"/>
                 <label>체크박스 타이틀1</label>
-                <ul>
+                <ul class="sub-tree">
                   <li>
                     <input type="checkbox" class="theme-wishket" value="value" name="name"/>
                     <label>체크박스 타이틀2</label>
-                    <ul>
+                    <ul class="sub-tree">
                       <li>
                         <input type="checkbox" class="theme-wishket" value="value" name="name"/>
                         <label>체크박스 타이틀2-1</label>
+                        <ul class="sub-tree">
+                          <li>
+                            <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                            <label>체크박스 타이틀2-1-1</label>
+                            <ul class="sub-tree">
+                              <li>
+                                <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                                <label>체크박스 타이틀2-1-1-1</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                                <label>체크박스 타이틀2-1-1-2</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                                <label>체크박스 타이틀2-1-1-3</label>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                            <label>체크박스 타이틀2-1-2</label>
+                          </li>
+                          <li>
+                            <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                            <label>체크박스 타이틀2-1-3</label>
+                          </li>
+                        </ul>
                       </li>
                       <li>
                         <input type="checkbox" class="theme-wishket" value="value" name="name"/>
                         <label>체크박스 타이틀2-2</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                        <label>체크박스 타이틀2-3</label>
                       </li>
                     </ul>
                   </li>
@@ -1188,11 +1594,11 @@
               <li>
                 <label>체크박스 타이틀5</label>
                 <input type="checkbox" class="theme-client" value="value" name="name" />
-                <ul>
+                <ul class="sub-tree">
                   <li>
                     <input type="checkbox" class="theme-wishket" value="value" name="name"/>
                     <label>체크박스 타이틀5-1</label>
-                    <ul>
+                    <ul class="sub-tree">
                       <li>
                         <input type="checkbox" class="theme-wishket" value="value" name="name"/>
                         <label>체크박스 타이틀5-1-1</label>
@@ -1215,6 +1621,287 @@
               </li>
             </ul>
           </section>
+
+          <hr class="guide-hr" />
+
+          <section id='card-checkbox' >
+            <h3 class="subtitle-2-bold">Select Card_Checkbox</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/radiocheck.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".card-checkbox-sample").uiRadioCheck({<br />    type: "card-checkbox",<br />    width: "224px"<br />  });<br />});<br /><br />&#60;input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" checked/><br />&#60;div class="card-img-box"><br />  &#60;img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/><br />  &#60;img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/><br />&#60;/div><br />&#60;div class="card-text">체크박스 타이틀&#60;/div></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label><label>theme-partner</label><label>theme-client</label></td>
+                </tr>
+                <tr>
+                  <td>addon 설정</td>
+                  <td>인풋뒤에 추가 <label>&#60;input class="addon-input" type="text" placeholder="체리 주세요."/></label></td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="card-box">
+              <li>
+                <input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" checked/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" checked disabled/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                </div>
+              </li>
+            </ul>
+
+            <ul class="card-box">
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name2" checked/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀<br />
+                  체크박스 타이틀
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name2" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀<br />
+                  체크박스 타이틀
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name2" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀<br />
+                  체크박스 타이틀
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name2" checked disabled/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀<br />
+                  체크박스 타이틀
+                </div>
+              </li>
+            </ul>
+
+            <ul class="card-box">
+              <li>
+                <input type="checkbox" class="theme-wishket card-checkbox-sample" value="value" name="card-checkbox-sample-name3" checked/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용</p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-wishket card-checkbox-sample" value="value" name="card-checkbox-sample-name3" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용</p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-wishket card-checkbox-sample" value="value" name="card-checkbox-sample-name3" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용</p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-wishket card-checkbox-sample" value="value" name="card-checkbox-sample-name3" checked disabled/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용</p>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="card-box">
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name4" checked/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name4" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name4" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name4" checked disabled/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                </div>
+              </li>
+            </ul>
+
+          </section>
+          <hr class="guide-hr" />
+          
+          <section id='card-checkbox' >
+            <h3 class="subtitle-2-bold">Select Card_Checkbox_Wide (Subtext)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/radiocheck.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".card-checkbox-sample").uiRadioCheck({<br />    type: "card-checkbox",<br />    width: "224px"<br />  });<br />});<br /><br />&#60;input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" checked/><br />&#60;div class="card-img-box"><br />  &#60;img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/><br />  &#60;img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/><br />&#60;/div><br />&#60;div class="card-text">체크박스 타이틀&#60;/div></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label><label>theme-partner</label><label>theme-client</label></td>
+                </tr>
+                <tr>
+                  <td>addon 설정</td>
+                  <td>인풋뒤에 추가 <label>&#60;input class="addon-input" type="text" placeholder="체리 주세요."/></label></td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <input type="checkbox" class="theme-partner card-wide-checkbox-sample" value="value" name="card-checkbox-wide-sample-name1"/>
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+              </div>
+              <div class="card-text">
+                체크박스 타이틀
+                <p class="subtext">선택 항목 상세 내용</p>
+              </div>
+            </div>
+            <div>
+              <input type="checkbox" class="theme-partner card-wide-checkbox-sample" value="value" name="card-checkbox-wide-sample-name1"/>
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+              </div>
+              <div class="card-text">
+                체크박스 타이틀
+                <p class="subtext">선택 항목 상세 내용</p>
+              </div>
+            </div>
+            <div>
+              <input type="checkbox" class="theme-partner card-wide-checkbox-sample" value="value" name="card-checkbox-wide-sample-name1"/>
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+              </div>
+              <div class="card-text">
+                체크박스 타이틀
+                <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+              </div>
+            </div>
+            <div>
+              <input type="checkbox" class="theme-partner card-wide-checkbox-sample" value="value" name="card-checkbox-wide-sample-name1"/>
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+              </div>
+              <div class="card-text">
+                체크박스 타이틀
+                <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+              </div>
+            </div>
+          </section>
+
+
           <hr class="guide-hr" />
           <section id="toggle">
             <h3 class="subtitle-2-bold">Toggle (O/X)</h3>
@@ -1502,13 +2189,36 @@
 
       $(".tree-sample").uiRadioCheck({
         type: "tree",
-      })
+      });
+
+      $(".card-radio-sample").uiRadioCheck({
+        type: "card-radio",
+        width: "224px"
+      });
+
+      $(".card-radio-wide-sample").uiRadioCheck({
+        type: "card-radio-wide",
+        width: "720px"
+      });
+      
+      $(".card-checkbox-sample").uiRadioCheck({
+        type: "card-checkbox",
+        width: "224px"
+      });
+      
+      $(".card-wide-checkbox-sample").uiRadioCheck({
+        type: "card-checkbox-wide",
+        width: "720px"
+      });
 
       $(".checked-sample, .radio-sample").uiRadioCheck();
 
       $(".toggle-sample").uiToggle();
-
-      $("#select-example01, #select-example02, #select-example03, #select-example04").uiSelect();
+      $("#select-example09, #select-example10, #select-example11, #select-example12").uiSelect();
+      $("#select-example05, #select-example06, #select-example07, #select-example08").uiSelect();
+      $("#select-example01, #select-example02, #select-example03, #select-example04").uiSelect({
+        type:"label"
+      });
 
       $("#autocomple-example01").uiAutoComple({
         textlength : 40,

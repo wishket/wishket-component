@@ -284,6 +284,21 @@ header > ul > li{
   border-right:0;
 }
 
+.card-box{
+  margin-bottom:30px;
+}
+
+.card-box::after{
+  clear: both;
+  content:'';
+  display: block;
+}
+
+.card-box > li{
+  float:left;
+  margin-right:20px;
+}
+
 /* layout end */
 
 code[class*="language-"],
