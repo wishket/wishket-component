@@ -1,0 +1,629 @@
+//text input stlye
+.error-text{display: none;}
+
+@mixin textinput($icon-position, $padding, $brand-color, $placeholder-color, $font-color, $font-size, $line-height){
+  position:relative;
+  // padding-bottom:28px;
+  >div>input{
+    display: block;
+    border-radius:4px;
+    padding:$padding;
+    border:1px solid $color-gray200;
+    font-size:$font-size;
+    line-height: $line-height;
+    color:$font-color;
+    font-weight:400;
+    background:#fff;
+    width:100%;
+    height: inherit;
+
+    @if $icon-position == icon-default {
+      padding:8px 12px 8px 12px;
+    } @else if $icon-position == icon-right {
+      padding:8px 38px 8px 12px;
+    } @else if $icon-position == icon-left {
+      padding:8px 12px 8px 38px;
+    } @else if $icon-position == icon-left-right {
+      padding:8px 38px 8px 38px;
+    }
+
+    &.size-s{
+      font-size:13px;
+      line-height: 20px;
+    }
+
+    &::placeholder, &::-webkit-input-placeholder{
+      color:$placeholder-color;
+      line-height:inherit;
+    }
+    &:disabled{
+      background:$color-gray10;
+      color:$color-gray300;
+    }
+    &:focus{
+      ~.text-unit{
+        opacity: 1;
+      }
+    }
+    &:hover, &:focus{
+      border-color:$brand-color;
+      &:disabled{
+        &:hover, &:focus{
+          border-color:$color-gray200;
+        }
+      }
+    }
+    // &[type='password']{
+      // font-size:20px;
+      // letter-spacing: 2px;
+      // font-family: Consolas, Courier, monospace;
+      // &::placeholder, &::-webkit-input-placeholder{
+      //   font-family: NotoSansKR !important;
+      //   font-size:$font-size !important;
+      //   letter-spacing: 0 !important;
+      // }
+    // }
+  }
+  input:-ms-input-placeholder{
+    color:$placeholder-color;
+    line-height:inherit;
+  }
+
+  input[type=text]::-ms-clear {
+    display:none;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  div>i{
+    position:absolute;
+    top:19px;
+    transform: translateY(-50%);
+    line-height: 0;
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:auto;
+      }
+      &:last-child{
+        right:12px;
+        left:auto;
+      }
+    }
+  }
+  >div{
+    position: relative;
+  }
+  div>.text-unit{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:14px;
+    color:$color-gray400;
+    opacity: 0;
+    transition:all .3s;
+    -webkit-transition:all .3s;
+    &.active{
+      opacity: 1;
+    }
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:auto;
+      }
+      &:last-child{
+        right:12px;
+        left:auto;
+      }
+    }
+  }
+
+  >span{
+    font-size:13px;
+    font-weight: 400;
+    bottom:0;
+    color:$color-gray400;
+    &.helper-text, &.error-text{
+      float:left;
+      padding:8px 12px 0 12px;
+    }
+    &.error-text{
+      display:none;
+    }
+    &.word-length{
+      float: right;
+      padding:8px 12px 0 0;
+    }
+  }
+  &.error{
+    >div>input{
+      color:$color-red500;
+      border-color:$color-red500;
+    }
+    >span{
+      color:$color-red500;
+    }
+  }
+
+  &:after{
+    clear: both;
+    display: block;
+    content:'';
+  }
+}
+
+.text-input-wishket{
+  @include textinput(icon-default, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 14px, 24px);
+  &.input-small{
+    @include textinput(icon-default, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-right{
+    @include textinput(icon-right, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-left{
+    @include textinput(icon-left, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-left-right{
+    @include textinput(icon-left-right, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+}
+
+.text-input-partner{
+  @include textinput(icon-default, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  &.input-small{
+    @include textinput(icon-default, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-right{
+    @include textinput(icon-right, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include textinput(icon-left, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include textinput(icon-left-right, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+}
+
+.text-input-client{
+  @include textinput(icon-default, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  &.input-small{
+    @include textinput(icon-default, 8px 12px, $color-client500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-right{
+    @include textinput(icon-right, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include textinput(icon-left, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include textinput(icon-left-right, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+}
+
+//label input style
+@mixin labelInput($icon-position, $brand-color, $font-color, $font-size, $line-height){
+  position:relative;  
+  >input{
+    display: block;
+    border-radius:4px;
+    border:1px solid $color-gray200;
+    font-size:$font-size;
+    line-height: $line-height;
+    color:$font-color;
+    font-weight:400;
+    background:#fff;
+    width:100%;
+    transition:all .3s;
+    -webkit-transition:all .3s;
+    @if $icon-position == icon-default {
+      padding:24px 12px 8px 12px;
+    } @else if $icon-position == icon-right {
+      padding:24px 44px 8px 12px;
+    } @else if $icon-position == icon-left {
+      padding:24px 12px 8px 44px;
+    } @else if $icon-position == icon-left-right {
+      padding:24px 44px 8px 44px;
+    }
+    &.size-s{
+      font-size:13px;
+      line-height: 20px;
+    }
+    &::placeholder, &::-webkit-input-placeholder{
+      text-indent: -999999px;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      color: #fff;  
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: #fff;  
+    }
+
+    &:disabled{
+      background:$color-gray10;
+      color:$color-gray300;
+    }
+    &:hover, &:focus{
+      border-color:$brand-color;
+      &:disabled{
+        &:hover, &:focus{
+          border-color:$color-gray200;
+        }
+      }
+    }
+    &:focus{
+      ~.text-unit{
+        opacity: 1;
+      }
+    }
+    // &[type='password']{
+      // font-size:20px;
+      // letter-spacing: 2px;
+      // font-family: Consolas, Courier, monospace;
+    // }
+  }
+
+  input:-ms-input-placeholder{
+    text-indent: -999999px;
+  }
+
+  input[type=text]::-ms-clear {
+    display:none;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  >label{
+    position:absolute;
+    @if $icon-position == icon-left {
+      left:44px;
+    } @else if $icon-position == icon-left-right{
+      left:44px;
+    } @else{
+      left:13px;
+    }
+    top:50%;
+    transform: translateY(-50%);
+    font-size:14px;
+    line-height:14px;
+    color:$color-gray300;
+    transition:all .3s;
+    -webkit-transition:all .3s;
+    padding-right:44px;
+  }
+  
+  >i{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    line-height: 0;
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:auto;
+      }
+      &:last-child{
+        right:12px;
+        left:auto;
+      }
+    }
+  }
+
+  >.text-unit{
+    position:absolute;
+    bottom:14px;
+    font-size:14px;
+    color:$color-gray400;
+    opacity: 0;
+    transition:all .3s;
+    -webkit-transition:all .3s;
+    &.active{
+      opacity: 1;
+    }
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:auto;
+      }
+      &:last-child{
+        right:12px;
+        left:auto;
+      }
+    }
+  }
+
+  &.label-effect{
+    >input:focus ~ label{
+      color:$brand-color !important;
+    }
+    > label{
+      transform:translateY(-20px);
+      font-size:0.688rem; 
+    }
+  }
+  &.error{
+    >input{
+      color:$color-red500;
+      border-color:$color-red500;
+    }
+    >label{
+      color:$color-red500;
+    }
+    >input:focus ~ label{
+      color:$color-red500 !important;
+    }
+  }
+  +.error-text{
+    color:$color-red500;
+    padding:8px 12px 0 12px;
+    font-size:13px;
+    font-weight: 400;
+    display:block;
+  }
+}
+
+.label-input-wishket{
+  @include labelInput(icon-default, $color-wishket500, $color-gray600, 14px, 24px);
+  &.icon-right{
+    @include labelInput(icon-right, $color-wishket500, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include labelInput(icon-left, $color-wishket500, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include labelInput(icon-left-right, $color-wishket500, $color-gray600, 14px, 24px);
+  }
+}
+
+.label-input-client{
+  @include labelInput(icon-default, $color-client500, $color-gray600, 14px, 24px);
+  &.icon-right{
+    @include labelInput(icon-right, $color-client500, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include labelInput(icon-left, $color-client500, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include labelInput(icon-left-right, $color-client500, $color-gray600, 14px, 24px);
+  }
+}
+
+.label-input-partner{
+  @include labelInput(icon-default, $color-partner500, $color-gray600, 14px, 24px);
+  &.icon-right{
+    @include labelInput(icon-right, $color-partner500, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include labelInput(icon-left, $color-partner500, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include labelInput(icon-left-right, $color-partner500, $color-gray600, 14px, 24px);
+  }
+}
+
+
+@mixin defaultinput($icon-position, $padding, $brand-color, $placeholder-color, $font-color, $font-size, $line-height){
+  position:relative;
+  // padding-bottom:28px;
+  >input{
+    display: block;
+    border-radius:4px;
+    padding:$padding;
+    border:1px solid $color-gray200;
+    font-size: $font-size;
+    line-height: $line-height;
+    color:$font-color;
+    font-weight:400;
+    background:#fff;
+    width:100%;
+    height: inherit;
+
+    @if $icon-position == icon-default {
+      padding:8px 12px 8px 12px;
+    } @else if $icon-position == icon-right {
+      padding:8px 38px 8px 12px;
+    } @else if $icon-position == icon-left {
+      padding:8px 12px 8px 38px;
+    } @else if $icon-position == icon-left-right {
+      padding:8px 38px 8px 38px;
+    }
+    &.size-s{
+      font-size:13px;
+      line-height: 20px;
+    }
+    &::placeholder, &::-webkit-input-placeholder{
+      color:$placeholder-color;
+      line-height:inherit;
+    }
+    &:disabled{
+      background:$color-gray10;
+      color:$color-gray300;
+    }
+    &:hover, &:focus{
+      border-color:$brand-color;
+      &:disabled{
+        &:hover, &:focus{
+          border-color:$color-gray200;
+        }
+      }
+    }
+    &:focus{
+      ~.text-unit{
+        opacity: 1;
+      }
+    }
+
+    // &[type='password']{
+      // font-size:20px;
+      // letter-spacing: 2px;
+      // font-family: Consolas, Courier, monospace;
+      // &::placeholder, &::-webkit-input-placeholder{
+      //   font-family: NotoSansKR !important;
+      //   font-size:$font-size !important;
+      //   letter-spacing: 0 !important;
+      // }
+    // }
+  }
+  input:-ms-input-placeholder{
+    color:$placeholder-color;
+    line-height:inherit;
+  }
+
+  input[type=text]::-ms-clear {
+    display:none;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  >i{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    line-height: 0;
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:auto;
+      }
+      &:last-child{
+        right:12px;
+        left:auto;
+      }
+    }
+  }
+
+  >.text-unit{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:14px;
+    color:$color-gray400;
+    opacity: 0;
+    transition:all .3s;
+    -webkit-transition:all .3s;
+    &.active{
+      opacity: 1;
+    }
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:auto;
+      }
+      &:last-child{
+        right:12px;
+        left:auto;
+      }
+    }
+  }
+
+  &.error{
+    >input{
+      color:$color-red500;
+      border-color:$color-red500;
+    }
+    +.error-text{
+      color:$color-red500;
+      padding:8px 12px 0 12px;
+      font-size:13px;
+      font-weight: 400;
+      display:block;
+    }
+  }
+
+  &:after{
+    clear: both;
+    display: block;
+    content:'';
+  }
+}
+
+.default-input-wishket{
+  @include defaultinput(icon-default, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 14px, 24px);
+  &.input-small{
+    @include defaultinput(icon-default, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-right{
+    @include defaultinput(icon-right, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include defaultinput(icon-left, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include defaultinput(icon-left-right, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+}
+
+.default-input-partner{
+  @include defaultinput(icon-default, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  &.input-small{
+    @include defaultinput(icon-default, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-right{
+    @include defaultinput(icon-right, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include defaultinput(icon-left, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include defaultinput(icon-left-right, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+}
+
+.default-input-client{
+  @include defaultinput(icon-default, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  &.input-small{
+    @include defaultinput(icon-default, 8px 12px, $color-client500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-right{
+    @include defaultinput(icon-right, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include defaultinput(icon-left, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include defaultinput(icon-left-right, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+}

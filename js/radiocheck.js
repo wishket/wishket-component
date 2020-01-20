@@ -1,12 +1,12 @@
 ;(function ($, window) {
   "use strict";
-  let newObject = {}
-  let defaults = {
+  var newObject = {}
+  var defaults = {
     type: "default",
     align: "vertical",
     width: "inherit"
   }
-  let UiRadioCheck = function (node, options){
+  var UiRadioCheck = function (node, options){
     this.node = node;
     this.$node = $(this.node);
     this.settings = $.extend({}, defaults, options);
@@ -20,9 +20,13 @@
         this.createHtml('checkbox', this.$node.find("input"));
       }else{
         if(type === 'checkbox'){
-          this.settings.type === "default" ? this.createHtml('checkbox') : (this.settings.type === "card-checkbox" ? this.createCard('card-checkbox') : this.createCard('card-checkbox-wide'))
+          if(this.settings.type === "chip"){
+            this.createHtml('chip');
+          }else{
+            this.settings.type === "default" ? this.createHtml('checkbox') : (this.settings.type === "card-checkbox" ? this.createCard('card-checkbox') : this.createCard('card-checkbox-wide'));
+          }
         }else if(type === 'radio'){
-          this.settings.type === "default" ? this.createHtml('radio') : (this.settings.type === "card-radio" ? this.createCard('card-radio') : this.createCard('card-radio-wide'))
+          this.settings.type === "default" ? this.createHtml('radio') : (this.settings.type === "card-radio" ? this.createCard('card-radio') : this.createCard('card-radio-wide'));
         }
       }
     },
@@ -46,6 +50,7 @@
       }
       var cardImg = this.$node.siblings(".card-img-box");
       var cardText = this.$node.siblings(".card-text");
+      var cardTooltip = this.$node.siblings(".card-tooltip");
       if(type === "card-radio"){
         this.$node.wrap('<label class="card-radio '+theme+disabled+'"><span></span></label>');
         this.$node.after('<span><span class="dot"></span></span>');
@@ -59,9 +64,9 @@
         this.$node.wrap('<label class="card-checkbox-wide '+theme+disabled+'"><span></span></label>');
         this.$node.after('<span class="arrow"></span>');
       }
-      
       this.$node.parent().parent().append(cardImg);
       this.$node.parent().parent().append(cardText);
+      this.$node.parent().parent().append(cardTooltip);
       this.$node.parent().parent().css("width", this.settings.width);
       type === "card-radio-wide" || type === "card-checkbox-wide" ? (this.$node.parent().siblings(".card-text").children(".subtext").height() > 30 ? this.$node.parent().parent().css("padding", "16px 16px 16px 116px") : null) : null;
       this.$node.is(":checked") === true ? self.toggle(true, this.$node.parent().parent(), "selected") : null;
@@ -91,6 +96,8 @@
       var subTextClass = subText ? ' detail-text' : '';
       var label = this.$node.siblings("label").text();
       var addon = this.$node.siblings("input");
+      var datepicker = this.$node.siblings(".ui-datepicker");
+
       label ? this.$node.siblings("label").remove() : null;
       subText ? this.$node.siblings("p").remove() : null;
       var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? " mobile" : " pc";
@@ -114,7 +121,6 @@
           addon = $(this).siblings("input");
           label ? $(this).siblings("label").remove() : null;
           subText ? $(this).siblings("p").remove() : null;
-          $(this).css("background", "red");
           $(this).wrap('<label class="checkbox-'+theme+disabled+subTextClass+isMobile+'"><span></span></label>');
           $(this).after('<span class="arrow"></span>');
           if(subText){
@@ -128,7 +134,6 @@
           var parent = $(this).parentsUntil('.tree-checkbox').siblings("label");
           var isChecked = $(this).is(":checked");
           if(isChecked === true){
-            console.log("checked true");
             self.treeCheck(true, $(this).parent().parent().parent().find("input[type='checkbox']"));
             self.treeCheck(true, parent.children().children("input"));
             self.toggle(false, parent.children().children("span"), "arrow");
@@ -206,6 +211,17 @@
           this.$node.parent().parent().parent().append(addon);
           addon.wrap('<div class="default-input-'+theme+'"></div')
           this.$node.parent().after('<span></span>');
+        }else if(datepicker.length > 0){
+          this.$node.is(":checked") ? datepicker.children("input").attr('disabled', false) : datepicker.children("input").attr('disabled', true);
+          if(type==='checkbox'){
+            this.$node.wrap('<div class="addon"><label class="checkbox-'+theme+disabled+subTextClass+isMobile+'"><span></span></label></div>');
+            this.$node.after('<span class="arrow"></span>');
+          }else if(type==='radio'){
+            this.$node.wrap('<div class="addon"><label class="radio-'+theme+disabled+subTextClass+isMobile+'"><span></span></label></div>');
+            this.$node.after('<span><span class="dot"></span></span>');
+          }
+          this.$node.parent().parent().parent().append(datepicker);
+          this.$node.parent().after('<span></span>');
         }else{
           if(type==='checkbox'){
             this.$node.wrap('<label class="checkbox-'+theme+disabled+subTextClass+isMobile+'"><span></span></label>');
@@ -213,19 +229,29 @@
           }else if(type==='radio'){
             this.$node.wrap('<label class="radio-'+theme+disabled+subTextClass+isMobile+'"><span></span></label>');
             this.$node.after('<span><span class="dot"></span></span>');
+          }else if(type==='chip'){
+            this.$node.wrap('<label class="chip-choice-'+theme+disabled+'"></label>');
+            this.$node.after('<span>'+label+'</span>');
           }
+
           if(subText){
             this.$node.parent().after('<div><span>'+label+'</span><p>'+subText+'</p></div>');
           }else{
-            this.$node.parent().after('<span>'+label+'</span>');
+            type==='chip' ? null : this.$node.parent().after('<span>'+label+'</span>');
           }
         }
+
 
         this.$node.on("change click", function(){
           if(type==='radio'){
             if(addon.length > 0){
               var addonInput = $(this).parent().parent().parent().parent().parent().find(".addon-input");
               self.addonEvent(true, 'radio', addonInput, $(this).parent().parent().siblings("div").children("input"));
+              $(this).parent().parent().siblings("div").children("input").focus();
+            }else if(datepicker.length > 0){
+              var addonInput = $(this).parent().parent().parent().parent().parent().find(".addon-input");
+              self.addonEvent(true, 'radio', addonInput, $(this).parent().parent().siblings("div").children("input"));
+              $(this).parent().parent().siblings("div").children("input").focus();
             }else{
               var addonInput = $(this).parent().parent().parent().parent().find(".addon-input");
               self.addonEvent(false, 'radio', addonInput);
@@ -233,9 +259,17 @@
           }else{
             if(addon.length > 0){
               if($(this).is(":checked")){
-                self.addonEvent(true, 'checkbox', addonInput, $(this).parent().parent().siblings("div").children());
+                self.addonEvent(true, 'checkbox', addonInput, $(this).parent().parent().siblings("div").children("input"));
+                $(this).parent().parent().siblings("div").children("input").focus();
               }else{
-                self.addonEvent(false, 'checkbox', addonInput, $(this).parent().parent().siblings("div").children());
+                self.addonEvent(false, 'checkbox', addonInput, $(this).parent().parent().siblings("div").children("input"));
+              }
+            }else if(datepicker.length > 0){
+              if($(this).is(":checked")){
+                self.addonEvent(true, 'checkbox', addonInput, $(this).parent().parent().siblings("div").children("input"));
+                $(this).parent().parent().siblings("div").children("input").focus();
+              }else{
+                self.addonEvent(false, 'checkbox', addonInput, $(this).parent().parent().siblings("div").children("input"));
               }
             }
           }

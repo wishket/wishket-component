@@ -1,0 +1,80 @@
+@mixin textArea($type, $brand-color){
+  >textarea{
+    position: relative;
+    display:block;
+    padding:8px 12px;
+    border:1px solid $color-gray200;
+    border-radius:4px;
+    width:100%;
+    min-height:200px;
+    font-size:14px;
+    color:$color-gray600;
+    line-height: 24px;
+    resize:none;
+    &.expand{
+      resize:auto;
+    }
+    &::placeholder{
+      color:$color-gray300;
+    }
+    &:disabled{
+      background:$color-gray10;
+      color:$color-gray300;
+    }
+    &:hover, &:focus{
+      border-color:$brand-color;
+      &:disabled{
+        &:hover, &:focus{
+          border-color:$color-gray200;
+        }
+      }
+    }
+  }
+  
+  >span{
+    font-size:0.813rem;
+    font-weight: 400;
+    font-size:13px;
+    font-weight:400;
+    color:$color-gray400;
+    display:inline-block;
+    &.helper-text, &.error-text{
+      float:left;
+      padding:8px 12px 0 12px;
+    }
+    &.error-text{
+      display:none;
+    }
+    &.word-length{
+      float: right;
+      padding:8px 12px 0 0;
+    }
+  }
+  &.error{
+    >div>input{
+      color:$color-red500;
+      border-color:$color-red500;
+    }
+    >span{
+      color:$color-red500;
+    }
+  }
+
+  &:after{
+    clear: both;
+    content:'';
+    display:block;
+  }
+}
+
+.ui-textarea-wishket{
+  @include textArea(default, $color-wishket500);
+}
+
+.ui-textarea-partner{
+  @include textArea(default, $color-partner500);
+}
+
+.ui-textarea-client{
+  @include textArea(default, $color-client500);
+}

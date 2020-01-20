@@ -37,10 +37,14 @@
         this.$node.on('focus click', function(){
           self.toggle(true, $(this).parent(), "label-effect");
         });
-        this.$node.siblings("label").on('click', function(){
-          self.toggle(true, $(this).parent(), "label-effect");
-          $(this).siblings("input").focus();
-        })
+        if(!this.$node.attr("disabled")){
+          // console.log(this.$node.parent().hasClass("label-effect"));
+          this.$node.siblings("label").on('click', function(){
+            console.log($(this).parent().hasClass());
+            self.toggle(true, $(this).parent(), "label-effect");
+            $(this).siblings("input").focus();
+          })
+        }
         this.$node.on('blur', function(){
           var value = $(this).val();
           if(!value){
@@ -213,7 +217,7 @@
       if(state){
         node.addClass(className);
       }else{
-        node.removeClass(className); 
+        node.removeClass(className);
       }
     }
   };

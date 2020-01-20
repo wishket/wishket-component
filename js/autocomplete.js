@@ -1,5 +1,23 @@
 ;(function ($, window) {
   "use strict";
+
+  // if (!Element.prototype.matches) {
+  //   Element.prototype.matches = Element.prototype.msMatchesSelector || 
+  //                               Element.prototype.webkitMatchesSelector;
+  // }
+  
+  // if (!Element.prototype.closest) {
+  //   Element.prototype.closest = function(s) {
+  //     var el = this;
+  
+  //     do {
+  //       if (el.matches(s)) return el;
+  //       el = el.parentElement || el.parentNode;
+  //     } while (el !== null && el.nodeType === 1);
+  //     return null;
+  //   };
+  // }
+
   var newObject = {}
   //디폴트 설정
   var defaults = {
@@ -84,7 +102,6 @@
       selected_string = selected_string.replace(/\+/gi, '%2B');
 
       if(this.settings.test){
-        console.log("test");
         e.preventDefault();
         $dropDown.html("");
         $dropDown.append("<li class='dropdown-list' data-tag='"+value+"' tabindex='0'><strong>‘"+value+"’</strong> 입력</li>");
@@ -93,7 +110,6 @@
           var stop = true;
           var labelMaxLength = self.settings.labelmaxcount;
           var labelCurrentLength = $dropDown.prev().children("span").length;
-          console.log(value);
           if(labelMaxLength > labelCurrentLength){
             $dropDown.prev().children("span").each(function () {
               if($(this).text()=== value){

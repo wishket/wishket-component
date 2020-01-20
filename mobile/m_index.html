@@ -1,0 +1,2949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>123</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+    <script type="text/javascript" src="../js/input.js"></script>
+    <script type="text/javascript" src="../js/radiocheck.js"></script>
+    <script type="text/javascript" src="../js/datepicker.js"></script>
+    <script type="text/javascript" src="../js/toggle.js"></script>
+    <script type="text/javascript" src="../js/tooltip.js"></script>
+    <script type="text/javascript" src="../js/select.js"></script>
+    <script type="text/javascript" src="../js/modal.js"></script>
+    <script type="text/javascript" src="../js/autocomplete.js"></script>
+    <script type="text/javascript" src="../js/datepicker.ko-KR.js"></script>
+    <link rel="stylesheet" href="../css/m_component.css">
+    <link rel="stylesheet" href="../css/m_guide.css">
+</head>
+<body>
+  <div class="wrap">
+    <!-- <header class="ui-gnb theme-default-black">
+      <a class="logo-white brand" href="./index.html">logo</a>
+      <ul class="right-menu">
+        <li><a href="">Color System</a></li>
+        <li><a href="">Type System</a></li>
+        <li><a href=""></a>Components</li>
+      </ul>
+    </header> -->
+    <div class="guide-content-wrap">
+      <div class="guide-content" style="width:100%; position: relative;">
+        <h1 class="guide__h1"><span>01</span> Color System</h1>
+        <section id="color-palette" >
+          <div class="palette">
+            <div>
+              <p>Red</p>
+              <ul class="red-color color-box">
+                <li>
+                  <span class="color-number">10</span>
+                  <span class="color-hex">#FFF5F5</span>
+                </li>
+                <li>
+                  <span class="color-number">50</span>
+                  <span class="color-hex">#FFE8E8</span>
+                </li>
+                <li>
+                  <span class="color-number">100</span>
+                  <span class="color-hex">#FFC9C9</span>
+                </li>
+                <li>
+                  <span class="color-number">200</span>
+                  <span class="color-hex">#ED9191</span>
+                </li>
+                <li>
+                  <span class="color-number">300</span>
+                  <span class="color-hex">#ED6666</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">400</span>
+                  <span class="color-hex">#EB3F3F</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">500</span>
+                  <span class="color-hex">#E52929</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">600</span>
+                  <span class="color-hex">#DB2121</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">700</span>
+                  <span class="color-hex">#D11519</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">800</span>
+                  <span class="color-hex">#C70006</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">900</span>
+                  <span class="color-hex">#BF0006</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p>Orange</p>
+              <ul class="orange color-box">
+                <li>
+                  <span class="color-number">10</span>
+                  <span class="color-hex">#FFF9F5</span>
+                </li>
+                <li>
+                  <span class="color-number">50</span>
+                  <span class="color-hex">#FFF0E8</span>
+                </li>
+                <li>
+                  <span class="color-number">100</span>
+                  <span class="color-hex">#FFD6BF</span>
+                </li>
+                <li>
+                  <span class="color-number">200</span>
+                  <span class="color-hex">#FFBB99</span>
+                </li>
+                <li>
+                  <span class="color-number">300</span>
+                  <span class="color-hex">#FFA070</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">400</span>
+                  <span class="color-hex">#FF8547</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">500</span>
+                  <span class="color-hex">#FF6B21</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">600</span>
+                  <span class="color-hex">#F4611D</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">700</span>
+                  <span class="color-hex">#E65918</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">800</span>
+                  <span class="color-hex">#DB5314</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">900</span>
+                  <span class="color-hex">#D14B0F</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p>Yellow</p>
+              <ul class="yellow color-box">
+                <li>
+                  <span class="color-number">10</span>
+                  <span class="color-hex">#FFFDF5</span>
+                </li>
+                <li>
+                  <span class="color-number">50</span>
+                  <span class="color-hex">#FFF9E0</span>
+                </li>
+                <li>
+                  <span class="color-number">100</span>
+                  <span class="color-hex">#FFEEB8</span>
+                </li>
+                <li>
+                  <span class="color-number">200</span>
+                  <span class="color-hex">#FFE491</span>
+                </li>
+                <li>
+                  <span class="color-number">300</span>
+                  <span class="color-hex">#FFDA6A</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">400</span>
+                  <span class="color-hex">#FFD043</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">500</span>
+                  <span class="color-hex">#FFC61C</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">600</span>
+                  <span class="color-hex">#FFB012</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">700</span>
+                  <span class="color-hex">#F79E0F</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">800</span>
+                  <span class="color-hex">#F79205</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">900</span>
+                  <span class="color-hex">#F28A05</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p>Partner</p>
+              <ul class="partner color-box">
+                <li>
+                  <span class="color-number">10</span>
+                  <span class="color-hex">#F5FFFC</span>
+                </li>
+                <li>
+                  <span class="color-number">50</span>
+                  <span class="color-hex">#EBFFF9</span>
+                </li>
+                <li>
+                  <span class="color-number">100</span>
+                  <span class="color-hex">#C4EDE1</span>
+                </li>
+                <li>
+                  <span class="color-number">200</span>
+                  <span class="color-hex">#93DBC6</span>
+                </li>
+                <li>
+                  <span class="color-number">300</span>
+                  <span class="color-hex">#63C9AB</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">400</span>
+                  <span class="color-hex">#30B891</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">500</span>
+                  <span class="color-hex">#00A878</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">600</span>
+                  <span class="color-hex">#009C6F</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">700</span>
+                  <span class="color-hex">#009168</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">800</span>
+                  <span class="color-hex">#008761</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">900</span>
+                  <span class="color-hex">#007D59</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <p>Wishket</p>  
+              <ul class="wishket color-box">
+                <li>
+                  <span class="color-number">10</span>
+                  <span class="color-hex">#F2FCFF</span>
+                </li>
+                <li>
+                  <span class="color-number">50</span>
+                  <span class="color-hex">#E8FAFF</span>
+                </li>
+                <li>
+                  <span class="color-number">100</span>
+                  <span class="color-hex">#BFEDFA</span>
+                </li>
+                <li>
+                  <span class="color-number">200</span>
+                  <span class="color-hex">#ABE3F2</span>
+                </li>
+                <li>
+                  <span class="color-number">300</span>
+                  <span class="color-hex">#80C7DE</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">400</span>
+                  <span class="color-hex">#5DB6D4</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">500</span>
+                  <span class="color-hex">#3BA3C7</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">600</span>
+                  <span class="color-hex">#369CC2</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">700</span>
+                  <span class="color-hex">#3391BA</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">800</span>
+                  <span class="color-hex">#308AB3</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">900</span>
+                  <span class="color-hex">#2E82AB</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <p>Client</p>
+              <ul class="client color-box">
+                <li>
+                  <span class="color-number">10</span>
+                  <span class="color-hex">#F5F9FF</span>
+                </li>
+                <li>
+                  <span class="color-number">50</span>
+                  <span class="color-hex">#E3EDFA</span>
+                </li>
+                <li>
+                  <span class="color-number">100</span>
+                  <span class="color-hex">#CCDBED</span>
+                </li>
+                <li>
+                  <span class="color-number">200</span>
+                  <span class="color-hex">#A6BFDE</span>
+                </li>
+                <li>
+                  <span class="color-number">300</span>
+                  <span class="color-hex">#7DA3CC</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">400</span>
+                  <span class="color-hex">#5487BA</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">500</span>
+                  <span class="color-hex">#2E6BAA</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">600</span>
+                  <span class="color-hex">#26619E</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">700</span>
+                  <span class="color-hex">#1F578C</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">800</span>
+                  <span class="color-hex">#1A4D80</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">900</span>
+                  <span class="color-hex">#144570</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <p>Indigo</p>
+              <ul class="indigo color-box">
+                <li>
+                  <span class="color-number">10</span>
+                  <span class="color-hex">#F7FAFC</span>
+                </li>
+                <li>
+                  <span class="color-number">50</span>
+                  <span class="color-hex">#E6EBF0</span>
+                </li>
+                <li>
+                  <span class="color-number">100</span>
+                  <span class="color-hex">#CCD1D6</span>
+                </li>
+                <li>
+                  <span class="color-number">200</span>
+                  <span class="color-hex">#A1A6AD</span>
+                </li>
+                <li>
+                  <span class="color-number">300</span>
+                  <span class="color-hex">#787d85</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">400</span>
+                  <span class="color-hex">#4d525c</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">500</span>
+                  <span class="color-hex">#383d47</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">600</span>
+                  <span class="color-hex">#242933</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">700</span>
+                  <span class="color-hex">#1C2029</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">800</span>
+                  <span class="color-hex">#14171F</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">900</span>
+                  <span class="color-hex">#0D0F14</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <p>Gray</p>
+              <ul class="gray color-box">
+                <li>
+                  <span class="color-number">10</span>
+                  <span class="color-hex">#FAFAFA</span>
+                </li>
+                <li>
+                  <span class="color-number">50</span>
+                  <span class="color-hex">#F5F5F5</span>
+                </li>
+                <li>
+                  <span class="color-number">100</span>
+                  <span class="color-hex">#EEEEEE</span>
+                </li>
+                <li>
+                  <span class="color-number">200</span>
+                  <span class="color-hex">#E0E0E0</span>
+                </li>
+                <li>
+                  <span class="color-number">300</span>
+                  <span class="color-hex">#BDBDBD</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">400</span>
+                  <span class="color-hex">#9E9E9E</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">500</span>
+                  <span class="color-hex">#757575</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">600</span>
+                  <span class="color-hex">#616161</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">700</span>
+                  <span class="color-hex">#424242</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">800</span>
+                  <span class="color-hex">#313131</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">900</span>
+                  <span class="color-hex">#212121</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <p>ETC</p>
+              <ul class="etc color-box">
+                <li>
+                  <span class="color-number">Partner</span>
+                  <span class="color-hex">#07B481</span>
+                </li>
+                <li>
+                  <span class="color-number">Wishket</span>
+                  <span class="color-hex">#2099BB</span>
+                </li>
+                <li>
+                  <span class="color-number">Client</span>
+                  <span class="color-hex">#446EAB</span>
+                </li>
+                <li>
+                  <span class="color-number">white</span>
+                  <span class="color-hex">#FFFFFF</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">Black</span>
+                  <span class="color-hex">#000000</span>
+                </li>
+                <li class="white">
+                  <span class="color-number">Visited</span>
+                  <span class="color-hex">#66198F</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <h1 class="guide__h1"><span>02</span> Type System</h1>
+        <section id="font">
+          <dl>
+            <dt>Font Families</dt>
+            <dd>
+              <p>Noto Sans CJK KR Light</p>
+              <p>Noto Sans CJK KR Regular</p>
+              <p>Noto Sans CJK KR Medium</p>
+              <p>Noto Sans CJK KR Bold</p>
+            </dd>
+          </dl>
+          <dl>
+            <dt>Type Scale</dt>
+            <dd>
+              <table class="font-type" style="width:100%">
+                <tr>
+                  <td class="title-1">Title 1</td>
+                  <td>48</td>
+                  <td>64</td>
+                </tr>
+                <tr>
+                  <td class="title-2">Title 2</td>
+                  <td>32</td>
+                  <td>48</td>
+                </tr>
+                <tr>
+                  <td class="title-2-medium">Title 2</td>
+                  <td>32</td>
+                  <td>48</td>
+                </tr>
+                <tr>
+                  <td class="title-2-regular">Title 2</td>
+                  <td>32</td>
+                  <td>48</td>
+                </tr>
+                <tr>
+                  <td class="title-2-light">Title 2</td>
+                  <td>32</td>
+                  <td>48</td>
+                </tr>
+                <tr>
+                  <td class="subtitle-1">Subtitle 1</td>
+                  <td>24</td>
+                  <td>36</td>
+                </tr>
+                <tr>
+                  <td class="subtitle-1-regular">Subtitle 1</td>
+                  <td>24</td>
+                  <td>36</td>
+                </tr>
+                <tr>
+                  <td class="subtitle-1-light">Subtitle 1</td>
+                  <td>24</td>
+                  <td>36</td>
+                </tr>
+                <tr>
+                  <td class="subtitle-2-bold">Subtitle 2</td>
+                  <td>18</td>
+                  <td>28</td>
+                </tr>
+                <tr>
+                  <td class="subtitle-2-medium">Subtitle 2</td>
+                  <td>18</td>
+                  <td>28</td>
+                </tr>
+                <tr>
+                  <td class="subtitle-2">Subtitle 2</td>
+                  <td>18</td>
+                  <td>28</td>
+                </tr>
+                <tr>
+                  <td class="body-1-bold">Body 1</td>
+                  <td>16</td>
+                  <td>26</td>
+                </tr>
+                <tr>
+                  <td class="body-1-medium">Body 1</td>
+                  <td>16</td>
+                  <td>26</td>
+                </tr>
+                <tr>
+                  <td class="body-1">Body 1</td>
+                  <td>16</td>
+                  <td>26</td>
+                </tr>
+                <tr>
+                  <td class="body-2-bold">Body 2</td>
+                  <td>14</td>
+                  <td>24</td>
+                </tr>
+                <tr>
+                  <td class="body-2-medium">Body 2</td>
+                  <td>14</td>
+                  <td>24</td>
+                </tr>
+                <tr>
+                  <td class="body-2">Body 2</td>
+                  <td>14</td>
+                  <td>24</td>
+                </tr>
+                <tr>
+                  <td class="body-3">Body 3</td>
+                  <td>13</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td class="body-3-medium">Body 3</td>
+                  <td>13</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td class="caption-bold">Caption 1</td>
+                  <td>12</td>
+                  <td>18</td>
+                </tr>
+                <tr>
+                  <td class="caption-medium">Caption 1</td>
+                  <td>12</td>
+                  <td>18</td>
+                </tr>
+                <tr>
+                  <td class="caption">Caption 1</td>
+                  <td>12</td>
+                  <td>18</td>
+                </tr>
+                <tr>
+                  <td class="caption-2">Caption 2</td>
+                  <td>11</td>
+                  <td>14</td>
+                </tr>
+              </table>
+            </dd>
+          </dl>
+        </section>
+        <h2 class="subtitle-1-bold hr">Input</h2>
+        <section id="title-input" >
+          <section id='text-input'>
+            <h3 class="subtitle-2-bold">Text</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".input-sample").uiInput();<br />});<br /><br />&#60;div><br />  &#60;input data-type="text" type="text" class="theme-wishket input-sample" placeholder="123213231" maxlength="10"/><br />  &#60;span class="helper-text">헬퍼헬퍼헬퍼&#60;/span><br />&#60;/div><br /><br />&#60;div><br />  &#60;i>아이콘 이미지&#60;/i><br />  &#60;input data-type="text" type="text" class="theme-wishket input-sample" placeholder="123213231" maxlength="10"/><br />  &#60;i>아이콘 이미지&#60;/i><br />  &#60;span class="helper-text">헬퍼헬퍼헬퍼&#60;/span><br />&#60;/div></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>data-type</td>
+                  <td>타입을 설정 <label>text</label> <label>label</label></td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-client</label> <label>theme-partner</label> <label>theme-wishket</label></td>
+                </tr>
+                <tr>
+                  <td>icon</td>
+                  <td>아이콘 설정 input 앞이나 뒤에 <label>&#60;i>아이콘&#60;/i></label></td>
+                </tr>
+                <tr>
+                  <td>maxlength</td>
+                  <td>최대 글자수</td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <input data-type="text" type="text" class="theme-partner input-sample" placeholder="플레이스 홀더" maxlength="100"/>
+              <span class="text-unit">테스트</span>
+              <span class="helper-text">헬퍼 텍스트 상세내용</span>
+            </div>
+            <div>
+              <input data-type="text" type="text" class="theme-wishket input-sample" placeholder="플레이스 홀더" maxlength="100"/>
+              <span class="helper-text">헬퍼 텍스트 상세내용</span>
+            </div>
+            <div>
+              <input data-type="text" type="text" class="theme-client input-sample" placeholder="플레이스 홀더" maxlength="100"/>
+              <span class="helper-text">헬퍼 텍스트 상세내용</span>
+            </div>
+            <div>
+              <i class="tooltip-sample-top">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg>
+                <div class="tooltip-container">
+                  <p class="subtext">입력한 이메일로 프로젝트 알림, 지원 및 미팅 알림, 계약 알림 등이 발송됩니다.<br /><br />개인용 이메일과 비즈니스용 이메일을 구분하고 싶거나, 기업 또는 팀 형태로 위시켓을 이용하는 경우에는 비즈니스용 이메일 사용을 권장합니다.</p>
+                </div>
+              </i>
+              <input data-type="text" type="text" class="theme-client input-sample" placeholder="플레이스 홀더" disabled maxlength="100"/>
+              <span class="helper-text">헬퍼 텍스트 상세내용</span>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id='text-small-input'>
+            <h3 class="subtitle-2-bold">Text (Small)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".input-sample").uiInput();<br />});<br /><br />&#60;div><br />  &#60;input data-type="text" type="text" class="theme-wishket input-sample" placeholder="123213231" maxlength="10"/><br />  &#60;span class="helper-text">헬퍼헬퍼헬퍼&#60;/span><br />&#60;/div><br /><br />&#60;div><br />  &#60;i>아이콘 이미지&#60;/i><br />  &#60;input data-type="text" type="text" class="theme-wishket input-sample" placeholder="123213231" maxlength="10"/><br />  &#60;i>아이콘 이미지&#60;/i><br />  &#60;span class="helper-text">헬퍼헬퍼헬퍼&#60;/span><br />&#60;/div></code></pre>
+            <div>
+              <input data-type="text" type="text" class="theme-wishket input-sample size-s" placeholder="플레이스 홀더" maxlength="100"/>
+              <span class="helper-text">헬퍼 텍스트 상세내용</span>
+            </div>
+            <div>
+              <input data-type="text" type="text" class="theme-client input-sample size-s" placeholder="플레이스 홀더" maxlength="100"/>
+              <span class="helper-text">헬퍼 텍스트 상세내용</span>
+            </div>
+            <div>
+              <input data-type="text" type="text" class="theme-partner input-sample size-s" placeholder="플레이스 홀더" maxlength="100"/>
+              <span class="helper-text">헬퍼 텍스트 상세내용</span>
+            </div>
+            <div>
+              <input data-type="text" type="text" class="theme-partner input-sample size-s" placeholder="플레이스 홀더" disabled maxlength="100"/>
+              <span class="helper-text">헬퍼 텍스트 상세내용</span>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="label-text">
+            <h3 class="subtitle-2-bold">Text (with Label)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".input-sample").uiInput();<br />});<br /><br />&#60;div><br />  &#60;input data-type="label" type="text" class="theme-wishket input-sample" placeholder="플레이스홀더" maxlength="10"/><br />  &#60;label>label&#60;/label><br />&#60;/div><br /><br />&#60;div><br />  &#60;i>아이콘 이미지&#60;/i><br />  &#60;input data-type="label" type="text" class="theme-wishket input-sample" placeholder="플레이스홀더" maxlength="10"/><br />  &#60;i>아이콘 이미지&#60;/i><br />  &#60;label>label&#60;/label><br />&#60;/div></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>data-input-type</td>
+                  <td>타입을 설정 <label>text-input</label> <label>label-input</label></td>
+                </tr>
+                <tr>
+                  <td>data-input-theme</td>
+                  <td>테마 설정 <label>client</label> <label>partner</label> <label>wishket</label></td>
+                </tr>
+                <tr>
+                  <td>data-input-label</td>
+                  <td>레이블 텍스트</td>
+                </tr>
+                <tr>
+                  <td>data-input-helper</td>
+                  <td>헬퍼 텍스트 예)핼퍼 텍스트 상세 내용 1 &#60;br /> 핼퍼 텍스트 상세 내용 1</td>
+                </tr>
+                <tr>
+                  <td>data-input-icon</td>
+                  <td>아이콘</td>
+                </tr>
+                <tr>
+                  <td>data-input-icon</td>
+                  <td>아이콘 위치 <label>right</label> <label>left</label></td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <label>요구인원</label>
+              <input data-type="label" type="text" class="theme-partner input-sample" placeholder="플레이스 홀더" />
+              <span class="text-unit">명</span>
+            </div>
+            <div>
+              <label>레이블</label>
+              <i class="tooltip-sample-top">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg>
+                <div class="tooltip-container">
+                  <p class="subtext">입력한 이메일로 프로젝트 알림, 지원 및 미팅 알림, 계약 알림 등이 발송됩니다.<br /><br />개인용 이메일과 비즈니스용 이메일을 구분하고 싶거나, 기업 또는 팀 형태로 위시켓을 이용하는 경우에는 비즈니스용 이메일 사용을 권장합니다.</p>
+                </div>
+              </i>
+              <input data-type="label" type="text" class="theme-wishket input-sample" placeholder="플레이스 홀더" />
+            </div>
+            <div>
+              <label>레이블</label>
+              <input data-type="label" type="text" value="입력 테스트123" class="theme-client input-sample" placeholder="플레이스 홀더" maxlength="10"/>
+            </div>
+            <div>
+              <label>레이블</label>
+              <i class="tooltip-sample-top">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg>
+                <div class="tooltip-container">
+                  <p class="subtext">입력한 이메일로 프로젝트 알림, 지원 및 미팅 알림, 계약 알림 등이 발송됩니다.<br /><br />개인용 이메일과 비즈니스용 이메일을 구분하고 싶거나, 기업 또는 팀 형태로 위시켓을 이용하는 경우에는 비즈니스용 이메일 사용을 권장합니다.</p>
+                </div>
+              </i>
+              <input data-type="label" type="text" class="theme-wishket input-sample" placeholder="플레이스 홀더" disabled/>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id='text-input'>
+            <h3 class="subtitle-2-bold">input??</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".input-sample").uiInput();<br />});<br /><br />&#60;div><br />  &#60;input type="text" class="theme-wishket input-sample" placeholder="플레이스 홀더"/><br />  &#60;i>아이콘 이미지&#60;/i><br />&#60;/div><br /><br /></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-client</label> <label>theme-partner</label> <label>theme-wishket</label></td>
+                </tr>
+                <tr>
+                  <td>icon</td>
+                  <td>아이콘 설정 input 앞이나 뒤에 <label>&#60;i>아이콘&#60;/i></label></td>
+                </tr>
+                <tr>
+                  <td>기호 추가</td>
+                  <td><span></span></td>
+                </tr>
+                <tr>
+                  <td>maxlength</td>
+                  <td>최대 글자수</td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <input type="text" class="theme-wishket input-sample" placeholder="요구인원" />
+              <span class="text-unit">명</span>
+            </div>
+            <div>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg></i>
+              <input type="text" class="theme-client input-sample" placeholder="플레이스 홀더" />
+            </div>
+            <div>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg></i>
+              <input type="text" class="theme-partner input-sample" placeholder="플레이스 홀더" />
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg></i>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="password-input">
+            <h3 class="subtitle-2-bold">Password</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".password-sample").uiInput();<br />});<br /><br />&#60;input type="password" class="theme-partner password-sample" placeholder="password"/></code></pre>
+
+            <div>
+              <input type="password" value="test" class="theme-partner password-sample" placeholder="비밀번호"/>
+            </div>
+            <div>
+              <input type="password" value="" class="theme-wishket password-sample" placeholder="비밀번호"/>
+            </div>
+            <div>
+              <input type="password" value="" class="theme-client password-sample" placeholder="비밀번호"/>
+            </div>
+            <div>
+              <input type="password" value="test" class="theme-client password-sample" placeholder="비밀번호" disabled/>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="password-input">
+            <h3 class="subtitle-2-bold">Password (with Label)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".password-sample").uiInput();<br />});<br /><br />&#60;input type="password" data-type="label" class="theme-partner password-sample" placeholder="password"/></code></pre>
+            <div>
+              <label>비밀번호</label>
+              <input data-type="label" type="password" value="test" class="theme-wishket password-sample" placeholder="password"/>
+            </div>
+            <div>
+              <label>비밀번호</label>
+              <input data-type="label" type="password" value="test" class="theme-partner password-sample" placeholder="password"/>
+            </div>
+            <div>
+              <label>비밀번호</label>
+              <input data-type="label" type="password" value="test" class="theme-client password-sample" placeholder="password"/>
+            </div>
+            <div>
+              <label>비밀번호</label>
+              <input data-type="label" type="password" value="test" class="theme-partner password-sample" placeholder="password" disabled/>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="tel-input">
+            <h3 class="subtitle-2-bold">Tel</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".tel-sample").uiInput({<br />    inputType: "tel",<br />  });<br />});<br /><br />&#60;input type="text" class="theme-wishket tel-sample" placeholder="000-0000-0000" maxlength="13"/></code></pre>
+
+            <div>
+              <input type="text" class="theme-client tel-sample" placeholder="000-0000-0000" maxlength="13"/>
+            </div>
+            <div>
+              <input type="text" class="theme-wishket tel-sample" placeholder="000-0000-0000" maxlength="13"/>
+            </div>
+            <div>
+              <input type="text" class="theme-partner tel-sample" placeholder="000-0000-0000" maxlength="13"/>
+            </div>
+            <div>
+              <input type="text" class="theme-wishket tel-sample" placeholder="000-0000-0000" maxlength="13" disabled/>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="tel-label-input">
+            <h3 class="subtitle-2-bold">Tel (with Label)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".tel-sample").uiInput({<br />    inputType: "tel",<br />  });<br />});<br /><br />&#60;input data-type="label" type="text" class="theme-partner tel-sample" placeholder="000-0000-0000" maxlength="13"/></code></pre>
+            <div>
+              <label>전화번호</label>
+              <input data-type="label" type="text" class="theme-wishket tel-sample" placeholder="000-0000-0000" maxlength="13"/>
+            </div>
+            <div>
+              <label>전화번호</label>
+              <input data-type="label" type="text" class="theme-client tel-sample" placeholder="000-0000-0000" maxlength="13"/>
+            </div>
+            <div>
+              <label>전화번호</label>
+              <input data-type="label" type="text" class="theme-partner tel-sample" placeholder="000-0000-0000" maxlength="13"/>
+            </div>
+            <div>
+              <label>전화번호</label>
+              <input data-type="label" type="text" class="theme-partner tel-sample" placeholder="000-0000-0000" maxlength="13" disabled/>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="price-input">
+            <h3 class="subtitle-2-bold">Price</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".price-sample").uiInput({<br />    inputType: "price",<br />  });<br />});<br /><br />&#60;div><br />  &#60;i>아이콘&#60;/i><br />  &#60;input type="text" class="theme-partner price-sample" placeholder="금액" maxlength="10"/><br />&#60;/div></code></pre>
+            <div>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 2l-2 10L7 2 4 12 2 2"/><path stroke="#9E9E9E" stroke-width="1.2" d="M.4 5.8h13.2"/></g></svg></i>
+              <input type="text" class="theme-partner price-sample" placeholder="금액" value="123,231"/>
+              <span class="text-unit">만원</span>
+            </div>
+            <div>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 2l-2 10L7 2 4 12 2 2"/><path stroke="#9E9E9E" stroke-width="1.2" d="M.4 5.8h13.2"/></g></svg></i>
+              <input type="text" class="theme-client price-sample" placeholder="금액" />
+              <span class="text-unit">만원</span>
+            </div>
+            <div>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 2l-2 10L7 2 4 12 2 2"/><path stroke="#9E9E9E" stroke-width="1.2" d="M.4 5.8h13.2"/></g></svg></i>
+              <input type="text" class="theme-wishket price-sample" placeholder="금액" />
+              <span class="text-unit">만원</span>
+            </div>
+            <div>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 2l-2 10L7 2 4 12 2 2"/><path stroke="#9E9E9E" stroke-width="1.2" d="M.4 5.8h13.2"/></g></svg></i>
+              <input type="text" class="theme-partner price-sample" placeholder="금액" disabled/>
+              <span class="text-unit">만원</span>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="price-input">
+            <h3 class="subtitle-2-bold">Tooltip</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/tooltip.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".tooltip-sample-left").uiTooltip({<br />    position:"left",<br />    width:"306px",<br />  });<br />});<br /><br />&#60;i class="tooltip-sample-bottom"><br />  아이콘<br />  &#60;div class="tooltip-container"><br />    &#60;h3>예상 진행 기간&#60;/h3><br />    &#60;p class="subtext">위시켓의 검수 과정에서 예상 진행 기간이&#60;br />촉박하거나 넉넉하다고 판단 될 경우, 기간 또는 프로젝트 내용 조정을 제안 드릴 수 있습니다.&#60;/p><br />  &#60;/div><br />&#60;/i></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                </tr>
+                <tr>
+                  <td>position</td>
+                  <td>툴팁의 위치를 설정합니다. <label>top</label> <label>left</label> <label>right</label> <label>bottom</label></td>
+                </tr>
+                <tr>
+                  <td>width</td>
+                  <td>툴팁 크기 지정 default <label>260px</label></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="guide-tooltip">
+              <div>
+                <p>툴팁 Basic Bottom</p>
+                <i class="tooltip-sample-bottom">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg>
+                  <div class="tooltip-container">
+                    <p class="subtext">위시켓의 검수 과정에서 예상 진행 기간이<br />촉박하거나 넉넉하다고 판단 될 경우, 기간 또는 프로젝트 내용 조정을 제안 드릴 수 있습니다.</p>
+                  </div>
+                </i>
+              </div>
+            </div>
+            <div class="guide-tooltip">
+              <div>
+              <p>툴팁 Basic Top</p>
+              <i class="tooltip-sample-top">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg>
+                <div class="tooltip-container">
+                  <p class="subtext">입력한 이메일로 프로젝트 알림, 지원 및 미팅 알림, 계약 알림 등이 발송됩니다.<br /><br />개인용 이메일과 비즈니스용 이메일을 구분하고 싶거나, 기업 또는 팀 형태로 위시켓을 이용하는 경우에는 비즈니스용 이메일 사용을 권장합니다.</p>
+                </div>
+              </i>
+              </div>
+            </div>
+            <div class="guide-tooltip">
+              <div>
+                <p>툴팁 Basic left</p>
+                <i class="tooltip-sample-left">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg>
+                  <div class="tooltip-container">
+                    <p class="subtext">위시켓의 검수 과정에서 예상 진행 기간이<br />촉박하거나 넉넉하다고 판단 될 경우, 기간 또는 프로젝트 내용 조정을 제안 드릴 수 있습니다.</p>
+                  </div>
+                </i>
+              </div>
+            </div>
+            <div class="guide-tooltip">
+              <div>
+              <p>툴팁 Basic right</p>
+              <i class="tooltip-sample-right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg>
+                <div class="tooltip-container">
+                  <p class="subtext">위시켓의 검수 과정에서 예상 진행 기간</p>
+                </div>
+              </i>
+              </div>
+            </div>
+            <div class="guide-tooltip">
+              <div>
+              <p>툴팁 Infobox</p>
+              <i class="tooltip-sample-bottom">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg>
+                <div class="tooltip-container tooltip-container__infobox">
+                  <div>
+                    <h3>예상 진행 기간</h3>
+                    <p class="subtext">위시켓의 검수 과정에서 예상 진행 기간이<br />촉박하거나 넉넉하다고 판단 될 경우, 기간 또는 프로젝트 내용 조정을 제안 드릴 수 있습니다.</p>
+                  </div>
+                  <div>
+                    <h3>예상 진행 기간 산정이 어려우신가요?</h3>
+                    <p class="subtext">위시켓 고객센터로 연락주시면, 담당 매니저가 상세한 프로젝트 내용을 상담해 드립니다.</p>
+                  </div>
+                </div>
+              </i>
+              </div>
+            </div>
+            <div class="guide-tooltip">
+              <div>
+              <p>툴팁 Image</p>
+              <i class="tooltip-sample-image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><g fill="none" fill-rule="evenodd"><circle cx="8" cy="8" r="7.5" stroke="#9E9E9E"></circle><path stroke="#9E9E9E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 11.5v-4"></path><path fill="#9E9E9E" d="M7.998 5.5A1.003 1.003 0 0 1 7 4.487c.005-.532.463-.987.996-.987.547 0 1.01.466 1.004 1.011a1.008 1.008 0 0 1-1.002.989"></path></g></svg>
+                <div class="tooltip-container">
+                  <p class="subtext">클라이언트 소개는 프로젝트 상세 정보 우측의 프로필 영역을 통해 파트너에게 보여지게 됩니다.</p>
+                  <img src="../img/img-tip-client-intro.jpg" alt="이미지"/>
+                  <p class="subtext">업력과 사업 분야, 회사 규모 등의 내용 위주로 간단히 입력해주세요.</p>
+                </div>
+              </i>
+              </div>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="uiautocomplete">
+            <h3 class="subtitle-2-bold">Autocomplete</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/autocomplete.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".autocomple").uiAutoComple({<br />    labelmaxcount : 2,<br />    textlength : 40<br />  });<br />});<br /><br />&#60;input class="autocomple ui-autocomplete theme-wishket" placeholder="플레이스 홀더" type="text" /
+            </code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>labelmaxcount</td>
+                  <td>라벨 선택 가능한 수</td>
+                </tr>
+                <tr>
+                  <td>textlength</td>
+                  <td>인풋 텍스트 글자수</td>
+                </tr>
+                <tr>
+                  <td>listwidth</td>
+                  <td>드롭다운 width길이 조정 초기값 inherit</td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td>색상 설정 <label>theme-partner</label> <label>theme-wishket</label> <label>theme-client</label></td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <input id="autocomple-example01" class="theme-partner" value='photoshop*!*illustrator*!*sketch' placeholder="플레이스 홀더" type="text" data-help-text="헬퍼 텍스트 상세 내용"/>
+            </div>
+            <div>
+              <input id="autocomple-example02" class="theme-wishket" placeholder="플레이스 홀더" type="text" />
+            </div>
+            <div>
+              <input id="autocomple-example03" class="theme-client" placeholder="플레이스 홀더2" type="text" />
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="textarea-input">
+            <h3 class="subtitle-2-bold">Textarea</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".textarea-sample").uiInput({<br />    inputType: "textArea",<br />  })<br />});<br /><br />&#60;div><br />  &#60;textarea class="theme-client textarea-sample" maxlength="100" placeholder="플레이스 홀더">&#60;/textarea><br />  &#60;span class="helper-text">헬퍼헬퍼헬퍼&#60;/span><br />&#60;/div></code></pre>
+            <div>
+              <textarea class="theme-client textarea-sample" placeholder="플레이스 홀더" maxlength="100"></textarea>
+              <span class="helper-text">헬퍼 텍스트 상세 내용</span>
+            </div>
+            <div>
+              <textarea class="theme-partner textarea-sample" placeholder="플레이스 홀더" maxlength="100"></textarea>
+              <span class="helper-text">헬퍼 텍스트 상세 내용</span>
+            </div>
+            <div>
+              <textarea class="theme-wishket textarea-sample" placeholder="플레이스 홀더" maxlength="100"></textarea>
+              <span class="helper-text">헬퍼 텍스트 상세 내용</span>
+            </div>
+            <div>
+              <textarea class="theme-wishket textarea-sample" placeholder="플레이스 홀더" maxlength="100" disabled></textarea>
+              <span class="helper-text">헬퍼 텍스트 상세 내용</span>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="textarea-expand-input">
+            <h3 class="subtitle-2-bold">Textarea (Expand)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/input.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".textarea-sample").uiInput({<br />    inputType: "textArea",<br />  })<br />});<br /><br />&#60;div><br />  &#60;textarea class="theme-client textarea-sample" maxlength="100" placeholder="플레이스 홀더">&#60;/textarea><br />  &#60;span class="helper-text">헬퍼헬퍼헬퍼&#60;/span><br />&#60;/div></code></pre>
+            <div>
+              <textarea class="theme-client textarea-sample expand" placeholder="플레이스 홀더" maxlength="100"></textarea>
+              <span class="helper-text">헬퍼 텍스트 상세 내용</span>
+            </div>
+            <div>
+              <textarea class="theme-partner textarea-sample expand" placeholder="플레이스 홀더" maxlength="100"></textarea>
+              <span class="helper-text">헬퍼 텍스트 상세 내용</span>
+            </div>
+            <div>
+              <textarea class="theme-wishket textarea-sample expand" placeholder="플레이스 홀더" maxlength="100"></textarea>
+              <span class="helper-text">헬퍼 텍스트 상세 내용</span>
+            </div>
+            <div>
+              <textarea class="theme-wishket textarea-sample expand" placeholder="플레이스 홀더" maxlength="100" disabled></textarea>
+              <span class="helper-text">헬퍼 텍스트 상세 내용</span>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="guide-uiselect">
+            <h3 class="subtitle-2-bold">Select</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/select.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".ui-label-select").uiSelect();<br />});<br /><br />&#60;select id="select-example02" class="theme-partner" name="ui-select-example02"><br />  &#60;option>구동리 옵션&#60;/option>  //label 텍스트<br />  &#60;option value="1">강남구&#60;/option><br />  &#60;option value="2" selected>서초구&#60;/option><br />  &#60;option value="3">관악구&#60;/option><br />  &#60;option value="4">동작구&#60;/option><br />&#60;/select>
+            </code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>width</td>
+                  <td>셀렉트의 너비를 설정 초기값은 100% 입니다.</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td><label>label</label> <label>default</label></td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td><label>theme-색상</label> 설정 <label>select-small</label> select small 설정</td>
+                </tr>
+              </tbody>
+            </table>
+            <select id="select-example05" class="theme-wishket">
+                <option>옵션 타이틀</option>
+                <option value="1">서울특별시1</option>
+                <option value="2">부산광역시2</option>
+                <option value="3">울산광역시3</option>
+                <option value="4">대구광역시4</option>
+                <option value="5">인청광역시5</option>
+              </select>
+  
+              <select id="select-example06" class="theme-partner" name="ui-select-example06">
+                <option>옵션 타이틀</option>
+                <option value="1">강남구</option>
+                <option value="2" selected>서초구</option>
+                <option value="3">관악구</option>
+                <option value="4">동작구</option>
+              </select>
+  
+              <select id="select-example07" class="theme-client" name="ui-select-example07">
+                <option>옵션 타이틀</option>
+                <option value="1">도요타</option>
+                <option value="2">기아</option>
+                <option value="3">현대</option>
+                <option value="4">아우디</option>
+              </select>
+  
+              <select id="select-example08" class="theme-client" name="ui-select-example08" disabled>
+                <option>옵션 타이틀</option>
+                <option value="1">아이폰</option>
+                <option value="2">갤럭시</option>
+                <option value="3">모토로라 레이저</option>
+                <option value="4">블랙베리</option>
+              </select>
+
+          </section>
+          <hr class="guide-hr" />
+          <section id="guide-uiselect">
+            <h3 class="subtitle-2-bold">Select (Small)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/select.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".ui-label-select").uiSelect();<br />});<br /><br />&#60;select id="select-example02" class="theme-partner select-small" name="ui-select-example02"><br />  &#60;option>구동리 옵션&#60;/option>  //label 텍스트<br />  &#60;option value="1">강남구&#60;/option><br />  &#60;option value="2" selected>서초구&#60;/option><br />  &#60;option value="3">관악구&#60;/option><br />  &#60;option value="4">동작구&#60;/option><br />&#60;/select>
+            </code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>width</td>
+                  <td>셀렉트의 너비를 설정 초기값은 100% 입니다.</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td><label>label</label> <label>default</label></td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td><label>theme-색상</label> 설정 <label>select-small</label> select small 설정</td>
+                </tr>
+              </tbody>
+            </table>
+            <select id="select-example09" class="theme-wishket select-small">
+                <option>옵션 타이틀</option>
+                <option value="1">서울특별시1</option>
+                <option value="2">부산광역시2</option>
+                <option value="3">울산광역시3</option>
+                <option value="4">대구광역시4</option>
+                <option value="5">인청광역시5</option>
+              </select>
+  
+              <select id="select-example10" class="theme-partner select-small" name="ui-select-example06">
+                <option>옵션 타이틀</option>
+                <option value="1">강남구</option>
+                <option value="2" selected>서초구</option>
+                <option value="3">관악구</option>
+                <option value="4">동작구</option>
+              </select>
+  
+              <select id="select-example11" class="theme-client select-small" name="ui-select-example07">
+                <option>옵션 타이틀</option>
+                <option value="1">도요타</option>
+                <option value="2">기아</option>
+                <option value="3">현대</option>
+                <option value="4">아우디</option>
+              </select>
+  
+              <select id="select-example12" class="theme-client select-small" name="ui-select-example08" disabled>
+                <option>옵션 타이틀</option>
+                <option value="1">아이폰</option>
+                <option value="2">갤럭시</option>
+                <option value="3">모토로라 레이저</option>
+                <option value="4">블랙베리</option>
+              </select>
+
+          </section>
+          <hr class="guide-hr" />
+          <section id="guide-ui-label-select">
+            <h3 class="subtitle-2-bold">Select (with Label)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/select.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".ui-label-select").uiSelect({<br />    type: "label"<br />  });<br />});<br /><br />&#60;select id="select-example02" class="theme-partner" name="ui-select-example02"><br />  &#60;option>구동리 옵션&#60;/option>  //label 텍스트<br />  &#60;option value="1">강남구&#60;/option><br />  &#60;option value="2" selected>서초구&#60;/option><br />  &#60;option value="3">관악구&#60;/option><br />  &#60;option value="4">동작구&#60;/option><br />&#60;/select>
+            </code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>width</td>
+                  <td>셀렉트의 너비를 설정 초기값은 100% 입니다.</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td><label>label</label> <label>default</label></td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td><label>theme-색상</label> 설정</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <select id="select-example01" class="theme-wishket">
+              <option>광역시</option>
+              <option value="1">서울특별시1</option>
+              <option value="2">부산광역시2</option>
+              <option value="3">울산광역시3</option>
+              <option value="4">대구광역시4</option>
+            </select>
+
+            <select id="select-example02" class="theme-partner" name="ui-select-example02">
+              <option>구동리 옵션</option>
+              <option value="1">강남구</option>
+              <option value="2" selected>서초구</option>
+              <option value="3">관악구</option>
+              <option value="4">동작구</option>
+            </select>
+
+            <select id="select-example03" class="theme-client" name="ui-select-example03">
+              <option>자동차</option>
+              <option value="1">도요타</option>
+              <option value="2">기아</option>
+              <option value="3">현대</option>
+              <option value="4">아우디</option>
+            </select>
+
+            <select id="select-example04" class="theme-client" name="ui-select-example04" disabled>
+              <option>휴대폰</option>
+              <option value="1">아이폰</option>
+              <option value="2">갤럭시</option>
+              <option value="3">모토로라 레이저</option>
+              <option value="4">블랙베리</option>
+            </select>
+          </section>
+          <hr class="guide-hr" />
+
+          <section id="date">
+            <h3 class="subtitle-2-bold">Date</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/datepicker.js">&#60;/script><br />&#60;script type="text/javascript" src="./js/datepicker.ko-KR.js">&#60;/script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$('[data-toggle="datepicker"]').datepicker({<br />  language: 'ko-KR',<br />  format: 'yyyy년 mm월 dd일',<br />  autoHide: true,<br />  autoClose: true,<br />  weekStart: 0,<br />  startDate: '2020/1/6',<br />  endDate: '2020/2/3',<br />});<br /><br />&#60;div><br />  &#60;input data-toggle="datepicker" class="theme-partner" placeholder="플레이스 홀더"/><br />  &#60;i>아이콘&#60;/i><br />&#60;/div></code></pre>
+            <div>
+              <input data-toggle="datepicker" class="theme-partner" placeholder="플레이스 홀더" readonly/>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><rect width="12.8" height="11.8" x=".6" y="1.6" stroke="#9E9E9E" stroke-width="1.2" rx="2"/><path stroke="#9E9E9E" stroke-linejoin="round" stroke-width="1.2" d="M.5 5.8h13M4 1V0M10 0v1"/></g></svg></i>
+            </div>
+            <div>
+              <input data-toggle="datepicker" class="theme-wishket" placeholder="플레이스 홀더" readonly/>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><rect width="12.8" height="11.8" x=".6" y="1.6" stroke="#9E9E9E" stroke-width="1.2" rx="2"/><path stroke="#9E9E9E" stroke-linejoin="round" stroke-width="1.2" d="M.5 5.8h13M4 1V0M10 0v1"/></g></svg></i>
+            </div>
+            <div>
+              <input data-toggle="datepicker" class="theme-client" placeholder="플레이스 홀더" readonly/>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><rect width="12.8" height="11.8" x=".6" y="1.6" stroke="#9E9E9E" stroke-width="1.2" rx="2"/><path stroke="#9E9E9E" stroke-linejoin="round" stroke-width="1.2" d="M.5 5.8h13M4 1V0M10 0v1"/></g></svg></i>
+            </div>
+            <div>
+              <input data-toggle="datepicker" class="theme-partner" placeholder="플레이스 홀더" disabled/>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><rect width="12.8" height="11.8" x=".6" y="1.6" stroke="#9E9E9E" stroke-width="1.2" rx="2"/><path stroke="#9E9E9E" stroke-linejoin="round" stroke-width="1.2" d="M.5 5.8h13M4 1V0M10 0v1"/></g></svg></i>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+          <section id="date">
+            <h3 class="subtitle-2-bold">Date (Small)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/datepicker.js">&#60;/script><br />&#60;script type="text/javascript" src="./js/datepicker.ko-KR.js">&#60;/script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$('[data-toggle="datepicker"]').datepicker({<br />  language: 'ko-KR',<br />  format: 'yyyy년 mm월 dd일',<br />  autoHide: true,<br />  autoClose: true,<br />  weekStart: 0,<br />  startDate: '2020/1/6',<br />  endDate: '2020/2/3',<br />});<br /><br />&#60;div><br />  &#60;input data-toggle="datepicker" class="theme-partner size-s" placeholder="플레이스 홀더"/><br />  &#60;i>아이콘&#60;/i><br />&#60;/div></code></pre>
+            <div>
+              <input data-toggle="datepicker" class="theme-partner size-s" placeholder="플레이스 홀더" readonly/>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><rect width="12.8" height="11.8" x=".6" y="1.6" stroke="#9E9E9E" stroke-width="1.2" rx="2"/><path stroke="#9E9E9E" stroke-linejoin="round" stroke-width="1.2" d="M.5 5.8h13M4 1V0M10 0v1"/></g></svg></i>
+            </div>
+            <div>
+              <input data-toggle="datepicker" class="theme-wishket size-s" placeholder="플레이스 홀더" readonly/>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><rect width="12.8" height="11.8" x=".6" y="1.6" stroke="#9E9E9E" stroke-width="1.2" rx="2"/><path stroke="#9E9E9E" stroke-linejoin="round" stroke-width="1.2" d="M.5 5.8h13M4 1V0M10 0v1"/></g></svg></i>
+            </div>
+            <div>
+              <input data-toggle="datepicker" class="theme-client size-s" placeholder="플레이스 홀더" readonly/>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><rect width="12.8" height="11.8" x=".6" y="1.6" stroke="#9E9E9E" stroke-width="1.2" rx="2"/><path stroke="#9E9E9E" stroke-linejoin="round" stroke-width="1.2" d="M.5 5.8h13M4 1V0M10 0v1"/></g></svg></i>
+            </div>
+            <div>
+              <input data-toggle="datepicker" class="theme-partner size-s" placeholder="플레이스 홀더" readonly disabled/>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><rect width="12.8" height="11.8" x=".6" y="1.6" stroke="#9E9E9E" stroke-width="1.2" rx="2"/><path stroke="#9E9E9E" stroke-linejoin="round" stroke-width="1.2" d="M.5 5.8h13M4 1V0M10 0v1"/></g></svg></i>
+            </div>
+          </section>
+
+          <hr class="guide-hr" />
+          <section id="radio">
+            <h3 class="subtitle-2-bold">Radio</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/radiocheck.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".radio-sample").uiRadioCheck();<br />});<br /><br />&#60;ul class="radio-group"><br />  &#60;li><br />    &#60;input type="radio" class="theme-client radio-sample" value="value" name="radio-sample-name" /><br />    &#60;label>라디오 타이틀&#60;/label><br />  &#60;/li><br />  &#60;li><br />    &#60;input type="radio" class="theme-partner radio-sample" value="value" name="radio-sample-name" /><br />    &#60;label>라디오 타이틀&#60;/label><br />  &#60;/li><br />  &#60;li><br />    &#60;input type="radio" class="theme-client radio-sample" value="value" name="radio-sample-name" /><br />    &#60;label>라디오 타이틀&#60;/label><br />  &#60;/li><br />  &#60;li><br />    &#60;input type="radio" class="theme-client radio-sample" value="value" name="radio-sample-name" disabled checked/><br />    &#60;label>라디오 타이틀&#60;/label><br />  &#60;/li><br />&#60;/ul></code></pre>
+
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ul class 추가</td>
+                  <td><label>radio-group</label></td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label> <label>theme-partner</label> <label>theme-client</label></td>
+                </tr>
+                <tr>
+                  <td>addon 설정</td>
+                  <td>인풋뒤에 추가 <label>&#60;input class="addon-input" type="text" placeholder="플레이스 홀더"/></label></td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="radio-group">
+              <li>
+                <input type="radio" class="theme-client radio-sample" value="value" name="radio-sample-name" />
+                <label>라디오 타이틀</label>
+              </li>
+              <li>
+                <input type="radio" class="theme-partner radio-sample" value="value" name="radio-sample-name" />
+                <label>라디오 타이틀</label>
+              </li>
+              <li>
+                <input type="radio" class="theme-client radio-sample" value="value" name="radio-sample-name" />
+                <label>라디오 타이틀</label>
+              </li>
+              <li>
+                <input type="radio" class="theme-client radio-sample" value="value" name="radio-sample-name" disabled checked/>
+                <label>라디오 타이틀</label>
+              </li>
+            </ul>
+          </section>
+          <hr class="guide-hr" />
+          <section id="radio">
+            <h3 class="subtitle-2-bold">Radio (Combination)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/radiocheck.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".radio-sample").uiRadioCheck();<br />});<br /><br />&#60;ul class="radio-group"><br />  &#60;li><br />    &#60;input type="radio" class="theme-client radio-sample" value="value" name="radio-sample-name" /><br />    &#60;label>라디오 타이틀&#60;/label><br />  &#60;/li><br />  &#60;li><br />    &#60;input type="radio" class="theme-partner radio-sample" value="value" name="radio-sample-name" /><br />    &#60;label>라디오 타이틀&#60;/label><br />  &#60;/li><br />  &#60;li><br />    &#60;input type="radio" class="theme-client radio-sample" value="value" name="radio-sample-name" /><br />    &#60;label>라디오 타이틀&#60;/label><br />  &#60;/li><br />  &#60;li><br />    &#60;input type="radio" class="theme-client radio-sample" value="value" name="radio-sample-name" disabled checked/><br />    &#60;label>라디오 타이틀&#60;/label><br />  &#60;/li><br />&#60;/ul></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ul class 추가</td>
+                  <td><label>radio-group</label></td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label> <label>theme-partner</label> <label>theme-client</label></td>
+                </tr>
+                <tr>
+                  <td>addon 설정</td>
+                  <td>인풋뒤에 추가 <label>&#60;input class="addon-input" type="text" placeholder="플레이스 홀더"/></label></td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="radio-group">
+              <li>
+                <input type="radio" class="theme-client radio-sample" value="value" name="radio-sample-name" />
+                <input class="addon-input" type="text" placeholder="플레이스 홀더"/>
+                <label>라디오 타이틀</label>
+              </li>
+              <li>
+                <input type="radio" class="theme-partner radio-sample" value="value" name="radio-sample-name" />
+                <input class="addon-input datepicker theme-partner" data-toggle="datepicker" placeholder="플레이스 홀더" readonly/>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><rect width="12.8" height="11.8" x=".6" y="1.6" stroke="#9E9E9E" stroke-width="1.2" rx="2"/><path stroke="#9E9E9E" stroke-linejoin="round" stroke-width="1.2" d="M.5 5.8h13M4 1V0M10 0v1"/></g></svg></i>
+                <label>라디오 타이틀</label>
+              </li>
+            </ul>
+          </section>
+          <hr class="guide-hr" />
+          <!-- <section id="select-card-radio">
+            <h3 class="subtitle-2-bold">Select Card_Radio</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/radiocheck.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".card-radio-sample").uiRadioCheck({<br />    type: "card-radio",<br />    width: "22%"<br />  });<br />});<br /><br />&#60;input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" /><br />&#60;div class="card-img-box"><br />  &#60;img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="선택 전 이미지"/><br />  &#60;img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="선택 후 이미지"/><br />&#60;/div><br />&#60;div class="card-text">라디오 타이틀&#60;/div></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ul class 추가</td>
+                  <td><label>radio-group</label></td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td><label>card-radio</label>로 셋팅</td>
+                </tr>
+                <tr>
+                  <td>width</td>
+                  <td><label>width</label>가로값</td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label> <label>theme-partner</label> <label>theme-client</label></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div>
+              <ul class="card-box">
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" checked/>
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀</div>
+                  <span class="card-tooltip">메시지 박스</span>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀</div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀</div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" disabled/>
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀</div>
+                </li>
+              </ul>
+
+              <ul class="card-box">
+                <li>
+                  <input type="radio" class="theme-partner card-radio-sample" value="value" name="card-radio-sample-name2" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀<br />라디오 타이틀</div>
+                  <span class="card-tooltip">메시지 박스</span>
+                </li>
+                <li>
+                  <input type="radio" class="theme-partner card-radio-sample" value="value" name="card-radio-sample-name2" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀<br />라디오 타이틀</div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-partner card-radio-sample" value="value" name="card-radio-sample-name2" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀<br />라디오 타이틀</div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" disabled/>
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">라디오 타이틀<br />라디오 타이틀</div>
+                </li>
+              </ul>
+
+              <ul class="card-box">
+                <li>
+                  <input type="radio" class="theme-wishket card-radio-sample" value="value" name="card-radio-sample-name3"/>
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용</p>
+                  </div>
+                  <span class="card-tooltip">메시지 박스</span>
+                </li>
+                <li>
+                  <input type="radio" class="theme-wishket card-radio-sample" value="value" name="card-radio-sample-name3" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-wishket card-radio-sample" value="value" name="card-radio-sample-name3" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name3" disabled checked/>
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용</p>
+                  </div>
+                </li>
+              </ul>
+
+              <ul class="card-box">
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name4" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name4" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name4" />
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                  </div>
+                </li>
+                <li>
+                  <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name4" disabled checked/>
+                  <div class="card-img-box">
+                    <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  </div>
+                  <div class="card-text">
+                    라디오 타이틀
+                    <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section> -->
+          <hr class="guide-hr" />
+          <section id='card-radio-wide' >
+            <h3 class="subtitle-2-bold">Select Card_Radio_Wide (Subtext)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/radiocheck.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".card-radio-wide-sample").uiRadioCheck({<br />    type: "card-radio-wide",<br />    width: "720px"<br />  });<br />});<br /><br />&#60;input type="radio" class="theme-client card-radio-wide-sample" value="value" name="card-radio-wide-sample-name" /><br />&#60;div class="card-img-box"><br />  &#60;img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="선택 전 이미지"/><br />  &#60;img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="선택 후 이미지"/><br />&#60;/div><br />&#60;div class="card-text"><br />  라디오 타이틀<br />  &#60;p class="subtext">선택 항목 상세 내용&#60;/p><br />&#60;/div></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label><label>theme-partner</label><label>theme-client</label></td>
+                </tr>
+                <tr>
+                  <td>addon 설정</td>
+                  <td>인풋뒤에 추가 <label>&#60;input class="addon-input" type="text" placeholder="체리 주세요."/></label></td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <input type="radio" class="theme-client card-radio-wide-sample" value="value" name="card-radio-wide-sample-name1" />
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+              </div>
+              <span class="card-tooltip">메시지 박스 메시지 박스</span>
+              <div class="card-text">
+                라디오 타이틀
+                <p class="subtext">선택 항목 상세 내용</p>
+              </div>
+            </div>
+            <div>
+              <input type="radio" class="theme-partner card-radio-wide-sample" value="value" name="card-radio-wide-sample-name1" />
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+              </div>
+              <div class="card-text">
+                라디오 타이틀
+                <p class="subtext">
+                  선택 항목 상세 내용<br />
+                  선택 항목 상세 내용
+                </p>
+              </div>
+            </div>
+            <div>
+              <input type="radio" class="theme-wishket card-radio-wide-sample" value="value" name="card-radio-wide-sample-name1" />
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+              </div>
+              <span class="card-tooltip">메시지 박스 메시지 박스</span>
+              <div class="card-text">
+                라디오 타이틀
+                <p class="subtext">선택 항목 상세 내용</p>
+              </div>
+            </div>
+            <div>
+              <input type="radio" class="theme-partner card-radio-wide-sample" value="value" name="card-radio-wide-sample-name1" disabled checked/>
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+              </div>
+              <div class="card-text">
+                라디오 타이틀
+                <p class="subtext">선택 항목 상세 내용</p>
+              </div>
+            </div>
+          </section>
+
+          <hr class="guide-hr" />
+
+          <section id='check' >
+            <h3 class="subtitle-2-bold">Checkbox</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/radiocheck.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".checked-sample").uiRadioCheck();<br />});<br /><br />&#60;div><br />  &#60;input type="checkbox" class="theme-wishket checked-sample" value="adsfa" name="asdfdfsaas" /><br />  &#60;label>체리</label><br />&#60;/div><br /><br />&#60;div><br />  &#60;input type="checkbox" class="theme-wishket checked-sample" value="adsfa" name="asdfdfsaas" /><br />  &#60;input class="addon-input" type="text" placeholder="체리 주세요."/><br />  &#60;label>체리&#60;/label><br />&#60;/div></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label><label>theme-partner</label><label>theme-client</label></td>
+                </tr>
+                <tr>
+                  <td>addon 설정</td>
+                  <td>인풋뒤에 추가 <label>&#60;input class="addon-input" type="text" placeholder="체리 주세요."/></label></td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <input type="checkbox" class="theme-wishket checked-sample" value="체크박스" name="checkTest" />
+              <label>체크박스</label>
+            </div>
+            <div>
+              <input type="checkbox" class="theme-wishket checked-sample" value="체크박스" name="checkTest" />
+              <input class="addon-input" type="text" placeholder="플레이스 홀더"/>
+              <label>체크박스</label>
+            </div>
+
+            <hr class="guide-hr" />
+            <h3 class="subtitle-2-bold">Checkbox Group</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/radiocheck.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".checked-sample").uiRadioCheck();<br />});<br /><br />&#60;ul><br />  &#60;li><br />    &#60;input type="checkbox" class="theme-wishket checked-sample" value="value" name="name"/><br />    &#60;label>사과</label><br />    &#60;p>국회는 국정을 감사하거나 특정한 국정사안에 대하여 조사할 수 있으며, 이에 필요한 서류의 제출 또는 증인의 출석과 증언이나 의견의 진술을 요구할 수 있다.&#60;/p><br />  &#60;/li><br />  &#60;li><br />    &#60;input type="checkbox" class="theme-partner checked-sample" value="value" name="name" checked/><br />    &#60;label>토마토&#60;/label><br />    &#60;input class="addon-input checked-sample" type="text" placeholder="플레이스 홀더"/><br />  &#60;/li><br />&#60;/ul></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ul class 추가</td>
+                  <td><label>check-group</label></td>
+                </tr>
+                <tr>
+                  <td>input class</td>
+                  <td>테마 설정 <label>theme-wishket</label><label>theme-partner</label><label>theme-client</label></td>
+                </tr>
+                <tr>
+                  <td>addon 설정</td>
+                  <td>인풋뒤에 추가 <label>&#60;input class="addon-input" type="text" placeholder="플레이스 홀더"/></label></td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <ul class="check-group">
+                <li>
+                  <input type="checkbox" class="theme-wishket checked-sample" value="value" name="name"/>
+                  <label>사과</label>
+                  <p>국회는 국정을 감사하거나 특정한 국정사안에 대하여 조사할 수 있으며, 이에 필요한 서류의 제출 또는 증인의 출석과 증언이나 의견의 진술을 요구할 수 있다.</p>
+                </li>
+                <li>
+                  <input type="checkbox" class="theme-partner checked-sample" value="value" name="name" checked/>
+                  <label>토마토</label>
+                  <input class="addon-input" type="text" placeholder="플레이스 홀더"/>
+                </li>
+                <li>
+                  <label>바나나</label>
+                  <input type="checkbox" class="theme-client checked-sample" value="value" name="name" />
+                </li>
+                <li>
+                  <input type="checkbox" class="theme-wishket checked-sample" value="value" name="name" disabled/>
+                  <label>스트로베리</label>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <hr class="guide-hr" />
+
+
+          <section id='check-combination' >
+            <h3 class="subtitle-2-bold">Checkbox (Combination)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/radiocheck.js"></script><br />&#60;script type="text/javascript" src="./js/datepicker.js">&#60;/script><br />&#60;script type="text/javascript" src="./js/datepicker.ko-KR.js">&#60;/script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$('[data-toggle="datepicker"]').datepicker({<br />  language: 'ko-KR',<br />  format: 'yyyy년 mm월 dd일',<br />  autoHide: true,<br />  autoClose: true,<br />  weekStart: 0,<br />  startDate: '2020/1/6',<br />  endDate: '2020/5/3',<br />});<br />$(".checked-sample").uiRadioCheck();<br /><br />&#60;div><br />  &#60;input type="checkbox" class="theme-wishket checked-sample" value="체크박스" name="checkTest" /><br />  &#60;input class="addon-input" type="text" placeholder="플레이스 홀더"/><br />  &#60;label>체크박스&#60;/label><br />&#60;/div><br />&#60;div><br />  &#60;input type="checkbox" class="theme-wishket checked-sample" value="체크박스" name="checkTest" /><br />  &#60;input class="addon-input datepicker theme-partner" data-toggle="datepicker" placeholder="플레이스 홀더"/><br />  &#60;i>아이콘</i><br />  &#60;label>체크박스&#60;/label><br />&#60;/div></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label><label>theme-partner</label><label>theme-client</label></td>
+                </tr>
+                <tr>
+                  <td>addon 설정</td>
+                  <td>인풋뒤에 추가 <label>&#60;input class="addon-input" type="text" placeholder="체리 주세요."/></label></td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <input type="checkbox" class="theme-wishket checked-sample" value="체크박스" name="checkTest" />
+              <input class="addon-input" type="text" placeholder="플레이스 홀더"/>
+              <label>체크박스</label>
+            </div>
+            <div>
+              <input type="checkbox" class="theme-wishket checked-sample" value="체크박스" name="checkTest" />
+              <input class="addon-input datepicker theme-partner" data-toggle="datepicker" placeholder="플레이스 홀더" readonly/>
+              <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"/><rect width="12.8" height="11.8" x=".6" y="1.6" stroke="#9E9E9E" stroke-width="1.2" rx="2"/><path stroke="#9E9E9E" stroke-linejoin="round" stroke-width="1.2" d="M.5 5.8h13M4 1V0M10 0v1"/></g></svg></i>
+              <label>체크박스</label>
+            </div>
+          </section>
+  
+
+          <hr class="guide-hr" />
+          <section id="tree-check">
+            <h3 class="subtitle-2-bold">Tree</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/checkbox.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $.uiCheckbox.setting();<br />});<br />&#60;CheckBox<br />  data-checkbox-type='tree'<br />  data-checkbox-theme='partner'<br />  data-options='[<br />    {"label":"트리테스트", "value":"apple", "depth":1, "name" : "tree01", "tree":"treeName01"}, <br />    {"label":"애플리케이션", "value":"apple", "depth":2, "name" : "tree01", "tree":"treeName01"}, <br />    {"label":"워드프레스", "value":"web", "depth":2, "name" : "tree01", "tree":"treeName01"}, <br />    {"label":"퍼블리싱", "value":"web", "depth":2, "name":"tree01", "tree":"treeName01"},<br />    {"label":"개발", "value":"web", "depth":1, "name":"tree03", "tree":"treeName02"},<br />    {"label":"애플리케이션", "value":"apple", "depth":2, "name":"tree03", "tree":"treeName02"}, <br />    {"label":"워드프레스", "value":"web", "depth":2, "name":"tree03", "tree":"treeName02"},<br />    {"label":"퍼블리싱", "value":"web", "depth":2, "name":"tree03", "tree":"treeName02"}<br />  ]'<br />><br />&#60;/CheckBox>
+            </code></pre>
+            <ul class="tree-sample">
+              <li>
+                <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                <label>체크박스 타이틀1</label>
+                <ul class="sub-tree">
+                  <li>
+                    <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                    <label>체크박스 타이틀2</label>
+                    <ul class="sub-tree">
+                      <li>
+                        <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                        <label>체크박스 타이틀2-1</label>
+                        <ul class="sub-tree">
+                          <li>
+                            <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                            <label>체크박스 타이틀2-1-1</label>
+                            <ul class="sub-tree">
+                              <li>
+                                <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                                <label>체크박스 타이틀2-1-1-1</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                                <label>체크박스 타이틀2-1-1-2</label>
+                              </li>
+                              <li>
+                                <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                                <label>체크박스 타이틀2-1-1-3</label>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                            <label>체크박스 타이틀2-1-2</label>
+                          </li>
+                          <li>
+                            <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                            <label>체크박스 타이틀2-1-3</label>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                        <label>체크박스 타이틀2-2</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                        <label>체크박스 타이틀2-3</label>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                    <label>체크박스 타이틀3</label>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-partner" value="value" name="name" />
+                <label>체크박스 타이틀4</label>
+              </li>
+              <li>
+                <label>체크박스 타이틀5</label>
+                <input type="checkbox" class="theme-client" value="value" name="name" />
+                <ul class="sub-tree">
+                  <li>
+                    <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                    <label>체크박스 타이틀5-1</label>
+                    <ul class="sub-tree">
+                      <li>
+                        <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                        <label>체크박스 타이틀5-1-1</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                        <label>체크박스 타이틀5-1-2</label>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox" class="theme-wishket" value="value" name="name"/>
+                    <label>체크박스 타이틀5-2</label>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-wishket" value="value" name="name" />
+                <label>체크박스 타이틀6</label>
+              </li>
+            </ul>
+          </section>
+
+          <hr class="guide-hr" />
+
+          <!-- <section id='card-checkbox' >
+            <h3 class="subtitle-2-bold">Select Card_Checkbox</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/radiocheck.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".card-checkbox-sample").uiRadioCheck({<br />    type: "card-checkbox",<br />    width: "224px"<br />  });<br />});<br /><br />&#60;input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" checked/><br />&#60;div class="card-img-box"><br />  &#60;img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/><br />  &#60;img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/><br />&#60;/div><br />&#60;div class="card-text">체크박스 타이틀&#60;/div></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label><label>theme-partner</label><label>theme-client</label></td>
+                </tr>
+                <tr>
+                  <td>addon 설정</td>
+                  <td>인풋뒤에 추가 <label>&#60;input class="addon-input" type="text" placeholder="체리 주세요."/></label></td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="card-box">
+              <li>
+                <input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" checked/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                </div>
+                <span class="card-tooltip">메시지 박스</span>
+                <div class="card-text">
+                  체크박스 타이틀
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" checked disabled/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                </div>
+              </li>
+            </ul>
+
+            <ul class="card-box">
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name2" checked/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀<br />
+                  체크박스 타이틀
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name2" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀<br />
+                  체크박스 타이틀
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name2" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀<br />
+                  체크박스 타이틀
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name2" checked disabled/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀<br />
+                  체크박스 타이틀
+                </div>
+              </li>
+            </ul>
+
+            <ul class="card-box">
+              <li>
+                <input type="checkbox" class="theme-wishket card-checkbox-sample" value="value" name="card-checkbox-sample-name3" checked/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용</p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-wishket card-checkbox-sample" value="value" name="card-checkbox-sample-name3" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용</p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-wishket card-checkbox-sample" value="value" name="card-checkbox-sample-name3" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용</p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-wishket card-checkbox-sample" value="value" name="card-checkbox-sample-name3" checked disabled/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용</p>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="card-box">
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name4" checked/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name4" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name4" />
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                </div>
+              </li>
+              <li>
+                <input type="checkbox" class="theme-partner card-checkbox-sample" value="value" name="card-checkbox-sample-name4" checked disabled/>
+                <div class="card-img-box">
+                  <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+                </div>
+                <div class="card-text">
+                  체크박스 타이틀
+                  <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+                </div>
+              </li>
+            </ul>
+
+          </section> -->
+          <hr class="guide-hr" />
+          
+          <section id='card-checkbox' >
+            <h3 class="subtitle-2-bold">Select Card_Checkbox_Wide (Subtext)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/radiocheck.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".card-checkbox-sample").uiRadioCheck({<br />    type: "card-checkbox",<br />    width: "224px"<br />  });<br />});<br /><br />&#60;input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" checked/><br />&#60;div class="card-img-box"><br />  &#60;img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/><br />  &#60;img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/><br />&#60;/div><br />&#60;div class="card-text">체크박스 타이틀&#60;/div></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label><label>theme-partner</label><label>theme-client</label></td>
+                </tr>
+                <tr>
+                  <td>addon 설정</td>
+                  <td>인풋뒤에 추가 <label>&#60;input class="addon-input" type="text" placeholder="체리 주세요."/></label></td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <input type="checkbox" class="theme-partner card-wide-checkbox-sample" value="value" name="card-checkbox-wide-sample-name1"/>
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+              </div>
+              <div class="card-text">
+                체크박스 타이틀
+                <p class="subtext">선택 항목 상세 내용</p>
+              </div>
+            </div>
+            <div>
+              <input type="checkbox" class="theme-partner card-wide-checkbox-sample" value="value" name="card-checkbox-wide-sample-name1"/>
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+              </div>
+              <div class="card-text">
+                체크박스 타이틀
+                <p class="subtext">선택 항목 상세 내용</p>
+              </div>
+            </div>
+            <div>
+              <input type="checkbox" class="theme-partner card-wide-checkbox-sample" value="value" name="card-checkbox-wide-sample-name1"/>
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+              </div>
+              <div class="card-text">
+                체크박스 타이틀
+                <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+              </div>
+            </div>
+            <div>
+              <input type="checkbox" class="theme-partner card-wide-checkbox-sample" value="value" name="card-checkbox-wide-sample-name1"/>
+              <div class="card-img-box">
+                <img class="card-img" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_d.png" alt="test 이미지"/>
+                <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/partner/job_developer_active.png" alt="test 이미지">
+              </div>
+              <div class="card-text">
+                체크박스 타이틀
+                <p class="subtext">선택 항목 상세 내용<br />선택 항목 상세 내용</p>
+              </div>
+            </div>
+          </section>
+
+
+          <hr class="guide-hr" />
+          <section id="toggle">
+            <h3 class="subtitle-2-bold">Toggle (O/X)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="./js/toggle.js"></script><br />&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />$(document).ready(function() {<br />  $(".toggle-sample").uiToggle();<br />});<br /><br />&#60;div><br />  &#60;input class="toggle-sample theme-partner" type="text" value=""/><br />  &#60;p>토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용&#60;/p><br />&#60;/div></code></pre>
+
+
+            <div>
+              <input class="toggle-sample theme-partner" type="text" value=""/>
+              <p>토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용</p>
+            </div>
+            <div>
+              <input class="toggle-sample theme-client" type="text" value=""/>
+              <p>토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용</p>
+            </div>
+            <div>
+              <input class="toggle-sample theme-wishket" type="text" value=""/>
+              <p>토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용토글 상세 질문 내용</p>
+            </div>
+          </section>
+          <hr class="guide-hr"/>
+          <section>
+            <div class="chip-box">
+              <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value01' data-checkbox-name='chipvalue' data-checkbox-theme='partner' data-checkbox-default=true ></CheckBox>
+              <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value02' data-checkbox-name='chipvalue' data-checkbox-theme='wishket' ></CheckBox>
+              <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value03' data-checkbox-name='chipvalue' data-checkbox-theme='client' data-checkbox-default=true ></CheckBox>
+              <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value04' data-checkbox-name='chipvalue' data-checkbox-theme='wishket' ></CheckBox>
+              <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value05' data-checkbox-name='chipvalue' data-checkbox-theme='partner' data-checkbox-default=true ></CheckBox>
+              <CheckBox data-checkbox-type='chip-choice' data-checkbox-value='chip-value06' data-checkbox-name='chipvalue' data-checkbox-theme='wishket' data-checkbox-disabled=true></CheckBox>
+            </div>
+          </section>
+        </section>
+        <h2 class="subtitle-1-bold hr">Alerts</h2>
+        <section id="title-alerts">
+          <section id="alerts-basic">
+            <h3 class="subtitle-2-bold">Alert (Basic)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />&#60;div class="alert-basic theme-partner"><br />  &#60;i class="info">&#60;/i><br />  정보메시지 1줄<br />  &#60;button class="close">&#60;/button><br />&#60;/div></code></pre>
+            <div>
+              <div class="alert-basic theme-partner">
+                <i class="info"></i>
+                partner 정보메시지 1줄
+                <button class="close"></button>
+              </div>
+            </div>
+            <div>
+              <div class="alert-basic theme-partner">
+                <i class="success"></i>
+                partner 정보메시지 1줄<br />
+                partner 정보메시지 2줄
+                <button class="close"></button>
+              </div>
+            </div>
+            <div>
+              <div class="alert-basic theme-client">
+                <i class="info"></i>
+                client 정보메시지 1줄
+                <button class="close"></button>
+              </div>
+            </div>
+            <div>
+              <div class="alert-basic theme-client">
+                <i class="success"></i>
+                client 정보메시지 1줄<br />
+                client 정보메시지 2줄
+                <button class="close"></button>
+              </div>
+            </div>
+            <div>
+              <div class="alert-basic theme-wishket">
+                <i class="info"></i>
+                wishket 정보메시지 1줄
+                <button class="close"></button>
+              </div>
+            </div>
+            <div>
+              <div class="alert-basic theme-wishket">
+                <i class="success"></i>
+                wishket 정보메시지 1줄<br />
+                wishket 정보메시지 2줄
+                <button class="close"></button>
+              </div>
+            </div>
+            <div>
+              <div class="alert-basic theme-wait">
+                <i class="wait"></i>
+                wait 정보메시지 1줄
+                <button class="close"></button>
+              </div>
+            </div>
+            <div>
+              <div class="alert-basic theme-wait">
+                <i class="wait"></i>
+                wait 정보메시지 1줄<br />
+                wait 정보메시지 2줄
+                <button class="close"></button>
+              </div>
+            </div>
+            <div>
+              <div class="alert-basic theme-warning">
+                <i class="warning"></i>
+                warning 정보메시지 1줄
+                <button class="close"></button>
+              </div>
+            </div>
+            <div>
+              <div class="alert-basic theme-warning">
+                <i class="warning"></i>
+                warning 정보메시지 1줄<br />
+                warning 정보메시지 2줄
+                <button class="close"></button>
+              </div>
+            </div>
+            <div>
+              <div class="alert-basic theme-error">
+                <i class="error"></i>
+                error 정보메시지 1줄
+                <button class="close"></button>
+              </div>
+            </div>
+            <div>
+              <div class="alert-basic theme-error">
+                <i class="error"></i>
+                error 정보메시지 1줄<br />
+                error 정보메시지 2줄
+                <button class="close"></button>
+              </div>
+            </div>
+          </section>
+          <hr class="guide-hr"/>
+          <section id="alerts-contents">
+            <h3 class="subtitle-2-bold">Alert (Contents)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />&#60;div class="alert-content theme-wishket"><br />  &#60;i class="info">&#60;/i><br />  정보메시지 1줄 wishket<br />&#60;/div></code></pre>
+            <div>
+              <div class="alert-content theme-wishket">
+                <i class="info"></i>
+                정보메시지 1줄 wishket
+              </div>
+            </div>
+            <div>
+              <div class="alert-content theme-wishket">
+                <i class="info"></i>
+                정보메시지 1줄 wishket<br />
+                정보메시지 2줄 wishket
+              </div>
+            </div>
+            <div>
+              <div class="alert-content theme-partner">
+                <i class="info"></i>
+                정보메시지 1줄 partner
+              </div>
+            </div>
+            <div>
+              <div class="alert-content theme-partner">
+                <i class="info"></i>
+                정보메시지 1줄 partner<br />
+                정보메시지 2줄 partner
+              </div>
+            </div>
+            <div>
+              <div class="alert-content theme-client">
+                <i class="info"></i>
+                정보메시지 1줄 client
+              </div>
+            </div>
+            <div>
+              <div class="alert-content theme-client">
+                <i class="info"></i>
+                정보메시지 1줄 client<br />
+                정보메시지 2줄 client
+              </div>
+            </div>
+            <div>
+              <div class="alert-content theme-wait">
+                <i class="info"></i>
+                정보메시지 1줄 wait
+              </div>
+            </div>
+            <div>
+              <div class="alert-content theme-wait">
+                <i class="info"></i>
+                정보메시지 1줄 wait<br />
+                정보메시지 2줄 wait
+              </div>
+            </div>
+            <div>
+              <div class="alert-content theme-warning">
+                <i class="info"></i>
+                정보메시지 1줄 warning
+              </div>
+            </div>
+            <div>
+              <div class="alert-content theme-warning">
+                <i class="info"></i>
+                정보메시지 1줄 warning<br />
+                정보메시지 2줄 warning
+              </div>
+            </div>
+            <div>
+              <div class="alert-content theme-error">
+                <i class="info"></i>
+                정보메시지 1줄 error
+              </div>
+            </div>
+            <div>
+              <div class="alert-content theme-error">
+                <i class="info"></i>
+                정보메시지 1줄 error<br />
+                정보메시지 2줄 error
+              </div>
+            </div>
+          </section>
+          <hr class="guide-hr"/>
+          <section id="alerts-link">
+            <h3 class="subtitle-2-bold">Alert (Link)</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;link rel="stylesheet" href="./css/component.css" /><br /><br />&#60;div class="alert-basic theme-partner"><br />  &#60;i class="info">&#60;/i><br />  정보메시지 1줄<br />  &#60;button class="close">&#60;/button><br />&#60;/div></code></pre>
+            <div>
+              <div class="alert-basic theme-wishket">
+                <i class="info"></i>
+                정보메시지 1줄 wishket <a href="#none">링크</a>
+              </div>
+            </div>
+            <div>
+              <div class="alert-content theme-wishket">
+                <i class="info"></i>
+                정보메시지 1줄 wishket <a href="#none">링크</a>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section id="title-modal">
+          <h2 class="subtitle-1-bold hr">Modal</h2>
+          <section id='modal-default'>
+            <h3 class="subtitle-2-bold">Only Text</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="../js/modal.js">&#60;/script><br />&#60;link rel="stylesheet" href="../css/component.css" /><br /><br />$(".modal-sample").uiModal();<br /><br />&#60;button class="open__modal theme-client">모달&#60;/button><br />&#60;div class="modal-sample"><br />  &#60;div class="modal__body"><br />    모달 팝업 상세 내용<br />  &#60;/div><br />  &#60;div class="modal__footer"><br />    &#60;div class="modal__button group-button"><br />      &#60;button class="theme-indigo close__modal">닫기&#60;/button><br />      &#60;button class="theme-wishket">버튼명&#60;/button><br />    &#60;/div><br />  &#60;/div><br />&#60;/div></code></pre>
+
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>닫기 설정</td>
+                  <td>class 추가 <label>close__modal</label></td>
+                </tr>
+                <tr>
+                  <td>열기 설정</td>
+                  <td>class 추가 <label>open__modal</label></td>
+                </tr>
+                <tr>
+                  <td>footer button type</td>
+                  <td><label>group-button</label>, <label>block-button</label>, <label>group-block-button</label> class 추가</td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label><label>theme-partner</label><label>theme-client</label></td>
+                </tr>
+                <tr>
+                  <td>size</td>
+                  <td><label>size-s</label> 400px, <label>기본</label> 520px, <label>size-l</label> 616px, <label>size-xl</label> 720px</td>
+                </tr>
+              </tbody>
+            </table>
+            <span>
+              <button class="open__modal theme-indigo">모달</button>
+              <div class="modal-sample">
+                <div class="modal__body">
+                  모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용
+                </div>
+                <div class="modal__footer">
+                  <div class="modal__button group-button">
+                    <button class="theme-indigo close__modal">닫기</button>
+                    <button class="theme-wishket">버튼명</button>
+                  </div>
+                </div>
+              </div>
+            </span>
+            <span>
+              <button class="open__modal theme-indigo">모달</button>
+              <div class="modal-sample">
+                <!-- <div class="modal__title">
+                </div> -->
+                <div class="modal__body">
+                  모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용
+                </div>
+                <div class="modal__footer">
+                  <div class="modal__button block-button">
+                    <button class="theme-indigo close__modal">닫기</button>
+                    <button class="theme-partner">버튼명</button>
+                  </div>
+                </div>
+              </div>
+            </span>
+            <span>
+              <button class="open__modal theme-indigo">모달</button>
+              <div class="modal-sample">
+                <!-- <div class="modal__title">
+                </div> -->
+                <div class="modal__body">
+                  모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용
+                </div>
+                <div class="modal__footer">
+                  <div class="modal__button block-button">
+                    <button class="theme-client close__modal">버튼명</button>
+                  </div>
+                </div>
+              </div>
+            </span>
+            <span>
+              <button class="open__modal theme-indigo">모달</button>
+              <div class="modal-sample">
+                <!-- <div class="modal__title">
+                </div> -->
+                <div class="modal__body">
+                  모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용
+                </div>
+                <div class="modal__footer">
+                  <div class="modal__button group-block-button">
+                    <button class="theme-indigo close__modal">닫기</button>
+                    <button class="theme-partner">버튼명</button>
+                  </div>
+                </div>
+              </div>
+            </span>
+          </section>
+          <hr class="guide-hr" />
+          <section id="toggle">
+            <h3 class="subtitle-2-bold">Title + Text</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="../js/modal.js">&#60;/script><br />&#60;link rel="stylesheet" href="../css/component.css" /><br /><br />$(".modal-sample").uiModal();<br /><br />&#60;button class="open__modal theme-indigo">모달&#60;/button><br />&#60;div class="modal-sample"><br />  &#60;div class="modal__title"><br />    모달 팝업 타이틀<br />  &#60;/div><br />  &#60;div class="modal__body"><br />    모달 팝업 상세 내용<br />  &#60;/div><br />  &#60;div class="modal__footer"><br />    &#60;div class="modal__button group-button"><br />      &#60;button class="theme-indigo close__modal">닫기&#60;/button><br />      &#60;button class="theme-wishket">버튼명&#60;/button><br />    &#60;/div><br />  &#60;/div><br />&#60;/div></code></pre>
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>닫기 설정</td>
+                  <td>class 추가 <label>close__modal</label></td>
+                </tr>
+                <tr>
+                  <td>열기 설정</td>
+                  <td>class 추가 <label>open__modal</label></td>
+                </tr>
+                <tr>
+                  <td>footer button type</td>
+                  <td><label>group-button</label>, <label>block-button</label>, <label>group-block-button</label> class 추가</td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label><label>theme-partner</label><label>theme-client</label></td>
+                </tr>
+                <tr>
+                  <td>size</td>
+                  <td><label>size-s</label> 400px, <label>기본</label> 520px, <label>size-l</label> 616px, <label>size-xl</label> 720px</td>
+                </tr>
+              </tbody>
+            </table>
+            <span>
+              <button class="open__modal theme-indigo">모달</button>
+              <div class="modal-sample">
+                <div class="modal__title">
+                  모달 팝업 타이틀
+                </div>
+                <div class="modal__body">
+                  모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용
+                </div>
+                <div class="modal__footer">
+                  <div class="modal__button group-button">
+                    <button class="theme-indigo close__modal">닫기</button>
+                    <button class="theme-wishket">버튼명</button>
+                  </div>
+                </div>
+              </div>
+            </span>
+            <span>
+              <button class="open__modal theme-indigo">모달</button>
+              <div class="modal-sample">
+                <div class="modal__title">
+                  모달 팝업 타이틀
+                </div>
+                <div class="modal__body">
+                  모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용
+                </div>
+                <div class="modal__footer">
+                  <div class="modal__button group-button">
+                    <button class="theme-indigo close__modal">닫기</button>
+                    <button class="theme-partner">버튼명</button>
+                  </div>
+                </div>
+              </div>
+            </span>
+            <span>
+              <button class="open__modal theme-indigo">모달</button>
+              <div class="modal-sample">
+                <div class="modal__title">
+                  모달 팝업 타이틀
+                </div>
+                <div class="modal__body">
+                  모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용
+                </div>
+                <div class="modal__footer">
+                  <div class="modal__button group-button">
+                    <button class="theme-indigo close__modal">닫기</button>
+                    <button class="theme-client">버튼명</button>
+                  </div>
+                </div>
+              </div>
+            </span>
+          </section>
+
+          <hr class="guide-hr" />
+          <section id="toggle">
+            <h3 class="subtitle-2-bold">List</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&lt;script type="text/javascript" src="../js/modal.js"&gt;&lt;/script&gt;<br>&lt;link rel="stylesheet" href="../css/component.css" /&gt;<br><br>$(".modal-sample").uiModal({<br>  type:"list"<br>});<br><br>&lt;button class="open__modal theme-indigo"&gt;모달&lt;/button&gt;<br>&lt;div class="modal-list-sample theme-wishket ui-modal"&gt;<br>  &lt;div class="modal__title"&gt;<br>    모달 팝업 타이틀<br>  &lt;/div&gt;<br>  &lt;div class="modal__body"&gt;<br>    &lt;ul class="radio-group"&gt;<br>      &lt;li&gt;<br>        &lt;input type="radio" class="theme-client radio-sample" value="value" name="radio-modal-sample-name" /&gt;<br>        &lt;label&gt;라디오 타이틀&lt;/label&gt;<br>      &lt;/li&gt;<br>      &lt;li&gt;<br>        &lt;input type="radio" class="theme-partner radio-sample" value="value" name="radio-modal-sample-name" /&gt;<br>        &lt;label&gt;라디오 타이틀&lt;/label&gt;<br>      &lt;/li&gt;<br>    &lt;/ul&gt;<br>  &lt;/div&gt;<br>  &lt;div class="modal__footer"&gt;<br>    &lt;div class="modal__button group-button"&gt;<br>      &lt;button class="theme-indigo close__modal"&gt;닫기&lt;/button&gt;<br>      &lt;button class="theme-wishket"&gt;버튼명&lt;/button&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</code></pre>
+
+
+
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>닫기 설정</td>
+                  <td>class 추가 <label>close__modal</label></td>
+                </tr>
+                <tr>
+                  <td>열기 설정</td>
+                  <td>class 추가 <label>open__modal</label></td>
+                </tr>
+                <tr>
+                  <td>footer button type</td>
+                  <td><label>group-button</label>, <label>block-button</label>, <label>group-block-button</label> class 추가</td>
+                </tr>
+                <tr>
+                  <td>class</td>
+                  <td>테마 설정 <label>theme-wishket</label><label>theme-partner</label><label>theme-client</label></td>
+                </tr>
+                <tr>
+                  <td>size</td>
+                  <td><label>size-s</label> 400px, <label>기본</label> 520px, <label>size-l</label> 616px, <label>size-xl</label> 720px</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <span>
+              <button class="open__modal theme-indigo">모달</button>
+              <div class="modal-list-sample theme-wishket ui-modal">
+                <div class="modal__title">
+                  모달 팝업 타이틀
+                </div>
+                <div class="modal__body">
+                  <ul class="radio-group">
+                    <li>
+                      <input type="radio" class="theme-client radio-sample" value="value" name="radio-modal-sample-name" />
+                      <label>라디오 타이틀</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="theme-partner radio-sample" value="value" name="radio-modal-sample-name" />
+                      <label>라디오 타이틀</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="theme-client radio-sample" value="value" name="radio-modal-sample-name" />
+                      <label>라디오 타이틀</label>
+                    </li>
+                    <li>
+                      <input type="radio" class="theme-client radio-sample" value="value" name="radio-modal-sample-name" />
+                      <label>라디오 타이틀</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal__footer">
+                  <div class="modal__button group-button">
+                    <button class="theme-indigo close__modal">닫기</button>
+                    <button class="theme-wishket">버튼명</button>
+                  </div>
+                </div>
+              </div>
+            </span>
+            <span>
+              <button class="open__modal theme-indigo">모달</button>
+              <div class="modal-list-sample theme-wishket ui-modal">
+                <div class="modal__title">
+                  모달 팝업 타이틀
+                </div>
+                <div class="modal__body">
+                  <ul class="check-group">
+                    <li>
+                      <input type="checkbox" class="theme-wishket checked-sample" value="value" name="check-modal-sample-name"/>
+                      <label>사과</label>
+                      <p>국회는 국정을 감사하거나 특정한 국정사안에 대하여 조사할 수 있으며, 이에 필요한 서류의 제출 또는 증인의 출석과 증언이나 의견의 진술을 요구할 수 있다.</p>
+                    </li>
+                    <li>
+                      <label>바나나</label>
+                      <input type="checkbox" class="theme-client checked-sample" value="value" name="check-modal-sample-name" />
+                    </li>
+                    <li>
+                      <input type="checkbox" class="theme-wishket checked-sample" value="value" name="check-modal-sample-name" disabled/>
+                      <label>스트로베리</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" class="theme-wishket checked-sample" value="value" name="check-modal-sample-name"/>
+                      <label>사과</label>
+                      <p>국회는 국정을 감사하거나 특정한 국정사안에 대하여 조사할 수 있으며, 이에 필요한 서류의 제출 또는 증인의 출석과 증언이나 의견의 진술을 요구할 수 있다.</p>
+                    </li>
+                    <li>
+                      <label>바나나</label>
+                      <input type="checkbox" class="theme-client checked-sample" value="value" name="check-modal-sample-name" />
+                    </li>
+                    <li>
+                      <input type="checkbox" class="theme-wishket checked-sample" value="value" name="check-modal-sample-name" disabled/>
+                      <label>스트로베리</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" class="theme-wishket checked-sample" value="value" name="check-modal-sample-name"/>
+                      <label>사과</label>
+                      <p>국회는 국정을 감사하거나 특정한 국정사안에 대하여 조사할 수 있으며, 이에 필요한 서류의 제출 또는 증인의 출석과 증언이나 의견의 진술을 요구할 수 있다.</p>
+                    </li>
+                    <li>
+                      <label>바나나</label>
+                      <input type="checkbox" class="theme-client checked-sample" value="value" name="check-modal-sample-name" />
+                    </li>
+                    <li>
+                      <input type="checkbox" class="theme-wishket checked-sample" value="value" name="check-modal-sample-name" disabled/>
+                      <label>스트로베리</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" class="theme-wishket checked-sample" value="value" name="check-modal-sample-name"/>
+                      <label>사과</label>
+                      <p>국회는 국정을 감사하거나 특정한 국정사안에 대하여 조사할 수 있으며, 이에 필요한 서류의 제출 또는 증인의 출석과 증언이나 의견의 진술을 요구할 수 있다.</p>
+                    </li>
+                    <li>
+                      <label>바나나</label>
+                      <input type="checkbox" class="theme-client checked-sample" value="value" name="check-modal-sample-name" />
+                    </li>
+                    <li>
+                      <input type="checkbox" class="theme-wishket checked-sample" value="value" name="check-modal-sample-name" disabled/>
+                      <label>스트로베리</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal__footer">
+                  <p>모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용</p>
+                  <div class="modal__button group-button">
+                    <button class="theme-indigo close__modal">닫기</button>
+                    <button class="theme-wishket">버튼명</button>
+                  </div>
+                </div>
+              </div>
+            </span>
+          </section>
+        </section>
+      </div>
+      <!-- <nav>
+        <ul class="guide-aside">
+          <li><a href="#color" class="body-2-light">Color</a></li> 
+          <li>
+            <a href="#title-input" class="body-2-light">Input</a>
+            <ul>
+              <li><a href="#text-input" class="body-2-light" style="color:red">Text</a></li>
+              <li><a href="#text-small-input" class="body-2-light" style="color:red">Text (Small)</a></li>
+              <li><a href="#label-text" class="body-2-light" style="color:red">Text (with Label)</a></li>
+              <li><a href="#password-input" class="body-2-light" style="color:red">Password</a></li>
+              <li><a href="#tel-input" class="body-2-light" style="color:red">Tel</a></li>
+              <li><a href="#tel-label-input" class="body-2-light" style="color:red">Tel (with Label)</a></li>
+              <li><a href="#price-input" class="body-2-light" style="color:red">Price</a></li>
+              <li><a href="#uiautocomplete" class="body-2-light">Autocomplete</a></li>
+              <li><a href="#textarea-input" class="body-2-light" style="color:red">Textarea</a></li>
+              <li><a href="#textarea-expand-input" class="body-2-light" style="color:red">Textarea (Expand)</a></li>
+              <li><a href="#guide-uiselect" class="body-2-light" style="color:red">Select (with Label)</a></li>
+              <li><a href="#radio" class="body-2-light" style="color:red">Radio</a></li>
+              <li><a href="#check" class="body-2-light" style="color:red">Checkbox</a></li>
+              <li><a href="#tree-check" class="body-2-light">Tree</a></li>
+              <li><a href="#toggle" class="body-2-light" style="color:red">Toggle</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#title-alerts" class="body-2-light" style="color:red">Alerts</a>
+            <ul>
+              <li><a href="#alerts-basic" class="body-2-light">Alert (Basic)</a></li>
+              <li><a href="#alerts-contents" class="body-2-light">Alert (Contents)</a></li>
+              <li><a href="#alerts-link" class="body-2-light">Alert (Link)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav> -->
+    </div>
+  </div>
+  <script>
+    $('[data-toggle="datepicker"]').datepicker({
+      language: 'ko-KR',
+      format: 'yyyy년 mm월 dd일',
+      autoHide: true,
+      autoClose: true,
+      weekStart: 0,
+      startDate: '2020/1/6',
+      endDate: '2021/5/3',
+      // pickedClass: 'client-picked',
+      // itemClass: 'client-calendar-object'
+    });
+
+    $(".input-sample, .password-sample").uiInput();
+
+    $(".tel-sample").uiInput({
+      inputType: "tel",
+    });
+
+    $(".price-sample").uiInput({
+      inputType: "price",
+    });
+
+    $(".textarea-sample").uiInput({
+      inputType: "textArea",
+    })
+
+    $(".tree-sample").uiRadioCheck({
+      type: "tree",
+    });
+
+    $(".card-radio-sample").uiRadioCheck({
+      type: "card-radio",
+      width: "224px"
+    });
+
+    $(".card-radio-wide-sample").uiRadioCheck({
+      type: "card-radio-wide",
+      width: "720px"
+    });
+    
+    $(".card-checkbox-sample").uiRadioCheck({
+      type: "card-checkbox",
+      width: "224px"
+    });
+    
+    $(".card-wide-checkbox-sample").uiRadioCheck({
+      type: "card-checkbox-wide",
+      width: "720px"
+    });
+
+    $(".checked-sample, .radio-sample").uiRadioCheck();
+
+    $(".toggle-sample").uiToggle();
+    $("#select-example09, #select-example10, #select-example11, #select-example12").uiSelect();
+    $("#select-example05, #select-example06, #select-example07, #select-example08").uiSelect();
+    $("#select-example01, #select-example02, #select-example03, #select-example04").uiSelect({
+      type:"label"
+    });
+
+    $("#autocomple-example01").uiAutoComple({
+      textlength : 40,
+      url: "url",
+      test: true
+    });
+    $("#autocomple-example02").uiAutoComple({
+      labelmaxcount : 3,
+      textlength : 50,
+      url: "url",
+      test: true
+    });
+    $("#autocomple-example03").uiAutoComple({
+      test: true
+    });
+
+    $(".tooltip-sample-bottom").uiTooltip({
+      position:"bottom",
+      width:"295px",
+    });
+
+    $(".tooltip-sample-left").uiTooltip({
+      position:"left",
+      width:"160px",
+    });
+
+    $(".tooltip-sample-right").uiTooltip({
+      position:"right",
+      width:"100px",
+    });
+
+    $(".tooltip-sample-top").uiTooltip({
+      position:"top",
+      width:"295px",
+    });
+    $(".tooltip-sample-image").uiTooltip({
+      position:"top",
+      width:"258px",
+    });
+
+    $(".modal-sample").uiModal();
+    $(".modal-list-sample").uiModal({
+      type:"list",
+    });
+
+    // $("#select-example01").on("change", function(){
+    //   console.log('체인지 테스트');
+    // });
+
+    // $("#autocomple-example01").on("change", function(){
+    //   console.log("autocomple 체인지 테스트");
+    // });
+
+    // $("#testddd3").on("change", function(){
+    //   console.log($(this).val());
+    // })
+
+    //nav 이벤트
+    $(document).on("scroll", scrollSpy);
+    function scrollSpy(e){
+      var isScroll = false;
+      var scrollPosition = $(document).scrollTop()
+      $('.guide-aside > li > a').each(function(){
+        var currentLink = $(this);
+        var currentScroll = $(currentLink.attr("href"));
+        if (currentScroll.position().top <= scrollPosition && currentScroll.position().top + currentScroll.height() > scrollPosition) {
+          $('.guide-aside > li > a').removeClass("active");
+          currentLink.addClass("active");
+          isScroll= true;
+        }else{
+          currentLink.removeClass("active");
+        }
+      });
+      if(isScroll){
+        childrenScrollSpy();
+      }
+    }
+
+    function childrenScrollSpy(isScroll, e){
+      var scrollPosition = $(document).scrollTop();
+      $('.guide-aside > li > a.active + ul > li > a').each(function(){
+        var childrenCurrentLink = $(this);
+        var childrenCurrentScroll = $(childrenCurrentLink.attr("href"));
+        if (childrenCurrentScroll.position().top <= scrollPosition && childrenCurrentScroll.position().top + childrenCurrentScroll.height() > scrollPosition && childrenCurrentScroll.position() != undefined) {
+          $('.guide-aside > li > ul > li').removeClass("active");
+          childrenCurrentLink.addClass("active");
+        }else{
+          childrenCurrentLink.removeClass("active");
+        }
+      });
+    }
+
+    $('.guide-aside a').on("click", function(e){
+      e.preventDefault();
+      var $target = $(this.hash);
+      $('html').animate( { scrollTop : $target.offset().top }, 500 );
+    });
+
+    if(!navigator.userAgent.match(/Android|Mobile|iP(hone|od|ad)|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/)){
+      location.href = "../index.html";
+    }
+  </script>
+</body>
+
+</html>
