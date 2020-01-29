@@ -1044,15 +1044,15 @@
 
 
       length = getDaysInMonth(viewYear, viewMonth); // The visible length of next month (42 means 6 rows and 7 columns)
-
-      n = 42 - (prevItems.length + length); // The last day of current month
+      n = 42 - (prevItems.length + length + 7); // The last day of current month
+      n < 0 ? n = 42 - (prevItems.length + length) : null;
+      console.log(n);
 
       var lastDate = new Date(viewYear, viewMonth, length);
 
       if (endDate) {
         nextDisabled = lastDate.getTime() >= endDate.getTime();
       }
-
       for (i = 1; i <= n; i += 1) {
         var date = new Date(nextViewYear, nextViewMonth, i);
         var picked = nextViewYear === year && nextViewMonth === month && i === day;
@@ -1065,7 +1065,6 @@
         if (!_disabled && filter) {
           _disabled = filter.call($element, date, 'day') === false;
         }
-
         if(this.options.otherDay === true){
           nextItems.push(this.createItem({
             disabled: _disabled,
@@ -1076,21 +1075,6 @@
             view: 'day next'
           }));
         }else{
-          if(nextItems.length >= 6){
-            var slicelength = parseInt((nextItems.length) - 6);
-            if(slicelength === 0){
-              // nextItems = nextItems.slice(0,0);
-              console.log("00000");
-              // console.log(nextItems.length);
-              // console.log("213123");
-              // console.log("dddd");
-            }else{
-              
-              nextItems = nextItems.slice(1, slicelength);
-            }
-          }
-          
-
           nextItems.push(this.createItem({
             disabled: _disabled,
             // picked: picked,
@@ -1099,16 +1083,10 @@
             // text: i,
             view: 'next'
           }));
-
-          if(nextItems.length / 7 === 0){
-            console.log("aaa");
-            console.log("--------");
-          }
-          console.log(nextItems.length);
         }
       } // Days of current month
       // -----------------------------------------------------------------------
-
+      console.log(nextItems);
       //node height등록
       var picker__nextItems = nextItems.length >= 7 ? nextItems.length - 7 : nextItems.length;
       var picker__prevItems = prevItems.length >= 7 ? prevItems.length - 7 : prevItems.length;
@@ -1144,17 +1122,19 @@
         }));
       } // Render days picker
       // -----------------------------------------------------------------------
-      
+
       this.$monthPrev.toggleClass(disabledClass, prevDisabled);
       this.$monthNext.toggleClass(disabledClass, nextDisabled);
       this.$monthCurrent.toggleClass(disabledClass, prevDisabled && nextDisabled).html(options.yearFirst ? "".concat(viewYear + yearSuffix, " ").concat(months[viewMonth]) : "".concat(months[viewMonth], " ").concat(viewYear).concat(yearSuffix));
-      
+
       if(this.options.otherDay === true){
         this.$days.html(prevItems.join('') + items.join('') + nextItems.join(''));
       }else{
         if(prevItems.length === 7){
+          nextItems.length === 0 ? null : nextItems[0] = '<li class="muted next__firestNode" data-view="next"></li>';
           this.$days.html(items.join('') + nextItems.join(''));
         }else{
+          nextItems.length === 0 ? null : nextItems[0] = '<li class="muted next__firestNode" data-view="next"></li>';
           this.$days.html(prevItems.join('') + items.join('') + nextItems.join(''));
         }
       }
