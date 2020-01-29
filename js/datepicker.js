@@ -1046,8 +1046,6 @@
       length = getDaysInMonth(viewYear, viewMonth); // The visible length of next month (42 means 6 rows and 7 columns)
       n = 42 - (prevItems.length + length + 7); // The last day of current month
       n < 0 ? n = 42 - (prevItems.length + length) : null;
-      console.log(n);
-
       var lastDate = new Date(viewYear, viewMonth, length);
 
       if (endDate) {
@@ -1086,7 +1084,6 @@
         }
       } // Days of current month
       // -----------------------------------------------------------------------
-      console.log(nextItems);
       //node height등록
       var picker__nextItems = nextItems.length >= 7 ? nextItems.length - 7 : nextItems.length;
       var picker__prevItems = prevItems.length >= 7 ? prevItems.length - 7 : prevItems.length;
