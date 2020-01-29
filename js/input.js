@@ -72,12 +72,22 @@
             number = $this.val().replace(/[^0-9]/g, ""),
             telNumber = '';
         if(number.substr(0, 2).indexOf("02") === 0){
-          if(number.length < 3){
-            telNumber = number;
-          }else if(number.length < 7){
-            telNumber = number.substr(0, 2)+"-"+number.substr(2, 4);
+          if(number.length < 10){
+            if(number.length < 3){
+              telNumber = number;
+            }else if(number.length < 6){
+              telNumber = number.substr(0, 2)+"-"+number.substr(2, 3);
+            }else{
+              telNumber = number.substr(0, 2)+"-"+number.substr(2, 3)+"-"+number.substr(5,4);
+            }
           }else{
-            telNumber = number.substr(0, 2)+"-"+number.substr(2, 4)+"-"+number.substr(6,4);
+            if(number.length < 3){
+              telNumber = number;
+            }else if(number.length < 7){
+              telNumber = number.substr(0, 2)+"-"+number.substr(2, 4);
+            }else{
+              telNumber = number.substr(0, 2)+"-"+number.substr(2, 4)+"-"+number.substr(6,4);
+            }
           }
         }else{
           if(number.length < 11){
