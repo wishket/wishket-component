@@ -12,7 +12,7 @@
     line-height: 24px;
     resize:none;
     &.expand{
-      resize:auto;
+      resize:vertical;
     }
     &::placeholder{
       color:$color-gray300;

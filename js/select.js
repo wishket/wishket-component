@@ -1,11 +1,43 @@
 ;(function ($, window) {
   "use strict";
+
+  if (!Element.prototype.matches) {
+    Element.prototype.matches = Element.prototype.msMatchesSelector || 
+                                Element.prototype.webkitMatchesSelector;
+  }
+  
+  if (!Element.prototype.closest) {
+    Element.prototype.closest = function(s) {
+      var el = this;
+  
+      do {
+        if (el.matches(s)) return el;
+        el = el.parentElement || el.parentNode;
+      } while (el !== null && el.nodeType === 1);
+      return null;
+    };
+  }
+
   var newObject = {}
 
   var defaults = {
     width: "100%", //width
     type: "default"
   }
+
+  $(document).on("click", function(e){
+    var target = e.target.closest("div.ui-label-select, div.ui-select");
+    if(!target){
+      $("div.ui-label-select, div.ui-select").not(target).each(function(){
+        var $this = $(this);
+        if($this.children(".select-dropdown").hasClass("open")){
+          $this.hasClass("selected") ? null : $this.removeClass("active");
+          $this.children(".select-dropdown").removeClass("open");
+          $this.children(".select-box").children(".select-icon").removeClass("active");
+        }
+      });
+    }
+  });
 
   var UiSelect = function (node, options){
     this.node = node;
@@ -21,42 +53,51 @@
       this.$node.next().css('width', this.settings.width);
     },
 
-    practice: function(){
-      var self = this;
-      var divSelect = this.$node.next();
+    wait: function(){
+      var self = this,
+          divSelect = this.$node.next();
 
-      //셀렉트 클릭
       if(!this.$node.attr("disabled")){
         divSelect.on("click", function(e){
-          var value = $(e.target).attr("data-select-value");
-          var otherSelector = $("div.ui-label-select, div.ui-select").not($(this));
-          //선택한 셀렉트 제외한 셀렉트 닫기
-          otherSelector.each(function(){
-            $(this).hasClass("selected") ? null : $(this).removeClass("active");
-            $(this).children(".select-dropdown").removeClass("open");
-            $(this).children(".select-box").children(".select-icon").removeClass("active");
+          var $this = $(this),
+              otherSelectors = $("div.ui-label-select, div.ui-select").not($this),
+              $target = $(e.target);
+          otherSelectors.each(function(){
+            var $this = $(this);
+            if($this.children(".select-dropdown").hasClass("open")){
+              $this.hasClass("selected") ? null : $this.removeClass("active");
+              $this.children(".select-dropdown").removeClass("open");
+              $this.children(".select-box").children(".select-icon").removeClass("active");
+            }
           });
-          //option 선택
-          if(value){
-            $(this).children(".select-box").children(".select-name").text($(e.target).text());
-            self.toggle(false, $(this).children(".select-dropdown"), "open");
-            self.toggle(true, $(this), "selected");
-            self.toggle(false, $(this).children(".select-dropdown").children(".current"), "current");
-            self.toggle(true, $(e.target), "current");
-            self.selectSync(value);
-          }
-          if(divSelect.children(".select-dropdown").hasClass("open")){
-            self.toggle(false, $(this).children(".select-dropdown"), "open");
-            self.toggle(false, $(this).children(".select-box").children(".select-icon"), "active");
-            divSelect.hasClass("selected") ? null : self.toggle(false, $(this), "active");
+
+          if($target.prop("tagName") === "LI"){
+            var value = $target.attr("data-select-value");
+            if(value && !$target.hasClass("disabled")){
+              $this.children(".select-box").children(".select-name").text($target.text());
+              self.toggle(true, $this, "selected");
+              self.toggle(false, $target.siblings(".current"), "current");
+              self.toggle(true, $target, "current");
+              self.toggle(false, $this.children(".select-box").children(".select-icon"), "active");
+              self.toggle(false, $this.children(".select-dropdown"), "open");
+              self.selectSync(value);
+            }
           }else{
-            self.toggle(true, $(this).children(".select-dropdown"), "open");
-            self.toggle(true, $(this).children(".select-box").children(".select-icon"), "active");
-            self.toggle(true, $(this), "active");
+            if(divSelect.children(".select-dropdown").hasClass("open")){
+              self.toggle(false, $this.children(".select-dropdown"), "open");
+              self.toggle(false, $this.children(".select-box").children(".select-icon"), "active");
+              divSelect.hasClass("selected") ? null : self.toggle(false, $this, "active");
+            }else{
+              self.toggle(true, $this.children(".select-dropdown"), "open");
+              self.toggle(true, $this.children(".select-box").children(".select-icon"), "active");
+              self.toggle(true, $this, "active");
+            }
           }
         });
       }
     },
+
+
 
     toggle: function(state, node, classNmae){
       if(state){
@@ -73,12 +114,14 @@
 
     createHtml: function(){
       var label = this.$node.find("option:first").text();
-      $(this.node).find("option:first").remove();
-      var option = this.$node.find("option");
-      var wrapClass = this.$node.attr("class");
-      var wrapDisabled = this.$node.attr("disabled") ? ' wrapdisabled' : '';
+      this.$node.find("option:first").remove();
+      var option = this.$node.find("option"),
+          wrapClass = this.$node.attr("class"),
+          wrapDisabled = this.$node.attr("disabled") ? ' wrapdisabled' : '',
+          createSelect = $(document.createDocumentFragment());
+
       if(this.settings.type === "label"){
-        var createSelect =
+        createSelect.append(
           '<div class="ui-label-select '+wrapClass+wrapDisabled+'" tabindex="0">' +
           '  <span class="select-box">' +
           '    <span class="select-label basic">'+label+'</span>' +
@@ -88,9 +131,9 @@
           '  <p class="selectBg"></p>' +
           '  <ul class="select-dropdown">' +
           '  </ul>' +
-          '</div>';
+          '</div>');
       }else{
-        var createSelect =
+        createSelect.append(
           '<div class="ui-select '+wrapClass+wrapDisabled+'" tabindex="0">' +
           '  <span class="select-box">' +
           '    <p class="select-name">'+label+'</p>' +
@@ -99,40 +142,32 @@
           '  <p class="selectBg"></p>' +
           '  <ul class="select-dropdown">' +
           '  </ul>' +
-          '</div>';
+          '</div>');
       }
+      createSelect = createSelect.detach();
       this.$node.after(createSelect);
 
       var selectDropdown = this.$node.next().children(".select-dropdown");
 
       option.each(function(){
-        var value = this.value;
-        var text = this.innerText;
-        var selected = $(this).attr("selected") ? 'current' : '';
-        var disabled = $(this).attr("disabled") ? 'disabled' : '';
-        var getClass = selected || disabled ? ' class="'+selected+' '+disabled+'"' : ''
-        if($(this).attr("selected")){
-          $(this).parent().next().addClass("selected");
-          $(this).parent().next().addClass("active");
-          $(this).parent().next().children(".select-box").children(".select-name").text($(this).text());
+        var value = this.value,
+            text = this.innerText,
+            $this = $(this),
+            selected = $this.attr("selected") ? 'current' : '',
+            disabled = $this.attr("disabled") ? 'disabled' : '',
+            getClass = selected || disabled ? ' class="'+selected+' '+disabled+'"' : '';
+            
+        if($this.attr("selected")){
+          $this.parent().next().addClass("selected");
+          $this.parent().next().addClass("active");
+          $this.parent().next().children(".select-box").children(".select-name").text($this.text());
         }
         selectDropdown.append('<li data-select-value="'+value+'"'+getClass+'>'+text+'</li>')
       });
-      this.practice();
+      this.wait();
     },
   };
   $.fn.uiSelect=function(options){
-    //close
-    $(document).on("click", function(e){
-      if(!$(e.target).hasClass('selectBg') && !$(e.target).hasClass("ui-label-select") && !$(e.target).hasClass("ui-select")){
-        $("div.ui-label-select, div.ui-select").each(function(){
-          $(this).hasClass("selected") ? null : $(this).removeClass("active");
-          $(this).children(".select-dropdown").removeClass("open");
-          $(this).children(".select-box").children(".select-icon").removeClass("active");
-        });
-      }
-    });
-
     return this.each(function(i){
       newObject[i] = new UiSelect(this, options);
     });

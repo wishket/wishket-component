@@ -18,13 +18,15 @@
       this.creatHtml();
       this.$node.parent().height(this.$node.siblings("p").height());
       this.$node.siblings(".on").on("click", function(){
-        self.toggle(true, $(this), "active");
-        self.toggle(false, $(this).siblings(".off"), "active");
+        var $this = $(this);
+        self.toggle(true, $this, "active");
+        self.toggle(false, $this.siblings(".off"), "active");
         self.syncInput("on");
       })
       this.$node.siblings(".off").on("click", function(){
-        self.toggle(true, $(this), "active");
-        self.toggle(false, $(this).siblings(".on"), "active");
+        var $this = $(this);
+        self.toggle(true, $this, "active");
+        self.toggle(false, $this.siblings(".on"), "active");
         self.syncInput("off");
       })
     },

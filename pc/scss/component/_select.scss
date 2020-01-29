@@ -42,6 +42,7 @@
       right: 13px;
       top: 50%;
       transform:translateY(-50%) rotate(.001deg);
+      line-height: 0;
       >svg{
         transition: all .2s;
         -webkit-transition: all .2s;
@@ -67,7 +68,7 @@
     top:41px;
     width:100%;
     border-radius: 4px;
-    padding:9px 0;
+    padding:8px 0;
     border:1px solid $color-gray200;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
     z-index:777;
@@ -83,7 +84,7 @@
       text-overflow: ellipsis;
       &.disabled{
         color:$color-gray300;
-        pointer-events: none;
+        // pointer-events: none;
       }
       &.current{
         color:$brand-color;
@@ -142,14 +143,13 @@
         border-color:$color-gray200 !important;
       }
     }
-    .select-label{
+    .select-name{
       color:$color-gray300 !important;
     }
     .select-icon{
       opacity: .4;
     }
   }
-
 }
 
 .ui-select{
@@ -193,7 +193,7 @@
   }
   >.select-box{
     position:relative;
-    padding:25px 51px 9px 13px;
+    padding:25px 51px 8px 13px;
     border:1px solid $color-gray200;
     font-size:14px;
     border-radius:4px;
@@ -228,6 +228,7 @@
       right: 13px;
       top: 50%;
       transform:translateY(-50%) rotate(.001deg);
+      line-height: 0;
       >svg{
         transition: all .2s;
         -webkit-transition: all .2s;
@@ -248,7 +249,7 @@
     top:57px;
     width:100%;
     border-radius: 4px;
-    padding:9px 0;
+    padding:8px 0;
     border:1px solid $color-gray200;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
     z-index:777;
@@ -264,7 +265,7 @@
       text-overflow: ellipsis;
       &.disabled{
         color:$color-gray300;
-        pointer-events: none;
+        // pointer-events: none;
       }
       &.current{
         color:$brand-color;
@@ -344,7 +345,6 @@
       opacity: .4;
     }
   }
-
 }
 
 .ui-label-select{

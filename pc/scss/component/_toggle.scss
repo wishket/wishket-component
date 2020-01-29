@@ -81,12 +81,12 @@
 
 .toggle{
   &.theme-wishket{
-    @include toggle(9px 13px, $color-wishket500, $color-gray900, 14px, 32px);
+    @include toggle(8px 13px, $color-wishket500, $color-gray900, 14px, 32px);
   }
   &.theme-partner{
-    @include toggle(9px 13px, $color-partner500, $color-gray900, 14px, 32px);
+    @include toggle(8px 13px, $color-partner500, $color-gray900, 14px, 32px);
   }
   &.theme-client{
-    @include toggle(9px 13px, $color-client500, $color-gray900, 14px, 32px);
+    @include toggle(8px 13px, $color-client500, $color-gray900, 14px, 32px);
   }
 }

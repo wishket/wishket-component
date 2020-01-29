@@ -53,16 +53,16 @@
         }
       }
     }
-    // &[type='password']{
-      // font-size:20px;
-      // letter-spacing: 2px;
-      // font-family: Consolas, Courier, monospace;
-      // &::placeholder, &::-webkit-input-placeholder{
-      //   font-family: NotoSansKR !important;
-      //   font-size:$font-size !important;
-      //   letter-spacing: 0 !important;
-      // }
-    // }
+    &[type='password']{
+      font-size:14px;
+      letter-spacing: 4px;
+      font-family: Consolas, Courier, monospace;
+      &::placeholder, &::-webkit-input-placeholder{
+        font-family: NotoSansKR !important;
+        font-size:$font-size !important;
+        letter-spacing: 0 !important;
+      }
+    }
   }
   input:-ms-input-placeholder{
     color:$placeholder-color;
@@ -271,11 +271,11 @@
         opacity: 1;
       }
     }
-    // &[type='password']{
-      // font-size:20px;
-      // letter-spacing: 2px;
-      // font-family: Consolas, Courier, monospace;
-    // }
+    &[type='password']{
+      font-size:14px;
+      letter-spacing: 4px;
+      font-family: Consolas, Courier, monospace;
+    }
   }
 
   input:-ms-input-placeholder{
@@ -367,7 +367,7 @@
     }
     > label{
       transform:translateY(-20px);
-      font-size:0.688rem; 
+      font-size:11px;
     }
   }
   &.error{
@@ -482,16 +482,16 @@
       }
     }
 
-    // &[type='password']{
-      // font-size:20px;
-      // letter-spacing: 2px;
-      // font-family: Consolas, Courier, monospace;
-      // &::placeholder, &::-webkit-input-placeholder{
-      //   font-family: NotoSansKR !important;
-      //   font-size:$font-size !important;
-      //   letter-spacing: 0 !important;
-      // }
-    // }
+    &[type='password']{
+      font-size:14px;
+      letter-spacing: 4px;
+      font-family: Consolas, Courier, monospace;
+      &::placeholder, &::-webkit-input-placeholder{
+        font-family: NotoSansKR !important;
+        font-size:$font-size !important;
+        letter-spacing: 0 !important;
+      }
+    }
   }
   input:-ms-input-placeholder{
     color:$placeholder-color;

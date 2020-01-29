@@ -12,9 +12,12 @@
     line-height: 24px;
     resize:none;
     &.expand{
-      resize:auto;
+      resize:vertical;
     }
-    &::placeholder{
+    &::placeholder, &::-webkit-input-placeholder{
+      color:$color-gray300;
+    }
+    &:-ms-input-placeholder {
       color:$color-gray300;
     }
     &:disabled{

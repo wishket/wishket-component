@@ -1066,14 +1066,46 @@
           _disabled = filter.call($element, date, 'day') === false;
         }
 
-        nextItems.push(this.createItem({
-          disabled: _disabled,
-          picked: picked,
-          highlighted: nextViewYear === thisYear && nextViewMonth === thisMonth && date.getDate() === thisDay,
-          muted: true,
-          text: i,
-          view: 'day next'
-        }));
+        if(this.options.otherDay === true){
+          nextItems.push(this.createItem({
+            disabled: _disabled,
+            picked: picked,
+            highlighted: nextViewYear === thisYear && nextViewMonth === thisMonth && date.getDate() === thisDay,
+            muted: true,
+            text: i,
+            view: 'day next'
+          }));
+        }else{
+          if(nextItems.length >= 6){
+            var slicelength = parseInt((nextItems.length) - 6);
+            if(slicelength === 0){
+              // nextItems = nextItems.slice(0,0);
+              console.log("00000");
+              // console.log(nextItems.length);
+              // console.log("213123");
+              // console.log("dddd");
+            }else{
+              
+              nextItems = nextItems.slice(1, slicelength);
+            }
+          }
+          
+
+          nextItems.push(this.createItem({
+            disabled: _disabled,
+            // picked: picked,
+            // highlighted: nextViewYear === thisYear && nextViewMonth === thisMonth && date.getDate() === thisDay,
+            muted: true,
+            // text: i,
+            view: 'next'
+          }));
+
+          if(nextItems.length / 7 === 0){
+            console.log("aaa");
+            console.log("--------");
+          }
+          console.log(nextItems.length);
+        }
       } // Days of current month
       // -----------------------------------------------------------------------
 
@@ -1121,9 +1153,9 @@
         this.$days.html(prevItems.join('') + items.join('') + nextItems.join(''));
       }else{
         if(prevItems.length === 7){
-          this.$days.html(items.join('')); 
+          this.$days.html(items.join('') + nextItems.join(''));
         }else{
-          this.$days.html(prevItems.join('') + items.join(''));
+          this.$days.html(prevItems.join('') + items.join('') + nextItems.join(''));
         }
       }
     }

@@ -1,22 +1,22 @@
 ;(function ($, window) {
   "use strict";
 
-  // if (!Element.prototype.matches) {
-  //   Element.prototype.matches = Element.prototype.msMatchesSelector || 
-  //                               Element.prototype.webkitMatchesSelector;
-  // }
+  if (!Element.prototype.matches) {
+    Element.prototype.matches = Element.prototype.msMatchesSelector || 
+                                Element.prototype.webkitMatchesSelector;
+  }
   
-  // if (!Element.prototype.closest) {
-  //   Element.prototype.closest = function(s) {
-  //     var el = this;
+  if (!Element.prototype.closest) {
+    Element.prototype.closest = function(s) {
+      var el = this;
   
-  //     do {
-  //       if (el.matches(s)) return el;
-  //       el = el.parentElement || el.parentNode;
-  //     } while (el !== null && el.nodeType === 1);
-  //     return null;
-  //   };
-  // }
+      do {
+        if (el.matches(s)) return el;
+        el = el.parentElement || el.parentNode;
+      } while (el !== null && el.nodeType === 1);
+      return null;
+    };
+  }
 
   var newObject = {}
 
@@ -52,10 +52,34 @@
             "top":boxHeight + 8,
             "width":this.settings.width
           });
+        }else if(this.settings.position === "bottomleft"){
+          this.$node.children(".tooltip-container").css({
+            "right":0,
+            "top":boxHeight + 8,
+            "width":this.settings.width
+          });
+        }else if(this.settings.position === "bottomright"){
+          this.$node.children(".tooltip-container").css({
+            "left":0,
+            "top":boxHeight + 8,
+            "width":this.settings.width
+          });
         }else if(this.settings.position === "top"){
           this.$node.children(".tooltip-container").css({
             "left":"50%",
             "transform":"translateX(-50%)",
+            "bottom":boxHeight + 8,
+            "width":this.settings.width
+          });
+        }else if(this.settings.position === "topleft"){
+          this.$node.children(".tooltip-container").css({
+            "right":0,
+            "bottom":boxHeight + 8,
+            "width":this.settings.width
+          });
+        }else if(this.settings.position === "topright"){
+          this.$node.children(".tooltip-container").css({
+            "left":0,
             "bottom":boxHeight + 8,
             "width":this.settings.width
           });
@@ -78,21 +102,22 @@
 
     tooltipEventMobile: function(textBox, boxWidth, boxPosition){
       this.$node.on('click', function(){
-        var otherTooltip = $(".tooltip-container").not($(this));
+        var $this = $(this),
+            otherTooltip = $(".tooltip-container").not($this);
         if(textBox.hasClass("active")){
           textBox.removeClass("active");
           textBox.remove();
         }else{
           $('body').append(textBox);
           otherTooltip.each(function(){
-            $(this).removeClass("active");
-            $(this).remove();
+            $this.removeClass("active");
+            $this.remove();
           });
           if(boxPosition === "bottom"){
             textBox.css({
               "left":"50%",
               "transform":"translateX(-50%)",
-              "top":$(this).offset().top + 8 + $(this).outerHeight(),
+              "top":$this.offset().top + 8 + $this.outerHeight(),
               "width": boxWidth
             });
           }else if(boxPosition === "top"){
@@ -101,17 +126,17 @@
               "transform":"translateX(-50%)",
               "width": boxWidth
             });
-            textBox.css('top', $(this).offset().top - textBox.outerHeight() - 8);
+            textBox.css('top', $this.offset().top - textBox.outerHeight() - 8);
           }else if(boxPosition === "left"){
             textBox.css({
-              "left":$(this).offset().left - parseInt(boxWidth) - 8,
-              "top":$(this).offset().top,
+              "left":$this.offset().left - parseInt(boxWidth) - 8,
+              "top":$this.offset().top,
               "width": boxWidth
             });
           }else if(boxPosition === "right"){
             textBox.css({
-              "left":$(this).offset().left + $(this).width() + 8,
-              "top":$(this).offset().top,
+              "left":$this.offset().left + $this.width() + 8,
+              "top":$this.offset().top,
               "width": boxWidth
             });
 
@@ -137,8 +162,9 @@
       $(document).on("click", function(e){
         if(!e.target.closest(".tooltip-container") && !e.target.closest(".ui-tooltip")){
           $(".tooltip-container").each(function(){
-            $(this).removeClass("active");
-            $(this).remove();
+            var $this = $(this);
+            $this.removeClass("active");
+            $this.remove();
           });
         }
       });

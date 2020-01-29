@@ -31,24 +31,26 @@
 
     wait: function(type){
       var self = this;
+
       if(type === 'label'){
         var value = this.$node.val();
+
         value ? self.toggle(true, this.$node.parent(),'label-effect') : null;
         this.$node.on('focus click', function(){
           self.toggle(true, $(this).parent(), "label-effect");
         });
         if(!this.$node.attr("disabled")){
-          // console.log(this.$node.parent().hasClass("label-effect"));
           this.$node.siblings("label").on('click', function(){
-            console.log($(this).parent().hasClass());
-            self.toggle(true, $(this).parent(), "label-effect");
-            $(this).siblings("input").focus();
+            var $this = $(this);
+            self.toggle(true, $this.parent(), "label-effect");
+            $this.siblings("input").focus();
           })
         }
         this.$node.on('blur', function(){
-          var value = $(this).val();
+          var $this = $(this),
+              value = $this.val();
           if(!value){
-            self.toggle(false, $(this).parent(), "label-effect");
+            self.toggle(false, $this.parent(), "label-effect");
           }
         });
       }
@@ -65,10 +67,10 @@
     },
 
     telKeyEvent: function(){
-      var self = this;
       this.$node.on('keyup keydown', function(){
-        var number = $(this).val().replace(/[^0-9]/g, "");
-        var telNumber = '';
+        var $this = $(this),
+            number = $this.val().replace(/[^0-9]/g, ""),
+            telNumber = '';
         if(number.substr(0, 2).indexOf("02") === 0){
           if(number.length < 3){
             telNumber = number;
@@ -78,80 +80,93 @@
             telNumber = number.substr(0, 2)+"-"+number.substr(2, 4)+"-"+number.substr(6,4);
           }
         }else{
-          if(number.length < 4){
-            telNumber = number;
-          }else if(number.length < 8){
-            telNumber = number.substr(0, 3)+"-"+number.substr(3, 4);
+          if(number.length < 11){
+            if(number.length < 4){
+              telNumber = number;
+            }else if(number.length < 7){
+              telNumber = number.substr(0, 3)+"-"+number.substr(3, 3);
+            }else{
+              telNumber = number.substr(0, 3)+"-"+number.substr(3, 3)+"-"+number.substr(6,4);
+            }
           }else{
-            telNumber = number.substr(0, 3)+"-"+number.substr(3, 4)+"-"+number.substr(7,4);
+            if(number.length < 4){
+              telNumber = number;
+            }else if(number.length < 8){
+              telNumber = number.substr(0, 3)+"-"+number.substr(3, 4);
+            }else{
+              telNumber = number.substr(0, 3)+"-"+number.substr(3, 4)+"-"+number.substr(7,4);
+            }
           }
         }
-        $(this).val(telNumber);
-        $(this).nextAll('.text-unit') ? ( $(this).val() ? $(this).nextAll('.text-unit').addClass("active") : $(this).nextAll('.text-unit').removeClass("active") ) : null;
+        $this.val(telNumber);
+        $this.nextAll('.text-unit') ? ( $this.val() ? $this.nextAll('.text-unit').addClass("active") : $this.nextAll('.text-unit').removeClass("active") ) : null;
       });
     },
 
     priceKeyEvent: function(){
-      var self = this;
-      var maxlength = this.$node.attr("maxlength");
+      var self = this,
+          maxlength = this.$node.attr("maxlength");
+
       maxlength = Number(maxlength) + Math.floor(maxlength/3);
       this.$node.on('keyup change keydown keypress',function(){
-        var count = $(this).val().length;
-        $(this).attr("maxlength", maxlength);
-        var number = $(this).val().replace(/\D/g, "");
+        var $this = $(this),
+            count = $this.val().length;
+        $this.attr("maxlength", maxlength);
+        var number = $this.val().replace(/\D/g, "");
         number = number.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        $(this).val(number);
+        $this.val(number);
         if(count >= maxlength){
-          self.toggle(true, $(this).parent(), "error");
-          self.error(true, $(this).parent().siblings("span.error-text"), '글자수를 초과하였습니다.');
+          self.toggle(true, $this.parent(), "error");
+          self.error(true, $this.parent().siblings("span.error-text"), '글자수를 초과하였습니다.');
         }else{
-          self.toggle(false, $(this).parent(), "error");
-          self.error(false, $(this).parent().siblings("span.error-text"));
+          self.toggle(false, $this.parent(), "error");
+          self.error(false, $this.parent().siblings("span.error-text"));
         }
-        $(this).nextAll('.text-unit') ? ( $(this).val() ? $(this).nextAll('.text-unit').addClass("active") : $(this).nextAll('.text-unit').removeClass("active") ) : null;
+        $this.nextAll('.text-unit') ? ( $this.val() ? $this.nextAll('.text-unit').addClass("active") : $this.nextAll('.text-unit').removeClass("active") ) : null;
       });
     },
 
     textKeyEvent: function(type){
       var self = this;
       this.$node.on('keyup change keydown',function(){
-        var count = $(this).val().length;
-        var maxlength = $(this).attr("maxlength");
+        var $this = $(this),
+            count = $this.val().length,
+            maxlength = $this.attr("maxlength");
         if(count >= maxlength){
-          $(this).val($(this).val().slice(0, maxlength));
+          $this.val($this.val().slice(0, maxlength));
           if(type === 'text'){
-            self.toggle(true, $(this).parent().parent(), "error");
-            $(this).parent().siblings("span.helper-text").hide();
-            self.error(true, $(this).parent().siblings("span.error-text"), '글자수를 초과하였습니다.');
+            self.toggle(true, $this.parent().parent(), "error");
+            $this.parent().siblings("span.helper-text").hide();
+            self.error(true, $this.parent().siblings("span.error-text"), '글자수를 초과하였습니다.');
           }else if(type === 'textArea'){
-            self.toggle(true, $(this).parent(), "error");
-            $(this).siblings("span.helper-text").hide();
-            self.error(true, $(this).siblings("span.error-text"), '글자수를 초과하였습니다.');
+            self.toggle(true, $this.parent(), "error");
+            $this.siblings("span.helper-text").hide();
+            self.error(true, $this.siblings("span.error-text"), '글자수를 초과하였습니다.');
           }else{
-            self.toggle(true, $(this).parent(), "error");
-            self.error(true, $(this).parent().siblings("span.error-text"), '글자수를 초과하였습니다.');
+            self.toggle(true, $this.parent(), "error");
+            self.error(true, $this.parent().siblings("span.error-text"), '글자수를 초과하였습니다.');
           }
         }else{
           if(type === 'text'){
-            self.toggle(false, $(this).parent().parent(), "error");
-            $(this).parent().siblings("span.helper-text").show();
-            self.error(false, $(this).parent().siblings("span.error-text"));
+            self.toggle(false, $this.parent().parent(), "error");
+            $this.parent().siblings("span.helper-text").show();
+            self.error(false, $this.parent().siblings("span.error-text"));
           }else if(type === 'textArea'){
-            self.toggle(false, $(this).parent(), "error");
-            $(this).siblings("span.helper-text").show();
-            self.error(false, $(this).siblings("span.error-text"));
+            self.toggle(false, $this.parent(), "error");
+            $this.siblings("span.helper-text").show();
+            self.error(false, $this.siblings("span.error-text"));
           }else{
-            self.toggle(false, $(this).parent(), "error");
-            self.error(false, $(this).parent().siblings("span.error-text"));
+            self.toggle(false, $this.parent(), "error");
+            self.error(false, $this.parent().siblings("span.error-text"));
           }
         }
         if(type === 'text'){
-          $(this).parent().siblings(".word-length").html(''+count+'/'+maxlength+'');
+          $this.parent().siblings(".word-length").html(''+count+'/'+maxlength+'');
         }else if(type === 'textArea'){
-          $(this).siblings(".word-length").html(''+count+'/'+maxlength+'');
+          $this.siblings(".word-length").html(''+count+'/'+maxlength+'');
         }
 
-        $(this).nextAll('.text-unit') ? ( $(this).val() ? $(this).nextAll('.text-unit').addClass("active") : $(this).nextAll('.text-unit').removeClass("active") ) : null;
+        $this.nextAll('.text-unit') ? ( $this.val() ? $this.nextAll('.text-unit').addClass("active") : $this.nextAll('.text-unit').removeClass("active") ) : null;
       });
     },
 
@@ -169,9 +184,9 @@
         theme = this.$node.attr("class").match(/(theme-)\w+/g)[0];
       }
       theme = theme ? theme.split("theme-")[1] : '';
-      var iconRight = this.$node.next('i').length > 0 ? this.$node.next('i') : this.$node.next('.text-unit');
-      var iconLeft = this.$node.prev('i').length > 0 ? this.$node.prev('i') : this.$node.prev('.text-unit');
-      var iconClass = iconRight.length === 1 && iconLeft.length === 1 ? 'icon-left-right ' : (iconRight.length > 0 ? 'icon-right ' : '' + iconLeft.length > 0 ? 'icon-left ' : '');
+      var iconRight = this.$node.next('i').length > 0 ? this.$node.next('i') : this.$node.next('.text-unit'),
+          iconLeft = this.$node.prev('i').length > 0 ? this.$node.prev('i') : this.$node.prev('.text-unit'),
+          iconClass = iconRight.length === 1 && iconLeft.length === 1 ? 'icon-left-right ' : (iconRight.length > 0 ? 'icon-right ' : '' + iconLeft.length > 0 ? 'icon-left ' : '');
       iconClass === "icon-left-right " ? iconLeft.addClass("first") : null;
       this.$node.next('.text-unit').length > 0 ? ( this.$node.val() ? this.$node.next('.text-unit').addClass("active") : null ) : null;
       this.$node.css("padding-right", iconRight.width() + 24);

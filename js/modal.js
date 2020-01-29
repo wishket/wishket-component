@@ -1,12 +1,10 @@
 ;(function ($, window) {
   "use strict";
-  var newObject = {}
-
-  var defaults = {
+  var newObject = {},
+      defaults = {
     type:"default"
-  }
-
-  var UiModal = function (node, options){
+  },
+      UiModal = function (node, options){
     this.node = node;
     this.$node = $(this.node);
     this.settings = $.extend({}, defaults, options);
@@ -45,8 +43,8 @@
       });
 
       modal.children().children(".modal__body").find("input").on("change", function(){
-        var inputName = $(this).attr('name');
-        var isChecked;
+        var inputName = $(this).attr('name'),
+            isChecked;
         isChecked = false;
         $("input[name="+inputName+"]").each(function(){
           if($(this).is(":checked") === true){

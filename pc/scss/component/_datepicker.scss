@@ -93,10 +93,11 @@
 .datepicker-panel > ul > li.muted:hover {
   // color: $color-gray300;
   // background-color: $color-gray10;
-  cursor: none;
+  cursor: default;
   color: #fff !important;
   background-color: #fff !important;
-  border-color:#fff !important;
+  border:1px solid;
+  border-width: 1px 0 0 1px;
 }
 
 .datepicker-panel > ul > li.partner-picked,
@@ -184,11 +185,17 @@
   margin-bottom: -1px;
   margin-left: -1px;
   border: 1px solid $color-gray200;
+  position: relative;
+  z-index:9999;
   &.disabled {
     color: $color-gray300; background-color: $color-gray10;
     // cursor: not-allowed;
     cursor: default;
   }
+}
+
+.datepicker-panel>ul[data-view="days"]>li[data-view="day next"]:last-child{
+  background:blueviolet !important;
 }
 
 .datepicker-panel > ul[data-view="days"] > li[data-view="day next"],

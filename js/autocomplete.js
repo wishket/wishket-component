@@ -1,23 +1,6 @@
 ;(function ($, window) {
   "use strict";
 
-  // if (!Element.prototype.matches) {
-  //   Element.prototype.matches = Element.prototype.msMatchesSelector || 
-  //                               Element.prototype.webkitMatchesSelector;
-  // }
-  
-  // if (!Element.prototype.closest) {
-  //   Element.prototype.closest = function(s) {
-  //     var el = this;
-  
-  //     do {
-  //       if (el.matches(s)) return el;
-  //       el = el.parentElement || el.parentNode;
-  //     } while (el !== null && el.nodeType === 1);
-  //     return null;
-  //   };
-  // }
-
   var newObject = {}
   //디폴트 설정
   var defaults = {
@@ -41,30 +24,32 @@
     },
 
     wait: function(){
-      var target = this;
-      var $tagBox = $(this.node).next().children(".ui-autocomplete");
-      var $dropDown = $(this.node).next().children(".tag-dropdown");
+      var target = this,
+          $tagBox = this.$node.next().children(".ui-autocomplete"),
+          $dropDown = this.$node.next().children(".tag-dropdown");
       $dropDown.css("width", this.settings.listwidth);
 
       $(document).on("click", ".i-close", function(e){
-        target.inputSync(false, $(this).parent().text());
-        target.addLabel("remove", $(this).parent());
+        var $this = $(this);
+        target.inputSync(false, $this.parent().text());
+        target.addLabel("remove", $this.parent());
       });
 
       $tagBox.children().on("keyup", function(e){
+        var $this = $(this);
         if(e.keyCode == '40' || e.keyCode == '37' || e.keyCode == '39' || e.keyCode == '38' || e.keyCode == '13'){
-          target.keyboardAccessibility($(this), e.keyCode);
+          target.keyboardAccessibility($this, e.keyCode);
         }else{
-          target.keyEventSearch(e, $(this), $dropDown);
+          target.keyEventSearch(e, $this, $dropDown);
         }
       });
     },
 
     //키이벤트
     keyEventSearch: function(e, target, $dropDown){
-      var self = this;
-      var value = target.val();
-      var textlength = this.settings.textlength;
+      var self = this,
+          value = target.val(),
+          textlength = this.settings.textlength;
       this.stringReplace(value, target);
 
         //글자수 체크
@@ -106,20 +91,21 @@
         $dropDown.html("");
         $dropDown.append("<li class='dropdown-list' data-tag='"+value+"' tabindex='0'><strong>‘"+value+"’</strong> 입력</li>");
         $dropDown.children().on("click", function(){
+          var $this = $(this);
           var value = $(this).data("tag");
           var stop = true;
           var labelMaxLength = self.settings.labelmaxcount;
           var labelCurrentLength = $dropDown.prev().children("span").length;
           if(labelMaxLength > labelCurrentLength){
             $dropDown.prev().children("span").each(function () {
-              if($(this).text()=== value){
+              if($this.text()=== value){
                 stop = false;
-                var label = $(this);
+                var label = $this;
                 label.addClass("error");
                 setTimeout(function(i){
                   label.removeClass("error");
                 }, 2000);
-                $(this).siblings("input").val("");
+                $this.siblings("input").val("");
               }
             });
             if(stop){
@@ -149,20 +135,21 @@
               $dropDown.append("<li class='dropdown-list' data-tag='"+value+"' tabindex='0'><strong>‘"+value+"’</strong> 입력</li>");
             }
             $dropDown.children().on("click", function(){
-              var value = $(this).data("tag");
-              var stop = true;
-              var labelMaxLength = self.settings.labelmaxcount;
-              var labelCurrentLength = $dropDown.prev().children("span").length;
+              var value = $(this).data("tag"),
+                  stop = true,
+                  labelMaxLength = self.settings.labelmaxcount,
+                  labelCurrentLength = $dropDown.prev().children("span").length;
               if(labelMaxLength > labelCurrentLength){
                 $dropDown.prev().children("span").each(function () {
-                  if($(this).text()=== value){
+                  $this = $(this);
+                  if($this.text()=== value){
                     stop = false;
-                    var label = $(this);
+                    var label = $this;
                     label.addClass("error");
                     setTimeout(function(i){
                       label.removeClass("error");
                     }, 2000);
-                    $(this).siblings("input").val("");
+                    $this.siblings("input").val("");
                   }
                 });
                 if(stop){
@@ -194,15 +181,16 @@
     },
 
     keyboardAccessibility: function(node, keycode){
-      var self = this;
-      var list = node.parent().next().children("li");
-      var $dropDown = node.parent().next();
+      var self = this,
+          list = node.parent().next().children("li"),
+          $dropDown = node.parent().next();
       if(keycode == '40'){
         list.each(function(){
-          if($(this).hasClass("list-selected")){
-            if($(this).next(".dropdown-list")[0]){
-              self.toggle(true, $(this).next(), "list-selected");
-              self.toggle(false, $(this), "list-selected");
+          var $this = $(this);
+          if($this.hasClass("list-selected")){
+            if($this.next(".dropdown-list")[0]){
+              self.toggle(true, $this.next(), "list-selected");
+              self.toggle(false, $this, "list-selected");
             }
             self.toggle(false, list.first(), "list-selected");
             return false;
@@ -212,13 +200,14 @@
         });
       }else if(keycode == '38'){
         list.each(function(){
-          if($(this).hasClass("list-selected")){
-            if($(this).next(".dropdown-list")[0]){
-              self.toggle(true, $(this).prev(), "list-selected");
-              self.toggle(false, $(this), "list-selected");
+          var $this = $(this);
+          if($this.hasClass("list-selected")){
+            if($this.next(".dropdown-list")[0]){
+              self.toggle(true, $this.prev(), "list-selected");
+              self.toggle(false, $this, "list-selected");
             }else{
-              self.toggle(true, $(this).prev(), "list-selected");
-              self.toggle(false, $(this), "list-selected");
+              self.toggle(true, $this.prev(), "list-selected");
+              self.toggle(false, $this, "list-selected");
             }
           }
         });
@@ -226,21 +215,22 @@
         if(node.val() !== ' '){
           if(list.hasClass("list-selected")){
             var dataTag = node.parent().next().children(".list-selected").attr("data-tag");
-            dataTag = dataTag.replace(/  +/g, ' ');
-            dataTag = dataTag.trim();
-            var stop = true;
-            var labelMaxLength = this.settings.labelmaxcount;
-            var labelCurrentLength = $dropDown.prev().children("span").length;
+                dataTag = dataTag.replace(/  +/g, ' ');
+                dataTag = dataTag.trim();
+            var stop = true,
+                labelMaxLength = this.settings.labelmaxcount,
+                labelCurrentLength = $dropDown.prev().children("span").length;
             if(labelMaxLength > labelCurrentLength){
               $dropDown.prev().children("span").each(function () {
-                if($(this).text()=== dataTag){
+                var $this = $(this);
+                if($this.text()=== dataTag){
                   stop = false;
-                  var label = $(this);
+                  var label = $this;
                   label.addClass("error");
                   setTimeout(function(i){
                       label.removeClass("error");
                   }, 2000);
-                  $(this).siblings("input").val("");
+                  $this.siblings("input").val("");
                 }
               });
               if(stop){
@@ -255,12 +245,12 @@
           }else if(!node.val()){
             return
           }else{
-            var stop = true;
-            var labelMaxLength = this.settings.labelmaxcount;
-            var labelCurrentLength = $dropDown.prev().children("span").length;
-            var value = node.val();
-            value = value.replace(/  +/g, ' ');
-            value = value.trim();
+            var stop = true,
+                labelMaxLength = this.settings.labelmaxcount,
+                labelCurrentLength = $dropDown.prev().children("span").length,
+                value = node.val();
+                value = value.replace(/  +/g, ' ');
+                value = value.trim();
             if(labelMaxLength > labelCurrentLength){
               $dropDown.prev().children("span").each(function () {
                 if($(this).text()=== value){
@@ -337,8 +327,10 @@
 
     //생성
     createHtml: function(value){
-      var wrapClass = this.node.getAttribute("class") ? 'class="ui-autocomplete '+this.node.getAttribute("class")+'" ' : '';
-      var placeholder = this.node.getAttribute("placeholder") ? 'placeholder="'+this.node.getAttribute("placeholder")+'"' : '';
+      var wrapClass = this.node.getAttribute("class") ? 'class="ui-autocomplete '+this.node.getAttribute("class")+'" ' : '',
+          placeholder = this.node.getAttribute("placeholder") ? 'placeholder="'+this.node.getAttribute("placeholder")+'"' : '',
+          loadTag = this.$node.attr("value"),
+          $flag = $(document.createDocumentFragment());
       this.node.classList.add("hiddenInput");
       var createHtml =
         '<div class="autocompletebox">' +
@@ -348,8 +340,8 @@
         '  <ul class="tag-dropdown" >' +
         '  </ul>' +
         '</div>';
-      this.$node.after(createHtml);
-      var loadTag = this.$node.attr("value");
+      $flag.append(createHtml);
+      this.$node.after($flag);
       loadTag ? this.addLabel("create", loadTag) : null;
       this.wait();
     },

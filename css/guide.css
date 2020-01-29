@@ -482,3 +482,15 @@ pre[class*="language-"] {
 #font-familes{
   margin-bottom:142px;
 }
+
+#modal-default > span{
+  display:inline-block;
+}
+
+#modal-title-text > span{
+  display:inline-block;
+}
+
+#modal-list-2 > span{
+  display:inline-block;
+}

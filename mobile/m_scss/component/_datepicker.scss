@@ -97,6 +97,7 @@
   color: #fff !important;
   background-color: #fff !important;
   border-color:#fff !important;
+  z-index:0 !important;
 }
 
 .datepicker-panel > ul > li.partner-picked,
@@ -115,6 +116,18 @@
 .datepicker-panel > ul > li.wishket-picked:hover {
   background-color: $color-wishket500;
   color: $color-white;
+}
+
+.datepicker-panel > ul[data-view="days"] > li[data-view="day"]{
+  background:red !important;
+}
+
+.datepicker-panel > ul[data-view="days"] > li[data-view="day"]:last-child{
+  background:red !important;
+}
+
+.datepicker-panel>ul[data-view="days"]>li{
+  background:blueviolet !important;
 }
 
 .datepicker-panel > ul > li[data-view="month prev"].disabled,
@@ -184,6 +197,8 @@
   margin-bottom: -1px;
   margin-left: -1px;
   border: 1px solid $color-gray200;
+  position:relative;
+  z-index:9999;
   &.disabled {
     color: $color-gray300; background-color: $color-gray10;
     // cursor: not-allowed;

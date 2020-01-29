@@ -98,7 +98,7 @@
 		"oA": 0,
 		"oAP": "/Users/jaehyun/source/wishket-component/css/component.css",
 		"oF": 6,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"/component/_alerts.scss": {
@@ -294,7 +294,7 @@
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets-red",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 600676372.10797298
+	"lastBuiltDate": 601289642.76667905
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
