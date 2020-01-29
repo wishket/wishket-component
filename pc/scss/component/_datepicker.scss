@@ -90,14 +90,25 @@
 }
 
 .datepicker-panel > ul > li.muted,
-.datepicker-panel > ul > li.muted:hover {
+.datepicker-panel > ul > li.muted:hover{
   // color: $color-gray300;
   // background-color: $color-gray10;
   cursor: default;
   color: #fff !important;
   background-color: #fff !important;
+  border-color:inherit !important;
   border:1px solid;
   border-width: 1px 0 0 1px;
+}
+
+.datepicker-panel > ul > li[data-view="next"],
+.datepicker-panel > ul > li[data-view="next"]:hover {
+  border-top-color:$color-gray200 !important;
+}
+
+.datepicker-panel > ul > li.next__firestNode,
+.datepicker-panel > ul > li.next__firestNode:hover{
+  border-left-color:$color-gray200 !important;
 }
 
 .datepicker-panel > ul > li.partner-picked,
@@ -192,10 +203,6 @@
     // cursor: not-allowed;
     cursor: default;
   }
-}
-
-.datepicker-panel>ul[data-view="days"]>li[data-view="day next"]:last-child{
-  background:blueviolet !important;
 }
 
 .datepicker-panel > ul[data-view="days"] > li[data-view="day next"],
