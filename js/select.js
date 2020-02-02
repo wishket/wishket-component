@@ -34,6 +34,7 @@
           $this.hasClass("selected") ? null : $this.removeClass("active");
           $this.children(".select-dropdown").removeClass("open");
           $this.children(".select-box").children(".select-icon").removeClass("active");
+          $this.removeClass("select__border");
         }
       });
     }
@@ -68,6 +69,7 @@
               $this.hasClass("selected") ? null : $this.removeClass("active");
               $this.children(".select-dropdown").removeClass("open");
               $this.children(".select-box").children(".select-icon").removeClass("active");
+              $this.removeClass("select__border");
             }
           });
 
@@ -80,16 +82,19 @@
               self.toggle(true, $target, "current");
               self.toggle(false, $this.children(".select-box").children(".select-icon"), "active");
               self.toggle(false, $this.children(".select-dropdown"), "open");
+              self.toggle(false, $this, "select__border");
               self.selectSync(value);
             }
           }else{
             if(divSelect.children(".select-dropdown").hasClass("open")){
               self.toggle(false, $this.children(".select-dropdown"), "open");
               self.toggle(false, $this.children(".select-box").children(".select-icon"), "active");
+              self.toggle(false, $this, "select__border");
               divSelect.hasClass("selected") ? null : self.toggle(false, $this, "active");
             }else{
               self.toggle(true, $this.children(".select-dropdown"), "open");
               self.toggle(true, $this.children(".select-box").children(".select-icon"), "active");
+              self.toggle(true, $this, "select__border");
               self.toggle(true, $this, "active");
             }
           }

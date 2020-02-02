@@ -2,16 +2,21 @@
   "use strict";
   var newObject = {},
       defaults = {
-    type: "default",
-    align: "vertical",
-    width: "inherit"
-  },
+        type: "default",
+        align: "vertical",
+        width: "inherit"
+    },
+
     UiRadioCheck = function (node, options){
     this.node = node;
     this.$node = $(this.node);
     this.settings = $.extend({}, defaults, options);
     this.init();
   };
+
+  var OSName="Unknown OS";
+  if (navigator.appVersion.indexOf("Win")!=-1) OSName="window__tooltip";
+  else if (navigator.appVersion.indexOf("Mac")!=-1) OSName="mac__tooltip";
 
   UiRadioCheck.prototype = {
     init: function(){
@@ -47,7 +52,6 @@
           cardImg = this.$node.siblings(".card-img-box"),
           cardText = this.$node.siblings(".card-text"),
           cardTooltip = this.$node.siblings(".card-tooltip");
-
       if(this.$node.attr("class") && this.$node.attr("class").match(/(theme-)\w+/g)){
         theme = this.$node.attr("class").match(/(theme-)\w+/g)[0];
       }
@@ -67,6 +71,7 @@
       this.$node.parent().parent().append(cardImg);
       this.$node.parent().parent().append(cardText);
       this.$node.parent().parent().append(cardTooltip);
+      cardTooltip ? self.toggle("true", cardTooltip, OSName) : null;
       this.$node.parent().parent().css("width", this.settings.width);
       type === "card-radio-wide" || type === "card-checkbox-wide" ? (this.$node.parent().siblings(".card-text").children(".subtext").height() > 30 ? this.$node.parent().parent().css("padding", "16px 16px 16px 116px") : null) : null;
       this.$node.is(":checked") === true ? self.toggle(true, this.$node.parent().parent(), "selected") : null;

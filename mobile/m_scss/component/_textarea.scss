@@ -1,36 +1,45 @@
 @mixin textArea($type, $brand-color){
-  >textarea{
-    position: relative;
-    display:block;
-    padding:8px 12px;
-    border:1px solid $color-gray200;
+  >.textarea__border{
     border-radius:4px;
-    width:100%;
-    min-height:200px;
-    font-size:14px;
-    color:$color-gray600;
-    line-height: 24px;
-    resize:none;
-    &.expand{
-      resize:vertical;
+    overflow:hidden;
+    border:1px solid $color-gray200;
+    &.disabled{
+      border-color:$color-gray200;
     }
-    &::placeholder{
-      color:$color-gray300;
-    }
-    &:disabled{
-      background:$color-gray10;
-      color:$color-gray300;
-    }
-    &:hover, &:focus{
+    &.active{
       border-color:$brand-color;
+    }
+    >textarea{
+      position: relative;
+      display:block;
+      padding:8px 12px;
+      width:100%;
+      min-height:200px;
+      font-size:14px;
+      color:$color-gray600;
+      line-height: 24px;
+      resize:none;
+      overflow:auto;
+      border:0;
+      &.expand{
+        resize:vertical;
+      }
+      &::placeholder, &::-webkit-input-placeholder{
+        color:$color-gray300;
+      }
+      &:-ms-input-placeholder {
+        color:$color-gray300;
+      }
+      &::-ms-input-placeholder {
+        color:$color-gray300;
+      }
       &:disabled{
-        &:hover, &:focus{
-          border-color:$color-gray200;
-        }
+        background:$color-gray10;
+        color:$color-gray300;
       }
     }
   }
-  
+
   >span{
     font-size:0.813rem;
     font-weight: 400;
@@ -51,9 +60,11 @@
     }
   }
   &.error{
-    >div>input{
-      color:$color-red500;
+    .textarea__border{
       border-color:$color-red500;
+      >textarea{
+        color:$color-red500;
+      }
     }
     >span{
       color:$color-red500;

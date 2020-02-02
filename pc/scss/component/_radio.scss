@@ -211,7 +211,16 @@
       margin:0;
     }
   }
+
+  &.horizontal{
+    >li{
+      display:inline-block;
+      margin-right:40px;
+    }
+  }
 }
+
+
 
 
 @mixin card-radio($brand-color, $bg-brand-color){
@@ -252,16 +261,22 @@
     top:4px;
     right:16px;
     transform:translateY(-50%);
-    padding:4px 12px;
     border-radius: 100px;
     border:1px solid $brand-color;
     color:$brand-color;
     background:#fff;
     font-size:13px;
-    line-height: 20px;
+    line-height: 1em;
     z-index:1;
     display:block;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.16);
+    font-weight:400;
+    &.window__tooltip{
+      padding:7px 12px 8px;
+    }
+    &.mac__tooltip{
+      padding:7px 12px 8px;
+    }
     &:after{
       content: "";
       position: absolute;
@@ -291,6 +306,7 @@
       padding:3px;
       border:1px solid $color-gray200;
       border-radius:50%;
+      background:#fff;
       .dot{
         width:8px;
         height:8px;
@@ -445,16 +461,22 @@
     top:10px;
     right:16px;
     transform:translateY(-50%);
-    padding:4px 12px;
     border-radius: 100px;
     border:1px solid $brand-color;
     color:$brand-color;
     background:#fff;
     font-size:13px;
-    line-height: 20px;
+    line-height: 1em;
     z-index:1;
     display:block;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.16);
+    font-weight:400;
+    &.window__tooltip{
+      padding:7px 12px 8px;
+    }
+    &.mac__tooltip{
+      padding:7px 12px 8px;
+    }
     &:after{
       content: "";
       position: absolute;
@@ -485,6 +507,7 @@
       padding:3px;
       border:1px solid $color-gray200;
       border-radius:50%;
+      background:#fff;
       .dot{
         width:8px;
         height:8px;

@@ -265,6 +265,8 @@
   var methods = {
     // Show the datepicker
     show: function show() {
+      this.element.classList.add("date__active");
+
       if (!this.built) {
         this.build();
       }
@@ -298,6 +300,7 @@
     },
     // Hide the datepicker
     hide: function hide() {
+      this.element.classList.remove("date__active");
       if (!this.shown) {
         return;
       }

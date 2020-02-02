@@ -62,6 +62,7 @@
       }else{
         if(this.settings.type === 'list'){
           this.$node.addClass("list__modal");
+          this.$node.children(".modal__title").append("<button class='list__modal__tilte__close close__modal'></button>")
           this.$node.children(".modal__footer").find("button").not(".close__modal").attr('disabled', true);
           if(this.$node.children(".modal__body").find("input").is(":checked") === true){
             // this.$node.children(".modal__footer").find("button").not(".close__modal").attr('disabled', false);

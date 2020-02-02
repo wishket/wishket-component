@@ -31,24 +31,17 @@
 
     wait: function(type){
       var self = this;
-
       if(type === 'label'){
         var value = this.$node.val();
-
         value ? self.toggle(true, this.$node.parent(),'label-effect') : null;
         this.$node.on('focus click', function(){
           self.toggle(true, $(this).parent(), "label-effect");
         });
-        if(!this.$node.attr("disabled")){
-          this.$node.siblings("label").on('click', function(){
-            var $this = $(this);
-            self.toggle(true, $this.parent(), "label-effect");
-            $this.siblings("input").focus();
-          })
-        }
-        this.$node.on('blur', function(){
+
+        this.$node.on('blur', function(e){
           var $this = $(this),
               value = $this.val();
+
           if(!value){
             self.toggle(false, $this.parent(), "label-effect");
           }
@@ -63,6 +56,14 @@
       }
       else if(this.settings.inputType === "textArea"){
         self.textKeyEvent("textArea");
+        this.$node.on({
+          focus: function(){
+            self.toggle(true, $(this).parent(), "active");
+          },
+          blur: function(){
+            self.toggle(false, $(this).parent(), "active");
+          }
+        })
       }
     },
 
@@ -149,9 +150,9 @@
             $this.parent().siblings("span.helper-text").hide();
             self.error(true, $this.parent().siblings("span.error-text"), '글자수를 초과하였습니다.');
           }else if(type === 'textArea'){
-            self.toggle(true, $this.parent(), "error");
-            $this.siblings("span.helper-text").hide();
-            self.error(true, $this.siblings("span.error-text"), '글자수를 초과하였습니다.');
+            self.toggle(true, $this.parent().parent(), "error");
+            $this.parent().siblings("span.helper-text").hide();
+            self.error(true, $this.parent().siblings("span.error-text"), '글자수를 초과하였습니다.');
           }else{
             self.toggle(true, $this.parent(), "error");
             self.error(true, $this.parent().siblings("span.error-text"), '글자수를 초과하였습니다.');
@@ -162,9 +163,9 @@
             $this.parent().siblings("span.helper-text").show();
             self.error(false, $this.parent().siblings("span.error-text"));
           }else if(type === 'textArea'){
-            self.toggle(false, $this.parent(), "error");
-            $this.siblings("span.helper-text").show();
-            self.error(false, $this.siblings("span.error-text"));
+            self.toggle(false, $this.parent().parent(), "error");
+            $this.parent().siblings("span.helper-text").show();
+            self.error(false, $this.parent().siblings("span.error-text"));
           }else{
             self.toggle(false, $this.parent(), "error");
             self.error(false, $this.parent().siblings("span.error-text"));
@@ -173,7 +174,7 @@
         if(type === 'text'){
           $this.parent().siblings(".word-length").html(''+count+'/'+maxlength+'');
         }else if(type === 'textArea'){
-          $this.siblings(".word-length").html(''+count+'/'+maxlength+'');
+          $this.parent().siblings(".word-length").html(''+count+'/'+maxlength+'');
         }
 
         $this.nextAll('.text-unit') ? ( $this.val() ? $this.nextAll('.text-unit').addClass("active") : $this.nextAll('.text-unit').removeClass("active") ) : null;
@@ -229,12 +230,15 @@
         theme = this.$node.attr("class").match(/(theme-)\w+/g)[0];
       }
       theme = theme ? theme.split("theme-")[1] : '';
-      var helperText = this.$node.siblings("span.helper-text");
-      var maxlength = this.$node.attr("maxlength");
+      var helperText = this.$node.siblings("span.helper-text"),
+          maxlength = this.$node.attr("maxlength");
+
       this.$node.wrap('<div class="ui-textarea-'+theme+'"></div>');
       this.$node.parent().append(helperText);
       this.$node.after("<span class='error-text'>에러상세 메시지</span>");
       this.$node.after("<span class='word-length'>0/"+maxlength+"</span>");
+      this.$node.wrap('<div class="textarea__border"></div>');
+      this.$node.attr('disabled') ? this.toggle(true, this.$node.parent(), 'disabled') : null;
       this.wait();
     },
 
@@ -244,6 +248,7 @@
       }else{
         node.removeClass(className);
       }
+      return;
     }
   };
   $.fn.uiInput=function(options){

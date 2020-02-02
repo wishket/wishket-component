@@ -17,6 +17,27 @@
     this.init();
   };
 
+  $(document).on("click", function(e){
+    var target = e.target.closest("div.autocompletebox");
+    if(!target){
+      $("div.autocompletebox").not(target).each(function(){
+        var $this = $(this);
+        if($this.children(".ui-autocomplete").hasClass("active")){
+          $this.children(".ui-autocomplete").removeClass("active");
+          $this.children(".tag-dropdown").removeClass("open");
+        }
+      });
+    }else{
+      $("div.autocompletebox").not(target).each(function(){
+        var $this = $(this);
+        if($this.children(".ui-autocomplete").hasClass("active")){
+          $this.children(".ui-autocomplete").removeClass("active");
+          $this.children(".tag-dropdown").removeClass("open");
+        }
+      });
+    }
+  });
+
   UiAutoComple.prototype = {
     init: function(){
       this.createHtml();
@@ -26,7 +47,8 @@
     wait: function(){
       var target = this,
           $tagBox = this.$node.next().children(".ui-autocomplete"),
-          $dropDown = this.$node.next().children(".tag-dropdown");
+          $dropDown = this.$node.next().children(".tag-dropdown"),
+          self = this;
       $dropDown.css("width", this.settings.listwidth);
 
       $(document).on("click", ".i-close", function(e){
@@ -35,8 +57,10 @@
         target.addLabel("remove", $this.parent());
       });
 
-      $tagBox.children().on("keyup", function(e){
+      $tagBox.children().on("keyup click", function(e){
         var $this = $(this);
+        self.toggle(true, $this.parent(), "active");
+        console.log("aa");
         if(e.keyCode == '40' || e.keyCode == '37' || e.keyCode == '39' || e.keyCode == '38' || e.keyCode == '13'){
           target.keyboardAccessibility($this, e.keyCode);
         }else{
@@ -67,11 +91,9 @@
       if(value.replace(/ /gi, '') === ''){
         $dropDown.css("left", dropdownPostion);
         this.toggle(false, $dropDown, "open")
-        this.toggle(false, target.parent(), "active");
       }else{
         $dropDown.css("left", dropdownPostion);
         this.toggle(true, $dropDown, "open");
-        this.toggle(true, target.parent(), "active");
       }
 
       var selected = [];
