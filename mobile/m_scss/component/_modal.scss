@@ -21,7 +21,9 @@
   left:50%;
   transform:translate(-50%, -50%);
   background: #fff;
-  width:520px;
+  width : -webkit-calc(100% - 48px);
+    width :    -moz-calc(100% - 48px);
+    width :         calc(100% - 48px);
   transition:all .2s;
   -webkit-transition:all .2s;
   opacity: 0;
@@ -52,7 +54,7 @@
     }
     color:$color-gray900;
     line-height:24px;
-    max-height: 242px;
+    max-height: 294px;
     overflow:auto;
   }
 

@@ -49,38 +49,38 @@
           this.$node.children(".tooltip-container").css({
             "left":"50%",
             "transform":"translateX(-50%)",
-            "top":boxHeight + 8,
+            "top":boxHeight + 4,
             "width":this.settings.width
           });
         }else if(this.settings.position === "bottomleft"){
           this.$node.children(".tooltip-container").css({
             "right":0,
-            "top":boxHeight + 8,
+            "top":boxHeight + 4,
             "width":this.settings.width
           });
         }else if(this.settings.position === "bottomright"){
           this.$node.children(".tooltip-container").css({
             "left":0,
-            "top":boxHeight + 8,
+            "top":boxHeight + 4,
             "width":this.settings.width
           });
         }else if(this.settings.position === "top"){
           this.$node.children(".tooltip-container").css({
             "left":"50%",
             "transform":"translateX(-50%)",
-            "bottom":boxHeight + 8,
+            "bottom":boxHeight + 6,
             "width":this.settings.width
           });
         }else if(this.settings.position === "topleft"){
           this.$node.children(".tooltip-container").css({
             "right":0,
-            "bottom":boxHeight + 8,
+            "bottom":boxHeight + 6,
             "width":this.settings.width
           });
         }else if(this.settings.position === "topright"){
           this.$node.children(".tooltip-container").css({
             "left":0,
-            "bottom":boxHeight + 8,
+            "bottom":boxHeight + 6,
             "width":this.settings.width
           });
         }else if(this.settings.position === "left"){
@@ -104,14 +104,18 @@
       this.$node.on('click', function(){
         var $this = $(this),
             otherTooltip = $(".tooltip-container").not($this);
+        
+            console.log($this);
+            console.log(textBox);
+
         if(textBox.hasClass("active")){
           textBox.removeClass("active");
-          textBox.remove();
+          // textBox.remove();
         }else{
           $('body').append(textBox);
           otherTooltip.each(function(){
             $this.removeClass("active");
-            $this.remove();
+            // $this.remove();
           });
           if(boxPosition === "bottom"){
             textBox.css({

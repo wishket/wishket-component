@@ -352,7 +352,7 @@ section#font, section#color-palette{
 
 .guide-tooltip >div> p{
   font-size:13px;
-  color:#bdbdbd;
+  color:#616161;
   float:left;
   margin-right:8px;
 }
@@ -460,7 +460,7 @@ pre[class*="language-"] {
 .guide-content{
   width:100%;
   position: relative;
-  padding: 36px;
+  padding: 24px;
   max-width: 1400px;
 }
 
@@ -499,4 +499,8 @@ pre[class*="language-"] {
 
 #title-modal >section > span{
   display:inline-block;
+}
+
+#title-modal > section > div{
+  margin:0 -12px 24px;
 }

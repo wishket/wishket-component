@@ -31,7 +31,6 @@
             "overflow-y":"hidden",
           });
         }
-        
       });
       modal.find(".close__modal").on('click', function(){
         modal.hide();
@@ -42,7 +41,7 @@
         });
       });
 
-      modal.children().children(".modal__body").find("input").on("change", function(){
+      modal.children().children(".modal__body").find("input:radio, input:checkbox").on("change", function(){
         var inputName = $(this).attr('name'),
             isChecked;
         isChecked = false;

@@ -52,7 +52,7 @@
     }
     color:$color-gray900;
     line-height:24px;
-    max-height: 242px;
+    max-height: 294px;
     overflow:auto;
   }
 
@@ -126,7 +126,9 @@
       }
       &.group-block-button{
         >button{
-          width:100%;
+          width : -webkit-calc(50% - 8px);
+          width :    -moz-calc(50% - 8px);
+          width :         calc(50% - 8px);
           margin-right:16px;
           &:last-child{
             margin-right:0;

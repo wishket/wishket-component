@@ -68,6 +68,16 @@
         font-size:13px;
         font-weight:400;
       }
+      >.infobox__box{
+        margin-top:16px;
+        background:#fff;
+        border:1px solid $color-gray200;
+        padding:12px 16px;
+        color:$color-gray600;
+        font-size:13px;
+        font-weight: 400;
+        line-height: 20px;
+      }
     }
   }
 }

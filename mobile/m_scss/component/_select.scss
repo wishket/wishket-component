@@ -41,6 +41,7 @@
       position:absolute;
       right: 13px;
       top: 50%;
+      line-height: 0;
       transform:translateY(-50%) rotate(.001deg);
       >svg{
         transition: all .2s;
@@ -104,6 +105,11 @@
           background:#fff;
         }
       }
+    }
+  }
+  &.select-small{
+    >.select-dropdown{
+      top:37px;
     }
   }
   &.open{
@@ -224,6 +230,7 @@
       right: 13px;
       top: 50%;
       transform:translateY(-50%) rotate(.001deg);
+      line-height: 0;
       >svg{
         transition: all .2s;
         -webkit-transition: all .2s;

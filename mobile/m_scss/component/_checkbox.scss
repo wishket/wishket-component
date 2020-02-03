@@ -386,12 +386,7 @@
     z-index:1;
     display:block;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.16);
-    &.window__tooltip{
-      padding:7px 12px 8px;
-    }
-    &.mac__tooltip{
-      padding:7px 12px 8px;
-    }
+    padding:8px 12px 7px;
     &:after{
       content: "";
       position: absolute;
@@ -582,12 +577,7 @@
     z-index:1;
     display:block;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.16);
-    &.window__tooltip{
-      padding:7px 12px 8px;
-    }
-    &.mac__tooltip{
-      padding:7px 12px 8px;
-    }
+    padding:8px 12px 7px;
     &:after{
       content: "";
       position: absolute;
