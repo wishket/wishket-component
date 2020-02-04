@@ -1200,6 +1200,63 @@
               <span class="helper-text">헬퍼 텍스트 상세 내용</span>
             </div>
           </section>
+          <hr class="guide-hr" />
+          <section id="title-file">
+            <h3 class="subtitle-2-bold">Attachment File</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&#60;script type="text/javascript" src="../js/input.js">&#60;/script><br />&#60;link rel="stylesheet" href="../css/component.css" /><br /><br />$(".textarea-sample").uiInput({<br />  inputType: "textArea"<br />});<br /><br />&#60;div><br />  &#60;textarea class="theme-client textarea-sample" maxlength="100" placeholder="플레이스 홀더">&#60;/textarea><br />  &#60;span class="helper-text">헬퍼헬퍼헬퍼&#60;/span><br />&#60;/div></code></pre>
+
+            <div class="ui-file file-state__default">
+              <i class="ui-file__icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 14h14V0H0z'/%3E%3Cpath stroke='%23BDBDBD' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M8.54 4.307l-4.36 4.36a1.028 1.028 0 0 0 1.453 1.453l1.09-1.09 2.18-2.18 2.544-2.543c.8-.8.8-2.107 0-2.907a2.062 2.062 0 0 0-2.907 0L1.999 7.94a3.092 3.092 0 0 0 0 4.36 3.093 3.093 0 0 0 4.36 0l6.542-6.54'/%3E%3C/g%3E%3C/svg%3E%0A"></i>
+              <p class="ui-file__name">Normal</p>
+              <span class="ui-file__size">0 MB</span>
+              <i class="ui-file__state"></i>
+            </div>
+            <div class="ui-file file-state__wating">
+              <i class="ui-file__icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 14h14V0H0z'/%3E%3Cpath stroke='%23BDBDBD' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M8.54 4.307l-4.36 4.36a1.028 1.028 0 0 0 1.453 1.453l1.09-1.09 2.18-2.18 2.544-2.543c.8-.8.8-2.107 0-2.907a2.062 2.062 0 0 0-2.907 0L1.999 7.94a3.092 3.092 0 0 0 0 4.36 3.093 3.093 0 0 0 4.36 0l6.542-6.54'/%3E%3C/g%3E%3C/svg%3E%0A"></i>
+              <p class="ui-file__name">Waiting</p>
+              <span class="ui-file__size">0 MB</span>
+              <i class="ui-file__state">
+                <!-- <svg viewBox="0 0 36 36" class="ui-file__progress theme-wishket">
+                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  <path class="circle" stroke-dasharray="60, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                </svg> -->
+              </i>
+            </div>
+            <div class="ui-file file-state__progress">
+              <i class="ui-file__icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 14h14V0H0z'/%3E%3Cpath stroke='%23BDBDBD' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M8.54 4.307l-4.36 4.36a1.028 1.028 0 0 0 1.453 1.453l1.09-1.09 2.18-2.18 2.544-2.543c.8-.8.8-2.107 0-2.907a2.062 2.062 0 0 0-2.907 0L1.999 7.94a3.092 3.092 0 0 0 0 4.36 3.093 3.093 0 0 0 4.36 0l6.542-6.54'/%3E%3C/g%3E%3C/svg%3E%0A"></i>
+              <p class="ui-file__name">Progress</p>
+              <span class="ui-file__size">0 MB</span>
+              <i class="ui-file__state">
+                <!-- <svg viewBox="0 0 36 36" class="ui-file__progress theme-wishket">
+                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  <path class="circle" stroke-dasharray="60, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                </svg> -->
+                <svg class="ui-file__progress theme-wishket">
+                  <circle class="circle-bg" cx="7" cy="7" r="6"></circle>
+                  <circle class="circle" stroke-dasharray="100, 100" cx="7" cy="7" r="6"></circle>
+                </svg>
+              </i>
+            </div>
+            <div class="ui-file file-state__finished">
+              <i class="ui-file__icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 14h14V0H0z'/%3E%3Cpath stroke='%23BDBDBD' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M8.54 4.307l-4.36 4.36a1.028 1.028 0 0 0 1.453 1.453l1.09-1.09 2.18-2.18 2.544-2.543c.8-.8.8-2.107 0-2.907a2.062 2.062 0 0 0-2.907 0L1.999 7.94a3.092 3.092 0 0 0 0 4.36 3.093 3.093 0 0 0 4.36 0l6.542-6.54'/%3E%3C/g%3E%3C/svg%3E%0A"></i>
+              <p class="ui-file__name">Finished</p>
+              <span class="ui-file__size">0 MB</span>
+              <i class="ui-file__state"></i>
+            </div>
+            <div class="ui-file file-state__error">
+              <i class="ui-file__icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 14h14V0H0z'/%3E%3Cpath stroke='%23BDBDBD' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M8.54 4.307l-4.36 4.36a1.028 1.028 0 0 0 1.453 1.453l1.09-1.09 2.18-2.18 2.544-2.543c.8-.8.8-2.107 0-2.907a2.062 2.062 0 0 0-2.907 0L1.999 7.94a3.092 3.092 0 0 0 0 4.36 3.093 3.093 0 0 0 4.36 0l6.542-6.54'/%3E%3C/g%3E%3C/svg%3E%0A"></i>
+              <p class="ui-file__name">Error</p>
+              <span class="ui-file__size">0 MB</span>
+              <i class="ui-file__state"></i>
+            </div>
+            <div class="ui-file file-state__dimmed">
+              <i class="ui-file__icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 14h14V0H0z'/%3E%3Cpath stroke='%23BDBDBD' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M8.54 4.307l-4.36 4.36a1.028 1.028 0 0 0 1.453 1.453l1.09-1.09 2.18-2.18 2.544-2.543c.8-.8.8-2.107 0-2.907a2.062 2.062 0 0 0-2.907 0L1.999 7.94a3.092 3.092 0 0 0 0 4.36 3.093 3.093 0 0 0 4.36 0l6.542-6.54'/%3E%3C/g%3E%3C/svg%3E%0A"></i>
+              <p class="ui-file__name">Dimmed</p>
+              <span class="ui-file__size">0 MB</span>
+              <i class="ui-file__state"></i>
+            </div>
+          </section>
         </section>
 
         <section id="tooltip">
@@ -1778,7 +1835,7 @@
               <input type="radio" class="theme-client card-radio-wide-sample" value="value" name="card-radio-wide-sample-name1" />
               <div class="card-img-box">
                 <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
               </div>
               <span class="card-tooltip">메시지 박스</span>
               <div class="card-text">
@@ -1805,7 +1862,7 @@
               <input type="radio" class="theme-partner card-radio-wide-sample" value="value" name="card-radio-wide-sample-name1" disabled checked/>
               <div class="card-img-box">
                 <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
               </div>
               <div class="card-text">
                 라디오 타이틀
@@ -2109,7 +2166,7 @@
               <input type="checkbox" class="theme-client card-wide-checkbox-sample" value="value" name="card-checkbox-wide-sample-name1"/>
               <div class="card-img-box">
                 <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
               </div>
               <div class="card-text">
                 체크박스 타이틀

@@ -104,19 +104,15 @@
       this.$node.on('click', function(){
         var $this = $(this),
             otherTooltip = $(".tooltip-container").not($this);
-        
-            console.log($this);
-            console.log(textBox);
-
         if(textBox.hasClass("active")){
           textBox.removeClass("active");
-          // textBox.remove();
+          textBox.remove();
         }else{
-          $('body').append(textBox);
           otherTooltip.each(function(){
-            $this.removeClass("active");
-            // $this.remove();
+            $(this).removeClass("active");
+            $(".tooltip-container").remove();
           });
+          $('body').append(textBox);
           if(boxPosition === "bottom"){
             textBox.css({
               "left":"50%",

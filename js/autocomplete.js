@@ -60,7 +60,6 @@
       $tagBox.children().on("keyup click", function(e){
         var $this = $(this);
         self.toggle(true, $this.parent(), "active");
-        console.log("aa");
         if(e.keyCode == '40' || e.keyCode == '37' || e.keyCode == '39' || e.keyCode == '38' || e.keyCode == '13'){
           target.keyboardAccessibility($this, e.keyCode);
         }else{

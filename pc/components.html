@@ -710,6 +710,59 @@
               <span class="helper-text">헬퍼 텍스트 상세 내용</span>
             </div>
           </section>
+          <hr class="guide-hr" />
+          <section id="title-file">
+            <h3 class="subtitle-2-bold">Attachment File</h3>
+            <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+            <pre class="language-javascript"><code>&lt;div class="ui-file file-state__progress"&gt;<br />  &lt;i class="ui-file__icon"&gt;&lt;img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 14h14V0H0z'/%3E%3Cpath stroke='%23BDBDBD' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M8.54 4.307l-4.36 4.36a1.028 1.028 0 0 0 1.453 1.453l1.09-1.09 2.18-2.18 2.544-2.543c.8-.8.8-2.107 0-2.907a2.062 2.062 0 0 0-2.907 0L1.999 7.94a3.092 3.092 0 0 0 0 4.36 3.093 3.093 0 0 0 4.36 0l6.542-6.54'/%3E%3C/g%3E%3C/svg%3E%0A"&gt;&lt;/i&gt;<br />  &lt;p class="ui-file__name"&gt;Progress&lt;/p&gt;<br />  &lt;span class="ui-file__size"&gt;0 MB&lt;/span&gt;<br />  &lt;i class="ui-file__state"&gt;<br />    &lt;svg class="ui-file__progress theme-wishket"&gt;<br />      &lt;circle class="circle-bg" cx="7" cy="7" r="6"&gt;&lt;/circle&gt;<br />      &lt;circle class="circle" stroke-dasharray="100, 100" cx="7" cy="7" r="6"&gt;&lt;/circle&gt;<br />    &lt;/svg&gt;<br />  &lt;/i&gt;<br />&lt;/div&gt;</code></pre>
+
+            <div class="ui-file file-state__default">
+              <i class="ui-file__icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 14h14V0H0z'/%3E%3Cpath stroke='%23BDBDBD' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M8.54 4.307l-4.36 4.36a1.028 1.028 0 0 0 1.453 1.453l1.09-1.09 2.18-2.18 2.544-2.543c.8-.8.8-2.107 0-2.907a2.062 2.062 0 0 0-2.907 0L1.999 7.94a3.092 3.092 0 0 0 0 4.36 3.093 3.093 0 0 0 4.36 0l6.542-6.54'/%3E%3C/g%3E%3C/svg%3E%0A"></i>
+              <p class="ui-file__name">Normal</p>
+              <span class="ui-file__size">0 MB</span>
+              <i class="ui-file__state"></i>
+            </div>
+            <div class="ui-file file-state__wating">
+              <i class="ui-file__icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 14h14V0H0z'/%3E%3Cpath stroke='%23BDBDBD' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M8.54 4.307l-4.36 4.36a1.028 1.028 0 0 0 1.453 1.453l1.09-1.09 2.18-2.18 2.544-2.543c.8-.8.8-2.107 0-2.907a2.062 2.062 0 0 0-2.907 0L1.999 7.94a3.092 3.092 0 0 0 0 4.36 3.093 3.093 0 0 0 4.36 0l6.542-6.54'/%3E%3C/g%3E%3C/svg%3E%0A"></i>
+              <p class="ui-file__name">Waiting</p>
+              <span class="ui-file__size">0 MB</span>
+              <i class="ui-file__state">
+                <svg class="ui-file__progress theme-wishket">
+                  <circle class="circle-bg" cx="7" cy="7" r="6"></circle>
+                  <circle class="circle" stroke-dasharray="100, 100" cx="7" cy="7" r="6"></circle>
+                </svg>
+              </i>
+            </div>
+            <div class="ui-file file-state__progress">
+              <i class="ui-file__icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 14h14V0H0z'/%3E%3Cpath stroke='%23BDBDBD' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M8.54 4.307l-4.36 4.36a1.028 1.028 0 0 0 1.453 1.453l1.09-1.09 2.18-2.18 2.544-2.543c.8-.8.8-2.107 0-2.907a2.062 2.062 0 0 0-2.907 0L1.999 7.94a3.092 3.092 0 0 0 0 4.36 3.093 3.093 0 0 0 4.36 0l6.542-6.54'/%3E%3C/g%3E%3C/svg%3E%0A"></i>
+              <p class="ui-file__name">Progress</p>
+              <span class="ui-file__size">0 MB</span>
+              <i class="ui-file__state">
+                <svg class="ui-file__progress theme-wishket">
+                  <circle class="circle-bg" cx="7" cy="7" r="6"></circle>
+                  <circle class="circle" stroke-dasharray="100, 100" cx="7" cy="7" r="6"></circle>
+                </svg>
+              </i>
+            </div>
+            <div class="ui-file file-state__finished">
+              <i class="ui-file__icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 14h14V0H0z'/%3E%3Cpath stroke='%23BDBDBD' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M8.54 4.307l-4.36 4.36a1.028 1.028 0 0 0 1.453 1.453l1.09-1.09 2.18-2.18 2.544-2.543c.8-.8.8-2.107 0-2.907a2.062 2.062 0 0 0-2.907 0L1.999 7.94a3.092 3.092 0 0 0 0 4.36 3.093 3.093 0 0 0 4.36 0l6.542-6.54'/%3E%3C/g%3E%3C/svg%3E%0A"></i>
+              <p class="ui-file__name">Finished</p>
+              <span class="ui-file__size">0 MB</span>
+              <i class="ui-file__state"></i>
+            </div>
+            <div class="ui-file file-state__error">
+              <i class="ui-file__icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 14h14V0H0z'/%3E%3Cpath stroke='%23BDBDBD' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M8.54 4.307l-4.36 4.36a1.028 1.028 0 0 0 1.453 1.453l1.09-1.09 2.18-2.18 2.544-2.543c.8-.8.8-2.107 0-2.907a2.062 2.062 0 0 0-2.907 0L1.999 7.94a3.092 3.092 0 0 0 0 4.36 3.093 3.093 0 0 0 4.36 0l6.542-6.54'/%3E%3C/g%3E%3C/svg%3E%0A"></i>
+              <p class="ui-file__name">Error</p>
+              <span class="ui-file__size">0 MB</span>
+              <i class="ui-file__state"></i>
+            </div>
+            <div class="ui-file file-state__dimmed">
+              <i class="ui-file__icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 14h14V0H0z'/%3E%3Cpath stroke='%23BDBDBD' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M8.54 4.307l-4.36 4.36a1.028 1.028 0 0 0 1.453 1.453l1.09-1.09 2.18-2.18 2.544-2.543c.8-.8.8-2.107 0-2.907a2.062 2.062 0 0 0-2.907 0L1.999 7.94a3.092 3.092 0 0 0 0 4.36 3.093 3.093 0 0 0 4.36 0l6.542-6.54'/%3E%3C/g%3E%3C/svg%3E%0A"></i>
+              <p class="ui-file__name">Dimmed</p>
+              <span class="ui-file__size">0 MB</span>
+              <i class="ui-file__state"></i>
+            </div>
+          </section>
         </section>
 
         <section id="tooltip">
@@ -1354,7 +1407,7 @@
                   <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name3" disabled checked/>
                   <div class="card-img-box">
                     <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
                   </div>
                   <div class="card-text">
                     라디오 타이틀
@@ -1369,7 +1422,7 @@
                   <span class="card-tooltip">메시지 박스</span>
                   <div class="card-img-box">
                     <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
                   </div>
                   <div class="card-text">라디오 타이틀</div>
                 </li>
@@ -1377,7 +1430,7 @@
                   <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" />
                   <div class="card-img-box">
                     <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
                   </div>
                   <div class="card-text">라디오 타이틀</div>
                 </li>
@@ -1385,7 +1438,7 @@
                   <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" />
                   <div class="card-img-box">
                     <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
                   </div>
                   <div class="card-text">라디오 타이틀</div>
                 </li>
@@ -1393,7 +1446,7 @@
                   <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name" disabled/>
                   <div class="card-img-box">
                     <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
                   </div>
                   <div class="card-text">라디오 타이틀</div>
                 </li>
@@ -1440,7 +1493,7 @@
                   <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name4" />
                   <div class="card-img-box">
                     <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
                   </div>
                   <div class="card-text">
                     라디오 타이틀
@@ -1451,7 +1504,7 @@
                   <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name4" />
                   <div class="card-img-box">
                     <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
                   </div>
                   <div class="card-text">
                     라디오 타이틀
@@ -1462,7 +1515,7 @@
                   <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name4" />
                   <div class="card-img-box">
                     <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
                   </div>
                   <div class="card-text">
                     라디오 타이틀
@@ -1473,7 +1526,7 @@
                   <input type="radio" class="theme-client card-radio-sample" value="value" name="card-radio-sample-name4" disabled checked/>
                   <div class="card-img-box">
                     <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                    <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                    <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
                   </div>
                   <div class="card-text">
                     라디오 타이틀
@@ -1534,7 +1587,7 @@
               <input type="radio" class="theme-client card-radio-wide-sample" value="value" name="card-radio-wide-sample-name1" />
               <div class="card-img-box">
                 <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
               </div>
               <span class="card-tooltip">메시지 박스 메시지 박스</span>
               <div class="card-text">
@@ -1561,7 +1614,7 @@
               <input type="radio" class="theme-partner card-radio-wide-sample" value="value" name="card-radio-wide-sample-name1" disabled checked/>
               <div class="card-img-box">
                 <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
               </div>
               <div class="card-text">
                 라디오 타이틀
@@ -1902,7 +1955,7 @@
                 <input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" checked/>
                 <div class="card-img-box">
                   <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                  <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
                 </div>
                 <span class="card-tooltip">메시지 박스</span>
                 <div class="card-text">
@@ -1913,7 +1966,7 @@
                 <input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" />
                 <div class="card-img-box">
                   <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                  <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
                 </div>
                 <div class="card-text">
                   체크박스 타이틀
@@ -1923,7 +1976,7 @@
                 <input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" />
                 <div class="card-img-box">
                   <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                  <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
                 </div>
                 <div class="card-text">
                   체크박스 타이틀
@@ -1933,7 +1986,7 @@
                 <input type="checkbox" class="theme-client card-checkbox-sample" value="value" name="card-checkbox-sample-name1" checked disabled/>
                 <div class="card-img-box">
                   <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                  <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                  <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
                 </div>
                 <div class="card-text">
                   체크박스 타이틀
@@ -2083,7 +2136,7 @@
               <input type="checkbox" class="theme-client card-wide-checkbox-sample" value="value" name="card-checkbox-wide-sample-name1"/>
               <div class="card-img-box">
                 <img class="card-img" style="width:60px;" src="../img/select_card_icon_job_category_1_d@2x.png" alt="test 이미지"/>
-                <img class="card-img-select" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c.png" alt="test 이미지"/>
+                <img class="card-img-select" style="width:60px;" src="https://www.wishket.com/static/renewal/img/project/submit/select_card_icon_job_category_1_c@2x.png" alt="test 이미지"/>
               </div>
               <div class="card-text">
                 체크박스 타이틀
@@ -5934,8 +5987,15 @@
 
       $('.guide-aside a').on("click", function(e){
         e.preventDefault();
-        var $target = $(this.hash);
-        $('html').animate( { scrollTop : $target.offset().top - 64 }, 500 );
+        var $target = $(this.hash),
+            $offset = undefined;
+        if (/Edge/.test(navigator.userAgent)) {
+          $offset=$target[0].offsetTop;
+          document.body.scrollTop = $offset - 64; 
+        }else{
+          $offset=$target.offset().top;
+          $('html').animate( { scrollTop : $offset - 64 }, 500 );
+        }
       });
 
       if(navigator.userAgent.match(/Android|Mobile|iP(hone|od|ad)|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/)){

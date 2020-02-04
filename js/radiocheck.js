@@ -265,10 +265,12 @@
           }
         }
 
+        console.log(this.$node);
         if(addon.length > 0 || datepicker.length > 0){
           var $addonbox = this.$node.parent().parent().parent().find(".addon-input").parent(),
               $checked = this.$node
           $addonbox.on("change click", function(){
+            console.log("aa");
             var $this = $(this);
             if($checked.is(":checked") === false){
               var addonInput = $this.parent().parent().parent().parent().parent().find(".addon-input");
