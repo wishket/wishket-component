@@ -59,6 +59,7 @@
               <li><a href="#uiautocomplete" class="body-2-light">Autocomplete</a></li>
               <li><a href="#textarea-input" class="body-2-light">Textarea</a></li>
               <li><a href="#textarea-expand-input" class="body-2-light">Textarea (Expand)</a></li>
+              <li><a href="#title-file" class="body-2-light">Attachment File</a></li>
             </ul>
           </li>
           <li>
@@ -99,11 +100,25 @@
               <li><a href="#card-checkbox" class="body-2-light">Select Card_Checkbox</a></li>
               <li><a href="#card-checkbox-wide" class="body-2-light">Select Card_Checkbox_Wide (Subtext)</a></li>
               <li><a href="#toggle" class="body-2-light">Toggle (O/X)</a></li>
-              <li><a href="#chip" class="body-2-light">Chip</a></li>
+              <li><a href="#input-chip" class="body-2-light">Input Chip</a></li>
+              <li><a href="#chip" class="body-2-light">Choice Chip</a></li>
             </ul>
           </li>
           <li>
             <a href="#title-modal" class="body-1-bold">Modal</a>
+            <ul>
+              <li><a href="#title-only-text-modal" class="body-2-light">Only Text</a></li>
+              <li><a href="#title-title-text-modal" class="body-2-light">Title + Text</a></li>
+              <li><a href="#title-list-radio-modal" class="body-2-light">List (Radio)</a></li>
+              <li><a href="#title-list-radio-max-modal" class="body-2-light">List_Max (Radio)</a></li>
+              <li><a href="#title-list-radio-max-text-modal" class="body-2-light">List_Max (Radio + Text)</a></li>
+              <li><a href="#title-list-checked-modal" class="body-2-light">List (Checkbox)</a></li>
+              <li><a href="#title-list-checked-max-modal" class="body-2-light">List_Max (Checkbox)</a></li>
+              <li><a href="#title-list-checked-max-text-modal" class="body-2-light">List_Max (Checkbox + Text)</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#title-pagination" class="body-1-bold">Pagination</a>
           </li>
         </ul>
       </nav>
@@ -1325,7 +1340,7 @@
               </li>
               <li>
                 <input type="radio" class="theme-client radio-sample" value="value" name="radio-sample-name" />
-                <input class="addon-input datepicker theme-partner" data-toggle="datepicker" placeholder="플레이스 홀더"/>
+                <input class="addon-input datepicker theme-client" data-toggle="datepicker" placeholder="플레이스 홀더"/>
                 <i><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><g fill="none" fill-rule="evenodd"><path d="M0 0h14v14H0z"></path><rect width="12.8" height="11.8" x=".6" y="1.6" stroke="#9E9E9E" stroke-width="1.2" rx="2"></rect><path stroke="#9E9E9E" stroke-linejoin="round" stroke-width="1.2" d="M.5 5.8h13M4 1V0M10 0v1"></path></g></svg></i>
                 <label>라디오 타이틀</label>
               </li>
@@ -2190,9 +2205,22 @@
           <hr class="guide-hr"/>
 
 
+          <section id="input-chip">
+            <div class="chip-box">
+              <h3 class="subtitle-2-bold">Input Chip</h3>
+              <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
+              <pre class="language-javascript"><code>&#60;span class="input-chip">photoshop&#60;i class="i-close">&#60;/i>&#60;/span></code></pre>
+              <ul class="chip-list">
+                <li>
+                  <span class="input-chip">photoshop<i class="i-close"></i></span>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <hr class="guide-hr"/>
           <section id="chip">
             <div class="chip-box">
-              <h3 class="subtitle-2-bold">Chip</h3>
+              <h3 class="subtitle-2-bold">Choice Chip</h3>
               <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
               <pre class="language-javascript"><code>&#60;script type="text/javascript" src="../js/radiocheck.js">&#60;/script><br />&#60;link rel="stylesheet" href="../css/component.css" /><br /><br />$("input.chip-sample").uiRadioCheck({<br />  type: "chip",<br />});<br /><br />&#60;span><br />  &#60;input type="checkbox" class="theme-wishket chip-sample" value="value" name="name"/><br />  &#60;label>Chip-value&#60;/label><br />&#60;/span></code></pre>
               <ul class="chip-list">
@@ -2215,11 +2243,11 @@
               </ul>
             </div>
           </section>
-        </section>
 
+        </section>
         <section id="title-modal">
           <h2 class="subtitle-1-bold hr">Modal</h2>
-          <section id='modal-default'>
+          <section id='title-only-text-modal'>
             <h3 class="subtitle-2-bold">Only Text</h3>
             <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
             <pre class="language-javascript"><code>&#60;script type="text/javascript" src="../js/modal.js">&#60;/script><br />&#60;link rel="stylesheet" href="../css/component.css" /><br /><br />$(".modal-sample").uiModal();<br /><br />&#60;button class="open__modal theme-client">모달&#60;/button><br />&#60;div class="modal-sample"><br />  &#60;div class="modal__body"><br />    모달 팝업 상세 내용<br />  &#60;/div><br />  &#60;div class="modal__footer"><br />    &#60;div class="modal__button group-button"><br />      &#60;button class="theme-indigo close__modal">닫기&#60;/button><br />      &#60;button class="theme-wishket">버튼명&#60;/button><br />    &#60;/div><br />  &#60;/div><br />&#60;/div></code></pre>
@@ -2490,7 +2518,7 @@
             </div>
           </section>
           <hr class="guide-hr" />
-          <section id="modal-title-text">
+          <section id="title-title-text-modal">
             <h3 class="subtitle-2-bold">Title + Text</h3>
             <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
             <pre class="language-javascript"><code>&#60;script type="text/javascript" src="../js/modal.js">&#60;/script><br />&#60;link rel="stylesheet" href="../css/component.css" /><br /><br />$(".modal-sample").uiModal();<br /><br />&#60;button class="open__modal theme-indigo">모달&#60;/button><br />&#60;div class="modal-sample"><br />  &#60;div class="modal__title"><br />    모달 팝업 타이틀<br />  &#60;/div><br />  &#60;div class="modal__body"><br />    모달 팝업 상세 내용<br />  &#60;/div><br />  &#60;div class="modal__footer"><br />    &#60;div class="modal__button group-button"><br />      &#60;button class="theme-indigo close__modal">닫기&#60;/button><br />      &#60;button class="theme-wishket">버튼명&#60;/button><br />    &#60;/div><br />  &#60;/div><br />&#60;/div></code></pre>
@@ -2782,7 +2810,7 @@
           </section>
 
           <hr class="guide-hr" />
-          <section id="modal-list-2">
+          <section id="title-list-radio-modal">
             <h3 class="subtitle-2-bold">List (Radio)</h3>
             <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
             <pre class="language-javascript"><code>&lt;script type="text/javascript" src="../js/modal.js"&gt;&lt;/script&gt;<br>&lt;link rel="stylesheet" href="../css/component.css" /&gt;<br><br>$(".modal-sample").uiModal({<br>  type:"list"<br>});<br><br>&lt;button class="open__modal theme-indigo"&gt;모달&lt;/button&gt;<br>&lt;div class="modal-list-sample theme-wishket ui-modal"&gt;<br>  &lt;div class="modal__title"&gt;<br>    모달 팝업 타이틀<br>  &lt;/div&gt;<br>  &lt;div class="modal__body"&gt;<br>    &lt;ul class="radio-group"&gt;<br>      &lt;li&gt;<br>        &lt;input type="radio" class="theme-client radio-sample" value="value" name="radio-modal-sample-name" /&gt;<br>        &lt;label&gt;라디오 타이틀&lt;/label&gt;<br>      &lt;/li&gt;<br>      &lt;li&gt;<br>        &lt;input type="radio" class="theme-partner radio-sample" value="value" name="radio-modal-sample-name" /&gt;<br>        &lt;label&gt;라디오 타이틀&lt;/label&gt;<br>      &lt;/li&gt;<br>    &lt;/ul&gt;<br>  &lt;/div&gt;<br>  &lt;div class="modal__footer"&gt;<br>    &lt;div class="modal__button group-button"&gt;<br>      &lt;button class="theme-indigo close__modal"&gt;닫기&lt;/button&gt;<br>      &lt;button class="theme-wishket"&gt;버튼명&lt;/button&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</code></pre>
@@ -3328,7 +3356,7 @@
               </span>
             </div>
           </section>
-          <section id="modal-list-2">
+          <section id="title-list-radio-max-modal">
             <h3 class="subtitle-2-bold">List_Max (Radio)</h3>
             <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
             <pre class="language-javascript"><code>&lt;script type="text/javascript" src="../js/modal.js"&gt;&lt;/script&gt;<br>&lt;link rel="stylesheet" href="../css/component.css" /&gt;<br><br>$(".modal-sample").uiModal({<br>  type:"list"<br>});<br><br>&lt;button class="open__modal theme-indigo"&gt;모달&lt;/button&gt;<br>&lt;div class="modal-list-sample theme-wishket ui-modal"&gt;<br>  &lt;div class="modal__title"&gt;<br>    모달 팝업 타이틀<br>  &lt;/div&gt;<br>  &lt;div class="modal__body"&gt;<br>    &lt;ul class="radio-group"&gt;<br>      &lt;li&gt;<br>        &lt;input type="radio" class="theme-client radio-sample" value="value" name="radio-modal-sample-name" /&gt;<br>        &lt;label&gt;라디오 타이틀&lt;/label&gt;<br>      &lt;/li&gt;<br>      &lt;li&gt;<br>        &lt;input type="radio" class="theme-partner radio-sample" value="value" name="radio-modal-sample-name" /&gt;<br>        &lt;label&gt;라디오 타이틀&lt;/label&gt;<br>      &lt;/li&gt;<br>    &lt;/ul&gt;<br>  &lt;/div&gt;<br>  &lt;div class="modal__footer"&gt;<br>    &lt;div class="modal__button group-button"&gt;<br>      &lt;button class="theme-indigo close__modal"&gt;닫기&lt;/button&gt;<br>      &lt;button class="theme-wishket"&gt;버튼명&lt;/button&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</code></pre>
@@ -4114,7 +4142,7 @@
             </div>
           </section>
 
-          <section id="modal-list-2">
+          <section id="title-list-radio-max-text-modal">
             <h3 class="subtitle-2-bold">List_Max (Radio + Text)</h3>
             <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
             <pre class="language-javascript"><code>&lt;script type="text/javascript" src="../js/modal.js"&gt;&lt;/script&gt;<br>&lt;link rel="stylesheet" href="../css/component.css" /&gt;<br><br>$(".modal-sample").uiModal({<br>  type:"list"<br>});<br><br>&lt;button class="open__modal theme-indigo"&gt;모달&lt;/button&gt;<br>&lt;div class="modal-list-sample theme-wishket ui-modal"&gt;<br>  &lt;div class="modal__title"&gt;<br>    모달 팝업 타이틀<br>  &lt;/div&gt;<br>  &lt;div class="modal__body"&gt;<br>    &lt;ul class="radio-group"&gt;<br>      &lt;li&gt;<br>        &lt;input type="radio" class="theme-client radio-sample" value="value" name="radio-modal-sample-name" /&gt;<br>        &lt;label&gt;라디오 타이틀&lt;/label&gt;<br>      &lt;/li&gt;<br>      &lt;li&gt;<br>        &lt;input type="radio" class="theme-partner radio-sample" value="value" name="radio-modal-sample-name" /&gt;<br>        &lt;label&gt;라디오 타이틀&lt;/label&gt;<br>      &lt;/li&gt;<br>    &lt;/ul&gt;<br>  &lt;/div&gt;<br>  &lt;div class="modal__footer"&gt;<br>    &lt;p class="text-align__center"&gt;모달 팝업 상세 내용 모달 팝업 상세 내용 모달 팝업 상세 내용&lt;/p&gt;<br />    &lt;div class="modal__button group-button"&gt;<br>      &lt;button class="theme-indigo close__modal"&gt;닫기&lt;/button&gt;<br>      &lt;button class="theme-wishket"&gt;버튼명&lt;/button&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</code></pre>
@@ -4254,7 +4282,7 @@
             </span>
           </section>
 
-          <section id="modal-list-2">
+          <section id="title-list-checked-modal">
             <h3 class="subtitle-2-bold">List (Checkbox)</h3>
             <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
             <pre class="language-javascript"><code>&lt;script type="text/javascript" src="../js/modal.js"&gt;&lt;/script&gt;<br>&lt;link rel="stylesheet" href="../css/component.css" /&gt;<br><br>$(".modal-sample").uiModal({<br>  type:"list"<br>});<br><br>&lt;button class="open__modal theme-indigo"&gt;모달&lt;/button&gt;<br>&lt;div class="modal-list-sample theme-wishket ui-modal"&gt;<br>  &lt;div class="modal__title"&gt;<br>    모달 팝업 타이틀<br>  &lt;/div&gt;<br>  &lt;div class="modal__body"&gt;<br>    &lt;ul class="radio-group"&gt;<br>      &lt;li&gt;<br>        &lt;input type="radio" class="theme-client radio-sample" value="value" name="radio-modal-sample-name" /&gt;<br>        &lt;label&gt;라디오 타이틀&lt;/label&gt;<br>      &lt;/li&gt;<br>      &lt;li&gt;<br>        &lt;input type="radio" class="theme-partner radio-sample" value="value" name="radio-modal-sample-name" /&gt;<br>        &lt;label&gt;라디오 타이틀&lt;/label&gt;<br>      &lt;/li&gt;<br>    &lt;/ul&gt;<br>  &lt;/div&gt;<br>  &lt;div class="modal__footer"&gt;<br>    &lt;div class="modal__button group-button"&gt;<br>      &lt;button class="theme-indigo close__modal"&gt;닫기&lt;/button&gt;<br>      &lt;button class="theme-wishket"&gt;버튼명&lt;/button&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</code></pre>
@@ -4800,7 +4828,7 @@
             </div>
           </section>
 
-          <section id="modal-list-2">
+          <section id="title-list-checked-max-modal">
             <h3 class="subtitle-2-bold">List_Max (Checkbox)</h3>
             <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
             <pre class="language-javascript"><code>&lt;script type="text/javascript" src="../js/modal.js"&gt;&lt;/script&gt;<br>&lt;link rel="stylesheet" href="../css/component.css" /&gt;<br><br>$(".modal-sample").uiModal({<br>  type:"list"<br>});<br><br>&lt;button class="open__modal theme-indigo"&gt;모달&lt;/button&gt;<br>&lt;div class="modal-list-sample theme-wishket ui-modal"&gt;<br>  &lt;div class="modal__title"&gt;<br>    모달 팝업 타이틀<br>  &lt;/div&gt;<br>  &lt;div class="modal__body"&gt;<br>    &lt;ul class="radio-group"&gt;<br>      &lt;li&gt;<br>        &lt;input type="radio" class="theme-client radio-sample" value="value" name="radio-modal-sample-name" /&gt;<br>        &lt;label&gt;라디오 타이틀&lt;/label&gt;<br>      &lt;/li&gt;<br>      &lt;li&gt;<br>        &lt;input type="radio" class="theme-partner radio-sample" value="value" name="radio-modal-sample-name" /&gt;<br>        &lt;label&gt;라디오 타이틀&lt;/label&gt;<br>      &lt;/li&gt;<br>    &lt;/ul&gt;<br>  &lt;/div&gt;<br>  &lt;div class="modal__footer"&gt;<br>    &lt;div class="modal__button group-button"&gt;<br>      &lt;button class="theme-indigo close__modal"&gt;닫기&lt;/button&gt;<br>      &lt;button class="theme-wishket"&gt;버튼명&lt;/button&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</code></pre>
@@ -5587,7 +5615,7 @@
 
           </section>
 
-          <section id="modal-list-2">
+          <section id="title-list-checked-max-text-modal">
             <h3 class="subtitle-2-bold">List_Max (Checkbox + Text)</h3>
             <p>css, js를 추가후 플러그인을 셋팅 합니다.</p>
             <pre class="language-javascript"><code>&lt;script type="text/javascript" src="../js/modal.js"&gt;&lt;/script&gt;<br>&lt;link rel="stylesheet" href="../css/component.css" /&gt;<br><br>$(".modal-sample").uiModal({<br>  type:"list"<br>});<br><br>&lt;button class="open__modal theme-indigo"&gt;모달&lt;/button&gt;<br>&lt;div class="modal-list-sample theme-wishket ui-modal"&gt;<br>  &lt;div class="modal__title"&gt;<br>    모달 팝업 타이틀<br>  &lt;/div&gt;<br>  &lt;div class="modal__body"&gt;<br>    &lt;ul class="check-group"&gt;<br>      &lt;li&gt;<br>        &lt;input type="check" class="theme-client checked-sample" value="value" name="check-modal-list-max-text" /&gt;<br>        &lt;label&gt;체크박스 타이틀&lt;/label&gt;<br>      &lt;/li&gt;<br>      &lt;li&gt;<br>        &lt;input type="check" class="theme-partner checked-sample" value="value" name="check-modal-list-max-text" /&gt;<br>        &lt;label&gt;체크박스 타이틀&lt;/label&gt;<br>      &lt;/li&gt;<br>    &lt;/ul&gt;<br>  &lt;/div&gt;<br>  &lt;div class="modal__footer"&gt;<br>    &lt;div class="modal__button group-button"&gt;<br>      &lt;button class="theme-indigo close__modal"&gt;닫기&lt;/button&gt;<br>      &lt;button class="theme-wishket"&gt;버튼명&lt;/button&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</code></pre>

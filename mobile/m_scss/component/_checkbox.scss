@@ -712,3 +712,29 @@
   }
   width:100% !important;
 }
+
+.input-chip{
+  position:absolute;
+  display:inline-block;
+  padding:2px 22px 2px 8px;
+  border-radius: 8px;
+  background:$color-gray100;
+  font-size:13px;
+  line-height: 20px;
+  margin:4px;
+  position:relative;
+  >i{
+    cursor: pointer;
+    position: absolute;
+    top:0;
+    right:5px;
+    width:16px;
+    height:100%;
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%239E9E9E' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.6'%3E%3Cpath d='M5 5l6 6M11 5l-6 6'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &.error{
+    color:$color-red500;
+  }
+}

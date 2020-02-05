@@ -265,20 +265,26 @@
           }
         }
 
-        console.log(this.$node);
+        if (/Edge/.test(navigator.userAgent)) {
+          if(addon.length > 0 || datepicker.length > 0){
+            addon.length > 0 ? addon.parent().after('<div class="addon__edge-bg" />') : null;
+            datepicker.length > 0 ? datepicker.after('<div class="addon__edge-bg" />') : null;
+            var $edge__bg = this.$node.parent().parent().parent().find(".addon__edge-bg"),
+                $checked = this.$node,
+                self = this;
+
+            $edge__bg.on("change click", function(){
+              $(this).siblings("div").children("input").trigger("click");
+              $(this).siblings("div").children("input").trigger("focus");
+              $(this).siblings("div").children("input").trigger("change");
+            });
+          }
+        }
+
         if(addon.length > 0 || datepicker.length > 0){
           var $addonbox = this.$node.parent().parent().parent().find(".addon-input").parent(),
               $checked = this.$node
-          $addonbox.on("change click", function(){
-            console.log("aa");
-            var $this = $(this);
-            if($checked.is(":checked") === false){
-              var addonInput = $this.parent().parent().parent().parent().parent().find(".addon-input");
-              self.addonEvent(true, $checked.attr("type"), addonInput, $(this).children("input"));
-              $(this).children("input").focus();
-              $checked.prop("checked", true);
-            }
-          });
+          self.addonClickEvent($addonbox, $checked);
         }
 
         this.$node.on("change click", function(){
@@ -305,16 +311,33 @@
         });
       }
     },
+    addonClickEvent: function(node, $checked){
+      var self = this;
+      node.on("change click", function(){
+        var $this = $(this);
+        if($checked.is(":checked") === false){
+          var addonInput = $this.parent().parent().parent().parent().parent().find(".addon-input");
+          self.addonEvent(true, $checked.attr("type"), addonInput, $(this).children("input"));
+          $(this).children("input").focus();
+          /Edge/.test(navigator.userAgent) ? $(this).children("input").trigger("focus") : null;
+          $checked.prop("checked", true);
+        }
+      });
+    },
     addonEvent: function(state, type, input, node){
       if(type === 'radio'){
         input.each(function(){
           $(this).attr('disabled', true);
+          /Edge/.test(navigator.userAgent) ? $(this).parent().siblings(".addon__edge-bg").css("z-index", "9999999") : null;
         });
       }
+      console.log(node);
       if(state){
         node.attr('disabled', false);
+        /Edge/.test(navigator.userAgent) ? node.parent().siblings(".addon__edge-bg").css("z-index", "-9999999") : null;
       }else if(!state && node){
         node.attr('disabled', true);
+        /Edge/.test(navigator.userAgent) ? node.parent().siblings(".addon__edge-bg").css("z-index", "9999999") : null;
       }
     }
   };

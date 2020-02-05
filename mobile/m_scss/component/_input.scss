@@ -236,6 +236,7 @@
 @mixin labelInput($icon-position, $brand-color, $font-color, $font-size, $line-height){
   position:relative;  
   >input{
+    background:#fff;
     display: block;
     border-radius:4px;
     border:1px solid $color-gray200;
@@ -243,7 +244,6 @@
     line-height: $line-height;
     color:$font-color;
     font-weight:400;
-    background:#fff;
     width:100%;
     transition:all .3s;
     -webkit-transition:all .3s;
@@ -265,7 +265,7 @@
     }
 
     &:-moz-placeholder { /* Firefox 18- */
-      color: #fff;  
+      color: #fff;
     }
 
     &::-moz-placeholder {  /* Firefox 19+ */
@@ -327,6 +327,7 @@
 
   >label{
     position:absolute;
+    pointer-events: none;
     @if $icon-position == icon-left {
       left:44px;
     } @else if $icon-position == icon-left-right{

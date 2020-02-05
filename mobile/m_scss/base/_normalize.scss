@@ -13,6 +13,7 @@
   &:focus {
     outline: none;
   }
+  -webkit-tap-highlight-color:transparent;
 }
 
 html {height: 100%; font-size:16px;}
@@ -57,4 +58,6 @@ table{
   border:none;
 }
 
-label, a, button, input { -webkit-tap-highlight-color:transparent;}
+label, a, button, input {
+  -webkit-tap-highlight-color:transparent;
+}
