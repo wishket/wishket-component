@@ -1,6 +1,7 @@
 @mixin pagination($brand-color){
   display: flex;
   display: -ms-flexbox;
+  justify-content:center;
   li{
     height:100%;
     margin-left:4px;
