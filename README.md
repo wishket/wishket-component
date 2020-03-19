@@ -1,2 +1,0 @@
-# wishket-component
-

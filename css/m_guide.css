@@ -117,7 +117,7 @@ a.logo-black{
   margin-bottom:0;
 }
 
-.guide-content-wrap >nav{
+/* .guide-content-wrap >nav{
   display: inline-block;
   position: fixed;
   top: 64px;
@@ -127,8 +127,7 @@ a.logo-black{
   border-right: 1px solid #eee;
   padding: 52px 40px 40px;
   overflow-x: scroll;
-  z-index:1;
-}
+} */
 
 .guide-aside li a.active{
   color:#3ba3c7;
@@ -250,9 +249,8 @@ section#font, section#color-palette{
 }
 
 #font > dl > dd{
-  padding-left:30%;
+  padding-top: 40px;
   position: relative;
-
 }
 
 #font > dl > dd > p{
@@ -462,9 +460,8 @@ pre[class*="language-"] {
 .guide-content{
   width:100%;
   position: relative;
-  padding: 40px 40px 40px 320px;
+  padding: 24px;
   max-width: 1400px;
-  overflow-x:hidden;
 }
 
 .guide__h1{
@@ -484,14 +481,26 @@ pre[class*="language-"] {
   margin-bottom:142px;
 }
 
-#modal-default > span{
+.palette > div{
+  display: inline-flex;
+  width:33.33333%;
+  flex-direction:column;
+  margin:0 -2px;
+}
+
+.palette .color-box{
+  flex-flow:column;
+  width:100%;
+}
+
+.palette .color-box > li{
+  width:100%;
+}
+
+#title-modal >section > span{
   display:inline-block;
 }
 
-#modal-title-text > span{
-  display:inline-block;
-}
-
-#modal-list-2 > span{
-  display:inline-block;
+#title-modal > section > div{
+  margin:0 -12px 24px;
 }

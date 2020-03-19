@@ -1,0 +1,91 @@
+@mixin textArea($type, $brand-color){
+  >.textarea__border{
+    border-radius:4px;
+    overflow:hidden;
+    border:1px solid $color-gray200;
+    &.disabled{
+      border-color:$color-gray200;
+    }
+    &.active{
+      border-color:$brand-color;
+    }
+    >textarea{
+      position: relative;
+      display:block;
+      padding:8px 12px;
+      width:100%;
+      min-height:200px;
+      font-size:14px;
+      color:$color-gray600;
+      line-height: 24px;
+      resize:none;
+      overflow:auto;
+      border:0;
+      &.expand{
+        resize:vertical;
+      }
+      &::placeholder, &::-webkit-input-placeholder{
+        color:$color-gray300;
+      }
+      &:-ms-input-placeholder {
+        color:$color-gray300;
+      }
+      &::-ms-input-placeholder {
+        color:$color-gray300;
+      }
+      &:disabled{
+        background:$color-gray10;
+        color:$color-gray300;
+      }
+    }
+  }
+
+  >span{
+    font-size:0.813rem;
+    font-weight: 400;
+    font-size:13px;
+    font-weight:400;
+    color:$color-gray400;
+    display:inline-block;
+    &.helper-text, &.error-text{
+      float:left;
+      padding:8px 12px 0 12px;
+    }
+    &.error-text{
+      display:none;
+    }
+    &.word-length{
+      float: right;
+      padding:8px 12px 0 0;
+    }
+  }
+  &.error{
+    .textarea__border{
+      border-color:$color-red500;
+      >textarea{
+        color:$color-red500;
+      }
+    }
+    >span{
+      color:$color-red500;
+    }
+  }
+
+  &:after{
+    clear: both;
+    content:'';
+    display:block;
+  }
+}
+
+.ui-textarea-wishket{
+  @include textArea(default, $color-wishket500);
+}
+
+.ui-textarea-partner{
+  @include textArea(default, $color-partner500);
+}
+
+.ui-textarea-client{
+  @include textArea(default, $color-client500);
+}

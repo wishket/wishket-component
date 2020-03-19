@@ -1,39 +1,63 @@
-;(function ( $, window, document, undefined ) {
-  $.uiToggle = {
-    setting:function(){
-      const target = $(".toggle");
-      target.each(function(){
-        let size = target.attr('data-toggle-size');
-        size = $.uiToggle.getSize(size);
-        $.uiToggle.toggle($(this), size);
-      });
-    },
-    toggle:function(target, size){
-      console.log(target);
-      target.children("p").height();
-      target.height(target.children("p").height());
-      target.find("button").on("click", function(){
-        const type = $(this).eq(0).text();
-        const input = target.children("input");
-        const value = target.children("input").val();
-        if(value === undefined){
-          target.find("button").removeClass("active");
-        }else if(value === 'on'){
-        }
-        if(type === 'on'){
-          input.val('true');
-          console.log()
-          $(this).parent().children(".active").removeClass("active");
-          $(this).addClass("active");
-        }else{
-          input.val('false');
-          $(this).parent().children(".active").removeClass("active");
-          $(this).addClass("active");
-        }
-        input.change();
-      });
-    },
-    getSize:function(size){
-    },
+;(function ($, window) {
+  "use strict";
+  var newObject = {}
+
+  var defaults = {
+  }
+
+  var UiToggle = function (node, options){
+    this.node = node;
+    this.$node = $(this.node);
+    this.settings = $.extend({}, defaults, options);
+    this.init();
   };
-})( jQuery, window, document );
+
+  UiToggle.prototype = {
+    init: function(){
+      var self = this;
+      this.creatHtml();
+      this.$node.parent().height(this.$node.siblings("p").height());
+      this.$node.siblings(".on").on("click", function(){
+        var $this = $(this);
+        self.toggle(true, $this, "active");
+        self.toggle(false, $this.siblings(".off"), "active");
+        self.syncInput("on");
+      })
+      this.$node.siblings(".off").on("click", function(){
+        var $this = $(this);
+        self.toggle(true, $this, "active");
+        self.toggle(false, $this.siblings(".on"), "active");
+        self.syncInput("off");
+      })
+    },
+    
+    toggle: function(state, node, className){
+      if(state){
+        node.addClass(className);
+      }else{
+        node.removeClass(className);
+      }
+    },
+
+    syncInput: function(value){
+      this.$node.val(value);
+      this.$node.change();
+    },
+
+    creatHtml: function(){
+      var classWrap = this.$node.attr("class");
+      var helptext = this.$node.siblings("p");
+      this.$node.wrap('<div class="toggle '+classWrap+'"></div>');
+      this.$node.parent().prepend(helptext);
+      var html =
+        '<button class="off">off<span></span></button>' +
+        '<button class="on">on<span></span></button>';
+      this.$node.before(html);
+    }
+  };
+  $.fn.uiToggle=function(){
+    return this.each(function(i){
+      newObject[i] = new UiToggle(this);
+    });
+  };
+})( jQuery, window);

@@ -1,0 +1,63 @@
+/*
+ html / css 의 기본 속성을 위시켓 스타일에 맞추어 기본 설정 변경하는 scss.
+ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'NotoSansKR',Sans-serif;
+  line-height: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  &:focus {
+    outline: none;
+  }
+  -webkit-tap-highlight-color:transparent;
+}
+
+html {height: 100%; font-size:16px;}
+body {height: 100%;}
+a {
+  text-decoration: none;
+  color: $color-gray900;
+}
+
+ul {
+  list-style: none;
+  li{
+    padding:0; 
+    margin:0;
+  }
+}
+
+button{
+  border:none;
+  background:none;
+}
+
+input, textarea{
+  -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+input:checked[type="checkbox"]{
+  background:#fff;
+  -webkit-appearance: checkbox;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+    appearance: none;
+}
+
+table{
+  border-spacing: 0;
+  border:none;
+}
+
+label, a, button, input {
+  -webkit-tap-highlight-color:transparent;
+}

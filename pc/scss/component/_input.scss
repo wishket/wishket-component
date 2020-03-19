@@ -1,0 +1,861 @@
+//text input stlye
+.error-text{display: none;}
+
+.addon{
+  position: relative;
+  .addon__edge-bg{
+    width:100%;
+    height: 100%;
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:999;
+    margin:0;
+    opacity:0;
+  }
+}
+
+@mixin textinput($icon-position, $padding, $brand-color, $placeholder-color, $font-color, $font-size, $line-height){
+  position:relative;
+  >div>input{
+    display: block;
+    border-radius:4px;
+    padding:$padding;
+    border:1px solid $color-gray200;
+    font-size:$font-size;
+    line-height: $line-height;
+    color:$font-color;
+    font-weight:400;
+    background:#fff;
+    width:100%;
+    height: inherit;
+
+    @if $icon-position == icon-default {
+      padding:8px 12px 8px 12px;
+    } @else if $icon-position == icon-right {
+      padding:8px 38px 8px 12px;
+    } @else if $icon-position == icon-left {
+      padding:8px 12px 8px 38px;
+    } @else if $icon-position == icon-left-right {
+      padding:8px 38px 8px 38px;
+    }
+
+    &.size-s{
+      font-size:13px;
+      line-height: 20px;
+    }
+
+    &::placeholder, &::-webkit-input-placeholder{
+      color:$placeholder-color;
+      line-height:inherit;
+    }
+    &:disabled{
+      background:$color-gray10;
+      color:$color-gray300;
+    }
+    &:focus{
+      ~.text-unit{
+        opacity: 1;
+      }
+    }
+    &:focus{
+      border-color:$brand-color;
+    }
+    &:hover{
+      // border-color:$brand-color;
+      &.no-hover{
+        border-color:#e0e0e0;
+      }
+      &:disabled{
+        &:hover, &:focus{
+          border-color:$color-gray200;
+        }
+      }
+    }
+    &[type=password]{
+      font-family: 'pass', 'Roboto', Helvetica, Arial, sans-serif ;
+      font-size: 18px;
+      &::-webkit-input-placeholder {
+        transform: scale(0.77);
+        transform-origin: 0 50%;
+      }
+      &::-moz-placeholder {
+        font-size: 14px;
+        opacity: 1;
+      }
+      &:-ms-input-placeholder {
+        font-size: 14px;
+        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+      }
+      &::-ms-input-placeholder {
+        font-size: 14px;
+        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+      }
+    }
+  }
+  input:-ms-input-placeholder{
+    color:$placeholder-color;
+    line-height:inherit;
+  }
+
+  input::-ms-input-placeholder{
+    color:$placeholder-color;
+    line-height:inherit;
+    font-family: 'NotoSansKR' !important;
+    font-size:$font-size !important;
+    letter-spacing: 0 !important;
+  }
+
+  input[type=text]::-ms-clear {
+    display:none;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  div>i{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    line-height: 0;
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:auto;
+      }
+      &:last-child{
+        right:12px;
+        left:auto;
+      }
+    }
+  }
+  >div{
+    position: relative;
+  }
+  div>.text-unit{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:14px;
+    color:$color-gray400;
+    opacity: 0;
+    transition:all .3s;
+    -webkit-transition:all .3s;
+    &.active{
+      opacity: 1;
+    }
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:auto;
+      }
+      &:last-child{
+        right:12px;
+        left:auto;
+      }
+    }
+  }
+
+  >span{
+    font-size:13px;
+    font-weight: 400;
+    bottom:0;
+    color:$color-gray400;
+    &.helper-text, &.error-text{
+      float:left;
+      padding:8px 12px 0 12px;
+    }
+    &.error-text{
+      display:none;
+    }
+    &.word-length{
+      float: right;
+      padding:8px 12px 0 0;
+    }
+  }
+  &.error{
+    >div>input{
+      color:$color-red500;
+      border-color:$color-red500;
+    }
+    >span{
+      color:$color-red500;
+    }
+  }
+
+  &:after{
+    clear: both;
+    display: block;
+    content:'';
+  }
+}
+
+.text-input-wishket{
+  @include textinput(icon-default, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 14px, 24px);
+  &.input-small{
+    @include textinput(icon-default, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-right{
+    @include textinput(icon-right, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-left{
+    @include textinput(icon-left, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-left-right{
+    @include textinput(icon-left-right, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+}
+
+.text-input-partner{
+  @include textinput(icon-default, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  &.input-small{
+    @include textinput(icon-default, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-right{
+    @include textinput(icon-right, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include textinput(icon-left, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include textinput(icon-left-right, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+}
+
+.text-input-client{
+  @include textinput(icon-default, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  &.input-small{
+    @include textinput(icon-default, 8px 12px, $color-client500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-right{
+    @include textinput(icon-right, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include textinput(icon-left, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include textinput(icon-left-right, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+}
+
+//label input style
+@mixin labelInput($icon-position, $brand-color, $font-color, $font-size, $line-height){
+  position:relative;  
+  >input{
+    display: block;
+    border-radius:4px;
+    border:1px solid $color-gray200;
+    font-size:$font-size;
+    line-height: $line-height;
+    color:$font-color;
+    font-weight:400;
+    background:#fff;
+    width:100%;
+    transition:all .3s;
+    -webkit-transition:all .3s;
+    @if $icon-position == icon-default {
+      padding:24px 12px 8px 12px;
+    } @else if $icon-position == icon-right {
+      padding:24px 44px 8px 12px;
+    } @else if $icon-position == icon-left {
+      padding:24px 12px 8px 44px;
+    } @else if $icon-position == icon-left-right {
+      padding:24px 44px 8px 44px;
+    }
+    &.size-s{
+      font-size:13px;
+      line-height: 20px;
+    }
+    &::placeholder, &::-webkit-input-placeholder{
+      text-indent: -999999px;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      color: #fff;  
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: #fff;  
+    }
+
+    &:disabled{
+      background:$color-gray10;
+      color:$color-gray300;
+    }
+    &:focus{
+      border-color:$brand-color;
+    }
+    &:hover{
+      // border-color:$brand-color;
+      &:disabled{
+        &:hover, &:focus{
+          border-color:$color-gray200;
+        }
+      }
+    }
+    &:focus{
+      ~.text-unit{
+        opacity: 1;
+      }
+    }
+    &[type=password]{
+      font-family: 'pass', 'Roboto', Helvetica, Arial, sans-serif ;
+      font-size: 18px;
+      &::-webkit-input-placeholder {
+        transform: scale(0.77);
+        transform-origin: 0 50%;
+      }
+      &::-moz-placeholder {
+        font-size: 14px;
+        opacity: 1;
+      }
+      &:-ms-input-placeholder {
+        font-size: 14px;
+        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+      }
+      &::-ms-input-placeholder {
+        font-size: 14px;
+        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+      }
+    }
+  }
+
+  input:-ms-input-placeholder{
+    text-indent: -999999px;
+  }
+
+  input::-ms-input-placeholder{
+    text-indent: -999999px;
+    color:#fff;
+  }
+
+  input:disabled::-ms-input-placeholder{
+    color:$color-gray10;
+  }
+
+  input[type=text]::-ms-clear {
+    display:none;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  >label{
+    position:absolute;
+    pointer-events: none;
+    @if $icon-position == icon-left {
+      left:44px;
+    } @else if $icon-position == icon-left-right{
+      left:44px;
+    } @else{
+      left:13px;
+    }
+    top:50%;
+    transform: translateY(-50%);
+    font-size:14px;
+    line-height:14px;
+    color:$color-gray300;
+    transition:all .3s;
+    -webkit-transition:all .3s;
+    padding-right:44px;
+  }
+  >i{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    line-height: 0;
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:auto;
+      }
+      &:last-child{
+        right:12px;
+        left:auto;
+      }
+    }
+  }
+
+  >.text-unit{
+    position:absolute;
+    bottom:14px;
+    font-size:14px;
+    color:$color-gray400;
+    opacity: 0;
+    transition:all .3s;
+    -webkit-transition:all .3s;
+    &.active{
+      opacity: 1;
+    }
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:auto;
+      }
+      &:last-child{
+        right:12px;
+        left:auto;
+      }
+    }
+  }
+
+  &.label-effect{
+    >input:focus ~ label{
+      color:$brand-color !important;
+    }
+    > label{
+      transform:translateY(-20px);
+      font-size:0.688rem; 
+    }
+  }
+  &.error{
+    >input{
+      color:$color-red500;
+      border-color:$color-red500;
+    }
+    >label{
+      color:$color-red500;
+    }
+    >input:focus ~ label{
+      color:$color-red500 !important;
+    }
+  }
+  +.error-text{
+    color:$color-red500;
+    padding:8px 12px 0 12px;
+    font-size:13px;
+    font-weight: 400;
+    display:block;
+  }
+}
+
+.label-input-wishket{
+  @include labelInput(icon-default, $color-wishket500, $color-gray600, 14px, 24px);
+  &.icon-right{
+    @include labelInput(icon-right, $color-wishket500, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include labelInput(icon-left, $color-wishket500, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include labelInput(icon-left-right, $color-wishket500, $color-gray600, 14px, 24px);
+  }
+}
+
+.label-input-client{
+  @include labelInput(icon-default, $color-client500, $color-gray600, 14px, 24px);
+  &.icon-right{
+    @include labelInput(icon-right, $color-client500, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include labelInput(icon-left, $color-client500, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include labelInput(icon-left-right, $color-client500, $color-gray600, 14px, 24px);
+  }
+}
+
+.label-input-partner{
+  @include labelInput(icon-default, $color-partner500, $color-gray600, 14px, 24px);
+  &.icon-right{
+    @include labelInput(icon-right, $color-partner500, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include labelInput(icon-left, $color-partner500, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include labelInput(icon-left-right, $color-partner500, $color-gray600, 14px, 24px);
+  }
+}
+
+
+@mixin defaultinput($icon-position, $padding, $brand-color, $placeholder-color, $font-color, $font-size, $line-height){
+  position:relative;
+  // padding-bottom:28px;
+  >input{
+    display: block;
+    border-radius:4px;
+    padding:$padding;
+    border:1px solid $color-gray200;
+    font-size: $font-size;
+    line-height: $line-height;
+    color:$font-color;
+    font-weight:400;
+    background:#fff;
+    width:100%;
+    height: inherit;
+
+    @if $icon-position == icon-default {
+      padding:8px 12px 8px 12px;
+    } @else if $icon-position == icon-right {
+      padding:8px 38px 8px 12px;
+    } @else if $icon-position == icon-left {
+      padding:8px 12px 8px 38px;
+    } @else if $icon-position == icon-left-right {
+      padding:8px 38px 8px 38px;
+    }
+    &.size-s{
+      font-size:13px;
+      line-height: 20px;
+    }
+    &::placeholder, &::-webkit-input-placeholder{
+      color:$placeholder-color;
+      line-height:inherit;
+    }
+    &:disabled{
+      background:$color-gray10;
+      color:$color-gray300;
+    }
+    &:focus{
+      border-color:$brand-color;
+    }
+    &:hover{
+      // border-color:$brand-color;
+      &:disabled{
+        &:hover, &:focus{
+          border-color:$color-gray200;
+        }
+      }
+    }
+    &:focus{
+      ~.text-unit{
+        opacity: 1;
+      }
+    }
+    &.date__active{
+      border-color:$brand-color;
+    }
+    &[type=password]{
+      min-height:42px;
+      font-family: 'pass', 'Roboto', Helvetica, Arial, sans-serif ;
+      font-size: 18px;
+      &::-webkit-input-placeholder {
+        transform: scale(0.77);
+        transform-origin: 0 50%;
+      }
+      &::-moz-placeholder {
+        font-size: 14px;
+        opacity: 1;
+      }
+      &:-ms-input-placeholder {
+        font-size: 14px;
+        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+      }
+      &::-ms-input-placeholder {
+        font-size: 14px;
+        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+      }
+    }
+  }
+  input:-ms-input-placeholder{
+    color:$placeholder-color;
+    line-height:inherit;
+  }
+
+  input::-ms-input-placeholder{
+    color:$placeholder-color;
+    line-height:inherit;
+    font-family: 'NotoSansKR' !important;
+    font-size:$font-size !important;
+    letter-spacing: 0 !important;
+  }
+
+  input[type=text]::-ms-clear {
+    display:none;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  >i{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    line-height: 0;
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:auto;
+      }
+      &:last-child{
+        right:12px;
+        left:auto;
+      }
+    }
+  }
+
+  >.text-unit{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:14px;
+    color:$color-gray400;
+    opacity: 0;
+    transition:all .3s;
+    -webkit-transition:all .3s;
+    &.active{
+      opacity: 1;
+    }
+    @if $icon-position == icon-right {
+      right:12px;
+    } @else if $icon-position == icon-left {
+      left:12px;
+    } @else if $icon-position == icon-left-right{
+      left:12px;
+      &.first{
+        left:12px;
+        right:auto;
+      }
+      &:last-child{
+        right:12px;
+        left:auto;
+      }
+    }
+  }
+
+  &.error{
+    >input{
+      color:$color-red500;
+      border-color:$color-red500;
+    }
+    +.error-text{
+      color:$color-red500;
+      padding:8px 12px 0 12px;
+      font-size:13px;
+      font-weight: 400;
+      display:block;
+    }
+  }
+
+  &:after{
+    clear: both;
+    display: block;
+    content:'';
+  }
+}
+
+.default-input-wishket{
+  @include defaultinput(icon-default, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 14px, 24px);
+  &.input-small{
+    @include defaultinput(icon-default, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-right{
+    @include defaultinput(icon-right, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include defaultinput(icon-left, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include defaultinput(icon-left-right, 8px 12px, $color-wishket500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+}
+
+.default-input-partner{
+  @include defaultinput(icon-default, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  &.input-small{
+    @include defaultinput(icon-default, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-right{
+    @include defaultinput(icon-right, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include defaultinput(icon-left, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include defaultinput(icon-left-right, 8px 12px, $color-partner500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+}
+
+.default-input-client{
+  @include defaultinput(icon-default, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  &.input-small{
+    @include defaultinput(icon-default, 8px 12px, $color-client500, $color-gray300, $color-gray600, 13px, 20px);
+  }
+  &.icon-right{
+    @include defaultinput(icon-right, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left{
+    @include defaultinput(icon-left, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+  &.icon-left-right{
+    @include defaultinput(icon-left-right, 8px 12px, $color-client500, $color-gray300, $color-gray600, 14px, 24px);
+  }
+}
+
+@mixin uifile{
+  display:flex;
+  display: -ms-flexbox;
+  padding:0 12px;
+  align-items: center;
+  height:32px;
+  border-radius: 8px;
+  background:#fff;
+  border:1px solid $color-gray200;
+  font-size:13px;
+  font-weight: 400;
+  line-height: 20px;
+  >.ui-file__icon{
+    line-height: 0;
+  }
+  >.ui-file__name{
+    font-size:inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    max-width:80%;
+    color:$color-gray600;
+    margin:0 auto 0 8px;
+  }
+  >.ui-file__size{
+    font-size:inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color:$color-gray400;
+  }
+  >.ui-file__state{
+    line-height:0;
+  }
+  &.file-state__default{
+    >.ui-file__state{
+      line-height: 0;
+      width:16px;
+      height:16px;
+      margin-left:12px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%239E9E9E' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.6'%3E%3Cpath d='M5 5l6 6M11 5l-6 6'/%3E%3C/g%3E%3C/svg%3E%0A");
+      >svg{
+        display:none;
+      }
+    }
+  }
+  &.file-state__wating{
+    opacity:.4;
+    pointer-events: none;
+    >.ui-file__state{
+      margin-left:14px;
+      >.ui-file__progress{
+        width:14px;
+        height:14px;
+        .circle-bg {
+          fill: none;
+          stroke: $color-gray200;
+          stroke-width: 2;
+        }
+        .circle{
+          opacity: 0;
+        }
+      }
+    }
+  }
+  &.file-state__progress{
+    &:hover, &:focus{
+      >.ui-file__state{
+        >.ui-file__progress{
+          .circle{
+            opacity: 1;
+            animation: progress 20s ease-out forwards;
+            -ms-animation: progress 20s ease-out forwards;
+            -moz-animation: progress 20s ease-out forwards;
+            -webkit-animation: progress 20s ease-out forwards;
+          }
+          @keyframes progress {
+            0% {
+              stroke-dasharray: 0 100;
+            }
+          }
+          @-webkit-keyframes progress {
+            0% {
+              stroke-dasharray: 0 100;
+            }
+          }
+        }
+      }
+    }
+    >.ui-file__state{
+      margin-left:14px;
+      >.ui-file__progress{
+        width:14px;
+        height:14px;
+        .circle-bg {
+          fill: none;
+          stroke: $color-gray200;
+          stroke-width: 2;
+        }
+        .circle {
+          opacity: 0;
+          fill: none;
+          stroke-width: 2;
+          stroke-linecap: round;
+        }
+        &.theme-wishket{
+          .circle{
+            stroke: $color-wishket500;
+          }
+        }
+        &.theme-client{
+          .circle{
+            stroke: $color-client500;
+          }
+        }
+        &.theme-partner{
+          .circle{
+            stroke: $color-partner500;
+          }
+        }
+      }
+    }
+  }
+  &.file-state__finished{
+    .ui-file__state{
+      display:none;
+    }
+  }
+  &.file-state__error{
+    border-color:$color-red500;
+    >.ui-file__name, >.ui-file__size{
+      color:$color-red500;
+    }
+  }
+  &.file-state__dimmed{
+    opacity:.4;
+    pointer-events: none;
+  }
+}
+
+.ui-file{
+  @include uifile;
+}

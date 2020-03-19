@@ -1,0 +1,79 @@
+@mixin pagination($brand-color){
+  display: flex;
+  display: -ms-flexbox;
+  li{
+    height:100%;
+    margin-left:4px;
+  }
+  li:first-child{
+    margin-left:0;
+    >.page-link{
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Crect width='32' height='32' rx='2'%3E%3C/rect%3E%3Cpath stroke='%239E9E9E' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M19 10l-6 6 6 6'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+      text-indent: -999999px;
+      background-position:center;
+    }
+  }
+  li:last-child{
+    >.page-link{
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Crect width='32' height='32' rx='2'%3E%3C/rect%3E%3Cpath stroke='%239E9E9E' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='M13 22l6-6-6-6'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+      text-indent: -999999px;
+      background-position:center;
+    }
+  }
+  .page-link {
+    position: relative;
+    display: block;
+    font-size:14px;
+    line-height: 30px;
+    min-width:32px;
+    text-align: center;
+    padding:0 8px;
+    font-weight: 500;
+    color:$color-gray600;
+    text-decoration: none;
+    border:1px solid transparent;
+    &:hover {
+      z-index: 2;
+      color: $brand-color;
+    }
+    &.active{
+      color: $brand-color;
+      border-color:$color-gray300;
+      border-radius:2px;
+    }
+  }
+}
+
+.page-item {
+  &:first-child {
+    .page-link {
+      margin-left: 0;
+    }
+  }
+  &:last-child {
+    .page-link {
+    }
+  }
+
+  &.active .page-link {
+    z-index: 3;
+  }
+
+  &.disabled .page-link {
+    pointer-events: none;
+    opacity: .4;
+    cursor: auto;
+  }
+}
+
+.pagination{
+  &.theme-wishket{
+    @include pagination($color-wishket500);
+  }
+  &.theme-partner{
+    @include pagination($color-partner500);
+  }
+  &.theme-client{
+    @include pagination($color-client500);
+  }
+}
