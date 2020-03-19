@@ -48,7 +48,7 @@ a.logo-black{
   color: #ffffff;
   position: fixed;
   top: 0;
-  z-index: 99999;
+  z-index: 9999999;
 }
 .ui-gnb.theme-default-black .brand {
   text-indent: -99999px;
