@@ -4,7 +4,7 @@
   font-weight: 400;
   cursor: pointer;
   display:inline-block;
-  min-width:260px;
+  min-width:100px;
   line-height: 0;
   -webkit-tap-highlight-color : transparent;
   >.selectBg{
@@ -30,7 +30,7 @@
       font-size:$font-size;
       line-height:$line-height;
       opacity: 1;
-      padding-right:42px;
+      padding-right:0;
       overflow: hidden;
       word-break: keep-all;
       text-overflow: ellipsis;
@@ -180,7 +180,7 @@
   font-weight: 400;
   cursor: pointer;
   display:inline-block;
-  min-width:260px;
+  min-width:100px;
   line-height: 0;
   >.selectBg{
     position:absolute;

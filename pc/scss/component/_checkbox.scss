@@ -23,6 +23,7 @@
         -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
       }
     }
+
     >span.arrow{
       .checked-icon{
         transition:stroke-dashoffset .18s cubic-bezier(.4,0,.6,1) 0ms;
@@ -256,6 +257,7 @@
   position:relative;
   display:inline-block;
   user-select:none;
+  margin: 4px 2px 8px 2px;
   &:focus{
     >span{
       background:$hover-color;

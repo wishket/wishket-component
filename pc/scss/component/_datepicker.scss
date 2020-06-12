@@ -174,7 +174,9 @@
   margin-left: 12px;
   margin-right: 12px;
   color: $color-gray900;
-  @extend .subtitle-2-bold;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: bold;
   &:hover {background-color: #fff;}
 }
 
@@ -186,7 +188,9 @@
 }
 
 .datepicker-panel > ul[data-view="days"] > li {
-  @extend .body-2;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
   height: 36px;
   width: 36px;
   padding: 5px 7px 7px 5px;
@@ -217,7 +221,9 @@
 
 .datepicker-panel > ul[data-view="week"] > li,
 .datepicker-panel > ul[data-view="week"] > li:hover {
-  @extend .caption;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: normal;
   color: $color-gray600;
   margin: 16px 0 8px 0;
   background-color: #fff;
