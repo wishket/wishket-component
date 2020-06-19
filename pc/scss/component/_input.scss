@@ -64,7 +64,7 @@
       border-color:$brand-color;
     }
     &:hover{
-      // border-color:$brand-color;
+       border-color:$brand-color;
       &.no-hover{
         border-color:#e0e0e0;
       }
@@ -301,7 +301,7 @@
       border-color:$brand-color;
     }
     &:hover{
-      // border-color:$brand-color;
+       border-color:$brand-color;
       &:disabled{
         &:hover, &:focus{
           border-color:$color-gray200;
@@ -538,7 +538,7 @@
       border-color:$brand-color;
     }
     &:hover{
-      // border-color:$brand-color;
+       border-color:$brand-color;
       &:disabled{
         &:hover, &:focus{
           border-color:$color-gray200;

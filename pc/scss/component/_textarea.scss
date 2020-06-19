@@ -9,6 +9,9 @@
     &.active{
       border-color:$brand-color;
     }
+    &:hover{
+      border-color:$brand-color;
+    }
     >textarea{
       position: relative;
       display:block;

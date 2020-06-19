@@ -127,6 +127,14 @@
       // }
     }
   }
+  &:hover{
+    >.select-box{
+      border-color:$brand-color;
+      >.select-label{
+        color:$brand-color;
+      }
+    }
+  }
   &.select__border{
     >.select-box{
       border-color:$brand-color;
