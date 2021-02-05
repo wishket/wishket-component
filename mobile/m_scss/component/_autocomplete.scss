@@ -1,4 +1,4 @@
-@mixin autocomplete($type, $brand-color, $brand-hover-color){
+@mixin autocomplete($type, $brand-color, $brand-hover-color, $brand-label-color, $brand-close-color){
   padding:4px 8px;
   border:1px solid $color-gray200;
   border-radius:4px;
@@ -37,11 +37,15 @@
     display:inline-block;
     padding:2px 22px 2px 8px;
     border-radius: 8px;
-    background:$color-gray100;
+    color: $brand-color;
+    background: $brand-label-color;
     font-size:13px;
     line-height: 20px;
     margin:4px;
     position:relative;
+    &:hover {
+      background: $brand-hover-color;
+    }
     >i{
       cursor: pointer;
       position: absolute;
@@ -49,7 +53,7 @@
       right:5px;
       width:16px;
       height:100%;
-      background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%239E9E9E' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.6'%3E%3Cpath d='M5 5l6 6M11 5l-6 6'/%3E%3C/g%3E%3C/svg%3E%0A");
+      background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23#{$brand-close-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.6'%3E%3Cpath d='M5 5l6 6M11 5l-6 6'/%3E%3C/g%3E%3C/svg%3E%0A");
       background-repeat: no-repeat;
       background-position: center;
     }
@@ -119,12 +123,12 @@
 
 .ui-autocomplete{
   &.theme-wishket{
-    @include autocomplete(default, $color-partner500, $color-partner10);
+    @include autocomplete(default, $color-wishket500, $color-wishket10, $color-wishket50, '3BA3C7');
   }
   &.theme-client{
-    @include autocomplete(default, $color-client500, $color-client10);
+    @include autocomplete(default, $color-client500, $color-client10, $color-client50, '2E6BAA');
   }
   &.theme-partner{
-    @include autocomplete(default, $color-wishket500, $color-wishket10);
+    @include autocomplete(default, $color-partner500, $color-partner10, $color-partner50, '00A878');
   }
 }
