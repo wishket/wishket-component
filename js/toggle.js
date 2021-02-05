@@ -21,14 +21,19 @@
         var $this = $(this);
         self.toggle(true, $this, "active");
         self.toggle(false, $this.siblings(".off"), "active");
-        self.syncInput("on");
-      })
+        self.syncInput("true");
+      });
       this.$node.siblings(".off").on("click", function(){
         var $this = $(this);
         self.toggle(true, $this, "active");
         self.toggle(false, $this.siblings(".on"), "active");
-        self.syncInput("off");
-      })
+        self.syncInput("false");
+      });
+      if (this.$node.val() === 'true') {
+        this.$node.siblings(".on").click();
+      } else if (this.$node.val() === 'false') {
+        this.$node.siblings(".off").click();
+      }
     },
     
     toggle: function(state, node, className){
@@ -50,8 +55,8 @@
       this.$node.wrap('<div class="toggle '+classWrap+'"></div>');
       this.$node.parent().prepend(helptext);
       var html =
-        '<button class="off">off<span></span></button>' +
-        '<button class="on">on<span></span></button>';
+        '<button type="button" class="off">off<span></span></button>' +
+        '<button type="button" class="on">on<span></span></button>';
       this.$node.before(html);
     }
   };

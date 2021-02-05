@@ -41,10 +41,19 @@
   });
 
   var UiSelect = function (node, options){
+    var that = this;
     this.node = node;
     this.$node = $(this.node);
-    this.settings = $.extend({}, defaults, options);
-    this.init();
+    if(options == 'clear') {
+      this.$dropdown = this.$node.siblings('.ui-select');
+      this.syncOptions();
+    } else {
+      this.settings = $.extend({}, defaults, options);
+      this.init();
+    }
+    this.$node.on('change', function () {
+      that.syncOptions();
+    });
   };
 
   UiSelect.prototype = {

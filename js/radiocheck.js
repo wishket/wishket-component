@@ -22,7 +22,7 @@
     init: function(){
       var type = this.$node.attr("type");
       if(this.settings.type === "tree"){
-        this.createHtml('checkbox', this.$node.find("input"));
+        this.createHtml('checkbox', this.$node.find("input:checkbox"));
       }else{
         if(type === 'checkbox'){
           if(this.settings.type === "chip"){
@@ -98,9 +98,9 @@
       var self = this,
           theme,
           disabled = this.$node.attr("disabled") ? ' disabled' : '',
-          subText = this.$node.siblings("p").text(),
+          subText = this.$node.siblings("p").html(),
           subTextClass = subText ? ' detail-text' : '',
-          label = this.$node.siblings("label").text(),
+          label = this.$node.siblings("label").html(),
           addon = this.$node.siblings("input"),
           datepicker = this.$node.siblings(".ui-datepicker");
 
@@ -331,7 +331,6 @@
           /Edge/.test(navigator.userAgent) ? $(this).parent().siblings(".addon__edge-bg").css("z-index", "9999999") : null;
         });
       }
-      console.log(node);
       if(state){
         node.attr('disabled', false);
         /Edge/.test(navigator.userAgent) ? node.parent().siblings(".addon__edge-bg").css("z-index", "-9999999") : null;

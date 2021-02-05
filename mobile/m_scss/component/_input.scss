@@ -127,7 +127,7 @@
     transform: translateY(-50%);
     font-size:14px;
     color:$color-gray400;
-    opacity: 0;
+    opacity: 0.7;
     transition:all .3s;
     -webkit-transition:all .3s;
     &.active{
@@ -372,7 +372,7 @@
     bottom:14px;
     font-size:14px;
     color:$color-gray400;
-    opacity: 0;
+    opacity: 0.7;
     transition:all .3s;
     -webkit-transition:all .3s;
     &.active{
@@ -590,7 +590,7 @@
     transform: translateY(-50%);
     font-size:14px;
     color:$color-gray400;
-    opacity: 0;
+    opacity: 0.7;
     transition:all .3s;
     -webkit-transition:all .3s;
     &.active{
