@@ -40,7 +40,7 @@
     position:absolute;
     display:inline-block;
     padding:2px 22px 2px 8px;
-    border-radius: 8px;
+    border-radius: 12px;
     color: $brand-color;
     background:$brand-label-color;
     font-size:13px;
@@ -57,7 +57,7 @@
       right:5px;
       width:16px;
       height:100%;
-      background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23#{$brand-close-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.6'%3E%3Cpath d='M5 5l6 6M11 5l-6 6'/%3E%3C/g%3E%3C/svg%3E%0A");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg stroke='%23#{$brand-close-color}' stroke-width='1.6'%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath d='M0 0L6 6' transform='translate(-233 -904) translate(0 117) translate(24 648) translate(0 94) translate(169 41) translate(40 4) translate(5 5)'/%3E%3Cpath d='M0 0L6 6' transform='translate(-233 -904) translate(0 117) translate(24 648) translate(0 94) translate(169 41) translate(40 4) translate(5 5) matrix(-1 0 0 1 6 0)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
       background-repeat: no-repeat;
       background-position: center;
     }
@@ -128,12 +128,12 @@
 
 .ui-autocomplete{
   &.theme-wishket{
-    @include autocomplete(default, $color-wishket500, $color-wishket10, $color-wishket50, '3BA3C7');
+    @include autocomplete(default, $color-wishket500, $color-wishket10, $color-wishket50, '80C7DE');
   }
   &.theme-client{
-    @include autocomplete(default, $color-client500, $color-client10, $color-client50, '2E6BAA');
+    @include autocomplete(default, $color-client500, $color-client10, $color-client50, '7DA3CC');
   }
   &.theme-partner{
-    @include autocomplete(default, $color-partner500, $color-partner10, $color-partner50, '00A878');
+    @include autocomplete(default, $color-partner500, $color-partner10, $color-partner50, '63C9AB');
   }
 }
