@@ -48,7 +48,7 @@
     margin:4px;
     position:relative;
     &:hover {
-      background: $brand-hover-color;
+      background: $brand-label-color
     }
     >i{
       cursor: pointer;
@@ -62,7 +62,11 @@
       background-position: center;
     }
     &.error{
-      color:$color-red500;
+      color: $color-orange500;
+      background-color: $color-orange50;
+      >i {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg stroke='%23FF6B21' stroke-width='1.6'%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath d='M0 0L6 6' transform='translate(-233 -904) translate(0 117) translate(24 648) translate(0 94) translate(169 41) translate(40 4) translate(5 5)'/%3E%3Cpath d='M0 0L6 6' transform='translate(-233 -904) translate(0 117) translate(24 648) translate(0 94) translate(169 41) translate(40 4) translate(5 5) matrix(-1 0 0 1 6 0)'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+      }
     }
   }
   &:focus{
