@@ -200,7 +200,16 @@
           iconClass = iconRight.length === 1 && iconLeft.length === 1 ? 'icon-left-right ' : (iconRight.length > 0 ? 'icon-right ' : '' + iconLeft.length > 0 ? 'icon-left ' : '');
       iconClass === "icon-left-right " ? iconLeft.addClass("first") : null;
       this.$node.next('.text-unit').length > 0 ? ( this.$node.val() ? this.$node.next('.text-unit').addClass("active") : null ) : null;
-      this.$node.css("padding-right", iconRight.width() + 24);
+
+      // 부모 엘리먼트가 display none 인 경우 width 값 0으로 잡히는 문제 해결
+      if (this.$node.parents(":hidden:last")) {
+        var hiddenParent = this.$node.parents(":hidden:last");
+        hiddenParent.css({ visibility: "hidden", display: "" });
+        this.$node.css("padding-right", iconRight.width() + 24);
+        hiddenParent.css({ visibility: "", display: "none" });
+      } else {
+        this.$node.css("padding-right", iconRight.width() + 24);
+      }
 
       if(type === 'label'){
         var label = this.$node.siblings("label");

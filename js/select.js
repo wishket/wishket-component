@@ -44,7 +44,7 @@
     var that = this;
     this.node = node;
     this.$node = $(this.node);
-    if(options == 'clear') {
+    if(options === 'clear') {
       this.$dropdown = this.$node.siblings('.ui-select');
       this.syncOptions();
     } else {
@@ -61,6 +61,27 @@
       this.createHtml();
       this.$node.hide();
       this.$node.next().css('width', this.settings.width);
+    },
+
+    syncOptions: function() {
+      var selectDropdown = this.$node.next().children(".select-dropdown");
+      var option = this.$node.find("option");
+      var targetValue = this.$node.val();
+      selectDropdown.children().remove();
+      option.each(function(){
+        var value = this.value,
+            text = this.innerText,
+            $this = $(this),
+            selected = this.value === targetValue ? 'current' : '',
+            disabled = $this.attr("disabled") ? 'disabled' : '',
+            getClass = selected || disabled ? ' class="'+selected+' '+disabled+'"' : '';
+        if(this.value === targetValue){
+          $this.parent().next().addClass("selected");
+          $this.parent().next().addClass("active");
+          $this.parent().next().children(".select-box").children(".select-name").text($this.text());
+        }
+        selectDropdown.append('<li data-select-value="'+value+'"'+getClass+'>'+text+'</li>')
+      });
     },
 
     wait: function(){
