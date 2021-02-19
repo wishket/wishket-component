@@ -37,8 +37,21 @@
   UiTooltip.prototype = {
     init: function(){
       this.$node.addClass("ui-tooltip");
-      var boxHeight = this.$node.height();
-      var boxWidth = this.$node.width();
+      var boxHeight;
+      var boxWidth;
+
+      // display none 인 경우 width 값 0으로 잡히는 문제 해결
+      if (this.$node.parents(":hidden:last")) {
+        var hiddenParent = this.$node.parents(":hidden:last");
+        hiddenParent.css({ visibility: "hidden", display: "" });
+        boxHeight = this.$node.height();
+        boxWidth = this.$node.width();
+        hiddenParent.css({ visibility: "", display: "none" });
+      } else {
+        boxHeight = this.$node.height();
+        boxWidth = this.$node.width();
+      }
+
       var tooltipTextBox = this.$node.children("div.tooltip-container");
       if(isMobile){
         tooltipTextBox.remove();
