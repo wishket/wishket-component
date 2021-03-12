@@ -31,7 +31,6 @@
     background:#fff;
     width:100%;
     height: inherit;
-
     @if $icon-position == icon-default {
       padding:8px 12px 8px 12px;
     } @else if $icon-position == icon-right {
