@@ -304,7 +304,7 @@
       var $tagBox = this.$node.next().children(".ui-autocomplete").children(".tag-input");
       if(type === "create"){
         tag = tag.split('*!*');
-        if(tag.length > 1){
+        if(tag.length >= 1){
           for(var i=0; i<tag.length; i++){
             $tagBox.before("<span class=\"autocomplete-label\">"+tag[i]+"<i class=\"i-close\"></i></span>");
           }

@@ -499,7 +499,7 @@
       line-height:inherit;
     }
     &:disabled{
-      background:$color-gray10;
+      background-color:$color-gray10;
       color:$color-gray300;
     }
     &:hover, &:focus{
