@@ -333,7 +333,20 @@
       }
     }
   }
-
+  &.label-placeholder{
+    >input{
+      &::placeholder, &::-webkit-input-placeholder{
+        text-indent: 0;
+        color: $color-gray200;
+      }
+      &:-moz-placeholder{ /* Firefox 18- */
+        color: $color-gray200;
+      }
+      &::-moz-placeholder{ /* Firefox 19+ */
+        color: $color-gray200;
+      }
+    }
+  }
   input:-ms-input-placeholder{
     text-indent: -999999px;
   }

@@ -17,6 +17,8 @@
         var type = this.$node.attr("data-type");
         if(type === 'label'){
           this.createHtml('label');
+        }else if(type === 'label-placeholder'){
+          this.createHtml('label-placeholder');
         }else if(type === 'text'){
           this.createHtml('text');
         }else{
@@ -214,6 +216,11 @@
       if(type === 'label'){
         var label = this.$node.siblings("label");
         this.$node.wrap('<div class="label-input-'+theme+' '+iconClass+'"></div>');
+        this.$node.parent().append(label);
+        this.$node.parent().after("<span class='error-text' style='display:none;'>에러상세 메시지</span>");
+      }else if(type === 'label-placeholder'){
+        var label = this.$node.siblings("label");
+        this.$node.wrap('<div class="label-input-'+theme+' label-placeholder label-effect '+iconClass+'"></div>');
         this.$node.parent().append(label);
         this.$node.parent().after("<span class='error-text' style='display:none;'>에러상세 메시지</span>");
       }else if(type === 'text'){
