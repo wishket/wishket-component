@@ -62,9 +62,11 @@
         this.$node.on({
           focus: function(){
             self.toggle(true, $(this).parent(), "active");
+            self.toggle(true, $(this).parent().parent().find('label'), "active");
           },
           blur: function(){
             self.toggle(false, $(this).parent(), "active");
+            self.toggle(false, $(this).parent().parent().find('label'), "active");
           }
         })
       }
@@ -250,12 +252,21 @@
       }
       theme = theme ? theme.split("theme-")[1] : '';
       var helperText = this.$node.siblings("span.helper-text"),
-          maxlength = this.$node.attr("maxlength");
+          maxlength = this.$node.attr("maxlength"),
+          label = this.$node.siblings("label");
+      var type = (this.$node.attr("data-type") === undefined)? '':this.$node.attr("data-type");
+      var shape = (this.$node.attr('data-shape') === undefined)? '':this.$node.attr('data-shape');
 
-      this.$node.wrap('<div class="ui-textarea-'+theme+'"></div>');
+
+      this.$node.wrap('<div class="ui-textarea-'+theme+' '+shape+' '+type+'"></div>');
+      if (type === 'label-textarea') {
+        this.$node.parent().prepend("<span class='word-length'>0/"+maxlength+"</span>");
+        this.$node.parent().prepend(label);
+      }else {
+        this.$node.after("<span class='word-length'>0/"+maxlength+"</span>");
+      }
       this.$node.parent().append(helperText);
       this.$node.after("<span class='error-text'>에러상세 메시지</span>");
-      this.$node.after("<span class='word-length'>0/"+maxlength+"</span>");
       this.$node.wrap('<div class="textarea__border"></div>');
       this.$node.attr('disabled') ? this.toggle(true, this.$node.parent(), 'disabled') : null;
       this.wait();
