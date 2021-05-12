@@ -149,6 +149,8 @@
 
     createHtml: function(){
       var label = this.$node.find("option:first").text();
+      var shape = (this.$node.attr('data-shape') === undefined)? '':this.$node.attr('data-shape');
+
       this.$node.find("option:first").remove();
       var option = this.$node.find("option"),
           wrapClass = this.$node.attr("class"),
@@ -157,7 +159,7 @@
 
       if(this.settings.type === "label"){
         createSelect.append(
-          '<div class="ui-label-select '+wrapClass+wrapDisabled+'" tabindex="0">' +
+          '<div class="ui-label-select '+wrapClass+wrapDisabled+' '+shape+'" tabindex="0">' +
           '  <span class="select-box">' +
           '    <span class="select-label basic">'+label+'</span>' +
           '    <p class="select-name"></p>' +

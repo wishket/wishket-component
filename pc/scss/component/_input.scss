@@ -297,10 +297,20 @@
       color:$color-gray300;
     }
     &:focus{
+      position: inherit;
+      z-index: 15;
       border-color:$brand-color;
+      ~label{
+        z-index: 16;
+      }
     }
     &:hover{
+       position: inherit;
+       z-index: 15;
        border-color:$brand-color;
+      ~label{
+        z-index: 16;
+      }
       &:disabled{
         &:hover, &:focus{
           border-color:$color-gray200;

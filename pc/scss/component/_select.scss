@@ -316,8 +316,10 @@
       }
     }
   }
-  &.open{
+  &:hover, &:focus, &.open{
     >.select-box{
+      position: inherit;
+      z-index: 15;
       border-color:$brand-color;
       >.select-label{
         color:$brand-color;
@@ -327,6 +329,12 @@
       //     transform:rotate(180deg);
       //   }
       // }
+    }
+  }
+  &.table-shape{
+    min-width: 0;
+    >.select-box {
+      border-radius: 0;
     }
   }
   &.select__border{
