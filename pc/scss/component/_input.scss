@@ -333,6 +333,11 @@
       }
     }
   }
+  &.table-shape {
+    >input {
+      border-radius: 0;
+    }
+  }
   &.label-placeholder{
     >input{
       &::placeholder, &::-webkit-input-placeholder{

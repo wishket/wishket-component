@@ -15,15 +15,16 @@
     init: function(){
       if(this.$node.attr("class").indexOf('addon-input') === -1){
         var type = this.$node.attr("data-type");
+        var shape = this.$node.attr("data-shape");
         if(type === 'label'){
-          this.createHtml('label');
+          this.createHtml('label', shape);
         }else if(type === 'label-placeholder'){
-          this.createHtml('label-placeholder');
+          this.createHtml('label-placeholder', shape);
         }else if(type === 'text'){
-          this.createHtml('text');
+          this.createHtml('text', shape);
         }else{
           if(this.settings.inputType==='textArea'){
-            this.createTextArea();
+            this.createTextArea(shape);
           }else{
             this.createHtml();
           }
@@ -191,7 +192,9 @@
       }
     },
 
-    createHtml: function(type, node){
+    createHtml: function(type, shape){
+      shape = (shape === undefined)? '':shape;
+
       var theme;
       if(this.$node.attr("class") && this.$node.attr("class").match(/(theme-)\w+/g)){
         theme = this.$node.attr("class").match(/(theme-)\w+/g)[0];
@@ -215,24 +218,24 @@
 
       if(type === 'label'){
         var label = this.$node.siblings("label");
-        this.$node.wrap('<div class="label-input-'+theme+' '+iconClass+'"></div>');
+        this.$node.wrap('<div class="label-input-'+theme+' '+iconClass+' '+shape+'"></div>');
         this.$node.parent().append(label);
         this.$node.parent().after("<span class='error-text' style='display:none;'>에러상세 메시지</span>");
       }else if(type === 'label-placeholder'){
         var label = this.$node.siblings("label");
-        this.$node.wrap('<div class="label-input-'+theme+' label-placeholder label-effect '+iconClass+'"></div>');
+        this.$node.wrap('<div class="label-input-'+theme+' label-placeholder label-effect '+iconClass+' '+shape+'"></div>');
         this.$node.parent().append(label);
         this.$node.parent().after("<span class='error-text' style='display:none;'>에러상세 메시지</span>");
       }else if(type === 'text'){
         var helperText = this.$node.siblings("span.helper-text");
         var maxlength = this.$node.attr("maxlength");
-        this.$node.wrap('<div class="text-input-'+theme+' '+iconClass+'"></div>');
+        this.$node.wrap('<div class="text-input-'+theme+' '+iconClass+' '+shape+'"></div>');
         this.$node.parent().append(helperText);
         this.$node.after("<span class='word-length'>0/"+maxlength+"</span>");
         this.$node.after("<span class='error-text'>에러상세 메시지</span>");
         this.$node.wrap("<div></div>");
       }else{
-        this.$node.wrap('<div class="default-input-'+theme+' '+iconClass+'"></div>');
+        this.$node.wrap('<div class="default-input-'+theme+' '+iconClass+' '+shape+'"></div>');
         this.$node.parent().after("<span class='error-text'>에러상세 메시지</span>");
       }
       iconLeft ? this.$node.parent().prepend(iconLeft) : null;
