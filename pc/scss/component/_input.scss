@@ -352,13 +352,13 @@
     >input{
       &::placeholder, &::-webkit-input-placeholder{
         text-indent: 0;
-        color: $color-gray200;
+        color: $color-gray300;
       }
       &:-moz-placeholder{ /* Firefox 18- */
-        color: $color-gray200;
+        color: $color-gray300;
       }
       &::-moz-placeholder{ /* Firefox 19+ */
-        color: $color-gray200;
+        color: $color-gray300;
       }
     }
   }
