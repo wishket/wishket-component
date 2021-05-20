@@ -338,6 +338,7 @@
     }
   }
   &.select__border{
+    z-index: 15;
     >.select-box{
       border-color:$brand-color;
       >.select-label{

@@ -312,6 +312,7 @@
         z-index: 16;
       }
       &:disabled{
+        z-index: 0;
         &:hover, &:focus{
           border-color:$color-gray200;
         }
