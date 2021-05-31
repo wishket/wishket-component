@@ -465,6 +465,7 @@
     }
   }
   &.error{
+    z-index: 16;
     >input{
       color:$color-red500;
       border-color:$color-red500;
