@@ -272,7 +272,7 @@
       color: #fff;
     }
 
-    &:disabled{
+    &:disabled:not(.no-dimmed-color){
       background:$color-gray10;
       color:$color-gray300;
     }
@@ -307,6 +307,25 @@
       &::-ms-input-placeholder {
         font-size: 14px;
         font-family: 'Roboto', Helvetica, Arial, sans-serif;
+      }
+    }
+  }
+  &.table-shape {
+    >input {
+      border-radius: 0;
+    }
+  }
+  &.label-placeholder{
+    >input{
+      &::placeholder, &::-webkit-input-placeholder{
+        text-indent: 0;
+        color: $color-gray300;
+      }
+      &:-moz-placeholder{ /* Firefox 18- */
+        color: $color-gray300;
+      }
+      &::-moz-placeholder{ /* Firefox 19+ */
+        color: $color-gray300;
       }
     }
   }

@@ -67,7 +67,43 @@
       color:$color-red500;
     }
   }
-
+  &.table-shape {
+    > .textarea__border {
+      border-radius: 0;
+    }
+  }
+  &.label-textarea{
+    label{
+      font-size: 11px;
+      color: $color-gray300;
+      padding: 8px 0 0 12px;
+      position: absolute;
+      z-index: 15;
+      &.active{
+        color:$brand-color;
+      }
+    }
+    >span{
+      &.word-length{
+        font-size: 11px;
+        line-height: 14px;
+        padding-right: 8px;
+        color: $color-gray600;
+        position: relative;
+        z-index: 15;
+      }
+    }
+    >.textarea__border{
+      width: 100%;
+      float: left;
+      margin-top: -24px;
+      padding-top: 24px;
+      background: $color-white;
+      >textarea{
+        padding-top: 0;
+      }
+    }
+  }
   &:after{
     clear: both;
     content:'';

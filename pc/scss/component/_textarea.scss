@@ -88,6 +88,9 @@
     }
     >span{
       &.word-length{
+        font-size: 11px;
+        line-height: 14px;
+        padding-right: 8px;
         color: $color-gray600;
         position: relative;
         z-index: 15;

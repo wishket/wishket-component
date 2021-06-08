@@ -308,8 +308,10 @@
       }
     }
   }
-  &.open{
+  &:focus, &.open{
     >.select-box{
+      position: inherit;
+      z-index: 15;
       border-color:$brand-color;
       >.select-label{
         color:$brand-color;
@@ -321,7 +323,14 @@
       // }
     }
   }
+  &.table-shape{
+    min-width: 0;
+    >.select-box {
+      border-radius: 0;
+    }
+  }
   &.select__border{
+    z-index: 15;
     >.select-box{
       border-color:$brand-color;
       >.select-label{
@@ -351,12 +360,12 @@
 
 .ui-label-select{
   &.theme-wishket{
-    @include label-select(default, $color-partner500, $color-partner10);
+    @include label-select(default, $color-wishket500, $color-wishket10);
   }
   &.theme-client{
     @include label-select(default, $color-client500, $color-client10);
   }
   &.theme-partner{
-    @include label-select(default, $color-wishket500, $color-wishket10);
+    @include label-select(default, $color-partner500, $color-partner10);
   }
 }
