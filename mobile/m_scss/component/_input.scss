@@ -285,6 +285,12 @@
       }
     }
     &:focus{
+      position: inherit;
+      z-index: 15;
+      border-color: $brand-color;
+      ~label {
+        z-index: 16;
+      }
       ~.text-unit{
         opacity: 1;
       }
