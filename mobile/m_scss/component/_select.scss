@@ -324,6 +324,7 @@
     }
   }
   &.table-shape{
+    display:block;
     min-width: 0;
     >.select-box {
       border-radius: 0;

@@ -277,7 +277,12 @@
       color:$color-gray300;
     }
     &:hover, &:focus{
+      position: inherit;
+      z-index: 10;
       border-color:$brand-color;
+      ~label {
+        z-index: 11;
+      }
       &:disabled{
         &:hover, &:focus{
           border-color:$color-gray200;
@@ -286,10 +291,10 @@
     }
     &:focus{
       position: inherit;
-      z-index: 15;
+      z-index: 10;
       border-color: $brand-color;
       ~label {
-        z-index: 16;
+        z-index: 11;
       }
       ~.text-unit{
         opacity: 1;
@@ -429,6 +434,7 @@
     }
   }
   &.error{
+    z-index: 10;
     >input{
       color:$color-red500;
       border-color:$color-red500;
