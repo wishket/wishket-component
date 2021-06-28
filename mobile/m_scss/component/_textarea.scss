@@ -76,7 +76,7 @@
     label{
       font-size: 11px;
       color: $color-gray300;
-      padding: 8px 0 0 12px;
+      padding: 8px 0 0 13px;
       position: absolute;
       z-index: 15;
       &.active{
@@ -97,7 +97,7 @@
       width: 100%;
       float: left;
       margin-top: -22px;
-      padding-top: 24px;
+      padding-top: 25px;
       background: $color-white;
       >textarea{
         padding-top: 0;

@@ -328,10 +328,14 @@
   }
   &.label-placeholder{
     >input{
+      &:disabled.no-dimmed-color {
+        -webkit-opacity:1;
+      }
       &::placeholder, &::-webkit-input-placeholder{
         text-indent: 0;
         color: $color-gray300;
       }
+
       &:-moz-placeholder{ /* Firefox 18- */
         color: $color-gray300;
       }

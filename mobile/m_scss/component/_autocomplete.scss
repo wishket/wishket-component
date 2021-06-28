@@ -22,6 +22,9 @@
     &::placeholder, &::-webkit-input-placeholder{
       color:$color-gray300;
     }
+    &.tag-input.multi-line {
+      min-width: 100%;
+    }
   }
 
   input[type=text]::-ms-clear {

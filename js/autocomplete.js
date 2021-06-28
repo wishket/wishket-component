@@ -83,6 +83,8 @@
       var dropdownPostion;
       if(target.parent().width() === target.width() + 8){
         dropdownPostion = 0;
+      }else if(target.parent().width() === target.width()){
+        dropdownPostion = 0;
       }else{
         dropdownPostion = target.parent().width() - target.width() - 16;
       }
@@ -162,7 +164,7 @@
                   labelCurrentLength = $dropDown.prev().children("span").length;
               if(labelMaxLength > labelCurrentLength){
                 $dropDown.prev().children("span").each(function () {
-                  $this = $(this);
+                  var $this = $(this);
                   if($this.text()=== value){
                     stop = false;
                     var label = $this;
@@ -351,12 +353,14 @@
       var wrapClass = this.node.getAttribute("class") ? 'class="ui-autocomplete '+this.node.getAttribute("class")+'" ' : '',
           placeholder = this.node.getAttribute("placeholder") ? 'placeholder="'+this.node.getAttribute("placeholder")+'"' : '',
           loadTag = this.$node.attr("value"),
-          $flag = $(document.createDocumentFragment());
+          $flag = $(document.createDocumentFragment()),
+          tag_input_type = this.node.getAttribute('data-shape'),
+          box_type = (this.node.getAttribute('box-type'))? ' ' + this.node.getAttribute('box-type') : '';
       this.node.classList.add("hiddenInput");
       var createHtml =
-        '<div class="autocompletebox">' +
+        '<div class="autocompletebox'+box_type+'">' +
         '  <div '+wrapClass+'>' +
-        '    <input class="tag-input" type="text" '+placeholder+' />' +
+        '    <input class="tag-input '+tag_input_type+'" type="text" '+placeholder+' />' +
         '  </div>' +
         '  <ul class="tag-dropdown" >' +
         '  </ul>' +
