@@ -57,7 +57,7 @@
       var html =
         '<button type="button" class="off">off<span></span></button>' +
         '<button type="button" class="on">on<span></span></button>';
-      this.$node.before(html);
+      this.$node.after(html);
     }
   };
   $.fn.uiToggle=function(){
