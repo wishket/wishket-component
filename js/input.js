@@ -260,7 +260,7 @@
 
       this.$node.wrap('<div class="ui-textarea-'+theme+' '+shape+' '+type+'"></div>');
       if (type === 'label-textarea') {
-        this.$node.parent().prepend("<span class='word-length'>0/"+maxlength+"</span>");
+        this.$node.parent().prepend("<span class='word-length'>" + this.$node.val().length + "/" + maxlength + "</span>");
         this.$node.parent().prepend(label);
       }else {
         this.$node.after("<span class='word-length'>" + this.$node.val().length + "/" + maxlength + "</span>");
