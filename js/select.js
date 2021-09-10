@@ -105,7 +105,7 @@
 
           if($target.prop("tagName") === "LI"){
             var value = $target.attr("data-select-value");
-            if(value && !$target.hasClass("disabled")){
+            if(!$target.hasClass("disabled")){
               $this.children(".select-box").children(".select-name").text($target.text());
               self.toggle(true, $this, "selected");
               self.toggle(false, $target.siblings(".current"), "current");
@@ -185,7 +185,7 @@
       this.$node.after(createSelect);
 
       var selectDropdown = this.$node.next().children(".select-dropdown");
-
+      var selectedValue = ""
       option.each(function(){
         var value = this.value,
             text = this.innerText,
@@ -198,9 +198,12 @@
           $this.parent().next().addClass("selected");
           $this.parent().next().addClass("active");
           $this.parent().next().children(".select-box").children(".select-name").text($this.text());
+          selectedValue = value
         }
         selectDropdown.append('<li data-select-value="'+value+'"'+getClass+'>'+text+'</li>')
       });
+      // 기본 값 설정
+      this.$node.val(selectedValue)
       this.wait();
     },
   };
