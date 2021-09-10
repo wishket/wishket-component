@@ -213,7 +213,7 @@
         var hiddenParent = this.$node.parents(":hidden:last");
         hiddenParent.css({ visibility: "hidden", display: "" });
         this.$node.css("padding-right", iconRight.width() + 24);
-        hiddenParent.css({ visibility: "", display: "none" });
+        hiddenParent.css({ visibility: ""}).addClass('hide');
       } else {
         this.$node.css("padding-right", iconRight.width() + 24);
       }
@@ -233,7 +233,7 @@
         var maxlength = this.$node.attr("maxlength");
         this.$node.wrap('<div class="text-input-'+theme+' '+iconClass+' '+shape+'"></div>');
         this.$node.parent().append(helperText);
-        this.$node.after("<span class='word-length'>0/"+maxlength+"</span>");
+        this.$node.after("<span class='word-length'>" + this.$node.val().length + "/" + maxlength + "</span>");
         this.$node.after("<span class='error-text'>에러상세 메시지</span>");
         this.$node.wrap("<div></div>");
       }else{
@@ -263,7 +263,7 @@
         this.$node.parent().prepend("<span class='word-length'>0/"+maxlength+"</span>");
         this.$node.parent().prepend(label);
       }else {
-        this.$node.after("<span class='word-length'>0/"+maxlength+"</span>");
+        this.$node.after("<span class='word-length'>" + this.$node.val().length + "/" + maxlength + "</span>");
       }
       this.$node.parent().append(helperText);
       this.$node.after("<span class='error-text'>에러상세 메시지</span>");
