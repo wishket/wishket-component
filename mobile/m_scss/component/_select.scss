@@ -154,10 +154,10 @@
 }
 
 .ui-select{
-  &.theme-wishket{
-    @include select(default, $color-partner500, $color-partner10, 14px, 24px);
-    &.select-small{
-      @include select(default, $color-partner500, $color-partner10, 13px, 20px);
+  &.theme-wishket {
+    @include select(default, $color-wishket500, $color-wishket10, 14px, 24px);
+    &.select-small {
+      @include select(default, $color-wishket500, $color-wishket10, 13px, 20px);
     }
   }
   &.theme-client{
@@ -167,9 +167,9 @@
     }
   }
   &.theme-partner{
-    @include select(default, $color-wishket500, $color-wishket10, 14px, 24px);
+    @include select(default, $color-partner500, $color-partner10, 14px, 24px);
     &.select-small{
-      @include select(default, $color-wishket500, $color-wishket10, 13px, 20px);
+      @include select(default, $color-partner500, $color-partner10, 13px, 20px);
     }
   }
 }
