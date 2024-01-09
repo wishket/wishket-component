@@ -44,8 +44,13 @@
     var that = this;
     this.node = node;
     this.$node = $(this.node);
+    this.initValue = this.$node.find("option:first").text()
     if(options === 'clear') {
       this.$dropdown = this.$node.siblings('.ui-select');
+      this.syncOptions();
+    } else if(options === 'reset') {
+      this.$dropdown = this.$node.siblings('.ui-select');
+      this.$node.val(this.initValue);
       this.syncOptions();
     } else {
       this.settings = $.extend({}, defaults, options);
@@ -65,8 +70,11 @@
 
     syncOptions: function() {
       var selectDropdown = this.$node.next().children(".select-dropdown");
-      var option = this.$node.find("option");
+      var selectNameEl = this.$node.next().find(".select-name");
+      var option = this.$node.find("option").not(':first');
       var targetValue = this.$node.val();
+      var selectedValue;
+
       selectDropdown.children().remove();
       option.each(function(){
         var value = this.value,
@@ -78,10 +86,11 @@
         if(this.value === targetValue){
           $this.parent().next().addClass("selected");
           $this.parent().next().addClass("active");
-          $this.parent().next().children(".select-box").children(".select-name").text($this.text());
+          selectedValue = $this.text();
         }
         selectDropdown.append('<li data-select-value="'+value+'"'+getClass+'>'+text+'</li>')
       });
+      selectNameEl.text(selectedValue ? selectedValue : this.initValue);
     },
 
     wait: function(){
@@ -151,8 +160,8 @@
       var label = this.$node.find("option:first").text();
       var shape = (this.$node.attr('data-shape') === undefined)? '':this.$node.attr('data-shape');
 
-      this.$node.find("option:first").remove();
-      var option = this.$node.find("option"),
+      // this.$node.find("option:first").remove();
+      var option = this.$node.find("option").not(":first"),
           wrapClass = this.$node.attr("class"),
           wrapDisabled = this.$node.attr("disabled") ? ' wrapdisabled' : '',
           createSelect = $(document.createDocumentFragment());
@@ -213,3 +222,4 @@
     });
   };
 })(jQuery, window);
+
