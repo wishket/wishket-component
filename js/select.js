@@ -114,7 +114,7 @@
 
           if($target.prop("tagName") === "LI"){
             var value = $target.attr("data-select-value");
-            if(!$target.hasClass("disabled")){
+            if(!$target.hasClass("disabled") && divSelect.children(".select-dropdown").hasClass("open")){
               $this.children(".select-box").children(".select-name").text($target.text());
               self.toggle(true, $this, "selected");
               self.toggle(false, $target.siblings(".current"), "current");
@@ -202,7 +202,7 @@
             selected = $this.attr("selected") ? 'current' : '',
             disabled = $this.attr("disabled") ? 'disabled' : '',
             getClass = selected || disabled ? ' class="'+selected+' '+disabled+'"' : '';
-            
+
         if($this.attr("selected")){
           $this.parent().next().addClass("selected");
           $this.parent().next().addClass("active");
@@ -222,4 +222,3 @@
     });
   };
 })(jQuery, window);
-
